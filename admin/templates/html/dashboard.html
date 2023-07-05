@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+        <link href="/admin/static/favicon.ico" rel="icon" type="image/icon" />
+
+        <!-- CSS ---------------------------------------------------------------------------------------------------- -->
+        <!-- datepicker -->
+        <link href="/admin/static/lib/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+        <link href="/admin/static/lib/bootstrap-datepicker/css/bootstrap-datepicker.standalone.min.css" rel="stylesheet" />
+        <!-- datatable -->
+        <link href="/admin/static/lib/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" />
+        <!-- WYSIWYG editor -->
+        <link href="/admin/static/lib/summernote/summernote-bs4.css" rel="stylesheet" />
+        <!-- fontawesome -->
+        <link href="/admin/static/lib/fontawesome/css/all.min.css" rel="stylesheet" />
+        <!-- sb-admin -->
+        <link href="/admin/static/theme/sb-admin-2/css/sb-admin-2.min.css" rel="stylesheet" />
+        <!-- local -->
+        <link href="/admin/static/css/style.css" rel="stylesheet" />
+        <!-- jquery ui css-->
+        <link href="/admin/static/lib/jquery/ui/jquery-ui.min.css" rel="stylesheet" />
+
+        <!-- JS  ---------------------------------------------------------------------------------------------------- -->
+        <!-- device lib -->
+        <script src="/admin/static/lib/isMobile.min.js"></script>
+        <!-- jquery -->
+        <script src="/admin/static/lib/jquery/jquery.min.js"></script>
+        <script src="/admin/static/lib/jquery/jquery-1.10.4-ui.js"></script>
+        <!-- 드롭엔 다운 기능을 위한 추가-->
+        <!-- (bootstrap 과 충돌로 인하여  상위로 올림 )  -->
+        <script src="/admin/static/lib/jquery/jquery.highlight-5.js"></script>
+        <script src="/admin/static/lib/jquery/jquery-migrate-3.0.0.min.js"></script>
+
+        <!-- bootstrap -->
+        <script src="/admin/static/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- jquery&bootstrap lib -->
+        <script src="/admin/static/lib/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+        <!-- jquery lib -->
+        <!-- <script src="/admin/static/lib/jquery/jquery-1.10.4-ui.js"></script> -->
+        <!-- 드롭엔 다운 기능을 위한 추가 -->
+        <script src="/admin/static/lib/jquery-easing/jquery.easing.min.js"></script>
+        <script src="/admin/static/lib/jquery-dateformat.min.js"></script>
+        <script src="/admin/static/lib/jquery-validation/jquery.validate.min.js"></script>
+        <script src="/admin/static/lib/jquery-validation/additional-methods.min.js"></script>
+        <script src="/admin/static/lib/jquery-validation/localization/messages_ko.min.js"></script>
+        <script src="/admin/static/lib/jquery.mask.min.js"></script>
+        <!-- datepicker -->
+        <script src="/admin/static/lib/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+        <script src="/admin/static/lib/bootstrap-datepicker/locales/bootstrap-datepicker.ko.min.js"></script>
+        <!-- datatable -->
+        <script src="/admin/static/lib/bootstrap-table/bootstrap-table.js?201910011606"></script>
+        <script src="/admin/static/lib/bootstrap-table/locale/bootstrap-table-ko-KR.js"></script>
+        <script src="/admin/static/lib/bootstrap-table/extensions/export/bootstrap-table-export.js"></script>
+        <!-- 
+		<script src="/admin/static/lib/bootstrap-table/extensions/export/bootstrap-table-export.min.js"></script>
+		-->
+        <!-- datatable -->
+        <script src="/admin/static/lib/tableexport.jquery.plugin/tableExport.min.js"></script>
+        <script src="/admin/static/lib/tableexport.jquery.plugin/libs/jsPDF/jspdf.min.js"></script>
+        <script src="/admin/static/lib/tableexport.jquery.plugin/libs/jsPDF-AutoTable/jspdf.plugin.autotable.js"></script>
+        <!-- WYSIWYG editor -->
+        <script src="/admin/static/lib/summernote/summernote-bs4.min.js"></script>
+        <script src="/admin/static/lib/summernote/lang/summernote-ko-KR.js"></script>
+        <!-- underscord.js -->
+        <script src="/admin/static/lib/underscore-min.js"></script>
+        <!-- local -->
+        <script src="/admin/static/js/utils.js"></script>
+        <script src="/admin/static/js/commons.js"></script>
+        <script src="/admin/static/js/datatable.js"></script>
+        <script src="/admin/static/js/validate.js"></script>
+
+        <script src="/admin/static/lib/chart.js/Chart.min.js"></script>
+        <script src="/admin/static/lib/chart.js/plugins/chartjs-plugin-datalabels.min.js"></script>
+        <title>Dashboard</title>
+        <script>
+            $(document).ready(function () {
+                new Chart(document.getElementById('chart'), {
+                    type: 'pie',
+                    data: {
+                        labels: ['카테고리1', '카테고리2'],
+                        datasets: [
+                            {
+                                backgroundColor: genSeqColor(null, null, 2),
+                                data: [7, 2]
+                            }
+                        ]
+                    },
+                    options: {
+                        maintainAspectRatio: false,
+                        tooltips: {
+                            backgroundColor: 'rgb(255,255,255)',
+                            bodyFontColor: '#858796',
+                            borderColor: '#dddfeb',
+                            borderWidth: 1,
+                            xPadding: 15,
+                            yPadding: 15,
+                            displayColors: false,
+                            caretPadding: 10
+                        },
+                        plugins: {
+                            datalabels: {
+                                formatter: function (value, ctx) {
+                                    let sum = 0;
+                                    let dataArr = ctx.chart.data.datasets[0].data;
+                                    dataArr.map(function (data) {
+                                        sum += data;
+                                    });
+                                    let percentage = ((value * 100) / sum).toFixed(2) + '%';
+                                    return percentage;
+                                },
+                                color: '#222222',
+                                font: {
+                                    weight: 'bold',
+                                    size: 14
+                                }
+                            }
+                        },
+                        legend: {
+                            display: true,
+                            position: 'right'
+                        }
+                        // cutoutPercentage: 60,
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body id="page-top">
+        <!-- Page Wrapper -->
+        <div id="wrapper">
+            <!-- Sidebar -->
+            <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #ffcc00">
+                <!-- Sidebar - Brand -->
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" th:href="@{/dashboard}">
+                    <div class="sidebar-brand-text mx-3">당부<br />파트너사이트</div>
+                </a>
+
+                <!-- Menu List-->
+                <th:block th:each="menu : ${session.menu}">
+                    <th:block th:switch="${menu.kind}">
+                        <hr th:case="'HR'" class="sidebar-divider" />
+                        <div th:case="'HEAD'" class="sidebar-heading" th:text="${menu.title}">헤더</div>
+                        <th:block th:case="'ITEM'">
+                            <th:block th:if="${menu.hasSubmenu()}">
+                                <li class="nav-item" th:classappend="${menu.active ? 'active' : ''}">
+                                    <a class="nav-link collapsed" th:id="|menu_item_${menu.menuSeq}|" th:href="${!#strings.isEmpty(menu.link) ? menu.link : '#'}" data-toggle="collapse" th:data-target="|#collapseMenu_${menu.menuSeq}|" th:target="${menu.target}">
+                                        <i class="fas fa-fw" th:classappend="${menu.icon}"></i>
+                                        <span th:text="${menu.title}">메뉴이름</span>
+                                    </a>
+                                    <div th:id="|collapseMenu_${menu.menuSeq}|" class="collapse" aria-labelledby="heading" th:classappend="${menu.active ? 'show' : ''}">
+                                        <div class="bg-white py-2 collapse-inner rounded">
+                                            <a th:each="submenu : ${menu.subMenus}" th:id="|menu_item_${submenu.menuSeq}|" class="collapse-item" th:href="${!#strings.isEmpty(submenu.link) ? submenu.link : '#'}" th:text="${submenu.title}" th:target="${submenu.target}" th:classappend="${submenu.active ? 'active' : ''}">메뉴명</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </th:block>
+                            <th:block th:unless="${menu.hasSubmenu()}">
+                                <li class="nav-item" th:classappend="${menu.active ? 'active' : ''}">
+                                    <a class="nav-link" th:href="${!#strings.isEmpty(menu.link) ? menu.link : '#'}" th:target="${menu.target}">
+                                        <i class="fas fa-fw" th:classappend="${menu.icon}"></i>
+                                        <span th:text="${menu.title}">메뉴이름</span>
+                                    </a>
+                                </li>
+                            </th:block>
+                        </th:block>
+                    </th:block>
+                </th:block>
+
+                <!-- Sidebar Toggler (Sidebar) -->
+                <div class="text-center d-none d-md-inline">
+                    <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                </div>
+            </ul>
+            <!-- End of Sidebar -->
+
+            <!-- Content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column">
+                <!-- Main Content -->
+                <div id="content">
+                    <!-- Topbar -->
+                    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-2 static-top shadow">
+                        <!-- Sidebar Toggle (Topbar) -->
+                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <!-- Topbar Navbar -->
+                        <ul class="navbar-nav ml-auto">
+                            <!-- Nav Item - User Information -->
+                            <li class="nav-item dropdown no-arrow mx-1" th:if="${session.isAccessProductReqMenu == true}">
+                                <a class="nav-link" href="/product/reqAnalysis/list" id="" role="button">
+                                    <i class="fas fa-search fa-fw"></i>
+                                    <span class="badge badge-danger badge-counter" th:text="${session.productReqCount}" style="font-size: 100%"></span>
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown no-arrow mx-1" th:if="${session.isAccessQuestionMenu == true}">
+                                <a class="nav-link" href="/board/question/list" id="" role="button">
+                                    <i class="fas fa-envelope fa-fw"></i>
+                                    <span class="badge badge-danger badge-counter" th:text="${session.questionCount}" style="font-size: 100%"></span>
+                                </a>
+                            </li>
+                            <div class="topbar-divider d-none d-sm-block" th:if="${session.isAccessProductReqMenu == true or session.isAccessQuestionMenu == true}"></div>
+                            <li class="nav-item dropdown no-arrow show">
+                                <a class="nav-link dropdown-toggle text-gray-600 small cursor" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="mr-2 d-none d-lg-inline" sec:authentication="principal.member.name">이름</span> (<span sec:authentication="principal.username">아이디</span>) </a>
+                                <!-- Dropdown - User Information -->
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                    <!--		                		<a class="dropdown-item" th:href="@{/account/mypage}">-->
+                                    <!--		                  			<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>-->
+                                    <!--		                  			Profile-->
+                                    <!--		                		</a>-->
+                                    <!--			                	<div class="dropdown-divider"></div>-->
+                                    <a class="dropdown-item" href="#logoutModal" data-toggle="modal" data-target="#logoutModal">
+                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Logout
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- End of Topbar -->
+
+                    <!-- Begin Page Content -->
+                    <div class="container-fluid">
+                        <!-- 페이지 경로 -->
+                        <div class="mb-2" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <i class="fas fa-home"></i>
+                                </li>
+                                <li class="breadcrumb-item">Dashboard</li>
+                            </ol>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-4 col-md-6 mb-4">
+                                <div class="card border-left-primary shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">온도</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">24</div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-thermometer-full fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-4 col-md-6 mb-4">
+                                <div class="card border-left-success shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">습도</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">70</div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-magic fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-4 col-md-6 mb-4">
+                                <div class="card border-left-warning shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">강수확률</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">70</div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-umbrella fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Content Row -->
+                        <div class="row">
+                            <!-- Content Column -->
+                            <div class="col-lg-6 mb-4">
+                                <!-- Project Card Example -->
+                                <div class="card shadow mb-4">
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 font-weight-bold text-primary">일정 진행 현황</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <h4 class="small font-weight-bold">기획 <span class="float-right">100%</span></h4>
+                                        <div class="progress mb-4">
+                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <h4 class="small font-weight-bold">설계 <span class="float-right">100%</span></h4>
+                                        <div class="progress mb-4">
+                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <h4 class="small font-weight-bold">퍼블리싱 <span class="float-right">60%</span></h4>
+                                        <div class="progress mb-4">
+                                            <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <h4 class="small font-weight-bold">개발 <span class="float-right">40%</span></h4>
+                                        <div class="progress mb-4">
+                                            <div class="progress-bar bg-info" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <h4 class="small font-weight-bold">QA <span class="float-right">0</span></h4>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 mb-4">
+                                <!-- Approach -->
+                                <div class="card shadow mb-4">
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 font-weight-bold text-primary">개발 기여도</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="chart-area">
+                                            <canvas id="chart" style="width: 100%; height: 100%"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.container-fluid -->
+                </div>
+                <!-- End of Main Content -->
+
+                <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>&copy; COPYRIGHT UBIVELOX CORP. ALL RIGHTS RESERVED.</span>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End of Footer -->
+            </div>
+            <!-- End of Content Wrapper -->
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Logout</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">로그아웃 하시겠습니까?</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">취소</button>
+                        <a class="btn btn-primary" th:href="@{/signout}">확인</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

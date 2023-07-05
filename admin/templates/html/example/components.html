@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{layout/sub_layout}">
+<head>
+	<title>페이지 컴포넌트 예제</title>
+	<script th:inline="javascript">
+		$(document).ready(function() {
+			$("#btnAlert").on("click", function() {
+				bsAlert("alert 팝업 예제");
+			});
+			$("#btnFnAlert").on("click", function() {
+				bsFormAlert2("bsFormAlert2를 이용한 alert 팝업 예제", function() {
+					bsAlert("확인 버튼을 클릭하셨습니다");
+				});
+			});
+			$("#btnConfirm").on("click", function() {
+				bsConfirm2(
+					"bsConfirm2 함수를 이용한 confirm 팝업 예제",
+					{
+						closeFunc: function() {
+							bsAlert("닫기 버튼을 클릭하였습니다");
+						},
+						okFunc: function() {
+							bsAlert("확인 버튼을 클릭하였습니다");
+						}
+					}
+				);
+			});
+
+			// data-toggle=popover-hover 속성이 붙은 요소를 모두 찾아서, 롤오버 팝업을 생성한다
+			setPopOverImg();
+		})
+	</script>
+</head>
+
+<th:block layout:fragment="content_body">
+	<!-- 페이지 경로 -->
+	<div class="mb-2" aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">
+				<i class="fas fa-home"></i>
+			</li>
+			<li class="breadcrumb-item">빌트인 js함수</li>
+		</ol>
+	</div>
+
+	<div class="row">
+		<div class="col">
+			<div class="card shadow mb-2">
+				<div class="card-header">
+					<h6 class="text-primary">alert 팝업 띄우기</h6>
+				</div>
+				<div class="card-body">
+					<div>bsAlert 함수 사용</div>
+					<div><code>bsAlert(메시지);</code></div>
+					<button class="btn btn-primary" id="btnAlert">alert 팝업 띄우기</button>
+				</div>
+			</div>
+		</div>
+		<div class="col">
+			<div class="card shadow mb-2">
+				<div class="card-header">
+					<h6 class="text-primary">콜백 함수를 갖는 alert 팝업 띄우기</h6>
+				</div>
+				<div class="card-body">
+					<div>bsAlert 함수 사용</div>
+					<div><code>bsFormAlert2(메시지, callback Func);</code></div>
+					<button class="btn btn-primary" id="btnFnAlert">alert 팝업 띄우기</button>
+				</div>
+			</div>
+		</div>
+		<div class="col">
+			<div class="card shadow mb-2">
+				<div class="card-header">
+					<h6 class="text-primary">confirm 팝업 띄우기</h6>
+				</div>
+				<div class="card-body">
+					<div>bsConfirm2 함수 사용</div>
+					<div>
+						<code>bsConfirm2(메시지, 옵션);</code><br />
+						<code>    // 상세 옵션은 common.js 파일 주석 참고</code>
+					</div>
+					<button class="btn btn-primary" id="btnConfirm">confirm 팝업 띄우기</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col">
+			<div class="card shadow mb-2">
+				<div class="card-header">
+					<h6 class="text-primary">롤오버 이미지 설정</h6>
+				</div>
+				<div class="card-body">
+					<div>
+						이미지에 <code>data-toggle="popover-hover"</code>속성과
+						<code>data-img="원본 이미지 URL"</code> 속성을 준 후,
+						setPopOverImg 함수를 실행해서 롤오버 이미지 생성
+					</div>
+					<pre class="blockquote border" style="white-space: pre-line; font-size: 1em;">
+						&lt;img src="/images/thumbnail.jpg" data-img="/images/picture.jpg" data-toggle="popover-hover">
+						...
+
+						$(document).ready(function() {
+						&nbsp;&nbsp;&nbsp;&nbsp;setPopOverImg();    // 롤오버 이미지 기능 생성
+						}
+					</pre>
+					<img th:src="@{/static/images/rollover.jpg}" th:data-img="@{/static/images/rollover.jpg}" data-toggle="popover-hover" style="width: 7%; height: 7%;" />
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col">
+			<div class="card shadow mb-2">
+				<div class="card-header">
+					<h6 class="text-primary">Summernote 웹에디터</h6>
+				</div>
+				<div class="card-body">
+					<div>summernote 클래스를 지정하면 자동으로 summernote 웹에디터 배치</div>
+					<pre class="blockquote border" style="white-space: pre-line; font-size: 1em;">
+						&lt;textarea class="form-control summernote"></textarea>
+					</pre>
+					<div>
+						<textarea class="form-control summernote"></textarea>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</th:block>
+</html>
