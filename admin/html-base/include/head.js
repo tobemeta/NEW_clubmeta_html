@@ -32,6 +32,8 @@
 
     <!-- bootstrap -->
     <script src="../static/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- sb-admin -->
+    <script src="../static/theme/sb-admin-2/js/sb-admin-2.js"></script>
     <!-- jquery&bootstrap lib -->
     <script src="../static/lib/bs-custom-file-input/bs-custom-file-input.min.js"></script>
     <!-- jquery lib -->
