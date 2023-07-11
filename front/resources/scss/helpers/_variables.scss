@@ -1,53 +1,52 @@
 // Sass 변수
 //$font-family:'Noto Sans KR', HelveticaNeue-Light, AppleSDGothicNeo-Light, sans-serif;
 
-$base-color:#111;
-$placeholder-color:#707070;
-$error-color:#F50F00;
-
+$base-color: #111;
+$placeholder-color: #707070;
+$error-color: #f50f00;
 
 // 메인 컬러
-$main-color:#FF5C00;
-$main-dark-color:#E45200;
-$main-light-color:#FF880A;
-$main-bg-color:#FFF8F2;
+$main-color: #ff5c00;
+$main-dark-color: #e45200;
+$main-light-color: #ff880a;
+$main-bg-color: #f9f9f9;
 
 // 서브 컬러
-$sub-color:#0F0AE3;
-$sub-dark-color:#0300A7;
-$sub-light-color:#306AFF;
-$sub-bg-color:#F4F8FF;
+$sub-color: #0f0ae3;
+$sub-dark-color: #0300a7;
+$sub-light-color: #306aff;
+$sub-bg-color: #f4f8ff;
 
 // 기타 컬러
-$red-color:#Ff0000;
-$blue-color:#26EBF8;
-$yellow-color:#F9E000;
-$green-color:#33E317;
-$pink-color:#E92DFF;
+$red-color: #ff0000;
+$blue-color: #26ebf8;
+$yellow-color: #f9e000;
+$green-color: #33e317;
+$pink-color: #e92dff;
 
-$form-bColor:#fff;
+$form-bColor: #fff;
 
-//폰트 
-$normal:500;
-$bold:700;
+//폰트
+$normal: 500;
+$bold: 700;
 
-$fs-24:2.4rem;
-$fs-20:2rem;
-$fs-16:1.6rem;
-$fs-14:1.4rem;
-$fs-12:1.2rem;
-$fs-10:1rem;
-$fs-8:0.8rem;
+$fs-24: 2.4rem;
+$fs-20: 2rem;
+$fs-16: 1.6rem;
+$fs-14: 1.4rem;
+$fs-12: 1.2rem;
+$fs-10: 1rem;
+$fs-8: 0.8rem;
 
-$screen-xs-max:72rem; // 모바일
-$screen-sm-min:72.1rem;
-$screen-md-min:99.2rem;
-$screen-lg-min:136.4rem; // PC
+$screen-xs-max: 72rem; // 모바일
+$screen-sm-min: 72.1rem;
+$screen-md-min: 99.2rem;
+$screen-lg-min: 136.4rem; // PC
 
-$min-width:144rem;
-$snb-width:23.6rem;
+$min-width: 36rem;
+$snb-width: 23.6rem;
 
-$z-header:200;
-$z-gnb:190;
-$z-botArea:200;
-$z-layer:1000;
+$z-header: 200;
+$z-gnb: 190;
+$z-botArea: 200;
+$z-layer: 1000;
