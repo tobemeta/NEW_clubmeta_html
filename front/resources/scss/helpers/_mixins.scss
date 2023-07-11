@@ -1,11 +1,33 @@
 //Sass mixin
-@mixin ellipsis() {overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-@mixin ellipsis2() {-webkit-line-clamp:2;-webkit-box-orient:vertical;display:-webkit-box;overflow:hidden;text-overflow:ellipsis;} //webkit 2줄 말줄임
+@mixin ellipsis() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+@mixin ellipsis2() {
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+} //webkit 2줄 말줄임
 @mixin imgCenter() {
-	position:relative;
-	img {position:absolute;left:0;right:0;top:0;bottom:0;max-width:100%;min-width:100%;min-height:100%;margin:auto;}
+    position: relative;
+    img {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        max-width: 100%;
+        min-width: 100%;
+        min-height: 100%;
+        margin: auto;
+    }
 }
 
+@mixin button() {
+}
 
 // @mixin flex($fg: 1, $fs: 0, $fb: auto) {
 //  	$fg-boxflex: $fg;

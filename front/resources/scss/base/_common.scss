@@ -1,0 +1,38 @@
+/*title*/
+h1 {
+    font-weight: $bold;
+    font-size: $fs-24;
+}
+
+.bold {
+    font-weight: $bold;
+}
+
+.title {
+    // 제목1
+    font-size: $fs-24;
+}
+.sub-title {
+    // 제목2
+    font-size: $fs-20;
+}
+.body-title {
+    // 본문1
+    font-size: $fs-16;
+}
+.body-sub-title {
+    // 본문2
+    font-size: $fs-14;
+}
+.text-l {
+    // 텍스트1
+    font-size: $fs-12;
+}
+.text-m {
+    // 텍스트2
+    font-size: $fs-10;
+}
+.text-s {
+    // 텍스트3
+    font-size: $fs-8;
+}

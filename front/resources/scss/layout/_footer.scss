@@ -8,14 +8,50 @@
     border-radius: 24px 24px 0px 0px;
     box-shadow: 0px 4px 12px 0px #14245b2e;
     .nav {
+        height: 100%;
+        padding: 0.8rem 1.6rem 1.4rem;
+        box-sizing: border-box;
         ul {
             display: flex;
+            justify-content: space-between;
         }
         li {
-            flex: 1;
+            width: 5.2rem;
+            height: 4.2rem;
         }
         a {
-            display: block;
+            display: inline-block;
+            position: relative;
+            width: 100%;
+            padding-top: 3rem;
+            font-size: 1rem;
+            line-height: 1.2rem;
+            text-align: center;
+            &:before {
+                display: block;
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 50%;
+                width: 3rem;
+                height: 3rem;
+                transform: translateX(-50%);
+            }
+            &.btn-home:before {
+                background: red;
+            }
+            &.btn-klip:before {
+                background: green;
+            }
+            &.btn-shot:before {
+                background: yellow;
+            }
+            &.btn-music:before {
+                background: blue;
+            }
+            &.btn-user:before {
+                background: gray;
+            }
         }
     }
 }

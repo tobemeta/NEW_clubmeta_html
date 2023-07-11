@@ -15,11 +15,12 @@
 
     a,
     button {
+        display: block;
         width: 4.8rem;
+        height: 4.8rem;
     }
 
     .btn-back {
-        width: 4.8rem;
         & + .header-title {
             text-align: center;
         }

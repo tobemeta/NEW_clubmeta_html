@@ -1,8 +1,3 @@
-body {
-    color: $base-color;
-    font-weight: $normal;
-}
-
 /*********common**********/
 /*font-size*/
 .fs-24 {
@@ -107,10 +102,4 @@ body {
     .pr-#{$i} {
         padding-right: $i * 0.1rem !important;
     }
-}
-
-/*title*/
-h1 {
-    font-weight: $bold;
-    font-size: $fs-24;
 }
