@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+        <title>목록예제 - 당부 파트너 관리</title>
+        <script class="__include" src="./include/head.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#btnCancel').on('click', function () {
+                    history.back();
+                });
+
+                $('#btnRegist').on('click', function () {
+                    // validation
+                    if ($('#title').val() == '') {
+                        bsAlert('제목은 필수 입력입니다');
+                        return;
+                    }
+                    if ($('[name=useYn]:checked').length == 0) {
+                        bsAlert('노출 여부를 선택해주세요');
+                        return;
+                    }
+
+                    var url = '/api/board/create';
+                    var formData = new FormData();
+                    formData.append('title', $('#title').val());
+                    formData.append('content', $('#contents').val());
+                    formData.append('file', $('#file')[0].files[0]);
+                    formData.append('useYn', $('[name=useYn]:checked').val());
+
+                    $.ajax({
+                        url: url,
+                        method: 'POST',
+                        data: formData,
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+                        success: function (data, jqXHR, status) {
+                            if (data.header.responseCode == '200') {
+                                location.href = '/board/list';
+                            }
+                        },
+                        error: function (jqXHR, status, ex) {
+                            debugger;
+                        }
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body id="page-top">
+        <!-- Page Wrapper -->
+        <div id="wrapper">
+            <!-- Sidebar -->
+            <div data-include="./include/sidebar.html"></div>
+            <!-- End of Sidebar -->
+
+            <!-- Content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column">
+                <!-- Main Content -->
+                <div id="content">
+                    <!-- Topbar -->
+                    <div data-include="./include/topbar.html"></div>
+                    <!-- End of Topbar -->
+
+                    <!-- Begin Page Content -->
+                    <div class="container-fluid">
+                        <!-- 페이지 경로 -->
+                        <div class="mb-2" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <i class="fas fa-home"></i>
+                                </li>
+                                <li class="breadcrumb-item">게시판</li>
+                                <li class="breadcrumb-item">글작성</li>
+                            </ol>
+                        </div>
+
+                        <div class="card shadow mb-2">
+                            <div class="card-header py-3">
+                                <div class="col-auto pl-1">
+                                    <h6 class="m-0 front-weight-bold text-primary">글 작성</h6>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <form method="post" enctype="multipart/form-data">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <tbody>
+                                                <tr>
+                                                    <th class="table-primary align-middle text-center">
+                                                        <label for="title">제목</label>
+                                                    </th>
+                                                    <td><input class="form-control" name="title" id="title" type="text" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="table-primary align-middle text-center">
+                                                        <label for="contents">내용</label>
+                                                    </th>
+                                                    <td><textarea name="contents" id="contents" rows="5" class="form-control summernote"></textarea></td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="table-primary align-middle text-center">파일첨부</th>
+                                                    <td>
+                                                        <div class="custom-file">
+                                                            <input type="file" id="file" class="custom-file-input" />
+                                                            <label class="custom-file-label">파일선택</label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="table-primary align-middle text-center">노출여부</th>
+                                                    <td>
+                                                        <span class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="useYn" id="useYnY" value="Y" />
+                                                            <label class="form-check-label" for="useYnY">노출</label>
+                                                        </span>
+                                                        <span class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="useYn" id="useYnN" value="N" />
+                                                            <label class="form-check-label" for="useYnN">비노출</label>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="card-footer text-right py-3">
+                                        <button type="button" class="btn btn-secondary btn-list" id="btnCancel">취소</button>
+                                        <button type="button" class="btn btn-primary" id="btnRegist">등록</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.container-fluid -->
+                </div>
+                <!-- End of Main Content -->
+
+                <!-- Footer -->
+                <div data-include="./include/footer.html"></div>
+                <!-- End of Footer -->
+            </div>
+            <!-- End of Content Wrapper -->
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- Scroll to Top Button-->
+        <div data-include="./include/topbtn.html"></div>
+
+        <!-- Logout Modal-->
+        <div data-include="./include/logoutModal.html"></div>
+    </body>
+</html>
