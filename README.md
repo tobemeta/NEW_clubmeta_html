@@ -11,9 +11,9 @@
 <https://marketplace.visualstudio.com/items?itemName=glenn2223.live-sass>
 2. Live Server (필수) - live 로컬서버(html용)   
 <https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer>
-3. prettier (선택) - 소스코드 정리   
+3. prettier (필수) - 소스코드 정리   
 <https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode>
-4. HTMLHint (선택) - 마크업 문법 검사   
+4. HTMLHint (필수) - 마크업 문법 검사   
 <https://marketplace.visualstudio.com/items?itemName=ctf0.htmlhint>    
 5. Git Graph (선택) - vscode에서 git 사용편의성 UP   
 <https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph>    
