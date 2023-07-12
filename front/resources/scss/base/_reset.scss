@@ -109,6 +109,7 @@ button {
     font-size: 15px;
     line-height: 1;
     font-family: 'Pretendard', 'Apple SD Gothic Neo', 'AppleSDGothicNeo', sans-serif;
+    font-weight: $normal;
     color: #111;
     word-break: break-word;
     letter-spacing: -0.05em;
@@ -225,9 +226,12 @@ input::-ms-clear {
 input,
 select,
 textarea {
-    color: #2b2b2b;
+    outline: none;
+    color: #111;
 }
-
+textarea {
+    resize: none;
+}
 /* WebKit browsers */
 ::-webkit-input-placeholder {
     color: #929292;

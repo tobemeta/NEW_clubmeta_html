@@ -1,18 +1,355 @@
+.form-box {
+    dl {
+        & + dl {
+            margin-top: 1.6rem;
+        }
+    }
+    & + .form-box {
+        margin-top: 2rem;
+    }
+}
 .input-box {
+    position: relative;
+    width: 100%;
     box-sizing: border-box;
+    label {
+        display: block;
+        margin-bottom: 0.4rem;
+        padding-left: 1.2rem;
+        font-size: 1.6rem;
+        line-height: 2.3rem;
+    }
     input {
         width: 100%;
         height: 4.8rem;
-        padding: 0 1.6rem;
+        padding: 0 4rem 0 1.6rem;
         background: #fff;
+        font-size: 1.6rem;
         box-sizing: border-box;
         border-radius: 1.2rem;
         border: 1px solid $form-bColor;
+
+        &::placeholder {
+            color: $placeholder-color;
+        }
+        &:focus {
+            border-color: #111;
+        }
+        &:disabled {
+            background: $disabled;
+            color: $disabled-color;
+
+            & + .btn-inp-del {
+                display: none;
+            }
+        }
+    }
+    &.error {
+        input {
+            border-color: $error-color;
+            color: $error-color;
+        }
+    }
+    &.small {
+        input {
+            height: 4rem;
+        }
+        .btn-inp-del {
+            top: 0.8rem;
+        }
+    }
+    &.ico {
+        input {
+            padding-left: 4.4rem;
+        }
+    }
+    &.focus {
+        .btn-inp-del {
+            display: block;
+        }
     }
     .btn-inp-del {
         display: none;
+        position: absolute;
+        top: 1.2rem;
+        right: 1.6rem;
         width: 2.4rem;
         height: 2.4rem;
-        background: #000;
+        background: url('../../resources/images/btn/btn_ip_delete.svg') no-repeat 0 0;
+    }
+
+    & ~ .input-box {
+        margin-top: 1.6rem;
+    }
+}
+
+.text-box {
+    position: relative;
+    .textarea {
+        width: 100%;
+        padding: 1.6rem;
+        font-size: 1.6rem;
+        border-radius: 1.6rem;
+        border: 1px solid #cfcfcf;
+        box-sizing: $sizing;
+        // outline-color: $base-color;
+        &::placeholder {
+            color: $placeholder-color;
+        }
+        &:focus {
+            border: 1px solid $base-color;
+        }
+    }
+    .byte {
+        display: block;
+        position: absolute;
+        bottom: 1rem;
+        right: 1.6rem;
+        font-size: 1rem;
+        line-height: 1.4rem;
+        color: #585858;
+    }
+}
+
+.select-box {
+    position: relative;
+    display: inline-block;
+    select,
+    .btn-select {
+        width: 100%;
+        height: 4rem;
+        padding: 0 2.8rem 0 0.8rem;
+        outline: 0;
+        border: 1px solid #e7e7e7;
+        border-radius: 0.8rem;
+        text-align: left;
+    }
+    select {
+        appearance: none;
+        background: #fff url(../images/ico-arrow-down.svg) no-repeat right 0.4rem center/2rem 1.6rem;
+    }
+    .btn-select {
+        background-color: #fff;
+        white-space: nowrap;
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 0.4rem;
+            top: 50%;
+            width: 2rem;
+            height: 1.6rem;
+            margin-top: -0.8rem;
+            background: url(../images/ico-arrow-down.svg) no-repeat right center;
+            transition: transform 0.3s ease-in-out;
+        }
+        &.open {
+            &:after {
+                transform: rotate(-180deg);
+            }
+        }
+    }
+}
+.btn-filter {
+    width: 3.2rem;
+    height: 4rem;
+    margin-right: -0.1rem;
+    outline: 0;
+    border: 1px solid #e7e7e7;
+    border-radius: 0.8rem 0 0 0.8rem;
+    background: #fff url(../images/ico-filter.svg) no-repeat center/2.4rem;
+    + .select-box {
+        select,
+        .btn-select {
+            border-radius: 0 0.8rem 0.8rem 0;
+        }
+    }
+}
+.select-options {
+    position: absolute;
+    padding: 0.4rem;
+    border-radius: 0.8rem;
+    background-color: #fff;
+    box-shadow: 0 0.2rem 0.6rem rgba($color: #14245b, $alpha: 0.12);
+    box-sizing: border-box;
+    z-index: 50;
+    h1 {
+        display: none;
+    }
+    ul {
+        li {
+            + li {
+                margin-top: 0.2rem;
+            }
+        }
+    }
+    .select-option {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        height: 2.4rem;
+        padding: 0px 8px;
+        border-radius: 0.4rem;
+        &.selected {
+            background-color: $main-bg-color;
+            font-weight: 500;
+        }
+    }
+}
+.pop-select {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    .select-options {
+        left: 0;
+        bottom: -100%;
+        width: 100%;
+        padding: 0;
+        border-radius: 20px 20px 0 0;
+        h1 {
+            display: block;
+            font-size: 20px;
+            padding: 20px;
+        }
+        .select-option {
+            align-items: center;
+            height: 4rem;
+            padding: 0px 20px;
+            border-radius: 0;
+            font-size: 16px;
+        }
+    }
+}
+
+.chk-box {
+    position: relative;
+    display: inline-block;
+    label {
+        position: relative;
+        display: block;
+        min-height: 1.8rem;
+        padding-left: 2.6rem;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+
+        cursor: pointer;
+        box-sizing: border-box;
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1.8rem;
+            height: 1.8rem;
+            border-radius: 0.4rem;
+            background-color: #fff;
+            border: 1px solid #b7b7b7;
+            box-sizing: border-box;
+        }
+    }
+    input {
+        visibility: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        &:checked + label {
+            &:before {
+                background: url('../../resources/images/ico/ico_chkbox_on.svg') no-repeat;
+                border: none;
+            }
+        }
+        &:disabled + label {
+            cursor: default;
+            &:before {
+                background: #cfcfcf;
+                border: 1px solid #888888;
+            }
+        }
+
+        &:checked:disabled + label {
+            &:before {
+                background: url('../../resources/images/ico/ico_chkbox_disable.svg') no-repeat;
+                border: none;
+            }
+        }
+    }
+}
+.rdo-box {
+    position: relative;
+    display: inline-block;
+    label {
+        position: relative;
+        display: block;
+        min-height: 1.8rem;
+        padding-left: 2.6rem;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+
+        cursor: pointer;
+        box-sizing: border-box;
+        &:before,
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            border-radius: 50%;
+            box-sizing: border-box;
+        }
+        &:before {
+            left: 0;
+            top: 0;
+            width: 1.8rem;
+            height: 1.8rem;
+            background: #fff;
+            border: 1px solid #b7b7b7;
+        }
+        &:after {
+            top: 0.4rem;
+            left: 0.4rem;
+            width: 1rem;
+            height: 1rem;
+        }
+    }
+    input {
+        visibility: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        &:checked + label {
+            &:before {
+                border: 2px solid $main-color;
+            }
+            &:after {
+                background: $main-color;
+            }
+        }
+        &:disabled + label {
+            cursor: default;
+            &:before {
+                background: #cfcfcf;
+                border: 1px solid #888888;
+            }
+            &:after {
+                border: none;
+                background: none;
+            }
+        }
+
+        &:checked:disabled + label {
+            cursor: default;
+            &:before {
+                background: #b7b7b7;
+                border: none;
+            }
+            &:after {
+                background: #707070;
+            }
+        }
     }
 }

@@ -3,22 +3,21 @@ const ui = {
         const _this = this;
 
         // _this.header();
-        // _this.footer();
-        _this.tab();
-        _this.form();
+        _this.footer();
+        // _this.tab();
+        _this.forms();
         _this.tooltip.init();
-
-        // fnb
-        let fnbButton = $('.bottom-nav > a');
-        fnbButton.on('click touchend', function () {
-            $(this).addClass('on').siblings().removeClass('on');
-        });
+        // _this.select.init();
     },
     header: () => {
         console.log('header');
     },
     footer: () => {
-        console.log('footer');
+        const footNav = $('.nav li a');
+
+        footNav.on('click', function () {
+            $(this).parent('li').addClass('on').siblings('li').removeClass('on');
+        });
     },
     tab: () => {
         console.log('tab');
@@ -148,106 +147,186 @@ const ui = {
                 });
         }
     },
-    form: () => {
-        const inputTxt = $('.input-box input').val();
-        console.log(inputTxt);
-        // if (inputTxt == 0) {
-        //     console.log(23);
-        // } else {
-        //     console.log(11);
-        // }
+    forms: () => {
+        const inpBox = $('.input-box');
+        const inp = $('.input-box input');
+
+        inpBox.each(function () {
+            inp.on('input', function () {
+                if ($(this).val() != '') {
+                    $(this).closest(inpBox).addClass('focus');
+                } else {
+                    $(this).closest(inpBox).removeClass('focus');
+                }
+            });
+        });
+
+        const inpError = inpBox.hasClass('error');
+
+        if (inpError) {
+            $(this).find('input').addClass('error');
+        } else {
+        }
+
+        $(document).on('click', '.btn-inp-del', function () {
+            const $inp = $(this).siblings('input');
+            $inp.val('').change().focus();
+            $('.input-box').removeClass('focus');
+        });
+    },
+    select: {
+        className: {
+            wrap: '.select-box',
+            btn: '.btn-select',
+            btnActive: '.open',
+            optionsWrap: '.select-options',
+            option: '.select-option',
+            selectPopClass: '.select-pop',
+            selectPopWrap: '.pop-select'
+        },
+        init: function () {
+            ui.select.ready();
+            ui.select.UI();
+        },
+        ready: function () {
+            $(ui.select.className.wrap).each(function () {
+                const $this = $(this);
+                const $sel = $this.find('select');
+                if (!$this.find(ui.select.className.btn).length) {
+                    const $title = $sel.attr('title') || '선택';
+                    const $btn = `<button class="${ui.select.className.btn.slice(1)}" title="${$title}"></button>`;
+                    $sel.hide();
+                    $this.append($btn);
+                    ui.select.setBtnText($sel);
+                }
+            });
+        },
+        setBtnText(elem) {
+            const $el = $(elem);
+            const $btn = $el.siblings(ui.select.className.btn);
+            if (!$el.length || !$btn.length) return;
+            const $selectedTxt = $el.find(':selected').text();
+            $btn.text($selectedTxt);
+        },
+        makeOptions: function (select, btn) {
+            const $select = $(select);
+            const $btn = $(btn);
+            if (!$select.children().length) return;
+            const isPop = $select.hasClass(ui.select.className.selectPopClass.slice(1));
+
+            let $options = $(ui.select.className.optionsWrap);
+            if ($options.length) ui.select.reset();
+
+            const $title = $btn.attr('title');
+            let $optionHtml = '';
+            if (isPop) $optionHtml += '<div class="' + ui.select.className.selectPopWrap.slice(1) + '">';
+            $optionHtml += '<div class="' + ui.select.className.optionsWrap.slice(1) + '">';
+            $optionHtml += '<h1>' + $title + '</h1>';
+            $optionHtml += '<ul>';
+            $select.children().each(function () {
+                const $this = $(this);
+                const $val = $this.attr('value');
+                const $text = $this.text();
+                const $seletedClass = $this.prop('selected') ? ' selected' : '';
+                $optionHtml += '<li><button class="' + ui.select.className.option.slice(1) + $seletedClass + '" data-val="' + $val + '">' + $text + '</button></li>';
+            });
+            $optionHtml += '</ul>';
+            $optionHtml += '</div>';
+            if (isPop) $optionHtml += '</div>';
+
+            $('body').append($optionHtml);
+            $options = $(ui.select.className.optionsWrap);
+            $options.data('select', select);
+
+            if (isPop) {
+                $options.animate({ bottom: 0 }, 500);
+            }
+
+            if (!isPop) {
+                let $top = $btn.offset().top + $btn.outerHeight();
+                let $left = $btn.offset().left;
+                const $width = $btn.outerWidth();
+                if ($top + $options.outerHeight() > $(window).scrollTop() + $(window).height() + 20) {
+                    $top = $top - $btn.outerHeight() - $options.outerHeight() - 2;
+                }
+                if ($left + $options.outerWidth() > $(window).scrollLeft() + $(window).width()) {
+                    $left = $left + $btn.outerWidth() - $options.outerWidth();
+                }
+                $options.css({
+                    top: $top + 2,
+                    left: $left,
+                    minWidth: $width
+                });
+            }
+        },
+        reset: function () {
+            const $options = $(ui.select.className.optionsWrap);
+            if (!$options.length) return;
+            $options.each(function () {
+                const $this = $(this);
+                const $select = $($this.data('select'));
+                if (!$select) return;
+                const $btn = $select.siblings(ui.select.className.btn);
+                if ($btn.length) $btn.removeClass(ui.select.className.btnActive.slice(1));
+                const $wrap = $this.closest(ui.select.className.selectPopWrap).length ? $this.closest(ui.select.className.selectPopWrap) : $this;
+
+                if ($this.parent('.pop-select').length) {
+                    $wrap.find('.select-options').animate({ bottom: -100 + '%' }, 500, function () {
+                        $wrap.remove();
+                    });
+                } else {
+                    $wrap.remove();
+                }
+            });
+
+            const $btn = $(ui.select.className.btn + ui.select.className.btnActive);
+            if ($btn.length) $btn.removeClass(ui.select.className.btnActive.slice(1));
+        },
+        UI: function () {
+            //select change
+            $(document).on('change', ui.select.className.wrap + ' select', function (e) {
+                ui.select.setBtnText(this);
+            });
+
+            //btn
+            $(document).on('click', ui.select.className.btn, function (e) {
+                e.preventDefault();
+                const $this = $(this);
+                const $select = $this.siblings('select');
+                if ($this.hasClass(ui.select.className.btnActive.slice(1))) {
+                    ui.select.reset();
+                } else {
+                    $this.addClass(ui.select.className.btnActive.slice(1));
+                    ui.select.makeOptions($select, $this);
+                }
+            });
+
+            //option
+            $(document).on('click', ui.select.className.option, function (e) {
+                e.preventDefault();
+                const $this = $(this);
+                const $val = $this.data('val');
+                const $closest = $this.closest(ui.select.className.optionsWrap);
+                const $select = $closest.data('select');
+                const $btn = $select.siblings(ui.select.className.btn);
+                $select.val($val).change();
+                ui.select.reset();
+                $btn.removeClass(ui.select.className.btnActive.slice(1)).focus();
+            });
+
+            //out click
+            $(document)
+                .on('click touchend', function (e) {
+                    e.preventDefault();
+                    ui.select.reset();
+                })
+                .on('click touchend', ui.select.className.wrap + ',' + ui.select.className.optionsWrap, function (e) {
+                    e.stopPropagation();
+                });
+        }
     }
 };
 
 $(document).ready(() => {
     ui.init();
-
-    //탭 패널 열기
-    function tabPanel() {
-        $('.tabMenu a')
-            .off('click touchend')
-            .on('click touchend', function () {
-                let id = $(this).attr('href'),
-                    $tab = $(this).parent();
-                if ($tab.hasClass('on')) return false;
-                $tab.addClass('on').siblings('.tabMenu').removeClass('on');
-                $(id).show().siblings('.tabCon').hide();
-            })
-            .off('focus')
-            .on('focus', function () {
-                $(this).click();
-            });
-    }
-
-    //탭 메뉴 스크롤
-    function tabMenuScroll() {
-        let sliders = document.querySelectorAll('.deal-scroll');
-
-        sliders.forEach((slider) => {
-            let mouseDown = false;
-            let startX, scrollLeft;
-            let startDragging = function (e) {
-                mouseDown = true;
-                startX = e.pageX - slider.offsetLeft;
-                scrollLeft = slider.scrollLeft;
-            };
-            let stopDragging = function (event) {
-                mouseDown = false;
-            };
-            slider.addEventListener('mousemove', (e) => {
-                e.preventDefault();
-                if (!mouseDown) {
-                    return;
-                }
-                const x = e.pageX - slider.offsetLeft;
-                const scroll = x - startX;
-                slider.scrollLeft = scrollLeft - scroll;
-            });
-            slider.addEventListener('mousedown', startDragging, false);
-            slider.addEventListener('mouseup', stopDragging, false);
-            slider.addEventListener('mouseleave', stopDragging, false);
-        });
-    }
-
-    //탭 클릭시 라인 이동
-    function jqTabLine(wrap) {
-        const $active = $(wrap).find('.tab.active');
-        const $activeLeft = $active.position().left;
-        const $activeWidth = $active.outerWidth();
-        const $line = $(wrap).find('.tab-line');
-        $line.stop().animate(
-            {
-                left: $activeLeft,
-                width: $activeWidth
-            },
-            300
-        );
-    }
-    function jqTab() {
-        $('.act-tab a').click(function (e) {
-            e.preventDefault();
-            const $href = $(this).attr('href');
-            $(this).parent().addClass('active').siblings().removeClass('active');
-            $(this)
-                .parent()
-                .siblings()
-                .each(function (e) {
-                    const $btn = $(this).find('a');
-                    const $btnHref = $btn.attr('href');
-                    $($btnHref).removeClass('active');
-                });
-            $($href).addClass('active');
-            jqTabLine($(this).closest('.ui-tab'));
-        });
-    }
-    function jqTabReady() {
-        $('.ui-tab').each(function () {
-            jqTabLine(this);
-        });
-    }
-    jqTabReady();
-    jqTab();
-    $(window).resize(jqTabReady);
-    tabMenuScroll();
-    tabPanel();
 });

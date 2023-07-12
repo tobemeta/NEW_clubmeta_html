@@ -25,8 +25,54 @@
         margin: auto;
     }
 }
+@mixin bg($src: null, $repeat: no-repeat, $po: center, $on: null) {
+    @if $src != null {
+        background-image: url($src);
+    }
+    background-repeat: $repeat;
+    background-position: $po;
+    @if $on != null {
+        &:hover,
+        &:focus {
+            background-image: url($src + '_on');
+        }
+    }
+}
 
-@mixin button() {
+@mixin btn($width: 150, $height: 50, $bg: #fff, $border: #ccc, $color: $strong-color, $fontSize: 15) {
+    display: inline-block;
+    min-width: $width + px;
+    height: $height + px;
+    padding: 0 10px;
+    background-color: $bg;
+    border: 1px solid $border;
+    line-height: $height + px;
+    font-size: $fontSize + px;
+    color: $color;
+    text-align: center;
+    font-weight: $bold;
+    box-sizing: border-box;
+    vertical-align: top;
+
+    &.btnPrimary {
+        &:hover,
+        &:focus {
+            background-color: #e8ab00;
+            border-color: #e8ab00;
+        }
+    }
+    &:disabled {
+        background-color: $bg !important;
+        border-color: $border !important;
+    }
+
+    &:link,
+    &:visited {
+        color: $color;
+    }
+    &:hover,
+    &:focus {
+    }
 }
 
 // @mixin flex($fg: 1, $fs: 0, $fb: auto) {
