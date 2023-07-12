@@ -5,6 +5,7 @@ const ui = {
         // _this.header();
         // _this.footer();
         _this.tab();
+        _this.form();
         _this.tooltip.init();
 
         // fnb
@@ -146,6 +147,15 @@ const ui = {
                     e.stopPropagation();
                 });
         }
+    },
+    form: () => {
+        const inputTxt = $('.input-box input').val();
+        console.log(inputTxt);
+        // if (inputTxt == 0) {
+        //     console.log(23);
+        // } else {
+        //     console.log(11);
+        // }
     }
 };
 

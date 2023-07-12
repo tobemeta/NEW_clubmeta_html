@@ -24,7 +24,7 @@ $yellow-color: #f9e000;
 $green-color: #33e317;
 $pink-color: #e92dff;
 
-$form-bColor: #fff;
+$form-bColor: #cfcfcf;
 
 //폰트
 $normal: 500;
@@ -38,8 +38,9 @@ $fs-12: 1.2rem;
 $fs-10: 1rem;
 $fs-8: 0.8rem;
 
-// 박스쉐도우
+// 박스
 $shadow: 0px 4px 12px 0px #14245b2e;
+$sizing: border-box;
 
 // 레이아웃
 $screen-xs-max: 72rem; // 모바일
