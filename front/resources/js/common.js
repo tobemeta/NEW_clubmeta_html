@@ -333,6 +333,49 @@ const ui = {
     popup: {
         zIndex: 1001,
         popCnt: 0,
+        delayTime: 2000,
+        toastClose: null,
+        toast: function (msg) {
+            var _this = this,
+                $toastPop = $('#toastPop');
+            //autoClose = null;
+            clearTimeout(_this.toastClose);
+
+            if ($toastPop.length == 0) {
+                $toastPop = $('<article class="toastPop" id="toastPop" role="dialog">');
+                $toastPop.append('<div class="toastBox"><p class="toastMsg"></p><button type="button" class="btnClose">닫기</button></div>');
+                //$toastPop.data('effect', 'fade');
+                $('body').append($toastPop);
+            }
+
+            $('.toastMsg', $toastPop).html(msg);
+
+            $toastPop.css('z-index', _this.zIndex++).fadeIn();
+
+            //autoClose = setTimeout(function() {$toastPop.hide();}, _this.delayTime);
+            _this.toastClose = setTimeout(function () {
+                $toastPop.hide();
+            }, _this.delayTime);
+
+            $('.btnClose', $toastPop)
+                .off('click')
+                .on('click', function () {
+                    clearTimeout(_this.toastClose);
+                    $toastPop.hide();
+                });
+
+            $toastPop
+                .off('mouseover')
+                .on('mouseover', function () {
+                    clearTimeout(_this.toastClose);
+                })
+                .off('mouseout')
+                .on('mouseout', function () {
+                    _this.toastClose = setTimeout(function () {
+                        $toastPop.hide();
+                    }, _this.delayTime);
+                });
+        },
         msg: function (option, popOpen, param) {
             var _this = this,
                 $msgBox = $('#msgBox'),
