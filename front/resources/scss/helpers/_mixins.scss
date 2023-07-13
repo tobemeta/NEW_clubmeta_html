@@ -77,7 +77,8 @@
     &:focus {
         background-color: #fff8f2;
     }
-    &:disabled {
+    &:disabled,
+    &.btn-disabled {
         background-color: $disabled !important;
         border: none;
         color: $dis-color;

@@ -7,7 +7,7 @@ const ui = {
         // _this.tab();
         _this.forms();
         _this.tooltip.init();
-        // _this.select.init();
+        _this.select.init();
     },
     header: () => {
         console.log('header');
@@ -15,7 +15,7 @@ const ui = {
     footer: () => {
         const footNav = $('.nav li a');
 
-        footNav.on('click', function () {
+        footNav.off().on('click', function () {
             $(this).parent('li').addClass('on').siblings('li').removeClass('on');
         });
     },
@@ -293,6 +293,9 @@ const ui = {
                 e.preventDefault();
                 const $this = $(this);
                 const $select = $this.siblings('select');
+
+                $('body').addClass('lock-body');
+
                 if ($this.hasClass(ui.select.className.btnActive.slice(1))) {
                     ui.select.reset();
                 } else {
@@ -312,13 +315,15 @@ const ui = {
                 $select.val($val).change();
                 ui.select.reset();
                 $btn.removeClass(ui.select.className.btnActive.slice(1)).focus();
+
+                $('body').removeClass('lock-body');
             });
 
             //out click
             $(document)
                 .on('click touchend', function (e) {
-                    e.preventDefault();
                     ui.select.reset();
+                    $('body').removeClass('lock-body');
                 })
                 .on('click touchend', ui.select.className.wrap + ',' + ui.select.className.optionsWrap, function (e) {
                     e.stopPropagation();

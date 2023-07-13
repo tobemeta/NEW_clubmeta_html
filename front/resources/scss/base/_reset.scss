@@ -106,13 +106,11 @@ input,
 select,
 textarea,
 button {
-    font-size: 15px;
-    line-height: 1;
-    font-family: 'Pretendard', 'Apple SD Gothic Neo', 'AppleSDGothicNeo', sans-serif;
-    font-weight: $normal;
+    font: $normal 1.6rem/1.44 'Pretendard', sans-serif;
     color: #111;
     word-break: break-word;
-    letter-spacing: -0.05em;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.02em;
 }
 
 a {

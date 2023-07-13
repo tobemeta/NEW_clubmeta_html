@@ -7,6 +7,9 @@ body {
 body {
     color: $base-color;
     font-weight: $normal;
+    &.lock-body {
+        overflow: hidden;
+    }
 }
 
 body.login {
