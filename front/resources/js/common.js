@@ -7,7 +7,7 @@ const ui = {
         // _this.tab();
         _this.forms();
         _this.tooltip.init();
-        // _this.select.init();
+        _this.select.init();
     },
     header: () => {
         console.log('header');
@@ -15,7 +15,7 @@ const ui = {
     footer: () => {
         const footNav = $('.nav li a');
 
-        footNav.on('click', function () {
+        footNav.off().on('click', function () {
             $(this).parent('li').addClass('on').siblings('li').removeClass('on');
         });
     },
@@ -293,6 +293,9 @@ const ui = {
                 e.preventDefault();
                 const $this = $(this);
                 const $select = $this.siblings('select');
+
+                $('body').addClass('lock-body');
+
                 if ($this.hasClass(ui.select.className.btnActive.slice(1))) {
                     ui.select.reset();
                 } else {
@@ -312,13 +315,15 @@ const ui = {
                 $select.val($val).change();
                 ui.select.reset();
                 $btn.removeClass(ui.select.className.btnActive.slice(1)).focus();
+
+                $('body').removeClass('lock-body');
             });
 
             //out click
             $(document)
                 .on('click touchend', function (e) {
-                    e.preventDefault();
                     ui.select.reset();
+                    $('body').removeClass('lock-body');
                 })
                 .on('click touchend', ui.select.className.wrap + ',' + ui.select.className.optionsWrap, function (e) {
                     e.stopPropagation();
@@ -328,6 +333,49 @@ const ui = {
     popup: {
         zIndex: 1001,
         popCnt: 0,
+        delayTime: 2000,
+        toastClose: null,
+        toast: function (msg) {
+            var _this = this,
+                $toastPop = $('#toastPop');
+            //autoClose = null;
+            clearTimeout(_this.toastClose);
+
+            if ($toastPop.length == 0) {
+                $toastPop = $('<article class="toastPop" id="toastPop" role="dialog">');
+                $toastPop.append('<div class="toastBox"><p class="toastMsg"></p><button type="button" class="btnClose">닫기</button></div>');
+                //$toastPop.data('effect', 'fade');
+                $('body').append($toastPop);
+            }
+
+            $('.toastMsg', $toastPop).html(msg);
+
+            $toastPop.css('z-index', _this.zIndex++).fadeIn();
+
+            //autoClose = setTimeout(function() {$toastPop.hide();}, _this.delayTime);
+            _this.toastClose = setTimeout(function () {
+                $toastPop.hide();
+            }, _this.delayTime);
+
+            $('.btnClose', $toastPop)
+                .off('click')
+                .on('click', function () {
+                    clearTimeout(_this.toastClose);
+                    $toastPop.hide();
+                });
+
+            $toastPop
+                .off('mouseover')
+                .on('mouseover', function () {
+                    clearTimeout(_this.toastClose);
+                })
+                .off('mouseout')
+                .on('mouseout', function () {
+                    _this.toastClose = setTimeout(function () {
+                        $toastPop.hide();
+                    }, _this.delayTime);
+                });
+        },
         msg: function (option, popOpen, param) {
             var _this = this,
                 $msgBox = $('#msgBox'),
