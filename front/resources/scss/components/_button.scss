@@ -12,6 +12,14 @@
         margin-top: 0.8rem;
     }
 }
+.btn-bottom-box {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
 .btn,
 .btn-default {
     @include btn();
