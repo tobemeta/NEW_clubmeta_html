@@ -324,6 +324,130 @@ const ui = {
                     e.stopPropagation();
                 });
         }
+    },
+    popup: {
+        zIndex: 1001,
+        popCnt: 0,
+        msg: function (option, popOpen, param) {
+            var _this = this,
+                $msgBox = $('#msgBox'),
+                $btnConfirm = $('.btn-pop-confirm', $msgBox),
+                $btnClose = $('.btn-close', $msgBox);
+
+            // 제목
+            $('.title-box h1', $msgBox).html(option.tlt == '' ? '알림' : option.tlt);
+
+            // 메세지
+            $('.msg', $msgBox).html(option.msg == '' ? '' : option.msg);
+
+            // 콜백
+            if (option.callback == '' || option.callback == null) {
+                $msgBox.data('callback', null);
+            } else {
+                $msgBox.data('callback', option.callback);
+            }
+
+            // type
+            if (option.type == 'alert') {
+                $btnClose.removeClass('lastFocus').hide();
+                $btnConfirm.addClass('lastFocus');
+            } else {
+                $btnClose.addClass('lastFocus').show();
+                $btnConfirm.removeClass('lastFocus');
+            }
+
+            if (option.cancleBtnHide) $('.title-box .btn-pop-close', $msgBox).hide();
+            else $('.title-box .btn-pop-close', $msgBox).show();
+
+            // 새창열림
+            if (option.comfirmBtn == 'blank') $btnConfirm.attr('title', '새창열림');
+            else if (option.comfirmBtn == 'move') $btnConfirm.attr('title', '바로가기');
+            else if (option.comfirmBtn != '') $btnConfirm.attr('title', option.comfirmBtn);
+            else $btnConfirm.attr('title', '확인');
+
+            ui.popup.open($msgBox, popOpen, param);
+        },
+        open: function (target, popOpen, param) {
+            console.log('팝업열기 : ' + target.selector);
+
+            var _this = this,
+                $layerW = $(target),
+                $layer = $('.layer-popup', $layerW),
+                effect = $layerW.data('effect'),
+                view = $layerW.data('view'),
+                callback = $layerW.data('callback'),
+                tmpAppend = '<a href="javascript:void(0);" class="tmpAppend"></a>';
+
+            _this.popCnt++;
+            $('body').addClass('popup-open');
+
+            $layerW.css('z-index', _this.zIndex++);
+            $layer.attr('tabindex', '0');
+
+            $('.btn-pop-close', $layer)
+                .off('click')
+                .on('click', function () {
+                    _this.close(target, popOpen);
+                    if (this.tagName == 'A') return false;
+                });
+
+            $('.btn-pop-confirm', $layer)
+                .off('click')
+                .on('click', function () {
+                    if (callback) {
+                        console.log('callback함수 실행');
+                        window[callback](target, popOpen, param);
+                    } else {
+                        _this.close(target, popOpen);
+                    }
+                    if (this.tagName == 'A') return false;
+                });
+
+            $('.lastFocus', $layer)
+                .off('focus')
+                .on('focus', function () {
+                    $layer.append(tmpAppend);
+                    $('.tmpAppend', $layer).focus(function () {
+                        $layer.attr('tabindex', '0').focus();
+                    });
+                });
+
+            $layer
+                .off('focus')
+                .on('focus', function () {
+                    //console.log('focus');
+                    $('.tmpAppend', $layer).remove();
+                    $(document).on('keydown', function (e) {
+                        if (e.keyCode == 9 && e.shiftKey) {
+                            $layer.append(tmpAppend);
+                            $('.tmpAppend', $layer).focus();
+                        }
+                    });
+                })
+                .blur(function () {
+                    $(document).off('keydown');
+                });
+
+            //if (effect == 'fade') {$layerW.fadeIn().focus();}
+            //else {$layerW.show().focus();}
+            //if (!view) $('body').addClass('popupOpen');
+
+            $layerW.show();
+            $layer.focus();
+
+            return false;
+        },
+        close: function (target, popOpen) {
+            console.log('팝업닫기 : ' + target.selector);
+            var _this = this;
+            _this.popCnt--;
+            if (_this.popCnt == 0) $('body').removeClass('popupOpen');
+
+            $('.layer-popup', target).removeAttr('tabindex');
+            $(target).hide();
+            //$('body').removeClass('popupOpen');
+            $(popOpen).focus();
+        }
     }
 };
 

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>레이아웃 | 클럽메타</title>
+        <link rel="stylesheet" href="../../resources/css/common.min.css" />
+        <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+        <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+        <script src="../../resources/js/common.js"></script>
+    </head>
+    <body>
+        <div class="wrap">
+            <header class="header">
+                <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
+                <h1 class="header-title">레이아웃</h1>
+                <!-- <a href="#none" class="btn-close" role="button">닫기</a> -->
+                <a href="#none" class="btn-search" role="button" title="검색">돋보기</a>
+            </header>
+            <div class="contents">
+                <div class="section">
+                    <h1>레이아웃</h1>
+                    <div>
+                        <button type="button" class="btnPrimary" onclick="return fn_msg(this);">메세지팝업</button>
+                        <button type="button" class="btnPrimary" onclick="return fn_alert(this);">팝업</button>
+
+                        <button type="button" class="btnPrimary" onclick="ui.popup.open('#sampleViewPop', this)">레이어팝업</button>
+                        <button type="button" class="btnPrimary" onclick="ui.popup.open('#alertPop', this)">확인팝업</button>
+                        <button type="button" class="btnPrimary" onclick="ui.popup.open('#delConfirmPop', this)">삭제확인팝업</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="nav">
+                    <ul>
+                        <li class="on"><a href="#none" role="button" class="btn-home">홈</a></li>
+                        <li><a href="#none" role="button" class="btn-klip">클립</a></li>
+                        <li><a href="#none" role="button" class="btn-shot">촬영</a></li>
+                        <li><a href="#none" role="button" class="btn-music">음악</a></li>
+                        <li><a href="#none" role="button" class="btn-user">마이</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        function fn_msg(obj) {
+            var option = {
+                // tlt: '', // 기본 : 알림
+                msg: '팝업 내용영역입니다',
+                type: '',
+                callback: 'fn_cbFunc'
+                //comfirmBtn: 'blank' // 새창으로 열리는 경우 : 메세지팝업에서 확인버튼 클릭시 새창으로 열리는 경우
+            };
+            ui.popup.msg(option, obj); //메세지 팝업
+            return false;
+        }
+
+        function fn_alert(obj) {
+            var option = {
+                tlt: '필수항목체크', // 기본 : 알림
+                msg: '메세지가 들어갑니다.<br>Alert',
+                type: 'alert'
+                //callback: 'fn_cbFunc',
+                //comfirmBtn: 'blank' // 새창으로 열리는 경우 : 메세지팝업에서 확인버튼 클릭시 새창으로 열리는 경우
+            };
+            ui.popup.msg(option, obj); //메세지 팝업
+            return false;
+        }
+
+        function fn_cbFunc(target, popOpen) {
+            ui.popup.close(target, popOpen); // 팝업 닫기
+            alert('콜백 함수 실행');
+        }
+    </script>
+</html>
+
+<!-- 팝업 -->
+<article class="layerpopup-box" id="msgBox" role="dialog">
+    <div class="layer-popup msg-box">
+        <!-- <header class="tltW">
+            <h1>알림</h1>
+            <button type="button" class="popClose" title="레이어팝업 닫기">닫기</button>
+        </header> -->
+        <p class="msg"></p>
+        <div class="btn-box">
+            <button type="button" class="btn-pop-close" title="레이어팝업 닫기">닫기</button>
+            <button type="button" class="btn-pop-confirm popConfirm" title="확인">확인</button>
+        </div>
+    </div>
+</article>
+
+<article class="layerpopup-box" id="sampleViewPop" role="dialog">
+    <div class="layer-popup">
+        <header class="layer-header">
+            <h1 class="pop-title">제목</h1>
+            <button type="button" class="btn-close" title="레이어팝업 닫기">닫기</button>
+        </header>
+
+        <div class="layer-content"></div>
+        <!-- //layer-content -->
+
+        <div class="btnLayer">
+            <button type="button" class="btn-close popClose" title="레이어팝업 닫기">닫기</button>
+            <button type="button" class="btnConfirm popConfirm" title="확인">확인</button>
+        </div>
+    </div>
+    <!-- //layer-popup -->
+</article>
+
+<!-- //팝업 -->

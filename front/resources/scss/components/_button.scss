@@ -1,9 +1,42 @@
+.btn-box {
+    display: flex;
+    flex-wrap: nowrap;
+
+    a,
+    button {
+    }
+    & > * + * {
+        margin-left: 1.2rem;
+    }
+    & + :is(.btn-box) {
+        margin-top: 0.8rem;
+    }
+}
+.btn,
+.btn-default {
+    @include btn();
+}
+.btn-primary {
+    @include btn($bg: $main-color, $border: $main-color, $color: #fff);
+}
+.btn-flat {
+    @include btn($bg: #fff8f2);
+}
+.btn-ghost {
+    @include btn($bg: none);
+}
+
 .btn-back {
-    background: url('../../resources/images/btn/btn_back.svg') no-repeat left center;
+    @include bg($src: '../images/btn/btn_back.svg', $po: left center);
     font-size: 0;
 }
 
 .btn-close {
-    background: url('../../resources/images/btn/btn_close.svg') no-repeat right center;
+    @include bg($src: '../images/btn/btn_back.svg', $po: right center);
+    font-size: 0;
+}
+
+.btn-search {
+    @include bg($src: '../images/btn/btn_search.svg', $po: right center);
     font-size: 0;
 }
