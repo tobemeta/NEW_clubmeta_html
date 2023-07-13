@@ -27,16 +27,16 @@
 }
 
 .btn-back {
-    @include bg($src: '../images/btn/btn_back.svg', $po: left center);
+    @include bg($src: '../images/btn/btn_back.svg', $po: center);
     font-size: 0;
 }
 
 .btn-close {
-    @include bg($src: '../images/btn/btn_back.svg', $po: right center);
+    @include bg($src: '../images/btn/btn_back.svg', $po: center);
     font-size: 0;
 }
 
 .btn-search {
-    @include bg($src: '../images/btn/btn_search.svg', $po: right center);
+    @include bg($src: '../images/btn/btn_search.svg', $po: center);
     font-size: 0;
 }
