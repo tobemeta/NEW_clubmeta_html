@@ -343,8 +343,7 @@ const ui = {
 
             if ($toastPop.length == 0) {
                 $toastPop = $('<article class="toastPop" id="toastPop" role="dialog">');
-                $toastPop.append('<div class="toastBox"><p class="toastMsg"></p><button type="button" class="btnClose">닫기</button></div>');
-                //$toastPop.data('effect', 'fade');
+                $toastPop.append('<div class="toast-box"><p class="toastMsg"></p><button type="button" class="btn-close">닫기</button></div>');
                 $('body').append($toastPop);
             }
 
@@ -352,9 +351,10 @@ const ui = {
 
             $toastPop.css('z-index', _this.zIndex++).fadeIn();
 
-            //autoClose = setTimeout(function() {$toastPop.hide();}, _this.delayTime);
             _this.toastClose = setTimeout(function () {
-                $toastPop.hide();
+                $toastPop.fadeOut(function () {
+                    $(this).remove();
+                });
             }, _this.delayTime);
 
             $('.btnClose', $toastPop)
@@ -372,7 +372,9 @@ const ui = {
                 .off('mouseout')
                 .on('mouseout', function () {
                     _this.toastClose = setTimeout(function () {
-                        $toastPop.hide();
+                        $toastPop.fadeOut(function () {
+                            $(this).remove();
+                        });
                     }, _this.delayTime);
                 });
         },
@@ -451,34 +453,24 @@ const ui = {
                     if (this.tagName == 'A') return false;
                 });
 
-            $('.lastFocus', $layer)
-                .off('focus')
-                .on('focus', function () {
-                    $layer.append(tmpAppend);
-                    $('.tmpAppend', $layer).focus(function () {
-                        $layer.attr('tabindex', '0').focus();
-                    });
-                });
+            $layerW.show();
+            if (effect == 'fade') {
+                $layer.hide().fadeIn();
+            }
 
-            $layer
-                .off('focus')
-                .on('focus', function () {
-                    //console.log('focus');
-                    $('.tmpAppend', $layer).remove();
-                    $(document).on('keydown', function (e) {
-                        if (e.keyCode == 9 && e.shiftKey) {
-                            $layer.append(tmpAppend);
-                            $('.tmpAppend', $layer).focus();
+            if (effect == 'slide') {
+                setTimeout(function () {
+                    $layer.addClass('slideView');
+                }, 1);
+
+                $('body')
+                    .off('click')
+                    .on('click', function (e) {
+                        if (e.target.className == 'layerPopupW') {
+                            _this.close(target, popOpen);
                         }
                     });
-                })
-                .blur(function () {
-                    $(document).off('keydown');
-                });
-
-            //if (effect == 'fade') {$layerW.fadeIn().focus();}
-            //else {$layerW.show().focus();}
-            //if (!view) $('body').addClass('popupOpen');
+            }
 
             $layerW.show();
             $layer.focus();

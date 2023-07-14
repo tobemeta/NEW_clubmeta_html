@@ -59,3 +59,27 @@
         line-height: 2.3rem;
     }
 }
+
+.toastPop {
+    position: fixed;
+    left: 50%;
+    top: 5rem;
+    transform: translate(-50%, 0);
+    z-index: 1000;
+    .toast-box {
+        position: relative;
+        width: 30rem;
+        min-height: 4rem;
+        padding: 1.4rem 1.6rem;
+        border-radius: 1.6rem;
+        background: rgba(17, 17, 17, 0.6);
+        box-sizing: $sizing;
+    }
+    .toastMsg {
+        font-size: 1.4rem;
+        line-height: 2rem;
+        color: #fff;
+    }
+    .btn-close {
+    }
+}
