@@ -42,3 +42,57 @@
         }
     }
 }
+.agreement-box {
+    .agree-chk-grp {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+        padding: 1.6rem;
+        border-radius: 0 0 1.6rem 1.6rem;
+        background-color: #fff;
+        box-shadow: $shadow;
+        z-index: 10;
+        > li {
+            position: relative;
+            box-sizing: border-box;
+            > .chk-box {
+                display: flex;
+                width: 100%;
+                label {
+                    width: 100%;
+                }
+                &::after {
+                    content: '';
+                    display: inline-block;
+                    width: 1.6rem;
+                    height: 1.6rem;
+                    @include bg($src: '../images/ico/ico_s_right.svg');
+                    background-size: cover;
+                }
+            }
+            .sub-chk-list {
+                display: flex;
+                gap: 2.4rem;
+                margin-top: 0.8rem;
+                padding-left: 2.4rem;
+                label {
+                    font-size: $fs-14;
+                }
+            }
+        }
+    }
+    .chk-in-all {
+        margin-bottom: 1px;
+        .chk-box {
+            display: flex;
+            padding: 1.6rem;
+            border-radius: 1.6rem 1.6rem 0 0;
+            background-color: #fff;
+            box-shadow: $shadow;
+        }
+        label {
+            width: 100%;
+        }
+    }
+}
