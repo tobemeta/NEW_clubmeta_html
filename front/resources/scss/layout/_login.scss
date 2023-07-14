@@ -42,7 +42,9 @@
         }
     }
 }
+//약관동의
 .agreement-box {
+    margin-top: 1.4rem;
     .agree-chk-grp {
         position: relative;
         display: flex;
@@ -94,5 +96,37 @@
         label {
             width: 100%;
         }
+    }
+}
+//회원가입
+.profile-box {
+    display: flex;
+    justify-content: center;
+    .prf-img {
+        position: relative;
+        img {
+            width: 10.4rem;
+            height: 10.4rem;
+        }
+        .prf-apply {
+            position: absolute;
+            bottom: -0.8rem;
+            right: -0.8rem;
+            width: 4.4rem;
+            height: 4.4rem;
+            @include bg($src: '../images/btn/btn_pf_pic.png');
+            background-size: cover;
+        }
+    }
+}
+.address-box {
+    display: flex;
+    gap: 0.4rem;
+    margin-bottom: 0.4rem;
+    .input-box {
+        width: auto;
+    }
+    .btn {
+        width: 9.6rem;
     }
 }
