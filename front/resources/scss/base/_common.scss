@@ -8,6 +8,12 @@ h1 {
     font-weight: $bold;
 }
 .title-box {
+    .title {
+        margin-bottom: 0.8rem;
+    }
+    .body-sub-title {
+        color: $dis-color;
+    }
 }
 .title {
     // 제목1
