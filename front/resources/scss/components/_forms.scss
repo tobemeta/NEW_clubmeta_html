@@ -14,7 +14,23 @@
         font-size: 1.6rem;
         line-height: 2.3rem;
     }
+    .req {
+        position: relative;
+        display: inline-block;
+        &::after {
+            content: '';
+            position: absolute;
+            display: inline-block;
+            width: 0.4rem;
+            height: 0.4rem;
+            border-radius: 0.4rem;
+            right: -0.6rem;
+            top: 0;
+            background-color: $error-color;
+        }
+    }
 }
+
 .input-box {
     display: flex;
     position: relative;

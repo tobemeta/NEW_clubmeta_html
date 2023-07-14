@@ -3,11 +3,21 @@ h1 {
     font-weight: $bold;
     font-size: $fs-24;
 }
+//text color
+.warring-txt {
+    color: $error-color;
+}
 
 .bold {
     font-weight: $bold;
 }
 .title-box {
+    .title {
+        margin-bottom: 0.8rem;
+    }
+    .body-sub-title {
+        color: $dis-color;
+    }
 }
 .title {
     // 제목1
