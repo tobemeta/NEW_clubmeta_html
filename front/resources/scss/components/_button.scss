@@ -6,7 +6,7 @@
     button {
     }
     & > * + * {
-        margin-left: 1.2rem;
+        margin-left: 0.8rem;
     }
     & + :is(.btn-box) {
         margin-top: 0.8rem;

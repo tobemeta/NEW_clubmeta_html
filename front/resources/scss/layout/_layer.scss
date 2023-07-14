@@ -22,6 +22,20 @@
             font-weight: $normal;
         }
     }
+    .btn-box {
+        position: fixed;
+        bottom: 1.6rem;
+        left: 1.6rem;
+        right: 1.6rem;
+
+        .btn {
+            background: #fff;
+            border: 0;
+            font-weight: $normal;
+            box-shadow: $shadow;
+            color: #111;
+        }
+    }
 }
 .msg-box {
     width: calc(100% - 3.2rem);

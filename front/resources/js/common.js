@@ -4,7 +4,7 @@ const ui = {
 
         // _this.header();
         _this.footer();
-        // _this.tab();
+        _this.tab();
         _this.forms();
         _this.tooltip.init();
         _this.select.init();
@@ -20,7 +20,31 @@ const ui = {
         });
     },
     tab: () => {
-        console.log('tab');
+        const $tabBtn = $('.tab-button');
+
+        $tabBtn.off('click').on('click', function (e) {
+            e.preventDefault();
+            var data = $(this).data('target'),
+                id = $(this).attr('href'),
+                $tab = $(this).parent();
+            const _this = $(this);
+
+            if ($tab.hasClass('on')) return false;
+
+            _this.parent().addClass('on').siblings().removeClass('on');
+            $(data).addClass('open').siblings().removeClass('open');
+            // $(id).addClass('open').siblings().removeClass('open');
+
+            const tabWrap = _this.closest('.tab-wrap');
+
+            if (tabWrap.hasClass('line')) {
+                console.log(_this);
+            } else if (tabWrap.hasClass('box')) {
+                console.log(33);
+            } else {
+                console.log(11);
+            }
+        });
     },
     tooltip: {
         className: {
@@ -410,10 +434,6 @@ const ui = {
             else $('.title-box .btn-pop-close', $msgBox).show();
 
             // 새창열림
-            if (option.comfirmBtn == 'blank') $btnConfirm.attr('title', '새창열림');
-            else if (option.comfirmBtn == 'move') $btnConfirm.attr('title', '바로가기');
-            else if (option.comfirmBtn != '') $btnConfirm.attr('title', option.comfirmBtn);
-            else $btnConfirm.attr('title', '확인');
 
             ui.popup.open($msgBox, popOpen, param);
         },
@@ -457,23 +477,6 @@ const ui = {
             if (effect == 'fade') {
                 $layer.hide().fadeIn();
             }
-
-            if (effect == 'slide') {
-                setTimeout(function () {
-                    $layer.addClass('slideView');
-                }, 1);
-
-                $('body')
-                    .off('click')
-                    .on('click', function (e) {
-                        if (e.target.className == 'layerPopupW') {
-                            _this.close(target, popOpen);
-                        }
-                    });
-            }
-
-            $layerW.show();
-            $layer.focus();
 
             return false;
         },

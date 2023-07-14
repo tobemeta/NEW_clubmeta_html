@@ -16,6 +16,7 @@
     }
 }
 .input-box {
+    display: flex;
     position: relative;
     width: 100%;
     box-sizing: border-box;
@@ -120,7 +121,21 @@
 
 .select-box {
     position: relative;
-    display: inline-block;
+    display: flex;
+
+    .select-sort {
+        width: 3.2rem;
+        @include bg($src: '../images/ico/ico_sort.svg', $color: #fff);
+
+        border: 1px solid #e7e7e7;
+        border-radius: 0.8rem 0 0 0.8rem;
+
+        & + select ~ .btn-select {
+            margin-left: 0.1rem;
+            border-radius: 0 0.8rem 0.8rem 0;
+        }
+    }
+
     select,
     .btn-select {
         width: 100%;
@@ -133,7 +148,7 @@
     }
     select {
         appearance: none;
-        background: #fff url(../images/ico-arrow-down.svg) no-repeat right 0.4rem center/2rem 1.6rem;
+        @include bg($src: '../images/ico/ico_dropdown.svg');
     }
     .btn-select {
         background-color: #fff;
@@ -144,10 +159,10 @@
             position: absolute;
             right: 0.4rem;
             top: 50%;
-            width: 2rem;
+            width: 1.6rem;
             height: 1.6rem;
             margin-top: -0.8rem;
-            background: url(../images/ico-arrow-down.svg) no-repeat right center;
+            @include bg($src: '../images/ico/ico_dropdown.svg');
             transition: transform 0.3s ease-in-out;
         }
         &.open {
@@ -194,11 +209,12 @@
         display: flex;
         width: 100%;
         align-items: center;
-        height: 2.4rem;
+        height: 3.2rem;
         padding: 0px 0.8rem;
         border-radius: 0.4rem;
+        font-size: 1.4rem;
         &.selected {
-            background-color: $main-bg-color;
+            background-color: #fff8f2;
             font-weight: 500;
         }
     }
@@ -243,7 +259,6 @@
         padding-left: 2.6rem;
         font-size: 1.6rem;
         line-height: 1.9rem;
-
         cursor: pointer;
         box-sizing: border-box;
         &:before {
@@ -283,6 +298,86 @@
             &:before {
                 background: url('../../resources/images/ico/ico_chkbox_disable.svg') no-repeat;
                 border: none;
+            }
+        }
+    }
+
+    &.toggle-cate {
+        label {
+            height: 4rem;
+            padding: 1.05rem 4rem 1.05rem 1.6rem;
+            background: #fff;
+            border: 1px solid #b7b7b7;
+            border-radius: 1.6rem;
+            text-align: center;
+            box-sizing: $sizing;
+
+            &:before {
+                left: auto;
+                top: 50%;
+                right: 0.8rem;
+                transform: translateY(-50%);
+                border: none;
+                @include bg($src: '../images/ico/ico_chk_plus.svg', $color: transparent);
+            }
+        }
+        input {
+            &:checked + label {
+                border-color: $main-color;
+                color: $main-color;
+
+                &:before {
+                    @include bg($src: '../images/ico/ico_chk_check.svg', $color: transparent);
+                }
+            }
+        }
+    }
+    &.toggle {
+        label {
+            width: 3.4rem;
+            height: 2.4rem;
+            padding: 0;
+            font-size: 0;
+            text-align: center;
+            box-sizing: $sizing;
+            &:before {
+                top: 50%;
+                width: 2.4rem;
+                height: 100%;
+                transform: translateY(-50%);
+                border: none;
+                border-radius: 50%;
+                background: #9f9f9f;
+                box-shadow: $shadow;
+            }
+            &:after {
+                display: block;
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 100%;
+                height: 1rem;
+                margin: 0;
+                padding: 0;
+                transform: translateY(-50%);
+                background: #fff;
+                border: 1px solid #e7e7e7;
+                border-radius: 0.4rem;
+                box-sizing: $sizing;
+                z-index: -1;
+            }
+        }
+        input {
+            &:checked + label {
+                border-color: $main-color;
+                color: $main-color;
+
+                &:before {
+                    background: $main-color;
+                    left: auto;
+                    right: 0;
+                }
             }
         }
     }
@@ -356,6 +451,38 @@
             }
             &:after {
                 background: #707070;
+            }
+        }
+    }
+    &.cell {
+        width: 100%;
+        label {
+            height: 4rem;
+            padding: 1.05rem 4rem 1.05rem 1.6rem;
+            background: #fff;
+            border: 1px solid #fff;
+            border-radius: 1.6rem;
+            box-shadow: $shadow;
+            box-sizing: $sizing;
+            color: #707070;
+
+            &:before {
+                display: none;
+            }
+        }
+        input {
+            &:checked + label {
+                border-color: $main-color;
+                color: $main-color;
+
+                &:before {
+                }
+                &:after {
+                    display: none;
+                }
+            }
+            &:disabled + label {
+                background: $disabled;
             }
         }
     }

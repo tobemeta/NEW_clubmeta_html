@@ -25,12 +25,13 @@
         margin: auto;
     }
 }
-@mixin bg($src: null, $repeat: no-repeat, $po: center, $on: null) {
+@mixin bg($src: null, $repeat: no-repeat, $po: center, $on: null, $color: null) {
     @if $src != null {
         background-image: url($src);
     }
     background-repeat: $repeat;
     background-position: $po;
+    background-color: $color;
     @if $on != null {
         &:hover,
         &:focus {
