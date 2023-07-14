@@ -195,7 +195,7 @@ const ui = {
         $(document).on('click', '.btn-inp-del', function () {
             const $inp = $(this).siblings('input');
             $inp.val('').change().focus();
-            $('.input-box').removeClass('focus');
+            $(this).parents('.input-box').removeClass('focus');
         });
     },
     select: {
