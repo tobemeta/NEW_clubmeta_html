@@ -374,49 +374,32 @@ const ui = {
     popup: {
         zIndex: 1001,
         popCnt: 0,
-        delayTime: 2000,
-        toastClose: null,
-        toast: function (msg) {
+
+        toast: function (target) {
+            console.log(this);
             var _this = this,
-                $toastPop = $('#toastPop');
-            //autoClose = null;
-            clearTimeout(_this.toastClose);
+                $toastPop = $(target),
+                delayTime = 3000;
 
-            if ($toastPop.length == 0) {
-                $toastPop = $('<article class="toastPop" id="toastPop" role="dialog">');
-                $toastPop.append('<div class="toast-box"><p class="toastMsg"></p><button type="button" class="btn-close">닫기</button></div>');
-                $('body').append($toastPop);
-            }
+            $toastPop.close = null;
 
-            $('.toastMsg', $toastPop).html(msg);
+            clearTimeout($toastPop.close);
 
-            $toastPop.css('z-index', _this.zIndex++).fadeIn();
+            $toastPop.fadeIn(100, function () {
+                setTimeout(function () {
+                    $toastPop.addClass('is-end');
+                }, delayTime);
+            });
 
-            _this.toastClose = setTimeout(function () {
-                $toastPop.fadeOut(function () {
-                    $(this).remove();
-                });
-            }, _this.delayTime);
+            $toastPop.on('transitionend', function () {
+                $toastPop.addClass('is-end').hide().removeClass('is-end');
+            });
 
-            $('.btnClose', $toastPop)
+            $('.btn-close', $toastPop)
                 .off('click')
                 .on('click', function () {
-                    clearTimeout(_this.toastClose);
-                    $toastPop.hide();
-                });
-
-            $toastPop
-                .off('mouseover')
-                .on('mouseover', function () {
-                    clearTimeout(_this.toastClose);
-                })
-                .off('mouseout')
-                .on('mouseout', function () {
-                    _this.toastClose = setTimeout(function () {
-                        $toastPop.fadeOut(function () {
-                            $(this).remove();
-                        });
-                    }, _this.delayTime);
+                    clearTimeout($toastPop.close);
+                    $toastPop.addClass('is-end');
                 });
         },
         msg: function (option, popOpen, param) {
@@ -468,6 +451,12 @@ const ui = {
             _this.popCnt++;
             $('body').addClass('popup-open');
 
+            if ($layerW.hasClass('bottom')) {
+                setTimeout(function () {
+                    $layerW.find('.layer-popup').animate({ height: 100 + '%' }, 200);
+                });
+            }
+
             $layerW.css('z-index', _this.zIndex++);
             $layer.attr('tabindex', '0');
 
@@ -475,7 +464,6 @@ const ui = {
                 .off('click')
                 .on('click', function () {
                     _this.close(target, popOpen);
-                    if (this.tagName == 'A') return false;
                 });
 
             $('.btn-pop-confirm', $layer)

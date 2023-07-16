@@ -41,7 +41,8 @@
                     <button type="button" class="btn-Primary" onclick="return fn_alert(this);">팝업</button>
                     <button type="button" class="btn-Primary"
                         onclick="ui.popup.open('#sampleViewPop', this)">레이어팝업</button>
-                    <button type="button" class="btn-Primary" onclick="ui.popup.toast('내용이 들어갑니다.')">토스트팝업</button>
+                    <button type="button" class="btn-Primary" onclick="ui.popup.toast('#toastPop')">토스트팝업</button>
+                    <button type="button" class="btn-Primary" onclick="ui.popup.toast('#toastPop2')">토스트팝업</button>
                 </div>
                 <br>
                 <br>
@@ -143,16 +144,35 @@
     </div>
 </article>
 
-<article class="layerpopup-box" id="sampleViewPop" role="dialog">
+<article class="layerpopup-box bottom" id="sampleViewPop" role="dialog">
     <div class="layer-popup">
         <header class="layer-header">
             <h1 class="pop-title">제목</h1>
             <button type="button" class="btn-close" title="레이어팝업 닫기">닫기</button>
         </header>
 
-        <div class="layer-content"></div>
+        <div class="layer-content">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
         <!-- //layer-content -->
-
+        <div class="btn-box">
+            <button type="button" class="btn btn-pop-close" title="레이어팝업 닫기">닫기</button>
+            <button type="button" class="btn-primary btn-pop-confirm" title="확인">확인</button>
+        </div>
         <div class="btnLayer">
             <button type="button" class="btn-close pop-close" title="레이어팝업 닫기">닫기</button>
             <button type="button" class="btn-confirm pop-confirm" title="확인">확인</button>
@@ -160,5 +180,41 @@
     </div>
     <!-- //layer-popup -->
 </article>
+
+<div class="toast-wrap top">
+    <div class="toast-inner">
+        <article class="toastPop" id="toastPop" role="dialog">
+            <div class="toast-box">
+                <p class="toastMsg">토스트1</p>
+                <button type="button" class="btn-close">닫기</button>
+            </div>
+        </article>
+
+        <article class="toastPop" id="toastPop2" role="dialog">
+            <div class="toast-box">
+                <p class="toastMsg">토스트2</p>
+                <button type="button" class="btn-close">닫기</button>
+            </div>
+        </article>
+    </div>
+</div>
+<div class="toast-wrap bottom">
+    <div class="toast-inner">
+        <article class="toastPop" id="toastPop3" role="dialog">
+            <div class="toast-box">
+                <p class="toastMsg">토스트1</p>
+                <button type="button" class="btn-close">닫기</button>
+            </div>
+        </article>
+
+        <article class="toastPop" id="toastPop4" role="dialog">
+            <div class="toast-box">
+                <p class="toastMsg">토스트2</p>
+                <button type="button" class="btn-close">닫기</button>
+            </div>
+        </article>
+    </div>
+
+</div>
 
 <!-- //팝업 -->
