@@ -2,7 +2,7 @@ const ui = {
     init: function () {
         const _this = this;
 
-        // _this.header();
+        _this.header();
         _this.footer();
         _this.tab();
         _this.forms();
@@ -10,7 +10,24 @@ const ui = {
         _this.select.init();
     },
     header: () => {
-        console.log('header');
+        let scrolling; // setTimeout() 메서드를 할당하는 전역 변수
+        const $header = $('.header');
+
+        window.addEventListener('scroll', (e) => {
+            if (!scrolling) {
+                $header.addClass('up');
+                console.log('start scrolling!');
+            }
+
+            // 일정시간(250ms) 뒤에 스크롤 동작 멈춤을 감지
+            clearTimeout(scrolling);
+            scrolling = setTimeout(() => {
+                console.log('stop scrolling!');
+                $header.removeClass('up');
+
+                scrolling = undefined;
+            }, 250);
+        });
     },
     footer: () => {
         const footNav = $('.nav li a');
@@ -484,7 +501,7 @@ const ui = {
             console.log('팝업닫기 : ' + target.selector);
             var _this = this;
             _this.popCnt--;
-            if (_this.popCnt == 0) $('body').removeClass('popupOpen');
+            if (_this.popCnt == 0) $('body').removeClass('popup-open');
 
             $('.layer-popup', target).removeAttr('tabindex');
             $(target).hide();
