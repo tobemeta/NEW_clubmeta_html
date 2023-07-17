@@ -98,10 +98,11 @@
         }
     }
 }
-//회원가입
+//회원가입 기본정보
 .profile-box {
     display: flex;
     justify-content: center;
+    margin-bottom: 1.6rem;
     .prf-img {
         position: relative;
         img {
@@ -125,6 +126,7 @@
     margin-bottom: 0.4rem;
     .input-box {
         width: auto;
+        flex: 1;
     }
     .btn {
         width: 9.6rem;
