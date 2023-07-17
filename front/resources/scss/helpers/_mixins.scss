@@ -106,11 +106,11 @@
         }
     }
     &.btn-ghost {
+        border: none;
         &:hover,
         &:active,
         &:focus {
             background: none;
-            border: none;
         }
     }
     &.btn-l {
