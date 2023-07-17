@@ -33,3 +33,37 @@ body.login {
         margin: 0 1.6rem;
     }
 }
+
+.quick_top {
+    position: fixed;
+    bottom: 10rem;
+    right: 1.6rem;
+    transition: bottom 0.3s ease;
+    font-size: 0;
+
+    .btn-top {
+        display: block;
+        position: relative;
+        width: 5.2rem;
+        height: 5.2rem;
+        padding-top: 1.6rem;
+        background: #fff;
+        border-radius: 50%;
+        border: 1px solid #cfcfcf;
+        box-sizing: $sizing;
+        box-shadow: $shadow;
+        font-size: 0.8rem;
+
+        &:before {
+            display: block;
+            content: '';
+            position: absolute;
+            top: 1.2rem;
+            left: 50%;
+            width: 1.6rem;
+            height: 1.6rem;
+            transform: translateX(-50%);
+            @include bg($src: '../images/ico/ico_arrow_top.svg');
+        }
+    }
+}

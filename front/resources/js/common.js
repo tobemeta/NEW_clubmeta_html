@@ -4,6 +4,7 @@ const ui = {
 
         _this.header();
         _this.footer();
+        _this.top();
         _this.tab();
         _this.forms();
         _this.tooltip.init();
@@ -34,6 +35,20 @@ const ui = {
 
         footNav.off().on('click', function () {
             $(this).parent('li').addClass('on').siblings('li').removeClass('on');
+        });
+    },
+    top: () => {
+        const $btnTop = $('.btn-top');
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 50) {
+                $('.quick_top').fadeIn();
+            } else {
+                $('.quick_top').fadeOut();
+            }
+        });
+        $btnTop.on('click', function () {
+            console.log(23);
+            $('html, body').animate({ scrollTop: 0 }, 400);
         });
     },
     tab: () => {
@@ -376,9 +391,7 @@ const ui = {
         popCnt: 0,
 
         toast: function (target) {
-            console.log(this);
-            var _this = this,
-                $toastPop = $(target),
+            var $toastPop = $(target),
                 delayTime = 3000;
 
             $toastPop.close = null;
@@ -440,21 +453,31 @@ const ui = {
         open: function (target, popOpen, param) {
             console.log('팝업열기 : ' + target.selector);
 
-            var _this = this,
-                $layerW = $(target),
-                $layer = $('.layer-popup', $layerW),
-                effect = $layerW.data('effect'),
-                view = $layerW.data('view'),
-                callback = $layerW.data('callback'),
-                tmpAppend = '<a href="javascript:void(0);" class="tmpAppend"></a>';
+            const _this = this;
+            const $layerW = $(target);
+            const $layer = $layerW.find('.layer-popup');
+            const callback = $layerW.data('callback');
 
             _this.popCnt++;
+
             $('body').addClass('popup-open');
 
             if ($layerW.hasClass('bottom')) {
                 setTimeout(function () {
-                    $layerW.find('.layer-popup').animate({ height: 100 + '%' }, 200);
+                    $layer.animate({ height: 50 + '%' }, 300);
                 });
+
+                $('.btn-pop-confirm', $layer)
+                    .off('click')
+                    .on('click', function () {
+                        if (callback) {
+                            console.log('callback함수 실행');
+                            window[callback](target, popOpen, param);
+                        } else {
+                            _this.close(target, popOpen);
+                        }
+                        if (this.tagName == 'A') return false;
+                    });
             }
 
             $layerW.css('z-index', _this.zIndex++);
@@ -463,12 +486,14 @@ const ui = {
             $('.btn-pop-close', $layer)
                 .off('click')
                 .on('click', function () {
+                    $(target).find('.layer-popup').removeAttr('style');
                     _this.close(target, popOpen);
                 });
 
             $('.btn-pop-confirm', $layer)
                 .off('click')
                 .on('click', function () {
+                    $(target).find('.layer-popup').removeAttr('style');
                     if (callback) {
                         console.log('callback함수 실행');
                         window[callback](target, popOpen, param);
@@ -479,9 +504,6 @@ const ui = {
                 });
 
             $layerW.show();
-            if (effect == 'fade') {
-                $layer.hide().fadeIn();
-            }
 
             return false;
         },
@@ -491,7 +513,8 @@ const ui = {
             _this.popCnt--;
             if (_this.popCnt == 0) $('body').removeClass('popup-open');
 
-            $('.layer-popup', target).removeAttr('tabindex');
+            $(target).find('.layer-popup').removeAttr('style');
+            $('.layer-popup', target).removeAttr('tabindex', 'style');
             $(target).hide();
             //$('body').removeClass('popupOpen');
             $(popOpen).focus();

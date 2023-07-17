@@ -28,9 +28,7 @@
     background: #fff;
     transform: translate(-50%, -50%);
     .layer-header {
-        background: $main-color;
         h1 {
-            color: #fff;
             font-weight: $normal;
         }
     }
@@ -99,22 +97,9 @@
         bottom: 5rem;
     }
 }
-.toast-inner {
-    position: relative;
-    width: 100%;
-    height: auto;
-}
 .toastPop {
-    position: absolute;
-    top: 0;
-    left: 0;
     display: none;
     width: 100%;
-    // position: fixed;
-    // left: 50%;
-    // top: 5rem;
-    // transform: translate(-50%, 0);
-    // z-index: 1000;
     .toast-box {
         position: relative;
         width: 100%;
