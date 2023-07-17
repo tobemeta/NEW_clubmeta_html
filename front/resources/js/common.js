@@ -389,7 +389,6 @@ const ui = {
     popup: {
         zIndex: 1001,
         popCnt: 0,
-
         toast: function (target) {
             var $toastPop = $(target),
                 delayTime = 3000;
@@ -452,72 +451,83 @@ const ui = {
         },
         open: function (target, popOpen, param) {
             console.log('팝업열기 : ' + target.selector);
-
             const _this = this;
             const $layerW = $(target);
             const $layer = $layerW.find('.layer-popup');
+            const $close = $layerW.find('.btn-pop-close');
+            const $confirm = $layerW.find('.btn-pop-confirm');
             const callback = $layerW.data('callback');
 
             _this.popCnt++;
 
+            $layerW.show();
+
             $('body').addClass('popup-open');
 
-            if ($layerW.hasClass('bottom')) {
-                setTimeout(function () {
-                    $layer.animate({ height: 50 + '%' }, 300);
-                });
+            const layerHeight = $layer.outerHeight(true);
 
-                $('.btn-pop-confirm', $layer)
-                    .off('click')
-                    .on('click', function () {
-                        if (callback) {
-                            console.log('callback함수 실행');
-                            window[callback](target, popOpen, param);
-                        } else {
-                            _this.close(target, popOpen);
-                        }
-                        if (this.tagName == 'A') return false;
-                    });
+            setTimeout(() => {
+                if ($layerW.hasClass('msg') == false && $layerW.hasClass('full') == false) {
+                    console.log(22222);
+                    $layer.animate({ bottom: 0 + 'px', height: layerHeight }, 500);
+                }
+            }, 200);
+
+            if ($layerW.hasClass('full')) {
+                console.log(33333);
+                $layer.animate({ bottom: 0 + 'px', height: 100 + '%' }, 500);
             }
 
             $layerW.css('z-index', _this.zIndex++);
-            $layer.attr('tabindex', '0');
 
-            $('.btn-pop-close', $layer)
-                .off('click')
-                .on('click', function () {
-                    $(target).find('.layer-popup').removeAttr('style');
-                    _this.close(target, popOpen);
-                });
+            $close.on('click', function (e) {
+                e.preventDefault();
 
-            $('.btn-pop-confirm', $layer)
-                .off('click')
-                .on('click', function () {
-                    $(target).find('.layer-popup').removeAttr('style');
-                    if (callback) {
-                        console.log('callback함수 실행');
-                        window[callback](target, popOpen, param);
-                    } else {
-                        _this.close(target, popOpen);
-                    }
-                    if (this.tagName == 'A') return false;
-                });
+                if ($layerW.hasClass('msg') == false) {
+                    $layerW.hide().removeAttr('style');
+                    $layer.animate({ bottom: -100 + '%' }, 500);
+                } else {
+                    $layerW.hide().removeAttr('style');
+                }
 
-            $layerW.show();
+                _this.close(target);
+            });
 
-            return false;
+            // $('.btn-pop-close', $layer)
+            //     .off('click')
+            //     .on('click', function () {
+            //         // $(target).find('.layer-popup').removeAttr('style');
+            //         _this.close(target, popOpen);
+            //     });
+
+            // $('.btn-pop-confirm', $layer)
+            //     .off('click')
+            //     .on('click', function (e) {
+            //         e.preventDefault();
+            //         $(target).find('.layer-popup').removeAttr('style');
+            //         if (callback) {
+            //             console.log('callback함수 실행');
+            //             window[callback](target, popOpen, param);
+            //         } else {
+            //             _this.close(target, popOpen);
+            //         }
+            //     });
         },
-        close: function (target, popOpen) {
+        close: function (target) {
             console.log('팝업닫기 : ' + target.selector);
-            var _this = this;
-            _this.popCnt--;
-            if (_this.popCnt == 0) $('body').removeClass('popup-open');
 
-            $(target).find('.layer-popup').removeAttr('style');
-            $('.layer-popup', target).removeAttr('tabindex', 'style');
-            $(target).hide();
-            //$('body').removeClass('popupOpen');
-            $(popOpen).focus();
+            const _this = this;
+            const $layerW = $(target);
+            const $layer = $layerW.find('.layer-popup');
+            const layerHeight = $layer.outerHeight(true);
+
+            _this.popCnt--;
+
+            // if ($layerW.hasClass('msg') == false) {
+            //     $layer.animate({ bottom: 0 + 'px', height: 'auto' }, 500);
+            // }
+
+            $layer.removeAttr('style');
         }
     }
 };
