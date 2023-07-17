@@ -45,7 +45,7 @@
 }
 
 .btn-close {
-    @include bg($src: '../images/btn/btn_back.svg', $po: center);
+    @include bg($src: '../images/btn/btn_close.svg', $po: center);
     font-size: 0;
 }
 

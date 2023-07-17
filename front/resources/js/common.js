@@ -414,120 +414,43 @@ const ui = {
                     $toastPop.addClass('is-end');
                 });
         },
-        msg: function (option, popOpen, param) {
-            var _this = this,
-                $msgBox = $('#msgBox'),
-                $btnConfirm = $('.btn-pop-confirm', $msgBox),
-                $btnClose = $('.btn-close', $msgBox);
-
-            // 제목
-            $('.title-box h1', $msgBox).html(option.tlt == '' ? '알림' : option.tlt);
-
-            // 메세지
-            $('.msg', $msgBox).html(option.msg == '' ? '' : option.msg);
-
-            // 콜백
-            if (option.callback == '' || option.callback == null) {
-                $msgBox.data('callback', null);
-            } else {
-                $msgBox.data('callback', option.callback);
-            }
-
-            // type
-            if (option.type == 'alert') {
-                $btnClose.removeClass('lastFocus').hide();
-                $btnConfirm.addClass('lastFocus');
-            } else {
-                $btnClose.addClass('lastFocus').show();
-                $btnConfirm.removeClass('lastFocus');
-            }
-
-            if (option.cancleBtnHide) $('.title-box .btn-pop-close', $msgBox).hide();
-            else $('.title-box .btn-pop-close', $msgBox).show();
-
-            // 새창열림
-
-            ui.popup.open($msgBox, popOpen, param);
-        },
-        open: function (target, popOpen, param) {
+        open: function (target) {
             console.log('팝업열기 : ' + target.selector);
-            const _this = this;
-            const $layerW = $(target);
-            const $layer = $layerW.find('.layer-popup');
-            const $close = $layerW.find('.btn-pop-close');
-            const $confirm = $layerW.find('.btn-pop-confirm');
-            const callback = $layerW.data('callback');
 
-            _this.popCnt++;
+            let $layer = $(target);
 
-            $layerW.show();
+            $layer.each(function () {
+                let $btnClose = $layer.find('.btn-pop-close');
+                let $btnConfirm = $layer.find('.btn-pop-confirm');
 
-            $('body').addClass('popup-open');
+                $layer.addClass('is-active');
 
-            const layerHeight = $layer.outerHeight(true);
+                setTimeout(function () {
+                    $layer.addClass('is-animation');
+                }, 100);
 
-            setTimeout(() => {
-                if ($layerW.hasClass('msg') == false && $layerW.hasClass('full') == false) {
-                    console.log(22222);
-                    $layer.animate({ bottom: 0 + 'px', height: layerHeight }, 500);
-                }
-            }, 200);
+                $btnClose.on('click', function (e) {
+                    e.preventDefault();
 
-            if ($layerW.hasClass('full')) {
-                console.log(33333);
-                $layer.animate({ bottom: 0 + 'px', height: 100 + '%' }, 500);
-            }
+                    $layer.removeClass('is-animation');
+                    let eventEnd = () => {
+                        $layer.removeClass('is-active');
+                        $layer.off('transitionend', eventEnd);
+                    };
+                    $layer.on('transitionend', eventEnd);
+                });
 
-            $layerW.css('z-index', _this.zIndex++);
+                $btnConfirm.on('click', function (e) {
+                    e.preventDefault();
 
-            $close.on('click', function (e) {
-                e.preventDefault();
-
-                if ($layerW.hasClass('msg') == false) {
-                    $layerW.hide().removeAttr('style');
-                    $layer.animate({ bottom: -100 + '%' }, 500);
-                } else {
-                    $layerW.hide().removeAttr('style');
-                }
-
-                _this.close(target);
+                    $layer.removeClass('is-animation');
+                    let eventEnd = () => {
+                        $layer.removeClass('is-active');
+                        $layer.off('transitionend', eventEnd);
+                    };
+                    $layer.on('transitionend', eventEnd);
+                });
             });
-
-            // $('.btn-pop-close', $layer)
-            //     .off('click')
-            //     .on('click', function () {
-            //         // $(target).find('.layer-popup').removeAttr('style');
-            //         _this.close(target, popOpen);
-            //     });
-
-            // $('.btn-pop-confirm', $layer)
-            //     .off('click')
-            //     .on('click', function (e) {
-            //         e.preventDefault();
-            //         $(target).find('.layer-popup').removeAttr('style');
-            //         if (callback) {
-            //             console.log('callback함수 실행');
-            //             window[callback](target, popOpen, param);
-            //         } else {
-            //             _this.close(target, popOpen);
-            //         }
-            //     });
-        },
-        close: function (target) {
-            console.log('팝업닫기 : ' + target.selector);
-
-            const _this = this;
-            const $layerW = $(target);
-            const $layer = $layerW.find('.layer-popup');
-            const layerHeight = $layer.outerHeight(true);
-
-            _this.popCnt--;
-
-            // if ($layerW.hasClass('msg') == false) {
-            //     $layer.animate({ bottom: 0 + 'px', height: 'auto' }, 500);
-            // }
-
-            $layer.removeAttr('style');
         }
     }
 };
