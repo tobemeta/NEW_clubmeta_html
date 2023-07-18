@@ -13,10 +13,10 @@ const ui = {
     header: () => {
         let scrolling;
         const $header = $('.header');
+        const headerHeight = $header.outerHeight(true);
 
         $(window).on('scroll', (e) => {
-            console.log(23);
-
+            console.log(headerHeight);
             if ($(this).scrollTop() > 50) {
                 $header.addClass('is-focus');
             } else {
@@ -24,14 +24,14 @@ const ui = {
             }
 
             if (!scrolling) {
-                $header.addClass('up');
+                $header.addClass('up').css('top', -headerHeight + 'px');
                 console.log('start scrolling!');
             }
 
             clearTimeout(scrolling);
             scrolling = setTimeout(() => {
                 console.log('stop scrolling!');
-                $header.removeClass('up');
+                $header.removeClass('up').css('top', 0);
 
                 scrolling = undefined;
             }, 250);
