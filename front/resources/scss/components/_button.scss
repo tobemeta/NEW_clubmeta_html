@@ -18,7 +18,7 @@
     left: 0;
     right: 0;
     width: 100%;
-    height: 9.4rem;
+    height: 6.4rem;
     background-color: #f9f9f9;
     padding: 0 1.6rem;
     box-sizing: border-box;
@@ -53,3 +53,7 @@
     @include bg($src: '../images/btn/btn_search.svg', $po: center);
     font-size: 0;
 }
+
+// .btn-del {
+//     @include imgBtn($src: '../images/btn/btn_')
+// }

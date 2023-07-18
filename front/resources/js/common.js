@@ -15,9 +15,17 @@ const ui = {
         const $header = $('.header');
         const headerHeight = $header.outerHeight(true);
 
+        // $(document).ready(() => {
+        //     if ($('.header .search-tab').length) {
+        //         $('header').addClass('search-header');
+        //     } else {
+        //         $('header').removeClass('search-header');
+        //     }
+        // });
+
         $(window).on('scroll', (e) => {
             console.log(headerHeight);
-            if ($(this).scrollTop() > 50) {
+            if ($(this).scrollTop() > headerHeight) {
                 $header.addClass('is-focus');
             } else {
                 $header.removeClass('is-focus');
@@ -235,6 +243,20 @@ const ui = {
             const $inp = $(this).siblings('input');
             $inp.val('').change().focus();
             $(this).parents('.input-box').removeClass('focus');
+        });
+
+        $(document).on('click', '.btn-inp-pw', function (e) {
+            e.preventDefault();
+
+            $(this).toggleClass('is-show');
+
+            const $inp = $(this).siblings('input');
+
+            if ($(this).hasClass('is-show')) {
+                $inp.prop('type', 'text');
+            } else {
+                $inp.prop('type', 'password');
+            }
         });
     },
     select: {

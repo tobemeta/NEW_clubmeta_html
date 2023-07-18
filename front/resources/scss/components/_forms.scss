@@ -46,7 +46,7 @@
     input {
         width: 100%;
         height: 4.8rem;
-        padding: 0 4rem 0 1.6rem;
+        padding: 0 1.6rem;
         background: #fff;
         font-size: 1.6rem;
         box-sizing: border-box;
@@ -59,10 +59,12 @@
         &:focus {
             border-color: #111;
         }
+
+        &.disabled,
         &:disabled {
             background: $disabled;
             color: $disabled-color;
-
+            & + .btn-inp-pw,
             & + .btn-inp-del {
                 display: none;
             }
@@ -90,6 +92,7 @@
         input {
             height: 4rem;
         }
+        .btn-inp-pw,
         .btn-inp-del {
             top: 0.8rem;
         }
@@ -100,6 +103,11 @@
         }
     }
     &.focus {
+        input {
+            padding-right: 4rem;
+            border-color: #111;
+        }
+        .btn-inp-pw,
         .btn-inp-del {
             display: block;
         }
@@ -111,7 +119,17 @@
         right: 1.6rem;
         width: 2.4rem;
         height: 2.4rem;
-        background: url('../../resources/images/btn/btn_ip_delete.svg') no-repeat 0 0;
+        @include bg($src: '../images/btn/btn_ip_delete.svg');
+    }
+
+    .btn-inp-pw {
+        display: none;
+        position: absolute;
+        top: 1.2rem;
+        right: 4rem;
+        width: 2.4rem;
+        height: 2.4rem;
+        @include bg($src: '../images/btn/btn_ip_pw.svg');
     }
 
     & ~ .input-box {

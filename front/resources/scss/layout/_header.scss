@@ -1,5 +1,4 @@
 .header {
-    position: fixed;
     left: 0;
     top: 0;
     width: 100%;
@@ -9,6 +8,7 @@
     z-index: $z-header;
     transition: top 0.2s ease-in-out;
     &.is-focus {
+        position: sticky;
         box-shadow: $shadow;
     }
     // &.up {
