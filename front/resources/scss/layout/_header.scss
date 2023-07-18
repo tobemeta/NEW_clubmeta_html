@@ -8,6 +8,9 @@
     box-sizing: border-box;
     z-index: $z-header;
     transition: top 0.2s ease-in-out;
+    &.is-focus {
+        box-shadow: $shadow;
+    }
     &.up {
         top: -4.8rem;
     }

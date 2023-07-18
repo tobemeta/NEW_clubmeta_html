@@ -11,16 +11,23 @@ const ui = {
         _this.select.init();
     },
     header: () => {
-        let scrolling; // setTimeout() 메서드를 할당하는 전역 변수
+        let scrolling;
         const $header = $('.header');
 
-        window.addEventListener('scroll', (e) => {
+        $(window).on('scroll', (e) => {
+            console.log(23);
+
+            if ($(this).scrollTop() > 50) {
+                $header.addClass('is-focus');
+            } else {
+                $header.removeClass('is-focus');
+            }
+
             if (!scrolling) {
                 $header.addClass('up');
                 console.log('start scrolling!');
             }
 
-            // 일정시간(250ms) 뒤에 스크롤 동작 멈춤을 감지
             clearTimeout(scrolling);
             scrolling = setTimeout(() => {
                 console.log('stop scrolling!');
