@@ -35,6 +35,47 @@
                 border-radius: 0;
             }
         }
+        .layer-popup {
+            padding: 0;
+        }
+        .layer-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4.8rem;
+            padding: 0 1.6rem;
+            align-items: center;
+            .btn-close {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .header-inner {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            .header-left {
+                .header-title {
+                    padding-left: 1.6rem;
+                    text-align: left;
+                }
+            }
+            .header-center {
+                flex: 1;
+            }
+            .header-right {
+                width: 4.8rem;
+                height: 4.8rem;
+            }
+        }
+        .layer-content {
+            padding: 4.8rem 1.6rem 1.6rem;
+        }
+        .btn-box {
+            padding: 1.6rem;
+        }
     }
     &.msg {
         &.is-active {
@@ -85,6 +126,7 @@
         }
         .btn-close {
             width: 2.4rem;
+            height: 2.4rem;
         }
     }
     .layer-content {
@@ -107,6 +149,10 @@
             font-weight: $normal;
             box-shadow: $shadow;
             color: #111;
+            &.btn-primary {
+                background-color: $main-color;
+                color: #fff;
+            }
         }
         & > * + * {
             margin: 0;
@@ -114,7 +160,6 @@
     }
     &.msg-box {
         width: calc(100% - 3.2rem);
-        min-height: 16.5rem;
         padding: 3.6rem 1.6rem 1.6rem;
         border-radius: 8px;
         box-shadow: 0px 4px 12px 0px #14245b2e;
