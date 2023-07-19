@@ -95,10 +95,19 @@
     }
     .title-box {
         display: flex;
+        position: relative;
         height: 5.6rem;
         margin-bottom: 0;
         justify-content: space-between;
         align-items: center;
+    }
+    .btn-go {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-position: right;
     }
 }
 .scroll-box {
@@ -130,7 +139,7 @@
 
 .challenge-box {
     ul {
-        padding-bottom: 1.6rem;
+        padding: 1.6rem;
         li {
             min-width: 14.1rem;
             height: 25.5rem;
@@ -145,11 +154,9 @@
             height: 18.8rem;
             box-shadow: $shadow;
             border-radius: 1.4rem;
+            @include imgCenter();
             img {
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
-                vertical-align: middle;
+                border-radius: 1.4rem;
             }
         }
         .info {
@@ -178,6 +185,7 @@
                 margin-right: 0.4rem;
                 border-radius: 50%;
                 box-sizing: $sizing;
+                @include imgCenter();
 
                 &:after {
                     display: block;
@@ -202,6 +210,88 @@
                     content: '@';
                 }
             }
+        }
+    }
+}
+
+.list-box {
+    li {
+        display: flex;
+        padding: 0.8rem 1.6rem 0.8rem 0.8rem;
+        border-radius: 2.4rem;
+        box-shadow: $shadow;
+        box-sizing: $sizing;
+        align-items: center;
+        & + li {
+            margin-top: 1rem;
+        }
+    }
+
+    a {
+        flex: 1;
+        display: flex;
+    }
+    .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 0.8rem;
+        strong {
+            font-weight: $normal;
+        }
+        span {
+            font-size: 1.2rem;
+            line-height: 1.7rem;
+            color: #585858;
+        }
+    }
+    &.sound {
+        li {
+            justify-content: space-between;
+        }
+        .img {
+            width: 5.6rem;
+            height: 5.6rem;
+            img {
+                border-radius: 1.6rem;
+            }
+        }
+    }
+    &.user {
+        li {
+            border: 1px solid #e7e7e7;
+        }
+        .img {
+            width: 4.8rem;
+            height: 4.8rem;
+            img {
+                border-radius: 50%;
+            }
+        }
+    }
+}
+.tag-list-box {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+
+        gap: 1rem;
+    }
+    a {
+        display: flex;
+        position: relative;
+        align-items: center;
+        height: 3.2rem;
+        padding: 0 1.6rem;
+        border-radius: 1.6rem;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        background: #fff;
+        box-shadow: $shadow;
+        line-height: 2.3rem;
+        box-sizing: $sizing;
+        &:before {
+            display: inline-block;
+            content: '#';
         }
     }
 }

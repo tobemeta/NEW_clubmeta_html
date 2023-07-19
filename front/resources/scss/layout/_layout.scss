@@ -43,6 +43,10 @@ body.login {
     padding: 0 1.6rem;
 }
 
+.img {
+    @include imgCenter();
+}
+
 .quick_top {
     display: none;
     position: fixed;
