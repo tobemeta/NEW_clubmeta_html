@@ -130,6 +130,10 @@
         width: 2.4rem;
         height: 2.4rem;
         @include bg($src: '../images/btn/btn_ip_pw.svg');
+
+        &.is-show {
+            @include bg($src: '../images/btn/btn_ip_pw_on.svg');
+        }
     }
 
     & ~ .input-box {
