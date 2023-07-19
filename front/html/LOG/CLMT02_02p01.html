@@ -5,64 +5,55 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
         <meta name="HandheldFriendly" content="true" />
         <meta name="format-detection" content="telephone=no" />
-        <title>비밀번호 재설정 | 클럽메타</title>
+        <title>주소 검색 | 클럽메타</title>
         <link rel="stylesheet" href="../../resources/css/common.min.css" />
         <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
         <script src="../../resources/js/lib/jquery-ui.min.js"></script>
         <script src="../../resources/js/common.js"></script>
     </head>
     <body>
-        <div class="wrap">
-            <header class="header">
-                <div class="header-inner">
-                    <div class="header-left">
-                        <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
+        <article class="layerpopup-box full is-active is-animation" id="fullViewPop" role="dialog">
+            <div class="layer-popup login">
+                <header class="layer-header">
+                    <div class="header-inner">
+                        <div class="header-left"><h1 class="pop-title">주소검색</h1></div>
+                        <div class="header-center"></div>
+                        <div class="header-right">
+                            <button type="button" class="btn-close" title="레이어팝업 닫기">닫기</button>
+                        </div>
                     </div>
-                    <div class="header-center">
-                        <h1 class="header-title">비밀번호 재설정</h1>
+                </header>
+
+                <div class="layer-content">
+                    <div class="form-box">
+                        <form action="">
+                            <fieldset>
+                                <div class="input-box">
+                                    <input type="text" title="내용입력" placeholder="지번, 도로명, 건물명으로 검색" />
+                                </div>
+                            </fieldset>
+                        </form>
                     </div>
-                    <div class="header-right"></div>
-                </div>
-            </header>
-            <div class="contents">
-                <div class="section">
-                    <div class="inner">
-                        <div class="title-box">
-                            <p class="title">새로운 비밀번호를 입력해주세요.</p>
-                            <div class="body-sub-title"><span>영문, 숫자, 특수문자를 포함한 8~20자를 조합하여 입력해주세요.</span></div>
+                    <div class="body-title mt-24"><strong>&lsquo;OOO&rsquo;</strong> 에 대한 검색 결과 (<span>2</span>)</div>
+                    <div class="address-result-box">
+                        <div class="card small">
+                            <a href="#none" role="button" title="주소 선택">
+                                <strong class="body-sub-title">경기도 성남시 분당구 OOO로 12</strong>
+                                <p class="body-sub-title">경기도 성남시 분당구 동판교로 OOO</p>
+                            </a>
                         </div>
-                        <div class="form-box">
-                            <form action="">
-                                <fieldset>
-                                    <dl>
-                                        <dt><label>새 비밀번호</label></dt>
-                                        <dd>
-                                            <div class="input-box">
-                                                <input type="password" placeholder="영문, 숫자, 특수문자를 포함한 8~20자" title="내용입력" />
-                                                <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
-                                                <span class="validate-txt is-error">비밀번호는 영문, 숫자, 특수문자를 포함한 8-20자 이내로 입력하셔야 합니다.</span>
-                                            </div>
-                                        </dd>
-                                    </dl>
-                                    <dl>
-                                        <dt><label>비밀번호 확인</label></dt>
-                                        <dd>
-                                            <div class="input-box">
-                                                <input type="password" placeholder="영문, 숫자, 특수문자를 포함한 8~20자" title="내용입력" />
-                                                <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
-                                                <span class="validate-txt is-error">입력하신 비밀번호와 비밀번호 확인이 일치하지 않습니다.</span>
-                                            </div>
-                                        </dd>
-                                    </dl>
-                                </fieldset>
-                            </form>
+                        <div class="card small">
+                            <a href="#none" role="button" title="주소 선택">
+                                <strong class="body-sub-title">경기도 성남시 분당구 OOO로 12</strong>
+                                <p class="body-sub-title">경기도 성남시 분당구 동판교로 OOO</p>
+                            </a>
                         </div>
-                        <div class="btn-box btn-bottom-box">
-                            <button type="button" class="btn-primary btn-l" title="확인">확인</button>
-                        </div>
+                        <div class="no-data">검색 결과가 없습니다. 다시 확인해주세요.</div>
                     </div>
                 </div>
+                <!-- //layer-content -->
             </div>
-        </div>
+            <!-- //layer-popup -->
+        </article>
     </body>
 </html>

@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
         <meta name="HandheldFriendly" content="true" />
         <meta name="format-detection" content="telephone=no" />
-        <title>비밀번호 찾기 | 클럽메타</title>
+        <title>비밀번호 재설정 | 클럽메타</title>
         <link rel="stylesheet" href="../../resources/css/common.min.css" />
         <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
         <script src="../../resources/js/lib/jquery-ui.min.js"></script>
@@ -19,7 +19,7 @@
                         <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
                     </div>
                     <div class="header-center">
-                        <h1 class="header-title">비밀번호 찾기</h1>
+                        <h1 class="header-title">비밀번호 재설정</h1>
                     </div>
                     <div class="header-right"></div>
                 </div>
@@ -27,16 +27,40 @@
             <div class="contents">
                 <div class="section">
                     <div class="inner">
-                        <div class="user-search-box complete">
-                            <p class="title">가입하신 아이디를 찾았습니다!<br />비밀번호를 다시 설정해주세요.</p>
-                            <div class="image"></div>
-                            <div class="card">
-                                <strong>clubmeta12@naver.com</strong>
-                                <p>2023.07.03 가입</p>
-                            </div>
+                        <div class="title-box">
+                            <p class="title">새로운 비밀번호를 입력해주세요.</p>
+                            <div class="body-sub-title"><span>영문, 숫자, 특수문자를 포함한 8~20자를 조합하여 입력해주세요.</span></div>
+                        </div>
+                        <div class="form-box">
+                            <form action="">
+                                <fieldset>
+                                    <dl>
+                                        <dt><label>새 비밀번호</label></dt>
+                                        <dd>
+                                            <div class="input-box">
+                                                <input type="password" placeholder="영문, 숫자, 특수문자를 포함한 8~20자" title="내용입력" />
+                                                <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
+                                                <a href="#none" class="btn-inp-pw" role="button" aria-label="입력내용삭제"></a>
+                                                <span class="validate-txt is-error">비밀번호는 영문, 숫자, 특수문자를 포함한 8-20자 이내로 입력하셔야 합니다.</span>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                    <dl>
+                                        <dt><label>비밀번호 확인</label></dt>
+                                        <dd>
+                                            <div class="input-box">
+                                                <input type="password" placeholder="영문, 숫자, 특수문자를 포함한 8~20자" title="내용입력" />
+                                                <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
+                                                <a href="#none" class="btn-inp-pw" role="button" aria-label="입력내용삭제"></a>
+                                                <span class="validate-txt is-error">입력하신 비밀번호와 비밀번호 확인이 일치하지 않습니다.</span>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </fieldset>
+                            </form>
                         </div>
                         <div class="btn-box btn-bottom-box">
-                            <button type="button" class="btn-primary btn-l" title="비밀번호 재설정">비밀번호 재설정</button>
+                            <button type="button" class="btn-primary btn-l" title="확인">확인</button>
                         </div>
                     </div>
                 </div>

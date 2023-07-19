@@ -178,7 +178,7 @@
 }
 //약관동의
 .agreement-box {
-    margin-top: 1.4rem;
+    margin-top: 5rem;
     .agree-chk-grp {
         position: relative;
         display: flex;
@@ -255,7 +255,7 @@
 .user-info-card {
     width: 100%;
     margin-bottom: 1.6rem;
-    padding: 1.6rem 0.8rem;
+    padding: 1.6rem;
     border-radius: 3.2rem;
     border: 1px solid #cfcfcf;
     background-color: #fff;
@@ -265,7 +265,6 @@
         align-items: center;
         justify-content: space-between;
         height: 4rem;
-        padding: 0 1.6rem 0 1.2rem;
     }
     dd {
         color: $dis-color;
