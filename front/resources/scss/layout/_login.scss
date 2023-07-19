@@ -33,10 +33,15 @@
             position: absolute;
             opacity: 0;
         }
+        .input-box {
+            &::before {
+                top: 1rem;
+            }
+        }
         input {
             height: 4.4rem;
         }
-        .btn-inp-del {
+        a {
             top: 1rem;
         }
     }

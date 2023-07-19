@@ -33,7 +33,7 @@
                                     <dl>
                                         <dt><label>아이디</label></dt>
                                         <dd>
-                                            <div class="input-box ico">
+                                            <div class="input-box ico -user">
                                                 <input type="text" title="내용입력" placeholder="아이디 (이메일) 입력" />
                                                 <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
                                             </div>
@@ -42,15 +42,16 @@
                                     <dl>
                                         <dt><label>비밀번호</label></dt>
                                         <dd>
-                                            <div class="input-box ico">
+                                            <div class="input-box ico -lock">
                                                 <input type="password" title="내용입력" placeholder="영문, 숫자, 특수문자를 포함한 8~20자" />
                                                 <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
-                                                <span class="validate-txt is-error">이메일 또는 비밀번호를 확인해주세요.</span>
+                                                <a href="#none" class="btn-inp-pw" role="button" aria-label="입력내용삭제"></a>
                                             </div>
                                         </dd>
                                     </dl>
                                 </fieldset>
                             </form>
+                            <span class="validate-txt is-error">이메일 또는 비밀번호를 확인해주세요.</span>
                         </div>
                         <button type="button" class="btn-primary btn-l" title="로그인">로그인</button>
                         <div class="option-box">

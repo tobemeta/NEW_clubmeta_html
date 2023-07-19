@@ -70,6 +70,14 @@
             }
         }
     }
+    .validate-txt {
+        display: none;
+        margin-top: 0.4rem;
+        padding-left: 1.6rem;
+        font-size: 1.2rem;
+        line-height: 1.7rem;
+        color: $error-color;
+    }
     &.error {
         flex-direction: column;
         input {
@@ -81,11 +89,6 @@
         }
         .validate-txt {
             display: block;
-            margin-top: 0.4rem;
-            padding-left: 1.6rem;
-            font-size: 1.2rem;
-            line-height: 1.7rem;
-            color: $error-color;
         }
     }
     &.small {
@@ -100,6 +103,26 @@
     &.ico {
         input {
             padding-left: 4.4rem;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 1.2rem;
+            left: 1.6rem;
+            display: block;
+            width: 2.4rem;
+            height: 2.4rem;
+            background-size: cover;
+        }
+        &.-user {
+            &::before {
+                @include bg($src: '../images/ico/ico_ip_user.svg');
+            }
+        }
+        &.-lock {
+            &::before {
+                @include bg($src: '../images/ico/ico_lock.svg');
+            }
         }
     }
     &.focus {
@@ -116,7 +139,7 @@
         display: none;
         position: absolute;
         top: 1.2rem;
-        right: 1.6rem;
+        right: 4rem;
         width: 2.4rem;
         height: 2.4rem;
         @include bg($src: '../images/btn/btn_ip_delete.svg');
@@ -126,7 +149,7 @@
         display: none;
         position: absolute;
         top: 1.2rem;
-        right: 4rem;
+        right: 1.6rem;
         width: 2.4rem;
         height: 2.4rem;
         @include bg($src: '../images/btn/btn_ip_pw.svg');
