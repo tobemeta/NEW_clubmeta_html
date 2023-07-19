@@ -29,6 +29,14 @@
             background-color: $error-color;
         }
     }
+    .validate-txt {
+        display: none;
+        margin-top: 0.4rem;
+        padding-left: 1.6rem;
+        font-size: 1.2rem;
+        line-height: 1.7rem;
+        color: $error-color;
+    }
 }
 
 .input-box {
@@ -69,14 +77,6 @@
                 display: none;
             }
         }
-    }
-    .validate-txt {
-        display: none;
-        margin-top: 0.4rem;
-        padding-left: 1.6rem;
-        font-size: 1.2rem;
-        line-height: 1.7rem;
-        color: $error-color;
     }
     &.error {
         flex-direction: column;
