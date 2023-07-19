@@ -26,21 +26,25 @@ body.login {
 .contents {
     padding-bottom: 9.4rem;
     box-sizing: $sizing;
-    .section:last-child {
+}
+
+.section {
+    box-sizing: $sizing;
+
+    & + .section {
+        margin-top: 2rem;
+    }
+    &:last-child {
         padding-bottom: 7.2rem;
     }
 }
 
-.section {
-    padding: 2.4rem 0;
-    box-sizing: $sizing;
-
-    .inner {
-        margin: 0 1.6rem;
-    }
+.inner {
+    padding: 0 1.6rem;
 }
 
 .quick_top {
+    display: none;
     position: fixed;
     bottom: 10rem;
     right: 1.6rem;

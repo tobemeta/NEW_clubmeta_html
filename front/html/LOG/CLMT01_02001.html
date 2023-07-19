@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
         <meta name="HandheldFriendly" content="true" />
         <meta name="format-detection" content="telephone=no" />
-        <title>레이아웃 | 클럽메타</title>
+        <title>검색 | 클럽메타</title>
         <link rel="stylesheet" href="../../resources/css/common.min.css" />
         <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
         <script src="../../resources/js/lib/jquery-ui.min.js"></script>
@@ -14,19 +14,20 @@
     <body>
         <div class="wrap">
             <header class="header">
-                <div class="header-inner">
-                    <!-- search class 추가 -->
+                <div class="header-inner search">
+                    <!-- 검색 시 search class 추가 -->
                     <div class="header-left">
                         <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
                     </div>
                     <div class="header-center">
                         <div class="input-box small">
-                            <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" />
+                            <input type="text" class="inp-search" placeholder="챌린지 / 음원 / 유저 / 태그로 검색" title="내용입력" data-name="search" />
                             <button type="button" class="btn-inp-del" aria-label="입력내용삭제"><span class="blind">삭제</span></button>
                         </div>
                     </div>
+                    <div class="header-right"></div>
                 </div>
-                <div class="tab-wrap search-tab">
+                <!-- <div class="tab-wrap search-tab">
                     <div class="tab-items">
                         <ul>
                             <li class="on"><a href="#tab1" class="tab-button" role="button" title="인기">인기</a></li>
@@ -36,50 +37,56 @@
                             <li><a href="#tab1" class="tab-button" role="button" title="태그">태그</a></li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
             </header>
             <div class="contents serach-content">
                 <div class="section search-area">
                     <div class="inner">
-                        <div class="title-box">
-                            <h1 class="title">최근 검색 기록</h1>
-                        </div>
-                        <div class="sch_cont_area">
-                            <ul>
+                        <div class="sch-latest-area">
+                            <div class="title-box">
+                                <h1 class="title">최근 검색 기록</h1>
+                            </div>
+                            <ul class="sch-latest-list">
                                 <li>
-                                    <a href="#none" role="button" class="" title="최근검색어">김셀럽</a>
-                                    <button type="button" class=""><span class="blind">삭제</span></button>
-                                </li>
-                                <li>
-                                    <a href="#none" role="button" class="" title="최근검색어">김셀럽</a>
-                                    <button type="button" class=""><span class="blind">삭제</span></button>
-                                </li>
-                                <li>
-                                    <a href="#none" role="button" class="" title="최근검색어">김셀럽</a>
+                                    <a href="#none" role="button" title="최근검색어">김셀럽김셀럽김셀럽김셀럽김셀럽김셀럽김셀럽김셀럽김셀럽김셀럽김셀럽김셀럽김셀럽김셀럽김셀럽김셀럽김셀럽</a>
                                     <button type="button" class="btn-del"><span class="blind">삭제</span></button>
+                                </li>
+                                <li>
+                                    <a href="#none" role="button" title="최근검색어">김셀럽</a>
+                                    <button type="button" class="btn-del"><span class="blind">삭제</span></button>
+                                </li>
+                                <li>
+                                    <a href="#none" role="button" title="최근검색어">김셀럽</a>
+                                    <button type="button" class="btn-del"><span class="blind">삭제</span></button>
+                                </li>
+                            </ul>
+                            <div class="btn-box">
+                                <button type="button" class="btn-all-del">전체삭제</button>
+                            </div>
+                        </div>
+                        <div class="search-result-area" style="display: none">
+                            <ul class="sch-result-list">
+                                <li>
+                                    <a href="#none" class="r-word"><span>재</span></a>
+                                </li>
+                                <li>
+                                    <a href="#none" class="r-word"><span>재</span>즈</a>
+                                </li>
+                                <li>
+                                    <a href="#none" class="r-word"><span>재</span>즈댄스</a>
+                                </li>
+                                <li>
+                                    <a href="#none" class="r-word"><span>재</span></a>
+                                </li>
+                                <li>
+                                    <a href="#none" class="r-word"><span>재</span>즈댄스즈댄스즈댄스즈댄스즈댄스즈댄스즈댄스즈댄스즈댄스즈댄스즈댄스즈댄스즈댄스</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <!-- <div class="section search-area">
-                    <div class="inner">
-                        <h1>최근 검색 기록</h1>
-                    </div>
-                </div>
-                <div class="section search-area">
-                    <div class="inner">
-                        <h1>최근 검색 기록</h1>
-                    </div>
-                </div> -->
             </div>
-            <div class="contents serach-content">
-                <div class="section">
-                    <div class="inner">
-                        <div class="search_result_area"></div>
-                    </div>
-                </div>
-            </div>
+
             <div class="quick_top">
                 <button type="button" class="btn-top">TOP</button>
             </div>

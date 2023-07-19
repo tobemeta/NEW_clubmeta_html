@@ -135,11 +135,19 @@
             display: block;
         }
     }
+    &.inp-pw {
+        .btn-inp-del {
+            right: 4rem;
+        }
+        .btn-inp-pw {
+            right: 1.6rem;
+        }
+    }
     .btn-inp-del {
         display: none;
         position: absolute;
         top: 1.2rem;
-        right: 4rem;
+        right: 1.6rem;
         width: 2.4rem;
         height: 2.4rem;
         @include bg($src: '../images/btn/btn_ip_delete.svg');
@@ -149,7 +157,7 @@
         display: none;
         position: absolute;
         top: 1.2rem;
-        right: 1.6rem;
+        right: 4rem;
         width: 2.4rem;
         height: 2.4rem;
         @include bg($src: '../images/btn/btn_ip_pw.svg');

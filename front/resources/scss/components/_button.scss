@@ -54,6 +54,11 @@
     font-size: 0;
 }
 
-// .btn-del {
-//     @include imgBtn($src: '../images/btn/btn_')
-// }
+.btn-del {
+    @include imgBtn($src: '../images/btn/btn_ip_delete');
+}
+.btn-go {
+    @include bg($src: '../images/ico/ico_s_right.svg', $po: center);
+    width: 1.6rem;
+    height: 1.6rem;
+}

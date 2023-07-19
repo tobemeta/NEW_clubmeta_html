@@ -7,6 +7,7 @@ const ui = {
         _this.top();
         _this.tab();
         _this.forms();
+        _this.sch();
         _this.tooltip.init();
         _this.select.init();
     },
@@ -15,13 +16,14 @@ const ui = {
         const $header = $('.header');
         const headerHeight = $header.outerHeight(true);
 
-        // $(document).ready(() => {
-        //     if ($('.header .search-tab').length) {
-        //         $('header').addClass('search-header');
-        //     } else {
-        //         $('header').removeClass('search-header');
-        //     }
-        // });
+        $(document).ready(() => {
+            // $('.serach-content');
+            // if ($('.header .search-tab').length) {
+            //     $('header').addClass('search-header');
+            // } else {
+            //     $('header').removeClass('search-header');
+            // }
+        });
 
         $(window).on('scroll', (e) => {
             console.log(headerHeight);
@@ -52,8 +54,36 @@ const ui = {
             $(this).parent('li').addClass('on').siblings('li').removeClass('on');
         });
     },
+    sch: () => {
+        const $delAll = $('.btn-all-del');
+        const $inpSearch = $('input[data-name="search"]');
+
+        $('.sch-latest-list li').each(function () {
+            const $btndel = $(this).find('.btn-del');
+
+            $btndel.on('click', () => {
+                $btndel.parent('li').remove();
+            });
+        });
+
+        $delAll.on('click', function () {
+            $('.sch-latest-list li').remove();
+            $(this).closest('.sch-latest-area').hide();
+        });
+
+        $inpSearch.on('input', function () {
+            if ($inpSearch.val().length >= 1) {
+                $('.sch-latest-area').hide();
+                $('.search-result-area').show();
+            } else {
+                $('.sch-latest-area').show();
+                $('.search-result-area').hide();
+            }
+        });
+    },
     top: () => {
         const $btnTop = $('.btn-top');
+
         $(window).scroll(function () {
             if ($(this).scrollTop() > 50) {
                 $('.quick_top').fadeIn();
