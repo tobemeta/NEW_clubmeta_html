@@ -373,3 +373,10 @@
         }
     }
 }
+//주소찾기 팝업
+.address-result-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    margin-top: 1.6rem;
+}
