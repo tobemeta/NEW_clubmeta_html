@@ -379,4 +379,23 @@
     flex-direction: column;
     gap: 1.6rem;
     margin-top: 1.6rem;
+    .card {
+        padding: 0;
+        box-sizing: border-box;
+        a {
+            display: block;
+            width: auto;
+            height: 100%;
+            padding: 1.6rem;
+        }
+        p {
+            color: $placeholder-color;
+        }
+    }
+    .no-data {
+        display: none;
+        font-size: 1.4rem;
+        line-height: 2rem;
+        color: $disabled-color;
+    }
 }
