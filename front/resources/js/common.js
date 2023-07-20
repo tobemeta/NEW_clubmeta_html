@@ -27,7 +27,6 @@ const ui = {
         });
 
         $(window).on('scroll', (e) => {
-            console.log(headerHeight);
             if ($(this).scrollTop() > headerHeight) {
                 $header.addClass('is-focus');
             } else {
@@ -36,12 +35,10 @@ const ui = {
 
             if (!scrolling) {
                 $header.addClass('up').css('top', -headerHeight + 'px');
-                console.log('start scrolling!');
             }
 
             clearTimeout(scrolling);
             scrolling = setTimeout(() => {
-                console.log('stop scrolling!');
                 $header.removeClass('up').css('top', 0);
 
                 scrolling = undefined;
@@ -93,7 +90,6 @@ const ui = {
             }
         });
         $btnTop.on('click', function () {
-            console.log(23);
             $('html, body').animate({ scrollTop: 0 }, 400);
         });
     },
@@ -515,9 +511,42 @@ const ui = {
     },
     etc: () => {
         const $btnMore = $('.btn-more');
+        const $batchNum = 5;
+        const $listWrap = $btnMore.closest('.section').find('.expand-list-box');
+        const $li = $listWrap.find('li');
 
-        $btnMore.on('click', function () {
-            console.log(23);
+        $li.hide();
+        $li.slice(0, $batchNum).show();
+        // Show the first batch of boxes
+
+        $btnMore.on('click', function (e) {
+            e.preventDefault();
+
+            // Counter to keep track of the current batch
+            let currentBatch = Math.ceil($li.filter(':visible').length / $batchNum);
+
+            const maxBatches = 4;
+
+            // Function to show the next batch of boxes
+            function showNextBatch() {
+                const start = currentBatch * $batchNum;
+                const end = start + $batchNum;
+
+                if (currentBatch >= maxBatches) {
+                    $btnMore.hide();
+                    return;
+                }
+
+                // Check if there are no more hidden li elements to show
+                if ($li.slice(start, end).filter(':hidden').length === 0) {
+                    $btnMore.hide();
+                    return;
+                }
+
+                $li.slice(start, end).show();
+                currentBatch++;
+            }
+            showNextBatch();
         });
     }
 };
