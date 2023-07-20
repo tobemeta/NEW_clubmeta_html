@@ -475,7 +475,7 @@ const ui = {
             let $layer = $(target);
 
             $layer.each(function () {
-                let $btnClose = $layer.find('.btn-pop-close');
+                let $btnClose = $layer.find('.btn-close', '.btn-pop-close');
                 let $btnConfirm = $layer.find('.btn-pop-confirm');
 
                 $layer.addClass('is-active');
@@ -509,44 +509,68 @@ const ui = {
         }
     },
     etc: () => {
-        const $btnMore = $('.btn-more');
-        const $batchNum = 5;
-        const $listWrap = $btnMore.closest('.section').find('.expand-list-box');
-        const $li = $listWrap.find('li');
+        function scrollBottom() {
+            const $scrollBottom = $(document).outerHeight(true);
 
-        $li.hide();
-        $li.slice(0, $batchNum).show();
-        // Show the first batch of boxes
+            $('html, body').stop(true).animate({ scrollTop: $scrollBottom }, 1000);
+        }
 
-        $btnMore.on('click', function (e) {
+        let $btnLoadmore = $('.btn-loadmore');
+        let $siblings = $btnLoadmore.parent().siblings();
+
+        $siblings.find('li').slice(0, 5).show();
+
+        $btnLoadmore.on('click', function (e) {
             e.preventDefault();
+            const $item = $(this).parent().siblings().find('li:hidden');
 
-            // Counter to keep track of the current batch
-            let currentBatch = Math.ceil($li.filter(':visible').length / $batchNum);
+            scrollBottom();
 
-            const maxBatches = 4;
+            $item.slice(0, 5).show();
 
-            // Function to show the next batch of boxes
-            function showNextBatch() {
-                const start = currentBatch * $batchNum;
-                const end = start + $batchNum;
-
-                if (currentBatch >= maxBatches) {
-                    $btnMore.hide();
-                    return;
-                }
-
-                // Check if there are no more hidden li elements to show
-                if ($li.slice(start, end).filter(':hidden').length === 0) {
-                    $btnMore.hide();
-                    return;
-                }
-
-                $li.slice(start, end).show();
-                currentBatch++;
+            if ($item.length == 0) {
+                $(this).parent().hide();
             }
-            showNextBatch();
         });
+
+        // const $btnMore = $('.btn-loadmore');
+        // const $batchNum = 5;
+        // const $listWrap = $btnMore.parent('.btn-box').siblings('.tag-list-box');
+        // const $li = $listWrap.find('li');
+
+        // $li.hide();
+        // $li.slice(0, $batchNum).show();
+        // // Show the first batch of boxes
+
+        // $btnMore.on('click', function (e) {
+        //     e.preventDefault();
+
+        //     // Counter to keep track of the current batch
+        //     let currentBatch = Math.ceil($li.filter(':visible').length / $batchNum);
+
+        //     const maxBatches = 4;
+
+        //     // Function to show the next batch of boxes
+        //     function showNextBatch() {
+        //         const start = currentBatch * $batchNum;
+        //         const end = start + $batchNum;
+
+        //         if (currentBatch >= maxBatches) {
+        //             $btnMore.hide();
+        //             return;
+        //         }
+
+        //         // Check if there are no more hidden li elements to show
+        //         if ($li.slice(start, end).filter(':hidden').length === 0) {
+        //             $btnMore.hide();
+        //             return;
+        //         }
+
+        //         $li.slice(start, end).show();
+        //         currentBatch++;
+        //     }
+        //     showNextBatch();
+        // });
     }
 };
 

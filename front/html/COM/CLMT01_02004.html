@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>검색 | 클럽메타</title>
+    <link rel="stylesheet" href="../../resources/css/common.min.css" />
+    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="header">
+            <div class="header-inner search">
+                <!-- 검색 시 search class 추가 -->
+                <div class="header-left">
+                    <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
+                </div>
+                <div class="header-center">
+                    <div class="input-box small">
+                        <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" />
+                        <button type="button" class="btn-inp-del" aria-label="입력내용삭제"><span
+                                class="blind">삭제</span></button>
+                    </div>
+                </div>
+                <div class="header-right"></div>
+            </div>
+            <div class="tab-wrap search-tab">
+                <div class="tab-items">
+                    <ul>
+                        <li><a href="../COM/CLMT01_02002.html" class="tab-button" role="button" title="인기"
+                                data-name="all">인기</a></li>
+                        <li><a href="../COM/CLMT01_02003.html" class="tab-button" role="button" title="챌린지"
+                                data-name="tab1">챌린지</a></li>
+                        <li><a href="../COM/CLMT01_02005.html" class="tab-button" role="button" title="음원"
+                                data-name="tab2">음원</a></li>
+                        <li class="on"><a href="../COM/CLMT01_02004.html" class="tab-button" role="button" title="유저"
+                                data-name="tab3">유저</a></li>
+                        <li><a href="../COM/CLMT01_02006.html" class="tab-button" role="button" title="태그"
+                                data-name="tab4">태그</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <!-- result-no : 데이터 없으시 serach-content에 class추가 -->
+        <!-- result-all : 전체인 경우 -->
+        <div class="contents serach-content">
+            <div class="sch-result-cont">
+                <div class="section">
+                    <div class="category-area r-user">
+                        <div class="inner">
+                            <div class="title-box">
+                                <h2 class="sub-title">유저</h2>
+                            </div>
+                            <div class="list-box user">
+                                <ul>
+                                    <li>
+                                        <a href="#none" role="button" title="유저 이동">
+                                            <div class="img">
+                                                <img src="../../resources/images/img/img_s_profile.png" alt="유저 이미지" />
+                                            </div>
+                                            <div class="info">
+                                                <strong>유저닉네임1</strong>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none" role="button" title="유저 이동">
+                                            <div class="img">
+                                                <img src="../../resources/images/img/img_artist_album_01.png"
+                                                    alt="유저 이미지" />
+                                            </div>
+                                            <div class="info">
+                                                <strong>유저닉네임1</strong>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none" role="button" title="유저 이동">
+                                            <div class="img">
+                                                <img src="../../resources/images/img/img_artist_album_01.png"
+                                                    alt="유저 이미지" />
+                                            </div>
+                                            <div class="info">
+                                                <strong>유저닉네임1</strong>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none" role="button" title="유저 이동">
+                                            <div class="img">
+                                                <img src="../../resources/images/img/img_artist_album_01.png"
+                                                    alt="유저 이미지" />
+                                            </div>
+                                            <div class="info">
+                                                <strong>유저닉네임1</strong>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none" role="button" title="유저 이동">
+                                            <div class="img">
+                                                <img src="../../resources/images/img/img_artist_album_01.png"
+                                                    alt="유저 이미지" />
+                                            </div>
+                                            <div class="info">
+                                                <strong>유저닉네임1</strong>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sch-result-nodata">
+                <p>"<span>풐ㄹ카</span>" 검색 결과 없음</p>
+            </div>
+        </div>
+
+        <div class="quick_top">
+            <button type="button" class="btn-top">TOP</button>
+        </div>
+    </div>
+</body>
+
+</html>

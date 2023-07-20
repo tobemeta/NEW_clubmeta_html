@@ -94,3 +94,93 @@ h1 {
         }
     }
 }
+
+.challenge-box {
+    &.small {
+        ul {
+            li {
+                height: 13.6rem;
+            }
+        }
+    }
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2.4rem 1.1rem;
+        li {
+            width: calc((100% - 2.2rem) / 3);
+            height: 18.8rem;
+            // min-width: 10.2rem;
+        }
+    }
+    a {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        .img {
+            width: 100%;
+            height: 13.6rem;
+            box-shadow: $shadow;
+            border-radius: 2.4rem;
+            overflow: hidden;
+            @include imgCenter();
+            img {
+                border-radius: 2.4rem;
+            }
+        }
+        .info {
+            margin-top: 0.8rem;
+            padding: 0 0.8rem;
+            span {
+                display: block;
+                position: relative;
+            }
+            .tag {
+                line-height: 2.3rem;
+                @include ellipsis();
+                &:before {
+                    display: inline-block;
+                    content: '#';
+                }
+            }
+            .user-info {
+                display: flex;
+                align-items: center;
+                margin-top: 0.4rem;
+            }
+            .user-name {
+                font-size: 1.2rem;
+                line-height: 1.7rem;
+                color: #585858;
+                @include ellipsis();
+                &:before {
+                    display: inline-block;
+                    content: '@';
+                }
+            }
+        }
+    }
+    .vinyl {
+        position: relative;
+        a {
+            height: 100%;
+
+            padding-top: 3.4rem;
+            box-sizing: border-box;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0rem;
+                display: block;
+                align-self: center;
+                width: 6.8rem;
+                height: 6.8rem;
+                @include bg($src: '../images/img/img_vinyl.png', $po: top);
+                background-size: contain;
+            }
+        }
+        .img {
+            height: 10.2rem;
+        }
+    }
+}
