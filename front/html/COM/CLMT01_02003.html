@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
         <meta name="HandheldFriendly" content="true" />
         <meta name="format-detection" content="telephone=no" />
-        <title>영상 리스트 | 클럽메타</title>
+        <title>검색 | 클럽메타</title>
         <link rel="stylesheet" href="../../resources/css/common.min.css" />
         <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
         <script src="../../resources/js/lib/jquery-ui.min.js"></script>
@@ -31,27 +31,117 @@
                 <div class="tab-wrap search-tab">
                     <div class="tab-items">
                         <ul>
-                            <li><a href="#tab1" class="tab-button" role="button" title="인기">인기</a></li>
-                            <li class="on"><a href="#tab1" class="tab-button" role="button" title="챌린지">챌린지</a></li>
-                            <li><a href="#tab1" class="tab-button" role="button" title="음원">음원</a></li>
-                            <li><a href="#tab1" class="tab-button" role="button" title="유저">유저</a></li>
-                            <li><a href="#tab1" class="tab-button" role="button" title="태그">태그</a></li>
+                            <li><a href="../COM/CLMT01_02002.html" class="tab-button" role="button" title="인기" data-name="all">인기</a></li>
+                            <li class="on"><a href="../COM/CLMT01_02003.html" class="tab-button" role="button" title="챌린지" data-name="tab1">챌린지</a></li>
+                            <li><a href="../COM/CLMT01_02005.html" class="tab-button" role="button" title="음원" data-name="tab2">음원</a></li>
+                            <li><a href="../COM/CLMT01_02004.html" class="tab-button" role="button" title="유저" data-name="tab3">유저</a></li>
+                            <li><a href="../COM/CLMT01_02006.html" class="tab-button" role="button" title="태그" data-name="tab4">태그</a></li>
                         </ul>
                     </div>
                 </div>
             </header>
-            <div class="contents serach-content" style="display: none">
-                <div class="section search-area">
-                    <div class="inner">
-                        <div class="search_result_nodate">
-                            <p>"<span>풐ㄹ카</span>" 검색 결과 없음</p>
+            <!-- result-no : 데이터 없으시 serach-content에 class추가 -->
+            <!-- result-all : 전체인 경우 -->
+            <div class="contents serach-content">
+                <div class="sch-result-cont">
+                    <div class="section ai-challenge">
+                        <div class="category-area card">
+                            <div class="inner">
+                                <div class="title-box">
+                                    <h2 class="sub-title">AI챌린지</h2>
+                                    <a href="#none" class="btn-go" role="button" title="이동"><span class="blind">AI챌린지 이동</span></a>
+                                </div>
+                                <div class="challenge-box scroll-box">
+                                    <ul>
+                                        <li>
+                                            <a href="#none">
+                                                <div class="img">
+                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png" alt="AI챌린지 이미지" />
+                                                </div>
+                                                <div class="info">
+                                                    <span class="tag">그린챌린지</span>
+                                                    <div class="user-info">
+                                                        <span class="user-img">
+                                                            <img src="../../resources/images/img/img_profile_example_04.png" alt="유저 프로필" />
+                                                        </span>
+                                                        <span class="user-name">유저닉네임1</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <div class="img">
+                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png" alt="AI챌린지 이미지" />
+                                                </div>
+                                                <div class="info">
+                                                    <span class="tag">그린챌린지</span>
+                                                    <div class="user-info">
+                                                        <span class="user-img">
+                                                            <img src="../../resources/images/img/img_profile_example_04.png" alt="유저 프로필" />
+                                                        </span>
+                                                        <span class="user-name">유저닉네임1</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <div class="img">
+                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png" alt="AI챌린지 이미지" />
+                                                </div>
+                                                <div class="info">
+                                                    <span class="tag">그린챌린지</span>
+                                                    <div class="user-info">
+                                                        <span class="user-img">
+                                                            <img src="../../resources/images/img/img_profile_example_04.png" alt="유저 프로필" />
+                                                        </span>
+                                                        <span class="user-name">유저닉네임1</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <div class="img">
+                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png" alt="AI챌린지 이미지" />
+                                                </div>
+                                                <div class="info">
+                                                    <span class="tag">그린챌린지</span>
+                                                    <div class="user-info">
+                                                        <span class="user-img">
+                                                            <img src="../../resources/images/img/img_profile_example_04.png" alt="유저 프로필" />
+                                                        </span>
+                                                        <span class="user-name">유저닉네임1</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <div class="img">
+                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png" alt="AI챌린지 이미지" />
+                                                </div>
+                                                <div class="info">
+                                                    <span class="tag">그린챌린지</span>
+                                                    <div class="user-info">
+                                                        <span class="user-img">
+                                                            <img src="../../resources/images/img/img_profile_example_04.png" alt="유저 프로필" />
+                                                        </span>
+                                                        <span class="user-name">유저닉네임1</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="contents serach-content search_result_content">
-                <div class="section">
-                    <div class="inner"></div>
+
+                <div class="sch-nodata">
+                    <p>"<span>풐ㄹ카</span>" 검색 결과 없음</p>
                 </div>
             </div>
 

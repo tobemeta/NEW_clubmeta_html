@@ -96,8 +96,7 @@ const ui = {
     tab: () => {
         const $tabBtn = $('.tab-button');
 
-        $tabBtn.off('click').on('click', function (e) {
-            e.preventDefault();
+        $tabBtn.off('click').on('click', function () {
             var data = $(this).data('target'),
                 id = $(this).attr('href'),
                 $tab = $(this).parent();
