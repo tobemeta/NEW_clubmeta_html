@@ -84,6 +84,12 @@ const ui = {
     top: () => {
         const $btnTop = $('.btn-top');
 
+        if ($btnTop.siblings('.fnb-wrap').length) {
+            $(this).add;
+        } else {
+            console.log(33);
+        }
+
         $(window).scroll(function () {
             if ($(this).scrollTop() > 50) {
                 $('.quick_top').fadeIn();
