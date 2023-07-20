@@ -154,6 +154,7 @@
             height: 18.8rem;
             box-shadow: $shadow;
             border-radius: 1.4rem;
+            overflow: hidden;
             @include imgCenter();
             img {
                 border-radius: 1.4rem;
@@ -210,6 +211,27 @@
                     content: '@';
                 }
             }
+        }
+    }
+    .vinyl {
+        position: relative;
+        a {
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                display: block;
+                align-self: center;
+                width: 66.6%;
+                height: 100%;
+                @include bg($src: '../images/img/img_vinyl.png', $po: top);
+                background-size: contain;
+            }
+        }
+
+        .img {
+            height: 14.1rem;
+            margin-top: 4.7rem;
         }
     }
 }
