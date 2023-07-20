@@ -23,6 +23,17 @@ body.login {
     }
 }
 
+.serach-content {
+    .section {
+        &:first-child {
+            margin-top: 0.8rem;
+        }
+    }
+    .btn-more {
+        color: #585858;
+    }
+}
+
 .contents {
     padding-bottom: 9.4rem;
     box-sizing: $sizing;
@@ -33,7 +44,7 @@ body.login {
     box-sizing: $sizing;
 
     & + .section {
-        margin-top: 2rem;
+        margin-top: 2.4rem;
     }
     &:last-child {
         padding-bottom: 7.2rem;
@@ -51,7 +62,7 @@ body.login {
 .quick_top {
     display: none;
     position: fixed;
-    bottom: 10rem;
+    bottom: 8rem;
     right: 1.6rem;
     transition: bottom 0.3s ease;
     font-size: 0;
@@ -68,6 +79,7 @@ body.login {
         box-sizing: $sizing;
         box-shadow: $shadow;
         font-size: 0.8rem;
+        z-index: 100;
 
         &:before {
             display: block;

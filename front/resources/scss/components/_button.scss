@@ -63,5 +63,7 @@
     height: 1.6rem;
 }
 
-.tooltip-wrap {
+.btn-more {
+    @include bg($src: '../images/ico/ico_more2.svg', $po: left);
+    padding-left: 2rem;
 }

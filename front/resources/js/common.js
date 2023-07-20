@@ -8,6 +8,7 @@ const ui = {
         _this.tab();
         _this.forms();
         _this.sch();
+        _this.etc();
         _this.tooltip.init();
         _this.select.init();
     },
@@ -511,6 +512,13 @@ const ui = {
                 });
             });
         }
+    },
+    etc: () => {
+        const $btnMore = $('.btn-more');
+
+        $btnMore.on('click', function () {
+            console.log(23);
+        });
     }
 };
 
