@@ -55,27 +55,44 @@ const ui = {
     sch: () => {
         const $delAll = $('.btn-all-del');
         const $inpSearch = $('input[data-name="search"]');
-
-        $('.sch-latest-list li').each(function () {
-            const $btndel = $(this).find('.btn-del');
-
-            $btndel.on('click', () => {
-                $btndel.parent('li').remove();
-            });
-        });
+        const latestidx = $('.sch-latest-list li');
 
         $delAll.on('click', function () {
             $('.sch-latest-list li').remove();
             $(this).closest('.sch-latest-area').hide();
         });
+        // 전체삭제
+
+        const btndel = $('.btn-del');
+        $(document).ready(function () {
+            var latestitems = $('.sch-latest-list li').length;
+
+            if (latestitems == 0) {
+                $('.sch-latest-area').hide();
+            }
+
+            btndel.on('click', function () {
+                $(this).parent('li').remove();
+                var latestitems = $('.sch-latest-list li').length;
+
+                if (latestitems == 0) {
+                    $('.sch-latest-area').hide();
+                }
+            });
+        });
+        // 최근검색어 없을때
 
         $inpSearch.on('input', function () {
             if ($inpSearch.val().length >= 1) {
                 $('.sch-latest-area').hide();
-                $('.search-result-area').show();
+                $('.sch-auto-area').show();
             } else {
-                $('.sch-latest-area').show();
-                $('.search-result-area').hide();
+                if ($('.sch-latest-list li').length == 0) {
+                    $('.sch-latest-area').hide();
+                } else {
+                    $('.sch-latest-area').show();
+                }
+                $('.sch-auto-area').hide();
             }
         });
     },
@@ -469,7 +486,7 @@ const ui = {
                     $toastPop.addClass('is-end');
                 });
         },
-        open: function (target) {
+        open: function (target, popOpen, param) {
             console.log('팝업열기 : ' + target.selector);
 
             let $layer = $(target);
@@ -477,100 +494,149 @@ const ui = {
             $layer.each(function () {
                 let $btnClose = $layer.find('.btn-close', '.btn-pop-close');
                 let $btnConfirm = $layer.find('.btn-pop-confirm');
+                // const callback = $layer.data('callback');
 
                 $layer.addClass('is-active');
-
-                setTimeout(function () {
-                    $layer.addClass('is-animation');
-                }, 100);
+                if (!$layer.hasClass('full')) {
+                    setTimeout(function () {
+                        $layer.addClass('is-animation');
+                    }, 100);
+                }
 
                 $btnClose.on('click', function (e) {
                     e.preventDefault();
-
-                    $layer.removeClass('is-animation');
-                    let eventEnd = () => {
+                    if ($layer.hasClass('full')) {
                         $layer.removeClass('is-active');
-                        $layer.off('transitionend', eventEnd);
-                    };
-                    $layer.on('transitionend', eventEnd);
+                    } else {
+                        $layer.removeClass('is-animation');
+                        let eventEnd = () => {
+                            $layer.removeClass('is-active');
+                            $layer.off('transitionend', eventEnd);
+                        };
+                        $layer.on('transitionend', eventEnd);
+                    }
                 });
 
                 $btnConfirm.on('click', function (e) {
                     e.preventDefault();
 
-                    $layer.removeClass('is-animation');
-                    let eventEnd = () => {
+                    if ($layer.hasClass('full')) {
                         $layer.removeClass('is-active');
-                        $layer.off('transitionend', eventEnd);
-                    };
-                    $layer.on('transitionend', eventEnd);
+                    } else {
+                        $layer.removeClass('is-animation');
+                        let eventEnd = () => {
+                            $layer.removeClass('is-active');
+                            $layer.off('transitionend', eventEnd);
+                        };
+                        $layer.on('transitionend', eventEnd);
+                    }
+
+                    //콜백함수 경우
+                    let callback = $layer.data('callback');
+
+                    if (callback) {
+                        ui.popup.close(target, popOpen);
+
+                        let callbackFunction = window[callback];
+
+                        if (typeof callbackFunction === 'function') {
+                            callbackFunction(target, popOpen, param);
+                        }
+                    }
                 });
+            });
+        },
+        close: function (target, popOpen, param, callback) {
+            console.log('팝업닫기 : ' + target.selector);
+        },
+        callbackPopup: function (message, callback) {
+            var popupHtml = `
+            <article class="layerpopup-box msg" role="dialog">
+                <div class="layer-popup msg-box">
+                    <p class="msg">${message}</p>
+                    <div class="btn-box">
+                        <button type="button" class="btn btn-primary btn-pop-confirm" title="확인">확인</button>
+                    </div>
+                </div>
+            </article>
+        `;
+
+            // 팝업 열기 함수 호출
+            this.open($(popupHtml), null, null);
+
+            // 확인 버튼 클릭 시 콜백 함수 실행
+            $('.btn-pop-confirm').on('click', function () {
+                ui.popup.close($(this).closest('.layerpopup-box'), null, null, callback);
             });
         }
     },
     etc: () => {
-        function scrollBottom() {
-            const $scrollBottom = $(document).outerHeight(true);
+        // function scrollBottom() {
+        //     const $scrollBottom = $(document).outerHeight(true);
 
-            $('html, body').stop(true).animate({ scrollTop: $scrollBottom }, 1000);
+        //     $('html, body').stop(true).animate({ scrollTop: $scrollBottom }, 1000);
+        // }
+
+        // let $btnLoadmore = $('.btn-loadmore');
+        // let $siblings = $btnLoadmore.parent().siblings();
+
+        // $siblings.find('li').slice(0, 5).show();
+
+        // $(document).ready(function () {
+        //     $btnLoadmore.on('click', function (e) {
+        //         e.preventDefault();
+
+        //         const $item = $('.tag-list-box li:hidden');
+
+        //         scrollBottom();
+
+        //         $item.slice(0, 5).show();
+
+        //         if ($item.length - 5 == 0) {
+        //             $(this).parent().hide();
+        //         }
+        //     });
+        // });
+
+        const $btnMore = $('.btn-loadmore');
+        const $batchNum = 5;
+        const $listWrap = $btnMore.closest('.tag-list-box').find('ul');
+        const $li = $listWrap.find('li');
+        $li.hide();
+        $li.slice(0, $batchNum).show();
+
+        if ($li.length <= 5) {
+            $btnMore.parent().hide();
         }
 
-        let $btnLoadmore = $('.btn-loadmore');
-        let $siblings = $btnLoadmore.parent().siblings();
+        function showNextBatch() {
+            const start = Math.ceil($li.filter(':visible').length / $batchNum) * $batchNum;
+            const end = start + $batchNum;
 
-        $siblings.find('li').slice(0, 5).show();
-
-        $btnLoadmore.on('click', function (e) {
-            e.preventDefault();
-            const $item = $(this).parent().siblings().find('li:hidden');
-
-            scrollBottom();
-
-            $item.slice(0, 5).show();
-
-            if ($item.length == 0) {
-                $(this).parent().hide();
+            if ($li.slice(start, end).filter(':hidden').length === 0) {
+                $btnMore.parent().hide();
+                return;
+            } else if ($li.slice(start, end).filter(':hidden').length < 5) {
+                $li.slice(start, end).show().parent().siblings().hide();
             }
+
+            $li.slice(start, end).show();
+
+            if ($li.filter(':visible').length >= 20) {
+                $btnMore.parent().hide();
+            }
+        }
+
+        function expandScroll() {
+            const $fScl = $(document).outerHeight();
+            $('html, body').stop().animate({ scrollTop: $fScl }, 1500);
+        }
+
+        $btnMore.on('click', function (e) {
+            e.preventDefault();
+            showNextBatch();
+            expandScroll();
         });
-
-        // const $btnMore = $('.btn-loadmore');
-        // const $batchNum = 5;
-        // const $listWrap = $btnMore.parent('.btn-box').siblings('.tag-list-box');
-        // const $li = $listWrap.find('li');
-
-        // $li.hide();
-        // $li.slice(0, $batchNum).show();
-        // // Show the first batch of boxes
-
-        // $btnMore.on('click', function (e) {
-        //     e.preventDefault();
-
-        //     // Counter to keep track of the current batch
-        //     let currentBatch = Math.ceil($li.filter(':visible').length / $batchNum);
-
-        //     const maxBatches = 4;
-
-        //     // Function to show the next batch of boxes
-        //     function showNextBatch() {
-        //         const start = currentBatch * $batchNum;
-        //         const end = start + $batchNum;
-
-        //         if (currentBatch >= maxBatches) {
-        //             $btnMore.hide();
-        //             return;
-        //         }
-
-        //         // Check if there are no more hidden li elements to show
-        //         if ($li.slice(start, end).filter(':hidden').length === 0) {
-        //             $btnMore.hide();
-        //             return;
-        //         }
-
-        //         $li.slice(start, end).show();
-        //         currentBatch++;
-        //     }
-        //     showNextBatch();
-        // });
     }
 };
 

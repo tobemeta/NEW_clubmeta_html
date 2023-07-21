@@ -58,24 +58,24 @@
                 <div class="section">
                     <div class="inner">
                         <div class="btn-box">
-                            <button type="button" class="btn btn-primary" onclick="ui.popup.open('#sampleViewPop')">레이어팝업</button>
-                            <button type="button" class="btn btn-primary" onclick="ui.popup.open('#fullViewPop')">레이어팝업</button>
+                            <button type="button" class="btn btn-primary" onclick="ui.popup.open('#sampleViewPop')">바텀팝업</button>
+                            <button type="button" class="btn btn-primary" onclick="ui.popup.open('#fullViewPop')">풀팝업</button>
                         </div>
                     </div>
                 </div>
                 <div class="section">
                     <div class="inner">
                         <div class="btn-box">
-                            <button type="button" class="btn btn-primary" onclick="ui.popup.toast('#toastPop')">토스트팝업</button>
-                            <button type="button" class="btn btn-primary" onclick="ui.popup.toast('#toastPop2')">토스트팝업</button>
+                            <button type="button" class="btn btn-primary" onclick="ui.popup.toast('#toastPop')">상단 토스트팝업</button>
+                            <button type="button" class="btn btn-primary" onclick="ui.popup.toast('#toastPop2')">상단 토스트팝업</button>
                         </div>
                     </div>
                 </div>
                 <div class="section">
                     <div class="inner">
                         <div class="btn-box">
-                            <button type="button" class="btn btn-primary" onclick="ui.popup.toast('#toastPop3')">토스트팝업</button>
-                            <button type="button" class="btn btn-primary" onclick="ui.popup.toast('#toastPop4')">토스트팝업</button>
+                            <button type="button" class="btn btn-primary" onclick="ui.popup.toast('#toastPop3')">하단 토스트팝업</button>
+                            <button type="button" class="btn btn-primary" onclick="ui.popup.toast('#toastPop4')">하단 토스트팝업</button>
                         </div>
                     </div>
                 </div>
@@ -94,6 +94,8 @@
         </div>
     </body>
 </html>
+
+<script></script>
 
 <!-- 팝업 -->
 <article class="layerpopup-box msg" id="msgBox" role="dialog">
@@ -135,7 +137,7 @@
     <!-- //layer-popup -->
 </article>
 
-<article class="layerpopup-box full" id="fullViewPop" role="dialog">
+<article class="layerpopup-box full" id="fullViewPop" role="dialog" data-callback="cbFun">
     <div class="layer-popup login">
         <header class="layer-header">
             <div class="header-inner">
