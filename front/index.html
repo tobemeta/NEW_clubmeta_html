@@ -17,8 +17,12 @@
 
             #wrap {
                 padding: 10px;
+                min-width: 1080px;
             }
-
+            .flex {
+                display: flex;
+                flex-direction: column;
+            }
             .tltW {
                 position: relative;
             }
@@ -33,14 +37,16 @@
             }
 
             .updateW {
+                flex: 1;
                 display: flex;
-                position: absolute;
+                justify-content: end;
+                /* position: absolute;
                 right: 10px;
-                top: 0;
+                top: 0; */
                 height: 30px;
                 line-height: 30px;
                 font-size: 12px;
-                color: #fff;
+                /* color: #fff; */
             }
 
             .updateW p + p:before {
@@ -68,7 +74,7 @@
             table {
                 table-layout: fixed;
                 width: 100%;
-                min-width: 1440px;
+                min-width: 1080px;
                 border-collapse: collapse;
                 border-spacing: 0;
             }
@@ -170,15 +176,18 @@
 
     <body>
         <div id="wrap">
-            <div class="tltW">
-                <h1>클럽메타 - 퍼블리스트</h1>
+            <div class="flex">
+                <div class="tltW">
+                    <h1>클럽메타 - 퍼블리스트</h1>
+                </div>
                 <div class="updateW">
                     <p class="page">화면 (완료 / 전체) : <span class="cnt">0</span> / <span class="total">0</span></p>
                     <p class="update">업데이트 : <span></span></p>
                     <!-- <p class="link"><a href="download.html" title="파일 다운로드 바로가기">다운로드</a></p> -->
                 </div>
+                <p class="notice">※ 업데이트일자와 완료일자가 같은 경우 파란색으로 표시(신규페이지) / 화면전체는 목록상 전체</p>
             </div>
-            <p class="notice">※ 업데이트일자와 완료일자가 같은 경우 파란색으로 표시(신규페이지) / 화면전체는 목록상 전체</p>
+
             <div id="menuTable"></div>
         </div>
     </body>
