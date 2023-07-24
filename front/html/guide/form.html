@@ -1,383 +1,392 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-        <meta name="HandheldFriendly" content="true" />
-        <meta name="format-detection" content="telephone=no" />
-        <title>폼요소 | 클럽메타</title>
-        <link rel="stylesheet" href="../../resources/css/common.min.css" />
-        <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
-        <script src="../../resources/js/lib/jquery-ui.min.js"></script>
-        <script src="../../resources/js/common.js"></script>
-    </head>
-    <body>
-        <div class="wrap">
-            <header class="header">
-                <div class="header-inner">
-                    <div class="header-left">
-                        <button class="btn-back" title="뒤로가기">뒤로가기</button>
-                    </div>
-                    <div class="header-center">
-                        <h1 class="header-title">폼요소</h1>
-                        <!-- <div class="input-box">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>폼요소 | 클럽메타</title>
+    <link rel="stylesheet" href="../../resources/css/common.min.css" />
+    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="header">
+            <div class="header-inner">
+                <div class="header-left">
+                    <button class="btn-back" title="뒤로가기">뒤로가기</button>
+                </div>
+                <div class="header-center">
+                    <h1 class="header-title">폼요소</h1>
+                    <!-- <div class="input-box">
                             <input type="text" placeholder="전화번호 또는 이메일" />
                         </div> -->
-                    </div>
-                    <div class="header-right">
-                        <button type="button" class="btn-search" title="검색">돋보기</button>
-                        <!-- <button type="button" class="btn-close" title="닫기">닫기</button> -->
-                    </div>
                 </div>
-            </header>
-            <div class="contents">
-                <div class="section">
-                    <div class="inner">
-                        <h1 class="title">폼요소</h1>
-                        <div class="form-box mt-20">
-                            <h2 class="sub-title">Default</h2>
-                            <form action="">
-                                <fieldset>
-                                    <dl>
-                                        <dt><label for="f1">default</label></dt>
-                                        <dd>
-                                            <div class="input-box">
-                                                <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" />
-                                                <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
-                                            </div>
-                                        </dd>
-                                    </dl>
-                                    <dl>
-                                        <dt><label for="f2">focus</label></dt>
-                                        <dd>
-                                            <div class="input-box">
-                                                <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" />
-                                                <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
-                                            </div>
-                                        </dd>
-                                    </dl>
-                                    <dl>
-                                        <dt><label for="f3">filled</label></dt>
-                                        <dd>
-                                            <div class="input-box">
-                                                <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" />
-                                                <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
-                                            </div>
-                                        </dd>
-                                    </dl>
-                                    <dl>
-                                        <dt><label for="f4">error</label></dt>
-                                        <dd>
-                                            <div class="input-box error">
-                                                <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" />
-                                                <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
-                                                <span class="validate-txt is-error">전화번호를 입력하세요.</span>
-                                            </div>
-                                        </dd>
-                                    </dl>
-                                    <dl>
-                                        <dt><label for="f5">disable</label></dt>
-                                        <dd>
-                                            <div class="input-box">
-                                                <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" value="전화번호 또는 이메일" disabled />
-                                                <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
-                                            </div>
-                                        </dd>
-                                    </dl>
-                                    <dl>
-                                        <dt><label for="f5">password</label></dt>
-                                        <dd>
-                                            <div class="input-box inp-pw">
-                                                <input type="password" placeholder="전화번호 또는 이메일" title="내용입력" />
-                                                <button type="button" class="btn-inp-pw"><span class="blind">보이기</span></button>
-                                                <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
-                                            </div>
-                                        </dd>
-                                    </dl>
-                                </fieldset>
-                            </form>
-                        </div>
-                    </div>
+                <div class="header-right">
+                    <button type="button" class="btn-search" title="검색">돋보기</button>
+                    <!-- <button type="button" class="btn-close" title="닫기">닫기</button> -->
                 </div>
-                <div class="section">
-                    <div class="inner">
-                        <div class="form-box">
-                            <h2 class="sub-title">Ico</h2>
-                            <dl>
-                                <dt><label for="f1">default</label></dt>
-                                <dd>
-                                    <div class="input-box ico">
-                                        <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" />
-                                        <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
-                                        <button></button>
-                                    </div>
-                                </dd>
-                            </dl>
-                            <dl>
-                                <dt><label for="f2">focus</label></dt>
-                                <dd>
-                                    <div class="input-box">
-                                        <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" />
-                                        <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
-                                    </div>
-                                </dd>
-                            </dl>
-                            <dl>
-                                <dt><label for="f3">filled</label></dt>
-                                <dd>
-                                    <div class="input-box">
-                                        <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" />
-                                        <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
-                                    </div>
-                                </dd>
-                            </dl>
-                            <dl>
-                                <dt><label for="f4">error</label></dt>
-                                <dd>
-                                    <div class="input-box error">
-                                        <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" />
-                                        <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
-                                    </div>
-                                </dd>
-                            </dl>
-                            <dl>
-                                <dt><label for="f5">disable</label></dt>
-                                <dd>
-                                    <div class="input-box">
-                                        <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" value="전화번호 또는 이메일" disabled />
-                                        <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
-                                    </div>
-                                </dd>
-                            </dl>
-                        </div>
-                    </div>
+            </div>
+        </header>
+        <div class="contents">
+            <div class="tab-wrap">
+                <div class="tab-items" style="margin: 0">
+                    <ul>
+                        <li><a href="../guide/font.html">텍스트</a></li>
+                        <li><a href="../guide/button.html">버튼</a></li>
+                        <li class="on"><a href="../guide/form.html">폼요소</a></li>
+                        <li><a href="../guide/popup.html">팝업</a></li>
+                        <li><a href="../guide/tab.html">탭</a></li>
+                        <li><a href="../guide/tooltip.html">툴팁</a></li>
+                    </ul>
                 </div>
-                <div class="section">
-                    <div class="inner">
-                        <div class="form-box">
-                            <h2 class="sub-title">Small</h2>
-                            <dl>
-                                <dt><label for="f1">default</label></dt>
-                                <dd>
-                                    <div class="input-box">
-                                        <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" />
-                                        <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
-                                    </div>
-                                </dd>
-                            </dl>
-                            <dl>
-                                <dt><label for="f2">focus</label></dt>
-                                <dd>
-                                    <div class="input-box">
-                                        <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" />
-                                        <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
-                                    </div>
-                                </dd>
-                            </dl>
-                            <dl>
-                                <dt><label for="f3">filled</label></dt>
-                                <dd>
-                                    <div class="input-box">
-                                        <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" />
-                                        <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
-                                    </div>
-                                </dd>
-                            </dl>
-                            <dl>
-                                <dt><label for="f4">error</label></dt>
-                                <dd>
-                                    <div class="input-box error">
-                                        <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" />
-                                        <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
-                                    </div>
-                                </dd>
-                            </dl>
-                            <dl>
-                                <dt><label for="f5">disable</label></dt>
-                                <dd>
-                                    <div class="input-box">
-                                        <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" value="전화번호 또는 이메일" disabled />
-                                        <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
-                                    </div>
-                                </dd>
-                            </dl>
-                        </div>
-                    </div>
-                </div>
-                <div class="section">
-                    <div class="inner">
-                        <div class="text-box">
-                            <textarea name="" id="" cols="30" rows="10" class="textarea" placeholder="텍스트를 입력하세요"></textarea>
-                            <span class="byte">0 / 100</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="section">
-                    <div class="inner">
-                        <div class="select-box">
-                            <select title="옵션선택">
-                                <option value="">최신순</option>
-                                <option value="1">옵션1</option>
-                                <option value="2">옵션2</option>
-                                <option value="3">옵션3</option>
-                                <option value="4">옵션4</option>
-                                <option value="5">옵션5</option>
-                            </select>
-                        </div>
-                        <div class="select-box mt-4">
-                            <select title="옵션선택" class="select-pop">
-                                <option value="">팝업으로 선택</option>
-                                <option value="1">옵션1</option>
-                                <option value="2">옵션2</option>
-                                <option value="3">옵션3</option>
-                                <option value="4">옵션4옵션4옵션4옵션4옵션4</option>
-                                <option value="5">옵션5옵션5옵션5옵션5</option>
-                                <option value="6">옵션5옵션5옵션5옵션5</option>
-                                <option value="7">옵션5옵션5옵션5옵션5</option>
-                                <option value="8">옵션5옵션5옵션5옵션5</option>
-                                <option value="9">옵션5옵션5옵션5옵션5</option>
-                                <option value="10">옵션5옵션5옵션5옵션5</option>
-                            </select>
-                        </div>
-                        <div class="select-box mt-20">
-                            <div class="select-sort"></div>
-                            <select title="옵션선택">
-                                <option value="">최신순</option>
-                                <option value="1">옵션1</option>
-                                <option value="2">옵션2</option>
-                                <option value="3">옵션3</option>
-                                <option value="4">옵션4</option>
-                                <option value="5">옵션5</option>
-                            </select>
-                        </div>
-                        <div class="select-box mt-4">
-                            <div class="select-sort"></div>
-                            <select title="옵션선택" class="select-pop">
-                                <option value="">팝업으로 선택</option>
-                                <option value="1">옵션1</option>
-                                <option value="2">옵션2</option>
-                                <option value="3">옵션3</option>
-                                <option value="4">옵션4옵션4옵션4옵션4옵션4</option>
-                                <option value="5">옵션5옵션5옵션5옵션5</option>
-                                <option value="6">옵션5옵션5옵션5옵션5</option>
-                                <option value="7">옵션5옵션5옵션5옵션5</option>
-                                <option value="8">옵션5옵션5옵션5옵션5</option>
-                                <option value="9">옵션5옵션5옵션5옵션5</option>
-                                <option value="10">옵션5옵션5옵션5옵션5</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="section">
-                    <div class="inner">
-                        <ul>
-                            <li class="mt-8">
-                                <div class="chk-box">
-                                    <input type="checkbox" id="chk1_1" />
-                                    <label for="chk1_1">텍스트와의 간격은 8</label>
-                                </div>
-                            </li>
-                            <li class="mt-8">
-                                <div class="chk-box">
-                                    <input type="checkbox" id="chk1_2" checked />
-                                    <label for="chk1_2">텍스트와의 간격은 8</label>
-                                </div>
-                            </li>
-                            <li class="mt-8">
-                                <div class="chk-box">
-                                    <input type="checkbox" id="chk1_3" checked disabled />
-                                    <label for="chk1_3">텍스트와의 간격은 8</label>
-                                </div>
-                            </li>
-                            <li class="mt-8">
-                                <div class="chk-box">
-                                    <input type="checkbox" id="chk1_4" disabled />
-                                    <label for="chk1_4">텍스트와의 간격은 8</label>
-                                </div>
-                            </li>
-                            <li class="mt-8">
-                                <div class="chk-box toggle-cate">
-                                    <input type="checkbox" id="chk1_5" />
-                                    <label for="chk1_5">재즈</label>
-                                </div>
-                            </li>
-                            <li class="mt-8">
-                                <div class="chk-box toggle-cate">
-                                    <input type="checkbox" id="chk1_6" checked />
-                                    <label for="chk1_6">재즈</label>
-                                </div>
-                            </li>
-                            <li class="mt-8">
-                                <div class="chk-box toggle">
-                                    <input type="checkbox" id="chk1_7" />
-                                    <label for="chk1_7"></label>
-                                </div>
-                            </li>
-                            <li class="mt-8">
-                                <div class="chk-box toggle">
-                                    <input type="checkbox" id="chk1_8" checked />
-                                    <label for="chk1_8"></label>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="section">
-                    <div class="inner">
-                        <ul>
-                            <li class="mt-8">
-                                <div class="rdo-box">
-                                    <input type="radio" id="rdo1_1" />
-                                    <label for="rdo1_1">텍스트와의 간격은 8</label>
-                                </div>
-                            </li>
-                            <li class="mt-8">
-                                <div class="rdo-box">
-                                    <input type="radio" id="rdo1_2" checked />
-                                    <label for="rdo1_2">텍스트와의 간격은 8</label>
-                                </div>
-                            </li>
-                            <li class="mt-8">
-                                <div class="rdo-box">
-                                    <input type="radio" id="rdo1_3" checked disabled />
-                                    <label for="rdo1_3">텍스트와의 간격은 8</label>
-                                </div>
-                            </li>
-                            <li class="mt-8">
-                                <div class="rdo-box">
-                                    <input type="radio" id="rdo1_4" disabled />
-                                    <label for="rdo1_4">텍스트와의 간격은 8</label>
-                                </div>
-                            </li>
-                            <li class="mt-8">
-                                <div class="rdo-box cell">
-                                    <input type="radio" id="rdo1_5" />
-                                    <label for="rdo1_5">선택항목</label>
-                                </div>
-                            </li>
-                            <li class="mt-8">
-                                <div class="rdo-box cell">
-                                    <input type="radio" id="rdo1_6" checked />
-                                    <label for="rdo1_6">선택항목</label>
-                                </div>
-                            </li>
-                        </ul>
+            </div>
+            <div class="section">
+                <div class="inner">
+                    <h1 class="title">폼요소</h1>
+                    <div class="form-box mt-20">
+                        <h2 class="sub-title">Default</h2>
+                        <form action="">
+                            <fieldset>
+                                <dl>
+                                    <dt><label for="f1">default</label></dt>
+                                    <dd>
+                                        <div class="input-box">
+                                            <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" />
+                                            <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt><label for="f2">focus</label></dt>
+                                    <dd>
+                                        <div class="input-box">
+                                            <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" />
+                                            <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt><label for="f3">filled</label></dt>
+                                    <dd>
+                                        <div class="input-box">
+                                            <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" />
+                                            <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt><label for="f4">error</label></dt>
+                                    <dd>
+                                        <div class="input-box error">
+                                            <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" />
+                                            <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
+                                            <span class="validate-txt is-error">전화번호를 입력하세요.</span>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt><label for="f5">disable</label></dt>
+                                    <dd>
+                                        <div class="input-box">
+                                            <input type="text" placeholder="전화번호 또는 이메일" title="내용입력"
+                                                value="전화번호 또는 이메일" disabled />
+                                            <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt><label for="f5">password</label></dt>
+                                    <dd>
+                                        <div class="input-box inp-pw">
+                                            <input type="password" placeholder="전화번호 또는 이메일" title="내용입력" />
+                                            <button type="button" class="btn-inp-pw"><span
+                                                    class="blind">보이기</span></button>
+                                            <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </fieldset>
+                        </form>
                     </div>
                 </div>
             </div>
-
-            <div class="fnb-wrap">
-                <div class="nav">
+            <div class="section">
+                <div class="inner">
+                    <div class="form-box">
+                        <h2 class="sub-title">Ico</h2>
+                        <dl>
+                            <dt><label for="f1">default</label></dt>
+                            <dd>
+                                <div class="input-box ico">
+                                    <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" />
+                                    <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
+                                    <button></button>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt><label for="f2">focus</label></dt>
+                            <dd>
+                                <div class="input-box">
+                                    <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" />
+                                    <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt><label for="f3">filled</label></dt>
+                            <dd>
+                                <div class="input-box">
+                                    <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" />
+                                    <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt><label for="f4">error</label></dt>
+                            <dd>
+                                <div class="input-box error">
+                                    <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" />
+                                    <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt><label for="f5">disable</label></dt>
+                            <dd>
+                                <div class="input-box">
+                                    <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" value="전화번호 또는 이메일"
+                                        disabled />
+                                    <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="inner">
+                    <div class="form-box">
+                        <h2 class="sub-title">Small</h2>
+                        <dl>
+                            <dt><label for="f1">default</label></dt>
+                            <dd>
+                                <div class="input-box">
+                                    <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" />
+                                    <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt><label for="f2">focus</label></dt>
+                            <dd>
+                                <div class="input-box">
+                                    <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" />
+                                    <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt><label for="f3">filled</label></dt>
+                            <dd>
+                                <div class="input-box">
+                                    <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" />
+                                    <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt><label for="f4">error</label></dt>
+                            <dd>
+                                <div class="input-box error">
+                                    <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" />
+                                    <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt><label for="f5">disable</label></dt>
+                            <dd>
+                                <div class="input-box">
+                                    <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" value="전화번호 또는 이메일"
+                                        disabled />
+                                    <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="inner">
+                    <div class="text-box">
+                        <textarea name="" id="" cols="30" rows="10" class="textarea"
+                            placeholder="텍스트를 입력하세요"></textarea>
+                        <span class="byte">0 / 100</span>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="inner">
+                    <div class="select-box">
+                        <select title="옵션선택">
+                            <option value="">최신순</option>
+                            <option value="1">옵션1</option>
+                            <option value="2">옵션2</option>
+                            <option value="3">옵션3</option>
+                            <option value="4">옵션4</option>
+                            <option value="5">옵션5</option>
+                        </select>
+                    </div>
+                    <div class="select-box mt-4">
+                        <select title="옵션선택" class="select-pop">
+                            <option value="">팝업으로 선택</option>
+                            <option value="1">옵션1</option>
+                            <option value="2">옵션2</option>
+                            <option value="3">옵션3</option>
+                            <option value="4">옵션4옵션4옵션4옵션4옵션4</option>
+                            <option value="5">옵션5옵션5옵션5옵션5</option>
+                            <option value="6">옵션5옵션5옵션5옵션5</option>
+                            <option value="7">옵션5옵션5옵션5옵션5</option>
+                            <option value="8">옵션5옵션5옵션5옵션5</option>
+                            <option value="9">옵션5옵션5옵션5옵션5</option>
+                            <option value="10">옵션5옵션5옵션5옵션5</option>
+                        </select>
+                    </div>
+                    <div class="select-box mt-20">
+                        <div class="select-sort"></div>
+                        <select title="옵션선택">
+                            <option value="">최신순</option>
+                            <option value="1">옵션1</option>
+                            <option value="2">옵션2</option>
+                            <option value="3">옵션3</option>
+                            <option value="4">옵션4</option>
+                            <option value="5">옵션5</option>
+                        </select>
+                    </div>
+                    <div class="select-box mt-4">
+                        <div class="select-sort"></div>
+                        <select title="옵션선택" class="select-pop">
+                            <option value="">팝업으로 선택</option>
+                            <option value="1">옵션1</option>
+                            <option value="2">옵션2</option>
+                            <option value="3">옵션3</option>
+                            <option value="4">옵션4옵션4옵션4옵션4옵션4</option>
+                            <option value="5">옵션5옵션5옵션5옵션5</option>
+                            <option value="6">옵션5옵션5옵션5옵션5</option>
+                            <option value="7">옵션5옵션5옵션5옵션5</option>
+                            <option value="8">옵션5옵션5옵션5옵션5</option>
+                            <option value="9">옵션5옵션5옵션5옵션5</option>
+                            <option value="10">옵션5옵션5옵션5옵션5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="inner">
                     <ul>
-                        <li class="on"><a href="#none" role="button" class="btn-home">홈</a></li>
-                        <li><a href="#none" role="button" class="btn-klip">클립</a></li>
-                        <li><a href="#none" role="button" class="btn-shot">촬영</a></li>
-                        <li><a href="#none" role="button" class="btn-music">음악</a></li>
-                        <li><a href="#none" role="button" class="btn-user">마이</a></li>
+                        <li class="mt-8">
+                            <div class="chk-box">
+                                <input type="checkbox" id="chk1_1" />
+                                <label for="chk1_1">텍스트와의 간격은 8</label>
+                            </div>
+                        </li>
+                        <li class="mt-8">
+                            <div class="chk-box">
+                                <input type="checkbox" id="chk1_2" checked />
+                                <label for="chk1_2">텍스트와의 간격은 8</label>
+                            </div>
+                        </li>
+                        <li class="mt-8">
+                            <div class="chk-box">
+                                <input type="checkbox" id="chk1_3" checked disabled />
+                                <label for="chk1_3">텍스트와의 간격은 8</label>
+                            </div>
+                        </li>
+                        <li class="mt-8">
+                            <div class="chk-box">
+                                <input type="checkbox" id="chk1_4" disabled />
+                                <label for="chk1_4">텍스트와의 간격은 8</label>
+                            </div>
+                        </li>
+                        <li class="mt-8">
+                            <div class="chk-box toggle-cate">
+                                <input type="checkbox" id="chk1_5" />
+                                <label for="chk1_5">재즈</label>
+                            </div>
+                        </li>
+                        <li class="mt-8">
+                            <div class="chk-box toggle-cate">
+                                <input type="checkbox" id="chk1_6" checked />
+                                <label for="chk1_6">재즈</label>
+                            </div>
+                        </li>
+                        <li class="mt-8">
+                            <div class="chk-box toggle">
+                                <input type="checkbox" id="chk1_7" />
+                                <label for="chk1_7"></label>
+                            </div>
+                        </li>
+                        <li class="mt-8">
+                            <div class="chk-box toggle">
+                                <input type="checkbox" id="chk1_8" checked />
+                                <label for="chk1_8"></label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <div class="inner">
+                    <ul>
+                        <li class="mt-8">
+                            <div class="rdo-box">
+                                <input type="radio" id="rdo1_1" />
+                                <label for="rdo1_1">텍스트와의 간격은 8</label>
+                            </div>
+                        </li>
+                        <li class="mt-8">
+                            <div class="rdo-box">
+                                <input type="radio" id="rdo1_2" checked />
+                                <label for="rdo1_2">텍스트와의 간격은 8</label>
+                            </div>
+                        </li>
+                        <li class="mt-8">
+                            <div class="rdo-box">
+                                <input type="radio" id="rdo1_3" checked disabled />
+                                <label for="rdo1_3">텍스트와의 간격은 8</label>
+                            </div>
+                        </li>
+                        <li class="mt-8">
+                            <div class="rdo-box">
+                                <input type="radio" id="rdo1_4" disabled />
+                                <label for="rdo1_4">텍스트와의 간격은 8</label>
+                            </div>
+                        </li>
+                        <li class="mt-8">
+                            <div class="rdo-box cell">
+                                <input type="radio" id="rdo1_5" />
+                                <label for="rdo1_5">선택항목</label>
+                            </div>
+                        </li>
+                        <li class="mt-8">
+                            <div class="rdo-box cell">
+                                <input type="radio" id="rdo1_6" checked />
+                                <label for="rdo1_6">선택항목</label>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
-    </body>
-    <script></script>
+    </div>
+</body>
+<script></script>
+
 </html>

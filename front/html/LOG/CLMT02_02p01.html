@@ -1,40 +1,47 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-        <meta name="HandheldFriendly" content="true" />
-        <meta name="format-detection" content="telephone=no" />
-        <title>주소 검색 | 클럽메타</title>
-        <link rel="stylesheet" href="../../resources/css/common.min.css" />
-        <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
-        <script src="../../resources/js/lib/jquery-ui.min.js"></script>
-        <script src="../../resources/js/common.js"></script>
-    </head>
-    <body>
-        <article class="layerpopup-box full is-active is-animation" id="fullViewPop" role="dialog">
-            <div class="layer-popup login">
-                <header class="layer-header">
-                    <div class="header-inner">
-                        <div class="header-left"><h1 class="pop-title">주소검색</h1></div>
-                        <div class="header-center"></div>
-                        <div class="header-right">
-                            <button type="button" class="btn-close" title="레이어팝업 닫기">닫기</button>
-                        </div>
-                    </div>
-                </header>
 
-                <div class="layer-content">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>주소 검색 | 클럽메타</title>
+    <link rel="stylesheet" href="../../resources/css/common.min.css" />
+    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+</head>
+
+<body>
+    <article class="layerpopup-box full is-active is-animation" id="fullViewPop" role="dialog">
+        <div class="layer-popup address">
+            <header class="layer-header">
+                <div class="header-inner">
+                    <div class="header-left">
+                        <h1 class="pop-title">주소검색</h1>
+                    </div>
+                    <div class="header-center"></div>
+                    <div class="header-right">
+                        <button type="button" class="btn-close btn-pop-close" title="레이어팝업 닫기">닫기</button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="layer-content">
+                <div class="inner">
                     <div class="form-box">
                         <form action="">
                             <fieldset>
                                 <div class="input-box">
-                                    <input type="text" title="내용입력" placeholder="지번, 도로명, 건물명으로 검색" />
+                                    <input type="search" title="내용입력" placeholder="지번, 도로명, 건물명으로 검색" />
                                 </div>
                             </fieldset>
                         </form>
                     </div>
-                    <div class="body-title mt-24"><strong>&lsquo;OOO&rsquo;</strong> 에 대한 검색 결과 (<span>2</span>)</div>
+                    <div class="body-title mt-24"><strong>&lsquo;<span>OOO</span>&rsquo;</strong> 에 대한 검색 결과
+                        (<span>2</span>)</div>
                     <div class="address-result-box">
                         <div class="card small">
                             <a href="#none" role="button" title="주소 선택">
@@ -51,9 +58,11 @@
                         <div class="no-data">검색 결과가 없습니다. 다시 확인해주세요.</div>
                     </div>
                 </div>
-                <!-- //layer-content -->
             </div>
-            <!-- //layer-popup -->
-        </article>
-    </body>
+            <!-- //layer-content -->
+        </div>
+        <!-- //layer-popup -->
+    </article>
+</body>
+
 </html>

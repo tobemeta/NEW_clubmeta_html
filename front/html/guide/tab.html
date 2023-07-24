@@ -1,287 +1,312 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-        <meta name="HandheldFriendly" content="true" />
-        <meta name="format-detection" content="telephone=no" />
-        <title>탭 | 클럽메타</title>
-        <link rel="stylesheet" href="../../resources/css/common.min.css" />
-        <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
-        <script src="../../resources/js/lib/jquery-ui.min.js"></script>
-        <script src="../../resources/js/common.js"></script>
-    </head>
-    <body>
-        <div class="wrap">
-            <header class="header">
-                <div class="header-inner">
-                    <div class="header-left">
-                        <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
-                    </div>
-                    <div class="header-center">
-                        <h1 class="header-title">탭</h1>
-                    </div>
-                    <div class="header-right"><a href="#none" class="btn-search" role="button" title="검색">돋보기</a></div>
-                </div>
 
-                <!-- <a href="#none" class="btn-close" role="button">닫기</a> -->
-                <!-- <div class="input-box small">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>탭 | 클럽메타</title>
+    <link rel="stylesheet" href="../../resources/css/common.min.css" />
+    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="header">
+            <div class="header-inner">
+                <div class="header-left">
+                    <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
+                </div>
+                <div class="header-center">
+                    <h1 class="header-title">탭</h1>
+                </div>
+                <div class="header-right"><a href="#none" class="btn-search" role="button" title="검색">돋보기</a></div>
+            </div>
+
+            <!-- <a href="#none" class="btn-close" role="button">닫기</a> -->
+            <!-- <div class="input-box small">
                     <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" />
                     <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
                 </div> -->
-            </header>
-            <div class="contents">
-                <div class="tab-wrap">
-                    <div class="tab-items" style="margin: 0">
-                        <ul>
-                            <li><a href="#none">텍스트</a></li>
-                            <li><a href="#none">버튼</a></li>
-                            <li><a href="#none">폼요소</a></li>
-                            <li><a href="#none">팝업</a></li>
-                            <li class="on"><a href="#none">탭</a></li>
-                            <li><a href="#none">툴팁</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="section">
-                    <div class="inner">
-                        <div class="title-box">
-                            <h2 class="sub-title">탭</h2>
-                        </div>
-                        <div class="tab-wrap">
-                            <div class="tab-items">
-                                <ul>
-                                    <li class="on">
-                                        <!-- <button type="button" class="tab-button" aria-label="tab1" data-target="#tab1">tab1</button> -->
-                                        <a href="#tab1" class="tab-button" role="button" title="tab1">tab1</a>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="tab-button" aria-label="tab2" data-target="#tab2">tab2</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="tab-button" aria-label="tab3" data-target="#tab3">tab3</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="tab-button" aria-label="tab4" data-target="#tab4">tab4</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="tab-button" aria-label="tab5" data-target="#tab5">tab5</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="tab-button" aria-label="tab6" data-target="#tab6">tab6</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="tab-button" aria-label="tab6" data-target="#tab6">tab6</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="tab-button" aria-label="tab6" data-target="#tab6">tab6</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="tab-button" aria-label="tab6" data-target="#tab6">tab6</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="tab-button" aria-label="tab6" data-target="#tab6">tab6</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="tab-button" aria-label="tab6" data-target="#tab6">tab6</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="tab-button" aria-label="tab6" data-target="#tab6">tab6</button>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="tab-content">
-                                <div id="tab1" class="tab-cont open">
-                                    탭 내용 입니다 1
-                                    <br />
-                                    <br />
-                                </div>
-                                <div id="tab2" class="tab-cont">
-                                    탭 내용 입니다 2
-                                    <br />
-                                    <br />
-                                </div>
-                                <div id="tab3" class="tab-cont">
-                                    탭 내용 입니다 3
-                                    <br />
-                                    <br />
-                                </div>
-                                <div id="tab4" class="tab-cont">
-                                    탭 내용 입니다 4
-                                    <br />
-                                    <br />
-                                </div>
-                                <div id="tab5" class="tab-cont">
-                                    탭 내용 입니다 5
-                                    <br />
-                                    <br />
-                                </div>
-                                <div id="tab6" class="tab-cont">
-                                    탭 내용 입니다 6
-                                    <br />
-                                    <br />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-wrap line">
-                            <div class="tab-items">
-                                <ul>
-                                    <li class="on">
-                                        <button type="button" class="tab-button" aria-label="tab1" data-target="#tab1-1">tab1</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="tab-button" aria-label="tab2" data-target="#tab2-1">tab2</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="tab-button" aria-label="tab3" data-target="#tab3-1">tab3</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="tab-button" aria-label="tab4" data-target="#tab4-1">tab4</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="tab-button" aria-label="tab5" data-target="#tab5-1">tab5</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="tab-button" aria-label="tab6" data-target="#tab6-1">tab6</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="tab-button" aria-label="tab6" data-target="#tab6-1">tab6</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="tab-button" aria-label="tab6" data-target="#tab6-1">tab6</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="tab-button" aria-label="tab6" data-target="#tab6-1">tab6</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="tab-button" aria-label="tab6" data-target="#tab6-1">tab6</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="tab-button" aria-label="tab6" data-target="#tab6-1">tab6</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="tab-button" aria-label="tab6" data-target="#tab6-1">tab6</button>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="tab-content">
-                                <div id="tab1-1" class="tab-cont open">
-                                    탭 내용 입니다 1
-                                    <br />
-                                    <br />
-                                </div>
-                                <div id="tab2-1" class="tab-cont">
-                                    탭 내용 입니다 2
-                                    <br />
-                                    <br />
-                                </div>
-                                <div id="tab3-1" class="tab-cont">
-                                    탭 내용 입니다 3
-                                    <br />
-                                    <br />
-                                </div>
-                                <div id="tab4-1" class="tab-cont">
-                                    탭 내용 입니다 4
-                                    <br />
-                                    <br />
-                                </div>
-                                <div id="tab5-1" class="tab-cont">
-                                    탭 내용 입니다 5
-                                    <br />
-                                    <br />
-                                </div>
-                                <div id="tab6-1" class="tab-cont">
-                                    탭 내용 입니다 6
-                                    <br />
-                                    <br />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-wrap box">
-                            <div class="tab-items">
-                                <ul>
-                                    <li class="on">
-                                        <button type="button" class="tab-button" aria-label="tab1" data-target="#tab1-2">tab1</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="tab-button" aria-label="tab2" data-target="#tab2-2">tab2</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="tab-button" aria-label="tab3" data-target="#tab3-2">tab3</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="tab-button" aria-label="tab4" data-target="#tab4-2">tab4</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="tab-button" aria-label="tab5" data-target="#tab5-2">tab5</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="tab-button" aria-label="tab6" data-target="#tab6-2">tab6</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="tab-button" aria-label="tab6" data-target="#tab6-2">tab6</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="tab-button" aria-label="tab6" data-target="#tab6-2">tab6</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="tab-button" aria-label="tab6" data-target="#tab6-2">tab6</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="tab-button" aria-label="tab6" data-target="#tab6-2">tab6</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="tab-button" aria-label="tab6" data-target="#tab6-2">tab6</button>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="tab-content">
-                                <div id="tab1-2" class="tab-cont open">
-                                    탭 내용 입니다 1
-                                    <br />
-                                    <br />
-                                </div>
-                                <div id="tab2-2" class="tab-cont">
-                                    탭 내용 입니다 2
-                                    <br />
-                                    <br />
-                                </div>
-                                <div id="tab3-2" class="tab-cont">
-                                    탭 내용 입니다 3
-                                    <br />
-                                    <br />
-                                </div>
-                                <div id="tab4-2" class="tab-cont">
-                                    탭 내용 입니다 4
-                                    <br />
-                                    <br />
-                                </div>
-                                <div id="tab5-2" class="tab-cont">
-                                    탭 내용 입니다 5
-                                    <br />
-                                    <br />
-                                </div>
-                                <div id="tab6-2" class="tab-cont">
-                                    탭 내용 입니다 6
-                                    <br />
-                                    <br />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        </header>
+        <div class="contents">
+            <div class="tab-items" style="margin: 0">
+                <ul>
+                    <li><a href="../guide/font.html">텍스트</a></li>
+                    <li><a href="../guide/button.html">버튼</a></li>
+                    <li><a href="../guide/form.html">폼요소</a></li>
+                    <li><a href="../guide/popup.html">팝업</a></li>
+                    <li class="on"><a href="../guide/tab.html">탭</a></li>
+                    <li><a href="../guide/tooltip.html">툴팁</a></li>
+                </ul>
             </div>
-            <div class="fnb-wrap">
-                <div class="nav">
-                    <ul>
-                        <li class="on"><a href="#none" role="button" class="btn-home">홈</a></li>
-                        <li><a href="#none" role="button" class="btn-klip">클립</a></li>
-                        <li><a href="#none" role="button" class="btn-shot">촬영</a></li>
-                        <li><a href="#none" role="button" class="btn-music">음악</a></li>
-                        <li><a href="#none" role="button" class="btn-user">마이</a></li>
-                    </ul>
+            <div class="section">
+                <div class="inner">
+                    <div class="title-box">
+                        <h2 class="sub-title">탭</h2>
+                    </div>
+                    <div class="tab-wrap mt-20">
+                        <div class="tab-items">
+                            <ul>
+                                <li class="on">
+                                    <!-- <button type="button" class="tab-button" aria-label="tab1" data-target="#tab1">tab1</button> -->
+                                    <a href="#tab1" class="tab-button" role="button" title="tab1">tab1</a>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab2"
+                                        data-target="#tab2">tab2</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab3"
+                                        data-target="#tab3">tab3</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab4"
+                                        data-target="#tab4">tab4</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab5"
+                                        data-target="#tab5">tab5</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab6"
+                                        data-target="#tab6">tab6</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab6"
+                                        data-target="#tab6">tab6</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab6"
+                                        data-target="#tab6">tab6</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab6"
+                                        data-target="#tab6">tab6</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab6"
+                                        data-target="#tab6">tab6</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab6"
+                                        data-target="#tab6">tab6</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab6"
+                                        data-target="#tab6">tab6</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <div id="tab1" class="tab-cont open">
+                                탭 내용 입니다 1
+                                <br />
+                                <br />
+                            </div>
+                            <div id="tab2" class="tab-cont">
+                                탭 내용 입니다 2
+                                <br />
+                                <br />
+                            </div>
+                            <div id="tab3" class="tab-cont">
+                                탭 내용 입니다 3
+                                <br />
+                                <br />
+                            </div>
+                            <div id="tab4" class="tab-cont">
+                                탭 내용 입니다 4
+                                <br />
+                                <br />
+                            </div>
+                            <div id="tab5" class="tab-cont">
+                                탭 내용 입니다 5
+                                <br />
+                                <br />
+                            </div>
+                            <div id="tab6" class="tab-cont">
+                                탭 내용 입니다 6
+                                <br />
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-wrap line mt-20">
+                        <div class="tab-items">
+                            <ul>
+                                <li class="on">
+                                    <button type="button" class="tab-button" aria-label="tab1"
+                                        data-target="#tab1-1">tab1</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab2"
+                                        data-target="#tab2-1">tab2</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab3"
+                                        data-target="#tab3-1">tab3</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab4"
+                                        data-target="#tab4-1">tab4</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab5"
+                                        data-target="#tab5-1">tab5</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab6"
+                                        data-target="#tab6-1">tab6</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab6"
+                                        data-target="#tab6-1">tab6</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab6"
+                                        data-target="#tab6-1">tab6</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab6"
+                                        data-target="#tab6-1">tab6</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab6"
+                                        data-target="#tab6-1">tab6</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab6"
+                                        data-target="#tab6-1">tab6</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab6"
+                                        data-target="#tab6-1">tab6</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <div id="tab1-1" class="tab-cont open">
+                                탭 내용 입니다 1
+                                <br />
+                                <br />
+                            </div>
+                            <div id="tab2-1" class="tab-cont">
+                                탭 내용 입니다 2
+                                <br />
+                                <br />
+                            </div>
+                            <div id="tab3-1" class="tab-cont">
+                                탭 내용 입니다 3
+                                <br />
+                                <br />
+                            </div>
+                            <div id="tab4-1" class="tab-cont">
+                                탭 내용 입니다 4
+                                <br />
+                                <br />
+                            </div>
+                            <div id="tab5-1" class="tab-cont">
+                                탭 내용 입니다 5
+                                <br />
+                                <br />
+                            </div>
+                            <div id="tab6-1" class="tab-cont">
+                                탭 내용 입니다 6
+                                <br />
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-wrap box mt-20">
+                        <div class="tab-items">
+                            <ul>
+                                <li class="on">
+                                    <button type="button" class="tab-button" aria-label="tab1"
+                                        data-target="#tab1-2">tab1</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab2"
+                                        data-target="#tab2-2">tab2</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab3"
+                                        data-target="#tab3-2">tab3</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab4"
+                                        data-target="#tab4-2">tab4</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab5"
+                                        data-target="#tab5-2">tab5</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab6"
+                                        data-target="#tab6-2">tab6</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab6"
+                                        data-target="#tab6-2">tab6</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab6"
+                                        data-target="#tab6-2">tab6</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab6"
+                                        data-target="#tab6-2">tab6</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab6"
+                                        data-target="#tab6-2">tab6</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab6"
+                                        data-target="#tab6-2">tab6</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <div id="tab1-2" class="tab-cont open">
+                                탭 내용 입니다 1
+                                <br />
+                                <br />
+                            </div>
+                            <div id="tab2-2" class="tab-cont">
+                                탭 내용 입니다 2
+                                <br />
+                                <br />
+                            </div>
+                            <div id="tab3-2" class="tab-cont">
+                                탭 내용 입니다 3
+                                <br />
+                                <br />
+                            </div>
+                            <div id="tab4-2" class="tab-cont">
+                                탭 내용 입니다 4
+                                <br />
+                                <br />
+                            </div>
+                            <div id="tab5-2" class="tab-cont">
+                                탭 내용 입니다 5
+                                <br />
+                                <br />
+                            </div>
+                            <div id="tab6-2" class="tab-cont">
+                                탭 내용 입니다 6
+                                <br />
+                                <br />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>

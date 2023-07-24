@@ -3,7 +3,6 @@ const ui = {
         const _this = this;
 
         _this.header();
-        _this.footer();
         _this.top();
         _this.tab();
         _this.forms();
@@ -15,16 +14,7 @@ const ui = {
     header: () => {
         let scrolling;
         const $header = $('.header');
-        const headerHeight = $header.outerHeight(true);
-
-        $(document).ready(() => {
-            // $('.serach-content');
-            // if ($('.header .search-tab').length) {
-            //     $('header').addClass('search-header');
-            // } else {
-            //     $('header').removeClass('search-header');
-            // }
-        });
+        const headerHeight = $header.height();
 
         $(window).on('scroll', (e) => {
             if ($(this).scrollTop() > headerHeight) {
@@ -43,13 +33,6 @@ const ui = {
 
                 scrolling = undefined;
             }, 250);
-        });
-    },
-    footer: () => {
-        const footNav = $('.nav li a');
-
-        footNav.off().on('click', function () {
-            $(this).parent('li').addClass('on').siblings('li').removeClass('on');
         });
     },
     sch: () => {
@@ -134,6 +117,8 @@ const ui = {
             } else {
                 console.log(11);
             }
+
+            let itemsWidth = $(this).outerWidth(true);
         });
     },
     tooltip: {
@@ -491,7 +476,9 @@ const ui = {
 
             let $layer = $(target);
 
-            $('.wrap').addClass('lock-wrap');
+            $(document).ready(function () {
+                $('body').addClass('lock-body');
+            });
 
             $layer.each(function () {
                 let $btnClose = $layer.find('.btn-pop-close');
@@ -503,6 +490,11 @@ const ui = {
                     setTimeout(function () {
                         $layer.addClass('is-animation');
                     }, 100);
+                } else {
+                    let btnBoxHeight = $layer.find('.layer-content').siblings('.btn-bottom-box').outerHeight(true);
+                    if ($('.layer-content + .btn-bottom-box').length) {
+                        $layer.find('.layer-content').css('padding-bottom', btnBoxHeight);
+                    }
                 }
 
                 $btnClose.on('click', function (e) {
@@ -512,6 +504,7 @@ const ui = {
 
                     if ($layer.hasClass('full')) {
                         $layer.removeClass('is-active');
+                        $layer.find('.layer-content').removeAttr('style');
                     } else {
                         $layer.removeClass('is-animation');
                         let eventEnd = () => {
@@ -529,6 +522,7 @@ const ui = {
 
                     if ($layer.hasClass('full')) {
                         $layer.removeClass('is-active');
+                        $layer.find('.layer-content').removeAttr('style');
                     } else {
                         $layer.removeClass('is-animation');
                         let eventEnd = () => {

@@ -1,98 +1,94 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-        <meta name="HandheldFriendly" content="true" />
-        <meta name="format-detection" content="telephone=no" />
-        <title>팝업 | 클럽메타</title>
-        <link rel="stylesheet" href="../../resources/css/common.min.css" />
-        <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
-        <script src="../../resources/js/lib/jquery-ui.min.js"></script>
-        <script src="../../resources/js/common.js"></script>
-    </head>
 
-    <body>
-        <div class="wrap">
-            <header class="header">
-                <div class="header-inner">
-                    <div class="header-left">
-                        <button class="btn-back" title="뒤로가기">뒤로가기</button>
-                    </div>
-                    <div class="header-center">
-                        <h1 class="header-title">팝업</h1>
-                        <!-- <div class="input-box">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>팝업 | 클럽메타</title>
+    <link rel="stylesheet" href="../../resources/css/common.min.css" />
+    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="header">
+            <div class="header-inner">
+                <div class="header-left">
+                    <button class="btn-back" title="뒤로가기">뒤로가기</button>
+                </div>
+                <div class="header-center">
+                    <h1 class="header-title">팝업</h1>
+                    <!-- <div class="input-box">
                             <input type="text" placeholder="전화번호 또는 이메일" />
                         </div> -->
-                    </div>
-                    <div class="header-right">
-                        <button type="button" class="btn-search" title="검색">돋보기</button>
-                        <!-- <button type="button" class="btn-close" title="닫기">닫기</button> -->
-                    </div>
                 </div>
-            </header>
-            <div class="contents">
-                <div class="tab-wrap">
-                    <div class="tab-items" style="margin: 0">
-                        <ul>
-                            <li><a href="#none">텍스트</a></li>
-                            <li><a href="#none">버튼</a></li>
-                            <li><a href="#none">폼요소</a></li>
-                            <li class="on"><a href="#none">팝업</a></li>
-                            <li><a href="#none">탭</a></li>
-                            <li><a href="#none">툴팁</a></li>
-                        </ul>
-                    </div>
+                <div class="header-right">
+                    <button type="button" class="btn-search" title="검색">돋보기</button>
+                    <!-- <button type="button" class="btn-close" title="닫기">닫기</button> -->
                 </div>
-                <div class="section">
-                    <div class="inner">
-                        <div class="title-box">
-                            <h2 class="sub-title">팝업</h2>
-                        </div>
-                        <div class="btn-box">
-                            <button type="button" class="btn btn-primary" onclick="ui.popup.open('#msgBox')">메세지팝업</button>
-                            <button type="button" class="btn btn-primary" onclick="ui.popup.open('#msgBox2')">팝업</button>
-                        </div>
+            </div>
+        </header>
+        <div class="contents">
+            <div class="tab-items" style="margin: 0">
+                <ul>
+                    <li><a href="../guide/font.html">텍스트</a></li>
+                    <li><a href="../guide/button.html">버튼</a></li>
+                    <li><a href="../guide/form.html">폼요소</a></li>
+                    <li class="on"><a href="../guide/popup.html">팝업</a></li>
+                    <li><a href="../guide/tab.html">탭</a></li>
+                    <li><a href="../guide/tooltip.html">툴팁</a></li>
+                </ul>
+            </div>
+            <div class="section">
+                <div class="inner">
+                    <div class="title-box">
+                        <h2 class="sub-title">팝업</h2>
                     </div>
-                </div>
-                <div class="section">
-                    <div class="inner">
-                        <div class="btn-box">
-                            <button type="button" class="btn btn-primary" onclick="ui.popup.open('#sampleViewPop')">바텀팝업</button>
-                            <button type="button" class="btn btn-primary" onclick="ui.popup.open('#fullViewPop')">풀팝업</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="section">
-                    <div class="inner">
-                        <div class="btn-box">
-                            <button type="button" class="btn btn-primary" onclick="ui.popup.toast('#toastPop')">상단 토스트팝업</button>
-                            <button type="button" class="btn btn-primary" onclick="ui.popup.toast('#toastPop2')">상단 토스트팝업</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="section">
-                    <div class="inner">
-                        <div class="btn-box">
-                            <button type="button" class="btn btn-primary" onclick="ui.popup.toast('#toastPop3')">하단 토스트팝업</button>
-                            <button type="button" class="btn btn-primary" onclick="ui.popup.toast('#toastPop4')">하단 토스트팝업</button>
-                        </div>
+                    <div class="btn-box mt-20">
+                        <button type="button" class="btn btn-primary" onclick="ui.popup.open('#msgBox')">메세지팝업</button>
+                        <button type="button" class="btn btn-primary" onclick="ui.popup.open('#msgBox2')">확인팝업</button>
                     </div>
                 </div>
             </div>
-            <div class="fnb-wrap">
-                <div class="nav">
-                    <ul>
-                        <li class="on"><a href="#none" role="button" class="btn-home">홈</a></li>
-                        <li><a href="#none" role="button" class="btn-klip">클립</a></li>
-                        <li><a href="#none" role="button" class="btn-shot">촬영</a></li>
-                        <li><a href="#none" role="button" class="btn-music">음악</a></li>
-                        <li><a href="#none" role="button" class="btn-user">마이</a></li>
-                    </ul>
+            <div class="section">
+                <div class="inner">
+                    <div class="btn-box">
+                        <button type="button" class="btn btn-primary"
+                            onclick="ui.popup.open('#sampleViewPop')">바텀팝업</button>
+                        <button type="button" class="btn btn-primary"
+                            onclick="ui.popup.open('#fullViewPop')">풀팝업</button>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="inner">
+                    <div class="btn-box">
+                        <button type="button" class="btn btn-primary" onclick="ui.popup.toast('#toastPop')">상단
+                            토스트팝업</button>
+                        <button type="button" class="btn btn-primary" onclick="ui.popup.toast('#toastPop2')">상단
+                            토스트팝업</button>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="inner">
+                    <div class="btn-box">
+                        <button type="button" class="btn btn-primary" onclick="ui.popup.toast('#toastPop3')">하단
+                            토스트팝업</button>
+                        <button type="button" class="btn btn-primary" onclick="ui.popup.toast('#toastPop4')">하단
+                            토스트팝업</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>
 
 <script></script>
@@ -124,7 +120,7 @@
     <div class="layer-popup">
         <header class="layer-header">
             <h1 class="pop-title">제목</h1>
-            <button type="button" class="btn-close" title="레이어팝업 닫기">닫기</button>
+            <button type="button" class="btn-close btn-pop-close" title="레이어팝업 닫기">닫기</button>
         </header>
 
         <div class="layer-content"></div>
@@ -149,14 +145,14 @@
                     </div> -->
                 </div>
                 <div class="header-right">
-                    <button type="button" class="btn-close" title="레이어팝업 닫기">닫기</button>
+                    <button type="button" class="btn-close btn-pop-close" title="레이어팝업 닫기">닫기</button>
                 </div>
             </div>
         </header>
 
         <div class="layer-content"></div>
         <!-- //layer-content -->
-        <div class="btn-box">
+        <div class="btn-bottom-box large">
             <button type="button" class="btn btn-pop-close" title="레이어팝업 닫기">닫기</button>
             <button type="button" class="btn-primary btn-pop-confirm" title="확인">확인</button>
         </div>
