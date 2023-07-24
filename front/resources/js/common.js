@@ -638,6 +638,21 @@ const ui = {
             showNextBatch();
             expandScroll();
         });
+        // 더보기
+
+        $('input[name=chk_all]').on('change', function () {
+            if ($('input[name=chk_all]').is(':checked')) $('input[name=chk]').prop('checked', true);
+            else $('input[name=chk]').prop('checked', false);
+        });
+
+        $('input[name=chk]').on('change', function () {
+            var total = $('input[name=chk]').length;
+            var checked = $('input[name=chk]:checked').length;
+
+            if (total != checked) $('input[name=chk_all]').prop('checked', false);
+            else $('input[name=chk_all]').prop('checked', true);
+        });
+        // 전체 체크 및 개별 체크
     }
 };
 
