@@ -138,15 +138,36 @@
 }
 
 //아이디,비밀번호 찾기
-.user-search-box {
+.user-idpw-box {
     display: flex;
     flex-direction: column;
-    gap: 2.4rem;
+    align-items: center;
+    gap: 1.6rem;
+    &.align-left {
+        align-items: flex-start;
+    }
+
+    &.pass {
+        padding-top: 10rem;
+    }
     .image {
         width: 100%;
         height: 21.2rem;
         @include bg($src: '../images/img/img_no_search.png');
         background-size: contain;
+    }
+    .title-box {
+        .title {
+            margin: 0;
+        }
+        .body-sub-title {
+            margin-top: 0.4rem;
+        }
+    }
+    .user-sch-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .card {
         align-self: stretch;
@@ -167,6 +188,50 @@
         + .body-title {
             color: $dis-color;
         }
+        &:before {
+            display: none;
+            content: '';
+            position: absolute;
+            top: 1.6rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4.8rem;
+            height: 4.8rem;
+            background-size: cover;
+        }
+
+        &.kakao {
+            position: relative;
+            padding-top: 7.2rem;
+            &::before {
+                display: block;
+                @include bg($src: '../images/btn/btn_kakao.png');
+            }
+        }
+        &.naver {
+            position: relative;
+            padding-top: 7.2rem;
+            &::before {
+                display: block;
+                @include bg($src: '../images/btn/btn_naver.png');
+            }
+        }
+        &.google {
+            position: relative;
+            padding-top: 7.2rem;
+            &::before {
+                display: block;
+                @include bg($src: '../images/btn/btn_google.png');
+            }
+        }
+        &.apple {
+            position: relative;
+            padding-top: 7.2rem;
+            &::before {
+                display: block;
+                @include bg($src: '../images/btn/btn_apple.png');
+            }
+        }
     }
     &.complete {
         margin-top: 1.2rem;
@@ -174,6 +239,10 @@
             height: 20.8rem;
             @include bg($src: '../images/img/img_found.png');
         }
+    }
+    .form-box {
+        width: 100%;
+        // margin-top: 0.8rem;
     }
 }
 //약관동의
@@ -231,6 +300,9 @@
     }
 }
 //회원가입 기본정보
+.sign-up-box {
+    padding-bottom: 7.6rem;
+}
 .profile-box {
     display: flex;
     justify-content: center;

@@ -97,10 +97,9 @@
                                             <dd>
                                                 <div class="address-box">
                                                     <div class="input-box">
-                                                        <input type="text" title="내용입력" readonly />
+                                                        <input type="text" class="address" title="내용입력" onclick="ui.popup.open('#addressPop')" readonly />
                                                         <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
                                                     </div>
-                                                    <button type="button" class="btn btn-l" title="">주소 검색</button>
                                                 </div>
                                                 <div class="input-box">
                                                     <input type="text" placeholder="상세주소(선택)" title="내용입력" />
@@ -117,17 +116,59 @@
                                                 </div>
                                             </dd>
                                         </dl>
+                                        <div class="btn-box btn-bottom-box large">
+                                            <button type="button" class="btn-primary btn-l" title="다음" disabled>다음</button>
+                                        </div>
                                     </fieldset>
                                 </form>
                             </div>
-                        </div>
-
-                        <div class="btn-box btn-bottom-box">
-                            <button type="button" class="btn-primary btn-l" title="다음" disabled>다음</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </body>
+    <article class="layerpopup-box full" id="addressPop" role="dialog">
+        <div class="layer-popup login">
+            <header class="layer-header">
+                <div class="header-inner">
+                    <div class="header-left"><h1 class="pop-title">주소검색</h1></div>
+                    <div class="header-center"></div>
+                    <div class="header-right">
+                        <button type="button" class="btn-close" title="레이어팝업 닫기">닫기</button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="layer-content">
+                <div class="form-box">
+                    <form action="">
+                        <fieldset>
+                            <div class="input-box">
+                                <input type="text" title="내용입력" placeholder="지번, 도로명, 건물명으로 검색" />
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="body-title mt-24"><strong>&lsquo;OOO&rsquo;</strong> 에 대한 검색 결과 (<span>2</span>)</div>
+                <div class="address-result-box">
+                    <div class="card small">
+                        <a href="#none" role="button" title="주소 선택">
+                            <strong class="body-sub-title">경기도 성남시 분당구 OOO로 12</strong>
+                            <p class="body-sub-title">경기도 성남시 분당구 동판교로 OOO</p>
+                        </a>
+                    </div>
+                    <div class="card small">
+                        <a href="#none" role="button" title="주소 선택">
+                            <strong class="body-sub-title">경기도 성남시 분당구 OOO로 12</strong>
+                            <p class="body-sub-title">경기도 성남시 분당구 동판교로 OOO</p>
+                        </a>
+                    </div>
+                    <div class="no-data">검색 결과가 없습니다. 다시 확인해주세요.</div>
+                </div>
+            </div>
+            <!-- //layer-content -->
+        </div>
+        <!-- //layer-popup -->
+    </article>
 </html>

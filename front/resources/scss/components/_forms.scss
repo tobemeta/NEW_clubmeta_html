@@ -134,6 +134,15 @@
         .btn-inp-del {
             display: block;
         }
+        &.error {
+            input {
+                border-color: $error-color;
+                color: $error-color;
+                &::placeholder {
+                    color: $error-color;
+                }
+            }
+        }
     }
     &.inp-pw {
         .btn-inp-del {

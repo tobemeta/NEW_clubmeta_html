@@ -491,8 +491,10 @@ const ui = {
 
             let $layer = $(target);
 
+            $('.wrap').addClass('lock-wrap');
+
             $layer.each(function () {
-                let $btnClose = $layer.find('.btn-close', '.btn-pop-close');
+                let $btnClose = $layer.find('.btn-pop-close');
                 let $btnConfirm = $layer.find('.btn-pop-confirm');
                 // const callback = $layer.data('callback');
 
@@ -505,6 +507,9 @@ const ui = {
 
                 $btnClose.on('click', function (e) {
                     e.preventDefault();
+
+                    $('.wrap').removeClass('lock-wrap');
+
                     if ($layer.hasClass('full')) {
                         $layer.removeClass('is-active');
                     } else {
@@ -519,6 +524,8 @@ const ui = {
 
                 $btnConfirm.on('click', function (e) {
                     e.preventDefault();
+
+                    $('.wrap').removeClass('lock-wrap');
 
                     if ($layer.hasClass('full')) {
                         $layer.removeClass('is-active');

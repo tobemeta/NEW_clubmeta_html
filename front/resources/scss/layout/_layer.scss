@@ -160,7 +160,8 @@
             margin: 0;
         }
     }
-    &.msg-box {
+    &.msg-box,
+    &.confirm-box {
         width: calc(100% - 3.2rem);
         padding: 3.6rem 1.6rem 1.6rem;
         border-radius: 8px;
@@ -180,6 +181,17 @@
         }
         .btn-box {
             margin-top: 2.4rem;
+        }
+    }
+    &.confirm-box {
+        padding: 3.6rem 2.5rem 1.6rem;
+        .msg {
+            padding: 0;
+            font-size: 1.6rem;
+            line-height: 2.3rem;
+        }
+        .btn-box {
+            margin-top: 3.6rem;
         }
     }
 }
@@ -224,5 +236,63 @@
     }
     & + .toastPop {
         margin-top: 2rem;
+    }
+}
+
+.msg-box {
+    .info-box {
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+        .title {
+        }
+    }
+    .info-list-box {
+        li {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding-left: 6.8rem;
+            align-items: start;
+            p {
+                line-height: 2.3rem;
+            }
+            span {
+                font-size: 1.2rem;
+                line-height: 1.7rem;
+                color: #585858;
+            }
+            &::before {
+                display: block;
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 1.6rem;
+                width: 3.6rem;
+                height: 3.6rem;
+                background-color: $main-color;
+                border-radius: 50%;
+            }
+            &.camera {
+                &::before {
+                    @include bg($src: '../images/ico/ico_w_camera.svg');
+                }
+            }
+            &.photo {
+                &::before {
+                    @include bg($src: '../images/ico/ico_w_photo.svg');
+                }
+            }
+            &.alarm {
+                &::before {
+                    @include bg($src: '../images/ico/ico_w_alarm.svg');
+                }
+            }
+            & + li {
+                margin-top: 2.4rem;
+            }
+        }
+    }
+    .help-box {
     }
 }
