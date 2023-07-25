@@ -469,4 +469,9 @@
         line-height: 2rem;
         color: $disabled-color;
     }
+    &.nodata {
+        .no-data {
+            display: block;
+        }
+    }
 }
