@@ -277,6 +277,7 @@ const ui = {
             e.preventDefault();
 
             $(this).toggleClass('is-show');
+            $(this).attr('aria-label', '비밀번호 숨김');
 
             const $inp = $(this).siblings('input');
 
@@ -284,6 +285,7 @@ const ui = {
                 $inp.prop('type', 'text');
             } else {
                 $inp.prop('type', 'password');
+                $(this).attr('aria-label', '비밀번호 표시');
             }
         });
     },

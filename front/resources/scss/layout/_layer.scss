@@ -31,6 +31,7 @@
     &.full {
         .layer-popup {
             padding: 0;
+            max-width: 100%;
         }
         &.is-active {
             .layer-popup {
@@ -112,6 +113,11 @@
             transition: none;
         }
     }
+    &.bottom {
+        .layer-popup {
+            max-width: 100%;
+        }
+    }
 }
 
 .layer-popup {
@@ -121,6 +127,7 @@
     position: absolute;
     left: 0;
     width: 100%;
+    max-width: 32.8rem;
     min-height: 10vh;
     max-height: 80vh;
     padding: 2rem 1.6rem;
