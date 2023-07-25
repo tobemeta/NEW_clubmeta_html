@@ -436,7 +436,7 @@ const ui = {
 
             //out click
             $(document)
-                .on('click touchend', function (e) {
+                .on('click touchend', '.pop-select', function (e) {
                     ui.select.reset();
                     $('body').removeClass('lock-body');
                 })
