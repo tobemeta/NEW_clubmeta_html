@@ -113,6 +113,16 @@ button {
     letter-spacing: -0.02em;
 }
 
+pre {
+    color: #111;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    text-align: justify;
+    font: 500 1.6rem/1.44 'Pretendard', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.02em;
+}
+
 a {
     text-decoration: none;
 }
