@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+        <title>클럽메타 관리자 - 신고관리</title>
+        <script src="./include/head.js"></script>
+        <link href="datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
+        <script>
+            $(document).ready(function () {
+                new Chart(document.getElementById('chart'), {
+                    type: 'pie',
+                    data: {
+                        labels: ['카테고리1', '카테고리2'],
+                        datasets: [
+                            {
+                                backgroundColor: genSeqColor(null, null, 2),
+                                data: [7, 2]
+                            }
+                        ]
+                    },
+                    options: {
+                        maintainAspectRatio: false,
+                        tooltips: {
+                            backgroundColor: 'rgb(255,255,255)',
+                            bodyFontColor: '#858796',
+                            borderColor: '#dddfeb',
+                            borderWidth: 1,
+                            xPadding: 15,
+                            yPadding: 15,
+                            displayColors: false,
+                            caretPadding: 10
+                        },
+                        plugins: {
+                            datalabels: {
+                                formatter: function (value, ctx) {
+                                    let sum = 0;
+                                    let dataArr = ctx.chart.data.datasets[0].data;
+                                    dataArr.map(function (data) {
+                                        sum += data;
+                                    });
+                                    let percentage = ((value * 100) / sum).toFixed(2) + '%';
+                                    return percentage;
+                                },
+                                color: '#222222',
+                                font: {
+                                    weight: 'bold',
+                                    size: 14
+                                }
+                            }
+                        },
+                        legend: {
+                            display: true,
+                            position: 'right'
+                        }
+                        // cutoutPercentage: 60,
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body id="page-top">
+        <!-- Page Wrapper -->
+        <div id="wrapper">
+            <!-- Sidebar -->
+            <div data-include="./include/sidebar.html"></div>
+            <!-- End of Sidebar -->
+
+            <!-- Content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column">
+                <!-- Main Content -->
+                <div id="content">
+                    <!-- Topbar -->
+                    <div data-include="./include/topbar.html"></div>
+                    <!-- End of Topbar -->
+
+                    <!-- Begin Page Content -->
+                    <div class="container-fluid">
+                        <!-- 페이지 경로 -->
+                        <div class="page-breadcrumb mb-2" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <i class="fas fa-home"></i>
+                                </li>
+                                <li class="breadcrumb-item">신고관리</li>
+                            </ol>
+                        </div>
+
+                        <h2 class="h3 text-gray-800">신고 관리</h2>
+                        <div class="tab-regular">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">유저 신고</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">영상 신고</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">댓글 신고</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                    <div class="card shadow mb-2">
+                                        <div class="card-body">
+                                            <form id="search" role="form">
+                                                <div class="row mb-1">
+                                                    <label class="col-xl-1 col-2 col-form-label">
+                                                        <strong>처리 상태</strong>
+                                                    </label>
+                                                    <div class="col-xl-11 col-10 form-inline">
+                                                        <span class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="rdo" id="rdo01" value="처리중" checked="checked" />
+                                                            <label class="form-check-label" for="rdo01">처리중</label>
+                                                        </span>
+                                                        <span class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="rdo" id="rdo02" value="처리완료(유저삭제)" />
+                                                            <label class="form-check-label" for="rdo02">처리완료(유저삭제)</label>
+                                                        </span>
+                                                        <span class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="rdo" id="rdo03" value="처리완료(해당없음)" />
+                                                            <label class="form-check-label" for="rdo03">처리완료(해당없음)</label>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-1">
+                                                    <label class="col-xl-1 col-2 col-form-label">
+                                                        <strong>검색어</strong>
+                                                    </label>
+                                                    <div class="col-xl-11 col-10 form-inline">
+                                                        <div class="mr-1">
+                                                            <!-- <label for="input-select">Example Select</label> -->
+                                                            <select class="form-control" id="input-select">
+                                                                <option>닉네임</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <input type="text" class="form-control" name="검색어 입력" placeholder="검색어 입력" />
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-1">
+                                                    <label class="col-xl-1 col-2 col-form-label">
+                                                        <strong>기간검색</strong>
+                                                    </label>
+                                                    <div class="col-xl-11 col-10 form-inline">
+                                                        <div class="form-inline mr-3">
+                                                            <input type="date" class="form-control" value="2017-06-01" />
+                                                            <span class="ml-2 mr-2">~</span>
+                                                            <input type="date" class="form-control" value="2017-06-01" />
+                                                        </div>
+
+                                                        <div class="form-inline">
+                                                            <span class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="radio" name="rdoList01" id="rdo04" value="오늘" checked="checked" />
+                                                                <label class="form-check-label" for="rdo04">오늘</label>
+                                                            </span>
+                                                            <span class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="radio" name="rdoList01" id="rdo05" value="7일" />
+                                                                <label class="form-check-label" for="rdo05">7일</label>
+                                                            </span>
+                                                            <span class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="radio" name="rdoList01" id="rdo06" value="15일" />
+                                                                <label class="form-check-label" for="rdo06">15일</label>
+                                                            </span>
+                                                            <span class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="radio" name="rdoList01" id="rdo07" value="1개월" />
+                                                                <label class="form-check-label" for="rdo07">1개월</label>
+                                                            </span>
+                                                            <span class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="radio" name="rdoList01" id="rdo08" value="3개월" />
+                                                                <label class="form-check-label" for="rdo08">3개월</label>
+                                                            </span>
+                                                            <span class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="radio" name="rdoList01" id="rdo09" value="전체" />
+                                                                <label class="form-check-label" for="rdo09">전체</label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col mt-xl-0 mt-1 text-right">
+                                                    <div class="col-auto p-0">
+                                                        <button type="button" class="btn btn-primary" id="btnSearch"><i class="fas fa-search"></i> 검색</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="card shadow mb-2">
+                                        <div class="card-body">
+                                            <div class="table-responsive">
+                                                <div class="fixed-table-pagination pagination-top clearfix mb-2">
+                                                    <div class="float-none pagination-detail" style="width: 100%">
+                                                        <span class="col-6 pagination-info" style="margin: 0"> 전체 0건 </span>
+                                                        <span class="float-right text-right col-6 page-list">
+                                                            <span class="btn-group dropdown">
+                                                                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+                                                                    <span class="page-size"> 25 </span>
+                                                                    <span class="caret"></span>
+                                                                </button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="#">10</a>
+                                                                    <a class="dropdown-item active" href="#">25</a>
+                                                                    <a class="dropdown-item" href="#">50</a>
+                                                                    <a class="dropdown-item" href="#">100</a>
+                                                                </div>
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="float-left pagination">
+                                                        <ul class="pagination">
+                                                            <li class="page-item page-double-pre disabled">
+                                                                <a class="page-link" href="#"><i class="fas fa-angle-double-left"></i></a>
+                                                            </li>
+                                                            <li class="page-item page-pre disabled">
+                                                                <a class="page-link" href="#"><i class="fas fa-angle-left"></i></a>
+                                                            </li>
+                                                            <li class="page-item page-next disabled">
+                                                                <a class="page-link" href="#"><i class="fas fa-angle-right"></i></a>
+                                                            </li>
+                                                            <li class="page-item page-double-next disabled">
+                                                                <a class="page-link" href="#"><i class="fas fa-angle-double-right"></i></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <table class="table table-bordered" id="dataTable01" width="100%" cellspacing="0">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>
+                                                                <span class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" name="chkList01" id="" value="선택" />
+                                                                </span>
+                                                            </th>
+                                                            <th>번호</th>
+                                                            <th>신고된 유저 닉네임</th>
+                                                            <th>신고 횟수</th>
+                                                            <th>최근 신고일자</th>
+                                                            <th>처리 상태</th>
+                                                            <th>처리일자</th>
+                                                            <th>처리 상태 변경</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="text-center">
+                                                        <tr class="no-records-found">
+                                                            <td colspan="8">조회된 데이터가 없습니다.</td>
+                                                        </tr>
+                                                        <tr class="">
+                                                            <td>
+                                                                <span class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" name="chkList01" id="" value="선택" />
+                                                                </span>
+                                                            </td>
+                                                            <td>10</td>
+                                                            <td>하하하</td>
+                                                            <td>22</td>
+                                                            <td>2023.06.26 16:00:00</td>
+                                                            <td>처리완료 (유저삭제)</td>
+                                                            <td>2023.06.26 16:00:00</td>
+                                                            <td><button type="button" class="btn btn-primary" id="" disabled>완료</button></td>
+                                                        </tr>
+                                                        <tr class="">
+                                                            <td>
+                                                                <span class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" name="chkList01" id="" value="선택" />
+                                                                </span>
+                                                            </td>
+                                                            <td>10</td>
+                                                            <td>하하하</td>
+                                                            <td>22</td>
+                                                            <td>2023.06.26 16:00:00</td>
+                                                            <td>처리완료 (유저삭제)</td>
+                                                            <td>2023.06.26 16:00:00</td>
+                                                            <td><button type="button" class="btn btn-primary" id="">변경</button></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                                <div class="fixed-table-pagination pagination-bottom">
+                                                    <div class="float-none pagination-detail row">
+                                                        <span class="col-6 pagination-info" style="margin: 0"> 총 0개 </span
+                                                        ><span class="text-right col-6 page-list"
+                                                            ><span class="btn-group dropdown dropup">
+                                                                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+                                                                    <span class="page-size"> 20 </span>
+                                                                    <span class="caret"></span>
+                                                                </button>
+                                                                <div class="dropdown-menu"><a class="dropdown-item" href="#">10</a><a class="dropdown-item active" href="#">20</a><a class="dropdown-item" href="#">50</a><a class="dropdown-item" href="#">100</a></div></span
+                                                            ></span
+                                                        >
+                                                    </div>
+                                                    <div class="float-left pagination">
+                                                        <ul class="pagination">
+                                                            <li class="page-item page-double-pre disabled">
+                                                                <a class="page-link" href="#"><i class="fas fa-angle-double-left"></i></a>
+                                                            </li>
+                                                            <li class="page-item page-pre disabled">
+                                                                <a class="page-link" href="#"><i class="fas fa-angle-left"></i></a>
+                                                            </li>
+                                                            <li class="page-item page-next disabled">
+                                                                <a class="page-link" href="#"><i class="fas fa-angle-right"></i></a>
+                                                            </li>
+                                                            <li class="page-item page-double-next disabled">
+                                                                <a class="page-link" href="#"><i class="fas fa-angle-double-right"></i></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="row mt-4">
+                                                <div class="col text-right"><a href="#" class="btn btn-secondary">삭제</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                    <h3>Tab Content Heading</h3>
+                                    <div class="card shadow mb-4">
+                                        <div class="card-header py-3">
+                                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Position</th>
+                                                            <th>Office</th>
+                                                            <th>Age</th>
+                                                            <th>Start date</th>
+                                                            <th>Salary</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Position</th>
+                                                            <th>Office</th>
+                                                            <th>Age</th>
+                                                            <th>Start date</th>
+                                                            <th>Salary</th>
+                                                        </tr>
+                                                    </tfoot>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Tiger Nixon</td>
+                                                            <td>System Architect</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>61</td>
+                                                            <td>2011/04/25</td>
+                                                            <td>$320,800</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Garrett Winters</td>
+                                                            <td>Accountant</td>
+                                                            <td>Tokyo</td>
+                                                            <td>63</td>
+                                                            <td>2011/07/25</td>
+                                                            <td>$170,750</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Ashton Cox</td>
+                                                            <td>Junior Technical Author</td>
+                                                            <td>San Francisco</td>
+                                                            <td>66</td>
+                                                            <td>2009/01/12</td>
+                                                            <td>$86,000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Cedric Kelly</td>
+                                                            <td>Senior Javascript Developer</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>22</td>
+                                                            <td>2012/03/29</td>
+                                                            <td>$433,060</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Airi Satou</td>
+                                                            <td>Accountant</td>
+                                                            <td>Tokyo</td>
+                                                            <td>33</td>
+                                                            <td>2008/11/28</td>
+                                                            <td>$162,700</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Brielle Williamson</td>
+                                                            <td>Integration Specialist</td>
+                                                            <td>New York</td>
+                                                            <td>61</td>
+                                                            <td>2012/12/02</td>
+                                                            <td>$372,000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Herrod Chandler</td>
+                                                            <td>Sales Assistant</td>
+                                                            <td>San Francisco</td>
+                                                            <td>59</td>
+                                                            <td>2012/08/06</td>
+                                                            <td>$137,500</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Rhona Davidson</td>
+                                                            <td>Integration Specialist</td>
+                                                            <td>Tokyo</td>
+                                                            <td>55</td>
+                                                            <td>2010/10/14</td>
+                                                            <td>$327,900</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Colleen Hurst</td>
+                                                            <td>Javascript Developer</td>
+                                                            <td>San Francisco</td>
+                                                            <td>39</td>
+                                                            <td>2009/09/15</td>
+                                                            <td>$205,500</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Sonya Frost</td>
+                                                            <td>Software Engineer</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>23</td>
+                                                            <td>2008/12/13</td>
+                                                            <td>$103,600</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Jena Gaines</td>
+                                                            <td>Office Manager</td>
+                                                            <td>London</td>
+                                                            <td>30</td>
+                                                            <td>2008/12/19</td>
+                                                            <td>$90,560</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Quinn Flynn</td>
+                                                            <td>Support Lead</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>22</td>
+                                                            <td>2013/03/03</td>
+                                                            <td>$342,000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Charde Marshall</td>
+                                                            <td>Regional Director</td>
+                                                            <td>San Francisco</td>
+                                                            <td>36</td>
+                                                            <td>2008/10/16</td>
+                                                            <td>$470,600</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Haley Kennedy</td>
+                                                            <td>Senior Marketing Designer</td>
+                                                            <td>London</td>
+                                                            <td>43</td>
+                                                            <td>2012/12/18</td>
+                                                            <td>$313,500</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Tatyana Fitzpatrick</td>
+                                                            <td>Regional Director</td>
+                                                            <td>London</td>
+                                                            <td>19</td>
+                                                            <td>2010/03/17</td>
+                                                            <td>$385,750</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Michael Silva</td>
+                                                            <td>Marketing Designer</td>
+                                                            <td>London</td>
+                                                            <td>66</td>
+                                                            <td>2012/11/27</td>
+                                                            <td>$198,500</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Paul Byrd</td>
+                                                            <td>Chief Financial Officer (CFO)</td>
+                                                            <td>New York</td>
+                                                            <td>64</td>
+                                                            <td>2010/06/09</td>
+                                                            <td>$725,000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Gloria Little</td>
+                                                            <td>Systems Administrator</td>
+                                                            <td>New York</td>
+                                                            <td>59</td>
+                                                            <td>2009/04/10</td>
+                                                            <td>$237,500</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Bradley Greer</td>
+                                                            <td>Software Engineer</td>
+                                                            <td>London</td>
+                                                            <td>41</td>
+                                                            <td>2012/10/13</td>
+                                                            <td>$132,000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Dai Rios</td>
+                                                            <td>Personnel Lead</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>35</td>
+                                                            <td>2012/09/26</td>
+                                                            <td>$217,500</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Jenette Caldwell</td>
+                                                            <td>Development Lead</td>
+                                                            <td>New York</td>
+                                                            <td>30</td>
+                                                            <td>2011/09/03</td>
+                                                            <td>$345,000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Yuri Berry</td>
+                                                            <td>Chief Marketing Officer (CMO)</td>
+                                                            <td>New York</td>
+                                                            <td>40</td>
+                                                            <td>2009/06/25</td>
+                                                            <td>$675,000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Caesar Vance</td>
+                                                            <td>Pre-Sales Support</td>
+                                                            <td>New York</td>
+                                                            <td>21</td>
+                                                            <td>2011/12/12</td>
+                                                            <td>$106,450</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Doris Wilder</td>
+                                                            <td>Sales Assistant</td>
+                                                            <td>Sidney</td>
+                                                            <td>23</td>
+                                                            <td>2010/09/20</td>
+                                                            <td>$85,600</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Angelica Ramos</td>
+                                                            <td>Chief Executive Officer (CEO)</td>
+                                                            <td>London</td>
+                                                            <td>47</td>
+                                                            <td>2009/10/09</td>
+                                                            <td>$1,200,000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Gavin Joyce</td>
+                                                            <td>Developer</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>42</td>
+                                                            <td>2010/12/22</td>
+                                                            <td>$92,575</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Jennifer Chang</td>
+                                                            <td>Regional Director</td>
+                                                            <td>Singapore</td>
+                                                            <td>28</td>
+                                                            <td>2010/11/14</td>
+                                                            <td>$357,650</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Brenden Wagner</td>
+                                                            <td>Software Engineer</td>
+                                                            <td>San Francisco</td>
+                                                            <td>28</td>
+                                                            <td>2011/06/07</td>
+                                                            <td>$206,850</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fiona Green</td>
+                                                            <td>Chief Operating Officer (COO)</td>
+                                                            <td>San Francisco</td>
+                                                            <td>48</td>
+                                                            <td>2010/03/11</td>
+                                                            <td>$850,000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Shou Itou</td>
+                                                            <td>Regional Marketing</td>
+                                                            <td>Tokyo</td>
+                                                            <td>20</td>
+                                                            <td>2011/08/14</td>
+                                                            <td>$163,000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Michelle House</td>
+                                                            <td>Integration Specialist</td>
+                                                            <td>Sidney</td>
+                                                            <td>37</td>
+                                                            <td>2011/06/02</td>
+                                                            <td>$95,400</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Suki Burks</td>
+                                                            <td>Developer</td>
+                                                            <td>London</td>
+                                                            <td>53</td>
+                                                            <td>2009/10/22</td>
+                                                            <td>$114,500</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Prescott Bartlett</td>
+                                                            <td>Technical Author</td>
+                                                            <td>London</td>
+                                                            <td>27</td>
+                                                            <td>2011/05/07</td>
+                                                            <td>$145,000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Gavin Cortez</td>
+                                                            <td>Team Leader</td>
+                                                            <td>San Francisco</td>
+                                                            <td>22</td>
+                                                            <td>2008/10/26</td>
+                                                            <td>$235,500</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Martena Mccray</td>
+                                                            <td>Post-Sales support</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>46</td>
+                                                            <td>2011/03/09</td>
+                                                            <td>$324,050</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Unity Butler</td>
+                                                            <td>Marketing Designer</td>
+                                                            <td>San Francisco</td>
+                                                            <td>47</td>
+                                                            <td>2009/12/09</td>
+                                                            <td>$85,675</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Howard Hatfield</td>
+                                                            <td>Office Manager</td>
+                                                            <td>San Francisco</td>
+                                                            <td>51</td>
+                                                            <td>2008/12/16</td>
+                                                            <td>$164,500</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Hope Fuentes</td>
+                                                            <td>Secretary</td>
+                                                            <td>San Francisco</td>
+                                                            <td>41</td>
+                                                            <td>2010/02/12</td>
+                                                            <td>$109,850</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Vivian Harrell</td>
+                                                            <td>Financial Controller</td>
+                                                            <td>San Francisco</td>
+                                                            <td>62</td>
+                                                            <td>2009/02/14</td>
+                                                            <td>$452,500</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Timothy Mooney</td>
+                                                            <td>Office Manager</td>
+                                                            <td>London</td>
+                                                            <td>37</td>
+                                                            <td>2008/12/11</td>
+                                                            <td>$136,200</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Jackson Bradshaw</td>
+                                                            <td>Director</td>
+                                                            <td>New York</td>
+                                                            <td>65</td>
+                                                            <td>2008/09/26</td>
+                                                            <td>$645,750</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Olivia Liang</td>
+                                                            <td>Support Engineer</td>
+                                                            <td>Singapore</td>
+                                                            <td>64</td>
+                                                            <td>2011/02/03</td>
+                                                            <td>$234,500</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Bruno Nash</td>
+                                                            <td>Software Engineer</td>
+                                                            <td>London</td>
+                                                            <td>38</td>
+                                                            <td>2011/05/03</td>
+                                                            <td>$163,500</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Sakura Yamamoto</td>
+                                                            <td>Support Engineer</td>
+                                                            <td>Tokyo</td>
+                                                            <td>37</td>
+                                                            <td>2009/08/19</td>
+                                                            <td>$139,575</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Thor Walton</td>
+                                                            <td>Developer</td>
+                                                            <td>New York</td>
+                                                            <td>61</td>
+                                                            <td>2013/08/11</td>
+                                                            <td>$98,540</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Finn Camacho</td>
+                                                            <td>Support Engineer</td>
+                                                            <td>San Francisco</td>
+                                                            <td>47</td>
+                                                            <td>2009/07/07</td>
+                                                            <td>$87,500</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Serge Baldwin</td>
+                                                            <td>Data Coordinator</td>
+                                                            <td>Singapore</td>
+                                                            <td>64</td>
+                                                            <td>2012/04/09</td>
+                                                            <td>$138,575</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Zenaida Frank</td>
+                                                            <td>Software Engineer</td>
+                                                            <td>New York</td>
+                                                            <td>63</td>
+                                                            <td>2010/01/04</td>
+                                                            <td>$125,250</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Zorita Serrano</td>
+                                                            <td>Software Engineer</td>
+                                                            <td>San Francisco</td>
+                                                            <td>56</td>
+                                                            <td>2012/06/01</td>
+                                                            <td>$115,000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Jennifer Acosta</td>
+                                                            <td>Junior Javascript Developer</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>43</td>
+                                                            <td>2013/02/01</td>
+                                                            <td>$75,650</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Cara Stevens</td>
+                                                            <td>Sales Assistant</td>
+                                                            <td>New York</td>
+                                                            <td>46</td>
+                                                            <td>2011/12/06</td>
+                                                            <td>$145,600</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Hermione Butler</td>
+                                                            <td>Regional Director</td>
+                                                            <td>London</td>
+                                                            <td>47</td>
+                                                            <td>2011/03/21</td>
+                                                            <td>$356,250</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Lael Greer</td>
+                                                            <td>Systems Administrator</td>
+                                                            <td>London</td>
+                                                            <td>21</td>
+                                                            <td>2009/02/27</td>
+                                                            <td>$103,500</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Jonas Alexander</td>
+                                                            <td>Developer</td>
+                                                            <td>San Francisco</td>
+                                                            <td>30</td>
+                                                            <td>2010/07/14</td>
+                                                            <td>$86,500</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Shad Decker</td>
+                                                            <td>Regional Director</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>51</td>
+                                                            <td>2008/11/13</td>
+                                                            <td>$183,000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Michael Bruce</td>
+                                                            <td>Javascript Developer</td>
+                                                            <td>Singapore</td>
+                                                            <td>29</td>
+                                                            <td>2011/06/27</td>
+                                                            <td>$183,000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Donna Snider</td>
+                                                            <td>Customer Support</td>
+                                                            <td>New York</td>
+                                                            <td>27</td>
+                                                            <td>2011/01/25</td>
+                                                            <td>$112,000</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                    <h3>Tab Heading Content</h3>
+                                    <p>Vivamus pellentesque vestibulum lectus vitae auctor. Maecenas eu sodales arcu. Fusce lobortis, libero ac cursus feugiat, nibh ex ultricies tortor, id dictum massa nisl ac nisi. Fusce a eros pellentesque, ultricies urna nec, consectetur dolor. Nam dapibus scelerisque risus, a commodo mi tempus eu.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.container-fluid -->
+                </div>
+                <!-- End of Main Content -->
+
+                <!-- Footer -->
+                <div data-include="./include/footer.html"></div>
+                <!-- End of Footer -->
+            </div>
+            <!-- End of Content Wrapper -->
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- Scroll to Top Button-->
+        <div data-include="./include/topbtn.html"></div>
+
+        <!-- Logout Modal-->
+        <div data-include="./include/logoutModal.html"></div>
+    </body>
+    <script src="./datatables/jquery.dataTables.min.js"></script>
+    <script src="./datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="./js/demo/datatables-demo.js"></script>
+</html>
