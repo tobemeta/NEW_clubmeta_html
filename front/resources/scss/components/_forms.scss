@@ -439,7 +439,7 @@
                 border-radius: 50%;
                 background: #9f9f9f;
                 box-shadow: $shadow;
-                transition: 0.3s ease;
+                transition: transform 0.3s ease;
             }
             &:after {
                 display: block;
@@ -468,10 +468,6 @@
                     background: $main-color;
                     left: auto;
                     right: 0;
-                    transition: 0.3s ease;
-                }
-                &:after {
-                    transition: 0.3s ease;
                 }
             }
         }
