@@ -350,7 +350,7 @@
     box-sizing: border-box;
     .cell-row {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         + .cell-row {
             margin-top: 2.4rem;
         }
