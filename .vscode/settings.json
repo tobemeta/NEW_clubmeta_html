@@ -6,11 +6,11 @@
       "savePath": "~/../css/"
     }
   ],
-  "liveSassCompile.settings.excludeList": [ 
-    "/node_modules/",
-    ".vscode/**",
-    "admin/**"
-  ],
+  // "liveSassCompile.settings.excludeList": [ 
+  //   "/node_modules/",
+  //   ".vscode/**",
+  //   "admin/**"
+  // ],
   "liveSassCompile.settings.autoprefix": [
     "> 2%",
     "last 2 versions"
