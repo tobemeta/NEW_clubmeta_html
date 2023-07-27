@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>클럽메다 관리자 - 레이아웃</title>
+        <script src="../include/head.js"></script>
+        <link rel="stylesheet" href="../../css/custom.min.css" />
+    </head>
+
+    <body>
+        <!-- Page Wrapper -->
+        <div id="wrapper" class="wrapper">
+            <!-- 사이드바 -->
+            <div data-include="../include/sidebar.html"></div>
+            <!-- //사이드바 -->
+
+            <!-- content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column bg-white">
+                <!-- 컨텐츠 본문 -->
+                <div id="content">
+                    <!--  -->
+                    <div data-include="../include/topbar.html"></div>
+
+                    <div class="container-fluid" role="main">
+                        <!-- 페이지 경로 -->
+                        <div class="page-breadcrumb" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <i class="fas fa-home d-flex align-items-center"></i>
+                                </li>
+                                <li class="breadcrumb-item">관리자관리</li>
+                            </ol>
+                        </div>
+                        <!-- //페이지 경로 -->
+                        <div class="main">
+                            <!-- 제목 및 등록버튼 -->
+                            <div class="row clearfix mt-4 mb-4">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h2 class="h3 text-gray-800 float-left">관리자 관리</h2>
+                                    <div class="float-right">
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">관리자 등록</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //제목 및 등록버튼 -->
+
+                            <!-- 검색 영역 -->
+                            <div class="search-wrap">
+                                <div class="form-box">
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label"><label for="" class="req">비밀번호</label></div>
+                                            <div class="form-box-cont">
+                                                <div class="input-group">
+                                                    <input type="id" class="form-control" placeholder="영문, 숫자, 특수문자를 포함한 8~20자" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn-wrap">
+                                <button type="submit" class="btn btn-dark"><i class="fa fa-search mr-1"></i> 검색</button>
+                            </div>
+                            <!-- //검색 영역 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll to Top Button-->
+        <div data-include="../include/topbtn.html"></div>
+
+        <!-- Logout Modal-->
+        <div data-include="../include/logoutModal.html"></div>
+    </body>
+    <div class="modal fade large" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">관리자 등록</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-box">
+                            <div class="form-box-row">
+                                <div class="form-box-item">
+                                    <div class="form-box-label"><label for="" class="req">아이디</label></div>
+                                    <div class="form-box-cont">
+                                        <div class="input-group">
+                                            <input type="id" class="form-control" placeholder="영문 소문자, 숫자와 특수기호(_),(-)만 사용한 5~20자" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-box-row">
+                                <div class="form-box-item">
+                                    <div class="form-box-label"><label for="" class="req">비밀번호</label></div>
+                                    <div class="form-box-cont">
+                                        <div class="input-group">
+                                            <input type="id" class="form-control" placeholder="영문, 숫자, 특수문자를 포함한 8~20자" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-box-row">
+                                <div class="form-box-item">
+                                    <div class="form-box-label"><label for="">메모</label></div>
+                                    <div class="form-box-cont">
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">취소</button>
+                    <button type="button" class="btn btn-primary btn-lg">등록</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</html>
