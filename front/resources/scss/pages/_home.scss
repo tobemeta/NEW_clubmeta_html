@@ -5,13 +5,18 @@
     .no-result {
         display: flex;
         flex-direction: column;
-        align-content: center;
+        align-items: center;
+        margin-top: 12.4rem;
         .img {
             display: block;
             width: 21.2rem;
             height: 21.2rem;
+            margin-bottom: 1.6rem;
             background-size: cover;
             @include bg($src: '../images/img/img_no_result.png');
+        }
+        .title {
+            margin-bottom: 0.4rem;
         }
     }
 }
