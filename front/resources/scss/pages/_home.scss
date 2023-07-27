@@ -1,0 +1,17 @@
+//홈화면
+
+//알림 리스트 화면
+.alarm-list-box {
+    .no-result {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        .img {
+            display: block;
+            width: 21.2rem;
+            height: 21.2rem;
+            background-size: cover;
+            @include bg($src: '../images/img/img_no_result.png');
+        }
+    }
+}
