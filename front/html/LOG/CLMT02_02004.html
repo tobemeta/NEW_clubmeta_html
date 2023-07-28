@@ -22,7 +22,8 @@
                     <div class="header-right"><a href="#none" role="button" class="btn-ghost" title="건너뛰기">건너뛰기</a></div>
                 </div>
             </header>
-            <div class="contents">
+            <!-- 2023-07-28 class추가 -->
+            <div class="contents pb-96">
                 <div class="section">
                     <div class="inner">
                         <div class="title-box">
@@ -85,11 +86,46 @@
                             </div>
                         </div>
                         <div class="btn-bottom-box">
-                            <button type="button" class="btn-primary" title="확인">확인</button>
+                            <!-- 2023-07-28 수정 -->
+                            <button type="button" class="btn-primary" title="확인" disabled>확인</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </body>
+    <!-- 2023-07-28 추가 -->
+    <script>
+        var $chkAll = $('#chk-all');
+        var $inpchk = $('input[name="chk"]');
+        var $btnPrimary = $('.btn-primary');
+
+        var $inpchk = $('.category-box input');
+        var $chkAll = $('.category-box input[name="chk_all"]');
+        var $btnPrimary = $('.btn-primary');
+
+        $inpchk.on('change', function () {
+            var checkedCount = $inpchk.filter(':checked').length;
+
+            $chkAll.on('click', function () {
+                var isChecked = $chkAll.prop('checked');
+                $inpchk.prop('checked', isChecked);
+
+                if (isChecked) {
+                    $btnPrimary.prop('disabled', false);
+                } else {
+                    $btnPrimary.prop('disabled', true);
+                }
+            });
+
+            $inpchk.on('change', function () {
+                var checkedCount = $inpchk.filter(':checked').length;
+
+                // 전체 선택 체크박스 상태 변경
+                $chkAll.prop('checked', $inpchk.length === checkedCount + 1);
+
+                $btnPrimary.prop('disabled', checkedCount < 1);
+            });
+        });
+    </script>
 </html>
