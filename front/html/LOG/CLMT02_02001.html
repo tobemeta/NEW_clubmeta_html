@@ -37,12 +37,13 @@
                         </div>
                         <div class="agreement-box">
                             <ul class="agree-chk-grp">
-                                <li class="chk-all">
+                                <!-- 2023-07-28 삭제 -->
+                                <!-- <li class="chk-all">
                                     <div class="chk-box">
                                         <input type="checkbox" id="chk1_all" name="chk_all" />
                                         <label for="chk1_all">전체 약관에 동의합니다.</label>
                                     </div>
-                                </li>
+                                </li> -->
                                 <li>
                                     <div class="chk-box">
                                         <input type="checkbox" id="chk1_2" name="chk" />
@@ -57,7 +58,8 @@
                                     </div>
                                     <a href="#none" class="btn-right" role="button" aria-label="약관 상세보기"></a>
                                 </li>
-                                <li>
+                                <!-- 2023-07-28 삭제 -->
+                                <!-- <li>
                                     <div class="chk-box">
                                         <input type="checkbox" id="chk1_4" name="chk" />
                                         <label for="chk1_4">개인정보제공 동의</label>
@@ -70,7 +72,7 @@
                                         <label for="chk1_5">전자금융거래 기본약관</label>
                                     </div>
                                     <a href="#none" class="btn-right" role="button" aria-label="약관 상세보기"></a>
-                                </li>
+                                </li> -->
                                 <li>
                                     <div class="chk-box">
                                         <input type="checkbox" id="chk1_6" name="chk" />
@@ -78,35 +80,50 @@
                                     </div>
                                     <a href="#none" class="btn-right" role="button" aria-label="약관 상세보기"></a>
                                 </li>
-                                <li>
+                                <!-- 2023-07-28 삭제 -->
+                                <!-- <li>
                                     <div class="chk-box">
                                         <input type="checkbox" id="chk1_8" name="chk" />
                                         <label for="chk1_8">[선택] 위치기반 서비스 이용동의</label>
                                     </div>
                                     <a href="#none" class="btn-right" role="button" aria-label="약관 상세보기"></a>
-                                </li>
+                                </li> -->
                                 <li>
                                     <div class="chk-box">
-                                        <input type="checkbox" id="chk1_9" name="chk" />
+                                        <!-- 2023-07-28 name 변경 -->
+                                        <input type="checkbox" id="chk1_9" name="chk_c" />
                                         <label for="chk1_9">[선택] 마케팅 활용 수신 동의</label>
                                     </div>
                                     <a href="#none" class="btn-right" role="button" aria-label="약관 상세보기"></a>
                                 </li>
-                                <li>
+                                <!-- 2023-07-28 삭제 -->
+                                <!-- <li>
                                     <div class="chk-box">
                                         <input type="checkbox" id="chk1_10" name="chk" />
                                         <label for="chk1_10">[선택] 주소 개인정보 수집 및 이용 동의</label>
                                     </div>
                                     <a href="#none" class="btn-right" role="button" aria-label="약관 상세보기"></a>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                         <div class="btn-bottom-box">
-                            <button type="button" class="btn-primary" title="동의하고 인증하기" disabled>동의하고 인증하기</button>
+                            <!-- 2023-07-28 -->
+                            <button type="button" class="btn-primary" title="전체 동의하고 인증하기" disabled>전체 동의하고 인증하기</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </body>
+    <!-- 2023-07-28 추가 -->
+    <script>
+        var $inpchk = $('.agree-chk-grp input[name="chk"]');
+        var $btnPrimary = $('.btn-primary');
+
+        $inpchk.on('change', function () {
+            var checkedCount = $inpchk.filter(':checked').length;
+
+            $btnPrimary.prop('disabled', checkedCount < 3);
+        });
+    </script>
 </html>
