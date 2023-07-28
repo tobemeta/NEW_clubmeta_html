@@ -603,7 +603,7 @@ const ui = {
 
         const $btnMore = $('.btn-loadmore');
         const $batchNum = 5;
-        const $listWrap = $btnMore.closest('.tag-list-box').find('ul');
+        const $listWrap = $btnMore.closest('.more-list').find('ul');
         const $li = $listWrap.find('li');
         $li.hide();
         $li.slice(0, $batchNum).show();

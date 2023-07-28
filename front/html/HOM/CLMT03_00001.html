@@ -1,45 +1,42 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>홈 | 클럽메타</title>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="format-detection" content="telephone=no" />
-    <title>홈 | 클럽메타</title>
+        <link rel="stylesheet" href="../../resources/css/common.min.css" />
+        <link rel="stylesheet" href="../../resources/css/lib/swiper.min.css" />
+        <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+        <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+        <script src="../../resources/js/lib/swiper.min.js"></script>
+        <script src="../../resources/js/common.js"></script>
+    </head>
 
-    <link rel="stylesheet" href="../../resources/css/common.min.css">
-    <link rel="stylesheet" href="../../resources/css/lib/swiper.min.css" />
-    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
-    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
-    <script src="../../resources/js/lib/swiper.min.js"></script>
-    <script src="../../resources/js/common.js"></script>
-</head>
-
-<body>
-    <div class="wrap">
-        <header class="header">
-            <div class="header-inner">
-                <div class="header-left">
-                    <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
+    <body>
+        <div class="wrap">
+            <header class="header">
+                <div class="header-inner">
+                    <div class="header-left">
+                        <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
+                    </div>
+                    <div class="header-center"></div>
+                    <div class="header-right"><a href="#none" class="btn-search" role="button" title="검색">돋보기</a></div>
                 </div>
-                <div class="header-center"></div>
-                <div class="header-right"><a href="#none" class="btn-search" role="button" title="검색">돋보기</a></div>
-            </div>
-        </header>
-        <div class="contents">
-            <div class="section">
-                <div class="inner">
+            </header>
+            <div class="contents">
+                <div class="section">
                     <div class="banner-box">
                         <!-- swiper-container -->
                         <div class="swiper">
                             <!-- swiper-wrapper -->
                             <div class="swiper-wrapper">
                                 <!-- Slides -->
-                                <div class="swiper-slide">Slide 1</div>
-                                <div class="swiper-slide">Slide 2</div>
-                                <div class="swiper-slide">Slide 3</div>
+                                <div class="swiper-slide" style="background: red">Slide 1</div>
+                                <div class="swiper-slide" style="background: blue">Slide 2</div>
+                                <div class="swiper-slide" style="background: green">Slide 3</div>
                             </div>
 
                             <!-- navigation buttons -->
@@ -49,9 +46,7 @@
                             <!-- pagination -->
                             <div class="swiper-pagination"></div>
 
-                            <div class="custom-fraction">
-                                <span class="current">1</span>/<span class="all"></span>
-                            </div>
+                            <div class="custom-fraction"><span class="current">1</span>/<span class="all"></span></div>
 
                             <div class="btn-wrap">
                                 <button type="button" class="swiper-auto-ctl" aria-label="슬라이드 자동롤링 중지">정지</button>
@@ -59,84 +54,144 @@
                         </div>
                     </div>
                 </div>
+                <div class="section">
+                    <div class="card">
+                        <div class="inner">
+                            <div class="title-box">
+                                <h2 class="sub-title">AI 챌린지</h2>
+                                <a href="#none" class="btn-go" role="button" title="더보기"><span class="blind">이달의 랭커</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="card">
+                        <div class="inner">
+                            <div class="title-box">
+                                <h2 class="sub-title">음원 챌린지</h2>
+                                <a href="#none" class="btn-go" role="button" title="더보기"><span class="blind">이달의 랭커</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="inner">
+                        <div class="title-box">
+                            <h2 class="sub-title">음원</h2>
+                            <a href="#none" class="btn-go" role="button" title="더보기"><span class="blind">이달의 랭커</span></a>
+                        </div>
+                        <div class="list-box">
+                            <ul>
+                                <li><a href="#none">test</a></li>
+                                <li><a href="#none">test</a></li>
+                                <li><a href="#none">test</a></li>
+                                <li><a href="#none">test</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="inner">
+                        <div class="title-box">
+                            <h2 class="sub-title">오늘의 트렌드 Top 10</h2>
+                            <a href="#none" class="btn-go" role="button" title="더보기"><span class="blind">이달의 랭커</span></a>
+                        </div>
+                        <div class="list-box"></div>
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="inner">
+                        <div class="title-box">
+                            <h2 class="sub-title">이달의 랭커</h2>
+                            <a href="#none" class="btn-go" role="button" title="더보기"><span class="blind">이달의 랭커</span></a>
+                        </div>
+                        <div class="more-list list-box">
+                            <ul>
+                                <li><a href="#none">test</a></li>
+                                <li><a href="#none">test</a></li>
+                                <li><a href="#none">test</a></li>
+                                <li><a href="#none">test</a></li>
+                                <li><a href="#none">test</a></li>
+                                <li><a href="#none">test</a></li>
+                            </ul>
+                            <div class="btn-box">
+                                <button type="button" class="btn-loadmore">더보기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quick_top">
+                <button type="button" class="btn-top">TOP</button>
             </div>
         </div>
-
-        <div class="quick_top">
-            <button type="button" class="btn-top">TOP</button>
-        </div>
-    </div>
-    <script>
-        $("document").ready(function () {
-            var swiper = new Swiper(".swiper", {
-                slidesPerView: 'auto',
-                centeredSlides: true,
-                watchOverflow: true,
-                autoplay: {
-                    delay: 2500,
-                    disableOnInteraction: false,
-                },
-
-                // pagination 기본은 bullet
-                pagination: {
-                    el: ".swiper-pagination"
-                },
-
-                // 좌우 화살표 navigation element 지정
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev"
-                },
-                // 반응형
-                breakpoints: {
-                    // 320px 이하가 되면 슬라이드 간 간격을 0으로
-                    320: {
-                        spaceBetween: 0
-                    },
-                },
-
-                on: {
-                    init: function () {
-
-                        var slideidx = this.slides.length;
-
-                        $('.swiper-slide').addClass('changed');
-                        $('.custom-fraction .current').text(this.realIndex + 1);
-                        $('.custom-fraction .all').text(slideidx);
+        <script>
+            $('document').ready(function () {
+                var swiper = new Swiper('.swiper', {
+                    slidesPerView: 'auto',
+                    centeredSlides: true,
+                    watchOverflow: true,
+                    autoplay: {
+                        delay: 2500,
+                        disableOnInteraction: false
                     },
 
-                    slideChangeTransitionStart: function () {
-                        $('.swiper-slide').addClass('changing');
-                        $('.swiper-slide').removeClass('changed');
-                        $('.custom-fraction .current').text(this.realIndex + 1);
+                    // pagination 기본은 bullet
+                    pagination: {
+                        el: '.swiper-pagination'
                     },
 
-                    slideChangeTransitionEnd: function () {
-                        // changing : transition O
-                        // changed : transition X
-                        $('.swiper-slide').removeClass('changing');
-                        $('.swiper-slide').addClass('changed');
+                    // 좌우 화살표 navigation element 지정
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev'
+                    },
+                    // 반응형
+                    breakpoints: {
+                        // 320px 이하가 되면 슬라이드 간 간격을 0으로
+                        320: {
+                            spaceBetween: 0
+                        }
+                    },
+
+                    on: {
+                        init: function () {
+                            var slideidx = this.slides.length;
+
+                            $('.swiper-slide').addClass('changed');
+                            $('.custom-fraction .current').text(this.realIndex + 1);
+                            $('.custom-fraction .all').text(slideidx);
+                        },
+
+                        slideChangeTransitionStart: function () {
+                            $('.swiper-slide').addClass('changing');
+                            $('.swiper-slide').removeClass('changed');
+                            $('.custom-fraction .current').text(this.realIndex + 1);
+                        },
+
+                        slideChangeTransitionEnd: function () {
+                            // changing : transition O
+                            // changed : transition X
+                            $('.swiper-slide').removeClass('changing');
+                            $('.swiper-slide').addClass('changed');
+                        }
                     }
-                },
+                });
+
+                // 슬라이더 할당한 swiper로 슬라이더 제어
+                $('.swiper-auto-ctl').on('click', function (e) {
+                    $(this).toggleClass('is-stop');
+
+                    if ($(this).hasClass('is-stop')) {
+                        swiper.autoplay.start();
+                        $(this).attr('aria-label', '슬라이드 자동롤링 시작').text('시작');
+                    } else {
+                        swiper.autoplay.stop();
+                        $(this).attr('aria-label', '슬라이드 자동롤링 중지').text('중지');
+                    }
+                });
             });
-
-            // 슬라이더 할당한 swiper로 슬라이더 제어
-            $('.swiper-auto-ctl').on('click', function (e) {
-
-                $(this).toggleClass('is-stop')
-
-                if ($(this).hasClass('is-stop')) {
-                    swiper.autoplay.start();
-                    $(this).attr('aria-label', '슬라이드 자동롤링 시작').text('시작')
-
-                } else {
-                    swiper.autoplay.stop();
-                    $(this).attr('aria-label', '슬라이드 자동롤링 중지').text('중지')
-                }
-            })
-        });
-
-    </script>
-</body>
-
+        </script>
+    </body>
 </html>

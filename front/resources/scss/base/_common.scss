@@ -123,7 +123,7 @@ h1 {
             box-shadow: $shadow;
             border-radius: 2.4rem;
             overflow: hidden;
-
+            @include imgCenter();
             img {
                 border-radius: 2.4rem;
             }
@@ -137,7 +137,7 @@ h1 {
             }
             .tag {
                 line-height: 2.3rem;
-
+                @include ellipsis();
                 &:before {
                     display: inline-block;
                     content: '#';
@@ -152,7 +152,7 @@ h1 {
                 font-size: 1.2rem;
                 line-height: 1.7rem;
                 color: #585858;
-
+                @include ellipsis();
                 &:before {
                     display: inline-block;
                     content: '@';
@@ -175,7 +175,7 @@ h1 {
                 align-self: center;
                 width: 6.8rem;
                 height: 6.8rem;
-
+                @include bg($src: '../images/img/img_vinyl.png', $po: top);
                 background-size: contain;
             }
         }
