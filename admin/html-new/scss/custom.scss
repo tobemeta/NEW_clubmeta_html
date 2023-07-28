@@ -1,3 +1,69 @@
+@use 'sass:math';
+
+@import '../lib/bootstrap/scss/functions';
+@import '../lib/bootstrap/scss/variables';
+@import '../lib/bootstrap/scss/mixins';
+
+$pc-full-size: 1200;
+$tablet-size: 1024;
+$mobile-size: 768;
+
+// common
+body {
+    font-family: 'Roboto', 'Noto Sans KR';
+    letter-spacing: -0.02em;
+}
+button {
+    background: none;
+    border: 0 none;
+}
+pre,
+code {
+    font-family: inherit;
+}
+ul,
+ol {
+    padding-inline-start: 1.2rem;
+}
+select,
+input,
+textarea,
+button,
+optgroup {
+    font-family: inherit;
+    letter-spacing: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.pre-line {
+    white-space: pre-line;
+}
+.ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+
+.bg-none {
+    background: none !important;
+}
+
+.d-flex {
+    .custom-control-label,
+    .btn {
+        white-space: nowrap;
+    }
+}
+.flex-auto {
+    flex: 1 1 auto;
+}
+
+.fc-red {
+    color: #dc3545 !important;
+}
+
 .search-wrap {
     & + .btn-wrap {
         text-align: center;
@@ -27,9 +93,9 @@
     }
 }
 
+//form
 .form-box {
     border-bottom: 0.063rem solid #dee2e6;
-    color: #111;
     a:not(.btn) {
         text-decoration: underline;
     }
@@ -83,5 +149,252 @@
         .btn {
             white-space: nowrap;
         }
+    }
+}
+.input-daterange-btn {
+    display: flex;
+    .input-daterange {
+        flex: 1 1 auto;
+    }
+    .input-group-prepend {
+        margin: 0 0.4rem;
+        align-items: center;
+        justify-content: center;
+    }
+    .btn {
+        white-space: nowrap;
+    }
+    &.time-type {
+        .time {
+            width: 10%;
+            flex-shrink: 0;
+            flex-grow: 0;
+            text-align: center;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+// title
+.title-wrap {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.625rem;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-bottom: 0;
+    }
+    > .left,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        flex: 1 1 auto;
+        text-align: left;
+        // display: flex;
+        // align-items: center;
+        // min-height: 2.188rem;
+        + .right {
+            padding-left: 2rem;
+        }
+    }
+    > .right {
+        margin-left: auto;
+        white-space: nowrap;
+    }
+    .custom-select {
+        width: auto;
+    }
+}
+
+//table
+.bootstrap-table .fixed-table-container .table thead th {
+    vertical-align: middle;
+}
+.table {
+    a:not(.btn) {
+        text-decoration: underline;
+    }
+    tr {
+        &:not(:hover) {
+            &.tr-fixed {
+                background: lighten($primary, 47%);
+            }
+            &.tr-selected {
+                background: lighten($red, 43%);
+            }
+        }
+        &.tr-disabled {
+            background: #f5f5f5;
+            th,
+            td {
+                color: #bbb;
+                text-decoration: line-through;
+                a {
+                    color: #bbb;
+                }
+            }
+        }
+    }
+    thead {
+        th {
+            text-align: center !important;
+            background-color: $gray-100;
+            font-weight: 500;
+        }
+    }
+    tbody {
+        th,
+        td {
+            text-align: center;
+        }
+    }
+    .card-views {
+        text-align: left;
+    }
+    .no-records-found {
+        td {
+            text-align: center;
+            padding: 2rem 0 !important;
+            color: $gray-500;
+        }
+    }
+    &.form-table {
+        th {
+            background: $gray-200;
+        }
+    }
+    th,
+    td {
+        .custom-control-inline {
+            vertical-align: middle;
+        }
+        .custom-control-inline:last-child {
+            margin-right: 0;
+        }
+    }
+    a.text-truncate {
+        display: block;
+    }
+    .text-truncate {
+        max-width: 31.25rem;
+    }
+}
+.fixed-table-pagination {
+    .pagination-info {
+        display: none;
+    }
+}
+.table:not(.table-sm):not(.table-lg) {
+    th,
+    td {
+        padding: 0.5rem;
+    }
+}
+.table-nodata {
+    text-align: center !important;
+    padding: 2rem 0 !important;
+    color: $gray-500 !important;
+}
+.datepicker td,
+.datepicker th {
+    width: 30px;
+    height: 30px;
+}
+.custom-control {
+    &.only {
+        min-height: 1rem;
+        padding-left: 1rem;
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: 0;
+        .custom-control-input {
+            height: 1rem;
+        }
+        .custom-control-label {
+            position: static;
+            &:before {
+                top: 0;
+                left: 0;
+            }
+            &:after {
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+}
+//sort기능 table
+.table.dataTable > thead .sorting:before,
+.table.dataTable > thead .sorting:after,
+.table.dataTable > thead .sorting_asc:before,
+.table.dataTable > thead .sorting_asc:after,
+.table.dataTable > thead .sorting_desc:before,
+.table.dataTable > thead .sorting_desc:after,
+.table.dataTable > thead .sorting_asc_disabled:before,
+.table.dataTable > thead .sorting_asc_disabled:after,
+.table.dataTable > thead .sorting_desc_disabled:before,
+.table.dataTable > thead .sorting_desc_disabled:after {
+    bottom: 0.8rem;
+}
+.table.dataTable > thead .no-sorting:before,
+.table.dataTable > thead .no-sorting:after {
+    display: none;
+}
+.bootstrap-table {
+    .dataTables_length,
+    .dataTables_filter,
+    .dataTables_info,
+    .dataTables_paginate {
+        display: none;
+    }
+    .dataTables_wrapper {
+        .row {
+            margin-left: 0;
+            margin-right: 0;
+            > div {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+        .table {
+            thead {
+                th:not(.no-sorting) {
+                    .th-inner {
+                        margin-right: 1rem;
+                    }
+                }
+            }
+            .data-img {
+                width: 4rem;
+                height: 4rem;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+//tab
+.sub-tab {
+    .nav-link {
+        color: var(--gray);
+        outline: 0;
+    }
+    .nav-item {
+        .active {
+            font-weight: 500;
+            color: var(--blue) !important;
+        }
+    }
+
+    + .tab-content {
+        margin-top: 2rem;
     }
 }
