@@ -35,7 +35,9 @@ optgroup {
     font-size: inherit;
     line-height: inherit;
 }
-
+.main {
+    margin-bottom: 3rem;
+}
 .pre-line {
     white-space: pre-line;
 }
@@ -54,6 +56,13 @@ optgroup {
     .custom-control-label,
     .btn {
         white-space: nowrap;
+        vertical-align: middle;
+    }
+    .custom-control-label {
+        &::before,
+        &:after {
+            top: 0.3rem;
+        }
     }
 }
 .flex-auto {
@@ -62,6 +71,25 @@ optgroup {
 
 .fc-red {
     color: #dc3545 !important;
+}
+.fc-yellow {
+    color: $yellow !important;
+}
+.fz-lg {
+    font-size: $font-size-lg;
+}
+.fz-sm {
+    font-size: $font-size-sm;
+}
+
+.text-line-box {
+    background: #fff;
+    padding: 1.5rem;
+    border: $border-width solid $border-color;
+    border-radius: $border-radius-lg;
+    > *:last-child {
+        margin-bottom: 0;
+    }
 }
 
 .search-wrap {
@@ -136,8 +164,8 @@ optgroup {
     }
     .form-box-cont {
         flex: 1 1 auto;
-        padding: 0.5rem 1rem;
-        min-height: 3.188rem;
+        padding: 0.3rem 0.8rem;
+        min-height: 2.8rem;
         // &:not(.d-flex) {
         //   display: flex;
         //   flex-direction: column;
@@ -216,7 +244,7 @@ optgroup {
 
 //table
 .bootstrap-table .fixed-table-container .table thead th {
-    vertical-align: middle;
+    vertical-align: middle !important;
 }
 .table {
     a:not(.btn) {
@@ -342,7 +370,7 @@ optgroup {
 .table.dataTable > thead .sorting_asc_disabled:after,
 .table.dataTable > thead .sorting_desc_disabled:before,
 .table.dataTable > thead .sorting_desc_disabled:after {
-    bottom: 0.8rem;
+    bottom: 0.5rem;
 }
 .table.dataTable > thead .no-sorting:before,
 .table.dataTable > thead .no-sorting:after {
@@ -380,6 +408,9 @@ optgroup {
         }
     }
 }
+.bootstrap-table .fixed-table-container .table thead th .th-inner {
+    padding: 0.5rem !important;
+}
 
 //tab
 .sub-tab {
@@ -397,4 +428,64 @@ optgroup {
     + .tab-content {
         margin-top: 2rem;
     }
+}
+
+//대시보드
+.dashboard-box {
+    background: var(--gray-dark);
+    border-radius: $border-radius-lg;
+    color: $white;
+    padding: 1rem;
+    overflow: auto hidden;
+    .text-line-box {
+        font-size: 0.875em;
+        background: none;
+        padding: 0.2rem 0.8rem;
+        color: $gray-400;
+        align-items: center;
+        > div {
+            width: 100%;
+            padding: 0.3rem;
+            align-items: center;
+            text-align: center;
+        }
+    }
+}
+.dashboard {
+    font-size: $font-size-sm;
+    word-break: keep-all;
+    white-space: nowrap;
+    display: flex;
+    > div {
+        display: flex;
+        width: 100%;
+        + div {
+            border-left: 1px solid $gray-600;
+        }
+    }
+    .line {
+        border-left: 1px solid $gray-600;
+    }
+    dl {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        padding: 0 0.5rem;
+        // min-width: 6rem;
+    }
+    dt {
+        display: flex;
+        font-weight: $font-weight-normal;
+        line-height: 1.1;
+        min-height: 1.688rem;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    dd {
+        margin: 0.25rem 0 0 0;
+    }
+}
+.dash-chart-box {
+    height: 100%;
 }

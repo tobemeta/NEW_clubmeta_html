@@ -167,13 +167,18 @@ label {
     }
     .form-box-cont {
         flex: 1 1 auto;
-        padding: 0.5rem 1rem;
-        min-height: 3.188rem;
+        padding: 0.3rem 0.8rem;
+        min-height: 2.8rem;
         // &:not(.d-flex) {
         //   display: flex;
         //   flex-direction: column;
         //   justify-content: center;
         // }
+    }
+    .form-control,
+    .custom-select {
+        height: calc(2.2rem + 2px);
+        line-height: 1.2;
     }
 
     .btn-group {
