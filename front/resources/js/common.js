@@ -409,7 +409,7 @@ const ui = {
                 const $this = $(this);
                 const $select = $this.siblings('select');
 
-                $('body').addClass('lock-body');
+                $('body').toggleClass('lock-body');
 
                 if ($this.hasClass(ui.select.className.btnActive.slice(1))) {
                     ui.select.reset();
@@ -442,6 +442,7 @@ const ui = {
                 })
                 .on('click touchend', ui.select.className.wrap + ',' + ui.select.className.optionsWrap, function (e) {
                     e.stopPropagation();
+                    // $('body').removeClass('lock-body');
                 });
         }
     },
@@ -502,7 +503,7 @@ const ui = {
                 $btnClose.on('click', function (e) {
                     e.preventDefault();
 
-                    $('.wrap').removeClass('lock-wrap');
+                    $('body').removeClass('lock-body');
 
                     if ($layer.hasClass('full')) {
                         $layer.removeClass('is-active');
@@ -520,7 +521,7 @@ const ui = {
                 $btnConfirm.on('click', function (e) {
                     e.preventDefault();
 
-                    $('.wrap').removeClass('lock-wrap');
+                    $('body').removeClass('lock-body');
 
                     if ($layer.hasClass('full')) {
                         $layer.removeClass('is-active');
