@@ -1,523 +1,676 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-        <meta name="HandheldFriendly" content="true" />
-        <meta name="format-detection" content="telephone=no" />
-        <title>홈 | 클럽메타</title>
 
-        <link rel="stylesheet" href="../../resources/css/common.min.css" />
-        <link rel="stylesheet" href="../../resources/css/lib/swiper.min.css" />
-        <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
-        <script src="../../resources/js/lib/jquery-ui.min.js"></script>
-        <script src="../../resources/js/lib/swiper.min.js"></script>
-        <script src="../../resources/js/common.js"></script>
-    </head>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>홈 | 클럽메타</title>
 
-    <body>
-        <div class="wrap">
-            <header class="header">
-                <div class="header-inner">
-                    <div class="header-left">
-                        <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
-                    </div>
-                    <div class="header-center"></div>
-                    <div class="header-right"><a href="#none" class="btn-search" role="button" title="검색">돋보기</a></div>
+    <link rel="stylesheet" href="../../resources/css/common.min.css" />
+    <link rel="stylesheet" href="../../resources/css/lib/swiper.min.css" />
+    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+    <script src="../../resources/js/lib/swiper.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="header">
+            <div class="header-inner">
+                <div class="header-left">
+                    <h1 class="header-title">클럽메타</h1>
                 </div>
-            </header>
-            <div class="contents">
-                <div class="section">
-                    <div class="banner-box">
-                        <!-- swiper-container -->
-                        <div class="swiper-area">
-                            <div class="swiper">
-                                <!-- swiper-wrapper -->
-                                <div class="swiper-wrapper">
-                                    <!-- Slides -->
-                                    <div class="swiper-slide" style="background: red">Slide 1</div>
-                                    <div class="swiper-slide" style="background: blue">Slide 2</div>
-                                    <div class="swiper-slide" style="background: green">Slide 3</div>
+                <div class="header-center"></div>
+                <div class="header-right">
+                    <a href="#none" class="btn-search" role="button" title="검색">돋보기</a>
+                    <a href="#none" class="btn-alarm" role="button" title="알람">알람</a>
+                </div>
+            </div>
+        </header>
+        <div class="contents">
+            <div class="visual-box event-slider">
+                <!-- swiper-container -->
+                <div class="swiper">
+                    <!-- swiper-wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <a href="#none">
+                                <div class="img visual_img">
+                                    <img src="../../resources/images/img/img_banner_temp.png" alt="">
                                 </div>
-
-                                <!-- navigation buttons -->
-                                <!-- <div class="swiper-button-prev"></div> -->
-                                <!-- <div class="swiper-button-next"></div> -->
-
-                                <!-- pagination -->
-                                <div class="swiper-pagination"></div>
-
-                                <div class="custom-fraction"><span class="current">1</span>/<span class="all"></span></div>
-
-                                <div class="btn-wrap">
-                                    <button type="button" class="swiper-auto-ctl" aria-label="슬라이드 자동롤링 중지">정지</button>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#none">
+                                <div class="img visual_img">
+                                    <img src="../../resources/images/img/img_banner_temp.png" alt="">
                                 </div>
-                            </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#none">
+                                <div class="img visual_img">
+                                    <img src="../../resources/images/img/img_banner_temp.png" alt="">
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="section type">
-                    <div class="category-area r-ai-challenge">
-                        <div class="inner">
-                            <div class="title-box">
-                                <h2 class="sub-title">AI챌린지</h2>
-                                <a href="#none" class="btn-go" role="button" title="이동"><span class="blind">AI챌린지 이동</span></a>
-                            </div>
-                            <div class="challenge-box scroll-box">
-                                <ul>
-                                    <li>
-                                        <a href="#none">
-                                            <div class="img">
-                                                <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png" alt="AI챌린지 이미지" />
-                                            </div>
-                                            <div class="info">
-                                                <span class="tag">그린챌린지</span>
-                                                <div class="user-info">
-                                                    <span class="user-img">
-                                                        <img src="../../resources/images/img/img_profile_example_01.png" alt="유저 프로필" />
-                                                    </span>
-                                                    <span class="user-name">유저닉네임1</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#none">
-                                            <div class="img">
-                                                <img src="../../resources/images/img/img_aichallenge_thumbnail_02.png" alt="AI챌린지 이미지" />
-                                            </div>
-                                            <div class="info">
-                                                <span class="tag">그린챌린지</span>
-                                                <div class="user-info">
-                                                    <span class="user-img">
-                                                        <img src="../../resources/images/img/img_profile_example_02.png" alt="유저 프로필" />
-                                                    </span>
-                                                    <span class="user-name">유저닉네임1</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#none">
-                                            <div class="img">
-                                                <img src="../../resources/images/img/img_aichallenge_thumbnail_03.png" alt="AI챌린지 이미지" />
-                                            </div>
-                                            <div class="info">
-                                                <span class="tag">그린챌린지</span>
-                                                <div class="user-info">
-                                                    <span class="user-img">
-                                                        <img src="../../resources/images/img/img_profile_example_03.png" alt="유저 프로필" />
-                                                    </span>
-                                                    <span class="user-name">유저닉네임1</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#none">
-                                            <div class="img">
-                                                <img src="../../resources/images/img/img_aichallenge_thumbnail_04.png" alt="AI챌린지 이미지" />
-                                            </div>
-                                            <div class="info">
-                                                <span class="tag">그린챌린지</span>
-                                                <div class="user-info">
-                                                    <span class="user-img">
-                                                        <img src="../../resources/images/img/img_profile_example_04.png" alt="유저 프로필" />
-                                                    </span>
-                                                    <span class="user-name">유저닉네임1</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#none">
-                                            <div class="img">
-                                                <img src="../../resources/images/img/img_aichallenge_thumbnail_05.png" alt="AI챌린지 이미지" />
-                                            </div>
-                                            <div class="info">
-                                                <span class="tag">그린챌린지</span>
-                                                <div class="user-info">
-                                                    <span class="user-img">
-                                                        <img src="../../resources/images/img/img_profile_example_05.png" alt="유저 프로필" />
-                                                    </span>
-                                                    <span class="user-name">유저닉네임1</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="category-area r-sound-challenge">
-                        <div class="inner">
-                            <div class="title-box">
-                                <h2 class="sub-title">음원챌린지</h2>
-                                <a href="#none" class="btn-go" role="button" title="이동"><span class="blind">음원챌린지 이동</span></a>
-                            </div>
-                            <div class="challenge-box scroll-box">
-                                <ul>
-                                    <li class="vinyl">
-                                        <a href="#none">
-                                            <div class="img">
-                                                <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png" alt="음원챌린지 이미지" />
-                                            </div>
-                                            <div class="info">
-                                                <span class="tag">그린챌린지</span>
-                                                <div class="user-info">
-                                                    <span class="user-img">
-                                                        <img src="../../resources/images/img/img_profile_example_02.png" alt="유저 프로필" />
-                                                    </span>
-                                                    <span class="user-name">유저닉네임1</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="vinyl">
-                                        <a href="#none">
-                                            <div class="img">
-                                                <img src="../../resources/images/img/img_aichallenge_thumbnail_03.png" alt="음원챌린지 이미지" />
-                                            </div>
-                                            <div class="info">
-                                                <span class="tag">그린챌린지</span>
-                                                <div class="user-info">
-                                                    <span class="user-img">
-                                                        <img src="../../resources/images/img/img_profile_example_01.png" alt="유저 프로필" />
-                                                    </span>
-                                                    <span class="user-name">유저닉네임1</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="vinyl">
-                                        <a href="#none">
-                                            <div class="img">
-                                                <img src="../../resources/images/img/img_aichallenge_thumbnail_02.png" alt="음원챌린지 이미지" />
-                                            </div>
-                                            <div class="info">
-                                                <span class="tag">그린챌린지</span>
-                                                <div class="user-info">
-                                                    <span class="user-img">
-                                                        <img src="../../resources/images/img/img_profile_example_04.png" alt="유저 프로필" />
-                                                    </span>
-                                                    <span class="user-name">유저닉네임1</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="vinyl">
-                                        <a href="#none">
-                                            <div class="img">
-                                                <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png" alt="음원챌린지 이미지" />
-                                            </div>
-                                            <div class="info">
-                                                <span class="tag">그린챌린지</span>
-                                                <div class="user-info">
-                                                    <span class="user-img">
-                                                        <img src="../../resources/images/img/img_profile_example_04.png" alt="유저 프로필" />
-                                                    </span>
-                                                    <span class="user-name">유저닉네임1</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="vinyl">
-                                        <a href="#none">
-                                            <div class="img">
-                                                <img src="../../resources/images/img/img_aichallenge_thumbnail_03.png" alt="음원챌린지 이미지" />
-                                            </div>
-                                            <div class="info">
-                                                <span class="tag">그린챌린지</span>
-                                                <div class="user-info">
-                                                    <span class="user-img">
-                                                        <img src="../../resources/images/img/img_profile_example_03.png" alt="유저 프로필" />
-                                                    </span>
-                                                    <span class="user-name">유저닉네임1</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="vinyl">
-                                        <a href="#none">
-                                            <div class="img">
-                                                <img src="../../resources/images/img/img_aichallenge_thumbnail_05.png" alt="음원챌린지 이미지" />
-                                            </div>
-                                            <div class="info">
-                                                <span class="tag">그린챌린지</span>
-                                                <div class="user-info">
-                                                    <span class="user-img">
-                                                        <img src="../../resources/images/img/img_profile_example_04.png" alt="유저 프로필" />
-                                                    </span>
-                                                    <span class="user-name">유저닉네임1</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="category-area r-sound">
-                        <div class="inner">
-                            <div class="title-box">
-                                <h2 class="sub-title">음원</h2>
-                                <a href="#none" class="btn-go" role="button" title="이동"><span class="blind">음원 이동</span></a>
-                            </div>
-                            <div class="list-box sound">
-                                <ul>
-                                    <li>
-                                        <a href="#none" role="button" title="음원 이동">
-                                            <div class="img">
-                                                <img src="../../resources/images/img/img_artist_album_01.png" alt="음원 이미지" />
-                                            </div>
-                                            <div class="info">
-                                                <strong>음원이름음원이름</strong>
-                                                <span>작곡가 명</span>
-                                            </div>
-                                        </a>
-                                        <div class="chk-box like">
-                                            <input type="checkbox" class="" id="chk" />
-                                            <label for="chk"><span class="blind">관심음원</span></label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="#none" role="button" title="음원 이동">
-                                            <div class="img">
-                                                <img src="../../resources/images/img/img_artist_album_02.png" alt="음원 이미지" />
-                                            </div>
-                                            <div class="info">
-                                                <strong>음원이름음원이름</strong>
-                                                <span>작곡가 명</span>
-                                            </div>
-                                        </a>
-                                        <div class="chk-box like">
-                                            <input type="checkbox" class="" id="chk1" />
-                                            <label for="chk1"><span class="blind">관심음원</span></label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="#none" role="button" title="음원 이동">
-                                            <div class="img">
-                                                <img src="../../resources/images/img/img_artist_album_03.png" alt="음원 이미지" />
-                                            </div>
-                                            <div class="info">
-                                                <strong>음원이름음원이름</strong>
-                                                <span>작곡가 명</span>
-                                            </div>
-                                        </a>
-                                        <div class="chk-box like">
-                                            <input type="checkbox" class="" id="chk2" />
-                                            <label for="chk2"><span class="blind">관심음원</span></label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="#none" role="button" title="음원 이동">
-                                            <div class="img">
-                                                <img src="../../resources/images/img/img_artist_album_04.png" alt="음원 이미지" />
-                                            </div>
-                                            <div class="info">
-                                                <strong>음원이름음원이름</strong>
-                                                <span>작곡가 명</span>
-                                            </div>
-                                        </a>
-                                        <div class="chk-box like">
-                                            <input type="checkbox" class="" id="chk3" />
-                                            <label for="chk3"><span class="blind">관심음원</span></label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="#none" role="button" title="음원 이동">
-                                            <div class="img">
-                                                <img src="../../resources/images/img/img_artist_album_05.png" alt="음원 이미지" />
-                                            </div>
-                                            <div class="info">
-                                                <strong>음원이름음원이름</strong>
-                                                <span>작곡가 명</span>
-                                            </div>
-                                        </a>
-                                        <div class="chk-box like">
-                                            <input type="checkbox" class="" id="chk4" />
-                                            <label for="chk4"><span class="blind">관심음원</span></label>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="category-area r-user">
-                        <div class="inner">
-                            <div class="title-box">
-                                <h2 class="sub-title">유저</h2>
-                                <a href="#none" class="btn-go" role="button" title="이동"><span class="blind">유저 이동</span></a>
-                            </div>
-                            <div class="list-box user">
-                                <ul>
-                                    <li>
-                                        <a href="#none" role="button" title="유저 이동">
-                                            <div class="img">
-                                                <img src="../../resources/images/img/img_s_profile.png" alt="유저 이미지" />
-                                            </div>
-                                            <div class="info">
-                                                <strong>유저닉네임1</strong>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#none" role="button" title="유저 이동">
-                                            <div class="img">
-                                                <img src="../../resources/images/img/img_artist_album_02.png" alt="유저 이미지" />
-                                            </div>
-                                            <div class="info">
-                                                <strong>유저닉네임1</strong>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#none" role="button" title="유저 이동">
-                                            <div class="img">
-                                                <img src="../../resources/images/img/img_artist_album_03.png" alt="유저 이미지" />
-                                            </div>
-                                            <div class="info">
-                                                <strong>유저닉네임1</strong>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#none" role="button" title="유저 이동">
-                                            <div class="img">
-                                                <img src="../../resources/images/img/img_artist_album_04.png" alt="유저 이미지" />
-                                            </div>
-                                            <div class="info">
-                                                <strong>유저닉네임1</strong>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#none" role="button" title="유저 이동">
-                                            <div class="img">
-                                                <img src="../../resources/images/img/img_artist_album_05.png" alt="유저 이미지" />
-                                            </div>
-                                            <div class="info">
-                                                <strong>유저닉네임1</strong>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="category-area r-tag">
-                        <div class="inner">
-                            <div class="title-box">
-                                <h2 class="sub-title">태그</h2>
-                                <a href="#none" class="btn-go" role="button" title="이동"><span class="blind">태그 이동</span></a>
-                            </div>
-                            <!-- 2023-07-28 more-list class 추가 -->
-                            <div class="tag-list-box more-list">
-                                <ul>
-                                    <li><a href="../COM/CLMT01_02007.html">그린챌린지</a></li>
-                                    <li><a href="#none">그린그린챌린지</a></li>
-                                    <li><a href="#none">그린챌린지</a></li>
-                                    <li><a href="#none">그린챌린지</a></li>
-                                    <li><a href="#none">태그</a></li>
 
-                                    <li><a href="#none">그린챌린지</a></li>
-                                    <li><a href="#none">그린그린챌린지</a></li>
-                                    <li><a href="#none">그린챌린지</a></li>
-                                    <li><a href="#none">그린챌린지</a></li>
-                                    <li><a href="#none">태그</a></li>
-
-                                    <li><a href="#none">그린챌린지</a></li>
-                                    <li><a href="#none">그린그린챌린지</a></li>
-                                    <li><a href="#none">그린챌린지</a></li>
-                                    <li><a href="#none">그린챌린지</a></li>
-                                    <li><a href="#none">태그</a></li>
-
-                                    <li><a href="#none">그린챌린지</a></li>
-                                    <li><a href="#none">그린그린챌린지</a></li>
-                                    <li><a href="#none">그린챌린지</a></li>
-                                    <li><a href="#none">그린챌린지</a></li>
-                                    <li><a href="#none">태그</a></li>
-                                </ul>
-                                <div class="btn-box">
-                                    <button type="button" class="btn-loadmore">더보기</button>
-                                </div>
-                            </div>
+                <div class="visual-custom">
+                    <div class="custom-left">
+                        <div class="count_insert">
+                            <span class="current">1</span>/<span class="total"></span>
                         </div>
+                        <button type="button" class="swiper-auto-ctl" aria-label="슬라이드 자동롤링 중지">
+                            <span class="blind">정지</span>
+                        </button>
+                    </div>
+                    <div class="custom-right">
+                        <a href="#none" class="btn-visual-more" role="button" title="전체보기"><span class="blind">이벤트 리스트
+                                이동</span></a>
                     </div>
                 </div>
             </div>
+            <div class="section type">
+                <div class="category-area r-ai-challenge">
+                    <div class="inner">
+                        <div class="title-box">
+                            <h2 class="sub-title">AI챌린지</h2>
+                            <a href="#none" class="btn-go" role="button" title="이동"><span class="blind">AI챌린지
+                                    이동</span></a>
+                        </div>
+                        <div class="challenge-box scroll-box">
+                            <ul>
+                                <li>
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
+                                                alt="AI챌린지 이미지" />
+                                        </div>
+                                        <div class="info">
+                                            <span class="tag">그린챌린지</span>
+                                            <div class="user-info">
+                                                <span class="user-img">
+                                                    <img src="../../resources/images/img/img_profile_example_01.png"
+                                                        alt="유저 프로필" />
+                                                </span>
+                                                <span class="user-name">유저닉네임1</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_02.png"
+                                                alt="AI챌린지 이미지" />
+                                        </div>
+                                        <div class="info">
+                                            <span class="tag">그린챌린지</span>
+                                            <div class="user-info">
+                                                <span class="user-img">
+                                                    <img src="../../resources/images/img/img_profile_example_02.png"
+                                                        alt="유저 프로필" />
+                                                </span>
+                                                <span class="user-name">유저닉네임1</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_03.png"
+                                                alt="AI챌린지 이미지" />
+                                        </div>
+                                        <div class="info">
+                                            <span class="tag">그린챌린지</span>
+                                            <div class="user-info">
+                                                <span class="user-img">
+                                                    <img src="../../resources/images/img/img_profile_example_03.png"
+                                                        alt="유저 프로필" />
+                                                </span>
+                                                <span class="user-name">유저닉네임1</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_04.png"
+                                                alt="AI챌린지 이미지" />
+                                        </div>
+                                        <div class="info">
+                                            <span class="tag">그린챌린지</span>
+                                            <div class="user-info">
+                                                <span class="user-img">
+                                                    <img src="../../resources/images/img/img_profile_example_04.png"
+                                                        alt="유저 프로필" />
+                                                </span>
+                                                <span class="user-name">유저닉네임1</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_05.png"
+                                                alt="AI챌린지 이미지" />
+                                        </div>
+                                        <div class="info">
+                                            <span class="tag">그린챌린지</span>
+                                            <div class="user-info">
+                                                <span class="user-img">
+                                                    <img src="../../resources/images/img/img_profile_example_05.png"
+                                                        alt="유저 프로필" />
+                                                </span>
+                                                <span class="user-name">유저닉네임1</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-area r-sound-challenge">
+                    <div class="inner">
+                        <div class="title-box">
+                            <h2 class="sub-title">음원챌린지</h2>
+                            <a href="#none" class="btn-go" role="button" title="이동"><span class="blind">음원챌린지
+                                    이동</span></a>
+                        </div>
+                        <div class="challenge-box scroll-box">
+                            <ul>
+                                <li class="vinyl">
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
+                                                alt="음원챌린지 이미지" />
+                                        </div>
+                                        <div class="info">
+                                            <span class="tag">그린챌린지</span>
+                                            <div class="user-info">
+                                                <span class="user-img">
+                                                    <img src="../../resources/images/img/img_profile_example_02.png"
+                                                        alt="유저 프로필" />
+                                                </span>
+                                                <span class="user-name">유저닉네임1</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="vinyl">
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_03.png"
+                                                alt="음원챌린지 이미지" />
+                                        </div>
+                                        <div class="info">
+                                            <span class="tag">그린챌린지</span>
+                                            <div class="user-info">
+                                                <span class="user-img">
+                                                    <img src="../../resources/images/img/img_profile_example_01.png"
+                                                        alt="유저 프로필" />
+                                                </span>
+                                                <span class="user-name">유저닉네임1</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="vinyl">
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_02.png"
+                                                alt="음원챌린지 이미지" />
+                                        </div>
+                                        <div class="info">
+                                            <span class="tag">그린챌린지</span>
+                                            <div class="user-info">
+                                                <span class="user-img">
+                                                    <img src="../../resources/images/img/img_profile_example_04.png"
+                                                        alt="유저 프로필" />
+                                                </span>
+                                                <span class="user-name">유저닉네임1</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="vinyl">
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
+                                                alt="음원챌린지 이미지" />
+                                        </div>
+                                        <div class="info">
+                                            <span class="tag">그린챌린지</span>
+                                            <div class="user-info">
+                                                <span class="user-img">
+                                                    <img src="../../resources/images/img/img_profile_example_04.png"
+                                                        alt="유저 프로필" />
+                                                </span>
+                                                <span class="user-name">유저닉네임1</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="vinyl">
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_03.png"
+                                                alt="음원챌린지 이미지" />
+                                        </div>
+                                        <div class="info">
+                                            <span class="tag">그린챌린지</span>
+                                            <div class="user-info">
+                                                <span class="user-img">
+                                                    <img src="../../resources/images/img/img_profile_example_03.png"
+                                                        alt="유저 프로필" />
+                                                </span>
+                                                <span class="user-name">유저닉네임1</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="vinyl">
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_05.png"
+                                                alt="음원챌린지 이미지" />
+                                        </div>
+                                        <div class="info">
+                                            <span class="tag">그린챌린지</span>
+                                            <div class="user-info">
+                                                <span class="user-img">
+                                                    <img src="../../resources/images/img/img_profile_example_04.png"
+                                                        alt="유저 프로필" />
+                                                </span>
+                                                <span class="user-name">유저닉네임1</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-area r-sound">
+                    <div class="inner">
+                        <div class="title-box">
+                            <h2 class="sub-title">음원</h2>
+                            <a href="#none" class="btn-go" role="button" title="이동"><span class="blind">음원 이동</span></a>
+                        </div>
+                        <div class="list-box sound">
+                            <ul>
+                                <li>
+                                    <a href="#none" role="button" title="음원 이동">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_artist_album_01.png"
+                                                alt="음원 이미지" />
+                                        </div>
+                                        <div class="info">
+                                            <strong>음원이름음원이름</strong>
+                                            <span>작곡가 명</span>
+                                        </div>
+                                    </a>
+                                    <div class="chk-box like">
+                                        <input type="checkbox" class="" id="chk" />
+                                        <label for="chk"><span class="blind">관심음원</span></label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#none" role="button" title="음원 이동">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_artist_album_02.png"
+                                                alt="음원 이미지" />
+                                        </div>
+                                        <div class="info">
+                                            <strong>음원이름음원이름</strong>
+                                            <span>작곡가 명</span>
+                                        </div>
+                                    </a>
+                                    <div class="chk-box like">
+                                        <input type="checkbox" class="" id="chk1" />
+                                        <label for="chk1"><span class="blind">관심음원</span></label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#none" role="button" title="음원 이동">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_artist_album_03.png"
+                                                alt="음원 이미지" />
+                                        </div>
+                                        <div class="info">
+                                            <strong>음원이름음원이름</strong>
+                                            <span>작곡가 명</span>
+                                        </div>
+                                    </a>
+                                    <div class="chk-box like">
+                                        <input type="checkbox" class="" id="chk2" />
+                                        <label for="chk2"><span class="blind">관심음원</span></label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#none" role="button" title="음원 이동">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_artist_album_04.png"
+                                                alt="음원 이미지" />
+                                        </div>
+                                        <div class="info">
+                                            <strong>음원이름음원이름</strong>
+                                            <span>작곡가 명</span>
+                                        </div>
+                                    </a>
+                                    <div class="chk-box like">
+                                        <input type="checkbox" class="" id="chk3" />
+                                        <label for="chk3"><span class="blind">관심음원</span></label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#none" role="button" title="음원 이동">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_artist_album_05.png"
+                                                alt="음원 이미지" />
+                                        </div>
+                                        <div class="info">
+                                            <strong>음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름</strong>
+                                            <span>작곡가 명</span>
+                                        </div>
+                                    </a>
+                                    <div class="chk-box like">
+                                        <input type="checkbox" class="" id="chk4" />
+                                        <label for="chk4"><span class="blind">관심음원</span></label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-area r-user">
+                    <div class="inner">
+                        <div class="title-box">
+                            <h2 class="sub-title">오늘의 트렌드 Top 10</h2>
+                        </div>
+                        <div class="challenge-box scroll-box ">
+                            <ul>
+                                <li class="vinyl">
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
+                                                alt="음원챌린지 이미지">
+                                        </div>
+                                        <div class="info">
+                                            <span class="tag">그린챌린지</span>
+                                            <div class="user-info">
+                                                <span class="user-img">
+                                                    <img src="../../resources/images/img/img_profile_example_02.png"
+                                                        alt="유저 프로필">
+                                                </span>
+                                                <span class="user-name">유저닉네임1</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="vinyl">
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_03.png"
+                                                alt="음원챌린지 이미지">
+                                        </div>
+                                        <div class="info">
+                                            <span class="tag">그린챌린지</span>
+                                            <div class="user-info">
+                                                <span class="user-img">
+                                                    <img src="../../resources/images/img/img_profile_example_01.png"
+                                                        alt="유저 프로필">
+                                                </span>
+                                                <span class="user-name">유저닉네임1</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="vinyl">
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_02.png"
+                                                alt="음원챌린지 이미지">
+                                        </div>
+                                        <div class="info">
+                                            <span class="tag">그린챌린지</span>
+                                            <div class="user-info">
+                                                <span class="user-img">
+                                                    <img src="../../resources/images/img/img_profile_example_04.png"
+                                                        alt="유저 프로필">
+                                                </span>
+                                                <span class="user-name">유저닉네임1</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="vinyl">
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
+                                                alt="음원챌린지 이미지">
+                                        </div>
+                                        <div class="info">
+                                            <span class="tag">그린챌린지</span>
+                                            <div class="user-info">
+                                                <span class="user-img">
+                                                    <img src="../../resources/images/img/img_profile_example_04.png"
+                                                        alt="유저 프로필">
+                                                </span>
+                                                <span class="user-name">유저닉네임1</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="vinyl">
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_03.png"
+                                                alt="음원챌린지 이미지">
+                                        </div>
+                                        <div class="info">
+                                            <span class="tag">그린챌린지</span>
+                                            <div class="user-info">
+                                                <span class="user-img">
+                                                    <img src="../../resources/images/img/img_profile_example_03.png"
+                                                        alt="유저 프로필">
+                                                </span>
+                                                <span class="user-name">유저닉네임1</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="vinyl">
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_05.png"
+                                                alt="음원챌린지 이미지">
+                                        </div>
+                                        <div class="info">
+                                            <span class="tag">그린챌린지</span>
+                                            <div class="user-info">
+                                                <span class="user-img">
+                                                    <img src="../../resources/images/img/img_profile_example_04.png"
+                                                        alt="유저 프로필">
+                                                </span>
+                                                <span class="user-name">유저닉네임1</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-area r-tag">
+                    <div class="inner">
+                        <div class="title-box">
+                            <h2 class="sub-title">이달의 랭커</h2>
+                        </div>
 
-            <div class="quick_top">
-                <button type="button" class="btn-top">TOP</button>
+                        <div class="list-box rank more-list">
+                            <ol class="rank-list">
+                                <li>
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
+                                                alt="유저 이미지">
+                                        </div>
+                                        <div class="info">
+                                            <strong>유저닉네임1</strong>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
+                                                alt="유저 이미지">
+                                        </div>
+                                        <div class="info">
+                                            <strong>유저닉네임1</strong>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
+                                                alt="유저 이미지">
+                                        </div>
+                                        <div class="info">
+                                            <strong>유저닉네임1</strong>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
+                                                alt="유저 이미지">
+                                        </div>
+                                        <div class="info">
+                                            <strong>유저닉네임1</strong>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
+                                                alt="유저 이미지">
+                                        </div>
+                                        <div class="info">
+                                            <strong>유저닉네임1</strong>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
+                                                alt="유저 이미지">
+                                        </div>
+                                        <div class="info">
+                                            <strong>유저닉네임1</strong>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ol>
+
+                            <div class="btn-box">
+                                <button type="button" class="btn-loadmore">더보기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <script>
-            $('document').ready(function () {
-                var swiper = new Swiper('.swiper', {
-                    slidesPerView: 'auto',
-                    centeredSlides: true,
-                    watchOverflow: true,
-                    autoplay: {
-                        delay: 2500,
-                        disableOnInteraction: false
-                    },
+    </div>
 
-                    // pagination 기본은 bullet
-                    pagination: {
-                        el: '.swiper-pagination'
-                    },
+    <div class="quick_top">
+        <button type="button" class="btn-top">TOP</button>
+    </div>
+    </div>
+    <script>
+        $('document').ready(function () {
+            var swiper = new Swiper('.swiper', {
+                slidesPerView: 'auto',
+                centeredSlides: true,
+                watchOverflow: true,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false
+                },
 
-                    // 좌우 화살표 navigation element 지정
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev'
-                    },
-                    // 반응형
-                    breakpoints: {
-                        // 320px 이하가 되면 슬라이드 간 간격을 0으로
-                        320: {
-                            spaceBetween: 0
-                        }
-                    },
+                // pagination 기본은 bullet
+                pagination: {
+                    el: '.swiper-pagination'
+                },
 
-                    on: {
-                        init: function () {
-                            var slideidx = this.slides.length;
-
-                            $('.swiper-slide').addClass('changed');
-                            $('.custom-fraction .current').text(this.realIndex + 1);
-                            $('.custom-fraction .all').text(slideidx);
-                        },
-
-                        slideChangeTransitionStart: function () {
-                            $('.swiper-slide').addClass('changing');
-                            $('.swiper-slide').removeClass('changed');
-                            $('.custom-fraction .current').text(this.realIndex + 1);
-                        },
-
-                        slideChangeTransitionEnd: function () {
-                            // changing : transition O
-                            // changed : transition X
-                            $('.swiper-slide').removeClass('changing');
-                            $('.swiper-slide').addClass('changed');
-                        }
+                // 좌우 화살표 navigation element 지정
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                },
+                // 반응형
+                breakpoints: {
+                    // 320px 이하가 되면 슬라이드 간 간격을 0으로
+                    320: {
+                        spaceBetween: 0
                     }
-                });
+                },
 
-                // 슬라이더 할당한 swiper로 슬라이더 제어
-                $('.swiper-auto-ctl').on('click', function (e) {
-                    $(this).toggleClass('is-stop');
+                on: {
+                    init: function () {
+                        var slideidx = this.slides.length;
+                        $('.swiper-slide').addClass('changed');
+                        $('.visual-custom .current').text(this.realIndex + 1);
+                        $('.visual-custom .total').text(slideidx);
 
-                    if ($(this).hasClass('is-stop')) {
-                        swiper.autoplay.start();
-                        $(this).attr('aria-label', '슬라이드 자동롤링 시작').text('시작');
-                    } else {
-                        swiper.autoplay.stop();
-                        $(this).attr('aria-label', '슬라이드 자동롤링 중지').text('중지');
+                        // 슬라이더 할당한 swiper로 슬라이더 제어
+                        $('.swiper-auto-ctl').on('click', function (e) {
+                            $(this).toggleClass('is-stop');
+
+                            if ($(this).hasClass('is-stop')) {
+                                swiper.autoplay.stop();
+                                $(this).attr('aria-label', '슬라이드 자동롤링 시작').find('.blind').text('시작');
+                            } else {
+                                swiper.autoplay.start();
+                                $(this).attr('aria-label', '슬라이드 자동롤링 중지').find('.blind').text('중지');
+                            }
+                        });
+                    },
+
+                    slideChangeTransitionStart: function () {
+                        $('.swiper-slide').addClass('changing');
+                        $('.swiper-slide').removeClass('changed');
+                        $('.visual-custom .current').text(this.realIndex + 1);
+                    },
+
+                    slideChangeTransitionEnd: function () {
+                        // changing : transition O
+                        // changed : transition X
+                        $('.swiper-slide').removeClass('changing');
+                        $('.swiper-slide').addClass('changed');
                     }
-                });
+                }
             });
-        </script>
-    </body>
+
+
+        });
+    </script>
+</body>
+
 </html>

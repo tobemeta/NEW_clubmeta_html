@@ -266,29 +266,36 @@ h1 {
     }
 
     a {
-        flex: 1;
         display: flex;
+        overflow: hidden;
+    }
+    .img {
+        flex: 0 0 auto;
     }
     .info {
         display: flex;
+        overflow: hidden;
         flex-direction: column;
         justify-content: center;
         margin-left: 0.8rem;
         strong {
+            display: block;
             font-weight: $normal;
+            @include ellipsis();
         }
         span {
             font-size: 1.2rem;
             line-height: 1.7rem;
             color: #585858;
+            @include ellipsis();
         }
     }
     &.sound {
-        // li {
-        //     justify-content: space-between;
-        // }
+        li {
+            justify-content: space-between;
+        }
         .img {
-            width: 5.6rem;
+            min-width: 5.6rem;
             height: 5.6rem;
             border-radius: 1.6rem;
             overflow: hidden;
@@ -300,7 +307,7 @@ h1 {
             padding: 0;
         }
         .img {
-            width: 4.8rem;
+            min-width: 4.8rem;
             height: 4.8rem;
             border-radius: 50%;
             overflow: hidden;
@@ -309,6 +316,18 @@ h1 {
             height: 6.4rem;
             padding: 0 0.8rem;
             align-items: center;
+        }
+    }
+    &.rank {
+        li {
+            border: 0.1rem solid #e7e7e7;
+            padding-left: 4.2rem;
+        }
+        .img {
+            width: 4.8rem;
+            height: 4.8rem;
+            border-radius: 50%;
+            overflow: hidden;
         }
     }
 }
@@ -389,7 +408,7 @@ h1 {
             }
             .info {
                 .user-img {
-                    width: 3.2rem;
+                    min-width: 3.2rem;
                     height: 3.2rem;
                     margin-right: 0.4rem;
                     border-radius: 50%;
@@ -443,4 +462,61 @@ h1 {
 
 .swiper {
     height: 100%;
+}
+
+.rank-list {
+    counter-reset: rank 0;
+    li {
+        position: relative;
+        padding-left: 5rem;
+        &:before,
+        &:after {
+            display: flex;
+            position: absolute;
+            left: 0.8rem;
+            width: 2.8rem;
+            height: 2.8rem;
+            transform: translateY(-50%);
+        }
+        &::before {
+            content: '';
+            top: 50%;
+            border-radius: 50%;
+            @include bg($src: '../images/ico/ico_rank.svg');
+            background-size: cover;
+        }
+        &::after {
+            content: counter(rank);
+            counter-increment: rank 1;
+            top: calc(50% + 0.08rem);
+            font-size: 1.2rem;
+            font-weight: $bold;
+            align-items: center;
+            justify-content: center;
+        }
+        &:first-child {
+            &::before {
+                @include bg($src: '../images/ico/ico_rank1.svg');
+            }
+            &::after {
+                content: '';
+            }
+        }
+        &:nth-child(2) {
+            &::before {
+                @include bg($src: '../images/ico/ico_rank2.svg');
+            }
+            &::after {
+                content: '';
+            }
+        }
+        &:nth-child(3) {
+            &::before {
+                @include bg($src: '../images/ico/ico_rank3.svg');
+            }
+            &::after {
+                content: '';
+            }
+        }
+    }
 }

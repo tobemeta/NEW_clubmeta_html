@@ -71,7 +71,7 @@ body.login {
     right: 1.6rem;
     transition: bottom 0.3s ease;
     font-size: 0;
-
+    z-index: 100;
     .btn-top {
         display: block;
         position: relative;
