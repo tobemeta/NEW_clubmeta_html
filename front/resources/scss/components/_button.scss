@@ -63,7 +63,10 @@
     @include bg($src: '../images/btn/btn_search.svg', $po: center);
     font-size: 0;
 }
-
+.btn-alarm {
+    @include bg($src: '../images/ico/ico_alarm.svg', $po: center);
+    font-size: 0;
+}
 .btn-del {
     @include imgBtn($src: '../images/btn/btn_ip_delete');
 }
