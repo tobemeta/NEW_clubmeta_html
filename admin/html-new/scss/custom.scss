@@ -496,14 +496,16 @@ optgroup {
     }
 }
 .btn-tab {
-    gap: 1rem;
+    gap: 0.5rem;
     border-bottom: 0 !important;
     .btn-tab-link {
         outline: 0;
         color: #fff;
         background-color: #858796;
         border-color: #858796;
-        border-radius: 0.35rem;
+        border-radius: 1.2rem;
+        border-top-left-radius: 1.2rem !important;
+        border-top-right-radius: 1.2rem !important;
         &.active {
             border-color: #858796 !important;
             font-weight: 500;
