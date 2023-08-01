@@ -8,6 +8,7 @@
     <title>클럽메타 관리자 - 관리자 관리</title>
     <!-- js -->
     <script src="../include/head.js"></script>
+    <script src="../../js/custom.js"></script>
     <!-- css -->
     <link href="../../datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../../css/common.min.css" />
@@ -231,7 +232,11 @@
                             </div>
                             <div class="fixed-table-pagination">
                                 <div class="pagination-detail"></div>
-                                <div class="justify-content-center pagination">
+                                <div class="float-left">
+                                    <button type="button" class="btn btn-outline-dark"><i class="bi bi-x"></i>
+                                        삭제</button>
+                                </div>
+                                <div class="pagination">
                                     <ul class="pagination">
                                         <li class="page-item page-pre"><a class="page-link" aria-label="previous page"
                                                 href="javascript:void(0)">‹</a></li>
@@ -243,11 +248,6 @@
                                                 href="javascript:void(0)">›</a></li>
                                     </ul>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="btn-wrap mt-3 clearfix">
-                            <div class="float-left">
-                                <button type="button" class="btn btn-outline-dark"><i class="bi bi-x"></i> 삭제</button>
                             </div>
                         </div>
                     </div>

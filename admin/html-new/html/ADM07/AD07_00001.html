@@ -8,6 +8,7 @@
     <title>클럽메타 관리자 - 신고관리</title>
     <!-- js -->
     <script src="../include/head.js"></script>
+    <script src="../../js/custom.js"></script>
     <!-- css -->
     <link href="../../datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../../css/common.min.css" />
@@ -18,6 +19,7 @@
     <!-- Page Wrapper -->
     <div id="wrapper" class="wrapper">
         <!-- 사이드바 -->
+        <div class="data-target" data-target="AD07_00001"></div>
         <div data-include="../include/sidebar.html"></div>
         <!-- //사이드바 -->
 
@@ -179,7 +181,8 @@
                                     <div class="fixed-table-toolbar"></div>
                                     <div class="fixed-table-container">
                                         <div class="fixed-table-body">
-                                            <div class="fixed-table-loading table table-bordered table-hover">
+                                            <div class="fixed-table-loading table table-bordered table-hover"
+                                                style="top: 42.7969px;">
                                                 <span class="loading-wrap">
                                                     <span class="loading-text">데이터를 불러오는 중입니다</span>
                                                     <span class="animation-wrap"><span
@@ -231,9 +234,12 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                    <tr class="no-records-found">
+                                                        <td colspan="8">조회된 데이터가 없습니다.</td>
+                                                    </tr>
                                                     <tr class="tr-fixed" data-index="0">
                                                         <td>
-                                                            <label class="custom-control custom-checkbox only mb-0">
+                                                            <label class="custom-control custom-checkbox only">
                                                                 <input type="checkbox" class="custom-control-input" />
                                                                 <span class="custom-control-label"></span>
                                                             </label>
@@ -251,7 +257,7 @@
                                                     </tr>
                                                     <tr data-index="1">
                                                         <td>
-                                                            <label class="custom-control custom-checkbox only mb-0">
+                                                            <label class="custom-control custom-checkbox only">
                                                                 <input type="checkbox" class="custom-control-input" />
                                                                 <span class="custom-control-label"></span>
                                                             </label>
@@ -269,7 +275,7 @@
                                                     </tr>
                                                     <tr data-index="2">
                                                         <td>
-                                                            <label class="custom-control custom-checkbox only mb-0">
+                                                            <label class="custom-control custom-checkbox only">
                                                                 <input type="checkbox" class="custom-control-input" />
                                                                 <span class="custom-control-label"></span>
                                                             </label>
@@ -287,7 +293,7 @@
                                                     </tr>
                                                     <tr data-index="3">
                                                         <td>
-                                                            <label class="custom-control custom-checkbox only mb-0">
+                                                            <label class="custom-control custom-checkbox only">
                                                                 <input type="checkbox" class="custom-control-input" />
                                                                 <span class="custom-control-label"></span>
                                                             </label>
@@ -313,7 +319,7 @@
                                             <button type="button" class="btn btn-outline-dark"><i class="bi bi-x"></i>
                                                 삭제</button>
                                         </div>
-                                        <div class="justify-content-center pagination">
+                                        <div class="pagination-wrap pagination">
                                             <ul class="pagination">
                                                 <li class="page-item page-pre"><a class="page-link"
                                                         aria-label="previous page" href="javascript:void(0)">‹</a></li>

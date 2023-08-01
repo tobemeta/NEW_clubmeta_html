@@ -36,8 +36,8 @@ optgroup {
     font-size: inherit;
     line-height: inherit;
 }
-.main {
-    margin-bottom: 3rem;
+.container-fluid {
+    padding-bottom: 3rem;
 }
 .pre-line {
     white-space: pre-line;
@@ -81,6 +81,50 @@ optgroup {
 }
 .fz-sm {
     font-size: $font-size-sm;
+}
+
+// login
+.form-signin-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+    color: #212529;
+    .signin-content {
+        flex-direction: row;
+        max-width: 40rem;
+        min-height: 30rem;
+    }
+
+    .signin-left {
+        width: 40rem;
+        flex: 0 0 50%;
+        border-right: 1px solid #ddd;
+    }
+    .signin-right {
+        flex: 0 0 50%;
+        padding: 2rem;
+        box-sizing: border-box;
+        .title {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+        }
+    }
+    form.user {
+        .form-control-user {
+            border-radius: 0.35rem;
+        }
+        .btn-user {
+            margin-top: 3rem;
+            border-radius: 0.35rem;
+        }
+        .custom-checkbox.small {
+            label {
+                font-size: 14px;
+            }
+        }
+    }
 }
 
 // topbar
@@ -312,6 +356,7 @@ optgroup {
     color: #111 !important;
     a:not(.btn) {
         text-decoration: underline;
+        color: #111;
     }
     tr {
         &:not(:hover) {
@@ -381,6 +426,9 @@ optgroup {
 .fixed-table-pagination {
     .pagination-info {
         display: none;
+    }
+    .pagination {
+        justify-content: center;
     }
 }
 .table:not(.table-sm):not(.table-lg) {
@@ -566,7 +614,18 @@ optgroup {
     }
 }
 
-@media (min-width: $mobile-size) {
+@media (min-width: $tablet-size) {
+    .form-signin-wrap {
+        .signin-content {
+            max-width: 60rem;
+        }
+    }
+}
+
+@media (max-width: $tablet-size) {
+    .sidebar-brand-text {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: $mobile-size) {
@@ -574,8 +633,26 @@ optgroup {
         font-size: 14px;
     }
 
+    .form-signin-wrap {
+        .signin-content {
+            min-width: 60%;
+        }
+        .signin-left {
+            display: none;
+        }
+        .signin-right {
+            flex: 1;
+        }
+    }
+
     .sidebar {
         width: 6.5rem !important;
+    }
+
+    .fixed-table-pagination {
+        .pagination {
+            justify-content: right;
+        }
     }
 
     .form-box {
