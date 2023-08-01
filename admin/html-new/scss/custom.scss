@@ -158,6 +158,29 @@ optgroup {
                 }
             }
         }
+        .possnum-wrap {
+            display: flex;
+            align-items: center;
+            dl,
+            dt,
+            dd {
+                margin: 0;
+            }
+            dl {
+                display: flex;
+                height: 100%;
+                padding: 0 0.75rem;
+                align-items: center;
+            }
+            dt {
+                color: #fff;
+                font-weight: 400;
+                margin-right: 0.3rem;
+            }
+            dd {
+                font-weight: bold;
+            }
+        }
     }
 }
 .topbar.navbar-light .navbar-nav .nav-item .nav-link:hover .navbar-nav {
