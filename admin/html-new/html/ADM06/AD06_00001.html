@@ -1,184 +1,170 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>클럽메타 관리자 - 음원 관리</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../css/custom.min.css" />
+        <link rel="stylesheet" href="../../css/common.min.css" />
+        <link href="../../datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
 
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>클럽메타 관리자 - 음원 관리</title>
-    <!-- css -->
-    <link rel="stylesheet" href="../../css/custom.min.css" />
-    <link rel="stylesheet" href="../../css/common.min.css" />
-    <link href="../../datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
+        <!-- js -->
+        <script src="../include/head.js"></script>
+    </head>
 
-    <!-- js -->
-    <script src="../include/head.js"></script>
-</head>
+    <body>
+        <!-- Page Wrapper -->
+        <div id="wrapper" class="wrapper">
+            <!-- 사이드바 -->
+            <div data-include="../include/sidebar.html"></div>
+            <!-- //사이드바 -->
 
-<body>
-    <!-- Page Wrapper -->
-    <div id="wrapper" class="wrapper">
-        <!-- 사이드바 -->
-        <div data-include="../include/sidebar.html"></div>
-        <!-- //사이드바 -->
+            <!-- content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column bg-white">
+                <!-- 컨텐츠 본문 -->
+                <div id="content">
+                    <!--  -->
+                    <div data-include="../include/topbar.html"></div>
 
-        <!-- content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column bg-white">
-            <!-- 컨텐츠 본문 -->
-            <div id="content">
-                <!--  -->
-                <div data-include="../include/topbar.html"></div>
-
-                <div class="container-fluid" role="main">
-                    <!-- 페이지 경로 -->
-                    <div class="page-breadcrumb" aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item">
-                                <i class="fas fa-home d-flex align-items-center"></i>
-                            </li>
-                            <li class="breadcrumb-item">영상관리</li>
-                            <li class="breadcrumb-item">영상 대시보드</li>
-                        </ol>
-                    </div>
-                    <!-- //페이지 경로 -->
-                    <div class="main">
-                        <!-- 제목 및 등록버튼 -->
-                        <div class="row clearfix mt-4 mb-4">
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                <h2 class="h3 text-gray-800 float-left">영상 대시보드</h2>
-                            </div>
+                    <div class="container-fluid" role="main">
+                        <!-- 페이지 경로 -->
+                        <div class="page-breadcrumb" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <i class="fas fa-home d-flex align-items-center"></i>
+                                </li>
+                                <li class="breadcrumb-item">영상관리</li>
+                                <li class="breadcrumb-item">영상 대시보드</li>
+                            </ol>
                         </div>
-                        <!-- //제목 및 등록버튼 -->
+                        <!-- //페이지 경로 -->
+                        <div class="main">
+                            <!-- 제목 및 등록버튼 -->
+                            <div class="row clearfix mt-4 mb-4">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h2 class="h3 text-gray-800 float-left">영상 대시보드</h2>
+                                </div>
+                            </div>
+                            <!-- //제목 및 등록버튼 -->
 
-                        <!-- 검색 영역 -->
-                        <div class="search-wrap">
-                            <div class="form-box">
-                                <div class="form-box-row">
-                                    <div class="form-box-item">
-                                        <div class="form-box-label"><label for="">기간 검색</label></div>
-                                        <div class="form-box-cont">
-                                            <div class="form-row input-daterange-btn">
-                                                <div class="col-md-2">
-                                                    <input type="date" class="form-control" placeholder="시작일" />
-                                                </div>
-                                                <div class="input-group-prepend">~</div>
-                                                <div class="col-md-2">
-                                                    <input type="date" class="form-control" placeholder="종료일" />
-                                                </div>
+                            <!-- 검색 영역 -->
+                            <div class="search-wrap">
+                                <div class="form-box">
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label"><label for="">기간 검색</label></div>
+                                            <div class="form-box-cont">
+                                                <div class="form-row input-daterange-btn">
+                                                    <div class="col-md-2">
+                                                        <input type="date" class="form-control" placeholder="시작일" />
+                                                    </div>
+                                                    <div class="input-group-prepend">~</div>
+                                                    <div class="col-md-2">
+                                                        <input type="date" class="form-control" placeholder="종료일" />
+                                                    </div>
 
-                                                <div class="btn-group" role="group" aria-label="기간 선택 버튼">
-                                                    <button type="button"
-                                                        class="btn btn-outline-secondary btn-sm">오늘</button>
-                                                    <button type="button"
-                                                        class="btn btn-outline-secondary btn-sm active">7일</button>
-                                                    <button type="button"
-                                                        class="btn btn-outline-secondary btn-sm">15일</button>
-                                                    <button type="button"
-                                                        class="btn btn-outline-secondary btn-sm">1개월</button>
-                                                    <button type="button"
-                                                        class="btn btn-outline-secondary btn-sm">3개월</button>
-                                                    <button type="button"
-                                                        class="btn btn-outline-secondary btn-sm">전체</button>
-                                                    <!-- active 클래스로  활성화 -->
-                                                </div>
-                                                <div class="btn-wrap ml-2 mt-0">
-                                                    <button type="submit" class="btn btn-dark"><i
-                                                            class="fa fa-search mr-1"></i> 검색</button>
+                                                    <div class="btn-group" role="group" aria-label="기간 선택 버튼">
+                                                        <button type="button" class="btn btn-outline-secondary btn-sm">오늘</button>
+                                                        <button type="button" class="btn btn-outline-secondary btn-sm active">7일</button>
+                                                        <button type="button" class="btn btn-outline-secondary btn-sm">15일</button>
+                                                        <button type="button" class="btn btn-outline-secondary btn-sm">1개월</button>
+                                                        <button type="button" class="btn btn-outline-secondary btn-sm">3개월</button>
+                                                        <button type="button" class="btn btn-outline-secondary btn-sm">전체</button>
+                                                        <!-- active 클래스로  활성화 -->
+                                                    </div>
+                                                    <div class="btn-wrap ml-2 mt-0">
+                                                        <button type="submit" class="btn btn-dark"><i class="fa fa-search mr-1"></i> 검색</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- //검색 영역 -->
+                            <!-- //검색 영역 -->
 
-                        <!---//contents--->
-                        <div class="dashboard-box mt-1">
-                            <div class="dashboard">
-                                <dl>
-                                    <dt>업로드 영상 수</dt>
-                                    <dd><strong class="fz-lg fc-yellow">264</strong></dd>
-                                </dl>
-                                <dl>
-                                    <dt>노출 수</dt>
-                                    <dd><strong class="fz-lg fc-yellow">231,0214</strong></dd>
-                                </dl>
-                                <dl>
-                                    <dt>댓글 수</dt>
-                                    <dd><strong class="fz-lg fc-yellow">2,439</strong></dd>
-                                </dl>
-                                <dl>
-                                    <dt>좋아요 수</dt>
-                                    <dd><strong class="fz-lg fc-yellow">100,684</strong></dd>
-                                </dl>
-                                <dl class="">
-                                    <dt>공유 횟수</dt>
-                                    <dd><strong class="fz-lg fc-yellow">210</strong></dd>
-                                </dl>
-                                <dl>
-                                    <dt>AI 챌린지<br />오픈 횟수</dt>
-                                    <dd><strong class="fz-lg fc-yellow">11</strong></dd>
-                                </dl>
-                                <dl class="">
-                                    <dt>음원챌리지<br />오픈 횟수</dt>
-                                    <dd><strong class="fz-lg fc-yellow">6</strong></dd>
-                                </dl>
+                            <!---//contents--->
+                            <div class="dashboard-box mt-1">
+                                <div class="dashboard">
+                                    <dl>
+                                        <dt>업로드 영상 수</dt>
+                                        <dd><strong class="fz-lg fc-yellow">264</strong></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>노출 수</dt>
+                                        <dd><strong class="fz-lg fc-yellow">231,0214</strong></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>댓글 수</dt>
+                                        <dd><strong class="fz-lg fc-yellow">2,439</strong></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>좋아요 수</dt>
+                                        <dd><strong class="fz-lg fc-yellow">100,684</strong></dd>
+                                    </dl>
+                                    <dl class="">
+                                        <dt>공유 횟수</dt>
+                                        <dd><strong class="fz-lg fc-yellow">210</strong></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>AI 챌린지<br />오픈 횟수</dt>
+                                        <dd><strong class="fz-lg fc-yellow">11</strong></dd>
+                                    </dl>
+                                    <dl class="">
+                                        <dt>음원챌리지<br />오픈 횟수</dt>
+                                        <dd><strong class="fz-lg fc-yellow">6</strong></dd>
+                                    </dl>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row clearfix mt-4 mb-4">
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                <h2 class="h3 text-gray-800 float-left">영상 인사이트</h2>
+                            <div class="row clearfix mt-4 mb-4">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h2 class="h3 text-gray-800 float-left">영상 인사이트</h2>
+                                </div>
                             </div>
-                        </div>
-                        <!-- 검색 영역 -->
-                        <div class="search-wrap">
-                            <div class="form-box">
-                                <div class="form-box-row">
-                                    <div class="form-box-item">
-                                        <div class="form-box-label"><label for="">기간 검색</label></div>
-                                        <div class="form-box-cont">
-                                            <div class="form-row input-daterange-btn">
-                                                <div class="col-md-2">
-                                                    <input type="date" class="form-control" placeholder="시작일" />
-                                                </div>
-                                                <div class="input-group-prepend">~</div>
-                                                <div class="col-md-2">
-                                                    <input type="date" class="form-control" placeholder="종료일" />
-                                                </div>
+                            <!-- 검색 영역 -->
+                            <div class="search-wrap">
+                                <div class="form-box">
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label"><label for="">기간 검색</label></div>
+                                            <div class="form-box-cont">
+                                                <div class="form-row input-daterange-btn">
+                                                    <div class="col-md-2">
+                                                        <input type="date" class="form-control" placeholder="시작일" />
+                                                    </div>
+                                                    <div class="input-group-prepend">~</div>
+                                                    <div class="col-md-2">
+                                                        <input type="date" class="form-control" placeholder="종료일" />
+                                                    </div>
 
-                                                <div class="btn-group" role="group" aria-label="기간 선택 버튼">
-                                                    <button type="button"
-                                                        class="btn btn-outline-secondary btn-sm">오늘</button>
-                                                    <button type="button"
-                                                        class="btn btn-outline-secondary btn-sm active">7일</button>
-                                                    <button type="button"
-                                                        class="btn btn-outline-secondary btn-sm">15일</button>
-                                                    <button type="button"
-                                                        class="btn btn-outline-secondary btn-sm">1개월</button>
-                                                    <button type="button"
-                                                        class="btn btn-outline-secondary btn-sm">3개월</button>
-                                                    <button type="button"
-                                                        class="btn btn-outline-secondary btn-sm">전체</button>
-                                                    <!-- active 클래스로  활성화 -->
-                                                </div>
-                                                <div class="btn-wrap ml-2 mt-0">
-                                                    <button type="submit" class="btn btn-dark"><i
-                                                            class="fa fa-search mr-1"></i> 검색</button>
+                                                    <div class="btn-group" role="group" aria-label="기간 선택 버튼">
+                                                        <button type="button" class="btn btn-outline-secondary btn-sm">오늘</button>
+                                                        <button type="button" class="btn btn-outline-secondary btn-sm active">7일</button>
+                                                        <button type="button" class="btn btn-outline-secondary btn-sm">15일</button>
+                                                        <button type="button" class="btn btn-outline-secondary btn-sm">1개월</button>
+                                                        <button type="button" class="btn btn-outline-secondary btn-sm">3개월</button>
+                                                        <button type="button" class="btn btn-outline-secondary btn-sm">전체</button>
+                                                        <!-- active 클래스로  활성화 -->
+                                                    </div>
+                                                    <div class="btn-wrap ml-2 mt-0">
+                                                        <button type="submit" class="btn btn-dark"><i class="fa fa-search mr-1"></i> 검색</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- //검색 영역 -->
-                        <div class="row mt-4">
-                            <div class="col-md-4">
-                                <div class="text-line-box dash-chart-box">
-                                    <div class="title-wrap">
-                                        <div class="left">
-                                            <h2 class="h5">영상 업로드 유저 성별(참여자)</h2>
+                            <!-- //검색 영역 -->
+                            <div class="row mt-4">
+                                <div class="col-md-4">
+                                    <div class="text-line-box dash-chart-box">
+                                        <div class="title-wrap">
+                                            <div class="left">
+                                                <h2 class="h5">영상 업로드 유저 성별(참여자)</h2>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -224,9 +210,10 @@
                                                 <h2 class="h5">업로드 시간대</h2>
                                             </div>
                                         </div>
-                                    <div class="form-row mt-4 align-items-center">
-                                        <div class="col-lg-auto my-3">
-                                            <canvas class="w-100" id="myChart4"></canvas>
+                                        <div class="form-row mt-4 align-items-center">
+                                            <div class="col-lg-auto my-3">
+                                                <canvas class="w-100" id="myChart4"></canvas>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -264,170 +251,116 @@
                                                 <div class="tab-pane fade" id="sub-panel3" role="tabpanel" aria-labelledby="sub-tab3"></div>
                                             </div>
                                             <!-- //탭 컨텐츠 -->
-                            <div class="col-md-4">
-                                <div class="text-line-box dash-chart-box">
-                                    <div class="title-wrap">
-                                        <div class="left">
-                                            <h2 class="h5">업로드 유저 연령대</h2>
-                                        </div>
-                                    </div>
-                                    <div class="btn-group d-flex" role="group" aria-label="Default button group">
-                                        <button type="button" class="btn btn-secondary">전체</button>
-                                        <button type="button" class="btn btn-secondary">남성</button>
-                                        <button type="button" class="btn btn-secondary">여성</button>
-                                    </div>
-                                    <div class="form-row mt-4 align-items-center">
-                                        <div class="col-lg-auto my-3">
-                                            <canvas class="w-100" id="myChart5"></canvas>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="text-line-box dash-chart-box">
-                                    <div class="title-wrap">
-                                        <div class="left">
-                                            <h2 class="h5">업로드 시간대</h2>
+                                <div class="col-md-6">
+                                    <div class="text-line-box dash-chart-box">
+                                        <div class="title-wrap">
+                                            <div class="left">
+                                                <h2 class="h5">영상 비중</h2>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="form-row mt-4 align-items-center">
-                                        <div class="col-lg-auto my-3">
-                                            <canvas class="w-100" id="myChart6"></canvas>
+                                        <div class="form-row mt-4 align-items-center">
+                                            <div class="col-lg-auto my-3">
+                                                <canvas class="w-100" id="myChart6"></canvas>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row mt-5">
-                            <div class="col-md-6">
-                                <div class="text-line-box dash-chart-box">
-                                    <div class="title-wrap">
-                                        <div class="left">
-                                            <h2 class="h5">업로드한 유저 지역 정보</h2>
+                            <div class="row mt-5 pb-6">
+                                <div class="col-md-6">
+                                    <div class="text-line-box dash-chart-box">
+                                        <div class="title-wrap">
+                                            <div class="left">
+                                                <h2 class="h5">일자별 요약</h2>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="btn-group d-flex" role="group" aria-label="Default button group">
-                                        <button type="button" class="btn btn-secondary">전체</button>
-                                        <button type="button" class="btn btn-secondary">남성</button>
-                                        <button type="button" class="btn btn-secondary">여성</button>
-                                    </div>
-                                    <div class="form-row mt-4 align-items-center">
-                                        <div class="col-lg-auto my-3">
-                                            <canvas class="w-100" id="myChart4"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="text-line-box dash-chart-box">
-                                    <div class="title-wrap">
-                                        <div class="left">
-                                            <h2 class="h5">영상 비중</h2>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-row mt-4 align-items-center">
-                                        <div class="col-lg-auto my-3">
-                                            <canvas class="w-100" id="myChart6"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row mt-5 pb-6">
-                            <div class="col-md-6">
-                                <div class="text-line-box dash-chart-box">
-                                    <div class="title-wrap">
-                                        <div class="left">
-                                            <h2 class="h5">업로드한 유저 지역 정보</h2>
-                                        </div>
-                                    </div>
-                                    <div class="mt-4 align-items-center">
-                                        <div class="bootstrap-table bootstrap4">
-                                            <div class="fixed-table-toolbar"></div>
-                                            <div class="fixed-table-container" style="padding-bottom: 0px">
-                                                <div class="fixed-table-header" style="display: none">
-                                                    <table></table>
-                                                </div>
-                                                <div class="fixed-table-body">
-                                                    <div class="fixed-table-loading table table-bordered table-hover"
-                                                        style="top: 42.7969px">
-                                                        <span class="loading-wrap">
-                                                            <span class="loading-text">데이터를 불러오는 중입니다</span>
-                                                            <span class="animation-wrap"><span
-                                                                    class="animation-dot"></span></span>
-                                                        </span>
+                                        <div class="mt-4 align-items-center">
+                                            <div class="bootstrap-table bootstrap4">
+                                                <div class="fixed-table-toolbar"></div>
+                                                <div class="fixed-table-container" style="padding-bottom: 0px">
+                                                    <div class="fixed-table-header" style="display: none">
+                                                        <table></table>
                                                     </div>
-                                                    <table id="table" class="table table-hover table-bordered"
-                                                        data-pagination="true">
-                                                        <thead>
-                                                            <tr>
-                                                                <th style="" data-field="0">
-                                                                    <div class="th-inner">일자</div>
-                                                                    <div class="fht-cell"></div>
-                                                                </th>
-                                                                <th style="" data-field="1">
-                                                                    <div class="th-inner">업로드<br />영상 수</div>
-                                                                    <div class="fht-cell"></div>
-                                                                </th>
-                                                                <th style="" data-field="2">
-                                                                    <div class="th-inner">챌린지<br />오픈 횟수</div>
-                                                                    <div class="fht-cell"></div>
-                                                                </th>
-                                                                <th style="" data-field="3">
-                                                                    <div class="th-inner">영상 노출 수</div>
-                                                                    <div class="fht-cell"></div>
-                                                                </th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr class="tr-fixed" data-index="0">
-                                                                <td>2023.07.27</td>
-                                                                <td>264</td>
-                                                                <td>10</td>
-                                                                <td>20,010</td>
-                                                            </tr>
-                                                            <tr data-index="1">
-                                                                <td>2023.07.26</td>
-                                                                <td>197</td>
-                                                                <td>5</td>
-                                                                <td>242,233</td>
-                                                            </tr>
-                                                            <tr data-index="2">
-                                                                <td>2023.07.25</td>
-                                                                <td>290</td>
-                                                                <td>11</td>
-                                                                <td>172,132</td>
-                                                            </tr>
-                                                            <tr data-index="3">
-                                                                <td>2023.07.24</td>
-                                                                <td>452</td>
-                                                                <td>21</td>
-                                                                <td>98,842</td>
-                                                            </tr>
-                                                            <tr data-index="4">
-                                                                <td>2023.07.23</td>
-                                                                <td>392</td>
-                                                                <td>30</td>
-                                                                <td>79,210</td>
-                                                            </tr>
-                                                            <tr data-index="5">
-                                                                <td>2023.07.22</td>
-                                                                <td>187</td>
-                                                                <td>17</td>
-                                                                <td>89,910</td>
-                                                            </tr>
-                                                            <tr data-index="6">
-                                                                <td>2023.07.21</td>
-                                                                <td>349</td>
-                                                                <td>7</td>
-                                                                <td>64,183</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
+                                                    <div class="fixed-table-body">
+                                                        <div class="fixed-table-loading table table-bordered table-hover" style="top: 42.7969px">
+                                                            <span class="loading-wrap">
+                                                                <span class="loading-text">데이터를 불러오는 중입니다</span>
+                                                                <span class="animation-wrap"><span class="animation-dot"></span></span>
+                                                            </span>
+                                                        </div>
+                                                        <table id="table" class="table table-hover table-bordered" data-pagination="true">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th style="" data-field="0">
+                                                                        <div class="th-inner">일자</div>
+                                                                        <div class="fht-cell"></div>
+                                                                    </th>
+                                                                    <th style="" data-field="1">
+                                                                        <div class="th-inner">업로드<br />영상 수</div>
+                                                                        <div class="fht-cell"></div>
+                                                                    </th>
+                                                                    <th style="" data-field="2">
+                                                                        <div class="th-inner">챌린지<br />오픈 횟수</div>
+                                                                        <div class="fht-cell"></div>
+                                                                    </th>
+                                                                    <th style="" data-field="3">
+                                                                        <div class="th-inner">영상 노출 수</div>
+                                                                        <div class="fht-cell"></div>
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr class="tr-fixed" data-index="0">
+                                                                    <td>2023.07.27</td>
+                                                                    <td>264</td>
+                                                                    <td>10</td>
+                                                                    <td>20,010</td>
+                                                                </tr>
+                                                                <tr data-index="1">
+                                                                    <td>2023.07.26</td>
+                                                                    <td>197</td>
+                                                                    <td>5</td>
+                                                                    <td>242,233</td>
+                                                                </tr>
+                                                                <tr data-index="2">
+                                                                    <td>2023.07.25</td>
+                                                                    <td>290</td>
+                                                                    <td>11</td>
+                                                                    <td>172,132</td>
+                                                                </tr>
+                                                                <tr data-index="3">
+                                                                    <td>2023.07.24</td>
+                                                                    <td>452</td>
+                                                                    <td>21</td>
+                                                                    <td>98,842</td>
+                                                                </tr>
+                                                                <tr data-index="4">
+                                                                    <td>2023.07.23</td>
+                                                                    <td>392</td>
+                                                                    <td>30</td>
+                                                                    <td>79,210</td>
+                                                                </tr>
+                                                                <tr data-index="5">
+                                                                    <td>2023.07.22</td>
+                                                                    <td>187</td>
+                                                                    <td>17</td>
+                                                                    <td>89,910</td>
+                                                                </tr>
+                                                                <tr data-index="6">
+                                                                    <td>2023.07.21</td>
+                                                                    <td>349</td>
+                                                                    <td>7</td>
+                                                                    <td>64,183</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div class="fixed-table-footer"></div>
                                                 </div>
-                                                <div class="fixed-table-footer"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -464,22 +397,6 @@
                                                 <div class="tab-pane fade" id="sub-panel003" role="tabpanel" aria-labelledby="sub-tab003"></div>
                                             </div>
                                             <!-- //탭 컨텐츠 -->
-                            </div>
-                            <div class="col-md-6">
-                                <div class="text-line-box dash-chart-box">
-                                    <div class="title-wrap">
-                                        <div class="left">
-                                            <h2 class="h5">영상 비중</h2>
-                                        </div>
-                                    </div>
-                                    <div class="btn-group d-flex" role="group" aria-label="Default button group">
-                                        <button type="button" class="btn btn-secondary">노출 수</button>
-                                        <button type="button" class="btn btn-secondary">좋아요 수</button>
-                                        <button type="button" class="btn btn-secondary">댓글 수</button>
-                                    </div>
-                                    <div class="form-row mt-4 align-items-center">
-                                        <div class="col-lg-auto my-3">
-                                            <canvas class="w-100" id="myChart6"></canvas>
                                         </div>
                                     </div>
                                 </div>
@@ -489,458 +406,456 @@
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Scroll to Top Button-->
-    <div data-include="../include/topbtn.html"></div>
+        <!-- Scroll to Top Button-->
+        <div data-include="../include/topbtn.html"></div>
 
-    <!-- Logout Modal-->
-    <div data-include="../include/logoutModal.html"></div>
-</body>
-<script src="../../datatables/jquery.dataTables.min.js"></script>
-<script src="../../datatables/dataTables.bootstrap4.min.js"></script>
-<script src="../../lib/chart.js/plugins/chartjs-plugin-datalabels.min.js"></script>
-<script src="../../lib/chart.js/Chart.min.js"></script>
-<!-- Page level custom scripts -->
-<script src="../../js/demo/datatables-demo.js"></script>
-<script>
-    // Graphs
-    var ctx = document.getElementById('myChart');
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-            datasets: [
-                {
-                    data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
-                    lineTension: 0,
-                    backgroundColor: 'transparent',
-                    borderColor: '#007bff',
-                    borderWidth: 1,
-                    pointRadius: 0,
-                    pointBackgroundColor: '#007bff'
-                }
-            ]
-        },
-        options: {
-            scales: {
-                yAxes: [
+        <!-- Logout Modal-->
+        <div data-include="../include/logoutModal.html"></div>
+    </body>
+    <script src="../../datatables/jquery.dataTables.min.js"></script>
+    <script src="../../datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="../../lib/chart.js/plugins/chartjs-plugin-datalabels.min.js"></script>
+    <script src="../../lib/chart.js/Chart.min.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="../../js/demo/datatables-demo.js"></script>
+    <script>
+        // Graphs
+        var ctx = document.getElementById('myChart');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+                datasets: [
                     {
-                        ticks: {
-                            beginAtZero: false
-                        }
+                        data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+                        lineTension: 0,
+                        backgroundColor: 'transparent',
+                        borderColor: '#007bff',
+                        borderWidth: 1,
+                        pointRadius: 0,
+                        pointBackgroundColor: '#007bff'
                     }
                 ]
             },
-            legend: {
-                display: false
-            }
-        }
-    });
-
-    var chartColors = {
-        red: 'rgb(255, 99, 132)',
-        orange: 'rgb(255, 159, 64)',
-        yellow: 'rgb(255, 205, 86)',
-        green: 'rgb(75, 192, 192)',
-        blue: 'rgb(54, 162, 235)',
-        purple: 'rgb(153, 102, 255)',
-        grey: 'rgb(201, 203, 207)'
-    };
-
-    var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
-    var COLORS = ['#4dc9f6', '#f67019', '#f53794', '#537bc4', '#acc236', '#166a8f', '#00a950', '#58595b', '#8549ba'];
-
-    var Color = Chart.helpers.color;
-
-    var Samples = {
-        // Adapted from http://indiegamr.com/generate-repeatable-random-numbers-in-js/
-        srand: function (seed) {
-            this._seed = seed;
-        },
-
-        rand: function (min, max) {
-            var seed = this._seed;
-            min = min === undefined ? 0 : min;
-            max = max === undefined ? 1 : max;
-            this._seed = (seed * 9301 + 49297) % 233280;
-            return min + (this._seed / 233280) * (max - min);
-        },
-
-        numbers: function (config) {
-            var cfg = applyDefaultNumbers(config);
-            var dfactor = Math.pow(10, cfg.decimals) || 0;
-            var data = [];
-            var i, value;
-
-            for (i = 0; i < cfg.count; ++i) {
-                value = (cfg.from[i] || 0) + this.rand(cfg.min, cfg.max);
-                if (this.rand() <= cfg.continuity) {
-                    data.push(Math.round(dfactor * value) / dfactor);
-                } else {
-                    data.push(null);
+            options: {
+                scales: {
+                    yAxes: [
+                        {
+                            ticks: {
+                                beginAtZero: false
+                            }
+                        }
+                    ]
+                },
+                legend: {
+                    display: false
                 }
+            }
+        });
+
+        var chartColors = {
+            red: 'rgb(255, 99, 132)',
+            orange: 'rgb(255, 159, 64)',
+            yellow: 'rgb(255, 205, 86)',
+            green: 'rgb(75, 192, 192)',
+            blue: 'rgb(54, 162, 235)',
+            purple: 'rgb(153, 102, 255)',
+            grey: 'rgb(201, 203, 207)'
+        };
+
+        var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+        var COLORS = ['#4dc9f6', '#f67019', '#f53794', '#537bc4', '#acc236', '#166a8f', '#00a950', '#58595b', '#8549ba'];
+
+        var Color = Chart.helpers.color;
+
+        var Samples = {
+            // Adapted from http://indiegamr.com/generate-repeatable-random-numbers-in-js/
+            srand: function (seed) {
+                this._seed = seed;
+            },
+
+            rand: function (min, max) {
+                var seed = this._seed;
+                min = min === undefined ? 0 : min;
+                max = max === undefined ? 1 : max;
+                this._seed = (seed * 9301 + 49297) % 233280;
+                return min + (this._seed / 233280) * (max - min);
+            },
+
+            numbers: function (config) {
+                var cfg = applyDefaultNumbers(config);
+                var dfactor = Math.pow(10, cfg.decimals) || 0;
+                var data = [];
+                var i, value;
+
+                for (i = 0; i < cfg.count; ++i) {
+                    value = (cfg.from[i] || 0) + this.rand(cfg.min, cfg.max);
+                    if (this.rand() <= cfg.continuity) {
+                        data.push(Math.round(dfactor * value) / dfactor);
+                    } else {
+                        data.push(null);
+                    }
+                }
+
+                return data;
+            },
+
+            labels: function (config) {
+                var cfg = config || {};
+                var min = cfg.min || 0;
+                var max = cfg.max || 100;
+                var count = cfg.count || 8;
+                var step = (max - min) / count;
+                var decimals = cfg.decimals || 8;
+                var dfactor = Math.pow(10, decimals) || 0;
+                var prefix = cfg.prefix || '';
+                var values = [];
+                var i;
+
+                for (i = min; i < max; i += step) {
+                    values.push(prefix + Math.round(dfactor * i) / dfactor);
+                }
+
+                return values;
+            },
+
+            months: function (config) {
+                var cfg = config || {};
+                var count = cfg.count || 12;
+                var section = cfg.section;
+                var values = [];
+                var i, value;
+
+                for (i = 0; i < count; ++i) {
+                    value = MONTHS[Math.ceil(i) % 12];
+                    values.push(value.substring(0, section));
+                }
+
+                return values;
+            },
+
+            color: function (index) {
+                return COLORS[index % COLORS.length];
+            },
+
+            transparentize: function (color, opacity) {
+                var alpha = opacity === undefined ? 0.5 : 1 - opacity;
+                return Color(color).alpha(alpha).rgbString();
+            }
+        };
+
+        var randomScalingFactor = function () {
+            return Math.round(Samples.rand(-100, 100));
+        };
+
+        Samples.srand(Date.now());
+
+        var color = Chart.helpers.color;
+
+        //chart2
+        var ctx2 = document.getElementById('myChart2');
+        var myChart2 = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                datasets: [
+                    {
+                        label: 'Dataset 1',
+                        backgroundColor: color(chartColors.red).alpha(0.5).rgbString(),
+                        borderColor: chartColors.red,
+                        borderWidth: 1,
+                        data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+                    },
+                    {
+                        label: 'Dataset 2',
+                        backgroundColor: color(chartColors.blue).alpha(0.5).rgbString(),
+                        borderColor: chartColors.blue,
+                        borderWidth: 1,
+                        data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                legend: {
+                    position: 'top'
+                }
+            }
+        });
+
+        //chart3
+        var ctx3 = document.getElementById('myChart3');
+        var myChart3 = new Chart(ctx3, {
+            type: 'horizontalBar',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                datasets: [
+                    {
+                        label: 'Dataset 1',
+                        backgroundColor: color(chartColors.red).alpha(0.5).rgbString(),
+                        borderColor: chartColors.red,
+                        borderWidth: 1,
+                        data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+                    },
+                    {
+                        label: 'Dataset 2',
+                        backgroundColor: color(chartColors.blue).alpha(0.5).rgbString(),
+                        borderColor: chartColors.blue,
+                        borderWidth: 1,
+                        data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+                    }
+                ]
+            },
+            options: {
+                elements: {
+                    rectangle: {
+                        borderWidth: 2
+                    }
+                },
+                responsive: true,
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        });
+
+        //chart4
+        var ctx4 = document.getElementById('myChart4');
+        var myChart4 = new Chart(ctx4, {
+            type: 'doughnut',
+            data: {
+                datasets: [
+                    {
+                        data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
+                        backgroundColor: [chartColors.red, chartColors.orange, chartColors.yellow, chartColors.green, chartColors.blue],
+                        label: 'Dataset 1'
+                    }
+                ],
+                labels: ['Red', 'Orange', 'Yellow', 'Green', 'Blue']
+            },
+            options: {
+                responsive: true,
+                legend: {
+                    position: 'bottom'
+                },
+                animation: {
+                    animateScale: true,
+                    animateRotate: true
+                }
+            }
+        });
+
+        //chart5
+        var ctx5 = document.getElementById('myChart5');
+        var myChart5 = new Chart(ctx5, {
+            type: 'pie',
+            data: {
+                datasets: [
+                    {
+                        data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
+                        backgroundColor: [chartColors.red, chartColors.orange, chartColors.yellow, chartColors.green, chartColors.blue],
+                        label: 'Dataset 1'
+                    }
+                ],
+                labels: ['Red', 'Orange', 'Yellow', 'Green', 'Blue']
+            },
+            options: {
+                responsive: true
+            }
+        });
+
+        //chart6
+        var ctx6 = document.getElementById('myChart6');
+        var myChart6 = new Chart(ctx6, {
+            type: 'radar',
+            data: {
+                labels: [['Eating', 'Dinner'], ['Drinking', 'Water'], 'Sleeping', ['Designing', 'Graphics'], 'Coding', 'Cycling', 'Running'],
+                datasets: [
+                    {
+                        label: 'My First dataset',
+                        backgroundColor: color(chartColors.red).alpha(0.2).rgbString(),
+                        borderColor: chartColors.red,
+                        borderWidth: 1,
+                        pointRadius: 0,
+                        pointBackgroundColor: chartColors.red,
+                        data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+                    },
+                    {
+                        label: 'My Second dataset',
+                        backgroundColor: color(chartColors.blue).alpha(0.2).rgbString(),
+                        borderColor: chartColors.blue,
+                        borderWidth: 1,
+                        pointRadius: 0,
+                        pointBackgroundColor: chartColors.blue,
+                        data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+                    }
+                ]
+            },
+            options: {
+                legend: {
+                    position: 'top'
+                },
+                scale: {
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        //chart7
+        function generateData() {
+            var unit = document.getElementById('unit').value;
+
+            function unitLessThanDay() {
+                return unit === 'second' || unit === 'minute' || unit === 'hour';
+            }
+
+            function beforeNineThirty(date) {
+                return date.hour() < 9 || (date.hour() === 9 && date.minute() < 30);
+            }
+
+            // Returns true if outside 9:30am-4pm on a weekday
+            function outsideMarketHours(date) {
+                if (date.isoWeekday() > 5) {
+                    return true;
+                }
+                if (unitLessThanDay() && (beforeNineThirty(date) || date.hour() > 16)) {
+                    return true;
+                }
+                return false;
+            }
+
+            function randomNumber(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+            function randomBar(date, lastClose) {
+                var open = randomNumber(lastClose * 0.95, lastClose * 1.05).toFixed(2);
+                var close = randomNumber(open * 0.95, open * 1.05).toFixed(2);
+                return {
+                    t: date.valueOf(),
+                    y: close
+                };
+            }
+
+            var date = moment('Jan 01 1990', 'MMM DD YYYY');
+            var now = moment();
+            var data = [];
+            var lessThanDay = unitLessThanDay();
+            for (; data.length < 600 && date.isBefore(now); date = date.clone().add(1, unit).startOf(unit)) {
+                if (outsideMarketHours(date)) {
+                    if (!lessThanDay || !beforeNineThirty(date)) {
+                        date = date.clone().add(date.isoWeekday() >= 5 ? 8 - date.isoWeekday() : 1, 'day');
+                    }
+                    if (lessThanDay) {
+                        date = date.hour(9).minute(30).second(0);
+                    }
+                }
+                data.push(randomBar(date, data.length > 0 ? data[data.length - 1].y : 30));
             }
 
             return data;
-        },
-
-        labels: function (config) {
-            var cfg = config || {};
-            var min = cfg.min || 0;
-            var max = cfg.max || 100;
-            var count = cfg.count || 8;
-            var step = (max - min) / count;
-            var decimals = cfg.decimals || 8;
-            var dfactor = Math.pow(10, decimals) || 0;
-            var prefix = cfg.prefix || '';
-            var values = [];
-            var i;
-
-            for (i = min; i < max; i += step) {
-                values.push(prefix + Math.round(dfactor * i) / dfactor);
-            }
-
-            return values;
-        },
-
-        months: function (config) {
-            var cfg = config || {};
-            var count = cfg.count || 12;
-            var section = cfg.section;
-            var values = [];
-            var i, value;
-
-            for (i = 0; i < count; ++i) {
-                value = MONTHS[Math.ceil(i) % 12];
-                values.push(value.substring(0, section));
-            }
-
-            return values;
-        },
-
-        color: function (index) {
-            return COLORS[index % COLORS.length];
-        },
-
-        transparentize: function (color, opacity) {
-            var alpha = opacity === undefined ? 0.5 : 1 - opacity;
-            return Color(color).alpha(alpha).rgbString();
-        }
-    };
-
-    var randomScalingFactor = function () {
-        return Math.round(Samples.rand(-100, 100));
-    };
-
-    Samples.srand(Date.now());
-
-    var color = Chart.helpers.color;
-
-    //chart2
-    var ctx2 = document.getElementById('myChart2');
-    var myChart2 = new Chart(ctx2, {
-        type: 'bar',
-        data: {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-            datasets: [
-                {
-                    label: 'Dataset 1',
-                    backgroundColor: color(chartColors.red).alpha(0.5).rgbString(),
-                    borderColor: chartColors.red,
-                    borderWidth: 1,
-                    data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-                },
-                {
-                    label: 'Dataset 2',
-                    backgroundColor: color(chartColors.blue).alpha(0.5).rgbString(),
-                    borderColor: chartColors.blue,
-                    borderWidth: 1,
-                    data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-                }
-            ]
-        },
-        options: {
-            responsive: true,
-            legend: {
-                position: 'top'
-            }
-        }
-    });
-
-    //chart3
-    var ctx3 = document.getElementById('myChart3');
-    var myChart3 = new Chart(ctx3, {
-        type: 'horizontalBar',
-        data: {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-            datasets: [
-                {
-                    label: 'Dataset 1',
-                    backgroundColor: color(chartColors.red).alpha(0.5).rgbString(),
-                    borderColor: chartColors.red,
-                    borderWidth: 1,
-                    data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-                },
-                {
-                    label: 'Dataset 2',
-                    backgroundColor: color(chartColors.blue).alpha(0.5).rgbString(),
-                    borderColor: chartColors.blue,
-                    borderWidth: 1,
-                    data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-                }
-            ]
-        },
-        options: {
-            elements: {
-                rectangle: {
-                    borderWidth: 2
-                }
-            },
-            responsive: true,
-            legend: {
-                position: 'bottom'
-            }
-        }
-    });
-
-    //chart4
-    var ctx4 = document.getElementById('myChart4');
-    var myChart4 = new Chart(ctx4, {
-        type: 'doughnut',
-        data: {
-            datasets: [
-                {
-                    data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
-                    backgroundColor: [chartColors.red, chartColors.orange, chartColors.yellow, chartColors.green, chartColors.blue],
-                    label: 'Dataset 1'
-                }
-            ],
-            labels: ['Red', 'Orange', 'Yellow', 'Green', 'Blue']
-        },
-        options: {
-            responsive: true,
-            legend: {
-                position: 'bottom'
-            },
-            animation: {
-                animateScale: true,
-                animateRotate: true
-            }
-        }
-    });
-
-    //chart5
-    var ctx5 = document.getElementById('myChart5');
-    var myChart5 = new Chart(ctx5, {
-        type: 'pie',
-        data: {
-            datasets: [
-                {
-                    data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
-                    backgroundColor: [chartColors.red, chartColors.orange, chartColors.yellow, chartColors.green, chartColors.blue],
-                    label: 'Dataset 1'
-                }
-            ],
-            labels: ['Red', 'Orange', 'Yellow', 'Green', 'Blue']
-        },
-        options: {
-            responsive: true
-        }
-    });
-
-    //chart6
-    var ctx6 = document.getElementById('myChart6');
-    var myChart6 = new Chart(ctx6, {
-        type: 'radar',
-        data: {
-            labels: [['Eating', 'Dinner'], ['Drinking', 'Water'], 'Sleeping', ['Designing', 'Graphics'], 'Coding', 'Cycling', 'Running'],
-            datasets: [
-                {
-                    label: 'My First dataset',
-                    backgroundColor: color(chartColors.red).alpha(0.2).rgbString(),
-                    borderColor: chartColors.red,
-                    borderWidth: 1,
-                    pointRadius: 0,
-                    pointBackgroundColor: chartColors.red,
-                    data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-                },
-                {
-                    label: 'My Second dataset',
-                    backgroundColor: color(chartColors.blue).alpha(0.2).rgbString(),
-                    borderColor: chartColors.blue,
-                    borderWidth: 1,
-                    pointRadius: 0,
-                    pointBackgroundColor: chartColors.blue,
-                    data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-                }
-            ]
-        },
-        options: {
-            legend: {
-                position: 'top'
-            },
-            scale: {
-                ticks: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-
-    //chart7
-    function generateData() {
-        var unit = document.getElementById('unit').value;
-
-        function unitLessThanDay() {
-            return unit === 'second' || unit === 'minute' || unit === 'hour';
         }
 
-        function beforeNineThirty(date) {
-            return date.hour() < 9 || (date.hour() === 9 && date.minute() < 30);
-        }
-
-        // Returns true if outside 9:30am-4pm on a weekday
-        function outsideMarketHours(date) {
-            if (date.isoWeekday() > 5) {
-                return true;
-            }
-            if (unitLessThanDay() && (beforeNineThirty(date) || date.hour() > 16)) {
-                return true;
-            }
-            return false;
-        }
-
-        function randomNumber(min, max) {
-            return Math.random() * (max - min) + min;
-        }
-
-        function randomBar(date, lastClose) {
-            var open = randomNumber(lastClose * 0.95, lastClose * 1.05).toFixed(2);
-            var close = randomNumber(open * 0.95, open * 1.05).toFixed(2);
-            return {
-                t: date.valueOf(),
-                y: close
-            };
-        }
-
-        var date = moment('Jan 01 1990', 'MMM DD YYYY');
-        var now = moment();
-        var data = [];
-        var lessThanDay = unitLessThanDay();
-        for (; data.length < 600 && date.isBefore(now); date = date.clone().add(1, unit).startOf(unit)) {
-            if (outsideMarketHours(date)) {
-                if (!lessThanDay || !beforeNineThirty(date)) {
-                    date = date.clone().add(date.isoWeekday() >= 5 ? 8 - date.isoWeekday() : 1, 'day');
-                }
-                if (lessThanDay) {
-                    date = date.hour(9).minute(30).second(0);
-                }
-            }
-            data.push(randomBar(date, data.length > 0 ? data[data.length - 1].y : 30));
-        }
-
-        return data;
-    }
-
-    var ctx7 = document.getElementById('myChart7').getContext('2d');
-    var myChart7 = new Chart(ctx7, {
-        data: {
-            datasets: [
-                {
-                    label: 'CHRT - Chart.js Corporation',
-                    backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
-                    borderColor: window.chartColors.red,
-                    data: generateData(),
-                    type: 'line',
-                    pointRadius: 0,
-                    fill: false,
-                    lineTension: 0,
-                    borderWidth: 1
-                }
-            ]
-        },
-        options: {
-            animation: {
-                duration: 0
-            },
-            scales: {
-                xAxes: [
+        var ctx7 = document.getElementById('myChart7').getContext('2d');
+        var myChart7 = new Chart(ctx7, {
+            data: {
+                datasets: [
                     {
-                        type: 'time',
-                        distribution: 'series',
-                        offset: true,
-                        ticks: {
-                            major: {
-                                enabled: true,
-                                fontStyle: 'bold'
-                            },
-                            source: 'data',
-                            autoSkip: true,
-                            autoSkipPadding: 75,
-                            maxRotation: 0,
-                            sampleSize: 100
-                        },
-                        afterBuildTicks: function (scale, ticks) {
-                            var majorUnit = scale._majorUnit;
-                            var firstTick = ticks[0];
-                            var i, ilen, val, tick, currMajor, lastMajor;
-
-                            val = moment(ticks[0].value);
-                            if ((majorUnit === 'minute' && val.second() === 0) || (majorUnit === 'hour' && val.minute() === 0) || (majorUnit === 'day' && val.hour() === 9) || (majorUnit === 'month' && val.date() <= 3 && val.isoWeekday() === 1) || (majorUnit === 'year' && val.month() === 0)) {
-                                firstTick.major = true;
-                            } else {
-                                firstTick.major = false;
-                            }
-                            lastMajor = val.get(majorUnit);
-
-                            for (i = 1, ilen = ticks.length; i < ilen; i++) {
-                                tick = ticks[i];
-                                val = moment(tick.value);
-                                currMajor = val.get(majorUnit);
-                                tick.major = currMajor !== lastMajor;
-                                lastMajor = currMajor;
-                            }
-                            return ticks;
-                        }
-                    }
-                ],
-                yAxes: [
-                    {
-                        gridLines: {
-                            drawBorder: false
-                        },
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'Closing price ($)'
-                        }
+                        label: 'CHRT - Chart.js Corporation',
+                        backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
+                        borderColor: window.chartColors.red,
+                        data: generateData(),
+                        type: 'line',
+                        pointRadius: 0,
+                        fill: false,
+                        lineTension: 0,
+                        borderWidth: 1
                     }
                 ]
             },
-            tooltips: {
-                intersect: false,
-                mode: 'index',
-                callbacks: {
-                    label: function (tooltipItem, myData) {
-                        var label = myData.datasets[tooltipItem.datasetIndex].label || '';
-                        if (label) {
-                            label += ': ';
+            options: {
+                animation: {
+                    duration: 0
+                },
+                scales: {
+                    xAxes: [
+                        {
+                            type: 'time',
+                            distribution: 'series',
+                            offset: true,
+                            ticks: {
+                                major: {
+                                    enabled: true,
+                                    fontStyle: 'bold'
+                                },
+                                source: 'data',
+                                autoSkip: true,
+                                autoSkipPadding: 75,
+                                maxRotation: 0,
+                                sampleSize: 100
+                            },
+                            afterBuildTicks: function (scale, ticks) {
+                                var majorUnit = scale._majorUnit;
+                                var firstTick = ticks[0];
+                                var i, ilen, val, tick, currMajor, lastMajor;
+
+                                val = moment(ticks[0].value);
+                                if ((majorUnit === 'minute' && val.second() === 0) || (majorUnit === 'hour' && val.minute() === 0) || (majorUnit === 'day' && val.hour() === 9) || (majorUnit === 'month' && val.date() <= 3 && val.isoWeekday() === 1) || (majorUnit === 'year' && val.month() === 0)) {
+                                    firstTick.major = true;
+                                } else {
+                                    firstTick.major = false;
+                                }
+                                lastMajor = val.get(majorUnit);
+
+                                for (i = 1, ilen = ticks.length; i < ilen; i++) {
+                                    tick = ticks[i];
+                                    val = moment(tick.value);
+                                    currMajor = val.get(majorUnit);
+                                    tick.major = currMajor !== lastMajor;
+                                    lastMajor = currMajor;
+                                }
+                                return ticks;
+                            }
                         }
-                        label += parseFloat(tooltipItem.value).toFixed(2);
-                        return label;
+                    ],
+                    yAxes: [
+                        {
+                            gridLines: {
+                                drawBorder: false
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Closing price ($)'
+                            }
+                        }
+                    ]
+                },
+                tooltips: {
+                    intersect: false,
+                    mode: 'index',
+                    callbacks: {
+                        label: function (tooltipItem, myData) {
+                            var label = myData.datasets[tooltipItem.datasetIndex].label || '';
+                            if (label) {
+                                label += ': ';
+                            }
+                            label += parseFloat(tooltipItem.value).toFixed(2);
+                            return label;
+                        }
                     }
                 }
             }
-        }
-    });
+        });
 
-    document.getElementById('update').addEventListener('click', function () {
-        var type = document.getElementById('type').value;
-        var dataset = myChart7.config.data.datasets[0];
-        dataset.type = type;
-        dataset.data = generateData();
-        myChart7.update();
-    });
-</script>
-
+        document.getElementById('update').addEventListener('click', function () {
+            var type = document.getElementById('type').value;
+            var dataset = myChart7.config.data.datasets[0];
+            dataset.type = type;
+            dataset.data = generateData();
+            myChart7.update();
+        });
+    </script>
 </html>
