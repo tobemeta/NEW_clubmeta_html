@@ -182,15 +182,31 @@
                                                 <h2 class="h5">업로드 유저 연령대</h2>
                                             </div>
                                         </div>
-                                        <div class="btn-group d-flex" role="group" aria-label="Default button group">
-                                            <button type="button" class="btn btn-secondary">전체</button>
-                                            <button type="button" class="btn btn-secondary">남성</button>
-                                            <button type="button" class="btn btn-secondary">여성</button>
-                                        </div>
+                                        <!-- 탭 메뉴 -->
+                                        <ul class="nav nav-tabs btn-tab" role="tablist">
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link btn-tab-link active" id="sub-tab1" data-toggle="tab" data-target="#sub-panel01" type="button" role="tab">전체</button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link btn-tab-link" id="sub-tab2" data-toggle="tab" data-target="#sub-panel02" type="button" role="tab">남성</button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link btn-tab-link" id="sub-tab3" data-toggle="tab" data-target="#sub-panel03" type="button" role="tab">여성</button>
+                                            </li>
+                                        </ul>
+                                        <!-- //탭 메뉴 -->
                                         <div class="form-row mt-4 align-items-center">
-                                            <div class="col-lg-auto my-3">
-                                                <canvas class="w-100" id="myChart5"></canvas>
+                                            <!-- 탭 컨탠츠 -->
+                                            <div class="tab-content">
+                                                <div class="tab-pane fade show active" id="sub-panel01" role="tabpanel" aria-labelledby="sub-tab1">
+                                                    <div class="col-lg-auto my-3">
+                                                        <canvas class="w-100" id="myChart5"></canvas>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="sub-panel02" role="tabpanel" aria-labelledby="sub-tab2"><h2 class="h5">업로드한 유저 연령대</h2></div>
+                                                <div class="tab-pane fade" id="sub-panel03" role="tabpanel" aria-labelledby="sub-tab3"></div>
                                             </div>
+                                            <!-- //탭 컨텐츠 -->
                                         </div>
                                     </div>
                                 </div>
@@ -218,15 +234,31 @@
                                                 <h2 class="h5">업로드한 유저 지역 정보</h2>
                                             </div>
                                         </div>
-                                        <div class="btn-group d-flex" role="group" aria-label="Default button group">
-                                            <button type="button" class="btn btn-secondary">전체</button>
-                                            <button type="button" class="btn btn-secondary">남성</button>
-                                            <button type="button" class="btn btn-secondary">여성</button>
-                                        </div>
+                                        <!-- 탭 메뉴 -->
+                                        <ul class="nav nav-tabs btn-tab" role="tablist">
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link btn-tab-link active" id="sub-tab1" data-toggle="tab" data-target="#sub-panel1" type="button" role="tab">전체</button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link btn-tab-link" id="sub-tab2" data-toggle="tab" data-target="#sub-panel2" type="button" role="tab">남성</button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link btn-tab-link" id="sub-tab3" data-toggle="tab" data-target="#sub-panel3" type="button" role="tab">여성</button>
+                                            </li>
+                                        </ul>
+                                        <!-- //탭 메뉴 -->
                                         <div class="form-row mt-4 align-items-center">
-                                            <div class="col-lg-auto my-3">
-                                                <canvas class="w-100" id="myChart4"></canvas>
+                                            <!-- 탭 컨탠츠 -->
+                                            <div class="tab-content">
+                                                <div class="tab-pane fade show active" id="sub-panel1" role="tabpanel" aria-labelledby="sub-tab1">
+                                                    <div class="col-lg-auto my-3">
+                                                        <canvas class="w-100" id="myChart44"></canvas>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="sub-panel2" role="tabpanel" aria-labelledby="sub-tab2"><h2 class="h5">업로드한 유저 지역 정보</h2></div>
+                                                <div class="tab-pane fade" id="sub-panel3" role="tabpanel" aria-labelledby="sub-tab3"></div>
                                             </div>
+                                            <!-- //탭 컨텐츠 -->
                                         </div>
                                     </div>
                                 </div>
@@ -343,18 +375,34 @@
                                     <div class="text-line-box dash-chart-box">
                                         <div class="title-wrap">
                                             <div class="left">
-                                                <h2 class="h5">영상 비중</h2>
+                                                <h2 class="h5">BEST 영상</h2>
                                             </div>
                                         </div>
-                                        <div class="btn-group d-flex" role="group" aria-label="Default button group">
-                                            <button type="button" class="btn btn-secondary">노출 수</button>
-                                            <button type="button" class="btn btn-secondary">좋아요 수</button>
-                                            <button type="button" class="btn btn-secondary">댓글 수</button>
-                                        </div>
+                                        <!-- 탭 메뉴 -->
+                                        <ul class="nav nav-tabs btn-tab" role="tablist">
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link btn-tab-link active" id="sub-tab001" data-toggle="tab" data-target="#sub-panel001" type="button" role="tab">노출 수</button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link btn-tab-link" id="sub-tab002" data-toggle="tab" data-target="#sub-panel002" type="button" role="tab">좋아요 수</button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link btn-tab-link" id="sub-tab003" data-toggle="tab" data-target="#sub-panel003" type="button" role="tab">댓글 수</button>
+                                            </li>
+                                        </ul>
+                                        <!-- //탭 메뉴 -->
                                         <div class="form-row mt-4 align-items-center">
-                                            <div class="col-lg-auto my-3">
-                                                <canvas class="w-100" id="myChart6"></canvas>
+                                            <!-- 탭 컨탠츠 -->
+                                            <div class="tab-content">
+                                                <div class="tab-pane fade show active" id="sub-panel001" role="tabpanel" aria-labelledby="sub-tab001">
+                                                    <div class="col-lg-auto my-3">
+                                                        <canvas class="w-100" id="myChart6"></canvas>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="sub-panel002" role="tabpanel" aria-labelledby="sub-tab002"><h2 class="h5">베스트 영상</h2></div>
+                                                <div class="tab-pane fade" id="sub-panel003" role="tabpanel" aria-labelledby="sub-tab003"></div>
                                             </div>
+                                            <!-- //탭 컨텐츠 -->
                                         </div>
                                     </div>
                                 </div>
