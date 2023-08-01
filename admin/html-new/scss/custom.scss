@@ -429,6 +429,22 @@ optgroup {
         margin-top: 2rem;
     }
 }
+.btn-tab {
+    gap: 1rem;
+    border-bottom: 0 !important;
+    .btn-tab-link {
+        outline: 0;
+        color: #fff;
+        background-color: #858796;
+        border-color: #858796;
+        border-radius: 0.35rem;
+        &.active {
+            border-color: #858796 !important;
+            font-weight: 500;
+            color: var(--gray-dark) !important;
+        }
+    }
+}
 
 //대시보드
 .dashboard-box {
