@@ -725,8 +725,14 @@ optgroup {
         flex-wrap: wrap;
         > div {
             + div {
+                width: 100%;
                 margin-left: 0;
                 margin-top: 0.5rem;
+            }
+            + div.btn-wrap {
+                position: absolute;
+                top: 0;
+                right: 0;
             }
             + .btn {
                 margin-left: auto;
