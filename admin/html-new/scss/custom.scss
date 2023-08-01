@@ -4,14 +4,15 @@
 @import '../lib/bootstrap/scss/variables';
 @import '../lib/bootstrap/scss/mixins';
 
-$pc-full-size: 1200;
-$tablet-size: 1024;
-$mobile-size: 768;
+$pc-full-size: 1200px;
+$tablet-size: 1024px;
+$mobile-size: 768px;
 
 // common
 body {
-    font-family: 'Roboto', 'Noto Sans KR';
+    font-family: 'Noto Sans KR', 'Roboto', sans-serif;
     letter-spacing: -0.02em;
+    color: #111;
 }
 button {
     background: none;
@@ -80,6 +81,47 @@ optgroup {
 }
 .fz-sm {
     font-size: $font-size-sm;
+}
+
+// topbar
+.topbar {
+    height: 3rem;
+    background: #858796;
+    margin-bottom: 4rem;
+    .nav-item {
+        display: flex;
+        align-items: center;
+        .nav-link {
+            height: 100%;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 14px;
+            &:hover {
+                color: #fff;
+            }
+        }
+        & + .nav-item {
+            .nav-link {
+                &:before {
+                    content: '';
+                    display: block;
+                    width: 0.063rem;
+                    height: 0.625rem;
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    margin-top: -0.313rem;
+                    background: #bbb;
+                }
+            }
+        }
+    }
+}
+.topbar.navbar-light .navbar-nav .nav-item .nav-link:hover .navbar-nav {
+    height: 100%;
+
+    .btn-group {
+        height: 100%;
+    }
 }
 
 .text-line-box {
@@ -152,6 +194,7 @@ optgroup {
         word-break: keep-all;
         label {
             margin: 0;
+            color: #111;
             &.req {
                 position: relative;
                 &::after {
@@ -179,13 +222,28 @@ optgroup {
         }
     }
 }
+.form-control.disabled,
+.custom-select.disabled {
+    pointer-events: none;
+    color: #6c757d;
+    background-color: #e9ecef;
+}
+.custom-control-wrap {
+    padding: 0.25rem 0;
+    .custom-control {
+        margin-top: 0.188rem;
+        margin-bottom: 0.188rem;
+    }
+}
+.input-group {
+}
 .input-daterange-btn {
     display: flex;
     .input-daterange {
         flex: 1 1 auto;
     }
     .input-group-prepend {
-        margin: 0 0.4rem;
+        margin: 0 -0.1rem;
         align-items: center;
         justify-content: center;
     }
@@ -201,6 +259,10 @@ optgroup {
             padding-left: 0;
             padding-right: 0;
         }
+    }
+    & > div + div,
+    & > div + .btn {
+        margin-left: 1rem;
     }
 }
 
@@ -247,6 +309,7 @@ optgroup {
     vertical-align: middle !important;
 }
 .table {
+    color: #111 !important;
     a:not(.btn) {
         text-decoration: underline;
     }
@@ -360,6 +423,9 @@ optgroup {
     }
 }
 //sort기능 table
+.table.dataTable {
+    margin-top: 0 !important;
+}
 .table.dataTable > thead .sorting:before,
 .table.dataTable > thead .sorting:after,
 .table.dataTable > thead .sorting_asc:before,
@@ -504,4 +570,66 @@ optgroup {
 }
 .dash-chart-box {
     height: 100%;
+}
+@media (max-width: $pc-full-size) {
+    .sidebar {
+        width: 12rem !important;
+        .nav-item {
+            .nav-link {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (min-width: $mobile-size) {
+}
+
+@media (max-width: $mobile-size) {
+    body {
+        font-size: 14px;
+    }
+
+    .sidebar {
+        width: 6.5rem !important;
+    }
+
+    .form-box {
+        background-color: #f8f9fa;
+        border-bottom-width: 0;
+        .form-box-row {
+            display: block;
+            border-top-width: 0;
+        }
+        .form-box-item {
+            display: block;
+            border-top: 2px solid #dee2e6;
+            // + .form-box-item {
+            //   margin-top: 1rem;
+            // }
+        }
+        .form-box-label {
+            display: block;
+            width: auto;
+            padding: 0.75rem 1rem;
+            text-align: left;
+            background-color: #e9ecef;
+        }
+        .form-box-cont {
+            padding: 1rem 0.5rem;
+        }
+    }
+    .input-daterange-btn {
+        flex-wrap: wrap;
+        > div {
+            + div {
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+            + .btn {
+                margin-left: auto;
+                margin-top: 0.5rem;
+            }
+        }
+    }
 }
