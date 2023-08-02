@@ -651,7 +651,26 @@ optgroup {
     }
 }
 .dash-chart-box {
+    position: relative;
     height: 100%;
+    .chart-pie {
+        z-index: 10;
+    }
+    .chart-total {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding-bottom: 1rem;
+        font-size: 2.2rem;
+        color: var(--gray-dark);
+        font-weight: 700;
+        z-index: 1;
+    }
 }
 @media (max-width: $pc-full-size) {
     .sidebar {
