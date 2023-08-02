@@ -1,309 +1,321 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title>클럽메타 관리자 - 신고관리</title>
-        <!-- js -->
-        <script src="../include/head.js"></script>
-    </head>
 
-    <body>
-        <!-- Page Wrapper -->
-        <div id="wrapper" class="wrapper">
-            <!-- 사이드바 -->
-            <div class="data-target" data-target="AD07_00001"></div>
-            <div data-include="../include/sidebar.html"></div>
-            <!-- //사이드바 -->
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>클럽메타 관리자 - 신고관리</title>
+    <!-- js -->
+    <script src="../include/head.js"></script>
+</head>
 
-            <!-- content Wrapper -->
-            <div id="content-wrapper" class="d-flex flex-column bg-white">
-                <!-- 컨텐츠 본문 -->
-                <div id="content">
-                    <!--  -->
-                    <div data-include="../include/topbar.html"></div>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>클럽메타 관리자 - 신고관리</title>
+    <!-- js -->
+    <script src="../include/head.js"></script>
+</head>
 
-                    <div class="container-fluid" role="main">
-                        <!-- 페이지 경로 -->
-                        <div class="page-breadcrumb" aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <i class="fas fa-home d-flex align-items-center"></i>
-                                </li>
-                                <li class="breadcrumb-item">신고관리</li>
-                            </ol>
-                        </div>
-                        <!-- //페이지 경로 -->
-                        <div class="main">
-                            <!-- 제목 및 등록버튼 -->
-                            <div class="row clearfix mt-4 mb-4">
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                    <h2 class="h3 text-gray-800 float-left">신고 관리</h2>
-                                </div>
-                            </div>
-                            <!-- //제목 및 등록버튼 -->
-                            <!-- 탭 메뉴 -->
-                            <ul class="nav nav-tabs sub-tab" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="sub-tab1" data-toggle="tab" data-target="#sub-panel1" type="button" role="tab">유저 신고</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="sub-tab2" data-toggle="tab" data-target="#sub-panel2" type="button" role="tab">영상 신고</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="sub-tab3" data-toggle="tab" data-target="#sub-panel3" type="button" role="tab">댓글 신고</button>
-                                </li>
-                            </ul>
-                            <!-- //탭 메뉴 -->
-                            <!-- 탭 컨탠츠 -->
-                            <div class="tab-content">
-                                <div class="tab-pane fade show active" id="sub-panel1" role="tabpanel" aria-labelledby="sub-tab1">
-                                    <!-- 검색 영역 -->
-                                    <div class="search-wrap">
-                                        <div class="form-box">
-                                            <div class="form-box-row">
-                                                <div class="form-box-item">
-                                                    <div class="form-box-label">처리상태</div>
-                                                    <div class="form-box-cont">
-                                                        <div class="custom-control-wrap">
-                                                            <label class="custom-control custom-checkbox custom-control-inline">
-                                                                <input type="checkbox" name="chk" class="custom-control-input" />
-                                                                <span class="custom-control-label">처리중</span>
-                                                            </label>
-                                                            <label class="custom-control custom-checkbox custom-control-inline">
-                                                                <input type="checkbox" name="chk" class="custom-control-input" />
-                                                                <span class="custom-control-label">처리완료(유저삭제) </span>
-                                                            </label>
-                                                            <label class="custom-control custom-checkbox custom-control-inline">
-                                                                <input type="checkbox" name="chk" class="custom-control-input" />
-                                                                <span class="custom-control-label">처리완료(해당없음) </span>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-box-row">
-                                                <div class="form-box-item">
-                                                    <div class="form-box-label">검색어</div>
-                                                    <div class="form-box-cont">
-                                                        <div class="form-row">
-                                                            <div class="col-md-5">
-                                                                <select class="custom-select">
-                                                                    <option value="1">최종수정자</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="col-md-7 mt-2 mt-md-0">
-                                                                <input type="text" class="form-control" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+<!-- content Wrapper -->
+<div id="content-wrapper" class="d-flex flex-column bg-white">
+    <!-- 컨텐츠 본문 -->
+    <div id="content">
+        <!--  -->
+        <div data-include="../include/topbar.html"></div>
 
-                                            <div class="form-box-row">
-                                                <div class="form-box-item">
-                                                    <div class="form-box-label">등록기간</div>
-                                                    <div class="form-box-cont">
-                                                        <div class="input-daterange-btn">
-                                                            <div class="input-group">
-                                                                <input type="date" class="form-control" placeholder="시작일" />
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text">~</div>
-                                                                </div>
-                                                                <input type="date" class="form-control" placeholder="종료일" />
-                                                            </div>
-
-                                                            <div class="btn-group" role="group" aria-label="기간 선택 버튼">
-                                                                <button type="button" class="btn btn-outline-secondary">오늘</button>
-                                                                <button type="button" class="btn btn-outline-secondary active">7일</button>
-                                                                <button type="button" class="btn btn-outline-secondary">15일</button>
-                                                                <button type="button" class="btn btn-outline-secondary">1개월</button>
-                                                                <button type="button" class="btn btn-outline-secondary">3개월</button>
-                                                                <button type="button" class="btn btn-outline-secondary">전체</button>
-                                                                <!-- active 클래스로  활성화 -->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="btn-wrap">
-                                        <button type="submit" class="btn btn-dark"><i class="fa fa-search mr-1"></i> 검색</button>
-                                    </div>
-                                    <!-- //검색 영역 -->
-                                    <div class="title-wrap mt-5">
-                                        <div class="left">검색 <strong class="fc-red">5</strong>건 / 전체 <strong class="fc-red">15</strong>건</div>
-                                        <div class="right">
-                                            <select class="custom-select custom-select-sm">
-                                                <option value="1">10</option>
-                                                <option value="2">25</option>
-                                                <option value="3">50</option>
-                                                <option value="4">100</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="bootstrap-table bootstrap4">
-                                        <div class="fixed-table-toolbar"></div>
-                                        <div class="fixed-table-container">
-                                            <div class="fixed-table-body">
-                                                <div class="fixed-table-loading table table-bordered table-hover" style="top: 42.7969px">
-                                                    <span class="loading-wrap">
-                                                        <span class="loading-text">데이터를 불러오는 중입니다</span>
-                                                        <span class="animation-wrap"><span class="animation-dot"></span></span>
-                                                    </span>
-                                                </div>
-                                                <table id="dataTable" class="table table-hover table-bordered" data-pagination="true">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="no-sorting" data-field="0" data-orderable="false">
-                                                                <div class="th-inner">
-                                                                    <label class="custom-control custom-checkbox only mb-0">
-                                                                        <input type="checkbox" class="custom-control-input" />
-                                                                        <span class="custom-control-label"></span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="fht-cell"></div>
-                                                            </th>
-                                                            <th data-field="1">
-                                                                <div class="th-inner">번호</div>
-                                                                <div class="fht-cell"></div>
-                                                            </th>
-                                                            <th data-field="2">
-                                                                <div class="th-inner">아이디</div>
-                                                                <div class="fht-cell"></div>
-                                                            </th>
-                                                            <th data-field="3">
-                                                                <div class="th-inner">비번</div>
-                                                                <div class="fht-cell"></div>
-                                                            </th>
-                                                            <th data-field="4">
-                                                                <div class="th-inner">메모</div>
-                                                                <div class="fht-cell"></div>
-                                                            </th>
-                                                            <th data-field="5">
-                                                                <div class="th-inner">등록일</div>
-                                                                <div class="fht-cell"></div>
-                                                            </th>
-                                                            <th data-field="6">
-                                                                <div class="th-inner">최종 로그인</div>
-                                                                <div class="fht-cell"></div>
-                                                            </th>
-                                                            <th data-field="7">
-                                                                <div class="th-inner">수정</div>
-                                                                <div class="fht-cell"></div>
-                                                            </th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr class="tr-fixed" data-index="0">
-                                                            <td>
-                                                                <label class="custom-control custom-checkbox only">
-                                                                    <input type="checkbox" class="custom-control-input" />
-                                                                    <span class="custom-control-label"></span>
-                                                                </label>
-                                                            </td>
-                                                            <td>10</td>
-                                                            <td><a href="#none">metaclub00</a></td>
-                                                            <td><a href="#none">zmffjqapxk1</a></td>
-                                                            <td class="text-left">신성장사업그룹 / 성장사업팀 / 홍길동</td>
-                                                            <td>2023.06.26 16:00:00</td>
-                                                            <td>2023.06.26 16:00:00</td>
-                                                            <td>
-                                                                <button type="button" class="btn btn-outline-dark btn-sm"><i class="bi bi-x"></i> 수정</button>
-                                                            </td>
-                                                        </tr>
-                                                        <tr data-index="1">
-                                                            <td>
-                                                                <label class="custom-control custom-checkbox only">
-                                                                    <input type="checkbox" class="custom-control-input" />
-                                                                    <span class="custom-control-label"></span>
-                                                                </label>
-                                                            </td>
-                                                            <td>9</td>
-                                                            <td><a href="#none">metaclub00</a></td>
-                                                            <td><a href="#none">zmffjqapxk1</a></td>
-                                                            <td class="text-left">메모</td>
-                                                            <td>2023.06.26 16:00:00</td>
-                                                            <td>2023.06.26 16:00:00</td>
-                                                            <td>
-                                                                <button type="button" class="btn btn-outline-dark btn-sm"><i class="bi bi-x"></i> 수정</button>
-                                                            </td>
-                                                        </tr>
-                                                        <tr data-index="2">
-                                                            <td>
-                                                                <label class="custom-control custom-checkbox only">
-                                                                    <input type="checkbox" class="custom-control-input" />
-                                                                    <span class="custom-control-label"></span>
-                                                                </label>
-                                                            </td>
-                                                            <td>8</td>
-                                                            <td><a href="#none">metaclub00</a></td>
-                                                            <td><a href="#none">zmffjqapxk1</a></td>
-                                                            <td class="text-left">메모</td>
-                                                            <td>2023.06.26 16:00:00</td>
-                                                            <td>2023.06.26 16:00:00</td>
-                                                            <td>
-                                                                <button type="button" class="btn btn-outline-dark btn-sm"><i class="bi bi-x"></i> 수정</button>
-                                                            </td>
-                                                        </tr>
-                                                        <tr data-index="3">
-                                                            <td>
-                                                                <label class="custom-control custom-checkbox only">
-                                                                    <input type="checkbox" class="custom-control-input" />
-                                                                    <span class="custom-control-label"></span>
-                                                                </label>
-                                                            </td>
-                                                            <td>10</td>
-                                                            <td><a href="#none">metaclub00</a></td>
-                                                            <td><a href="#none">zmffjqapxk1</a></td>
-                                                            <td class="text-left">신성장사업그룹 / 성장사업팀 / 홍길동</td>
-                                                            <td>2023.06.26 16:00:00</td>
-                                                            <td>2023.06.26 16:00:00</td>
-                                                            <td>
-                                                                <button type="button" class="btn btn-outline-dark btn-sm"><i class="bi bi-x"></i> 수정</button>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <div class="fixed-table-footer"></div>
-                                        </div>
-                                        <div class="fixed-table-pagination">
-                                            <div class="float-left">
-                                                <button type="button" class="btn btn-outline-dark"><i class="bi bi-x"></i> 삭제</button>
-                                            </div>
-                                            <div class="pagination-wrap pagination">
-                                                <ul class="pagination">
-                                                    <li class="page-item page-pre"><a class="page-link" aria-label="previous page" href="javascript:void(0)">‹</a></li>
-                                                    <li class="page-item active"><a class="page-link" aria-label="to page 1" href="javascript:void(0)">1</a></li>
-                                                    <li class="page-item"><a class="page-link" aria-label="to page 2" href="javascript:void(0)">2</a></li>
-                                                    <li class="page-item page-next"><a class="page-link" aria-label="next page" href="javascript:void(0)">›</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="sub-panel2" role="tabpanel" aria-labelledby="sub-tab2"></div>
-                                <div class="tab-pane fade" id="sub-panel3" role="tabpanel" aria-labelledby="sub-tab3"></div>
-                            </div>
-                            <!-- //탭 컨텐츠 -->
-                        </div>
-                        <!---//contents--->
+        <div class="container-fluid" role="main">
+            <!-- 페이지 경로 -->
+            <div class="page-breadcrumb" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <i class="fas fa-home d-flex align-items-center"></i>
+                    </li>
+                    <li class="breadcrumb-item">신고관리</li>
+                </ol>
+            </div>
+            <!-- //페이지 경로 -->
+            <div class="main">
+                <!-- 제목 및 등록버튼 -->
+                <div class="row clearfix mt-4 mb-4">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <h2 class="h3 text-gray-800 float-left">신고 관리</h2>
                     </div>
                 </div>
+                <!-- //제목 및 등록버튼 -->
+                <!-- 탭 메뉴 -->
+                <ul class="nav nav-tabs sub-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="sub-tab1" data-toggle="tab" data-target="#sub-panel1"
+                            type="button" role="tab">유저 신고</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="sub-tab2" data-toggle="tab" data-target="#sub-panel2" type="button"
+                            role="tab">영상 신고</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="sub-tab3" data-toggle="tab" data-target="#sub-panel3" type="button"
+                            role="tab">댓글 신고</button>
+                    </li>
+                </ul>
+                <!-- //탭 메뉴 -->
+                <!-- 탭 컨탠츠 -->
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="sub-panel1" role="tabpanel" aria-labelledby="sub-tab1">
+                        <!-- 검색 영역 -->
+                        <div class="search-wrap">
+                            <div class="form-box">
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label">처리상태</div>
+                                        <div class="form-box-cont">
+                                            <div class="custom-control-wrap">
+                                                <label class="custom-control custom-checkbox custom-control-inline">
+                                                    <input type="checkbox" name="chk" class="custom-control-input" />
+                                                    <span class="custom-control-label">처리중</span>
+                                                </label>
+                                                <label class="custom-control custom-checkbox custom-control-inline">
+                                                    <input type="checkbox" name="chk" class="custom-control-input" />
+                                                    <span class="custom-control-label">처리완료(유저삭제) </span>
+                                                </label>
+                                                <label class="custom-control custom-checkbox custom-control-inline">
+                                                    <input type="checkbox" name="chk" class="custom-control-input" />
+                                                    <span class="custom-control-label">처리완료(해당없음) </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label">검색어</div>
+                                        <div class="form-box-cont">
+                                            <div class="form-row">
+                                                <div class="col-md-5">
+                                                    <select class="custom-select">
+                                                        <option value="1">최종수정자</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-7 mt-2 mt-md-0">
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label">등록기간</div>
+                                        <div class="form-box-cont">
+                                            <div class="input-daterange-btn">
+                                                <div class="input-group">
+                                                    <input type="date" class="form-control" placeholder="시작일" />
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text">~</div>
+                                                    </div>
+                                                    <input type="date" class="form-control" placeholder="종료일" />
+                                                </div>
+
+                                                <div class="btn-group" role="group" aria-label="기간 선택 버튼">
+                                                    <button type="button" class="btn btn-outline-secondary">오늘</button>
+                                                    <button type="button"
+                                                        class="btn btn-outline-secondary active">7일</button>
+                                                    <button type="button" class="btn btn-outline-secondary">15일</button>
+                                                    <button type="button" class="btn btn-outline-secondary">1개월</button>
+                                                    <button type="button" class="btn btn-outline-secondary">3개월</button>
+                                                    <button type="button" class="btn btn-outline-secondary">전체</button>
+                                                    <!-- active 클래스로  활성화 -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-wrap">
+                            <button type="submit" class="btn btn-dark"><i class="fa fa-search mr-1"></i> 검색</button>
+                        </div>
+                    </div>
+                    <div class="bootstrap-table bootstrap4">
+                        <div class="fixed-table-toolbar"></div>
+                        <div class="fixed-table-container" style="padding-bottom: 0px">
+                            <div class="fixed-table-header" style="display: none">
+                                <table></table>
+                            </div>
+                            <div class="fixed-table-body">
+                                <div class="fixed-table-loading table table-bordered table-hover"
+                                    style="top: 42.7969px;">
+                                    <span class="loading-wrap">
+                                        <span class="loading-text">데이터를 불러오는 중입니다</span>
+                                        <span class="animation-wrap"><span class="animation-dot"></span></span>
+                                    </span>
+                                </div>
+                                <table id="dataTable" class="table table-hover table-bordered" data-pagination="true">
+                                    <thead>
+                                        <tr>
+                                            <th class="no-sorting" data-field="0" data-orderable="false">
+                                                <div class="th-inner">
+                                                    <label class="custom-control custom-checkbox only mb-0">
+                                                        <input type="checkbox" class="custom-control-input" />
+                                                        <span class="custom-control-label"></span>
+                                                    </label>
+                                                </div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                            <th data-field="1">
+                                                <div class="th-inner">번호</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                            <th data-field="2">
+                                                <div class="th-inner">신고된 유저 닉네임</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                            <th data-field="3">
+                                                <div class="th-inner">신고 횟수</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                            <th data-field="4">
+                                                <div class="th-inner">최근 신고일자</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                            <th data-field="5">
+                                                <div class="th-inner">처리 상태</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                            <th data-field="6">
+                                                <div class="th-inner">처리일자</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                            <th data-field="7">
+                                                <div class="th-inner">처리 상태 변경</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- <tr class="no-records-found">
+                                                        <td colspan="8">조회된 데이터가 없습니다.</td>
+                                                    </tr> -->
+                                        <tr class="tr-fixed" data-index="0">
+                                            <td>
+                                                <label class="custom-control custom-checkbox only">
+                                                    <input type="checkbox" class="custom-control-input" />
+                                                    <span class="custom-control-label"></span>
+                                                </label>
+                                            </td>
+                                            <td>10</td>
+                                            <td><a href="#none">하하하<i class="fa-solid fa-link"></i></a></td>
+                                            <td><a href="#none">22<i class="fas fa-file-lines"></i></a></td>
+                                            <td>2023.06.26<br>16:00:00</td>
+                                            <td>처리완료 (<span>유저삭제</span>)</td>
+                                            <td>2023.06.26<br>16:00:00</td>
+                                            <td>
+                                                <button type="button" class="btn btn-primary btn-sm"
+                                                    disabled>완료</button>
+                                            </td>
+                                        </tr>
+                                        <tr data-index="1">
+                                            <td>
+                                                <label class="custom-control custom-checkbox only">
+                                                    <input type="checkbox" class="custom-control-input" />
+                                                    <span class="custom-control-label"></span>
+                                                </label>
+                                            </td>
+                                            <td>9</td>
+                                            <td><a href="#none">metaclub00</a></td>
+                                            <td><a href="#none">zmffjqapxk1</a></td>
+                                            <td class="text-left">메모</td>
+                                            <td>2023.06.26 16:00:00</td>
+                                            <td>2023.06.26 16:00:00</td>
+                                            <td>
+                                                <button type="button" class="btn btn-outline-dark btn-sm"><i
+                                                        class="bi bi-x"></i> 수정</button>
+                                            </td>
+                                        </tr>
+                                        <tr data-index="2">
+                                            <td>
+                                                <label class="custom-control custom-checkbox only">
+                                                    <input type="checkbox" class="custom-control-input" />
+                                                    <span class="custom-control-label"></span>
+                                                </label>
+                                            </td>
+                                            <td>8</td>
+                                            <td><a href="#none">metaclub00</a></td>
+                                            <td><a href="#none">zmffjqapxk1</a></td>
+                                            <td class="text-left">메모</td>
+                                            <td>2023.06.26 16:00:00</td>
+                                            <td>2023.06.26 16:00:00</td>
+                                            <td>
+                                                <button type="button" class="btn btn-outline-dark btn-sm"><i
+                                                        class="bi bi-x"></i> 수정</button>
+                                            </td>
+                                        </tr>
+                                        <tr data-index="3">
+                                            <td>
+                                                <label class="custom-control custom-checkbox only">
+                                                    <input type="checkbox" class="custom-control-input" />
+                                                    <span class="custom-control-label"></span>
+                                                </label>
+                                            </td>
+                                            <td>10</td>
+                                            <td><a href="#none">metaclub00</a></td>
+                                            <td><a href="#none">zmffjqapxk1</a></td>
+                                            <td class="text-left">신성장사업그룹 / 성장사업팀 / 홍길동</td>
+                                            <td>2023.06.26 16:00:00</td>
+                                            <td>2023.06.26 16:00:00</td>
+                                            <td>
+                                                <button type="button" class="btn btn-outline-dark btn-sm"><i
+                                                        class="bi bi-x"></i> 수정</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="fixed-table-pagination">
+                                <div class="float-left">
+                                    <button type="button" class="btn btn-outline-dark"><i class="bi bi-x"></i>
+                                        삭제</button>
+                                </div>
+                                <div class="pagination-wrap pagination">
+                                    <ul class="pagination">
+                                        <li class="page-item page-pre"><a class="page-link" aria-label="previous page"
+                                                href="javascript:void(0)">‹</a></li>
+                                        <li class="page-item active"><a class="page-link" aria-label="to page 1"
+                                                href="javascript:void(0)">1</a></li>
+                                        <li class="page-item"><a class="page-link" aria-label="to page 2"
+                                                href="javascript:void(0)">2</a></li>
+                                        <li class="page-item page-next"><a class="page-link" aria-label="next page"
+                                                href="javascript:void(0)">›</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="sub-panel2" role="tabpanel" aria-labelledby="sub-tab2"></div>
+                    <div class="tab-pane fade" id="sub-panel3" role="tabpanel" aria-labelledby="sub-tab3"></div>
+                </div>
+                <!-- //탭 컨텐츠 -->
             </div>
+            <!---//contents--->
         </div>
-        <!-- Scroll to Top Button-->
-        <div data-include="../include/topbtn.html"></div>
+    </div>
+</div>
+</div>
+<!-- Scroll to Top Button-->
+<div data-include="../include/topbtn.html"></div>
 
-        <!-- Logout Modal-->
-        <div data-include="../include/logoutModal.html"></div>
-    </body>
-    <script src="../../datatables/jquery.dataTables.min.js"></script>
-    <script src="../../datatables/dataTables.bootstrap4.min.js"></script>
+<!-- Logout Modal-->
+<div data-include="../include/logoutModal.html"></div>
+<div data-include="../include/pop/changePwModal.html"></div>
 
-    <!-- Page level custom scripts -->
-    <script src="../../js/demo/datatables-demo.js"></script>
+</body>
+<script src="../../datatables/jquery.dataTables.min.js"></script>
+<script src="../../datatables/dataTables.bootstrap4.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="../../js/demo/datatables-demo.js"></script>
+
 </html>

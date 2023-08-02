@@ -1,547 +1,677 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title>클럽메타 관리자 - 음원 관리</title>
-        <!-- js -->
-        <script src="../include/head.js"></script>
-    </head>
 
-    <body>
-        <!-- Page Wrapper -->
-        <div id="wrapper" class="wrapper">
-            <!-- 사이드바 -->
-            <div data-include="../include/sidebar.html"></div>
-            <!-- //사이드바 -->
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>클럽메타 관리자 - 음원 관리</title>
+    <!-- js -->
+    <script src="../include/head.js"></script>
+</head>
 
-            <!-- content Wrapper -->
-            <div id="content-wrapper" class="d-flex flex-column bg-white">
-                <!-- 컨텐츠 본문 -->
-                <div id="content">
-                    <!--  -->
-                    <div data-include="../include/topbar.html"></div>
+<body>
+    <!-- Page Wrapper -->
+    <div id="wrapper" class="wrapper">
+        <!-- 사이드바 -->
+        <div data-include="../include/sidebar.html"></div>
+        <!-- //사이드바 -->
 
-                    <div class="container-fluid" role="main">
-                        <!-- 페이지 경로 -->
-                        <div class="page-breadcrumb" aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <i class="fas fa-home d-flex align-items-center"></i>
-                                </li>
-                                <li class="breadcrumb-item">영상관리</li>
-                                <li class="breadcrumb-item">영상 대시보드</li>
-                            </ol>
+        <!-- content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column bg-white">
+            <!-- 컨텐츠 본문 -->
+            <div id="content">
+                <!--  -->
+                <div data-include="../include/topbar.html"></div>
+
+                <div class="container-fluid" role="main">
+                    <!-- 페이지 경로 -->
+                    <div class="page-breadcrumb" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <i class="fas fa-home d-flex align-items-center"></i>
+                            </li>
+                            <li class="breadcrumb-item">영상관리</li>
+                            <li class="breadcrumb-item">영상 대시보드</li>
+                        </ol>
+                    </div>
+                    <!-- //페이지 경로 -->
+                    <div class="main">
+                        <!-- 제목 및 등록버튼 -->
+                        <div class="row clearfix mt-4 mb-4">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <h2 class="h3 text-gray-800 float-left">영상 대시보드</h2>
+                            </div>
                         </div>
-                        <!-- //페이지 경로 -->
-                        <div class="main">
-                            <!-- 제목 및 등록버튼 -->
-                            <div class="row clearfix mt-4 mb-4">
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                    <h2 class="h3 text-gray-800 float-left">영상 대시보드</h2>
+                        <!-- //제목 및 등록버튼 -->
+
+                        <!-- 검색 영역 -->
+                        <div class="search-wrap">
+                            <div class="form-box">
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label"><label for="">기간 검색</label></div>
+                                        <div class="form-box-cont">
+                                            <div class="input-daterange-btn">
+                                                <div class="input-group">
+                                                    <input type="date" class="form-control" placeholder="시작일" />
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text">~</div>
+                                                    </div>
+                                                    <input type="date" class="form-control" placeholder="종료일" />
+                                                </div>
+
+                                                <div class="btn-group" role="group" aria-label="기간 선택 버튼">
+                                                    <button type="button" class="btn btn-outline-secondary">오늘</button>
+                                                    <button type="button"
+                                                        class="btn btn-outline-secondary active">7일</button>
+                                                    <button type="button" class="btn btn-outline-secondary">15일</button>
+                                                    <button type="button" class="btn btn-outline-secondary">1개월</button>
+                                                    <button type="button" class="btn btn-outline-secondary">3개월</button>
+                                                    <button type="button" class="btn btn-outline-secondary">전체</button>
+                                                    <!-- active 클래스로  활성화 -->
+                                                </div>
+                                                <div class="btn-wrap ml-2 mt-0">
+                                                    <button type="submit" class="btn btn-dark"><i
+                                                            class="fa fa-search mr-1"></i> 검색</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <!-- //제목 및 등록버튼 -->
+                        </div>
+                        <!-- //검색 영역 -->
 
-                            <!-- 검색 영역 -->
-                            <div class="search-wrap">
-                                <div class="form-box">
-                                    <div class="form-box-row">
-                                        <div class="form-box-item">
-                                            <div class="form-box-label"><label for="">기간 검색</label></div>
-                                            <div class="form-box-cont">
-                                                <div class="input-daterange-btn">
-                                                    <div class="input-group">
-                                                        <input type="date" class="form-control" placeholder="시작일" />
-                                                        <div class="input-group-prepend">
-                                                            <div class="input-group-text">~</div>
+                        <!---//contents--->
+                        <div class="dashboard-box mt-1">
+                            <div class="dashboard">
+                                <dl>
+                                    <dt>업로드 영상 수</dt>
+                                    <dd><strong class="fz-lg fc-yellow">264</strong></dd>
+                                </dl>
+                                <dl>
+                                    <dt>노출 수</dt>
+                                    <dd><strong class="fz-lg fc-yellow">231,0214</strong></dd>
+                                </dl>
+                                <dl>
+                                    <dt>댓글 수</dt>
+                                    <dd><strong class="fz-lg fc-yellow">2,439</strong></dd>
+                                </dl>
+                                <dl>
+                                    <dt>좋아요 수</dt>
+                                    <dd><strong class="fz-lg fc-yellow">100,684</strong></dd>
+                                </dl>
+                                <dl class="">
+                                    <dt>공유 횟수</dt>
+                                    <dd><strong class="fz-lg fc-yellow">210</strong></dd>
+                                </dl>
+                                <dl>
+                                    <dt>AI 챌린지<br />오픈 횟수</dt>
+                                    <dd><strong class="fz-lg fc-yellow">11</strong></dd>
+                                </dl>
+                                <dl class="">
+                                    <dt>음원챌리지<br />오픈 횟수</dt>
+                                    <dd><strong class="fz-lg fc-yellow">6</strong></dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="row clearfix mt-4 mb-4">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <h2 class="h3 text-gray-800 float-left">영상 인사이트</h2>
+                            </div>
+                        </div>
+                        <!-- 검색 영역 -->
+                        <div class="search-wrap">
+                            <div class="form-box">
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label"><label for="">기간 검색</label></div>
+                                        <div class="form-box-cont">
+                                            <div class="input-daterange-btn">
+                                                <div class="input-group">
+                                                    <input type="date" class="form-control" placeholder="시작일" />
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text">~</div>
+                                                    </div>
+                                                    <input type="date" class="form-control" placeholder="종료일" />
+                                                </div>
+
+                                                <div class="btn-group" role="group" aria-label="기간 선택 버튼">
+                                                    <button type="button" class="btn btn-outline-secondary">오늘</button>
+                                                    <button type="button"
+                                                        class="btn btn-outline-secondary active">7일</button>
+                                                    <button type="button" class="btn btn-outline-secondary">15일</button>
+                                                    <button type="button" class="btn btn-outline-secondary">1개월</button>
+                                                    <button type="button" class="btn btn-outline-secondary">3개월</button>
+                                                    <button type="button" class="btn btn-outline-secondary">전체</button>
+                                                    <!-- active 클래스로  활성화 -->
+                                                </div>
+                                                <div class="btn-wrap ml-2 mt-0">
+                                                    <button type="submit" class="btn btn-dark"><i
+                                                            class="fa fa-search mr-1"></i> 검색</button>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="sub-panel0002" role="tabpanel"
+                                                aria-labelledby="sub-tab0002">
+                                                <h2 class="h5">베스트 영상</h2>
+                                            </div>
+                                            <div class="tab-pane fade" id="sub-panel0003" role="tabpanel"
+                                                aria-labelledby="sub-tab0003"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //검색 영역 -->
+                        <div class="row mt-4">
+                            <div class="col-md-4">
+                                <div class="card shadow dash-chart-box">
+                                    <!-- Card Header - Dropdown -->
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 font-weight-bold text-primary">영상 업로드 유저 성별(참여자)</h6>
+                                    </div>
+                                    <!-- Card Body -->
+                                    <div class="card-body">
+                                        <div class="chart-pie pt-4">
+                                            <div class="chartjs-size-monitor">
+                                                <div class="chartjs-size-monitor-expand">
+                                                    <div class=""></div>
+                                                </div>
+                                                <div class="chartjs-size-monitor-shrink">
+                                                    <div class=""></div>
+                                                </div>
+                                            </div>
+
+                                            <canvas id="myDnChart" width="544" height="216"
+                                                style="display: block; width: 544px; height: 216px"
+                                                class="chartjs-render-monitor"></canvas>
+                                        </div>
+                                        <div class="chart-total">
+                                            <p>1,873</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card shadow dash-chart-box">
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 font-weight-bold text-primary">업로드 유저 연령대</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <!-- 탭 메뉴 -->
+                                        <ul class="nav nav-tabs btn-tab" role="tablist">
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link btn-tab-link active" id="sub-tab1"
+                                                    data-toggle="tab" data-target="#sub-panel01" type="button"
+                                                    role="tab">전체</button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link btn-tab-link" id="sub-tab2" data-toggle="tab"
+                                                    data-target="#sub-panel02" type="button" role="tab">남성</button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link btn-tab-link" id="sub-tab3" data-toggle="tab"
+                                                    data-target="#sub-panel03" type="button" role="tab">여성</button>
+                                            </li>
+                                        </ul>
+                                        <!-- //탭 메뉴 -->
+                                        <!-- 탭 컨탠츠 -->
+                                        <div class="tab-content mt-4">
+                                            <div class="tab-pane fade show active" id="sub-panel01" role="tabpanel"
+                                                aria-labelledby="sub-tab1">
+                                                <h4 class="small font-weight-bold">14~18 <span
+                                                        class="float-right">13%</span></h4>
+                                                <div class="progress mb-4">
+                                                    <div class="progress-bar" role="progressbar" style="width: 13%"
+                                                        aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                                <h4 class="small font-weight-bold">19~24 <span
+                                                        class="float-right">50%</span></h4>
+                                                <div class="progress mb-4">
+                                                    <div class="progress-bar" role="progressbar" style="width: 50%"
+                                                        aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                                <h4 class="small font-weight-bold">25~29 <span
+                                                        class="float-right">25%</span></h4>
+                                                <div class="progress mb-4">
+                                                    <div class="progress-bar" role="progressbar" style="width: 25%"
+                                                        aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                                <h4 class="small font-weight-bold">30~40 <span
+                                                        class="float-right">10%</span></h4>
+                                                <div class="progress mb-4">
+                                                    <div class="progress-bar" role="progressbar" style="width: 10%"
+                                                        aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                                <h4 class="small font-weight-bold">41~ <span
+                                                        class="float-right">2%</span></h4>
+                                                <div class="progress">
+                                                    <div class="progress-bar" role="progressbar" style="width: 2%"
+                                                        aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="sub-panel02" role="tabpanel"
+                                                aria-labelledby="sub-tab2">
+                                                <div class="tab-pane fade show active" id="sub-panel02" role="tabpanel"
+                                                    aria-labelledby="sub-tab1">
+                                                    <h4 class="small font-weight-bold">14~18 <span
+                                                            class="float-right">13%</span></h4>
+                                                    <div class="progress mb-4">
+                                                        <div class="progress-bar" role="progressbar" style="width: 13%"
+                                                            aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
                                                         </div>
-                                                        <input type="date" class="form-control" placeholder="종료일" />
                                                     </div>
-
-                                                    <div class="btn-group" role="group" aria-label="기간 선택 버튼">
-                                                        <button type="button" class="btn btn-outline-secondary">오늘</button>
-                                                        <button type="button" class="btn btn-outline-secondary active">7일</button>
-                                                        <button type="button" class="btn btn-outline-secondary">15일</button>
-                                                        <button type="button" class="btn btn-outline-secondary">1개월</button>
-                                                        <button type="button" class="btn btn-outline-secondary">3개월</button>
-                                                        <button type="button" class="btn btn-outline-secondary">전체</button>
-                                                        <!-- active 클래스로  활성화 -->
-                                                    </div>
-                                                    <div class="btn-wrap ml-2 mt-0">
-                                                        <button type="submit" class="btn btn-dark"><i class="fa fa-search mr-1"></i> 검색</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- //검색 영역 -->
-
-                            <!---//contents--->
-                            <div class="dashboard-box mt-1">
-                                <div class="dashboard">
-                                    <dl>
-                                        <dt>업로드 영상 수</dt>
-                                        <dd><strong class="fz-lg fc-yellow">264</strong></dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>노출 수</dt>
-                                        <dd><strong class="fz-lg fc-yellow">231,0214</strong></dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>댓글 수</dt>
-                                        <dd><strong class="fz-lg fc-yellow">2,439</strong></dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>좋아요 수</dt>
-                                        <dd><strong class="fz-lg fc-yellow">100,684</strong></dd>
-                                    </dl>
-                                    <dl class="">
-                                        <dt>공유 횟수</dt>
-                                        <dd><strong class="fz-lg fc-yellow">210</strong></dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>AI 챌린지<br />오픈 횟수</dt>
-                                        <dd><strong class="fz-lg fc-yellow">11</strong></dd>
-                                    </dl>
-                                    <dl class="">
-                                        <dt>음원챌리지<br />오픈 횟수</dt>
-                                        <dd><strong class="fz-lg fc-yellow">6</strong></dd>
-                                    </dl>
-                                </div>
-                            </div>
-                            <div class="row clearfix mt-4 mb-4">
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                    <h2 class="h3 text-gray-800 float-left">영상 인사이트</h2>
-                                </div>
-                            </div>
-                            <!-- 검색 영역 -->
-                            <div class="search-wrap">
-                                <div class="form-box">
-                                    <div class="form-box-row">
-                                        <div class="form-box-item">
-                                            <div class="form-box-label"><label for="">기간 검색</label></div>
-                                            <div class="form-box-cont">
-                                                <div class="input-daterange-btn">
-                                                    <div class="input-group">
-                                                        <input type="date" class="form-control" placeholder="시작일" />
-                                                        <div class="input-group-prepend">
-                                                            <div class="input-group-text">~</div>
+                                                    <h4 class="small font-weight-bold">19~24 <span
+                                                            class="float-right">50%</span></h4>
+                                                    <div class="progress mb-4">
+                                                        <div class="progress-bar" role="progressbar" style="width: 50%"
+                                                            aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
                                                         </div>
-                                                        <input type="date" class="form-control" placeholder="종료일" />
                                                     </div>
-
-                                                    <div class="btn-group" role="group" aria-label="기간 선택 버튼">
-                                                        <button type="button" class="btn btn-outline-secondary">오늘</button>
-                                                        <button type="button" class="btn btn-outline-secondary active">7일</button>
-                                                        <button type="button" class="btn btn-outline-secondary">15일</button>
-                                                        <button type="button" class="btn btn-outline-secondary">1개월</button>
-                                                        <button type="button" class="btn btn-outline-secondary">3개월</button>
-                                                        <button type="button" class="btn btn-outline-secondary">전체</button>
-                                                        <!-- active 클래스로  활성화 -->
-                                                    </div>
-                                                    <div class="btn-wrap ml-2 mt-0">
-                                                        <button type="submit" class="btn btn-dark"><i class="fa fa-search mr-1"></i> 검색</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- //검색 영역 -->
-                            <div class="row mt-4">
-                                <div class="col-md-4">
-                                    <div class="card shadow dash-chart-box">
-                                        <!-- Card Header - Dropdown -->
-                                        <div class="card-header py-3">
-                                            <h6 class="m-0 font-weight-bold text-primary">영상 업로드 유저 성별(참여자)</h6>
-                                        </div>
-                                        <!-- Card Body -->
-                                        <div class="card-body">
-                                            <div class="chart-pie pt-4">
-                                                <div class="chartjs-size-monitor">
-                                                    <div class="chartjs-size-monitor-expand">
-                                                        <div class=""></div>
-                                                    </div>
-                                                    <div class="chartjs-size-monitor-shrink">
-                                                        <div class=""></div>
-                                                    </div>
-                                                </div>
-
-                                                <canvas id="myDnChart" width="544" height="216" style="display: block; width: 544px; height: 216px" class="chartjs-render-monitor"></canvas>
-                                            </div>
-                                            <div class="chart-total"><p>1,873</p></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card shadow dash-chart-box">
-                                        <div class="card-header py-3">
-                                            <h6 class="m-0 font-weight-bold text-primary">업로드 유저 연령대</h6>
-                                        </div>
-                                        <div class="card-body">
-                                            <!-- 탭 메뉴 -->
-                                            <ul class="nav nav-tabs btn-tab" role="tablist">
-                                                <li class="nav-item" role="presentation">
-                                                    <button class="nav-link btn-tab-link active" id="sub-tab1" data-toggle="tab" data-target="#sub-panel01" type="button" role="tab">전체</button>
-                                                </li>
-                                                <li class="nav-item" role="presentation">
-                                                    <button class="nav-link btn-tab-link" id="sub-tab2" data-toggle="tab" data-target="#sub-panel02" type="button" role="tab">남성</button>
-                                                </li>
-                                                <li class="nav-item" role="presentation">
-                                                    <button class="nav-link btn-tab-link" id="sub-tab3" data-toggle="tab" data-target="#sub-panel03" type="button" role="tab">여성</button>
-                                                </li>
-                                            </ul>
-                                            <!-- //탭 메뉴 -->
-                                            <!-- 탭 컨탠츠 -->
-                                            <div class="tab-content mt-4">
-                                                <div class="tab-pane fade show active" id="sub-panel01" role="tabpanel" aria-labelledby="sub-tab1">
-                                                    <h4 class="small font-weight-bold">14~18 <span class="float-right">13%</span></h4>
+                                                    <h4 class="small font-weight-bold">25~29 <span
+                                                            class="float-right">65%</span></h4>
                                                     <div class="progress mb-4">
-                                                        <div class="progress-bar" role="progressbar" style="width: 13%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        <div class="progress-bar" role="progressbar" style="width: 65%"
+                                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                                                        </div>
                                                     </div>
-                                                    <h4 class="small font-weight-bold">19~24 <span class="float-right">50%</span></h4>
+                                                    <h4 class="small font-weight-bold">30~40 <span
+                                                            class="float-right">10%</span></h4>
                                                     <div class="progress mb-4">
-                                                        <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        <div class="progress-bar" role="progressbar" style="width: 10%"
+                                                            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                                                        </div>
                                                     </div>
-                                                    <h4 class="small font-weight-bold">25~29 <span class="float-right">25%</span></h4>
-                                                    <div class="progress mb-4">
-                                                        <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                    <h4 class="small font-weight-bold">30~40 <span class="float-right">10%</span></h4>
-                                                    <div class="progress mb-4">
-                                                        <div class="progress-bar" role="progressbar" style="width: 10%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                    <h4 class="small font-weight-bold">41~ <span class="float-right">2%</span></h4>
+                                                    <h4 class="small font-weight-bold">41~ <span
+                                                            class="float-right">2%</span></h4>
                                                     <div class="progress">
-                                                        <div class="progress-bar" role="progressbar" style="width: 2%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="tab-pane fade" id="sub-panel02" role="tabpanel" aria-labelledby="sub-tab2">
-                                                    <div class="tab-pane fade show active" id="sub-panel02" role="tabpanel" aria-labelledby="sub-tab1">
-                                                        <h4 class="small font-weight-bold">14~18 <span class="float-right">13%</span></h4>
-                                                        <div class="progress mb-4">
-                                                            <div class="progress-bar" role="progressbar" style="width: 13%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                        <h4 class="small font-weight-bold">19~24 <span class="float-right">50%</span></h4>
-                                                        <div class="progress mb-4">
-                                                            <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                        <h4 class="small font-weight-bold">25~29 <span class="float-right">65%</span></h4>
-                                                        <div class="progress mb-4">
-                                                            <div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                        <h4 class="small font-weight-bold">30~40 <span class="float-right">10%</span></h4>
-                                                        <div class="progress mb-4">
-                                                            <div class="progress-bar" role="progressbar" style="width: 10%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                        <h4 class="small font-weight-bold">41~ <span class="float-right">2%</span></h4>
-                                                        <div class="progress">
-                                                            <div class="progress-bar" role="progressbar" style="width: 2%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        <div class="progress-bar" role="progressbar" style="width: 2%"
+                                                            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="tab-pane fade" id="sub-panel03" role="tabpanel" aria-labelledby="sub-tab3">
-                                                    <div class="tab-pane fade show active" id="sub-panel03" role="tabpanel" aria-labelledby="sub-tab1">
-                                                        <h4 class="small font-weight-bold">14~18 <span class="float-right">13%</span></h4>
-                                                        <div class="progress mb-4">
-                                                            <div class="progress-bar" role="progressbar" style="width: 13%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <div class="tab-pane fade" id="sub-panel03" role="tabpanel"
+                                                aria-labelledby="sub-tab3">
+                                                <div class="tab-pane fade show active" id="sub-panel03" role="tabpanel"
+                                                    aria-labelledby="sub-tab1">
+                                                    <h4 class="small font-weight-bold">14~18 <span
+                                                            class="float-right">13%</span></h4>
+                                                    <div class="progress mb-4">
+                                                        <div class="progress-bar" role="progressbar" style="width: 13%"
+                                                            aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
                                                         </div>
-                                                        <h4 class="small font-weight-bold">19~24 <span class="float-right">10%</span></h4>
-                                                        <div class="progress mb-4">
-                                                            <div class="progress-bar" role="progressbar" style="width: 10%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                    <h4 class="small font-weight-bold">19~24 <span
+                                                            class="float-right">10%</span></h4>
+                                                    <div class="progress mb-4">
+                                                        <div class="progress-bar" role="progressbar" style="width: 10%"
+                                                            aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
                                                         </div>
-                                                        <h4 class="small font-weight-bold">25~29 <span class="float-right">25%</span></h4>
-                                                        <div class="progress mb-4">
-                                                            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                    <h4 class="small font-weight-bold">25~29 <span
+                                                            class="float-right">25%</span></h4>
+                                                    <div class="progress mb-4">
+                                                        <div class="progress-bar" role="progressbar" style="width: 25%"
+                                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
                                                         </div>
-                                                        <h4 class="small font-weight-bold">30~40 <span class="float-right">50%</span></h4>
-                                                        <div class="progress mb-4">
-                                                            <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                    <h4 class="small font-weight-bold">30~40 <span
+                                                            class="float-right">50%</span></h4>
+                                                    <div class="progress mb-4">
+                                                        <div class="progress-bar" role="progressbar" style="width: 50%"
+                                                            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
                                                         </div>
-                                                        <h4 class="small font-weight-bold">41~ <span class="float-right">2%</span></h4>
-                                                        <div class="progress">
-                                                            <div class="progress-bar" role="progressbar" style="width: 2%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                    <h4 class="small font-weight-bold">41~ <span
+                                                            class="float-right">2%</span></h4>
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar" style="width: 2%"
+                                                            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </div>
+                                        </div>
+                                        <!-- //탭 컨텐츠 -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card shadow dash-chart-box">
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 font-weight-bold text-primary">업로드 시간대</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="chart-bar">
+                                            <div class="chartjs-size-monitor">
+                                                <div class="chartjs-size-monitor-expand">
+                                                    <div class=""></div>
+                                                </div>
+                                                <div class="chartjs-size-monitor-shrink">
+                                                    <div class=""></div>
+                                                </div>
+                                            </div>
+                                            <canvas id="myBarChart" width="889" height="320"
+                                                style="display: block; width: 889px; height: 320px"
+                                                class="chartjs-render-monitor"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col-md-6">
+                                <div class="card shadow dash-chart-box">
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 font-weight-bold text-primary">업로드한 유저 지역 정보</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <!-- 탭 메뉴 -->
+                                        <ul class="nav nav-tabs btn-tab" role="tablist">
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link btn-tab-link active" id="sub-tab01"
+                                                    data-toggle="tab" data-target="#sub-panel001" type="button"
+                                                    role="tab">전체</button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link btn-tab-link" id="sub-tab02" data-toggle="tab"
+                                                    data-target="#sub-panel002" type="button" role="tab">남성</button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link btn-tab-link" id="sub-tab03" data-toggle="tab"
+                                                    data-target="#sub-panel003" type="button" role="tab">여성</button>
+                                            </li>
+                                        </ul>
+                                        <!-- //탭 메뉴 -->
+                                        <!-- 탭 컨탠츠 -->
+                                        <div class="tab-content mt-4">
+                                            <div class="tab-pane fade show active" id="sub-panel001" role="tabpanel"
+                                                aria-labelledby="sub-tab01">
+                                                <h4 class="small font-weight-bold">경기 <span
+                                                        class="float-right">13%</span></h4>
+                                                <div class="progress mb-4">
+                                                    <div class="progress-bar" role="progressbar" style="width: 13%"
+                                                        aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                                <h4 class="small font-weight-bold">서울 <span
+                                                        class="float-right">50%</span></h4>
+                                                <div class="progress mb-4">
+                                                    <div class="progress-bar" role="progressbar" style="width: 50%"
+                                                        aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                                <h4 class="small font-weight-bold">부산 <span
+                                                        class="float-right">25%</span></h4>
+                                                <div class="progress mb-4">
+                                                    <div class="progress-bar" role="progressbar" style="width: 25%"
+                                                        aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                                <h4 class="small font-weight-bold">광주 <span
+                                                        class="float-right">10%</span></h4>
+                                                <div class="progress mb-4">
+                                                    <div class="progress-bar" role="progressbar" style="width: 10%"
+                                                        aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                                <h4 class="small font-weight-bold">강원 <span
+                                                        class="float-right">2%</span></h4>
+                                                <div class="progress">
+                                                    <div class="progress-bar" role="progressbar" style="width: 2%"
+                                                        aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="sub-panel002" role="tabpanel"
+                                                aria-labelledby="sub-tab02">
+                                                <div class="tab-pane fade show active" id="sub-panel002" role="tabpanel"
+                                                    aria-labelledby="sub-tab1">
+                                                    <h4 class="small font-weight-bold">경기 <span
+                                                            class="float-right">13%</span></h4>
+                                                    <div class="progress mb-4">
+                                                        <div class="progress-bar" role="progressbar" style="width: 13%"
+                                                            aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                        </div>
+                                                    </div>
+                                                    <h4 class="small font-weight-bold">서울 <span
+                                                            class="float-right">50%</span></h4>
+                                                    <div class="progress mb-4">
+                                                        <div class="progress-bar" role="progressbar" style="width: 50%"
+                                                            aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+                                                        </div>
+                                                    </div>
+                                                    <h4 class="small font-weight-bold">부산 <span
+                                                            class="float-right">25%</span></h4>
+                                                    <div class="progress mb-4">
+                                                        <div class="progress-bar" role="progressbar" style="width: 25%"
+                                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                                                        </div>
+                                                    </div>
+                                                    <h4 class="small font-weight-bold">광주 <span
+                                                            class="float-right">10%</span></h4>
+                                                    <div class="progress mb-4">
+                                                        <div class="progress-bar" role="progressbar" style="width: 10%"
+                                                            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                                                        </div>
+                                                    </div>
+                                                    <h4 class="small font-weight-bold">강원 <span
+                                                            class="float-right">2%</span></h4>
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar" style="width: 2%"
+                                                            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="sub-panel003" role="tabpanel"
+                                                aria-labelledby="sub-tab03">
+                                                <div class="tab-pane fade show active" id="sub-panel003" role="tabpanel"
+                                                    aria-labelledby="sub-tab1">
+                                                    <h4 class="small font-weight-bold">경기 <span
+                                                            class="float-right">13%</span></h4>
+                                                    <div class="progress mb-4">
+                                                        <div class="progress-bar" role="progressbar" style="width: 13%"
+                                                            aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                        </div>
+                                                    </div>
+                                                    <h4 class="small font-weight-bold">서울 <span
+                                                            class="float-right">50%</span></h4>
+                                                    <div class="progress mb-4">
+                                                        <div class="progress-bar" role="progressbar" style="width: 50%"
+                                                            aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+                                                        </div>
+                                                    </div>
+                                                    <h4 class="small font-weight-bold">부산 <span
+                                                            class="float-right">25%</span></h4>
+                                                    <div class="progress mb-4">
+                                                        <div class="progress-bar" role="progressbar" style="width: 25%"
+                                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                                                        </div>
+                                                    </div>
+                                                    <h4 class="small font-weight-bold">광주 <span
+                                                            class="float-right">10%</span></h4>
+                                                    <div class="progress mb-4">
+                                                        <div class="progress-bar" role="progressbar" style="width: 10%"
+                                                            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                                                        </div>
+                                                    </div>
+                                                    <h4 class="small font-weight-bold">강원 <span
+                                                            class="float-right">2%</span></h4>
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar" style="width: 2%"
+                                                            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- //탭 컨텐츠 -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card shadow dash-chart-box">
+                                    <!-- Card Header - Dropdown -->
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 font-weight-bold text-primary">영상 비중</h6>
+                                    </div>
+                                    <!-- Card Body -->
+                                    <div class="card-body">
+                                        <div class="chart-pie pt-4">
+                                            <div class="chartjs-size-monitor">
+                                                <div class="chartjs-size-monitor-expand">
+                                                    <div class=""></div>
+                                                </div>
+                                                <div class="chartjs-size-monitor-shrink">
+                                                    <div class=""></div>
+                                                </div>
+                                            </div>
+                                            <canvas id="myPieChart" width="544" height="216"
+                                                style="display: block; width: 544px; height: 216px"
+                                                class="chartjs-render-monitor"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-5 pb-6">
+                            <div class="col-md-6">
+                                <div class="card shadow dash-chart-box">
+                                    <!-- Card Header - Dropdown -->
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 font-weight-bold text-primary">일자별 요약</h6>
+                                    </div>
+                                    <!-- Card Body -->
+                                    <div class="card-body">
+                                        <div class="bootstrap-table bootstrap4">
+                                            <div class="fixed-table-toolbar"></div>
+                                            <div class="fixed-table-container" style="padding-bottom: 0px">
+                                                <div class="fixed-table-header" style="display: none">
+                                                    <table></table>
+                                                </div>
+                                                <div class="fixed-table-body">
+                                                    <div class="fixed-table-loading table table-bordered table-hover"
+                                                        style="top: 42.7969px">
+                                                        <span class="loading-wrap">
+                                                            <span class="loading-text">데이터를 불러오는 중입니다</span>
+                                                            <span class="animation-wrap"><span
+                                                                    class="animation-dot"></span></span>
+                                                        </span>
+                                                    </div>
+                                                    <table id="table" class="table table-hover table-bordered"
+                                                        data-pagination="true">
+                                                        <thead>
+                                                            <tr>
+                                                                <th style="" data-field="0">
+                                                                    <div class="th-inner">일자</div>
+                                                                    <div class="fht-cell"></div>
+                                                                </th>
+                                                                <th style="" data-field="1">
+                                                                    <div class="th-inner">업로드<br />영상 수</div>
+                                                                    <div class="fht-cell"></div>
+                                                                </th>
+                                                                <th style="" data-field="2">
+                                                                    <div class="th-inner">챌린지<br />오픈 횟수</div>
+                                                                    <div class="fht-cell"></div>
+                                                                </th>
+                                                                <th style="" data-field="3">
+                                                                    <div class="th-inner">영상 노출 수</div>
+                                                                    <div class="fht-cell"></div>
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr class="tr-fixed" data-index="0">
+                                                                <td>2023.07.27</td>
+                                                                <td>264</td>
+                                                                <td>10</td>
+                                                                <td>20,010</td>
+                                                            </tr>
+                                                            <tr data-index="1">
+                                                                <td>2023.07.26</td>
+                                                                <td>197</td>
+                                                                <td>5</td>
+                                                                <td>242,233</td>
+                                                            </tr>
+                                                            <tr data-index="2">
+                                                                <td>2023.07.25</td>
+                                                                <td>290</td>
+                                                                <td>11</td>
+                                                                <td>172,132</td>
+                                                            </tr>
+                                                            <tr data-index="3">
+                                                                <td>2023.07.24</td>
+                                                                <td>452</td>
+                                                                <td>21</td>
+                                                                <td>98,842</td>
+                                                            </tr>
+                                                            <tr data-index="4">
+                                                                <td>2023.07.23</td>
+                                                                <td>392</td>
+                                                                <td>30</td>
+                                                                <td>79,210</td>
+                                                            </tr>
+                                                            <tr data-index="5">
+                                                                <td>2023.07.22</td>
+                                                                <td>187</td>
+                                                                <td>17</td>
+                                                                <td>89,910</td>
+                                                            </tr>
+                                                            <tr data-index="6">
+                                                                <td>2023.07.21</td>
+                                                                <td>349</td>
+                                                                <td>7</td>
+                                                                <td>64,183</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="fixed-table-footer"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card shadow dash-chart-box">
+                                    <!-- Card Header - Dropdown -->
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 font-weight-bold text-primary">BEST 영상</h6>
+                                    </div>
+                                    <!-- Card Body -->
+                                    <div class="card-body">
+                                        <!-- 탭 메뉴 -->
+                                        <ul class="nav nav-tabs btn-tab" role="tablist">
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link btn-tab-link active" id="sub-tab0001"
+                                                    data-toggle="tab" data-target="#sub-panel0001" type="button"
+                                                    role="tab">노출 수</button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link btn-tab-link" id="sub-tab0002" data-toggle="tab"
+                                                    data-target="#sub-panel0002" type="button" role="tab">좋아요 수</button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link btn-tab-link" id="sub-tab0003" data-toggle="tab"
+                                                    data-target="#sub-panel0003" type="button" role="tab">댓글 수</button>
+                                            </li>
+                                        </ul>
+                                        <!-- //탭 메뉴 -->
+                                        <div class="form-row mt-4 align-items-center">
+                                            <!-- 탭 컨탠츠 -->
+                                            <div class="tab-content">
+                                                <div class="tab-pane fade show active" id="sub-panel0001"
+                                                    role="tabpanel" aria-labelledby="sub-tab0001">
+                                                    <div class="col-lg-auto my-3">
+                                                        <canvas class="w-100" id="myChart6"></canvas>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="sub-panel0002" role="tabpanel"
+                                                    aria-labelledby="sub-tab0002">
+                                                    <h2 class="h5">베스트 영상</h2>
+                                                </div>
+                                                <div class="tab-pane fade" id="sub-panel0003" role="tabpanel"
+                                                    aria-labelledby="sub-tab0003"></div>
                                             </div>
                                             <!-- //탭 컨텐츠 -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card shadow dash-chart-box">
-                                        <div class="card-header py-3">
-                                            <h6 class="m-0 font-weight-bold text-primary">업로드 시간대</h6>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="chart-bar">
-                                                <div class="chartjs-size-monitor">
-                                                    <div class="chartjs-size-monitor-expand"><div class=""></div></div>
-                                                    <div class="chartjs-size-monitor-shrink"><div class=""></div></div>
-                                                </div>
-                                                <canvas id="myBarChart" width="889" height="320" style="display: block; width: 889px; height: 320px" class="chartjs-render-monitor"></canvas>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mt-5">
-                                <div class="col-md-6">
-                                    <div class="card shadow dash-chart-box">
-                                        <div class="card-header py-3">
-                                            <h6 class="m-0 font-weight-bold text-primary">업로드한 유저 지역 정보</h6>
-                                        </div>
-                                        <div class="card-body">
-                                            <!-- 탭 메뉴 -->
-                                            <ul class="nav nav-tabs btn-tab" role="tablist">
-                                                <li class="nav-item" role="presentation">
-                                                    <button class="nav-link btn-tab-link active" id="sub-tab01" data-toggle="tab" data-target="#sub-panel001" type="button" role="tab">전체</button>
-                                                </li>
-                                                <li class="nav-item" role="presentation">
-                                                    <button class="nav-link btn-tab-link" id="sub-tab02" data-toggle="tab" data-target="#sub-panel002" type="button" role="tab">남성</button>
-                                                </li>
-                                                <li class="nav-item" role="presentation">
-                                                    <button class="nav-link btn-tab-link" id="sub-tab03" data-toggle="tab" data-target="#sub-panel003" type="button" role="tab">여성</button>
-                                                </li>
-                                            </ul>
-                                            <!-- //탭 메뉴 -->
-                                            <!-- 탭 컨탠츠 -->
-                                            <div class="tab-content mt-4">
-                                                <div class="tab-pane fade show active" id="sub-panel001" role="tabpanel" aria-labelledby="sub-tab01">
-                                                    <h4 class="small font-weight-bold">경기 <span class="float-right">13%</span></h4>
-                                                    <div class="progress mb-4">
-                                                        <div class="progress-bar" role="progressbar" style="width: 13%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                    <h4 class="small font-weight-bold">서울 <span class="float-right">50%</span></h4>
-                                                    <div class="progress mb-4">
-                                                        <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                    <h4 class="small font-weight-bold">부산 <span class="float-right">25%</span></h4>
-                                                    <div class="progress mb-4">
-                                                        <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                    <h4 class="small font-weight-bold">광주 <span class="float-right">10%</span></h4>
-                                                    <div class="progress mb-4">
-                                                        <div class="progress-bar" role="progressbar" style="width: 10%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                    <h4 class="small font-weight-bold">강원 <span class="float-right">2%</span></h4>
-                                                    <div class="progress">
-                                                        <div class="progress-bar" role="progressbar" style="width: 2%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="tab-pane fade" id="sub-panel002" role="tabpanel" aria-labelledby="sub-tab02">
-                                                    <div class="tab-pane fade show active" id="sub-panel002" role="tabpanel" aria-labelledby="sub-tab1">
-                                                        <h4 class="small font-weight-bold">경기 <span class="float-right">13%</span></h4>
-                                                        <div class="progress mb-4">
-                                                            <div class="progress-bar" role="progressbar" style="width: 13%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                        <h4 class="small font-weight-bold">서울 <span class="float-right">50%</span></h4>
-                                                        <div class="progress mb-4">
-                                                            <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                        <h4 class="small font-weight-bold">부산 <span class="float-right">25%</span></h4>
-                                                        <div class="progress mb-4">
-                                                            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                        <h4 class="small font-weight-bold">광주 <span class="float-right">10%</span></h4>
-                                                        <div class="progress mb-4">
-                                                            <div class="progress-bar" role="progressbar" style="width: 10%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                        <h4 class="small font-weight-bold">강원 <span class="float-right">2%</span></h4>
-                                                        <div class="progress">
-                                                            <div class="progress-bar" role="progressbar" style="width: 2%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="tab-pane fade" id="sub-panel003" role="tabpanel" aria-labelledby="sub-tab03">
-                                                    <div class="tab-pane fade show active" id="sub-panel003" role="tabpanel" aria-labelledby="sub-tab1">
-                                                        <h4 class="small font-weight-bold">경기 <span class="float-right">13%</span></h4>
-                                                        <div class="progress mb-4">
-                                                            <div class="progress-bar" role="progressbar" style="width: 13%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                        <h4 class="small font-weight-bold">서울 <span class="float-right">50%</span></h4>
-                                                        <div class="progress mb-4">
-                                                            <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                        <h4 class="small font-weight-bold">부산 <span class="float-right">25%</span></h4>
-                                                        <div class="progress mb-4">
-                                                            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                        <h4 class="small font-weight-bold">광주 <span class="float-right">10%</span></h4>
-                                                        <div class="progress mb-4">
-                                                            <div class="progress-bar" role="progressbar" style="width: 10%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                        <h4 class="small font-weight-bold">강원 <span class="float-right">2%</span></h4>
-                                                        <div class="progress">
-                                                            <div class="progress-bar" role="progressbar" style="width: 2%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- //탭 컨텐츠 -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card shadow dash-chart-box">
-                                        <!-- Card Header - Dropdown -->
-                                        <div class="card-header py-3">
-                                            <h6 class="m-0 font-weight-bold text-primary">영상 비중</h6>
-                                        </div>
-                                        <!-- Card Body -->
-                                        <div class="card-body">
-                                            <div class="chart-pie pt-4">
-                                                <div class="chartjs-size-monitor">
-                                                    <div class="chartjs-size-monitor-expand">
-                                                        <div class=""></div>
-                                                    </div>
-                                                    <div class="chartjs-size-monitor-shrink">
-                                                        <div class=""></div>
-                                                    </div>
-                                                </div>
-                                                <canvas id="myPieChart" width="544" height="216" style="display: block; width: 544px; height: 216px" class="chartjs-render-monitor"></canvas>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mt-5 pb-6">
-                                <div class="col-md-6">
-                                    <div class="card shadow dash-chart-box">
-                                        <!-- Card Header - Dropdown -->
-                                        <div class="card-header py-3">
-                                            <h6 class="m-0 font-weight-bold text-primary">일자별 요약</h6>
-                                        </div>
-                                        <!-- Card Body -->
-                                        <div class="card-body">
-                                            <div class="bootstrap-table bootstrap4">
-                                                <div class="fixed-table-toolbar"></div>
-                                                <div class="fixed-table-container" style="padding-bottom: 0px">
-                                                    <div class="fixed-table-header" style="display: none">
-                                                        <table></table>
-                                                    </div>
-                                                    <div class="fixed-table-body">
-                                                        <div class="fixed-table-loading table table-bordered table-hover" style="top: 42.7969px">
-                                                            <span class="loading-wrap">
-                                                                <span class="loading-text">데이터를 불러오는 중입니다</span>
-                                                                <span class="animation-wrap"><span class="animation-dot"></span></span>
-                                                            </span>
-                                                        </div>
-                                                        <table id="table" class="table table-hover table-bordered" data-pagination="true">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th style="" data-field="0">
-                                                                        <div class="th-inner">일자</div>
-                                                                        <div class="fht-cell"></div>
-                                                                    </th>
-                                                                    <th style="" data-field="1">
-                                                                        <div class="th-inner">업로드<br />영상 수</div>
-                                                                        <div class="fht-cell"></div>
-                                                                    </th>
-                                                                    <th style="" data-field="2">
-                                                                        <div class="th-inner">챌린지<br />오픈 횟수</div>
-                                                                        <div class="fht-cell"></div>
-                                                                    </th>
-                                                                    <th style="" data-field="3">
-                                                                        <div class="th-inner">영상 노출 수</div>
-                                                                        <div class="fht-cell"></div>
-                                                                    </th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr class="tr-fixed" data-index="0">
-                                                                    <td>2023.07.27</td>
-                                                                    <td>264</td>
-                                                                    <td>10</td>
-                                                                    <td>20,010</td>
-                                                                </tr>
-                                                                <tr data-index="1">
-                                                                    <td>2023.07.26</td>
-                                                                    <td>197</td>
-                                                                    <td>5</td>
-                                                                    <td>242,233</td>
-                                                                </tr>
-                                                                <tr data-index="2">
-                                                                    <td>2023.07.25</td>
-                                                                    <td>290</td>
-                                                                    <td>11</td>
-                                                                    <td>172,132</td>
-                                                                </tr>
-                                                                <tr data-index="3">
-                                                                    <td>2023.07.24</td>
-                                                                    <td>452</td>
-                                                                    <td>21</td>
-                                                                    <td>98,842</td>
-                                                                </tr>
-                                                                <tr data-index="4">
-                                                                    <td>2023.07.23</td>
-                                                                    <td>392</td>
-                                                                    <td>30</td>
-                                                                    <td>79,210</td>
-                                                                </tr>
-                                                                <tr data-index="5">
-                                                                    <td>2023.07.22</td>
-                                                                    <td>187</td>
-                                                                    <td>17</td>
-                                                                    <td>89,910</td>
-                                                                </tr>
-                                                                <tr data-index="6">
-                                                                    <td>2023.07.21</td>
-                                                                    <td>349</td>
-                                                                    <td>7</td>
-                                                                    <td>64,183</td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                    <div class="fixed-table-footer"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card shadow dash-chart-box">
-                                        <!-- Card Header - Dropdown -->
-                                        <div class="card-header py-3">
-                                            <h6 class="m-0 font-weight-bold text-primary">BEST 영상</h6>
-                                        </div>
-                                        <!-- Card Body -->
-                                        <div class="card-body">
-                                            <!-- 탭 메뉴 -->
-                                            <ul class="nav nav-tabs btn-tab" role="tablist">
-                                                <li class="nav-item" role="presentation">
-                                                    <button class="nav-link btn-tab-link active" id="sub-tab0001" data-toggle="tab" data-target="#sub-panel0001" type="button" role="tab">노출 수</button>
-                                                </li>
-                                                <li class="nav-item" role="presentation">
-                                                    <button class="nav-link btn-tab-link" id="sub-tab0002" data-toggle="tab" data-target="#sub-panel0002" type="button" role="tab">좋아요 수</button>
-                                                </li>
-                                                <li class="nav-item" role="presentation">
-                                                    <button class="nav-link btn-tab-link" id="sub-tab0003" data-toggle="tab" data-target="#sub-panel0003" type="button" role="tab">댓글 수</button>
-                                                </li>
-                                            </ul>
-                                            <!-- //탭 메뉴 -->
-                                            <div class="form-row mt-4 align-items-center">
-                                                <!-- 탭 컨탠츠 -->
-                                                <div class="tab-content">
-                                                    <div class="tab-pane fade show active" id="sub-panel0001" role="tabpanel" aria-labelledby="sub-tab0001">
-                                                        <div class="col-lg-auto my-3">
-                                                            <canvas class="w-100" id="myChart6"></canvas>
-                                                        </div>
-                                                    </div>
-                                                    <div class="tab-pane fade" id="sub-panel0002" role="tabpanel" aria-labelledby="sub-tab0002">
-                                                        <h2 class="h5">베스트 영상</h2>
-                                                    </div>
-                                                    <div class="tab-pane fade" id="sub-panel0003" role="tabpanel" aria-labelledby="sub-tab0003"></div>
-                                                </div>
-                                                <!-- //탭 컨텐츠 -->
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -551,23 +681,24 @@
                 </div>
             </div>
         </div>
-        <!-- Scroll to Top Button-->
-        <div data-include="../include/topbtn.html"></div>
+    </div>
+    <!-- Scroll to Top Button-->
+    <div data-include="../include/topbtn.html"></div>
 
-        <!-- Logout Modal-->
-        <div data-include="../include/logoutModal.html"></div>
-    </body>
-    <script src="../../datatables/jquery.dataTables.min.js"></script>
-    <script src="../../datatables/dataTables.bootstrap4.min.js"></script>
-    <script src="../../lib/chart.js/plugins/chartjs-plugin-datalabels.min.js"></script>
-    <script src="../../lib/chart.js/Chart.min.js"></script>
-    <!-- Page level custom scripts -->
-    <script src="../../js/demo/datatables-demo.js"></script>
-    <!-- Page level custom scripts -->
-    <script src="../../js/demo/chart-area-demo.js"></script>
-    <script src="../../js/demo/chart-pie-demo.js"></script>
-    <script src="../../js/demo/chart-bar-demo.js"></script>
-    <!-- <script>
+    <!-- Logout Modal-->
+    <div data-include="../include/logoutModal.html"></div>
+</body>
+<script src="../../datatables/jquery.dataTables.min.js"></script>
+<script src="../../datatables/dataTables.bootstrap4.min.js"></script>
+<script src="../../lib/chart.js/plugins/chartjs-plugin-datalabels.min.js"></script>
+<script src="../../lib/chart.js/Chart.min.js"></script>
+<!-- Page level custom scripts -->
+<script src="../../js/demo/datatables-demo.js"></script>
+<!-- Page level custom scripts -->
+<script src="../../js/demo/chart-area-demo.js"></script>
+<script src="../../js/demo/chart-pie-demo.js"></script>
+<script src="../../js/demo/chart-bar-demo.js"></script>
+<!-- <script>
         // Graphs
         var ctx = document.getElementById('myChart');
         var myChart = new Chart(ctx, {
@@ -1006,4 +1137,5 @@
             myChart7.update();
         });
     </script> -->
+
 </html>
