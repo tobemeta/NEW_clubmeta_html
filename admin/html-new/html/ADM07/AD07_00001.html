@@ -8,6 +8,21 @@
     <title>클럽메타 관리자 - 신고관리</title>
     <!-- js -->
     <script src="../include/head.js"></script>
+    <script src="../../js/custom.js"></script>
+    <script>
+        $('#changePwModal').modal('show');
+
+        Modal.alert('얼럿메시지', function (e) {
+            console.log('확인');
+        });
+        Modal.confirm('컨펌메시지', function (e) {
+            if (e) {
+                console.log('확인');
+            } else {
+                console.log('취소');
+            }
+        });
+    </script>
 </head>
 
 <body>
@@ -168,7 +183,10 @@
                                 </div>
                                 <div class="bootstrap-table bootstrap4">
                                     <div class="fixed-table-toolbar"></div>
-                                    <div class="fixed-table-container">
+                                    <div class="fixed-table-container" style="padding-bottom: 0px">
+                                        <div class="fixed-table-header" style="display: none">
+                                            <table></table>
+                                        </div>
                                         <div class="fixed-table-body">
                                             <div class="fixed-table-loading table table-bordered table-hover"
                                                 style="top: 42.7969px;">
@@ -197,35 +215,35 @@
                                                             <div class="fht-cell"></div>
                                                         </th>
                                                         <th data-field="2">
-                                                            <div class="th-inner">아이디</div>
+                                                            <div class="th-inner">신고된 유저 닉네임</div>
                                                             <div class="fht-cell"></div>
                                                         </th>
                                                         <th data-field="3">
-                                                            <div class="th-inner">비번</div>
+                                                            <div class="th-inner">신고 횟수</div>
                                                             <div class="fht-cell"></div>
                                                         </th>
                                                         <th data-field="4">
-                                                            <div class="th-inner">메모</div>
+                                                            <div class="th-inner">최근 신고일자</div>
                                                             <div class="fht-cell"></div>
                                                         </th>
                                                         <th data-field="5">
-                                                            <div class="th-inner">등록일</div>
+                                                            <div class="th-inner">처리 상태</div>
                                                             <div class="fht-cell"></div>
                                                         </th>
                                                         <th data-field="6">
-                                                            <div class="th-inner">최종 로그인</div>
+                                                            <div class="th-inner">처리일자</div>
                                                             <div class="fht-cell"></div>
                                                         </th>
                                                         <th data-field="7">
-                                                            <div class="th-inner">수정</div>
+                                                            <div class="th-inner">처리 상태 변경</div>
                                                             <div class="fht-cell"></div>
                                                         </th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr class="no-records-found">
+                                                    <!-- <tr class="no-records-found">
                                                         <td colspan="8">조회된 데이터가 없습니다.</td>
-                                                    </tr>
+                                                    </tr> -->
                                                     <tr class="tr-fixed" data-index="0">
                                                         <td>
                                                             <label class="custom-control custom-checkbox only">
@@ -234,14 +252,14 @@
                                                             </label>
                                                         </td>
                                                         <td>10</td>
-                                                        <td><a href="#none">metaclub00</a></td>
-                                                        <td><a href="#none">zmffjqapxk1</a></td>
-                                                        <td class="text-left">신성장사업그룹 / 성장사업팀 / 홍길동</td>
-                                                        <td>2023.06.26 16:00:00</td>
-                                                        <td>2023.06.26 16:00:00</td>
+                                                        <td><a href="#none">하하하<i class="fa-solid fa-link"></i></a></td>
+                                                        <td><a href="#none">22<i class="fas fa-file-lines"></i></a></td>
+                                                        <td>2023.06.26<br>16:00:00</td>
+                                                        <td>처리완료 (<span>유저삭제</span>)</td>
+                                                        <td>2023.06.26<br>16:00:00</td>
                                                         <td>
-                                                            <button type="button" class="btn btn-outline-dark btn-sm"><i
-                                                                    class="bi bi-x"></i> 수정</button>
+                                                            <button type="button" class="btn btn-primary btn-sm"
+                                                                disabled>완료</button>
                                                         </td>
                                                     </tr>
                                                     <tr data-index="1">
@@ -338,6 +356,8 @@
 
     <!-- Logout Modal-->
     <div data-include="../include/logoutModal.html"></div>
+    <div data-include="../include/pop/changePwModal.html"></div>
+
 </body>
 <script src="../../datatables/jquery.dataTables.min.js"></script>
 <script src="../../datatables/dataTables.bootstrap4.min.js"></script>
