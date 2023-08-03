@@ -1,784 +1,788 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <title>클럽메타 - 메뉴표</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <script src="./static/lib/jquery-3.7.0.min.js"></script>
+        <script src="./static/js/temp/makeMenuTable.min.js"></script>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
 
-<head>
-    <meta charset="UTF-8" />
-    <title>클럽메타 - 메뉴표</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <script src="./static/lib/jquery-3.7.0.min.js"></script>
-    <script src="./static/js/temp/makeMenuTable.min.js"></script>
-    <style>
-        * {
-            padding: 0;
-            margin: 0;
-        }
+            #wrap {
+                padding: 10px;
+                min-width: 1080px;
+            }
 
-        #wrap {
-            padding: 10px;
-            min-width: 1080px;
-        }
+            .flex {
+                display: flex;
+                flex-direction: column;
+            }
 
-        .flex {
-            display: flex;
-            flex-direction: column;
-        }
+            .tltW {
+                position: relative;
+            }
 
-        .tltW {
-            position: relative;
-        }
+            .tltW h1 {
+                height: 30px;
+                background: #000;
+                color: #fff;
+                text-align: center;
+                font-size: 20px;
+                line-height: 30px;
+            }
 
-        .tltW h1 {
-            height: 30px;
-            background: #000;
-            color: #fff;
-            text-align: center;
-            font-size: 20px;
-            line-height: 30px;
-        }
-
-        .updateW {
-            flex: 1;
-            display: flex;
-            justify-content: end;
-            /* position: absolute;
+            .updateW {
+                flex: 1;
+                display: flex;
+                justify-content: end;
+                /* position: absolute;
                 right: 10px;
                 top: 0; */
-            height: 30px;
-            line-height: 30px;
-            font-size: 12px;
-            /* color: #fff; */
-        }
+                height: 30px;
+                line-height: 30px;
+                font-size: 12px;
+                /* color: #fff; */
+            }
 
-        .updateW p+p:before {
-            content: '|';
-            display: inline-block;
-            padding: 0 10px;
-            vertical-align: top;
-            font-weight: normal;
-        }
+            .updateW p + p:before {
+                content: '|';
+                display: inline-block;
+                padding: 0 10px;
+                vertical-align: top;
+                font-weight: normal;
+            }
 
-        .notice {
-            padding: 10px 0;
-            text-align: right;
-            font-size: 12px;
-            font-weight: bold;
-        }
+            .notice {
+                padding: 10px 0;
+                text-align: right;
+                font-size: 12px;
+                font-weight: bold;
+            }
 
-        .link {}
+            .link {
+            }
 
-        .link a {
-            color: #fff;
-        }
+            .link a {
+                color: #fff;
+            }
 
-        table {
-            table-layout: fixed;
-            width: 100%;
-            min-width: 1080px;
-            border-collapse: collapse;
-            border-spacing: 0;
-        }
+            table {
+                table-layout: fixed;
+                width: 100%;
+                min-width: 1080px;
+                border-collapse: collapse;
+                border-spacing: 0;
+            }
 
-        th,
-        td {
-            height: 24px;
-            padding: 0 5px;
-            border: 1px solid #000;
-            font-size: 12px;
-            color: #000;
-            font-size: 12px;
-        }
+            th,
+            td {
+                height: 24px;
+                padding: 0 5px;
+                border: 1px solid #000;
+                font-size: 12px;
+                color: #000;
+                font-size: 12px;
+            }
 
-        thead th {
-            background: #595959;
-            text-align: center;
-            color: #fff;
-        }
+            thead th {
+                background: #595959;
+                text-align: center;
+                color: #fff;
+            }
 
-        tbody .num {
-            background: #d9d9d9;
-            text-align: center;
-        }
+            tbody .num {
+                background: #d9d9d9;
+                text-align: center;
+            }
 
-        table td.boderTd {
-            height: 0;
-            padding: 0;
-            border-color: #000;
-        }
+            table td.boderTd {
+                height: 0;
+                padding: 0;
+                border-color: #000;
+            }
 
-        caption {
-            visibility: hidden;
-            position: absolute;
-            left: -9999em;
-            top: -9999em;
-        }
+            caption {
+                visibility: hidden;
+                position: absolute;
+                left: -9999em;
+                top: -9999em;
+            }
 
-        .incomplete td {
-            background: #d9d9d9;
-        }
+            .incomplete td {
+                background: #d9d9d9;
+            }
 
-        .num {}
+            .num {
+            }
 
-        .type {
-            text-align: center;
-            font-weight: bold;
-        }
+            .type {
+                text-align: center;
+                font-weight: bold;
+            }
 
-        .depth1 {
-            font-weight: bold;
-        }
+            .depth1 {
+                font-weight: bold;
+            }
 
-        .depth1,
-        .depth2,
-        .depth3,
-        .depth4 {}
+            .depth1,
+            .depth2,
+            .depth3,
+            .depth4 {
+            }
 
-        .id {
-            text-align: center;
-        }
+            .id {
+                text-align: center;
+            }
 
-        .path {}
+            .path {
+            }
 
-        .path a {
-            display: block;
-            text-decoration: none;
-            color: blue;
-        }
+            .path a {
+                display: block;
+                text-decoration: none;
+                color: blue;
+            }
 
-        .path a:hover {
-            text-decoration: underline;
-        }
+            .path a:hover {
+                text-decoration: underline;
+            }
 
-        .native {
-            text-align: center;
-        }
+            .native {
+                text-align: center;
+            }
 
-        .complete,
-        .mod {
-            text-align: center;
-        }
+            .complete,
+            .mod {
+                text-align: center;
+            }
 
-        .complete span {
-            color: blue;
-        }
+            .complete span {
+                color: blue;
+            }
 
-        .mod span {
-            color: red;
-        }
+            .mod span {
+                color: red;
+            }
 
-        .etc {}
-    </style>
-</head>
+            .etc {
+            }
+        </style>
+    </head>
 
-<body>
-    <div id="wrap">
-        <div class="flex">
-            <div class="tltW">
-                <h1>클럽메타 - 퍼블리스트</h1>
+    <body>
+        <div id="wrap">
+            <div class="flex">
+                <div class="tltW">
+                    <h1>클럽메타 - 퍼블리스트</h1>
+                </div>
+                <div class="updateW">
+                    <p class="page">화면 (완료 / 전체) : <span class="cnt">0</span> / <span class="total">0</span></p>
+                    <p class="update">업데이트 : <span></span></p>
+                    <!-- <p class="link"><a href="download.html" title="파일 다운로드 바로가기">다운로드</a></p> -->
+                </div>
+                <p class="notice">※ 업데이트일자와 완료일자가 같은 경우 파란색으로 표시(신규페이지) / 화면전체는 목록상 전체</p>
             </div>
-            <div class="updateW">
-                <p class="page">화면 (완료 / 전체) : <span class="cnt">0</span> / <span class="total">0</span></p>
-                <p class="update">업데이트 : <span></span></p>
-                <!-- <p class="link"><a href="download.html" title="파일 다운로드 바로가기">다운로드</a></p> -->
-            </div>
-            <p class="notice">※ 업데이트일자와 완료일자가 같은 경우 파란색으로 표시(신규페이지) / 화면전체는 목록상 전체</p>
+
+            <div id="menuTable"></div>
         </div>
+    </body>
 
-        <div id="menuTable"></div>
-    </div>
-</body>
-
-<script>
-    $(document).ready(function () {
-        $('#menuTable').makeMenuTable({
-            json: menuTableList,
-            header: menuTableHeader,
-            colSize: menuColSize,
-            menuDefault: menuDefault,
-            path_prefix: 'html-new/html/',
-            update: '2023-08-01'
+    <script>
+        $(document).ready(function () {
+            $('#menuTable').makeMenuTable({
+                json: menuTableList,
+                header: menuTableHeader,
+                colSize: menuColSize,
+                menuDefault: menuDefault,
+                path_prefix: 'html-new/html/',
+                update: '2023-08-01'
+            });
         });
-    });
-    // '1Depth', '2Depth', '3Depth', '4Depth', '5Depth', 'native',
-    // 120, 130, 130, 130, 130, 50,
-    var menuTableHeader = ['구분', '화면명', '화면ID', '경로', '완료일자', '수정일자', '비고'],
-        // menuColSize = [5 + '%', 10 + '%', '*', 100, '*', 100, 100, 200];
-        menuColSize = [5 + '%', 9 + '%', '*', 10 + '%', '*', 8 + '%', 8 + '%', 25 + '%'];
+        // '1Depth', '2Depth', '3Depth', '4Depth', '5Depth', 'native',
+        // 120, 130, 130, 130, 130, 50,
+        var menuTableHeader = ['구분', '화면명', '화면ID', '경로', '완료일자', '수정일자', '비고'],
+            // menuColSize = [5 + '%', 10 + '%', '*', 100, '*', 100, 100, 200];
+            menuColSize = [5 + '%', 9 + '%', '*', 10 + '%', '*', 8 + '%', 8 + '%', 25 + '%'];
 
-    // var menuTableHeader = ['구분', '1Depth', '2Depth', '3Depth', '4Depth', '경로', '완료일자', '비고'],
-    // 	menuColSize = [40, 100, 150, 150, 150, 150, '*', 100, 200];
+        // var menuTableHeader = ['구분', '1Depth', '2Depth', '3Depth', '4Depth', '경로', '완료일자', '비고'],
+        // 	menuColSize = [40, 100, 150, 150, 150, 150, '*', 100, 200];
 
-    var menuDefault = {
-        type: '',
-        // depth1: '',
-        // depth2: '',
-        // depth3: '',
-        // depth4: '',
-        // depth5: '',
-        name: '',
-        id: '',
-        path: '',
-        // native: '',
-        complete: '',
-        mod: '',
-        etc: ''
-    };
+        var menuDefault = {
+            type: '',
+            // depth1: '',
+            // depth2: '',
+            // depth3: '',
+            // depth4: '',
+            // depth5: '',
+            name: '',
+            id: '',
+            path: '',
+            // native: '',
+            complete: '',
+            mod: '',
+            etc: ''
+        };
 
-    var menuTableList = [
-        // 로그인
-        {
-            type: '로그인',
-            name: '로그인',
-            id: 'AD01_00001',
-            complete: '2023-08-01',
-            path: 'ADM01/AD01_00001.html',
-        },
-        {
-            name: '비밀번호 변경 팝업',
-            id: 'AD01_00p01'
-        },
-        {
-            name: '비밀번호 변경 완료 팝업',
-            id: 'AD01_00p02'
-        },
-        {
-            type: '메인 대시보드',
-            name: '메인 대시보드',
-            id: 'AD02_00001',
-            etc: ''
-        },
-        {
-            name: '알림리스트 팝업',
-            id: 'AD02_00p01',
-            etc: ''
-        },
-        {
-            name: '시스템 점검 관리 리스트',
-            id: 'AD02_00002',
-            etc: ''
-        },
-        {
-            name: '시스템 점검 등록',
-            id: 'AD02_00003',
-            etc: ''
-        },
-        {
-            type: '관리자 관리',
-            name: '관리자 목록',
-            id: 'AD03_00001',
-            complete: '2023-08-01',
-            path: 'ADM03/AD03_00001.html',
-            etc: ''
-        },
-        {
-            name: '관리자 등록 팝업',
-            id: 'AD03_00p01',
-            etc: ''
-        },
-        {
-            type: '유저 관리',
-            name: '유저 리스트',
-            id: 'AD04_00001',
-            etc: ''
-        },
-        {
-            name: '유저상세',
-            id: 'AD04_00002',
-            etc: ''
-        },
-        {
-            name: '접속일 내역 팝업',
-            id: 'AD04_00p01',
-            etc: ''
-        },
-        {
-            name: '뱃지 내역 팝업',
-            id: 'AD04_00p02',
-            etc: ''
-        },
-        {
-            name: '적립 포인트(슈) 내역 팝업',
-            id: 'AD04_00p03',
-            etc: ''
-        },
-        {
-            name: '유저 정보 수정',
-            id: 'AD04_00003',
-            etc: ''
-        },
-        {
-            type: '랭킹관리',
-            name: '유저 랭킹 리스트',
-            id: 'AD05_00001',
-            etc: ''
-        },
-        {
-            type: '영상관리',
-            name: '[탭] AI챌린지 리스트',
-            id: 'AD06_00001',
-            etc: ''
-        },
-        {
-            name: 'AI챌린지 상세',
-            id: 'AD06_00002',
-            etc: ''
-        },
-        {
-            name: '음원 상세 팝업',
-            id: 'AD06_00p01',
-            etc: ''
-        },
-        {
-            name: '투표 내역 팝업',
-            id: 'AD06_00p02',
-            etc: ''
-        },
-        {
-            name: '리워드 내역 팝업',
-            id: 'AD06_00p03',
-            etc: ''
-        },
-        {
-            name: 'AI챌린지 참여 영상 상세',
-            id: 'AD06_00003',
-            etc: ''
-        },
-        {
-            name: '좋아요 내역 팝업',
-            id: 'AD06_00p04',
-            etc: ''
-        },
-        {
-            name: '댓글 내역 팝업',
-            id: 'AD06_00p05',
-            etc: ''
-        },
-        {
-            name: 'SNS 공유 내역 팝업',
-            id: 'AD06_00p06',
-            etc: ''
-        },
-        {
-            name: 'AI챌린지 등록',
-            id: 'AD06_00004',
-            etc: ''
-        },
-        {
-            name: '[탭] 음원 챌린지 리스트',
-            id: 'AD06_01001',
-            etc: ''
-        },
-        {
-            name: '음원 챌린지 상세',
-            id: 'AD06_01002',
-            etc: ''
-        },
-        {
-            name: '음원 챌린지 참여 영상 상세',
-            id: 'AD06_01003',
-            etc: ''
-        },
-        {
-            name: '음원 챌린지 등록',
-            id: 'AD06_01004',
-            etc: ''
-        },
-        {
-            name: '[탭] 일반 영상 리스트',
-            id: 'AD06_02001',
-            etc: ''
-        },
-        {
-            name: '영상 상세',
-            id: 'AD06_02002',
-            etc: ''
-        },
-        {
-            name: '일반영상 등록',
-            id: 'AD06_02003',
-            etc: ''
-        },
-        {
-            type: '신고관리',
-            name: '[탭] 유저 신고 리스트',
-            id: 'AD07_00001',
-            complete: '2023-08-01',
-            path: 'ADM07/AD07_00001.html',
-            etc: ''
-        },
-        {
-            name: '신고한 유저 팝업',
-            id: 'AD07_00p01',
-            etc: ''
-        },
-        {
-            name: '처리상태 변경 팝업',
-            id: 'AD07_00p02',
-            etc: ''
-        },
-        {
-            name: '[탭] 영상 신고 리스트',
-            id: 'AD07_00002',
-            etc: ''
-        },
-        {
-            name: '원본 영상  팝업',
-            id: 'AD07_00p03',
-            etc: ''
-        },
-        {
-            name: '[탭] 댓글 신고 리스트',
-            id: 'AD07_00003',
-            etc: ''
-        },
-        {
-            name: '금칙어 관리',
-            id: 'AD07_00004',
-            etc: ''
-        },
-        {
-            type: '게시판 관리',
-            name: '[탭] 공지사항',
-            id: 'AD08_00001',
-            etc: ''
-        },
-        {
-            name: '[탭] FAQ',
-            id: 'AD08_00002',
-            etc: ''
-        },
-        {
-            name: '게시판 상세(등록)',
-            id: 'AD08_00003',
-            etc: ''
-        },
-        {
-            type: '이벤트 관리',
-            name: '이벤트 목록',
-            id: 'AD09_00001',
-            etc: ''
-        },
-        {
-            name: '이벤트 등록(수정)',
-            id: 'AD09_00002',
-            etc: ''
-        },
-        {
-            name: '참여현황 내역 팝업',
-            id: 'AD09_00p01',
-            etc: ''
-        },
-        {
-            name: '당첨자 등록 팝업',
-            id: 'AD09_00p02',
-            etc: ''
-        },
-        {
-            name: '당첨자 내역 팝업',
-            id: 'AD09_00p03',
-            etc: ''
-        },
-        {
-            type: 'Shoe/MDT 관리',
-            name: 'Shoe 내역',
-            id: 'AD10_00001',
-            etc: ''
-        },
-        {
-            name: 'Shoe 지급/차감 입력(수기) 팝업',
-            id: 'AD10_00p01',
-            etc: ''
-        },
-        {
-            name: 'Shoe 지급 관리 등록 (슈 설정)',
-            id: 'AD10_00002',
-            etc: ''
-        },
-        {
-            name: '정산 신청 내역 관리',
-            id: 'AD10_00003',
-            etc: ''
-        },
-        {
-            name: '지급 금액 입력(수기) 팝업',
-            id: 'AD10_00p02',
-            etc: ''
-        },
-        {
-            name: '정산 지급/반려 사유 입력(수기) 팝업',
-            id: 'AD10_00p03',
-            etc: ''
-        },
-        {
-            type: '뱃지 관리',
-            name: '뱃지 리스트',
-            id: 'AD11_00001',
-            etc: ''
-        },
-        {
-            name: '뱃지 등록',
-            id: 'AD11_00002',
-            etc: ''
-        },
-        {
-            type: '앱 PUSH 관리',
-            name: '앱 PUSH 리스트',
-            id: 'AD12_00001',
-            etc: ''
-        },
-        {
-            name: '앱 PUSH 등록',
-            id: 'AD12_00002',
-            etc: ''
-        },
-        {
-            type: '작곡가 관리',
-            name: '앱 PUSH 리스트',
-            id: 'AD12_00001',
-            etc: ''
-        },
-        {
-            name: '작곡가 리스트',
-            id: 'AD13_00001',
-            etc: ''
-        },
-        {
-            name: '작곡가 상세',
-            id: 'AD13_00002',
-            etc: ''
-        },
-        {
-            name: '신분증 사본 팝업',
-            id: 'AD13_00p01',
-            etc: ''
-        },
-        {
-            type: '음악 관리',
-            name: '[탭] 전체 음원 리스트',
-            id: 'AD14_00001',
-            etc: ''
-        },
-        {
-            name: '음원 상세 (인사이트 포함)',
-            id: 'AD14_00002',
-            etc: ''
-        },
-        {
-            name: '[탭] 음원 신청 리스트(승인)',
-            id: 'AD14_00003',
-            etc: ''
-        },
-        {
-            name: '음원 상세 (승인처리)',
-            id: 'AD14_00004',
-            etc: ''
-        },
-        {
-            name: '해시태그 관리(등록)',
-            id: 'AD14_00005',
-            etc: ''
-        },
-        {
-            type: '약관 관리',
-            name: '약관 리스트',
-            id: 'AD15_00001',
-            etc: ''
-        },
-        {
-            name: '약관 상세(등록)',
-            id: 'AD15_00002',
-            etc: ''
-        },
+        var menuTableList = [
+            // 로그인
+            {
+                type: '로그인',
+                name: '로그인',
+                id: 'AD01_00001',
+                complete: '2023-08-01',
+                path: 'ADM01/AD01_00001.html'
+            },
+            {
+                name: '비밀번호 변경 팝업',
+                id: 'AD01_00p01'
+            },
+            {
+                name: '비밀번호 변경 완료 팝업',
+                id: 'AD01_00p02',
+                etc: 'AD01_00p01와 동일 레이아웃'
+            },
+            {
+                type: '메인 대시보드',
+                name: '메인 대시보드',
+                id: 'AD02_00001',
+                etc: ''
+            },
+            {
+                name: '알림리스트 팝업',
+                id: 'AD02_00p01',
+                etc: ''
+            },
+            {
+                name: '시스템 점검 관리 리스트',
+                id: 'AD02_00002',
+                etc: ''
+            },
+            {
+                name: '시스템 점검 등록',
+                id: 'AD02_00003',
+                etc: ''
+            },
+            {
+                type: '관리자 관리',
+                name: '관리자 목록',
+                id: 'AD03_00001',
+                complete: '2023-08-01',
+                path: 'ADM03/AD03_00001.html',
+                etc: ''
+            },
+            {
+                name: '관리자 등록 팝업',
+                id: 'AD03_00p01',
+                etc: ''
+            },
+            {
+                type: '유저 관리',
+                name: '유저 리스트',
+                id: 'AD04_00001',
+                etc: ''
+            },
+            {
+                name: '유저상세',
+                id: 'AD04_00002',
+                etc: ''
+            },
+            {
+                name: '접속일 내역 팝업',
+                id: 'AD04_00p01',
+                etc: ''
+            },
+            {
+                name: '뱃지 내역 팝업',
+                id: 'AD04_00p02',
+                etc: ''
+            },
+            {
+                name: '적립 포인트(슈) 내역 팝업',
+                id: 'AD04_00p03',
+                etc: ''
+            },
+            {
+                name: '유저 정보 수정',
+                id: 'AD04_00003',
+                etc: ''
+            },
+            {
+                type: '랭킹관리',
+                name: '유저 랭킹 리스트',
+                id: 'AD05_00001',
+                etc: ''
+            },
+            {
+                type: '영상관리',
+                name: '[탭] AI챌린지 리스트',
+                id: 'AD06_00001',
+                etc: ''
+            },
+            {
+                name: 'AI챌린지 상세',
+                id: 'AD06_00002',
+                etc: ''
+            },
+            {
+                name: '음원 상세 팝업',
+                id: 'AD06_00p01',
+                etc: ''
+            },
+            {
+                name: '투표 내역 팝업',
+                id: 'AD06_00p02',
+                etc: ''
+            },
+            {
+                name: '리워드 내역 팝업',
+                id: 'AD06_00p03',
+                etc: ''
+            },
+            {
+                name: 'AI챌린지 참여 영상 상세',
+                id: 'AD06_00003',
+                etc: ''
+            },
+            {
+                name: '좋아요 내역 팝업',
+                id: 'AD06_00p04',
+                etc: ''
+            },
+            {
+                name: '댓글 내역 팝업',
+                id: 'AD06_00p05',
+                etc: ''
+            },
+            {
+                name: 'SNS 공유 내역 팝업',
+                id: 'AD06_00p06',
+                etc: ''
+            },
+            {
+                name: 'AI챌린지 등록',
+                id: 'AD06_00004',
+                etc: ''
+            },
+            {
+                name: '[탭] 음원 챌린지 리스트',
+                id: 'AD06_01001',
+                etc: ''
+            },
+            {
+                name: '음원 챌린지 상세',
+                id: 'AD06_01002',
+                etc: ''
+            },
+            {
+                name: '음원 챌린지 참여 영상 상세',
+                id: 'AD06_01003',
+                etc: ''
+            },
+            {
+                name: '음원 챌린지 등록',
+                id: 'AD06_01004',
+                etc: ''
+            },
+            {
+                name: '[탭] 일반 영상 리스트',
+                id: 'AD06_02001',
+                etc: ''
+            },
+            {
+                name: '영상 상세',
+                id: 'AD06_02002',
+                etc: ''
+            },
+            {
+                name: '일반영상 등록',
+                id: 'AD06_02003',
+                etc: ''
+            },
+            {
+                type: '신고관리',
+                name: '[탭] 유저 신고 리스트',
+                id: 'AD07_00001',
+                complete: '2023-08-01',
+                path: 'ADM07/AD07_00001.html',
+                etc: ''
+            },
+            {
+                name: '신고한 유저 팝업',
+                id: 'AD07_00p01',
+                etc: ''
+            },
+            {
+                name: '처리상태 변경 팝업',
+                id: 'AD07_00p02',
+                etc: ''
+            },
+            {
+                name: '[탭] 영상 신고 리스트',
+                id: 'AD07_00002',
+                etc: 'AD08_00001와 동일 레이아웃'
+            },
+            {
+                name: '원본 영상  팝업',
+                id: 'AD07_00p03',
+                etc: ''
+            },
+            {
+                name: '[탭] 댓글 신고 리스트',
+                id: 'AD07_00003',
+                etc: 'AD07_00001와 동일 레이아웃'
+            },
+            {
+                name: '금칙어 관리',
+                id: 'AD07_00004',
+                etc: 'AD03_00001와 동일 레이아웃'
+            },
+            {
+                type: '게시판 관리',
+                name: '[탭] 공지사항',
+                id: 'AD08_00001',
+                etc: ''
+            },
+            {
+                name: '[탭] FAQ',
+                id: 'AD08_00002',
+                etc: ''
+            },
+            {
+                name: '게시판 상세(등록)',
+                id: 'AD08_00003',
+                etc: ''
+            },
+            {
+                type: '이벤트 관리',
+                name: '이벤트 목록',
+                id: 'AD09_00001',
+                etc: ''
+            },
+            {
+                name: '이벤트 등록(수정)',
+                id: 'AD09_00002',
+                etc: ''
+            },
+            {
+                name: '참여현황 내역 팝업',
+                id: 'AD09_00p01',
+                etc: ''
+            },
+            {
+                name: '당첨자 등록 팝업',
+                id: 'AD09_00p02',
+                etc: ''
+            },
+            {
+                name: '당첨자 내역 팝업',
+                id: 'AD09_00p03',
+                etc: ''
+            },
+            {
+                type: 'Shoe/MDT 관리',
+                name: 'Shoe 내역',
+                id: 'AD10_00001',
+                etc: ''
+            },
+            {
+                name: 'Shoe 지급/차감 입력(수기) 팝업',
+                id: 'AD10_00p01',
+                etc: ''
+            },
+            {
+                name: 'Shoe 지급 관리 등록 (슈 설정)',
+                id: 'AD10_00002',
+                etc: ''
+            },
+            {
+                name: '정산 신청 내역 관리',
+                id: 'AD10_00003',
+                etc: ''
+            },
+            {
+                name: '지급 금액 입력(수기) 팝업',
+                id: 'AD10_00p02',
+                etc: ''
+            },
+            {
+                name: '정산 지급/반려 사유 입력(수기) 팝업',
+                id: 'AD10_00p03',
+                etc: ''
+            },
+            {
+                type: '뱃지 관리',
+                name: '뱃지 리스트',
+                id: 'AD11_00001',
+                etc: ''
+            },
+            {
+                name: '뱃지 등록',
+                id: 'AD11_00002',
+                etc: ''
+            },
+            {
+                type: '앱 PUSH 관리',
+                name: '앱 PUSH 리스트',
+                id: 'AD12_00001',
+                etc: ''
+            },
+            {
+                name: '앱 PUSH 등록',
+                id: 'AD12_00002',
+                etc: ''
+            },
+            {
+                type: '작곡가 관리',
+                name: '앱 PUSH 리스트',
+                id: 'AD12_00001',
+                etc: ''
+            },
+            {
+                name: '작곡가 리스트',
+                id: 'AD13_00001',
+                etc: ''
+            },
+            {
+                name: '작곡가 상세',
+                id: 'AD13_00002',
+                etc: ''
+            },
+            {
+                name: '신분증 사본 팝업',
+                id: 'AD13_00p01',
+                etc: ''
+            },
+            {
+                type: '음악 관리',
+                name: '[탭] 전체 음원 리스트',
+                id: 'AD14_00001',
+                etc: ''
+            },
+            {
+                name: '음원 상세 (인사이트 포함)',
+                id: 'AD14_00002',
+                etc: ''
+            },
+            {
+                name: '[탭] 음원 신청 리스트(승인)',
+                id: 'AD14_00003',
+                etc: ''
+            },
+            {
+                name: '음원 상세 (승인처리)',
+                id: 'AD14_00004',
+                etc: ''
+            },
+            {
+                name: '해시태그 관리(등록)',
+                id: 'AD14_00005',
+                etc: ''
+            },
+            {
+                type: '약관 관리',
+                name: '약관 리스트',
+                id: 'AD15_00001',
+                etc: ''
+            },
+            {
+                name: '약관 상세(등록)',
+                id: 'AD15_00002',
+                etc: ''
+            },
 
-        /////////작곡가 웹
-        {
-            type: '작곡가웹'
-        },
-        {
-            type: '이용약관',
-            name: '이용약관',
-            id: 'BO01_00001',
-            etc: ''
-        },
-        {
-            type: '개인정보 처리방침',
-            name: '개인정보 처리방침',
-            id: 'BO02_00001',
-            etc: ''
-        },
-        {
-            type: '로그인',
-            name: '로그인',
-            id: 'BO03_00001',
-            etc: ''
-        },
-        {
-            type: '계정정보찾기',
-            name: '아이디 찾기 안내',
-            id: 'BO04_00001',
-            etc: ''
-        },
-        {
-            name: '아이디 찾기 결과 ',
-            id: 'BO04_00002',
-            etc: ''
-        },
-        {
-            name: '비밀번호 찾기(안내) ',
-            id: 'BO04_00003',
-            etc: ''
-        },
-        {
-            name: '비밀번호 찾기(ID정보) ',
-            id: 'BO04_00004',
-            etc: ''
-        },
-        {
-            name: '비밀번호 재설정',
-            id: 'BO04_00005',
-            etc: ''
-        },
-        {
-            type: '회원가입',
-            name: '이용약관',
-            id: 'BO05_00001',
-            etc: ''
-        },
-        {
-            name: '약관 상세 팝업',
-            id: 'BO05_00002',
-            etc: ''
-        },
-        {
-            name: '기본정보 입력',
-            id: 'BO05_00003',
-            etc: ''
-        },
-        {
-            name: '주소 검색 팝업',
-            id: 'BO05_00p01',
-            etc: ''
-        },
-        {
-            name: '관심 카테고리 선택',
-            id: 'BO05_00004',
-            etc: ''
-        },
-        {
-            name: '회원가입 완료 오류 팝업',
-            id: 'BO05_00p02',
-            etc: ''
-        },
-        {
-            type: '메인 대시보드',
-            name: '메인 대시보드',
-            id: 'BO06_00001',
-            etc: ''
-        },
-        {
-            name: '알림 리스트 팝업',
-            id: 'BO06_00p01',
-            etc: ''
-        },
-        {
-            type: '개인정보 변경',
-            name: '개인정보 변경',
-            id: 'BO07_00001',
-            etc: ''
-        },
-        {
-            type: '음원관리',
-            name: '음원 리스트',
-            id: 'BO08_00001',
-            complete: '2023-08-01',
-            path: 'BO08/BO08_00001.html',
-            etc: ''
-        },
-        {
-            name: '음원 상세',
-            id: 'BO08_00002',
-            etc: ''
-        },
-        {
-            name: '댓글 팝업',
-            id: 'BO08_00p01',
-            etc: ''
-        },
-        {
-            name: 'AI챌린지 정보 팝업',
-            id: 'BO08_00p02',
-            etc: ''
-        },
-        {
-            name: '음원챌린지 정보 팝업',
-            id: 'BO08_00p03',
-            etc: ''
-        },
-        {
-            name: '음원 등록',
-            id: 'BO08_00003',
-            etc: ''
-        },
-        {
-            name: '내가 오픈한 챌린지',
-            id: 'BO08_00004',
-            etc: ''
-        },
-        {
-            name: '내가 오픈한 챌린지 (Data 없음)',
-            id: 'BO08_00005',
-            etc: ''
-        },
-        {
-            name: '내가 오픈한 챌린지 정보',
-            id: 'BO08_00006',
-            etc: ''
-        },
-        {
-            name: '음원 챌린지 오픈',
-            id: 'BO08_00007',
-            etc: ''
-        },
-        {
-            name: '음원리스트 팝업',
-            id: 'BO08_00p04',
-            etc: ''
-        },
-        {
-            type: '정산관리',
-            name: '[탭] 정산 내역',
-            id: 'BO09_00001',
-            etc: ''
-        },
-        {
-            name: '[탭] 리워드(Shoe) 내역',
-            id: 'BO09_00002',
-            etc: ''
-        },
-        {
-            name: '출금신청',
-            id: 'BO09_00003',
-            etc: ''
-        },
-        {
-            type: '공지사항',
-            name: '공지사항 리스트 ',
-            id: 'BO10_00001',
-            etc: ''
-        },
-        {
-            name: '공지사항 상세',
-            id: 'BO10_00002',
-            etc: ''
-        },
-        {
-            name: '로그아웃 (확인 팝업) 팝업',
-            id: 'BO11_00p01',
-            etc: ''
-        }
-    ];
-</script>
-
+            /////////작곡가 웹
+            {
+                type: '작곡가웹'
+            },
+            {
+                type: '이용약관',
+                name: '이용약관',
+                id: 'BO01_00001',
+                etc: ''
+            },
+            {
+                type: '개인정보 처리방침',
+                name: '개인정보 처리방침',
+                id: 'BO02_00001',
+                etc: ''
+            },
+            {
+                type: '로그인',
+                name: '로그인',
+                id: 'BO03_00001',
+                etc: ''
+            },
+            {
+                type: '계정정보찾기',
+                name: '아이디 찾기 안내',
+                id: 'BO04_00001',
+                etc: ''
+            },
+            {
+                name: '아이디 찾기 결과 ',
+                id: 'BO04_00002',
+                etc: ''
+            },
+            {
+                name: '비밀번호 찾기(안내) ',
+                id: 'BO04_00003',
+                etc: ''
+            },
+            {
+                name: '비밀번호 찾기(ID정보) ',
+                id: 'BO04_00004',
+                etc: ''
+            },
+            {
+                name: '비밀번호 재설정',
+                id: 'BO04_00005',
+                etc: ''
+            },
+            {
+                type: '회원가입',
+                name: '이용약관',
+                id: 'BO05_00001',
+                etc: ''
+            },
+            {
+                name: '약관 상세 팝업',
+                id: 'BO05_00002',
+                etc: ''
+            },
+            {
+                name: '기본정보 입력',
+                id: 'BO05_00003',
+                etc: ''
+            },
+            {
+                name: '주소 검색 팝업',
+                id: 'BO05_00p01',
+                etc: ''
+            },
+            {
+                name: '관심 카테고리 선택',
+                id: 'BO05_00004',
+                etc: ''
+            },
+            {
+                name: '회원가입 완료 오류 팝업',
+                id: 'BO05_00p02',
+                etc: ''
+            },
+            {
+                type: '메인 대시보드',
+                name: '메인 대시보드',
+                id: 'BO06_00001',
+                etc: ''
+            },
+            {
+                name: '알림 리스트 팝업',
+                id: 'BO06_00p01',
+                etc: ''
+            },
+            {
+                type: '개인정보 변경',
+                name: '개인정보 변경',
+                id: 'BO07_00001',
+                etc: ''
+            },
+            {
+                type: '음원관리',
+                name: '음원 리스트',
+                id: 'BO08_00001',
+                complete: '2023-08-01',
+                path: 'BO08/BO08_00001.html',
+                etc: ''
+            },
+            {
+                name: '음원 상세',
+                id: 'BO08_00002',
+                etc: ''
+            },
+            {
+                name: '댓글 팝업',
+                id: 'BO08_00p01',
+                etc: ''
+            },
+            {
+                name: 'AI챌린지 정보 팝업',
+                id: 'BO08_00p02',
+                etc: ''
+            },
+            {
+                name: '음원챌린지 정보 팝업',
+                id: 'BO08_00p03',
+                etc: ''
+            },
+            {
+                name: '음원 등록',
+                id: 'BO08_00003',
+                etc: ''
+            },
+            {
+                name: '내가 오픈한 챌린지',
+                id: 'BO08_00004',
+                etc: ''
+            },
+            {
+                name: '내가 오픈한 챌린지 (Data 없음)',
+                id: 'BO08_00005',
+                etc: ''
+            },
+            {
+                name: '내가 오픈한 챌린지 정보',
+                id: 'BO08_00006',
+                etc: ''
+            },
+            {
+                name: '음원 챌린지 오픈',
+                id: 'BO08_00007',
+                etc: ''
+            },
+            {
+                name: '음원리스트 팝업',
+                id: 'BO08_00p04',
+                etc: ''
+            },
+            {
+                type: '정산관리',
+                name: '[탭] 정산 내역',
+                id: 'BO09_00001',
+                etc: ''
+            },
+            {
+                name: '[탭] 리워드(Shoe) 내역',
+                id: 'BO09_00002',
+                etc: ''
+            },
+            {
+                name: '출금신청',
+                id: 'BO09_00003',
+                etc: ''
+            },
+            {
+                type: '공지사항',
+                name: '공지사항 리스트 ',
+                id: 'BO10_00001',
+                etc: ''
+            },
+            {
+                name: '공지사항 상세',
+                id: 'BO10_00002',
+                etc: ''
+            },
+            {
+                name: '로그아웃 (확인 팝업) 팝업',
+                id: 'BO11_00p01',
+                etc: ''
+            }
+        ];
+    </script>
 </html>
