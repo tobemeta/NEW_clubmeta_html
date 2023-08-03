@@ -10,12 +10,13 @@
             <div class="modal-body">
                 <p>새롭게 사용하실 비밀번호를 영문, 숫자, 특수문자를 포함한<br>8~20자로 입력해주세요.</p>
                 <div class="form-group">
-                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                        aria-describedby="emailHelp" placeholder="아이디" />
+                    <input type="password" class="form-control" aria-describedby="emailHelp" placeholder="현재 비밀번호" />
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control form-control-user" id="exampleInputPassword"
-                        placeholder="비밀번호" />
+                    <input type="password" class="form-control" placeholder="신규 비밀번호" />
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="신규 비밀번호 확인" />
                 </div>
                 <!-- 클래스 .d-none, .d-block으로 show hide 처리-->
                 <div class="text-danger text-l">
@@ -31,7 +32,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button id="btnFnAlert" type="button" onclick="$('#changePwModal').modal('hide')"
+                <button id="btnFnAlert" type="button" onclick="conAlert('비밀번호 변경이 완료되었습니다.')"
                     class="btn btn-primary btn-lg" data-dismiss="modal">확인</button>
             </div>
         </div>

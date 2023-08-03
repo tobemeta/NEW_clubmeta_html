@@ -8,6 +8,7 @@
     <title>클럽메타 관리자 - 음원 관리</title>
     <!-- js -->
     <script src="../include/head.js"></script>
+    <script src="../../js/custom.js"></script>
 </head>
 
 <body>
@@ -163,7 +164,7 @@
                                 <div class="card shadow dash-chart-box">
                                     <!-- Card Header - Dropdown -->
                                     <div class="card-header py-3">
-                                        <h6 class="m-0 font-weight-bold text-primary">영상 업로드 유저 성별(참여자)</h6>
+                                        <h6 class="m-0 font-weight-bold text-dark">영상 업로드 유저 성별(참여자)</h6>
                                     </div>
                                     <!-- Card Body -->
                                     <div class="card-body">
@@ -210,7 +211,7 @@
                             <div class="col-md-4">
                                 <div class="card shadow dash-chart-box">
                                     <div class="card-header py-3">
-                                        <h6 class="m-0 font-weight-bold text-primary">업로드 유저 연령대</h6>
+                                        <h6 class="m-0 font-weight-bold text-dark">업로드 유저 연령대</h6>
                                     </div>
                                     <div class="card-body">
                                         <!-- 탭 메뉴 -->
@@ -355,7 +356,7 @@
                             <div class="col-md-4">
                                 <div class="card shadow dash-chart-box">
                                     <div class="card-header py-3">
-                                        <h6 class="m-0 font-weight-bold text-primary">업로드 시간대</h6>
+                                        <h6 class="m-0 font-weight-bold text-dark">업로드 시간대</h6>
                                     </div>
                                     <div class="card-body">
                                         <div class="chart-bar">
@@ -376,10 +377,10 @@
                             </div>
                         </div>
                         <div class="row mt-5">
-                            <div class="col-md-6">
+                            <div class="col-md-5">
                                 <div class="card shadow dash-chart-box">
                                     <div class="card-header py-3">
-                                        <h6 class="m-0 font-weight-bold text-primary">업로드한 유저 지역 정보</h6>
+                                        <h6 class="m-0 font-weight-bold text-dark">업로드한 유저 지역 정보</h6>
                                     </div>
                                     <div class="card-body">
                                         <!-- 탭 메뉴 -->
@@ -521,16 +522,16 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-7">
                                 <div class="card shadow dash-chart-box">
                                     <!-- Card Header - Dropdown -->
                                     <div class="card-header py-3">
-                                        <h6 class="m-0 font-weight-bold text-primary">영상 비중</h6>
+                                        <h6 class="m-0 font-weight-bold text-dark">영상 비중</h6>
                                     </div>
                                     <!-- Card Body -->
                                     <div class="card-body">
                                         <div class="form-row align-items-center">
-                                            <div class="col-md-7 mt-3">
+                                            <div class="col-md-5 mt-3">
                                                 <div class="chart-pie">
                                                     <div class="chartjs-size-monitor">
                                                         <div class="chartjs-size-monitor-expand">
@@ -541,11 +542,10 @@
                                                         </div>
                                                     </div>
                                                     <canvas id="myPieChart" width="" height="216"
-                                                        style="display: block; width: 200px; height: 216px"
-                                                        class="chartjs-render-monitor"></canvas>
+                                                        style="display: block;" class="chartjs-render-monitor"></canvas>
                                                 </div>
                                             </div>
-                                            <div class="col-md-5 mt-md-0">
+                                            <div class="col-md-7 mt-md-0">
                                                 <div class="form-box mt-3">
                                                     <div class="form-box-row">
                                                         <div class="form-box-item">
@@ -588,7 +588,7 @@
                                 <div class="card shadow dash-chart-box">
                                     <!-- Card Header - Dropdown -->
                                     <div class="card-header py-3">
-                                        <h6 class="m-0 font-weight-bold text-primary">일자별 요약</h6>
+                                        <h6 class="m-0 font-weight-bold text-dark">일자별 요약</h6>
                                     </div>
                                     <!-- Card Body -->
                                     <div class="card-body">
@@ -681,49 +681,45 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card shadow dash-chart-box">
-                                <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">BEST 영상</h6>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <!-- 탭 메뉴 -->
-                                    <ul class="nav nav-tabs btn-tab" role="tablist">
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link btn-tab-link active" id="sub-tab0001"
-                                                data-toggle="tab" data-target="#sub-panel0001" type="button"
-                                                role="tab">노출 수</button>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link btn-tab-link" id="sub-tab0002" data-toggle="tab"
-                                                data-target="#sub-panel0002" type="button" role="tab">좋아요 수</button>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link btn-tab-link" id="sub-tab0003" data-toggle="tab"
-                                                data-target="#sub-panel0003" type="button" role="tab">댓글 수</button>
-                                        </li>
-                                    </ul>
-                                    <!-- //탭 메뉴 -->
-                                    <div class="form-row mt-4 align-items-center">
-                                        <!-- 탭 컨탠츠 -->
-                                        <div class="tab-content">
-                                            <div class="tab-pane fade show active" id="sub-panel0001" role="tabpanel"
-                                                aria-labelledby="sub-tab0001">
-                                                화면 디자인 요청
-                                                <div class="col-lg-auto my-3">
-                                                    <canvas class="w-100" id="myChart6"></canvas>
+                            <div class="col-md-6">
+                                <div class="card shadow dash-chart-box">
+                                    <!-- Card Header - Dropdown -->
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 font-weight-bold text-dark">BEST 영상</h6>
+                                    </div>
+                                    <!-- Card Body -->
+                                    <div class="card-body">
+                                        <!-- 탭 메뉴 -->
+                                        <ul class="nav nav-tabs btn-tab" role="tablist">
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link btn-tab-link active" id="sub-tab0001"
+                                                    data-toggle="tab" data-target="#sub-panel0001" type="button"
+                                                    role="tab">노출 수</button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link btn-tab-link" id="sub-tab0002" data-toggle="tab"
+                                                    data-target="#sub-panel0002" type="button" role="tab">좋아요 수</button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link btn-tab-link" id="sub-tab0003" data-toggle="tab"
+                                                    data-target="#sub-panel0003" type="button" role="tab">댓글 수</button>
+                                            </li>
+                                        </ul>
+                                        <!-- //탭 메뉴 -->
+                                        <div class="form-row mt-4 align-items-center">
+                                            <!-- 탭 컨탠츠 -->
+                                            <div class="tab-content">
+                                                <div class="tab-pane fade show active" id="sub-panel0001"
+                                                    role="tabpanel" aria-labelledby="sub-tab0001">
+                                                    화면 디자인 요청
                                                 </div>
                                                 <div class="tab-pane fade" id="sub-panel0002" role="tabpanel"
-                                                    aria-labelledby="sub-tab0002">
-                                                    <h2 class="h5">베스트 영상</h2>
+                                                    aria-labelledby="sub-tab0002">화면 디자인 요청
                                                 </div>
                                                 <div class="tab-pane fade" id="sub-panel0003" role="tabpanel"
-                                                    aria-labelledby="sub-tab0003"></div>
+                                                    aria-labelledby="sub-tab0003">화면 디자인 요청</div>
+                                                <!-- //탭 컨텐츠 -->
                                             </div>
-                                            <!-- //탭 컨텐츠 -->
                                         </div>
                                     </div>
                                 </div>
@@ -739,6 +735,8 @@
 
     <!-- Logout Modal-->
     <div data-include="../include/logoutModal.html"></div>
+    <!-- changePw Modal-->
+    <div data-include="../include/pop/changePwModal.html"></div>
 </body>
 <script src="../../datatables/jquery.dataTables.min.js"></script>
 <script src="../../datatables/dataTables.bootstrap4.min.js"></script>
