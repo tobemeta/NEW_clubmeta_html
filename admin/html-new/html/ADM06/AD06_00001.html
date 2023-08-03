@@ -177,6 +177,26 @@
                                             <div class="chart-total">
                                                 <p>1,873</p>
                                             </div>
+                                            <div class="form-box mt-3">
+                                                <div class="form-box-row">
+                                                    <div class="form-box-item">
+                                                        <div class="form-box-label"><label for="">여성</label></div>
+                                                        <div class="form-box-cont d-flex align-items-center">
+                                                            <span class="align-middle"><strong>1,073</strong>명</span>
+                                                            <span class="align-middle ml-1">65%</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-box-row">
+                                                    <div class="form-box-item">
+                                                        <div class="form-box-label"><label for="">남성</label></div>
+                                                        <div class="form-box-cont d-flex align-items-center">
+                                                            <span class="align-middle"><strong>800</strong>명</span>
+                                                            <span class="align-middle ml-1">35%</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -402,16 +422,39 @@
                                         </div>
                                         <!-- Card Body -->
                                         <div class="card-body">
-                                            <div class="chart-pie pt-4">
-                                                <div class="chartjs-size-monitor">
-                                                    <div class="chartjs-size-monitor-expand">
-                                                        <div class=""></div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="chart-pie pt-4">
+                                                    <div class="chartjs-size-monitor">
+                                                        <div class="chartjs-size-monitor-expand">
+                                                            <div class=""></div>
+                                                        </div>
+                                                        <div class="chartjs-size-monitor-shrink">
+                                                            <div class=""></div>
+                                                        </div>
                                                     </div>
-                                                    <div class="chartjs-size-monitor-shrink">
-                                                        <div class=""></div>
+                                                    <canvas id="myPieChart" width="" height="216" style="display: block; width: 200px; height: 216px" class="chartjs-render-monitor"></canvas>
+                                                </div>
+
+                                                <div class="form-box mt-3">
+                                                    <div class="form-box-row">
+                                                        <div class="form-box-item">
+                                                            <div class="form-box-label"><label for="">여성</label></div>
+                                                            <div class="form-box-cont">
+                                                                <p class="align-middle"><strong>1,073</strong>명</p>
+                                                                <p class="align-middle ml-1">65%</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-box-row">
+                                                        <div class="form-box-item">
+                                                            <div class="form-box-label"><label for="">남성</label></div>
+                                                            <div class="form-box-cont d-flex align-items-center">
+                                                                <span class="align-middle"><strong>800</strong>명</span>
+                                                                <span class="align-middle ml-1">35%</span>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <canvas id="myPieChart" width="544" height="216" style="display: block; width: 544px; height: 216px" class="chartjs-render-monitor"></canvas>
                                             </div>
                                         </div>
                                     </div>

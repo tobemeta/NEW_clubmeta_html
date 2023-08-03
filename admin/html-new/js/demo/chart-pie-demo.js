@@ -33,48 +33,8 @@ var myPieChart = new Chart(ctx, {
             display: true,
             position: 'bottom'
         },
-        cutoutPercentage: 80,
-        elements: {
-            center: {
-                text: '', // Data labels will be dynamically added
-                fontStyle: 'Arial',
-                sidePadding: 20
-            }
-        },
-        plugins: false // Disable the external plugin (chartjs-plugin-datalabels)
-    },
-    // After the chart is drawn, calculate and display the data labels
-    plugins: [
-        {
-            afterDraw: function (chart) {
-                var width = chart.chart.width,
-                    height = chart.chart.height,
-                    ctx = chart.chart.ctx,
-                    type = chart.config.type;
-
-                if (type === 'doughnut') {
-                    var fontSize = (height / 150).toFixed(2);
-                    ctx.font = fontSize + 'em Arial';
-                    ctx.textBaseline = 'middle';
-
-                    var dataArr = chart.config.data.datasets[0].data,
-                        sum = dataArr.reduce((a, b) => a + b, 0);
-
-                    var position = 0; // Starting position for the data label
-                    dataArr.forEach((value, index) => {
-                        var percentage = ((value * 100) / sum).toFixed(2) + '%';
-                        var textX = Math.round((width - ctx.measureText(percentage).width) / 2);
-                        var textY = height / 2 + position;
-
-                        ctx.fillText(percentage, textX, textY);
-
-                        // Increase the position for the next data label
-                        position += fontSize * 2;
-                    });
-                }
-            }
-        }
-    ]
+        cutoutPercentage: 80
+    }
 });
 
 var ctx = document.getElementById('myPieChart');
