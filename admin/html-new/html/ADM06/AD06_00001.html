@@ -173,14 +173,16 @@
                                                 </div>
 
                                                 <canvas id="myDnChart" width="544" height="216" style="display: block; width: 544px; height: 216px" class="chartjs-render-monitor"></canvas>
+
+                                                <div class="chart-total">
+                                                    <p>1,873</p>
+                                                </div>
                                             </div>
-                                            <div class="chart-total">
-                                                <p>1,873</p>
-                                            </div>
+
                                             <div class="form-box mt-3">
                                                 <div class="form-box-row">
                                                     <div class="form-box-item">
-                                                        <div class="form-box-label"><label for="">여성</label></div>
+                                                        <div class="form-box-label label-s"><label for="">여성</label></div>
                                                         <div class="form-box-cont d-flex align-items-center">
                                                             <span class="align-middle"><strong>1,073</strong>명</span>
                                                             <span class="align-middle ml-1">65%</span>
@@ -189,7 +191,7 @@
                                                 </div>
                                                 <div class="form-box-row">
                                                     <div class="form-box-item">
-                                                        <div class="form-box-label"><label for="">남성</label></div>
+                                                        <div class="form-box-label label-s"><label for="">남성</label></div>
                                                         <div class="form-box-cont d-flex align-items-center">
                                                             <span class="align-middle"><strong>800</strong>명</span>
                                                             <span class="align-middle ml-1">35%</span>
@@ -422,8 +424,8 @@
                                         </div>
                                         <!-- Card Body -->
                                         <div class="card-body">
-                                            <div class="form-row align-items-center">
-                                                <div class="chart-pie pt-4 col-md-8">
+                                            <div class="d-flex align-items-center">
+                                                <div class="chart-pie pt-4">
                                                     <div class="chartjs-size-monitor">
                                                         <div class="chartjs-size-monitor-expand">
                                                             <div class=""></div>
@@ -432,13 +434,13 @@
                                                             <div class=""></div>
                                                         </div>
                                                     </div>
-                                                    <canvas id="myPieChart" width="" height="216" style="display: block; width: auto !important; height: 216px" class="chartjs-render-monitor"></canvas>
+                                                    <canvas id="myPieChart" width="" height="216" style="display: block; width: 200px; height: 216px" class="chartjs-render-monitor"></canvas>
                                                 </div>
 
-                                                <div class="form-box col-md-4 mt-md-0">
+                                                <div class="form-box mt-3">
                                                     <div class="form-box-row">
                                                         <div class="form-box-item">
-                                                            <div class="form-box-label"><label for="">AI챌린지</label></div>
+                                                            <div class="form-box-label"><label for="">여성</label></div>
                                                             <div class="form-box-cont">
                                                                 <p class="align-middle"><strong>1,073</strong>명</p>
                                                                 <p class="align-middle ml-1">65%</p>
@@ -613,446 +615,5 @@
     <!-- Page level custom scripts -->
     <script src="../../js/demo/datatables-demo.js"></script>
     <!-- Page level custom scripts -->
-    <script src="../../js/demo/chart-area-demo.js"></script>
-    <script src="../../js/demo/chart-pie-demo.js"></script>
-    <script src="../../js/demo/chart-bar-demo.js"></script>
-    <!-- <script>
-        // Graphs
-        var ctx = document.getElementById('myChart');
-        var myChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-                datasets: [
-                    {
-                        data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
-                        lineTension: 0,
-                        backgroundColor: 'transparent',
-                        borderColor: '#007bff',
-                        borderWidth: 1,
-                        pointRadius: 0,
-                        pointBackgroundColor: '#007bff'
-                    }
-                ]
-            },
-            options: {
-                scales: {
-                    yAxes: [
-                        {
-                            ticks: {
-                                beginAtZero: false
-                            }
-                        }
-                    ]
-                },
-                legend: {
-                    display: false
-                }
-            }
-        });
-
-        var chartColors = {
-            red: 'rgb(255, 99, 132)',
-            orange: 'rgb(255, 159, 64)',
-            yellow: 'rgb(255, 205, 86)',
-            green: 'rgb(75, 192, 192)',
-            blue: 'rgb(54, 162, 235)',
-            purple: 'rgb(153, 102, 255)',
-            grey: 'rgb(201, 203, 207)'
-        };
-
-        var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
-        var COLORS = ['#4dc9f6', '#f67019', '#f53794', '#537bc4', '#acc236', '#166a8f', '#00a950', '#58595b', '#8549ba'];
-
-        var Color = Chart.helpers.color;
-
-        var Samples = {
-            // Adapted from http://indiegamr.com/generate-repeatable-random-numbers-in-js/
-            srand: function (seed) {
-                this._seed = seed;
-            },
-
-            rand: function (min, max) {
-                var seed = this._seed;
-                min = min === undefined ? 0 : min;
-                max = max === undefined ? 1 : max;
-                this._seed = (seed * 9301 + 49297) % 233280;
-                return min + (this._seed / 233280) * (max - min);
-            },
-
-            numbers: function (config) {
-                var cfg = applyDefaultNumbers(config);
-                var dfactor = Math.pow(10, cfg.decimals) || 0;
-                var data = [];
-                var i, value;
-
-                for (i = 0; i < cfg.count; ++i) {
-                    value = (cfg.from[i] || 0) + this.rand(cfg.min, cfg.max);
-                    if (this.rand() <= cfg.continuity) {
-                        data.push(Math.round(dfactor * value) / dfactor);
-                    } else {
-                        data.push(null);
-                    }
-                }
-
-                return data;
-            },
-
-            labels: function (config) {
-                var cfg = config || {};
-                var min = cfg.min || 0;
-                var max = cfg.max || 100;
-                var count = cfg.count || 8;
-                var step = (max - min) / count;
-                var decimals = cfg.decimals || 8;
-                var dfactor = Math.pow(10, decimals) || 0;
-                var prefix = cfg.prefix || '';
-                var values = [];
-                var i;
-
-                for (i = min; i < max; i += step) {
-                    values.push(prefix + Math.round(dfactor * i) / dfactor);
-                }
-
-                return values;
-            },
-
-            months: function (config) {
-                var cfg = config || {};
-                var count = cfg.count || 12;
-                var section = cfg.section;
-                var values = [];
-                var i, value;
-
-                for (i = 0; i < count; ++i) {
-                    value = MONTHS[Math.ceil(i) % 12];
-                    values.push(value.substring(0, section));
-                }
-
-                return values;
-            },
-
-            color: function (index) {
-                return COLORS[index % COLORS.length];
-            },
-
-            transparentize: function (color, opacity) {
-                var alpha = opacity === undefined ? 0.5 : 1 - opacity;
-                return Color(color).alpha(alpha).rgbString();
-            }
-        };
-
-        var randomScalingFactor = function () {
-            return Math.round(Samples.rand(-100, 100));
-        };
-
-        Samples.srand(Date.now());
-
-        var color = Chart.helpers.color;
-
-        //chart2
-        var ctx2 = document.getElementById('myChart2');
-        var myChart2 = new Chart(ctx2, {
-            type: 'bar',
-            data: {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                datasets: [
-                    {
-                        label: 'Dataset 1',
-                        backgroundColor: color(chartColors.red).alpha(0.5).rgbString(),
-                        borderColor: chartColors.red,
-                        borderWidth: 1,
-                        data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-                    },
-                    {
-                        label: 'Dataset 2',
-                        backgroundColor: color(chartColors.blue).alpha(0.5).rgbString(),
-                        borderColor: chartColors.blue,
-                        borderWidth: 1,
-                        data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                legend: {
-                    position: 'top'
-                }
-            }
-        });
-        //chart3
-        var ctx3 = document.getElementById('myChart3');
-        var myChart3 = new Chart(ctx3, {
-            type: 'horizontalBar',
-            data: {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                datasets: [
-                    {
-                        label: 'Dataset 1',
-                        backgroundColor: color(chartColors.red).alpha(0.5).rgbString(),
-                        borderColor: chartColors.red,
-                        borderWidth: 1,
-                        data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-                    },
-                    {
-                        label: 'Dataset 2',
-                        backgroundColor: color(chartColors.blue).alpha(0.5).rgbString(),
-                        borderColor: chartColors.blue,
-                        borderWidth: 1,
-                        data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-                    }
-                ]
-            },
-            options: {
-                elements: {
-                    rectangle: {
-                        borderWidth: 2
-                    }
-                },
-                responsive: true,
-                legend: {
-                    position: 'bottom'
-                }
-            }
-        });
-
-        //chart4
-        var ctx4 = document.getElementById('myChart4');
-        var myChart4 = new Chart(ctx4, {
-            type: 'doughnut',
-            data: {
-                datasets: [
-                    {
-                        data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
-                        backgroundColor: [chartColors.red, chartColors.orange, chartColors.yellow, chartColors.green, chartColors.blue],
-                        label: 'Dataset 1'
-                    }
-                ],
-                labels: ['Red', 'Orange', 'Yellow', 'Green', 'Blue']
-            },
-            options: {
-                responsive: true,
-                legend: {
-                    position: 'bottom'
-                },
-                animation: {
-                    animateScale: true,
-                    animateRotate: true
-                }
-            }
-        });
-
-        //chart5
-        var ctx5 = document.getElementById('myChart5');
-        var myChart5 = new Chart(ctx5, {
-            type: 'pie',
-            data: {
-                datasets: [
-                    {
-                        data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
-                        backgroundColor: [chartColors.red, chartColors.orange, chartColors.yellow, chartColors.green, chartColors.blue],
-                        label: 'Dataset 1'
-                    }
-                ],
-                labels: ['Red', 'Orange', 'Yellow', 'Green', 'Blue']
-            },
-            options: {
-                responsive: true
-            }
-        });
-
-        //chart6
-        var ctx6 = document.getElementById('myChart6');
-        var myChart6 = new Chart(ctx6, {
-            type: 'radar',
-            data: {
-                labels: [['Eating', 'Dinner'], ['Drinking', 'Water'], 'Sleeping', ['Designing', 'Graphics'], 'Coding', 'Cycling', 'Running'],
-                datasets: [
-                    {
-                        label: 'My First dataset',
-                        backgroundColor: color(chartColors.red).alpha(0.2).rgbString(),
-                        borderColor: chartColors.red,
-                        borderWidth: 1,
-                        pointRadius: 0,
-                        pointBackgroundColor: chartColors.red,
-                        data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-                    },
-                    {
-                        label: 'My Second dataset',
-                        backgroundColor: color(chartColors.blue).alpha(0.2).rgbString(),
-                        borderColor: chartColors.blue,
-                        borderWidth: 1,
-                        pointRadius: 0,
-                        pointBackgroundColor: chartColors.blue,
-                        data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-                    }
-                ]
-            },
-            options: {
-                legend: {
-                    position: 'top'
-                },
-                scale: {
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-
-        //chart7
-        function generateData() {
-            var unit = document.getElementById('unit').value;
-
-            function unitLessThanDay() {
-                return unit === 'second' || unit === 'minute' || unit === 'hour';
-            }
-
-            function beforeNineThirty(date) {
-                return date.hour() < 9 || (date.hour() === 9 && date.minute() < 30);
-            }
-
-            // Returns true if outside 9:30am-4pm on a weekday
-            function outsideMarketHours(date) {
-                if (date.isoWeekday() > 5) {
-                    return true;
-                }
-                if (unitLessThanDay() && (beforeNineThirty(date) || date.hour() > 16)) {
-                    return true;
-                }
-                return false;
-            }
-
-            function randomNumber(min, max) {
-                return Math.random() * (max - min) + min;
-            }
-
-            function randomBar(date, lastClose) {
-                var open = randomNumber(lastClose * 0.95, lastClose * 1.05).toFixed(2);
-                var close = randomNumber(open * 0.95, open * 1.05).toFixed(2);
-                return {
-                    t: date.valueOf(),
-                    y: close
-                };
-            }
-
-            var date = moment('Jan 01 1990', 'MMM DD YYYY');
-            var now = moment();
-            var data = [];
-            var lessThanDay = unitLessThanDay();
-            for (; data.length < 600 && date.isBefore(now); date = date.clone().add(1, unit).startOf(unit)) {
-                if (outsideMarketHours(date)) {
-                    if (!lessThanDay || !beforeNineThirty(date)) {
-                        date = date.clone().add(date.isoWeekday() >= 5 ? 8 - date.isoWeekday() : 1, 'day');
-                    }
-                    if (lessThanDay) {
-                        date = date.hour(9).minute(30).second(0);
-                    }
-                }
-                data.push(randomBar(date, data.length > 0 ? data[data.length - 1].y : 30));
-            }
-
-            return data;
-        }
-
-        var ctx7 = document.getElementById('myChart7').getContext('2d');
-        var myChart7 = new Chart(ctx7, {
-            data: {
-                datasets: [
-                    {
-                        label: 'CHRT - Chart.js Corporation',
-                        backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
-                        borderColor: window.chartColors.red,
-                        data: generateData(),
-                        type: 'line',
-                        pointRadius: 0,
-                        fill: false,
-                        lineTension: 0,
-                        borderWidth: 1
-                    }
-                ]
-            },
-            options: {
-                animation: {
-                    duration: 0
-                },
-                scales: {
-                    xAxes: [
-                        {
-                            type: 'time',
-                            distribution: 'series',
-                            offset: true,
-                            ticks: {
-                                major: {
-                                    enabled: true,
-                                    fontStyle: 'bold'
-                                },
-                                source: 'data',
-                                autoSkip: true,
-                                autoSkipPadding: 75,
-                                maxRotation: 0,
-                                sampleSize: 100
-                            },
-                            afterBuildTicks: function (scale, ticks) {
-                                var majorUnit = scale._majorUnit;
-                                var firstTick = ticks[0];
-                                var i, ilen, val, tick, currMajor, lastMajor;
-
-                                val = moment(ticks[0].value);
-                                if ((majorUnit === 'minute' && val.second() === 0) || (majorUnit === 'hour' && val.minute() === 0) || (majorUnit === 'day' && val.hour() === 9) || (majorUnit === 'month' && val.date() <= 3 && val.isoWeekday() === 1) || (majorUnit === 'year' && val.month() === 0)) {
-                                    firstTick.major = true;
-                                } else {
-                                    firstTick.major = false;
-                                }
-                                lastMajor = val.get(majorUnit);
-
-                                for (i = 1, ilen = ticks.length; i < ilen; i++) {
-                                    tick = ticks[i];
-                                    val = moment(tick.value);
-                                    currMajor = val.get(majorUnit);
-                                    tick.major = currMajor !== lastMajor;
-                                    lastMajor = currMajor;
-                                }
-                                return ticks;
-                            }
-                        }
-                    ],
-                    yAxes: [
-                        {
-                            gridLines: {
-                                drawBorder: false
-                            },
-                            scaleLabel: {
-                                display: true,
-                                labelString: 'Closing price ($)'
-                            }
-                        }
-                    ]
-                },
-                tooltips: {
-                    intersect: false,
-                    mode: 'index',
-                    callbacks: {
-                        label: function (tooltipItem, myData) {
-                            var label = myData.datasets[tooltipItem.datasetIndex].label || '';
-                            if (label) {
-                                label += ': ';
-                            }
-                            label += parseFloat(tooltipItem.value).toFixed(2);
-                            return label;
-                        }
-                    }
-                }
-            }
-        });
-
-        document.getElementById('update').addEventListener('click', function () {
-            var type = document.getElementById('type').value;
-            var dataset = myChart7.config.data.datasets[0];
-            dataset.type = type;
-            dataset.data = generateData();
-            myChart7.update();
-        });
-    </script> -->
+    <script src="../../js/chart_custom.js"></script>
 </html>
