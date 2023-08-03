@@ -7,6 +7,8 @@
 $pc-full-size: 1200px;
 $tablet-size: 1024px;
 $mobile-size: 768px;
+$mobile-ios-size: 390px;
+$mobile-aos-size: 360px;
 
 // common
 body {
@@ -226,6 +228,8 @@ optgroup {
     & + .breadcrumb-item {
         &::before {
             content: '>';
+        }
+        &:last-child {
         }
     }
 }
@@ -695,6 +699,21 @@ optgroup {
     .sidebar-brand-text {
         font-size: 14px;
     }
+    .dashboard {
+        flex-wrap: wrap;
+        dl {
+            width: 50%;
+        }
+        dt {
+            font-size: 16px;
+            br {
+                display: none;
+            }
+        }
+        dd {
+            font-size: 16px;
+        }
+    }
 }
 
 @media (max-width: $mobile-size) {
@@ -767,5 +786,10 @@ optgroup {
                 margin-top: 0.5rem;
             }
         }
+    }
+}
+@media (max-width: $mobile-ios-size) {
+    .form-box .btn-group .btn {
+        padding: 3px;
     }
 }
