@@ -575,33 +575,7 @@ const ui = {
         }
     },
     etc: () => {
-        // function scrollBottom() {
-        //     const $scrollBottom = $(document).outerHeight(true);
-
-        //     $('html, body').stop(true).animate({ scrollTop: $scrollBottom }, 1000);
-        // }
-
-        // let $btnLoadmore = $('.btn-loadmore');
-        // let $siblings = $btnLoadmore.parent().siblings();
-
-        // $siblings.find('li').slice(0, 5).show();
-
-        // $(document).ready(function () {
-        //     $btnLoadmore.on('click', function (e) {
-        //         e.preventDefault();
-
-        //         const $item = $('.tag-list-box li:hidden');
-
-        //         scrollBottom();
-
-        //         $item.slice(0, 5).show();
-
-        //         if ($item.length - 5 == 0) {
-        //             $(this).parent().hide();
-        //         }
-        //     });
-        // });
-
+        // 더보기
         const $btnMore = $('.btn-loadmore');
         const $batchNum = 5;
         const $listWrap = $btnMore.closest('.more-list').find('ul, ol');
@@ -641,8 +615,8 @@ const ui = {
             showNextBatch();
             expandScroll();
         });
-        // 더보기
 
+        // 전체 체크 및 개별 체크
         $('input[name=chk_all]').on('change', function () {
             if ($('input[name=chk_all]').is(':checked')) $('input[name=chk]').prop('checked', true);
             else $('input[name=chk]').prop('checked', false);
@@ -655,7 +629,22 @@ const ui = {
             if (total != checked) $('input[name=chk_all]').prop('checked', false);
             else $('input[name=chk_all]').prop('checked', true);
         });
-        // 전체 체크 및 개별 체크
+
+        // 재생
+        var $btnPlay = $('.btn-play');
+        $btnPlay.off('click').on('click', function (e) {
+            e.preventDefault();
+            $(this).closest('li').siblings().find('.btn-play').removeClass('is-stop');
+
+            $(this).toggleClass('is-stop');
+
+            if ($(this).hasClass('is-stop')) {
+                $(this).find('.blind').text('정지');
+            } else {
+                $(this).find('.blind').text('재생');
+            }
+        });
+        // $btnPlay.each(function () {});
     }
 };
 

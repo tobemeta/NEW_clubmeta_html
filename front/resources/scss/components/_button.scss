@@ -80,3 +80,10 @@
     @include bg($src: '../images/ico/ico_more2.svg', $po: left);
     padding-left: 2rem;
 }
+
+.btn-play {
+    @include bg($src: '../images/ico/ico_w_play.svg', $po: center 1.7rem);
+    &.is-stop {
+        @include bg($src: '../images/ico/ico_w_pause.svg', $po: center 1.3rem);
+    }
+}
