@@ -241,12 +241,22 @@ optgroup {
 }
 
 .breadcrumb-item {
+    color: #999;
+    a {
+        text-decoration: none;
+    }
+    &:first-child {
+        display: flex;
+        align-items: center;
+    }
     & + .breadcrumb-item {
         &::before {
             content: '>';
         }
-        &:last-child {
-        }
+    }
+    &:last-child {
+        color: #212529;
+        font-weight: 500;
     }
 }
 
