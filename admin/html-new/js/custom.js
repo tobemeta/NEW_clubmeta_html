@@ -1,5 +1,12 @@
 $(document).ready(function () {
-    console.log(23);
+    console.log(33);
+    setTimeout(function () {
+        if ($('.sidebar').length) {
+            console.log(location.pathname);
+        } else {
+            console.log('error');
+        }
+    }, 100);
 });
 
 // confirmPop
