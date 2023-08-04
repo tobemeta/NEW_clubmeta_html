@@ -1,12 +1,30 @@
-$(document).ready(function () {
-    console.log(33);
-    setTimeout(function () {
+const ui = {
+    init: function () {
+        const _this = this;
+
+        _this.menuActive();
+    },
+    menuActive: function () {
         if ($('.sidebar').length) {
-            console.log(location.pathname);
+            var $path = location.pathname;
+            var $href = $path.split('/').pop();
+
+            $('.sidebar .nav-item a').each(function () {
+                if ($(this).attr('href').indexOf($href) !== -1) {
+                    $(this).addClass('active');
+
+                    $(this).closest('.collapse').addClass('show');
+                    $(this).closest('.nav-item').addClass('active');
+                }
+            });
         } else {
             console.log('error');
         }
-    }, 100);
+    }
+};
+
+$(window).on('load', function () {
+    ui.init();
 });
 
 // confirmPop

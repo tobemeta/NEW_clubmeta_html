@@ -100,6 +100,19 @@ optgroup {
         min-width: 100px;
     }
 }
+// 사이트바
+.sidebar {
+    .nav-item {
+        &.active {
+            .nav-link {
+                color: #fff;
+                i {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
 
 // login
 .form-signin-wrap {
