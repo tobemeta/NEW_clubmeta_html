@@ -1,5 +1,7 @@
 //홈화면
-
+.event-swiper {
+    overflow: hidden;
+}
 //알림 리스트 화면
 .alarm-list-box {
     .no-result {
@@ -83,6 +85,190 @@
                     height: 100%;
                 }
             }
+        }
+    }
+}
+
+.challenge-box {
+    .top {
+        position: relative;
+        .info {
+            position: absolute;
+            bottom: 0.8rem;
+            left: 0;
+            right: 0;
+            color: #fff;
+            z-index: 2;
+        }
+        .util {
+            display: flex;
+            height: 1.6rem;
+            margin-top: 0.4rem;
+            p {
+                display: inline-block;
+                position: relative;
+                flex: 1 1 50%;
+                font-size: 1rem;
+                line-height: 1.6rem;
+                &:before {
+                    display: inline-block;
+                    content: '';
+                    width: 1.6rem;
+                    height: 1.6rem;
+                }
+                &.like:before {
+                    @include bg($src: '../images/ico/ico_w_heart.svg');
+                    background-size: cover;
+                }
+                &.reply:before {
+                    @include bg($src: '../images/ico/ico_w_reply.svg');
+                    background-size: cover;
+                }
+            }
+            span {
+                display: inline-block;
+                vertical-align: top;
+            }
+        }
+    }
+    .card {
+        position: relative;
+        padding: 0.8rem 0.8rem 1.2rem 0.8rem;
+        box-sizing: $sizing;
+
+        .util {
+            display: flex;
+            position: absolute;
+            top: 1.6rem;
+            left: 1.6rem;
+            z-index: 2;
+            p {
+                display: flex;
+                position: relative;
+                height: 2.4rem;
+                align-items: center;
+                font-size: 1rem;
+                color: #fff;
+                &:before {
+                    display: inline-block;
+                    content: '';
+                    width: 1.6rem;
+                    height: 1.6rem;
+                }
+                &.like:before {
+                    @include bg($src: '../images/ico/ico_w_heart.svg');
+                    background-size: cover;
+                }
+            }
+        }
+        .user-info {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-top: -1.8rem;
+            .user-img {
+                min-width: 3.6rem;
+                height: 3.6rem;
+                margin-bottom: 0.8rem;
+                border-radius: 50%;
+                box-sizing: $sizing;
+                overflow: hidden;
+                @include imgCenter();
+                border: 2px solid #fff;
+                box-shadow: $shadow;
+            }
+            .user-name {
+                font-size: 1.4rem;
+                line-height: 2rem;
+            }
+        }
+    }
+}
+
+.list-box {
+    .info {
+        .num {
+            position: relative;
+            height: 1.6rem;
+            line-height: 1.6rem;
+            font-size: 1rem;
+            padding-left: 1.6rem;
+            &:before {
+                display: block;
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 1rem;
+                height: 0.2rem;
+                border-radius: 0.1rem;
+                background-color: #9f9f9f;
+                margin-bottom: 0.3rem;
+                transform: translateY(-50%);
+            }
+            &.rank-up {
+                color: #e92dff;
+                &:before {
+                    top: 0;
+                    width: 1.6rem;
+                    height: 1.6rem;
+                    margin-bottom: 0;
+                    border-radius: 0;
+                    background-color: transparent;
+                    transform: none;
+                    @include bg($src: '../images/ico/ico_rank_up.svg', $po: center left);
+                }
+            }
+            &.rank-down {
+                color: #e92dff;
+                &:before {
+                    top: 0;
+                    width: 1.6rem;
+                    height: 1.6rem;
+                    margin-bottom: 0;
+                    border-radius: 0;
+                    background-color: transparent;
+                    transform: none;
+                    @include bg($src: '../images/ico/ico_rank_down.svg', $po: center);
+                }
+            }
+        }
+    }
+
+    .rank-up {
+    }
+}
+.rank-swiper {
+    overflow: hidden;
+    height: 33rem;
+    margin-left: -1.6rem;
+    margin-right: -1.6rem;
+    padding: 0 1.6rem;
+    .swiper-wrapper {
+        width: 100% !important;
+    }
+    .swiper-slide {
+        height: auto;
+    }
+    &.list-box {
+        li + li {
+            margin-top: 0;
+        }
+    }
+    ol {
+        counter-reset: rank 0;
+    }
+    li {
+        padding: 0.8rem 1.6rem;
+        width: calc(100% - 2.8rem);
+        &:before {
+            display: inline-block;
+            content: counter(rank);
+            counter-increment: rank 1;
+            width: 2rem;
+            height: 2rem;
+            margin-right: 0.8rem;
+            text-align: center;
         }
     }
 }
