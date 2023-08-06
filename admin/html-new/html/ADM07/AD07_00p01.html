@@ -1,0 +1,141 @@
+<div class="modal fade large" id="reportListPop" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalLabel">신고한 유저</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="title-wrap mt-1">
+                    <div class="left">검색 <strong class="fc-red">5</strong>건 / 전체 <strong class="fc-red">15</strong>건</div>
+                    <div class="right">
+                        <select class="custom-select custom-select-sm">
+                            <option value="1">10</option>
+                            <option value="2">25</option>
+                            <option value="3">50</option>
+                            <option value="4">100</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="bootstrap-table bootstrap4">
+                    <div class="fixed-table-toolbar"></div>
+                    <div class="fixed-table-container" style="padding-bottom: 0px">
+                        <div class="fixed-table-header" style="display: none">
+                            <table></table>
+                        </div>
+                        <div class="fixed-table-body">
+                            <div class="fixed-table-loading table table-bordered table-hover" style="top: 42.7969px">
+                                <span class="loading-wrap">
+                                    <span class="loading-text">데이터를 불러오는 중입니다</span>
+                                    <span class="animation-wrap"><span class="animation-dot"></span></span>
+                                </span>
+                            </div>
+                            <table id="dataTable" class="table table-hover table-bordered dataTable no-footer" data-pagination="true">
+                                <thead>
+                                    <tr>
+                                        <th data-field="0">
+                                            <div class="th-inner">번호</div>
+                                            <div class="fht-cell"></div>
+                                        </th>
+                                        <th data-field="1">
+                                            <div class="th-inner">신고한 유저</div>
+                                            <div class="fht-cell"></div>
+                                        </th>
+                                        <th data-field="2">
+                                            <div class="th-inner">신고 사유</div>
+                                            <div class="fht-cell"></div>
+                                        </th>
+                                        <th data-field="3">
+                                            <div class="th-inner">신고일자</div>
+                                            <div class="fht-cell"></div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="" data-index="0">
+                                        <td>10</td>
+                                        <td><a href="#none">흐흐흐</a></td>
+                                        <td class="text-left">거짓정보</td>
+                                        <td>2023.06.26 16:00:00</td>
+                                    </tr>
+                                    <tr data-index="1">
+                                        <td>9</td>
+                                        <td><a href="#none">metaclub1</a></td>
+                                        <td class="text-left">마음에 들지 않습니다</td>
+                                        <td>2023.06.26 16:00:00</td>
+                                    </tr>
+                                    <tr data-index="2">
+                                        <td>8</td>
+                                        <td><a href="#none">하하하111</a></td>
+                                        <td class="text-left">마음에 들지 않습니다</td>
+                                        <td>2023.06.26 16:00:00</td>
+                                    </tr>
+                                    <tr data-index="3">
+                                        <td>7</td>
+                                        <td><a href="#none">흐흐흐</a></td>
+                                        <td class="text-left">거짓정보</td>
+                                        <td>2023.06.26 16:00:00</td>
+                                    </tr>
+                                    <tr class="" data-index="4">
+                                        <td>6</td>
+                                        <td><a href="#none">흐흐흐</a></td>
+                                        <td class="text-left">거짓정보</td>
+                                        <td>2023.06.26 16:00:00</td>
+                                    </tr>
+                                    <tr data-index="5">
+                                        <td>5</td>
+                                        <td><a href="#none">metaclub1</a></td>
+                                        <td class="text-left">마음에 들지 않습니다</td>
+                                        <td>2023.06.26 16:00:00</td>
+                                    </tr>
+                                    <tr data-index="6">
+                                        <td>4</td>
+                                        <td><a href="#none">하하하111</a></td>
+                                        <td class="text-left">마음에 들지 않습니다</td>
+                                        <td>2023.06.26 16:00:00</td>
+                                    </tr>
+                                    <tr data-index="7">
+                                        <td>3</td>
+                                        <td><a href="#none">흐흐흐</a></td>
+                                        <td class="text-left">거짓정보</td>
+                                        <td>2023.06.26 16:00:00</td>
+                                    </tr>
+
+                                    <tr data-index="8">
+                                        <td>2</td>
+                                        <td><a href="#none">하하하111</a></td>
+                                        <td class="text-left">마음에 들지 않습니다</td>
+                                        <td>2023.06.26 16:00:00</td>
+                                    </tr>
+                                    <tr data-index="9">
+                                        <td>1</td>
+                                        <td><a href="#none">흐흐흐</a></td>
+                                        <td class="text-left">거짓정보</td>
+                                        <td>2023.06.26 16:00:00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="fixed-table-pagination">
+                        <div class="pagination-detail"></div>
+                        <div class="pagination">
+                            <ul class="pagination">
+                                <li class="page-item page-pre"><a class="page-link" aria-label="previous page" href="javascript:void(0)">‹</a></li>
+                                <li class="page-item active"><a class="page-link" aria-label="to page 1" href="javascript:void(0)">1</a></li>
+                                <li class="page-item"><a class="page-link" aria-label="to page 2" href="javascript:void(0)">2</a></li>
+                                <li class="page-item page-next"><a class="page-link" aria-label="next page" href="javascript:void(0)">›</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">취소</button>
+                <button type="button" class="btn btn-primary btn-lg">확인</button>
+            </div>
+        </div>
+    </div>
+</div>
