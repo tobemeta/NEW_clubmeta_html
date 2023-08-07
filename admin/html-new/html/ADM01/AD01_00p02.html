@@ -1,0 +1,30 @@
+<div class="modal fade" id="menuPwModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title bold">메뉴 접근 비밀번호 입력</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>비밀번호 입력 후 접근 가능합니다.</p>
+                <div class="form-group">
+                    <input type="password" class="form-control" aria-describedby="emailHelp" placeholder="현재 비밀번호" />
+                </div>
+                <!-- 클래스 .d-none, .d-block으로 show hide 처리-->
+                <div class="text-danger text-l">
+                    <span>현재 비밀번호가 일치하지 않습니다.</span>
+                    <!-- 비번, 비번확인 불일치 -->
+                    <!-- <span>현재 비밀번호가 일치하지 않습니다.</span> -->
+                    <!-- 미입력 시 -->
+                    <!-- <span>비밀번호를 입력해 주세요.</span> -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary btn-close" type="button" data-dismiss="modal">취소</button>
+                <button id="btnFnAlert" type="button" class="btn btn-primary btn-lg" data-dismiss="modal">확인</button>
+            </div>
+        </div>
+    </div>
+</div>
