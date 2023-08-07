@@ -169,7 +169,7 @@
                                     </div>
                                     <div class="fixed-table-pagination">
                                         <div class="float-left">
-                                            <button type="button" class="btn btn-outline-dark"><i class="bi bi-x"></i> 삭제</button>
+                                            <button type="button" class="btn btn-outline-dark" data-toggle="modal" onclick="bsConfirm('해당 리스트를 정말 삭제 하시겠습니까? 삭제하시면 재등록해야 합니다.')"><i class="bi bi-x"></i> 삭제</button>
                                         </div>
                                         <div class="float-right">
                                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#excelUploadPop">엑셀 업로드</button>
@@ -192,6 +192,44 @@
             </div>
         </div>
         <!-- content Wrapper -->
+        <!-- modal -->
+        <div class="modal fade large" id="excelUploadPop" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">금칙어 엑셀업로드</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-box">
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label">엑셀파일</div>
+                                        <div class="form-box-cont">
+                                            <div class="form-row">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" />
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-outline-secondary" type="button">찾아보기</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">취소</button>
+                        <button type="button" class="btn btn-primary btn-lg">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 
     <!-- Scroll to Top Button-->
@@ -201,7 +239,6 @@
     <div data-include="../include/logoutModal.html"></div>
     <!-- changePw Modal-->
     <div data-include="../include/pop/changePwModal.html"></div>
-    <div data-include="./AD07_00p03.html"></div>
 
     <script src="../../datatables/jquery.dataTables.min.js"></script>
     <script src="../../datatables/dataTables.bootstrap4.min.js"></script>
