@@ -4,7 +4,7 @@ Chart.defaults.global.defaultFontColor = '#858796';
 
 // Doughnut Chart
 var ctx = document.getElementById('myDnChart');
-var myPieChart = new Chart(ctx, {
+var myDnChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
         labels: ['여성', '남성'],
@@ -13,6 +13,40 @@ var myPieChart = new Chart(ctx, {
                 data: [70, 30],
                 backgroundColor: ['#1cc88a', '#4e73df'],
                 hoverBackgroundColor: ['#17a673', '#2e59d9'],
+                hoverBorderColor: 'rgba(234, 236, 244, 1)'
+            }
+        ]
+    },
+    options: {
+        maintainAspectRatio: false,
+        tooltips: {
+            backgroundColor: 'rgb(255,255,255)',
+            bodyFontColor: '#858796',
+            borderColor: '#dddfeb',
+            borderWidth: 1,
+            xPadding: 15,
+            yPadding: 15,
+            displayColors: false,
+            caretPadding: 10
+        },
+        legend: {
+            display: true,
+            position: 'bottom'
+        },
+        cutoutPercentage: 80
+    }
+});
+
+var ctx = document.getElementById('myDnChartSec');
+var myDnChartSec = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ['HIPHOP', 'K-POP', '동요', 'POP', 'JAZZ'],
+        datasets: [
+            {
+                data: [40, 25, 18, 12, 5],
+                backgroundColor: ['#2f92ff', '#4e73df', 'rgb(153, 158, 255)', 'rgb(149, 206, 255)', '#17dceb'],
+                hoverBackgroundColor: ['#0079fd', '#2e59d9', 'rgb(128, 133, 233)', 'rgb(124, 181, 236)', '#009fab'],
                 hoverBorderColor: 'rgba(234, 236, 244, 1)'
             }
         ]
@@ -49,6 +83,40 @@ var myPieChart = new Chart(ctx, {
                 data: [60, 30, 10],
                 backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
                 hoverBackgroundColor: ['#2e59d9', '#17a673'],
+                hoverBorderColor: 'rgba(234, 236, 244, 1)'
+            }
+        ]
+    },
+    options: {
+        maintainAspectRatio: false,
+        tooltips: {
+            backgroundColor: 'rgb(255,255,255)',
+            bodyFontColor: '#858796',
+            borderColor: '#dddfeb',
+            borderWidth: 1,
+            xPadding: 15,
+            yPadding: 15,
+            displayColors: false,
+            caretPadding: 10
+        },
+        legend: {
+            display: true,
+            position: 'bottom'
+        }
+    }
+});
+
+var ctx = document.getElementById('myPieChartSec');
+var myPieChartSec = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['K-POP', 'JAZZ', 'POP', 'HIPHOP', '동요'],
+        datasets: [
+            {
+                label: '%',
+                data: [57, 20, 13, 8, 2],
+                backgroundColor: ['rgb(68,169,168)', '#1cc88a', 'rgb(153, 158, 255)', 'rgb(149, 206, 255)', '#17dceb'],
+                hoverBackgroundColor: ['rgb(43,144,143)', 'rgb(128, 133, 233)', 'rgb(128, 133, 233)', 'rgb(124, 181, 236)', '#009fab'],
                 hoverBorderColor: 'rgba(234, 236, 244, 1)'
             }
         ]
@@ -183,7 +251,7 @@ var myBarChart = new Chart(ctx, {
 
 // Area Chart
 var ctx = document.getElementById('myAreaChart');
-var myLineChart = new Chart(ctx, {
+var myAreaChart = new Chart(ctx, {
     type: 'line',
     data: {
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
