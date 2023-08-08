@@ -10,7 +10,7 @@ h1 {
 }
 
 .bold {
-    font-weight: $bold;
+    font-weight: $bold !important;
 }
 .title-box {
     .title {
@@ -18,6 +18,11 @@ h1 {
     }
     .body-sub-title {
         color: $dis-color;
+    }
+    &.flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 }
 .title {
@@ -61,6 +66,7 @@ h1 {
     background: #fff;
     border-radius: 3.2rem;
     box-shadow: $shadow;
+    box-sizing: border-box;
 
     &.small {
         border-radius: 2.4rem;
@@ -344,6 +350,52 @@ h1 {
             height: 4.8rem;
             border-radius: 50%;
             overflow: hidden;
+        }
+    }
+    &.noti {
+        margin-top: 1.6rem;
+        li {
+            padding: 0;
+        }
+        a {
+            padding: 0.8rem;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .noti-img {
+            min-width: 4.8rem;
+            height: 4.8rem;
+            border-radius: 50%;
+            box-sizing: $sizing;
+            overflow: hidden;
+            border: 2px solid #e7e7e7;
+            overflow: hidden;
+        }
+        .noti-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex: 1 1 auto;
+            gap: 0.4rem;
+            .text {
+                line-height: 2.3rem;
+            }
+            .time-text {
+                font-size: 1.2rem;
+                line-height: 1.7rem;
+                color: #707070;
+            }
+        }
+        .noti-freeview {
+            min-width: 4.8rem;
+            height: 6.4rem;
+            border-radius: 1.6rem;
+            box-shadow: $shadow;
+            overflow: hidden;
+        }
+        .img {
+            width: 100%;
+            height: 100%;
         }
     }
 }

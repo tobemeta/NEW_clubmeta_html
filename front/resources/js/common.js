@@ -268,7 +268,7 @@ const ui = {
         }
 
         $(document).on('click', '.btn-inp-del', function () {
-            const $inp = $(this).siblings('input');
+            const $inp = $(this).siblings('input', 'textarea');
             $inp.val('').change().focus();
             $(this).parents('.input-box').removeClass('focus');
         });
@@ -374,6 +374,67 @@ const ui = {
                 });
             }
         },
+        makeOptionsRadio: function (select, btn) {
+            const $select = $(select);
+            const $btn = $(btn);
+            const $dataName = $('.select-rdo').data('name');
+            const $btnSel = $('.select-box .btn-confirm').text();
+            if (!$select.children().length) return;
+            const isPop = $select.hasClass(ui.select.className.selectPopClass.slice(1));
+
+            let $options = $(ui.select.className.optionsWrap);
+            if ($options.length) ui.select.reset();
+
+            const $title = $btn.attr('title');
+            let $optionHtml = '';
+            if (isPop) $optionHtml += '<div class="' + ui.select.className.selectPopWrap.slice(1) + '">';
+            $optionHtml += '<div class="' + ui.select.className.optionsWrap.slice(1) + ' rdo-options' + '">';
+            $optionHtml += '<h1>' + $title + '</h1>';
+            $optionHtml += '<ul>';
+            $select.children().each(function () {
+                const $this = $(this);
+                const $val = $this.attr('value');
+                const $text = $this.text();
+                const $seletedClass = $this.prop('selected') ? ' selected' : '';
+                $optionHtml += '<li>';
+                $optionHtml += '<div class="rdo-box cell">';
+                $optionHtml += '<input type="radio" name="' + $dataName + '" id="' + 'rdo' + $val + '" class="' + ui.select.className.option.slice(1) + $seletedClass + ' rdo-sel' + '">';
+                $optionHtml += '<label for="' + 'rdo' + $val + '">' + $text + '</label>';
+                $optionHtml += '</div">';
+                $optionHtml += '</li">';
+            });
+            $optionHtml += '</ul>';
+            $optionHtml += '<div class="btn-bottom-box">';
+            $optionHtml += '<button type="button" class="btn-primary btn-sel">' + $btnSel + '</button></div>';
+            $optionHtml += '</div>';
+
+            if (isPop) $optionHtml += '</div>';
+
+            $('body').append($optionHtml);
+            $options = $(ui.select.className.optionsWrap);
+            $options.data('select', select);
+
+            if (isPop) {
+                $options.animate({ bottom: 0 }, 500);
+            }
+
+            if (!isPop) {
+                let $top = $btn.offset().top + $btn.outerHeight();
+                let $left = $btn.offset().left;
+                const $width = $btn.outerWidth();
+                if ($top + $options.outerHeight() > $(window).scrollTop() + $(window).height() + 20) {
+                    $top = $top - $btn.outerHeight() - $options.outerHeight() - 2;
+                }
+                if ($left + $options.outerWidth() > $(window).scrollLeft() + $(window).width()) {
+                    $left = $left + $btn.outerWidth() - $options.outerWidth();
+                }
+                $options.css({
+                    top: $top + 2,
+                    left: $left,
+                    minWidth: $width
+                });
+            }
+        },
         reset: function () {
             const $options = $(ui.select.className.optionsWrap);
             if (!$options.length) return;
@@ -413,6 +474,8 @@ const ui = {
 
                 if ($this.hasClass(ui.select.className.btnActive.slice(1))) {
                     ui.select.reset();
+                } else if ($this.siblings('.select-rdo').length) {
+                    ui.select.makeOptionsRadio($select, $this);
                 } else {
                     $this.addClass(ui.select.className.btnActive.slice(1));
                     ui.select.makeOptions($select, $this);
@@ -427,11 +490,24 @@ const ui = {
                 const $closest = $this.closest(ui.select.className.optionsWrap);
                 const $select = $closest.data('select');
                 const $btn = $select.siblings(ui.select.className.btn);
-                $select.val($val).change();
-                ui.select.reset();
-                $btn.removeClass(ui.select.className.btnActive.slice(1)).focus();
 
-                $('body').removeClass('lock-body');
+                if ($this.hasClass('rdo-sel')) {
+                    $('.btn-sel').on('click', function () {
+                        $select.val($val).change();
+                        ui.select.reset();
+                        $btn.removeClass(ui.select.className.btnActive.slice(1)).focus();
+                        $('body').removeClass('lock-body');
+                    });
+                } else {
+                    $select.val($val).change();
+                    ui.select.reset();
+                    $btn.removeClass(ui.select.className.btnActive.slice(1)).focus();
+                    $('body').removeClass('lock-body');
+                }
+            });
+
+            $(document).on('change', '.rdo-sel', function () {
+                console.log(23232323232);
             });
 
             //out click

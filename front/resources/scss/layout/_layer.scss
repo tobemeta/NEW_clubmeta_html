@@ -78,6 +78,7 @@
                 }
             }
             .header-center {
+                display: flex;
                 flex: 1;
             }
             .header-right {
@@ -116,6 +117,13 @@
     &.bottom {
         .layer-popup {
             max-width: 100%;
+            padding: 0;
+        }
+        .layer-header {
+            padding: 2rem 1.6rem 0 1.6rem;
+        }
+        .layer-content {
+            padding-bottom: 2.4rem;
         }
     }
 }
@@ -164,6 +172,9 @@
         background: #fff;
         box-sizing: $sizing;
     }
+    .layer-inner {
+        padding: 0 1.6rem;
+    }
     .btn-box {
         display: flex;
         margin-top: auto;
@@ -171,7 +182,7 @@
         box-sizing: $sizing;
         gap: 1.6rem;
         .btn {
-            background: #fff;
+            background-color: #fff;
             border: 0;
             font-weight: $normal;
             box-shadow: $shadow;
@@ -219,14 +230,21 @@
             margin-top: 3.6rem;
         }
     }
+    .layer-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
 }
 .toast-wrap {
     position: fixed;
     left: 50%;
-    width: calc(100% - 4rem);
+    // width: calc(100% - 4rem);
     min-height: 3rem;
     transform: translateX(-50%);
     pointer-events: none;
+    z-index: 999;
     &.top {
         top: 5rem;
     }
@@ -238,9 +256,10 @@
     display: none;
     width: 100%;
     .toast-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         position: relative;
-        width: 100%;
-        min-height: 4rem;
         padding: 1.4rem 1.6rem;
         border-radius: 1.6rem;
         background: rgba(17, 17, 17, 0.6);
@@ -250,6 +269,36 @@
         font-size: 1.4rem;
         line-height: 2rem;
         color: #fff;
+        &.check {
+            position: relative;
+            padding-left: 3.4rem;
+            &:before {
+                display: block;
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 2.4rem;
+                height: 2.4rem;
+                @include bg($src: '../images/ico/ico_w_check.svg', $po: center);
+                transform: translateY(-50%);
+            }
+        }
+        &.warning {
+            position: relative;
+            padding-left: 3.4rem;
+            &:before {
+                display: block;
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 2.4rem;
+                height: 2.4rem;
+                @include bg($src: '../images/ico/ico_w_warning.svg', $po: center);
+                transform: translateY(-50%);
+            }
+        }
     }
     .btn-close {
         @include bg($src: '../images/btn/btn_close.svg');
@@ -318,6 +367,7 @@
             }
         }
     }
-    .help-box {
+    .btn-box {
+        gap: 0.8rem;
     }
 }
