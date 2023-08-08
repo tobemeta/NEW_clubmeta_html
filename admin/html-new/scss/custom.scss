@@ -641,6 +641,19 @@ optgroup {
 }
 
 //대시보드
+.ico-new {
+    position: relative;
+    &::after {
+        content: 'N';
+        position: absolute;
+        right: -1.2rem;
+        top: 0;
+        display: block;
+        color: var(--red);
+        font-weight: 800;
+        font-size: 0.9rem;
+    }
+}
 .dashboard-box {
     background: var(--gray-dark);
     border-radius: $border-radius-lg;

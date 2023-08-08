@@ -106,39 +106,39 @@ var myPieChart = new Chart(ctx, {
     }
 });
 
-var ctx = document.getElementById('myPieChartSec');
-var myPieChartSec = new Chart(ctx, {
-    type: 'pie',
-    data: {
-        labels: ['K-POP', 'JAZZ', 'POP', 'HIPHOP', '동요'],
-        datasets: [
-            {
-                label: '%',
-                data: [57, 20, 13, 8, 2],
-                backgroundColor: ['rgb(68,169,168)', '#1cc88a', 'rgb(153, 158, 255)', 'rgb(149, 206, 255)', '#17dceb'],
-                hoverBackgroundColor: ['rgb(43,144,143)', 'rgb(128, 133, 233)', 'rgb(128, 133, 233)', 'rgb(124, 181, 236)', '#009fab'],
-                hoverBorderColor: 'rgba(234, 236, 244, 1)'
-            }
-        ]
-    },
-    options: {
-        maintainAspectRatio: false,
-        tooltips: {
-            backgroundColor: 'rgb(255,255,255)',
-            bodyFontColor: '#858796',
-            borderColor: '#dddfeb',
-            borderWidth: 1,
-            xPadding: 15,
-            yPadding: 15,
-            displayColors: false,
-            caretPadding: 10
-        },
-        legend: {
-            display: true,
-            position: 'bottom'
-        }
-    }
-});
+// var ctx = document.getElementById('myPieChartSec');
+// var myPieChartSec = new Chart(ctx, {
+//     type: 'pie',
+//     data: {
+//         labels: ['K-POP', 'JAZZ', 'POP', 'HIPHOP', '동요'],
+//         datasets: [
+//             {
+//                 label: '%',
+//                 data: [57, 20, 13, 8, 2],
+//                 backgroundColor: ['rgb(68,169,168)', '#1cc88a', 'rgb(153, 158, 255)', 'rgb(149, 206, 255)', '#17dceb'],
+//                 hoverBackgroundColor: ['rgb(43,144,143)', 'rgb(128, 133, 233)', 'rgb(128, 133, 233)', 'rgb(124, 181, 236)', '#009fab'],
+//                 hoverBorderColor: 'rgba(234, 236, 244, 1)'
+//             }
+//         ]
+//     },
+//     options: {
+//         maintainAspectRatio: false,
+//         tooltips: {
+//             backgroundColor: 'rgb(255,255,255)',
+//             bodyFontColor: '#858796',
+//             borderColor: '#dddfeb',
+//             borderWidth: 1,
+//             xPadding: 15,
+//             yPadding: 15,
+//             displayColors: false,
+//             caretPadding: 10
+//         },
+//         legend: {
+//             display: true,
+//             position: 'bottom'
+//         }
+//     }
+// });
 
 function number_format(number, decimals, dec_point, thousands_sep) {
     // *     example: number_format(1234.56, 2, ',', ' ');

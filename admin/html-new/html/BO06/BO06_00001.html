@@ -59,19 +59,19 @@
                                                                 <tbody>
                                                                     <tr data-index="0">
                                                                         <td class="text-left">
-                                                                            <a href="#" class="ellipsis-1">음원 승인이 완료되었습니다.</a>
+                                                                            <a href="#" class="text-truncate"><span class="ico-new">음원 승인이 완료되었습니다.</span></a>
                                                                         </td>
                                                                         <td class="text-right"><small class="text-nowrap">YYYY.MM.DD</small></td>
                                                                     </tr>
                                                                     <tr data-index="1">
                                                                         <td class="text-left">
-                                                                            <a href="#" class="ellipsis-1">신청한 정산 금액이 지급되었습니다.</a>
+                                                                            <a href="#" class="text-truncate"><span class="">신청한 정산 금액이 지급되었습니다.</span></a>
                                                                         </td>
                                                                         <td class="text-right"><small class="text-nowrap">YYYY.MM.DD</small></td>
                                                                     </tr>
                                                                     <tr data-index="2">
                                                                         <td class="text-left">
-                                                                            <a href="#" class="ellipsis-1">개최한 음원 챌린지가 종료되었습니다.</a>
+                                                                            <a href="#" class="text-truncate"><span class="">개최한 음원 챌린지가 종료되었습니다.</span></a>
                                                                         </td>
                                                                         <td class="text-right"><small class="text-nowrap">YYYY.MM.DD</small></td>
                                                                     </tr>
@@ -253,6 +253,87 @@
                                                         </div>
                                                     </div>
                                                     <canvas id="myPieChartSec" width="" height="216" style="display: block" class="chartjs-render-monitor"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card shadow dash-chart-box mt-3">
+                                            <!-- Card Header - Dropdown -->
+                                            <div class="card-header py-3">
+                                                <h6 class="m-0 font-weight-bold text-dark">클럽메타 인기음원 Top 10</h6>
+                                            </div>
+                                            <!-- Card Body -->
+                                            <div class="card-body">
+                                                <div class="bootstrap-table bootstrap4">
+                                                    <div class="fixed-table-toolbar"></div>
+                                                    <div class="fixed-table-container" style="padding-bottom: 0px">
+                                                        <div class="fixed-table-header" style="display: none">
+                                                            <table></table>
+                                                        </div>
+                                                        <div class="fixed-table-body">
+                                                            <div class="fixed-table-loading table table-bordered table-hover" style="top: 42.7969px">
+                                                                <span class="loading-wrap">
+                                                                    <span class="loading-text">데이터를 불러오는 중입니다</span>
+                                                                    <span class="animation-wrap"><span class="animation-dot"></span></span>
+                                                                </span>
+                                                            </div>
+                                                            <table id="table03" class="table table-hover table-bordered" data-pagination="true">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th data-field="0">
+                                                                            <div class="th-inner">음원명</div>
+                                                                            <div class="fht-cell"></div>
+                                                                        </th>
+                                                                        <th data-field="1">
+                                                                            <div class="th-inner">작곡가명</div>
+                                                                            <div class="fht-cell"></div>
+                                                                        </th>
+                                                                        <th data-field="2">
+                                                                            <div class="th-inner">장르</div>
+                                                                            <div class="fht-cell"></div>
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr class="" data-index="0">
+                                                                        <td>음원제목</td>
+                                                                        <td>작곡가명</td>
+                                                                        <td>재즈</td>
+                                                                    </tr>
+                                                                    <tr data-index="1">
+                                                                        <td>음원제목</td>
+                                                                        <td>작곡가명</td>
+                                                                        <td>K-POP</td>
+                                                                    </tr>
+                                                                    <tr data-index="2">
+                                                                        <td>음원제목</td>
+                                                                        <td>작곡가명</td>
+                                                                        <td>힙합/랩</td>
+                                                                    </tr>
+                                                                    <tr data-index="3">
+                                                                        <td>음원제목</td>
+                                                                        <td>작곡가명</td>
+                                                                        <td>POP</td>
+                                                                    </tr>
+                                                                    <tr data-index="4">
+                                                                        <td>음원제목</td>
+                                                                        <td>작곡가명</td>
+                                                                        <td>키즈</td>
+                                                                    </tr>
+                                                                    <tr data-index="5">
+                                                                        <td>음원제목</td>
+                                                                        <td>작곡가명</td>
+                                                                        <td>장르</td>
+                                                                    </tr>
+                                                                    <tr data-index="6">
+                                                                        <td>음원제목</td>
+                                                                        <td>작곡가명</td>
+                                                                        <td>장르</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <div class="fixed-table-footer"></div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -550,132 +631,156 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mt-5 pb-6">
-                                <div class="col-md-6">
-                                    <div class="card shadow dash-chart-box">
-                                        <!-- Card Header - Dropdown -->
-                                        <div class="card-header py-3">
-                                            <h6 class="m-0 font-weight-bold text-dark">일자별 요약</h6>
-                                        </div>
-                                        <!-- Card Body -->
-                                        <div class="card-body">
-                                            <div class="bootstrap-table bootstrap4">
-                                                <div class="fixed-table-toolbar"></div>
-                                                <div class="fixed-table-container" style="padding-bottom: 0px">
-                                                    <div class="fixed-table-header" style="display: none">
-                                                        <table></table>
-                                                    </div>
-                                                    <div class="fixed-table-body">
-                                                        <div class="fixed-table-loading table table-bordered table-hover" style="top: 42.7969px">
-                                                            <span class="loading-wrap">
-                                                                <span class="loading-text">데이터를 불러오는 중입니다</span>
-                                                                <span class="animation-wrap"><span class="animation-dot"></span></span>
-                                                            </span>
-                                                        </div>
-                                                        <table id="table03" class="table table-hover table-bordered" data-pagination="true">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th data-field="0">
-                                                                        <div class="th-inner">일자</div>
-                                                                        <div class="fht-cell"></div>
-                                                                    </th>
-                                                                    <th data-field="1">
-                                                                        <div class="th-inner">업로드<br />영상 수</div>
-                                                                        <div class="fht-cell"></div>
-                                                                    </th>
-                                                                    <th data-field="2">
-                                                                        <div class="th-inner">챌린지<br />오픈 횟수</div>
-                                                                        <div class="fht-cell"></div>
-                                                                    </th>
-                                                                    <th data-field="3">
-                                                                        <div class="th-inner">영상 노출 수</div>
-                                                                        <div class="fht-cell"></div>
-                                                                    </th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr class="" data-index="0">
-                                                                    <td>2023.07.27</td>
-                                                                    <td>264</td>
-                                                                    <td>10</td>
-                                                                    <td>20,010</td>
-                                                                </tr>
-                                                                <tr data-index="1">
-                                                                    <td>2023.07.26</td>
-                                                                    <td>197</td>
-                                                                    <td>5</td>
-                                                                    <td>242,233</td>
-                                                                </tr>
-                                                                <tr data-index="2">
-                                                                    <td>2023.07.25</td>
-                                                                    <td>290</td>
-                                                                    <td>11</td>
-                                                                    <td>172,132</td>
-                                                                </tr>
-                                                                <tr data-index="3">
-                                                                    <td>2023.07.24</td>
-                                                                    <td>452</td>
-                                                                    <td>21</td>
-                                                                    <td>98,842</td>
-                                                                </tr>
-                                                                <tr data-index="4">
-                                                                    <td>2023.07.23</td>
-                                                                    <td>392</td>
-                                                                    <td>30</td>
-                                                                    <td>79,210</td>
-                                                                </tr>
-                                                                <tr data-index="5">
-                                                                    <td>2023.07.22</td>
-                                                                    <td>187</td>
-                                                                    <td>17</td>
-                                                                    <td>89,910</td>
-                                                                </tr>
-                                                                <tr data-index="6">
-                                                                    <td>2023.07.21</td>
-                                                                    <td>349</td>
-                                                                    <td>7</td>
-                                                                    <td>64,183</td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                    <div class="fixed-table-footer"></div>
-                                                </div>
+                                        <div class="card shadow dash-chart-box mt-3">
+                                            <!-- Card Header - Dropdown -->
+                                            <div class="card-header py-3">
+                                                <h6 class="m-0 font-weight-bold text-dark">BEST 영상</h6>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card shadow dash-chart-box">
-                                        <!-- Card Header - Dropdown -->
-                                        <div class="card-header py-3">
-                                            <h6 class="m-0 font-weight-bold text-dark">BEST 영상</h6>
-                                        </div>
-                                        <!-- Card Body -->
-                                        <div class="card-body">
-                                            <!-- 탭 메뉴 -->
-                                            <ul class="nav nav-tabs btn-tab" role="tablist">
-                                                <li class="nav-item" role="presentation">
-                                                    <button class="nav-link btn-tab-link active" id="sub-tab0001" data-toggle="tab" data-target="#sub-panel0001" type="button" role="tab">노출 수</button>
-                                                </li>
-                                                <li class="nav-item" role="presentation">
-                                                    <button class="nav-link btn-tab-link" id="sub-tab0002" data-toggle="tab" data-target="#sub-panel0002" type="button" role="tab">좋아요 수</button>
-                                                </li>
-                                                <li class="nav-item" role="presentation">
-                                                    <button class="nav-link btn-tab-link" id="sub-tab0003" data-toggle="tab" data-target="#sub-panel0003" type="button" role="tab">댓글 수</button>
-                                                </li>
-                                            </ul>
-                                            <!-- //탭 메뉴 -->
-                                            <div class="form-row mt-4 align-items-center">
-                                                <!-- 탭 컨탠츠 -->
-                                                <div class="tab-content">
-                                                    <div class="tab-pane fade show active" id="sub-panel0001" role="tabpanel" aria-labelledby="sub-tab0001">화면 디자인 요청</div>
-                                                    <div class="tab-pane fade" id="sub-panel0002" role="tabpanel" aria-labelledby="sub-tab0002">화면 디자인 요청</div>
-                                                    <div class="tab-pane fade" id="sub-panel0003" role="tabpanel" aria-labelledby="sub-tab0003">화면 디자인 요청</div>
-                                                    <!-- //탭 컨텐츠 -->
+                                            <!-- Card Body -->
+                                            <div class="card-body">
+                                                <!-- 탭 메뉴 -->
+                                                <ul class="nav nav-tabs btn-tab" role="tablist">
+                                                    <li class="nav-item" role="presentation">
+                                                        <button class="nav-link btn-tab-link active" id="sub-tab0001" data-toggle="tab" data-target="#sub-panel0001" type="button" role="tab">음원</button>
+                                                    </li>
+                                                    <li class="nav-item" role="presentation">
+                                                        <button class="nav-link btn-tab-link" id="sub-tab0002" data-toggle="tab" data-target="#sub-panel0002" type="button" role="tab">작곡가</button>
+                                                    </li>
+                                                </ul>
+                                                <!-- //탭 메뉴 -->
+                                                <div class="form-row mt-4 align-items-center">
+                                                    <!-- 탭 컨탠츠 -->
+                                                    <div class="tab-content">
+                                                        <div class="tab-pane fade show active" id="sub-panel0001" role="tabpanel" aria-labelledby="sub-tab0001">
+                                                            <div class="bootstrap-table bootstrap4">
+                                                                <div class="fixed-table-toolbar"></div>
+                                                                <div class="fixed-table-container" style="padding-bottom: 0px">
+                                                                    <div class="fixed-table-header" style="display: none">
+                                                                        <table></table>
+                                                                    </div>
+                                                                    <div class="fixed-table-body">
+                                                                        <div class="fixed-table-loading table table-bordered table-hover" style="top: 42.7969px">
+                                                                            <span class="loading-wrap">
+                                                                                <span class="loading-text">데이터를 불러오는 중입니다</span>
+                                                                                <span class="animation-wrap"><span class="animation-dot"></span></span>
+                                                                            </span>
+                                                                        </div>
+                                                                        <table id="table04" class="table table-hover" data-pagination="true">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th data-field="0">
+                                                                                        <div class="th-inner">댓글</div>
+                                                                                        <div class="fht-cell"></div>
+                                                                                    </th>
+                                                                                    <th data-field="1">
+                                                                                        <div class="th-inner">좋아요 수</div>
+                                                                                        <div class="fht-cell"></div>
+                                                                                    </th>
+                                                                                    <th data-field="2">
+                                                                                        <div class="th-inner">일자</div>
+                                                                                        <div class="fht-cell"></div>
+                                                                                    </th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr data-index="0">
+                                                                                    <td class="text-left"><a href="#none" class="text-truncate">[음원] 댓글내용댓글내용</a></td>
+                                                                                    <td>2,500</td>
+                                                                                    <td>3시간 전</td>
+                                                                                </tr>
+                                                                                <tr data-index="1">
+                                                                                    <td class="text-left"><a href="#none" class="text-truncate">[음원] 댓글내용댓글내용댓글내용댓글내용댓글내댓글내용댓글내용댓글내용댓글내용용댓글내용댓글내용댓글내용</a></td>
+                                                                                    <td>1,210</td>
+                                                                                    <td>6일 전</td>
+                                                                                </tr>
+                                                                                <tr data-index="2">
+                                                                                    <td class="text-left"><a href="#none" class="text-truncate">[음원] 댓글내용댓글내용</a></td>
+                                                                                    <td>4,520</td>
+                                                                                    <td>11주 전</td>
+                                                                                </tr>
+                                                                                <tr data-index="3">
+                                                                                    <td class="text-left"><a href="#none" class="text-truncate">[음원] 댓글내용댓글내용댓글내용댓글내용</a></td>
+                                                                                    <td>210</td>
+                                                                                    <td>13주 전</td>
+                                                                                </tr>
+                                                                                <tr data-index="4">
+                                                                                    <td class="text-left"><a href="#none" class="text-truncate">[음원] 댓글내용댓글내용댓글내용댓글내용댓글내용</a></td>
+                                                                                    <td>21</td>
+                                                                                    <td>145주 전</td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                    <div class="fixed-table-footer"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tab-pane fade" id="sub-panel0002" role="tabpanel" aria-labelledby="sub-tab0002">
+                                                            <div class="bootstrap-table bootstrap4">
+                                                                <div class="fixed-table-toolbar"></div>
+                                                                <div class="fixed-table-container" style="padding-bottom: 0px">
+                                                                    <div class="fixed-table-header" style="display: none">
+                                                                        <table></table>
+                                                                    </div>
+                                                                    <div class="fixed-table-body">
+                                                                        <div class="fixed-table-loading table table-bordered table-hover" style="top: 42.7969px">
+                                                                            <span class="loading-wrap">
+                                                                                <span class="loading-text">데이터를 불러오는 중입니다</span>
+                                                                                <span class="animation-wrap"><span class="animation-dot"></span></span>
+                                                                            </span>
+                                                                        </div>
+                                                                        <table id="table05" class="table table-hover" data-pagination="true">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th data-field="0">
+                                                                                        <div class="th-inner">댓글</div>
+                                                                                        <div class="fht-cell"></div>
+                                                                                    </th>
+                                                                                    <th data-field="1">
+                                                                                        <div class="th-inner">좋아요 수</div>
+                                                                                        <div class="fht-cell"></div>
+                                                                                    </th>
+                                                                                    <th data-field="2">
+                                                                                        <div class="th-inner">일자</div>
+                                                                                        <div class="fht-cell"></div>
+                                                                                    </th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr data-index="0">
+                                                                                    <td class="text-left"><a href="#none" class="text-truncate">[음원] 댓글내용댓글내용</a></td>
+                                                                                    <td>2,500</td>
+                                                                                    <td>3시간 전</td>
+                                                                                </tr>
+                                                                                <tr data-index="1">
+                                                                                    <td class="text-left"><a href="#none" class="text-truncate">[음원] 댓글내용댓글내용댓글내용댓글내용댓글내댓글내용댓글내용댓글내용댓글내용용댓글내용댓글내용댓글내용</a></td>
+                                                                                    <td>1,210</td>
+                                                                                    <td>6일 전</td>
+                                                                                </tr>
+                                                                                <tr data-index="2">
+                                                                                    <td class="text-left"><a href="#none" class="text-truncate">[음원] 댓글내용댓글내용</a></td>
+                                                                                    <td>4,520</td>
+                                                                                    <td>11주 전</td>
+                                                                                </tr>
+                                                                                <tr data-index="3">
+                                                                                    <td class="text-left"><a href="#none" class="text-truncate">[음원] 댓글내용댓글내용댓글내용댓글내용</a></td>
+                                                                                    <td>210</td>
+                                                                                    <td>13주 전</td>
+                                                                                </tr>
+                                                                                <tr data-index="4">
+                                                                                    <td class="text-left"><a href="#none" class="text-truncate">[음원] 댓글내용댓글내용댓글내용댓글내용댓글내용</a></td>
+                                                                                    <td>21</td>
+                                                                                    <td>145주 전</td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                    <div class="fixed-table-footer"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- //탭 컨텐츠 -->
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -703,4 +808,39 @@
     <script src="../../js/demo/datatables-demo.js"></script>
     <!-- Page level custom scripts -->
     <script src="../../js/chart_custom.js"></script>
+    <script>
+        var ctx = document.getElementById('myPieChartSec');
+        var myPieChartSec = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['K-POP', 'JAZZ', 'POP', 'HIPHOP', '동요'],
+                datasets: [
+                    {
+                        label: '%',
+                        data: [57, 20, 13, 8, 2],
+                        backgroundColor: ['rgb(68,169,168)', '#1cc88a', 'rgb(153, 158, 255)', 'rgb(149, 206, 255)', '#17dceb'],
+                        hoverBackgroundColor: ['rgb(43,144,143)', '#17a673', 'rgb(128, 133, 233)', 'rgb(124, 181, 236)', '#009fab'],
+                        hoverBorderColor: 'rgba(234, 236, 244, 1)'
+                    }
+                ]
+            },
+            options: {
+                maintainAspectRatio: false,
+                tooltips: {
+                    backgroundColor: 'rgb(255,255,255)',
+                    bodyFontColor: '#858796',
+                    borderColor: '#dddfeb',
+                    borderWidth: 1,
+                    xPadding: 15,
+                    yPadding: 15,
+                    displayColors: false,
+                    caretPadding: 10
+                },
+                legend: {
+                    display: true,
+                    position: 'bottom'
+                }
+            }
+        });
+    </script>
 </html>
