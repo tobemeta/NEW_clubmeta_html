@@ -1,32 +1,922 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>클럽메타 관리자 - 음원 정보</title>
+        <!-- js -->
+        <script src="../include/head.js"></script>
+        <script src="../../js/custom.js"></script>
+    </head>
 
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>클럽메다 관리자 - 레이아웃</title>
-    <script src="./include/head.js"></script>
-</head>
+    <body>
+        <!-- Page Wrapper -->
+        <div id="wrapper" class="wrapper">
+            <!-- 사이드바 -->
+            <div data-include="../include/sidebar_comp.html"></div>
+            <!-- //사이드바 -->
 
-<body>
-    <div id="wrapper" class="wrapper">
-        <div data-include="./include/sidebar.html"></div>
+            <!-- content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column bg-white">
+                <!-- 컨텐츠 본문 -->
+                <div id="content">
+                    <!--  -->
+                    <div data-include="../include/topbar_comp.html"></div>
 
-        <div id="content-wrapper" class="d-flex flex-column">
-            <div id="content">
-                <div data-include="./include/topbar.html"></div>
-                <div class="container-fluid"><span>참고사이트 :</span><a
-                        href="https://getbootstrap.com/docs/4.5/components/alerts/">https://getbootstrap.com/docs/4.5/components/alerts/</a>
+                    <div class="container-fluid" role="main">
+                        <!-- 페이지 경로 -->
+                        <div class="page-breadcrumb" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <i class="fas fa-home d-flex align-items-center"></i>
+                                </li>
+                                <li class="breadcrumb-item">음원관리</li>
+                                <li class="breadcrumb-item">음원</li>
+                                <li class="breadcrumb-item">음원 정보</li>
+                            </ol>
+                        </div>
+                        <!-- //페이지 경로 -->
+                        <div class="main">
+                            <!-- 제목 및 등록버튼 -->
+                            <div class="row clearfix mt-4 mb-4">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h2 class="h3 text-gray-800 float-left">음원 정보</h2>
+                                    <div class="float-right">
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="">음원 챌린지 오픈</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //제목 및 등록버튼 -->
+
+                            <!---//contents--->
+                            <div class="d-flex">
+                                <div class="col-auto">
+                                    <div class="preview-img -fix mw-25"><img src="../../images/img/img_aichallenge_thumbnail_01.png" alt="음원앨범이미지" /></div>
+                                    <div class="progress mt-3">
+                                        <button type="button" class="play"><i class="fas fa-play"></i></button>
+                                        <button type="button" class="pause d-none"><i class="fas fa-pause"></i></button>
+                                        <div class="progress-bar" role="progressbar" style="width: 13%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-box">
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label"><label for="">음원 타이틀</label></div>
+                                                <div class="form-box-cont">
+                                                    <div class="form-row">음원타이틀음원타이틀음원타이틀</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label">음원 길이</div>
+                                                <div class="form-box-cont">
+                                                    <div class="form-row">
+                                                        <span>00:45</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label">등록일</div>
+                                                <div class="form-box-cont">
+                                                    <div class="form-row">
+                                                        <span>2023.06.20</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label">장르</div>
+                                                <div class="form-box-cont">
+                                                    <div class="form-row">
+                                                        <span>케이팝/재즈/키즈</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label">해시태그</div>
+                                                <div class="form-box-cont">
+                                                    <div class="form-row">
+                                                        <span class="mr-2">#텍스트</span>
+                                                        <span class="mr-2">#텍스트</span>
+                                                        <span class="mr-2">#텍스트</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label">처리 상태</div>
+                                                <div class="form-box-cont">
+                                                    <div class="form-row">
+                                                        <span class="mr-2">승인</span>
+                                                        <span class="mr-2">-</span>
+                                                        <span class="mr-2">2023.08.03</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dashboard-box mt-4">
+                                <div class="dashboard">
+                                    <dl>
+                                        <dt>사용자 수</dt>
+                                        <dd><strong class="fz-lg fc-yellow">264</strong></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>클립 수(챌린지/일반)</dt>
+                                        <dd><strong class="fz-lg fc-yellow">231,0214</strong></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>좋아요</dt>
+                                        <dd><strong class="fz-lg fc-yellow">2,439</strong></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>댓글</dt>
+                                        <dd><strong class="fz-lg fc-yellow">100,684</strong></dd>
+                                    </dl>
+                                    <dl class="">
+                                        <dt>공유</dt>
+                                        <dd><strong class="fz-lg fc-yellow">210</strong></dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col-6">
+                                    <div class="card shadow dash-chart-box">
+                                        <!-- Card Header - Dropdown -->
+                                        <div class="card-header py-3">
+                                            <h6 class="m-0 font-weight-bold text-dark">음원이 영상에 쓰인 비율</h6>
+                                        </div>
+                                        <!-- Card Body -->
+                                        <div class="card-body">
+                                            <div class="chart-pie mt-5">
+                                                <div class="chartjs-size-monitor">
+                                                    <div class="chartjs-size-monitor-expand">
+                                                        <div class=""></div>
+                                                    </div>
+                                                    <div class="chartjs-size-monitor-shrink">
+                                                        <div class=""></div>
+                                                    </div>
+                                                </div>
+                                                <canvas id="myPieChart" width="" height="216" style="display: block" class="chartjs-render-monitor"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="card shadow dash-chart-box">
+                                        <!-- Card Header - Dropdown -->
+                                        <div class="card-header py-3">
+                                            <h6 class="m-0 font-weight-bold text-dark">사용한 유저 성별 비율</h6>
+                                        </div>
+                                        <!-- Card Body -->
+                                        <div class="card-body">
+                                            <div class="chart-pie">
+                                                <div class="chartjs-size-monitor">
+                                                    <div class="chartjs-size-monitor-expand">
+                                                        <div class=""></div>
+                                                    </div>
+                                                    <div class="chartjs-size-monitor-shrink">
+                                                        <div class=""></div>
+                                                    </div>
+                                                </div>
+
+                                                <canvas id="myDnChart" width="544" height="216" style="display: block; width: 344px; height: 116px" class="chartjs-render-monitor"></canvas>
+                                            </div>
+                                            <div class="chart-total">
+                                                <p class="mb-4">1,873</p>
+                                            </div>
+                                            <div class="form-box mt-3">
+                                                <div class="form-box-row">
+                                                    <div class="form-box-item">
+                                                        <div class="form-box-label label-m"><label for="">여성</label></div>
+                                                        <div class="form-box-cont d-flex align-items-center">
+                                                            <span class="align-middle"><strong>1,073명</strong></span>
+                                                            <span class="align-middle ml-2">65%</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-box-row">
+                                                    <div class="form-box-item">
+                                                        <div class="form-box-label label-m"><label for="">남성</label></div>
+                                                        <div class="form-box-cont d-flex align-items-center">
+                                                            <span class="align-middle"><strong>800명</strong></span>
+                                                            <span class="align-middle ml-2">35%</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col-6">
+                                    <div class="card shadow dash-chart-box">
+                                        <div class="card-header py-3">
+                                            <h6 class="m-0 font-weight-bold text-dark">업로드 시간대</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="chart-bar">
+                                                <div class="chartjs-size-monitor">
+                                                    <div class="chartjs-size-monitor-expand">
+                                                        <div class=""></div>
+                                                    </div>
+                                                    <div class="chartjs-size-monitor-shrink">
+                                                        <div class=""></div>
+                                                    </div>
+                                                </div>
+                                                <canvas id="myBarChart" width="100%" height="320" style="display: block; width: 100%" class="chartjs-render-monitor"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="card shadow dash-chart-box">
+                                        <!-- Card Header - Dropdown -->
+                                        <div class="card-header py-3">
+                                            <h6 class="m-0 font-weight-bold text-dark">Talk</h6>
+                                        </div>
+                                        <!-- Card Body -->
+                                        <div class="card-body">
+                                            <div class="bootstrap-table bootstrap4">
+                                                <div class="fixed-table-toolbar"></div>
+                                                <div class="fixed-table-container" style="padding-bottom: 0px">
+                                                    <div class="fixed-table-header" style="display: none">
+                                                        <table></table>
+                                                    </div>
+                                                    <div class="fixed-table-body">
+                                                        <div class="fixed-table-loading table table-bordered table-hover" style="top: 42.7969px">
+                                                            <span class="loading-wrap">
+                                                                <span class="loading-text">데이터를 불러오는 중입니다</span>
+                                                                <span class="animation-wrap"><span class="animation-dot"></span></span>
+                                                            </span>
+                                                        </div>
+                                                        <table id="table04" class="table table-hover" data-pagination="true">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th data-field="0" class="">
+                                                                        <div class="th-inner">댓글</div>
+                                                                        <div class="fht-cell"></div>
+                                                                    </th>
+                                                                    <th data-field="1">
+                                                                        <div class="th-inner">일자</div>
+                                                                        <div class="fht-cell"></div>
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr data-index="0">
+                                                                    <td class="text-left"><a href="#none" class="text-truncate">[음원] 댓글내용댓글내용</a></td>
+                                                                    <td>2023.07.11</td>
+                                                                </tr>
+                                                                <tr data-index="1">
+                                                                    <td class="text-left"><a href="#none" class="text-truncate">[음원] 댓글내용댓글내용댓글내용댓글내용댓글내댓글내용댓글내용댓글내용댓글내용용댓글내용댓글내용댓글내용</a></td>
+                                                                    <td>2023.07.11</td>
+                                                                </tr>
+                                                                <tr data-index="2">
+                                                                    <td class="text-left"><a href="#none" class="text-truncate">[음원] 댓글내용댓글내용</a></td>
+                                                                    <td>2023.07.11</td>
+                                                                </tr>
+                                                                <tr data-index="3">
+                                                                    <td class="text-left"><a href="#none" class="text-truncate">[음원] 댓글내용댓글내용댓글내용댓글내용</a></td>
+                                                                    <td>2023.07.11</td>
+                                                                </tr>
+                                                                <tr data-index="4">
+                                                                    <td class="text-left"><a href="#none" class="text-truncate">[음원] 댓글내용댓글내용댓글내용댓글내용댓글내용</a></td>
+                                                                    <td>2023.07.11</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div class="fixed-table-footer"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix mt-5 mb-4">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h2 class="h3 text-gray-800 float-left">음원이 사용된 챌린지 및 영상</h2>
+                                </div>
+                            </div>
+                            <ul class="nav nav-tabs sub-tab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="sub-tab1" data-toggle="tab" data-target="#sub-panel1" type="button" role="tab">AI챌린지</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="sub-tab2" data-toggle="tab" data-target="#sub-panel2" type="button" role="tab">음원 챌린지</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="sub-tab3" data-toggle="tab" data-target="#sub-panel3" type="button" role="tab">일반 영상</button>
+                                </li>
+                            </ul>
+                            <!-- 탭컨텐츠 -->
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="sub-panel1" role="tabpanel" aria-labelledby="sub-tab1">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <div class="dashboard-box">
+                                                <div class="dashboard-header border-bottom border-secondary mb-3">
+                                                    <h6 class="h6 text-light pb-1">성비</h6>
+                                                </div>
+                                                <div class="dashboard">
+                                                    <dl>
+                                                        <dt class="ico"><i class="fas fa-male"></i></dt>
+                                                        <dd><strong class="fz-lg fc-yellow">500 (<span>50%</span>)</strong></dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt class="ico"><i class="fas fa-female"></i></dt>
+                                                        <dd><strong class="fz-lg fc-yellow">500 (<span>50%</span>)</strong></dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-8 align-items-stretch">
+                                            <div class="dashboard-box h-100">
+                                                <div class="dashboard h-100 align-items-center">
+                                                    <dl>
+                                                        <dt>총 영상수</dt>
+                                                        <dd><strong class="fz-lg fc-yellow">264</strong></dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>총 노출수</dt>
+                                                        <dd><strong class="fz-lg fc-yellow">231,0214</strong></dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>총 도달수</dt>
+                                                        <dd><strong class="fz-lg fc-yellow">2,439</strong></dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="title-wrap mt-4">
+                                        <div class="left">전체 <strong class="fc-red">15</strong>건</div>
+                                        <div class="right">
+                                            <select class="custom-select custom-select-sm">
+                                                <option value="1">10</option>
+                                                <option value="2">25</option>
+                                                <option value="3">50</option>
+                                                <option value="4">100</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="bootstrap-table bootstrap4">
+                                        <div class="fixed-table-toolbar"></div>
+                                        <div class="fixed-table-container" style="padding-bottom: 0px">
+                                            <div class="fixed-table-header" style="display: none">
+                                                <table></table>
+                                            </div>
+                                            <div class="fixed-table-body">
+                                                <div class="fixed-table-loading table table-bordered table-hover" style="top: 42.7969px">
+                                                    <span class="loading-wrap">
+                                                        <span class="loading-text">데이터를 불러오는 중입니다</span>
+                                                        <span class="animation-wrap"><span class="animation-dot"></span></span>
+                                                    </span>
+                                                </div>
+                                                <table id="dataTable" class="table table-hover table-bordered" data-pagination="true">
+                                                    <thead>
+                                                        <tr>
+                                                            <th data-field="1">
+                                                                <div class="th-inner">번호</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="2">
+                                                                <div class="th-inner">챌린지명</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="3">
+                                                                <div class="th-inner">영상 길이</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="4">
+                                                                <div class="th-inner">챌린지 기간</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="5">
+                                                                <div class="th-inner">챌린지 참가자 수</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="6">
+                                                                <div class="th-inner">좋아요</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="7">
+                                                                <div class="th-inner">뷰</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- <tr class="no-records-found">
+                                                        <td colspan="8">해당 데이터가 없습니다.</td>
+                                                        </tr> -->
+                                                        <tr class="tr-fixed" data-index="0">
+                                                            <td>10</td>
+                                                            <td class="text-left"><a href="#none" data-toggle="modal" data-target="#aiInfoModal">음원챌린지명</a></td>
+                                                            <td>00:45</td>
+                                                            <td>2023.06.26 ~ 2023.06.26</td>
+                                                            <td>210</td>
+                                                            <td>1,210</td>
+                                                            <td>85</td>
+                                                        </tr>
+                                                        <tr data-index="1">
+                                                            <td>9</td>
+                                                            <td class="text-left"><a href="#none" data-toggle="modal" data-target="#aiInfoModal">음원챌린지명</a></td>
+                                                            <td>00:45</td>
+                                                            <td>종료</td>
+                                                            <td>210</td>
+                                                            <td>12,210</td>
+                                                            <td>285</td>
+                                                        </tr>
+                                                        <tr data-index="2">
+                                                            <td>8</td>
+                                                            <td class="text-left"><a href="#none" data-toggle="modal" data-target="#aiInfoModal">음원챌린지명</a></td>
+                                                            <td>00:45</td>
+                                                            <td>2023.06.26 ~ 2023.11.26</td>
+                                                            <td>210</td>
+                                                            <td>1,210</td>
+                                                            <td>185</td>
+                                                        </tr>
+                                                        <tr data-index="3">
+                                                            <td>7</td>
+                                                            <td class="text-left"><a href="#none" data-toggle="modal" data-target="#aiInfoModal">음원챌린지명</a></td>
+                                                            <td>00:45</td>
+                                                            <td>2023.06.26 ~ 2023.09.26</td>
+                                                            <td>210</td>
+                                                            <td>10</td>
+                                                            <td>850</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="fixed-table-footer"></div>
+                                        </div>
+
+                                        <div class="fixed-table-pagination">
+                                            <div class="pagination-detail"></div>
+                                            <!-- 왼쪽 버튼 영역 -->
+                                            <div class="float-left"></div>
+                                            <!-- 오른쪽 버튼 영역 -->
+                                            <div class="float-right"></div>
+                                            <div class="pagination">
+                                                <ul class="pagination">
+                                                    <li class="page-item page-pre"><a class="page-link" aria-label="previous page" href="javascript:void(0)">‹</a></li>
+                                                    <li class="page-item active"><a class="page-link" aria-label="to page 1" href="javascript:void(0)">1</a></li>
+                                                    <li class="page-item"><a class="page-link" aria-label="to page 2" href="javascript:void(0)">2</a></li>
+                                                    <li class="page-item page-next"><a class="page-link" aria-label="next page" href="javascript:void(0)">›</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="sub-panel2" role="tabpanel" aria-labelledby="sub-tab2">동일내용</div>
+                                <div class="tab-pane fade" id="sub-panel3" role="tabpanel" aria-labelledby="sub-tab3">동일내용</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Scroll to Top Button-->
-    <div data-include="./include/topbtn.html"></div>
+        <!-- Scroll to Top Button-->
+        <div data-include="../include/topbtn.html"></div>
 
-    <!-- Logout Modal-->
-    <div data-include="./include/logoutModal.html"></div>
-</body>
+        <!-- Logout Modal-->
+        <div data-include="../include/logoutModal.html"></div>
+        <div class="modal fade large" id="aiInfoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">AI챌린지 정보</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row clearfix mb-4">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <h2 class="h3 text-gray-800 float-left">챌린지 정보</h2>
+                            </div>
+                        </div>
+                        <div class="form-box">
+                            <div class="form-box-row">
+                                <div class="form-box-item">
+                                    <div class="form-box-label">챌린지 명</div>
+                                    <div class="form-box-cont col-md-5">
+                                        <div class="form-row">
+                                            <span>AI챌린지이름</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-label">챌린지 오플 유저</div>
+                                    <div class="form-box-cont col-md-5">
+                                        <div class="form-row">
+                                            <span>clubmeta0101</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-box-row">
+                                <div class="form-box-item">
+                                    <div class="form-box-label">상태</div>
+                                    <div class="form-box-cont col-md-5">
+                                        <div class="form-row">
+                                            <span class="mr-2">종료 (</span>
+                                            <span class="mr-2">순위 발표 완료</span>
+                                            <span class="mr-2">/</span>
+                                            <span class="mr-2">2023.06.10 17:00:15</span>
+                                            <span class="mr-2">)</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-label">리워드 총액</div>
+                                    <div class="form-box-cont col-md-5">
+                                        <div class="form-row">
+                                            <span class="mr-2">500</span>
+                                            <span class="mr-2">Shoe</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-box-row">
+                                <div class="form-box-item">
+                                    <div class="form-box-label">챌린지 기간</div>
+                                    <div class="form-box-cont col-md-5">
+                                        <div class="form-row">
+                                            <span class="mr-2">2023.06.01 13:00:00</span>
+                                            <span class="mr-2">~</span>
+                                            <span class="mr-2">2023.06.08 13:00:00</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-label">사용 음원</div>
+                                    <div class="form-box-cont col-md-5">
+                                        <div class="form-row">
+                                            <span>음원타이틀 명</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-box-row">
+                                <div class="form-box-item">
+                                    <div class="form-box-label">작곡가 명</div>
+                                    <div class="form-box-cont col-md-5">
+                                        <div class="form-row">
+                                            <span>작곡가 이름</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-label">사용 음원 길이</div>
+                                    <div class="form-box-cont col-md-5">
+                                        <div class="form-row">
+                                            <span class="mr-2">00:45</span>
+                                            <span class="mr-2">/</span>
+                                            <span class="mr-2">01:00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix mt-5 mb-1">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <h2 class="h3 text-gray-800 float-left">참가 영상 리스트</h2>
+                            </div>
+                        </div>
+                        <div class="title-wrap">
+                            <div class="left">전체 <strong class="fc-red">15</strong>건</div>
+                            <div class="right">
+                                <select class="custom-select custom-select-sm">
+                                    <option value="1">10</option>
+                                    <option value="2">25</option>
+                                    <option value="3">50</option>
+                                    <option value="4">100</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="bootstrap-table bootstrap4">
+                            <div class="fixed-table-toolbar"></div>
+                            <div class="fixed-table-container" style="padding-bottom: 0px">
+                                <div class="fixed-table-header" style="display: none">
+                                    <table></table>
+                                </div>
+                                <div class="fixed-table-body">
+                                    <div class="fixed-table-loading table table-bordered table-hover" style="top: 42.7969px">
+                                        <span class="loading-wrap">
+                                            <span class="loading-text">데이터를 불러오는 중입니다</span>
+                                            <span class="animation-wrap"><span class="animation-dot"></span></span>
+                                        </span>
+                                    </div>
+                                    <table id="dataTable1" class="table table-hover table-bordered" data-pagination="true">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="1">
+                                                    <div class="th-inner">번호</div>
+                                                    <div class="fht-cell"></div>
+                                                </th>
+                                                <th data-field="2">
+                                                    <div class="th-inner">닉게임</div>
+                                                    <div class="fht-cell"></div>
+                                                </th>
+                                                <th data-field="3">
+                                                    <div class="th-inner">게시일</div>
+                                                    <div class="fht-cell"></div>
+                                                </th>
+                                                <th data-field="4">
+                                                    <div class="th-inner">노출 수</div>
+                                                    <div class="fht-cell"></div>
+                                                </th>
+                                                <th data-field="5">
+                                                    <div class="th-inner">댓글 수</div>
+                                                    <div class="fht-cell"></div>
+                                                </th>
+                                                <th data-field="6">
+                                                    <div class="th-inner">좋아요 수</div>
+                                                    <div class="fht-cell"></div>
+                                                </th>
+                                                <th data-field="7">
+                                                    <div class="th-inner">공유 횟수</div>
+                                                    <div class="fht-cell"></div>
+                                                </th>
+                                                <th data-field="8">
+                                                    <div class="th-inner">투표수</div>
+                                                    <div class="fht-cell"></div>
+                                                </th>
+                                                <th data-field="9">
+                                                    <div class="th-inner">AI 점수</div>
+                                                    <div class="fht-cell"></div>
+                                                </th>
+                                                <th data-field="10">
+                                                    <div class="th-inner">랭킹</div>
+                                                    <div class="fht-cell"></div>
+                                                </th>
+                                                <th class="no-sorting" data-field="11">
+                                                    <div class="th-inner">프리뷰</div>
+                                                    <div class="fht-cell"></div>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- <tr class="no-records-found">
+                                            <td colspan="8">해당 데이터가 없습니다.</td>
+                                            </tr> -->
+                                            <tr class="" data-index="0">
+                                                <td>10</td>
+                                                <td>metaclub00</td>
+                                                <td>2023.06.26 16:00:00</td>
+                                                <td>130</td>
+                                                <td>12</td>
+                                                <td>25</td>
+                                                <td>30</td>
+                                                <td>20</td>
+                                                <td>90</td>
+                                                <td>1</td>
+                                                <td>
+                                                    <a href="#none"><img class="data-img" src="../../images/img/img_aichallenge_thumbnail_01.png" alt="" /></a>
+                                                </td>
+                                            </tr>
+                                            <tr data-index="1">
+                                                <td>9</td>
+                                                <td>metaclub00</td>
+                                                <td>2023.06.26 16:00:00</td>
+                                                <td>130</td>
+                                                <td>12</td>
+                                                <td>25</td>
+                                                <td>30</td>
+                                                <td>20</td>
+                                                <td>90</td>
+                                                <td>1</td>
+                                                <td>
+                                                    <a href="#none"><img class="data-img" src="../../images/img/img_aichallenge_thumbnail_01.png" alt="" /></a>
+                                                </td>
+                                            </tr>
+                                            <tr data-index="2">
+                                                <td>8</td>
+                                                <td>metaclub00</td>
+                                                <td>2023.06.26 16:00:00</td>
+                                                <td>130</td>
+                                                <td>12</td>
+                                                <td>25</td>
+                                                <td>30</td>
+                                                <td>20</td>
+                                                <td>90</td>
+                                                <td>1</td>
+                                                <td>
+                                                    <a href="#none"><img class="data-img" src="../../images/img/img_aichallenge_thumbnail_01.png" alt="" /></a>
+                                                </td>
+                                            </tr>
+                                            <tr data-index="3">
+                                                <td>7</td>
+                                                <td>metaclub00</td>
+                                                <td>2023.06.26 16:00:00</td>
+                                                <td>130</td>
+                                                <td>12</td>
+                                                <td>25</td>
+                                                <td>30</td>
+                                                <td>20</td>
+                                                <td>90</td>
+                                                <td>1</td>
+                                                <td>
+                                                    <a href="#none"><img class="data-img" src="../../images/img/img_aichallenge_thumbnail_01.png" alt="" /></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="fixed-table-footer"></div>
+                            </div>
 
+                            <div class="fixed-table-pagination">
+                                <div class="pagination-detail"></div>
+                                <!-- 왼쪽 버튼 영역 -->
+                                <div class="float-left"></div>
+                                <!-- 오른쪽 버튼 영역 -->
+                                <div class="float-right"></div>
+                                <div class="pagination">
+                                    <ul class="pagination">
+                                        <li class="page-item page-pre"><a class="page-link" aria-label="previous page" href="javascript:void(0)">‹</a></li>
+                                        <li class="page-item active"><a class="page-link" aria-label="to page 1" href="javascript:void(0)">1</a></li>
+                                        <li class="page-item"><a class="page-link" aria-label="to page 2" href="javascript:void(0)">2</a></li>
+                                        <li class="page-item page-next"><a class="page-link" aria-label="next page" href="javascript:void(0)">›</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">취소</button> -->
+                        <button type="button" class="btn btn-primary btn-lg">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="../../datatables/jquery.dataTables.min.js"></script>
+    <script src="../../datatables/dataTables.bootstrap4.min.js"></script>
+
+    <script src="../../lib/chart.js/plugins/chartjs-plugin-datalabels.min.js"></script>
+    <script src="../../lib/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="../../js/demo/datatables-demo.js"></script>
+    <script>
+        var ctx = document.getElementById('myPieChart');
+        var myPieChartSec = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['K-POP', 'JAZZ', 'POP', 'HIPHOP', '동요'],
+                datasets: [
+                    {
+                        label: '%',
+                        data: [57, 20, 13, 8, 2],
+                        backgroundColor: ['rgb(68,169,168)', '#1cc88a', 'rgb(153, 158, 255)', 'rgb(149, 206, 255)', '#17dceb'],
+                        hoverBackgroundColor: ['rgb(43,144,143)', '#17a673', 'rgb(128, 133, 233)', 'rgb(124, 181, 236)', '#009fab'],
+                        hoverBorderColor: 'rgba(234, 236, 244, 1)'
+                    }
+                ]
+            },
+            options: {
+                maintainAspectRatio: false,
+                tooltips: {
+                    backgroundColor: 'rgb(255,255,255)',
+                    bodyFontColor: '#858796',
+                    borderColor: '#dddfeb',
+                    borderWidth: 1,
+                    xPadding: 15,
+                    yPadding: 15,
+                    displayColors: false,
+                    caretPadding: 10
+                },
+                legend: {
+                    display: true,
+                    position: 'bottom'
+                }
+            }
+        });
+        var ctx = document.getElementById('myDnChart');
+        var myDnChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['여성', '남성'],
+                datasets: [
+                    {
+                        data: [55, 30],
+                        backgroundColor: ['#4e73df', '#1cc88a'],
+                        hoverBackgroundColor: ['#2e59d9', '#17a673'],
+                        hoverBorderColor: 'rgba(234, 236, 244, 1)'
+                    }
+                ]
+            },
+            options: {
+                maintainAspectRatio: false,
+                tooltips: {
+                    backgroundColor: 'rgb(255,255,255)',
+                    bodyFontColor: '#858796',
+                    borderColor: '#dddfeb',
+                    borderWidth: 1,
+                    xPadding: 15,
+                    yPadding: 15,
+                    displayColors: false,
+                    caretPadding: 10
+                },
+                legend: {
+                    display: true,
+                    position: 'bottom'
+                },
+                cutoutPercentage: 80
+            }
+        });
+
+        // Bar Chart
+        var ctx = document.getElementById('myBarChart');
+        var myBarChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Jul 17', 'Jul 18', 'Jul 19', 'Jul 20', 'Jul 21', 'Jul 22', 'Jul 23'],
+                datasets: [
+                    {
+                        label: '갯수',
+                        backgroundColor: '#4e73df',
+                        hoverBackgroundColor: '#2e59d9',
+                        borderColor: '#4e73df',
+                        data: [35, 10, 65, 95, 6, 74, 84]
+                    }
+                ]
+            },
+            options: {
+                maintainAspectRatio: false,
+                layout: {
+                    padding: {
+                        left: 25,
+                        right: 25,
+                        top: 15,
+                        bottom: 0
+                    }
+                },
+                scales: {
+                    xAxes: [
+                        {
+                            time: {
+                                unit: 'week'
+                            },
+                            gridLines: {
+                                display: false
+                            },
+                            ticks: {
+                                maxTicksLimit: 6
+                            },
+                            maxBarThickness: 25
+                        }
+                    ],
+                    yAxes: [
+                        {
+                            ticks: {
+                                min: 0,
+                                max: 100,
+                                display: false,
+                                drawBorder: false
+                                // callback: function (value, index, values) {
+                                //     return number_format(value);
+                                // }
+                            },
+                            gridLines: {
+                                display: true,
+                                drawBorder: false
+                            }
+                        }
+                    ]
+                },
+                legend: {
+                    display: false
+                },
+                tooltips: {
+                    titleMarginBottom: 10,
+                    titleFontColor: '#6e707e',
+                    titleFontSize: 14,
+                    backgroundColor: 'rgb(255,255,255)',
+                    bodyFontColor: '#858796',
+                    borderColor: '#dddfeb',
+                    borderWidth: 1,
+                    xPadding: 15,
+                    yPadding: 15,
+                    displayColors: false,
+                    caretPadding: 10
+                    // callbacks: {
+                    //     label: function (tooltipItem, chart) {
+                    //         var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
+                    //         return number_format(tooltipItem.yLabel) + ' ' + datasetLabel;
+                    //     }
+                    // }
+                }
+            }
+        });
+    </script>
 </html>

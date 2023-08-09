@@ -3,6 +3,17 @@ const ui = {
         const _this = this;
 
         _this.menuActive();
+
+        // Add event listener to play button
+        $('.progress .play').on('click', function () {
+            $(this).addClass('d-none');
+            $(this).siblings('.pause').removeClass('d-none');
+        });
+
+        $('.progress .pause').on('click', function () {
+            $(this).addClass('d-none');
+            $(this).siblings('.play').removeClass('d-none');
+        });
     },
     menuActive: function () {
         if ($('.sidebar').length) {

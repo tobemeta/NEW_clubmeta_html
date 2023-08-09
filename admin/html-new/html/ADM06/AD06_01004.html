@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>클럽메타 관리자 - AI챌린지 등록</title>
+        <!-- js -->
+        <script src="../include/head.js"></script>
+        <script src="../../js/custom.js"></script>
+    </head>
+
+    <body>
+        <!-- Page Wrapper -->
+        <div id="wrapper" class="wrapper">
+            <!-- 사이드바 -->
+            <div data-include="../include/sidebar.html"></div>
+            <!-- //사이드바 -->
+
+            <!-- content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column bg-white">
+                <!-- 컨텐츠 본문 -->
+                <div id="content">
+                    <!--  -->
+                    <div data-include="../include/topbar.html"></div>
+
+                    <div class="container-fluid" role="main">
+                        <!-- 페이지 경로 -->
+                        <div class="page-breadcrumb" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="#"><i class="fas fa-home d-flex align-items-center"></i></a>
+                                </li>
+                                <li class="breadcrumb-item">영상관리</li>
+                                <li class="breadcrumb-item">AI 챌린지 리스트</li>
+                                <li class="breadcrumb-item">AI 챌린지 등록</li>
+                            </ol>
+                        </div>
+                        <!-- //페이지 경로 -->
+                        <div class="main">
+                            <!-- 제목 및 등록버튼 -->
+                            <div class="row clearfix mt-4 mb-4">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h2 class="h3 text-gray-800 float-left">AI 챌린지 등록</h2>
+                                </div>
+                            </div>
+                            <!-- //제목 및 등록버튼 -->
+
+                            <!---//contents--->
+                            <form>
+                                <div class="form-box">
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label"><label for="">썸네일</label></div>
+                                            <div class="form-box-cont">
+                                                <div class="form-row">
+                                                    <div class="d-flex w-100">
+                                                        <div class="preview-img mw-25 mr-2"><img src="../../images/img/img_musicchallenge_thumbnail_05.png" alt="썸네일이미지" /></div>
+                                                        <div class="flex-grow-1 ml-2 align-self-end">
+                                                            <div class="custom-file w-50">
+                                                                <label class="custom-file-label" for="customFile" data-browse="파일선택">파일선택</label>
+                                                                <input type="file" class="custom-file-input" id="customFile" />
+                                                            </div>
+                                                            <div class="text-secondary mt-1">*등록종류: JPG, JPEG, ..... 문구변경예정</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label">기준영상</div>
+                                            <div class="form-box-cont">
+                                                <div class="form-row">
+                                                    <div class="custom-file w-25">
+                                                        <label class="custom-file-label" for="customFile01" data-browse="파일선택">파일선택</label>
+                                                        <input type="file" class="custom-file-input" id="customFile01" />
+                                                    </div>
+                                                    <div class="text-secondary w-100 mt-1">*등록종류: MP4, 용량: 1GB .....문구변경예정</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label">챌린지 명</div>
+                                            <div class="form-box-cont">
+                                                <div class="form-row">
+                                                    <div class="input-group w-50">
+                                                        <input type="text" class="form-control" placeholder="한글, 영문, 숫자, 특수기호 포함 최대 50자" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label">음원</div>
+                                            <div class="form-box-cont">
+                                                <div class="form-row flex-column align-items-start">
+                                                    <div class="custom-file w-25">
+                                                        <label class="custom-file-label" for="customFile03" data-browse="파일선택">파일선택</label>
+                                                        <input type="file" class="custom-file-input" id="customFile03" />
+                                                    </div>
+                                                    <div class="input-group w-50 mt-1">
+                                                        <input type="text" class="form-control" placeholder="음원검색을 선택해 사용할 음원을 검색하세요." />
+                                                        <div class="input-group-append">
+                                                            <button class="btn btn-outline-secondary" type="button" id="button-addon2">음원 검색</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-secondary w-100 mt-1">*음원을 업로드 할 경우 음원 검색을 통해 해당 음원을 꼭 선택해주세요.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label">기간</div>
+                                            <div class="form-box-cont">
+                                                <div class="input-daterange-btn">
+                                                    <div class="input-group">
+                                                        <input type="date" class="form-control" placeholder="시작일" />
+                                                        <div class="d-flex sm-3">
+                                                            <select class="custom-select rounded-0">
+                                                                <option value="1">00시</option>
+                                                            </select>
+                                                            <select class="custom-select rounded-0">
+                                                                <option value="1">00분</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text">~</div>
+                                                        </div>
+                                                        <input type="date" class="form-control" placeholder="종료일" />
+                                                        <div class="d-flex sm-3">
+                                                            <select class="custom-select rounded-0">
+                                                                <option value="1">00시</option>
+                                                            </select>
+                                                            <select class="custom-select">
+                                                                <option value="1">00분</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label">리워드</div>
+                                            <div class="form-box-cont">
+                                                <div class="form-row">
+                                                    <div class="w-100">
+                                                        <div class="input-group w-50 mb-1">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text" id="rank01">랭킹 1위</span>
+                                                            </div>
+                                                            <input type="text" class="form-control" aria-describedby="rank01" placeholder="숫자 입력" />
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">Shoe</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="w-100">
+                                                        <div class="input-group w-50 mb-1">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text" id="rank02">랭킹 2위</span>
+                                                            </div>
+                                                            <input type="text" class="form-control" aria-describedby="rank02" placeholder="숫자 입력" />
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">Shoe</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="w-100">
+                                                        <div class="input-group w-50 mb-1">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text" id="rank03">랭킹 3위</span>
+                                                            </div>
+                                                            <input type="text" class="form-control" aria-describedby="rank03" placeholder="숫자 입력" />
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">Shoe</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="w-100">
+                                                        <div class="form-box-row border-0">
+                                                            <div class="form-box-item">
+                                                                <div class="form-box-label">참가 리워드 지급</div>
+                                                                <div class="form-box-cont">
+                                                                    <div class="form-row">
+                                                                        <div class="form-group">
+                                                                            <div class="row">
+                                                                                <label class="custom-control custom-radio custom-control-inline">
+                                                                                    <input type="radio" name="rdo1" class="custom-control-input" />
+                                                                                    <span class="custom-control-label">사용</span>
+                                                                                </label>
+                                                                                <label class="custom-control custom-radio custom-control-inline">
+                                                                                    <input type="radio" name="rdo1" class="custom-control-input" />
+                                                                                    <span class="custom-control-label">미사용</span>
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="d-flex w-100 mt-2 align-items-center">
+                                                        <span class="col-auto mr-3 text-gray-800">참가 리워드</span>
+                                                        <div class="col">
+                                                            <div class="form-group m-0">
+                                                                <div class="row align-items-center">
+                                                                    <div class="col-md-2 p-0">
+                                                                        <div class="input-group">
+                                                                            <input type="text" class="form-control" placeholder="숫자 입력" />
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-auto">
+                                                                        <span>Shoe</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label">해시태그</div>
+                                            <div class="form-box-cont"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <div class="btn-wrap text-center mt-5">
+                                <button type="button" class="btn btn-lg btn-primary">영상 삭제</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll to Top Button-->
+        <div data-include="../include/topbtn.html"></div>
+
+        <!-- Logout Modal-->
+        <div data-include="../include/logoutModal.html"></div>
+        <!-- changePw Modal-->
+        <div data-include="../include/pop/changePwModal.html"></div>
+    </body>
+    <script src="../../datatables/jquery.dataTables.min.js"></script>
+    <script src="../../datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="../../lib/chart.js/plugins/chartjs-plugin-datalabels.min.js"></script>
+    <script src="../../lib/chart.js/Chart.min.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="../../js/demo/datatables-demo.js"></script>
+</html>

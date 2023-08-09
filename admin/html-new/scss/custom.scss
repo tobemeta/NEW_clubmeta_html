@@ -98,6 +98,12 @@ optgroup {
         height: 100%;
         object-fit: cover;
     }
+    &.-fix {
+        img {
+            height: 240px;
+            width: 240px;
+        }
+    }
 }
 .modal-footer {
     justify-content: center;
@@ -720,6 +726,9 @@ optgroup {
         align-items: center;
         justify-content: center;
         text-align: center;
+        &.ico {
+            font-size: 1.8rem;
+        }
     }
     dd {
         margin: 0.25rem 0 0 0;
