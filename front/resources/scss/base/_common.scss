@@ -77,6 +77,21 @@ h1 {
         display: inline-block;
         content: '#';
     }
+    &.blue {
+        display: inline-block;
+        padding: 0.6rem 1.2rem;
+        border: 1px solid #0f0ae3;
+        border-radius: 1.6rem;
+        box-sizing: $sizing;
+        font-weight: $bold;
+        color: #0f0ae3;
+    }
+}
+.tag-list {
+    display: flex;
+}
+.util-list {
+    display: flex;
 }
 .user-name {
     &:before {
