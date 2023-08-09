@@ -124,6 +124,11 @@
                 @include bg($src: '../images/ico/ico_lock.svg');
             }
         }
+        &.comment {
+            &::before {
+                background-image: url('../images/ico/ico_reply.svg');
+            }
+        }
     }
     &.focus {
         input {
@@ -197,6 +202,23 @@
         &:focus {
             border: 1px solid $base-color;
         }
+        &.autosize {
+        }
+        &.comment {
+            position: relative;
+            padding-left: 4.4rem;
+            &::before {
+                display: block;
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 1.6rem;
+                width: 2.4rem;
+                height: 2.4rem;
+                transform: translateY(-50%);
+                background-image: url('../images/ico/ico_reply.svg');
+            }
+        }
     }
     .byte {
         display: block;
@@ -206,6 +228,15 @@
         font-size: 1rem;
         line-height: 1.4rem;
         color: #585858;
+    }
+    .btn-inp-del {
+        display: none;
+        position: absolute;
+        top: 1.2rem;
+        right: 1.6rem;
+        width: 2.4rem;
+        height: 2.4rem;
+        @include bg($src: '../images/btn/btn_ip_delete.svg');
     }
 }
 
@@ -239,6 +270,10 @@
     select {
         appearance: none;
         @include bg($src: '../images/ico/ico_dropdown.svg');
+
+        & + .btn {
+            display: none;
+        }
     }
     .btn-select {
         background-color: #fff;
@@ -284,7 +319,7 @@
     background-color: #fff;
     box-shadow: 0 0.2rem 0.6rem rgba($color: #14245b, $alpha: 0.12);
     box-sizing: border-box;
-    z-index: 50;
+    z-index: 301;
     h1 {
         display: none;
     }
@@ -308,7 +343,12 @@
             font-weight: 500;
         }
     }
+    .btn-bottom-box {
+        position: static;
+        background: #fff;
+    }
 }
+
 .pop-select {
     position: fixed;
     left: 0;
@@ -329,12 +369,28 @@
             font-size: 2rem;
             padding: 2rem;
         }
+        ul {
+            max-height: 60vh;
+            overflow: hidden;
+            overflow-y: auto;
+        }
         .select-option {
             align-items: center;
             height: 4rem;
             padding: 0px 2rem;
             border-radius: 0;
             font-size: 1.6rem;
+        }
+    }
+    .rdo-options {
+        h1 {
+            padding-bottom: 0;
+        }
+        ul {
+            padding: 1.6rem;
+        }
+        li + li {
+            margin-top: 0.8rem;
         }
     }
 }

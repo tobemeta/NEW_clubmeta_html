@@ -42,7 +42,7 @@ $fs-10: 1rem;
 $fs-8: 0.8rem;
 
 // 박스
-$shadow: 0px 4px 12px 0px #14245b2e;
+$shadow: 0px 4px 12px 0px rgba(20, 36, 91, 0.18);
 $sizing: border-box;
 
 // 레이아웃
@@ -57,4 +57,4 @@ $snb-width: 23.6rem;
 $z-header: 200;
 $z-gnb: 190;
 $z-botArea: 200;
-$z-layer: 1000;
+$z-layer: 300;

@@ -1,35 +1,95 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-        <meta name="HandheldFriendly" content="true" />
-        <meta name="format-detection" content="telephone=no" />
-        <title>AI 챌린지 리스트 | 클럽메타</title>
-        <link rel="stylesheet" href="../../resources/css/common.min.css" />
-        <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
-        <script src="../../resources/js/lib/jquery-ui.min.js"></script>
-        <script src="../../resources/js/common.js"></script>
-    </head>
 
-    <body>
-        <div class="wrap">
-            <header class="header">
-                <div class="header-inner">
-                    <div class="header-left">
-                        <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
-                    </div>
-                    <div class="header-center"></div>
-                    <div class="header-right"><a href="#none" class="btn-search" role="button" title="검색">돋보기</a></div>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>AI 챌린지 리스트 | 클럽메타</title>
+    <link rel="stylesheet" href="../../resources/css/common.min.css" />
+    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="header">
+            <div class="header-inner">
+                <div class="header-left">
+                    <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
                 </div>
-            </header>
-            <div class="contents"></div>
-
-            <div class="quick_top">
-                <button type="button" class="btn-top">TOP</button>
+                <div class="header-center">
+                    <div class="input-box small">
+                        <input type="text" class="inp-search" placeholder="#원하는 AI챌린지를 검색하세요!" title="내용입력"
+                            data-name="search" />
+                        <button type="button" class="btn-inp-del" aria-label="입력내용삭제"><span
+                                class="blind">삭제</span></button>
+                    </div>
+                </div>
+                <div class="header-right"></div>
             </div>
+        </header>
+        <div class="contents">
+            <div class="section">
+                <div class="inner">
+                    <div class="title-box flex">
+                        <h1>AI챌린지</h1>
+                        <div>
+                            <div class="select-box">
+                                <div class="select-sort"></div>
+                                <select title="옵션선택">
+                                    <option value="">인기순</option>
+                                    <option value="1">최신순</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-list-box">
+                        <ul>
+                            <li>
+                                <div class="chall-info">
+                                    <div>
+                                        <div></div>
+                                        <div></div>
+                                        <div>
+                                            <ul>
+                                                <li class="tag">댄스</li>
+                                                <li class="tag">쉬운댄스</li>
+                                                <li class="tag">인기</li>
+                                                <li class="tag">말줄임표</li>
+                                            </ul>
+                                        </div>
+                                        <div class="util">
+                                            <p class="like"></p>
+                                            <p class="veiw"></p>
+                                            <p class="number"></p>
+                                        </div>
+                                    </div>
+                                    <div class="img">
+                                        <img src="" alt="">
+                                        <p>00:15</p>
+                                    </div>
+                                </div>
+                                <div class="btn-box">
+                                    <a href="#none" class="btn btn-primary">참가</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </body>
+
+        <div class="quick_top">
+            <button type="button" class="btn-top">TOP</button>
+        </div>
+    </div>
+</body>
+
 </html>
 
 <!-- 팝업 -->

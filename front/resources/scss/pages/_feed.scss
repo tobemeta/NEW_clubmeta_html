@@ -1,0 +1,195 @@
+.feed-more-box,
+.comment-more-box {
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    .card {
+        display: block;
+        position: relative;
+        width: 100%;
+        text-align: left;
+        font-size: 1.6rem;
+        padding-left: 4.8rem;
+        line-height: 2.3rem;
+        &:before {
+            display: block;
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 1.6rem;
+            width: 2.4rem;
+            height: 2.4rem;
+            transform: translateY(-50%);
+        }
+        &.original {
+            &:before {
+                background: url('../images/ico/ico_original.svg') no-repeat 0 0;
+            }
+        }
+        &.block {
+            &:before {
+                background: url('../images/ico/ico_banned.svg') no-repeat 0 0;
+            }
+        }
+        &.report {
+            &:before {
+                background: url('../images/ico/ico_redlight.svg') no-repeat 0 0;
+            }
+        }
+    }
+}
+.report-box {
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    .rdo-box.cell {
+        label {
+            height: auto;
+            padding: 1.15rem 4rem 1.15rem 1.6rem;
+            font-size: 1.6rem;
+            line-height: 1.9rem;
+            color: #111;
+        }
+    }
+}
+.comment {
+    .layer-content {
+        &::-webkit-scrollbar {
+            display: none;
+            width: 0;
+            height: 0;
+            background: transparent;
+        }
+    }
+    .header-center {
+        align-items: center;
+        p {
+            margin-left: 1rem;
+            font-size: 1.4rem;
+            line-height: 2rem;
+            color: #585858;
+        }
+    }
+}
+.comment-box {
+    &.no-reply {
+        .select-box,
+        .comment-list {
+            display: none;
+        }
+        .no-comment {
+            display: flex;
+        }
+    }
+    .no-comment {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 12.4rem;
+        .img {
+            display: block;
+            width: 21.2rem;
+            height: 21.2rem;
+            margin-bottom: 1.6rem;
+            background-size: cover;
+            @include bg($src: '../images/img/img_no_result.png');
+        }
+        .title {
+            margin-bottom: 0.4rem;
+            font-size: 2rem;
+            line-height: 2.4rem;
+        }
+    }
+}
+.comment-inp-box {
+    margin-top: auto;
+    padding: 0 1.6rem 2.4rem 1.6rem;
+    box-sizing: $sizing;
+    .text-box {
+        .textarea {
+            min-height: 4.8rem;
+            &::-webkit-scrollbar {
+                display: none;
+                width: 0;
+                height: 0;
+                background: transparent;
+            }
+        }
+    }
+}
+.comment-select {
+    position: absolute;
+    top: 4.8rem;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 2.4rem 1.6rem;
+    z-index: 10;
+    .btn-select:after {
+        right: 2rem;
+    }
+}
+.comment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    padding-top: 8.8rem;
+}
+.comment-item {
+    display: flex;
+    gap: 0.8rem;
+    .comment-img {
+        overflow: hidden;
+        min-width: 3.2rem;
+        height: 3.2rem;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        box-sizing: $sizing;
+        @include imgCenter();
+    }
+    .comment-info {
+        flex: 1;
+        padding-right: 0.8rem;
+        .name {
+            font-size: 1.4rem;
+            line-height: 2rem;
+            color: #404040;
+        }
+        .text {
+            margin-top: 0.4rem;
+            line-height: 2.3rem;
+        }
+        .date {
+            margin-top: 0.8rem;
+            font-size: 1.2rem;
+            color: #707070;
+            line-height: 1.7rem;
+        }
+    }
+}
+.comment-util {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .more {
+        display: block;
+        width: 2.4rem;
+        height: 2.4rem;
+        margin-bottom: 1rem;
+        @include bg($src: '../images/ico/ico_more.svg', $po: center);
+        transform: rotate(-90deg);
+    }
+    .like-num {
+        font-size: 1rem;
+        color: #404040;
+    }
+}
+.comment-more-box {
+    .card {
+        padding: 1.05rem 1.6rem;
+    }
+}
