@@ -12,6 +12,8 @@ body {
     &.lock-body {
         overflow: hidden;
     }
+    padding-top: constant(safe-area-inset-top); /* iOS 11.0 */
+    padding-top: env(safe-area-inset-top); /* iOS 11+ */
 }
 
 .wrap {
@@ -43,7 +45,7 @@ body.login {
 }
 
 .contents {
-    padding-bottom: 2rem;
+    padding-bottom: 2.4rem;
     box-sizing: $sizing;
 }
 

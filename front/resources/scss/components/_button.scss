@@ -4,6 +4,13 @@
 
     a,
     button {
+        &.disabled,
+        &:disabled {
+            cursor: none;
+            background-color: #cfcfcf;
+            color: #585858;
+            border: none;
+        }
     }
     & > * + * {
         margin-left: 0.8rem;

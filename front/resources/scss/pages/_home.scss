@@ -184,7 +184,147 @@
         }
     }
 }
+.card-list-box {
+    margin-top: 1.6rem;
+    > ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
 
+    .chall-card {
+        padding: 0.8rem 0.85rem;
+        .chall-info {
+            display: flex;
+            gap: 1rem;
+        }
+        .info-cont {
+            flex: 1;
+            gap: 0.8rem;
+            overflow: hidden;
+            padding: 1.15rem 0 1.15rem 0.8rem;
+            .tag-list {
+                gap: 0.4rem;
+                .tag {
+                    font-size: 1.4rem;
+                    line-height: 2rem;
+                    color: #404040;
+                    &:last-child {
+                        flex: 1;
+                        @include ellipsis();
+                    }
+                }
+            }
+            .tag {
+                &.blue {
+                    width: auto;
+                    max-width: 100%;
+                    height: 3.2rem;
+                    line-height: 2rem;
+                    vertical-align: middle;
+                    @include ellipsis();
+                }
+            }
+            .music-title {
+                margin-top: 0.8rem;
+                font-size: 1.4rem;
+                line-height: 2rem;
+                @include ellipsis();
+                &:before {
+                    display: inline-block;
+                    content: '';
+                    width: 1.6rem;
+                    height: 1.6rem;
+                    margin-right: 0.4rem;
+                    vertical-align: middle;
+                    @include bg($src: '../images/ico/ico_music_bk.svg');
+                }
+
+                & ~ div {
+                    margin-top: 0.8rem;
+                }
+            }
+            .util-list {
+                justify-content: space-between;
+                p {
+                    display: inline-block;
+                    position: relative;
+                    padding-left: 1.8rem;
+                    padding-right: 1.2rem;
+                    font-size: 1.2rem;
+                    line-height: 1.7rem;
+                    color: #585858;
+                    &:before {
+                        display: block;
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 1.6rem;
+                        height: 1.6rem;
+                    }
+                    &.like:before {
+                        background: url('../images/ico/ico_heart_grey.svg') no-repeat center;
+                    }
+                    &.veiw:before {
+                        background: url('../images/ico/ico_eye_grey.svg') no-repeat center;
+                    }
+                    &.number:before {
+                        background: url('../images/ico/ico_user_grey.svg') no-repeat center;
+                    }
+                    span {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+        &.new {
+            .info-img {
+                &:after {
+                    display: block;
+                    content: '';
+                    position: absolute;
+                    top: 0.8rem;
+                    right: 0.8rem;
+                    width: 2rem;
+                    height: 2rem;
+                    background: url('../images/ico/ico_o_new.svg') no-repeat center;
+                }
+            }
+        }
+        .info-img {
+            width: 10.2rem;
+            height: auto;
+            overflow: hidden;
+            border-radius: 2.4rem;
+            &:before {
+                display: block;
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(180deg, rgba(5, 4, 37, 0) 80.21%, rgba(4, 4, 37, 0.5) 100%);
+                z-index: 1;
+            }
+
+            .time {
+                position: absolute;
+                bottom: 0.8rem;
+                right: 0.7rem;
+                font-size: 1rem;
+                line-height: 1.4rem;
+                z-index: 1;
+                color: #fff;
+            }
+        }
+        .btn-box {
+            margin: 0.8rem auto;
+            padding: 0 0.75rem;
+        }
+    }
+}
 .list-box {
     .info {
         .num {
@@ -269,6 +409,38 @@
             height: 2rem;
             margin-right: 0.8rem;
             text-align: center;
+        }
+    }
+}
+
+.chall-slider {
+    height: 32.1rem;
+}
+.chall-swiper {
+    // overflow: hidden;
+    .swiper-slide {
+        width: 21.6rem;
+        opacity: 0.5;
+        a {
+            display: block;
+            height: 100%;
+
+            .img {
+                overflow: hidden;
+                border-radius: 2.4rem;
+                height: 28.8rem;
+            }
+        }
+        &.swiper-slide-active {
+            opacity: 1;
+            .util-list {
+                display: flex;
+            }
+        }
+        .util-list {
+            display: none;
+            justify-content: space-around;
+            margin-top: 1.6rem;
         }
     }
 }
