@@ -7,7 +7,7 @@
         content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
     <meta name="HandheldFriendly" content="true" />
     <meta name="format-detection" content="telephone=no" />
-    <title>영상 신고 리스트 팝업 | 클럽메타</title>
+    <title>신고 접수 완료 팝업 | 클럽메타</title>
     <link rel="stylesheet" href="../../resources/css/common.min.css" />
     <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
     <script src="../../resources/js/lib/jquery-ui.min.js"></script>
@@ -18,14 +18,12 @@
     <article class="layerpopup-box msg is-active is-animation" id="msgBox" role="dialog">
         <div class="layer-popup msg-box">
             <div class="title-box">
-                <strong class="sub-title bold">댓글 삭제 확인</strong>
+                <strong class="sub-title bold">신고 접수 완료</strong>
             </div>
-            <p class="msg">작성한 댓글을 완전히 삭제할까요?</p>
+            <p class="msg">신고해 주셔서 감사합니다.</p>
             <div class="btn-box">
-                <button type="button" class="btn btn-pop-close" title="취소"
-                    onclick="ui.popup.close('#msgBox')">취소</button>
-                <button type="button" class="btn btn-disprimary btn-pop-confirm bold" title="확인"
-                    onclick="ui.popup.close('#msgBox')">확인</button>
+                <button type="button" class="btn btn-primary btn-pop-confirm" onclick="ui.popup.close('#msgBox')"
+                    title="확인">확인</button>
             </div>
         </div>
     </article>

@@ -579,6 +579,8 @@ const ui = {
                 $btnClose.on('click', function (e) {
                     e.preventDefault();
 
+                    console.log(2323);
+
                     $('body').removeClass('lock-body');
 
                     if ($layer.hasClass('full')) {
@@ -628,6 +630,30 @@ const ui = {
         },
         close: function (target, popOpen, param, callback) {
             console.log('팝업닫기 : ' + target.selector);
+
+            let $layer = $(target);
+
+            $('body').removeClass('lock-body');
+
+            if ($layer.hasClass('full')) {
+                $layer.removeClass('is-active');
+                $layer.find('.layer-content').removeAttr('style');
+            } else {
+                $layer.removeClass('is-animation');
+                let eventEnd = () => {
+                    $layer.removeClass('is-active');
+                    $layer.off('transitionend', eventEnd);
+                };
+                $layer.on('transitionend', eventEnd);
+            }
+
+            if (callback) {
+                let callbackFunction = window[callback];
+
+                if (typeof callbackFunction === 'function') {
+                    callbackFunction(target, popOpen, param);
+                }
+            }
         },
         callbackPopup: function (message, callback) {
             var popupHtml = `
