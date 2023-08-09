@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>클럽메타 관리자 - AI챌린지 리스트</title>
+        <!-- js -->
+        <script src="../include/head.js"></script>
+        <script src="../../js/custom.js"></script>
+    </head>
+
+    <body>
+        <!-- Page Wrapper -->
+        <div id="wrapper" class="wrapper">
+            <!-- 사이드바 -->
+            <div data-include="../include/sidebar.html"></div>
+            <!-- //사이드바 -->
+
+            <!-- content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column bg-white">
+                <!-- 컨텐츠 본문 -->
+                <div id="content">
+                    <!--  -->
+                    <div data-include="../include/topbar.html"></div>
+
+                    <div class="container-fluid" role="main">
+                        <!-- 페이지 경로 -->
+                        <div class="page-breadcrumb" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="#"><i class="fas fa-home d-flex align-items-center"></i></a>
+                                </li>
+                                <li class="breadcrumb-item">영상관리</li>
+                                <li class="breadcrumb-item">AI 챌린지 리스트</li>
+                            </ol>
+                        </div>
+                        <!-- //페이지 경로 -->
+                        <div class="main">
+                            <!-- 제목 및 등록버튼 -->
+                            <div class="row clearfix mt-4 mb-4">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h2 class="h3 text-gray-800 float-left">AI 챌린지 리스트</h2>
+                                    <div class="float-right">
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="">AI챌린지 등록</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //제목 및 등록버튼 -->
+
+                            <!-- 검색 영역 -->
+                            <div class="search-wrap">
+                                <div class="form-box">
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label"><label for="">챌린지 상태</label></div>
+                                            <div class="form-box-cont">
+                                                <div class="form-row">
+                                                    <div class="col-md-4 mt-1">
+                                                        <div class="d-flex align-items-center">
+                                                            <label class="custom-control custom-checkbox mb-0">
+                                                                <input type="checkbox" class="custom-control-input" />
+                                                                <span class="custom-control-label">오픈 예정</span>
+                                                            </label>
+                                                            <label class="custom-control custom-checkbox ml-2 mb-0">
+                                                                <input type="checkbox" class="custom-control-input" />
+                                                                <span class="custom-control-label">진행중</span>
+                                                            </label>
+                                                            <label class="custom-control custom-checkbox ml-2 mb-0">
+                                                                <input type="checkbox" class="custom-control-input" />
+                                                                <span class="custom-control-label">종료(순위 발표 대기)</span>
+                                                            </label>
+                                                            <label class="custom-control custom-checkbox ml-2 mb-0">
+                                                                <input type="checkbox" class="custom-control-input" />
+                                                                <span class="custom-control-label">종료(순위 발표 완료)</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label">검색어</div>
+                                            <div class="form-box-cont">
+                                                <div class="form-row">
+                                                    <div class="col-md-5">
+                                                        <select class="custom-select">
+                                                            <option value="1">전체</option>
+                                                            <option value="2">오픈 유저 닉네임</option>
+                                                            <option value="3">챌린지 이름</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-7 mt-2 mt-md-0">
+                                                        <input type="text" class="form-control" placeholder="검색어 입력" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label">등록기간</div>
+                                            <div class="form-box-cont">
+                                                <div class="input-daterange-btn">
+                                                    <div class="input-group">
+                                                        <input type="date" class="form-control" placeholder="시작일" />
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text">~</div>
+                                                        </div>
+                                                        <input type="date" class="form-control" placeholder="종료일" />
+                                                    </div>
+
+                                                    <div class="btn-group" role="group" aria-label="기간 선택 버튼">
+                                                        <button type="button" class="btn btn-outline-secondary">오늘</button>
+                                                        <button type="button" class="btn btn-outline-secondary active">7일</button>
+                                                        <button type="button" class="btn btn-outline-secondary">15일</button>
+                                                        <button type="button" class="btn btn-outline-secondary">1개월</button>
+                                                        <button type="button" class="btn btn-outline-secondary">3개월</button>
+                                                        <button type="button" class="btn btn-outline-secondary">전체</button>
+                                                        <!-- active 클래스로  활성화 -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn-wrap">
+                                <button type="submit" class="btn btn-dark"><i class="fa fa-search mr-1"></i> 검색</button>
+                            </div>
+                            <!-- //검색 영역 -->
+
+                            <!---//contents--->
+                            <div class="dashboard-box mt-5">
+                                <div class="dashboard">
+                                    <dl>
+                                        <dt>AI 챌린지<br />오픈 횟수</dt>
+                                        <dd><strong class="fz-lg fc-yellow">264</strong></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>AI 챌린지<br />참여 영상</dt>
+                                        <dd><strong class="fz-lg fc-yellow">231,0214</strong></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>AI 챌린지<br />참여자</dt>
+                                        <dd><strong class="fz-lg fc-yellow">2,439</strong></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>노출 수</dt>
+                                        <dd><strong class="fz-lg fc-yellow">100,684</strong></dd>
+                                    </dl>
+                                    <dl class="">
+                                        <dt>댓글 수</dt>
+                                        <dd><strong class="fz-lg fc-yellow">210</strong></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>좋아요 수</dt>
+                                        <dd><strong class="fz-lg fc-yellow">11</strong></dd>
+                                    </dl>
+                                    <dl class="">
+                                        <dt>공유 횟수</dt>
+                                        <dd><strong class="fz-lg fc-yellow">6</strong></dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="title-wrap mt-5">
+                                <div class="left">검색 <strong class="fc-red">5</strong>건 / 전체 <strong class="fc-red">15</strong>건</div>
+                                <div class="right">
+                                    <select class="custom-select custom-select-sm">
+                                        <option value="1">10</option>
+                                        <option value="2">25</option>
+                                        <option value="3">50</option>
+                                        <option value="4">100</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="bootstrap-table bootstrap4">
+                                <div class="fixed-table-toolbar"></div>
+                                <div class="fixed-table-container" style="padding-bottom: 0px">
+                                    <div class="fixed-table-header" style="display: none">
+                                        <table></table>
+                                    </div>
+                                    <div class="fixed-table-body">
+                                        <div class="fixed-table-loading table table-bordered table-hover" style="top: 42.7969px">
+                                            <span class="loading-wrap">
+                                                <span class="loading-text">데이터를 불러오는 중입니다</span>
+                                                <span class="animation-wrap"><span class="animation-dot"></span></span>
+                                            </span>
+                                        </div>
+                                        <table id="dataTable" class="table table-hover table-bordered" data-pagination="true">
+                                            <thead>
+                                                <tr>
+                                                    <th class="no-sorting" data-field="0" data-orderable="false">
+                                                        <div class="th-inner">
+                                                            <label class="custom-control custom-checkbox only mb-0">
+                                                                <input type="checkbox" class="custom-control-input" />
+                                                                <span class="custom-control-label"></span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="fht-cell"></div>
+                                                    </th>
+                                                    <th data-field="1">
+                                                        <div class="th-inner">번호</div>
+                                                        <div class="fht-cell"></div>
+                                                    </th>
+                                                    <th data-field="2">
+                                                        <div class="th-inner">오픈 유저 닉네임</div>
+                                                        <div class="fht-cell"></div>
+                                                    </th>
+                                                    <th data-field="3">
+                                                        <div class="th-inner">상태</div>
+                                                        <div class="fht-cell"></div>
+                                                    </th>
+                                                    <th class="w-25" data-field="4">
+                                                        <div class="th-inner">챌린지 이름</div>
+                                                        <div class="fht-cell"></div>
+                                                    </th>
+                                                    <th data-field="5">
+                                                        <div class="th-inner">오픈일</div>
+                                                        <div class="fht-cell"></div>
+                                                    </th>
+                                                    <th data-field="6">
+                                                        <div class="th-inner">종료일</div>
+                                                        <div class="fht-cell"></div>
+                                                    </th>
+                                                    <th data-field="7">
+                                                        <div class="th-inner">참가인원</div>
+                                                        <div class="fht-cell"></div>
+                                                    </th>
+                                                    <th data-field="8">
+                                                        <div class="th-inner">기준영상</div>
+                                                        <div class="fht-cell"></div>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="" data-index="0">
+                                                    <td>
+                                                        <label class="custom-control custom-checkbox only mb-0">
+                                                            <input type="checkbox" class="custom-control-input" />
+                                                            <span class="custom-control-label"></span>
+                                                        </label>
+                                                    </td>
+                                                    <td>10</td>
+                                                    <td><a href="#none">metaclub00</a></td>
+                                                    <td>진행중</td>
+                                                    <td class="text-left"><a href="#none">챌린지 이름</a></td>
+                                                    <td>2023.06.26</td>
+                                                    <td>2023.08.26</td>
+                                                    <td>12</td>
+                                                    <td>
+                                                        <a href="#none"><img class="data-img" src="../../images/img/img_aichallenge_thumbnail_01.png" alt="" /></a>
+                                                    </td>
+                                                </tr>
+                                                <tr data-index="1">
+                                                    <td>
+                                                        <label class="custom-control custom-checkbox only mb-0">
+                                                            <input type="checkbox" class="custom-control-input" />
+                                                            <span class="custom-control-label"></span>
+                                                        </label>
+                                                    </td>
+                                                    <td>9</td>
+                                                    <td><a href="#none">metaclub01</a></td>
+                                                    <td>오픈예정</td>
+                                                    <td class="text-left"><a href="#none">챌린지 이름</a></td>
+                                                    <td>2023.06.26</td>
+                                                    <td>2023.08.26</td>
+                                                    <td>-</td>
+                                                    <td>
+                                                        <a href="#none"><img class="data-img" src="../../images/img/img_aichallenge_thumbnail_01.png" alt="" /></a>
+                                                    </td>
+                                                </tr>
+                                                <tr data-index="2">
+                                                    <td>
+                                                        <label class="custom-control custom-checkbox only mb-0">
+                                                            <input type="checkbox" class="custom-control-input" />
+                                                            <span class="custom-control-label"></span>
+                                                        </label>
+                                                    </td>
+                                                    <td>8</td>
+                                                    <td><a href="#none">metaclub02</a></td>
+                                                    <td>종료</td>
+                                                    <td class="text-left"><a href="#none">챌린지 이름</a></td>
+                                                    <td>2023.06.26</td>
+                                                    <td>2023.08.26</td>
+                                                    <td>23</td>
+                                                    <td>
+                                                        <a href="#none"><img class="data-img" src="../../images/img/img_aichallenge_thumbnail_01.png" alt="" /></a>
+                                                    </td>
+                                                </tr>
+                                                <tr data-index="3">
+                                                    <td>
+                                                        <label class="custom-control custom-checkbox only mb-0">
+                                                            <input type="checkbox" class="custom-control-input" />
+                                                            <span class="custom-control-label"></span>
+                                                        </label>
+                                                    </td>
+                                                    <td>7</td>
+                                                    <td><a href="#none">metaclub01</a></td>
+                                                    <td>오픈예정</td>
+                                                    <td class="text-left"><a href="#none">챌린지 이름</a></td>
+                                                    <td>2023.06.26</td>
+                                                    <td>2023.08.26</td>
+                                                    <td>-</td>
+                                                    <td>
+                                                        <a href="#none"><img class="data-img" src="../../images/img/img_aichallenge_thumbnail_01.png" alt="" /></a>
+                                                    </td>
+                                                </tr>
+                                                <tr data-index="4">
+                                                    <td>
+                                                        <label class="custom-control custom-checkbox only mb-0">
+                                                            <input type="checkbox" class="custom-control-input" />
+                                                            <span class="custom-control-label"></span>
+                                                        </label>
+                                                    </td>
+                                                    <td>8</td>
+                                                    <td><a href="#none">metaclub02</a></td>
+                                                    <td>종료</td>
+                                                    <td class="text-left"><a href="#none">챌린지 이름</a></td>
+                                                    <td>2023.06.26</td>
+                                                    <td>2023.08.26</td>
+                                                    <td>23</td>
+                                                    <td>
+                                                        <a href="#none"><img class="data-img" src="../../images/img/img_aichallenge_thumbnail_01.png" alt="" /></a>
+                                                    </td>
+                                                </tr>
+                                                <tr data-index="5">
+                                                    <td>
+                                                        <label class="custom-control custom-checkbox only mb-0">
+                                                            <input type="checkbox" class="custom-control-input" />
+                                                            <span class="custom-control-label"></span>
+                                                        </label>
+                                                    </td>
+                                                    <td>7</td>
+                                                    <td><a href="#none">metaclub01</a></td>
+                                                    <td>오픈예정</td>
+                                                    <td class="text-left"><a href="#none">챌린지 이름</a></td>
+                                                    <td>2023.06.26</td>
+                                                    <td>2023.08.26</td>
+                                                    <td>-</td>
+                                                    <td>
+                                                        <a href="#none"><img class="data-img" src="../../images/img/img_aichallenge_thumbnail_01.png" alt="" /></a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="fixed-table-footer"></div>
+                                </div>
+
+                                <div class="fixed-table-pagination">
+                                    <div class="pagination-detail"></div>
+                                    <div class="float-left">
+                                        <button type="button" class="btn btn-outline-dark"><i class="bi bi-x"></i> 삭제</button>
+                                    </div>
+                                    <div class="pagination">
+                                        <ul class="pagination">
+                                            <li class="page-item page-pre"><a class="page-link" aria-label="previous page" href="javascript:void(0)">‹</a></li>
+                                            <li class="page-item active"><a class="page-link" aria-label="to page 1" href="javascript:void(0)">1</a></li>
+                                            <li class="page-item"><a class="page-link" aria-label="to page 2" href="javascript:void(0)">2</a></li>
+                                            <li class="page-item page-next"><a class="page-link" aria-label="next page" href="javascript:void(0)">›</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll to Top Button-->
+        <div data-include="../include/topbtn.html"></div>
+
+        <!-- Logout Modal-->
+        <div data-include="../include/logoutModal.html"></div>
+        <!-- changePw Modal-->
+        <div data-include="../include/pop/changePwModal.html"></div>
+    </body>
+    <script src="../../datatables/jquery.dataTables.min.js"></script>
+    <script src="../../datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="../../lib/chart.js/plugins/chartjs-plugin-datalabels.min.js"></script>
+    <script src="../../lib/chart.js/Chart.min.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="../../js/demo/datatables-demo.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="../../js/chart_custom.js"></script>
+</html>

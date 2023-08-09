@@ -93,7 +93,12 @@ optgroup {
 //         margin: 0 auto;
 //     }
 // }
-
+.preview-img {
+    img {
+        height: 100%;
+        object-fit: cover;
+    }
+}
 .modal-footer {
     justify-content: center;
     .btn {
@@ -380,6 +385,13 @@ optgroup {
     & > div + div,
     & > div + .btn {
         margin-left: 1rem;
+    }
+    select {
+        border-left: 0 !important;
+        &:last-of-type {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
     }
 }
 
@@ -927,5 +939,16 @@ optgroup {
     }
     + .rdo-ico-type {
         margin-left: 1rem;
+    }
+}
+//커스텀 파일
+.custom-file-label {
+    margin-bottom: 0;
+    padding-right: 5.625rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    &:after {
+        content: '찾아보기';
     }
 }
