@@ -205,20 +205,17 @@
             gap: 0.8rem;
             overflow: hidden;
             padding: 1.15rem 0 1.15rem 0.8rem;
+
             .tag-list {
-                gap: 0.4rem;
-                flex-wrap: nowrap;
+                display: block;
+                @include ellipsis();
                 .tag {
+                    display: inline;
                     font-size: 1.4rem;
                     line-height: 2rem;
                     color: #404040;
-                    @include ellipsis();
-                    &:last-child {
-                        flex: 1;
-                        min-width: 30%;
-                        @include ellipsis();
-                    }
                 }
+                @include ellipsis();
             }
             .tag {
                 &.blue {
