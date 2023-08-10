@@ -180,6 +180,9 @@
             .user-name {
                 font-size: 1.4rem;
                 line-height: 2rem;
+                @include ellipsis();
+                width: 100%;
+                text-align: center;
             }
         }
     }
@@ -610,6 +613,9 @@
     }
     .btn-box {
         margin-top: 1.6rem;
+    }
+    .tag-list {
+        flex-wrap: wrap;
     }
 }
 .chall-slider-video {
