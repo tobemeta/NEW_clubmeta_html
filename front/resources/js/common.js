@@ -30,7 +30,7 @@ const ui = {
             clearTimeout(scrolling);
             scrolling = setTimeout(() => {
                 $header.removeClass('up').css('top', 0);
-
+                // $header.removeClass('up').css('top', (window.statusBarHeight || 0) + 'px');
                 scrolling = undefined;
             }, 250);
         });
