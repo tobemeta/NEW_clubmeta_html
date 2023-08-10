@@ -5,12 +5,12 @@ const ui = {
         _this.menuActive();
 
         // Add event listener to play button
-        $('.progress .play').on('click', function () {
+        $('.play').on('click', function () {
             $(this).addClass('d-none');
             $(this).siblings('.pause').removeClass('d-none');
         });
 
-        $('.progress .pause').on('click', function () {
+        $('.pause').on('click', function () {
             $(this).addClass('d-none');
             $(this).siblings('.play').removeClass('d-none');
         });

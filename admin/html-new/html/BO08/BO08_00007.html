@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>클럽메타 관리자 - 음원 챌린지 오픈</title>
+        <!-- js -->
+        <script src="../include/head.js"></script>
+        <script src="../../js/custom.js"></script>
+    </head>
+
+    <body>
+        <!-- Page Wrapper -->
+        <div id="wrapper" class="wrapper">
+            <!-- 사이드바 -->
+            <div data-include="../include/sidebar_comp.html"></div>
+            <!-- //사이드바 -->
+
+            <!-- content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column bg-white">
+                <!-- 컨텐츠 본문 -->
+                <div id="content">
+                    <!--  -->
+                    <div data-include="../include/topbar_comp.html"></div>
+
+                    <div class="container-fluid" role="main">
+                        <!-- 페이지 경로 -->
+                        <div class="page-breadcrumb" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="#"><i class="fas fa-home d-flex align-items-center"></i></a>
+                                </li>
+                                <li class="breadcrumb-item">음원관리</li>
+                                <li class="breadcrumb-item">음원 챌린지</li>
+                                <li class="breadcrumb-item">음원 챌린지 오픈</li>
+                            </ol>
+                        </div>
+                        <!-- //페이지 경로 -->
+                        <div class="main">
+                            <!-- 제목 및 등록버튼 -->
+                            <div class="row clearfix mt-4 mb-4">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h2 class="h3 text-gray-800 float-left">음원 챌린지 오픈</h2>
+                                </div>
+                            </div>
+                            <!-- //제목 및 등록버튼 -->
+
+                            <!---//contents--->
+                            <form>
+                                <div class="form-box">
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label"><label for="">음원 챌린지 제목</label></div>
+                                            <div class="form-box-cont">
+                                                <div class="form-row">
+                                                    <div class="input-group w-50">
+                                                        <input type="text" class="form-control" placeholder="한글, 영문, 숫자, 특수기호 포함한 5~20자" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label">음원</div>
+                                            <div class="form-box-cont">
+                                                <div class="form-row">
+                                                    <div class="input-group w-50">
+                                                        <input type="text" class="form-control" placeholder="음원선택을 선택해 사용할 음원을 선택하세요." />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label">챌린지 진행 기간</div>
+                                            <div class="form-box-cont">
+                                                <div class="input-daterange-btn">
+                                                    <div class="input-group">
+                                                        <input type="date" class="form-control" placeholder="시작일" />
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text">~</div>
+                                                        </div>
+                                                        <input type="date" class="form-control" placeholder="종료일" />
+                                                    </div>
+
+                                                    <div class="btn-group" role="group" aria-label="기간 선택 버튼">
+                                                        <button type="button" class="btn btn-outline-secondary active">7일</button>
+                                                        <button type="button" class="btn btn-outline-secondary">15일</button>
+                                                        <button type="button" class="btn btn-outline-secondary">1개월</button>
+                                                        <!-- active 클래스로  활성화 -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label">게시글</div>
+                                            <div class="form-box-cont">
+                                                <div class="form-row">
+                                                    <textarea class="form-control" cols="30" rows="8" placeholder="한글, 영문, 숫자, 특수문자 포함 최대 100자까지 입력 가능"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label">해시태그</div>
+                                            <div class="form-box-cont">
+                                                <div class="form-row">
+                                                    <div class="input-group w-50">
+                                                        <input type="text" class="form-control" placeholder="음원선택을 선택해 사용할 음원을 선택하세요." />
+                                                    </div>
+                                                    <div class="text-danger w-100 mt-2">#텍스트 형식으로 입력해주세요.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="text-gray-900 w-100 mt-1">* 음원 등록 시, 수정이 불가합니다.</div>
+                            <div class="text-gray-900 w-100 mt-1">* 음원 승인까지 3일 정도 시간이 소요됩니다. 승인 완료 시 알림 안내가 전송됩니다.</div>
+                            <div class="btn-wrap text-center mt-5">
+                                <button type="button" class="btn btn-lg btn-outline-secondary">취소</button>
+                                <button type="button" class="btn btn-lg btn-primary">등록</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll to Top Button-->
+        <div data-include="../include/topbtn.html"></div>
+
+        <!-- Logout Modal-->
+        <div data-include="../include/logoutModal.html"></div>
+        <!-- changePw Modal-->
+        <div data-include="../include/pop/changePwModal.html"></div>
+    </body>
+    <script src="../../datatables/jquery.dataTables.min.js"></script>
+    <script src="../../datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="../../lib/chart.js/plugins/chartjs-plugin-datalabels.min.js"></script>
+    <script src="../../lib/chart.js/Chart.min.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="../../js/demo/datatables-demo.js"></script>
+</html>

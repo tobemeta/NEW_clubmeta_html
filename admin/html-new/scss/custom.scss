@@ -342,6 +342,8 @@ optgroup {
     .form-row {
         height: 100%;
         align-items: center;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .btn-group {
@@ -483,6 +485,11 @@ optgroup {
         td {
             text-align: center;
         }
+        .data-img {
+            width: 4rem;
+            height: 4rem;
+            object-fit: cover;
+        }
     }
     .card-views {
         text-align: left;
@@ -613,11 +620,6 @@ optgroup {
                         margin-right: 1rem;
                     }
                 }
-            }
-            .data-img {
-                width: 4rem;
-                height: 4rem;
-                object-fit: cover;
             }
         }
     }
@@ -960,4 +962,14 @@ optgroup {
     &:after {
         content: '찾아보기';
     }
+}
+//체크박스 버튼형
+.btn-check:checked + .btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check) + .btn:active {
+    color: var(--light);
+    background-color: var(--primary);
+    border-color: var(--primary);
 }
