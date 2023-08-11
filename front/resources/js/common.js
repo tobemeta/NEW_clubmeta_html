@@ -15,6 +15,13 @@ const ui = {
         let scrolling;
         const $header = $('.header');
         const headerHeight = $header.height();
+        // 2023-08-11 개발 수정
+        const statusBarHeight = window.statusBarHeight || 0;
+
+        // 2023-08-11 개발 수정
+        $(document).ready(function () {
+            $header.css('padding-top', statusBarHeight + 'px');
+        });
 
         $(window).on('scroll', (e) => {
             if ($(this).scrollTop() > headerHeight) {
@@ -24,14 +31,15 @@ const ui = {
             }
 
             if (!scrolling) {
-                $header.addClass('up').css('top', -headerHeight + 'px');
+                // 2023-08-11 개발 수정
+                $header.addClass('up').css('top', -headerHeight - statusBarHeight + 'px');
             }
 
             clearTimeout(scrolling);
             scrolling = setTimeout(() => {
-                // $header.removeClass('up').css('top', 0);
-                // 2023-08-11 수정
-                $header.removeClass('up').css('top', (window.statusBarHeight || 0) + 'px');
+                $header.removeClass('up').css('top', 0);
+                // 2023-08-11 개발 수정
+                $header.removeClass('up').css('padding-top', statusBarHeight + 'px');
                 scrolling = undefined;
             }, 250);
         });
