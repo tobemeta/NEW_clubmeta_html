@@ -12,9 +12,9 @@ body {
     &.lock-body {
         overflow: hidden;
     }
-    padding-top: constant(safe-area-inset-top); /* iOS 11.0 */
-    padding-top: env(safe-area-inset-top); /* iOS 11+ */
-}
+//     padding-top: constant(safe-area-inset-top); /* iOS 11.0 */
+//     padding-top: env(safe-area-inset-top); /* iOS 11+ */
+// }
 
 .wrap {
     width: 100%;
