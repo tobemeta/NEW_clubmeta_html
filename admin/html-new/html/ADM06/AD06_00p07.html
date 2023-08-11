@@ -1,0 +1,262 @@
+<div class="modal fade large" id="musicListModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">음원리스트</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="bootstrap-table bootstrap4">
+                    <div class="fixed-table-toolbar"></div>
+                    <div class="fixed-table-container" style="padding-bottom: 0px">
+                        <div class="fixed-table-header" style="display: none">
+                            <table></table>
+                        </div>
+                        <div class="fixed-table-body">
+                            <div class="fixed-table-loading table table-bordered table-hover" style="top: 42.7969px">
+                                <span class="loading-wrap">
+                                    <span class="loading-text">데이터를 불러오는 중입니다</span>
+                                    <span class="animation-wrap"><span class="animation-dot"></span></span>
+                                </span>
+                            </div>
+                            <table id="dataTable1" class="table table-hover table-bordered" data-pagination="true">
+                                <thead>
+                                    <tr>
+                                        <th data-field="1">
+                                            <div class="th-inner">음원</div>
+                                            <div class="fht-cell"></div>
+                                        </th>
+                                        <th data-field="2">
+                                            <div class="th-inner">길이</div>
+                                            <div class="fht-cell"></div>
+                                        </th>
+                                        <th class="no-sorting" data-field="3">
+                                            <div class="th-inner">듣기</div>
+                                            <div class="fht-cell"></div>
+                                        </th>
+                                        <th class="no-sorting" data-field="4">
+                                            <div class="th-inner">선택</div>
+                                            <div class="fht-cell"></div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- <tr class="no-records-found">
+                                    <td colspan="4">해당 데이터가 없습니다.</td>
+                                    </tr> -->
+                                    <tr class="" data-index="0">
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="col-auto">
+                                                    <img class="data-img" src="../../images/img/img_aichallenge_thumbnail_01.png" alt="" />
+                                                </div>
+                                                <div class="col-auto">
+                                                    <span>음원 타이틀명</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>00:45</td>
+                                        <td>
+                                            <button type="button" class="play"><i class="fas fa-play"></i></button>
+                                            <button type="button" class="pause d-none"><i class="fas fa-pause"></i></button>
+                                        </td>
+                                        <td>
+                                            <div class="custom-checkbox">
+                                                <input type="radio" class="btn-check custom-control-input" name="singleRadioGrp" id="btn-check" autocomplete="off" />
+                                                <label class="btn btn-outline-secondary" for="btn-check">선택</label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr data-index="1">
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="col-auto">
+                                                    <img class="data-img" src="../../images/img/img_aichallenge_thumbnail_01.png" alt="" />
+                                                </div>
+                                                <div class="col-auto">
+                                                    <span>음원 타이틀명</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>00:45</td>
+                                        <td>
+                                            <button type="button" class="play"><i class="fas fa-play"></i></button>
+                                            <button type="button" class="pause d-none"><i class="fas fa-pause"></i></button>
+                                        </td>
+                                        <td>
+                                            <div class="custom-checkbox">
+                                                <input type="radio" class="btn-check custom-control-input" name="singleRadioGrp" id="btn-check1" autocomplete="off" />
+                                                <label class="btn btn-outline-secondary" for="btn-check1">선택</label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr data-index="2">
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="col-auto">
+                                                    <img class="data-img" src="../../images/img/img_aichallenge_thumbnail_01.png" alt="" />
+                                                </div>
+                                                <div class="col-auto">
+                                                    <span>음원 타이틀명</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>00:45</td>
+                                        <td>
+                                            <button type="button" class="play"><i class="fas fa-play"></i></button>
+                                            <button type="button" class="pause d-none"><i class="fas fa-pause"></i></button>
+                                        </td>
+                                        <td>
+                                            <div class="custom-checkbox">
+                                                <input type="radio" class="btn-check custom-control-input" name="singleRadioGrp" id="btn-check2" autocomplete="off" />
+                                                <label class="btn btn-outline-secondary" for="btn-check2">선택</label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr data-index="3">
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="col-auto">
+                                                    <img class="data-img" src="../../images/img/img_aichallenge_thumbnail_01.png" alt="" />
+                                                </div>
+                                                <div class="col-auto">
+                                                    <span>음원 타이틀명</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>00:45</td>
+                                        <td>
+                                            <button type="button" class="play"><i class="fas fa-play"></i></button>
+                                            <button type="button" class="pause d-none"><i class="fas fa-pause"></i></button>
+                                        </td>
+                                        <td>
+                                            <div class="custom-checkbox">
+                                                <input type="radio" class="btn-check custom-control-input" name="singleRadioGrp" id="btn-check3" autocomplete="off" />
+                                                <label class="btn btn-outline-secondary" for="btn-check3">선택</label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr data-index="3">
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="col-auto">
+                                                    <img class="data-img" src="../../images/img/img_aichallenge_thumbnail_01.png" alt="" />
+                                                </div>
+                                                <div class="col-auto">
+                                                    <span>음원 타이틀명</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>00:45</td>
+                                        <td>
+                                            <button type="button" class="play"><i class="fas fa-play"></i></button>
+                                            <button type="button" class="pause d-none"><i class="fas fa-pause"></i></button>
+                                        </td>
+                                        <td>
+                                            <div class="custom-checkbox">
+                                                <input type="radio" class="btn-check custom-control-input" name="singleRadioGrp" id="btn-check4" autocomplete="off" />
+                                                <label class="btn btn-outline-secondary" for="btn-check4">선택</label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr data-index="3">
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="col-auto">
+                                                    <img class="data-img" src="../../images/img/img_aichallenge_thumbnail_01.png" alt="" />
+                                                </div>
+                                                <div class="col-auto">
+                                                    <span>음원 타이틀명</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>00:45</td>
+                                        <td>
+                                            <button type="button" class="play"><i class="fas fa-play"></i></button>
+                                            <button type="button" class="pause d-none"><i class="fas fa-pause"></i></button>
+                                        </td>
+                                        <td>
+                                            <div class="custom-checkbox">
+                                                <input type="radio" class="btn-check custom-control-input" name="singleRadioGrp" id="btn-check5" autocomplete="off" />
+                                                <label class="btn btn-outline-secondary" for="btn-check5">선택</label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr data-index="3">
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="col-auto">
+                                                    <img class="data-img" src="../../images/img/img_aichallenge_thumbnail_01.png" alt="" />
+                                                </div>
+                                                <div class="col-auto">
+                                                    <span>음원 타이틀명</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>00:45</td>
+                                        <td>
+                                            <button type="button" class="play"><i class="fas fa-play"></i></button>
+                                            <button type="button" class="pause d-none"><i class="fas fa-pause"></i></button>
+                                        </td>
+                                        <td>
+                                            <div class="custom-checkbox">
+                                                <input type="radio" class="btn-check custom-control-input" name="singleRadioGrp" id="btn-check6" autocomplete="off" />
+                                                <label class="btn btn-outline-secondary" for="btn-check6">선택</label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr data-index="3">
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="col-auto">
+                                                    <img class="data-img" src="../../images/img/img_aichallenge_thumbnail_01.png" alt="" />
+                                                </div>
+                                                <div class="col-auto">
+                                                    <span>음원 타이틀명</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>00:45</td>
+                                        <td>
+                                            <button type="button" class="play"><i class="fas fa-play"></i></button>
+                                            <button type="button" class="pause d-none"><i class="fas fa-pause"></i></button>
+                                        </td>
+                                        <td>
+                                            <div class="custom-checkbox">
+                                                <input type="radio" class="btn-check custom-control-input" name="singleRadioGrp" id="btn-check7" autocomplete="off" />
+                                                <label class="btn btn-outline-secondary" for="btn-check7">선택</label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="fixed-table-footer"></div>
+                    </div>
+
+                    <div class="fixed-table-pagination">
+                        <div class="pagination-detail"></div>
+                        <!-- 왼쪽 버튼 영역 -->
+                        <div class="float-left"></div>
+                        <!-- 오른쪽 버튼 영역 -->
+                        <div class="float-right"></div>
+                        <div class="pagination">
+                            <ul class="pagination">
+                                <li class="page-item page-pre"><a class="page-link" aria-label="previous page" href="javascript:void(0)">‹</a></li>
+                                <li class="page-item active"><a class="page-link" aria-label="to page 1" href="javascript:void(0)">1</a></li>
+                                <li class="page-item"><a class="page-link" aria-label="to page 2" href="javascript:void(0)">2</a></li>
+                                <li class="page-item page-next"><a class="page-link" aria-label="next page" href="javascript:void(0)">›</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <!-- <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">취소</button> -->
+                <button type="button" class="btn btn-primary btn-lg">확인</button>
+            </div>
+        </div>
+    </div>
+</div>
