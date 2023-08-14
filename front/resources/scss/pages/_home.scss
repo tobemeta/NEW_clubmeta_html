@@ -449,7 +449,7 @@
 .chall-swiper {
     overflow: hidden;
     .swiper-slide {
-        width: 21.6rem !important;
+        width: 216px;
         opacity: 0.5;
         a {
             display: block;
@@ -535,6 +535,7 @@
             a {
                 display: flex;
                 flex-direction: column;
+                padding-top: 7.2rem;
                 &:before {
                     display: block;
                     content: '';
@@ -550,7 +551,6 @@
             }
             .img {
                 height: 21.6rem;
-                margin-top: auto;
             }
         }
     }
