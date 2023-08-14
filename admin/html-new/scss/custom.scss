@@ -394,7 +394,7 @@ optgroup {
     & > div + .btn {
         margin-left: 1rem;
     }
-    select {
+    .custom-select {
         border-left: 0 !important;
         &:last-of-type {
             border-top-left-radius: 0;
@@ -734,6 +734,49 @@ optgroup {
     }
     dd {
         margin: 0.25rem 0 0 0;
+    }
+}
+.dashboard-list {
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+    > li {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        list-style: none;
+        height: 100%;
+        background: $gray-100;
+        padding: 1rem;
+        border-radius: $border-radius-lg;
+    }
+    .tit {
+        display: flex;
+        flex-wrap: wrap;
+        line-height: 1.2;
+        align-items: center;
+        > strong {
+            word-break: keep-all;
+            text-align: center;
+        }
+        > span {
+            width: 50%;
+            margin-left: auto;
+            text-align: right;
+            white-space: nowrap;
+        }
+    }
+    .sub {
+        text-align: right;
+        margin-top: 0.3rem;
+        color: $gray-600;
+        font-size: $font-size-sm;
+        word-break: keep-all;
+        + .sub {
+            margin-top: 0;
+        }
     }
 }
 .dash-chart-box {

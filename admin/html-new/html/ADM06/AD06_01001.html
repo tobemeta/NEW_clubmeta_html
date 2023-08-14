@@ -68,10 +68,6 @@
                                                             </label>
                                                             <label class="custom-control custom-checkbox ml-2 mb-0">
                                                                 <input type="checkbox" class="custom-control-input" />
-                                                                <span class="custom-control-label">종료(순위 발표 대기)</span>
-                                                            </label>
-                                                            <label class="custom-control custom-checkbox ml-2 mb-0">
-                                                                <input type="checkbox" class="custom-control-input" />
                                                                 <span class="custom-control-label">종료(순위 발표 완료)</span>
                                                             </label>
                                                         </div>
@@ -354,10 +350,12 @@
                                     <div class="pagination-detail"></div>
                                     <!-- 왼쪽 버튼 영역 -->
                                     <div class="float-left">
-                                        <button type="button" class="btn btn-outline-dark"><i class="bi bi-x"></i> 삭제</button>
+                                        <button type="button" class="btn btn-secondary"><i class="bi bi-x"></i> 삭제</button>
                                     </div>
                                     <!-- 오른쪽 버튼 영역 -->
-                                    <div class="float-right"></div>
+                                    <div class="float-right">
+                                        <button type="button" class="btn btn-primary" onclick="bsConfirm('엑셀 파일을 다운로드 하시겠습니까?')">엑셀 다운로드</button>
+                                    </div>
                                     <div class="pagination">
                                         <ul class="pagination">
                                             <li class="page-item page-pre"><a class="page-link" aria-label="previous page" href="javascript:void(0)">‹</a></li>
