@@ -154,6 +154,15 @@
                                 </div>
                             </div>
                             <!-- //검색 영역 -->
+
+                            <!-- 데이터 없는 경우,
+                            검색결과 없을 경우 : 일치하는 검색결과가 없습니다.
+                            리스트가 없을 경우 : 항목이 없습니다.
+                            클래스 .d-none으로 노출 -->
+
+                            <div class="text-center mt-5 d-none"><strong class="text-gray-700 fz-lg">일치하는 검색결과가 없습니다.</strong></div>
+                            <!-- <div class="text-center mt-5 d-none"><strong class="text-gray-700 fz-lg">항목이 없습니다.</strong></div> -->
+
                             <div class="row mt-4">
                                 <div class="col-md-4">
                                     <div class="card shadow dash-chart-box">
@@ -173,7 +182,7 @@
                                                     </div>
                                                 </div>
 
-                                                <canvas id="myDnChart" width="544" height="216" style="display: block; width: 544px; height: 216px" class="chartjs-render-monitor"></canvas>
+                                                <canvas id="myDnChart" width="544" height="216" style="display: block; width: 100%; height: 216px" class="chartjs-render-monitor"></canvas>
                                             </div>
                                             <div class="chart-total">
                                                 <p>1,873</p>
@@ -584,9 +593,189 @@
                                             <div class="form-row mt-4 align-items-center">
                                                 <!-- 탭 컨탠츠 -->
                                                 <div class="tab-content">
-                                                    <div class="tab-pane fade show active" id="sub-panel0001" role="tabpanel" aria-labelledby="sub-tab0001">화면 디자인 요청</div>
-                                                    <div class="tab-pane fade" id="sub-panel0002" role="tabpanel" aria-labelledby="sub-tab0002">화면 디자인 요청</div>
-                                                    <div class="tab-pane fade" id="sub-panel0003" role="tabpanel" aria-labelledby="sub-tab0003">화면 디자인 요청</div>
+                                                    <div class="tab-pane fade show active" id="sub-panel0001" role="tabpanel" aria-labelledby="sub-tab0001">
+                                                        <div class="d-flex">
+                                                            <div class="col">
+                                                                <h6 class="h5 text-center text-gray-800">AI 챌린지</h6>
+                                                                <div class="card dashboard-card">
+                                                                    <span class="badge rounded-pill bg-light"><i class="far fa-eye"></i><span class="ml-2">468</span></span>
+                                                                    <a href="#none"><img src="../../images/img/img_musicchallenge_thumbnail_05.png" class="card-img-top" alt="챌린지이미지" /></a>
+                                                                    <div class="card-body position-absolute">
+                                                                        <span class="card-title">@닉네임</span>
+                                                                        <p class="card-text text-truncate">챌린지 이름 챌린지 이름 챌린지 이름 챌린지 이름 챌린지 이름</p>
+                                                                    </div>
+
+                                                                    <div class="card-body">
+                                                                        <ul class="list-group list-group-flush">
+                                                                            <li class="list-group-item"><i class="far fa-eye"></i><span class="ml-2">10,120</span></li>
+                                                                            <li class="list-group-item"><i class="fas fa-heart"></i><span class="ml-2">5,401</span></li>
+                                                                            <li class="list-group-item"><i class="fas fa-comment-alt"></i><span class="ml-2">321</span></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <h6 class="h5 text-center text-gray-800">음원 챌린지</h6>
+                                                                <div class="card dashboard-card">
+                                                                    <span class="badge rounded-pill bg-light"><i class="far fa-eye"></i><span class="ml-2">136</span></span>
+                                                                    <a href="#none"><img src="../../images/img/img_musicchallenge_thumbnail_05.png" class="card-img-top" alt="챌린지이미지" /></a>
+                                                                    <div class="card-body position-absolute">
+                                                                        <span class="card-title">@닉네임</span>
+                                                                        <p class="card-text text-truncate">챌린지 이름</p>
+                                                                    </div>
+
+                                                                    <div class="card-body">
+                                                                        <ul class="list-group list-group-flush">
+                                                                            <li class="list-group-item"><i class="far fa-eye"></i><span class="ml-2">10,120</span></li>
+                                                                            <li class="list-group-item"><i class="fas fa-heart"></i><span class="ml-2">5,401</span></li>
+                                                                            <li class="list-group-item"><i class="fas fa-comment-alt"></i><span class="ml-2">321</span></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <h6 class="h5 text-center text-gray-800">일반</h6>
+                                                                <div class="card dashboard-card">
+                                                                    <span class="badge rounded-pill bg-light"><i class="far fa-eye"></i><span class="ml-2">468</span></span>
+                                                                    <a href="#none"><img src="../../images/img/img_musicchallenge_thumbnail_05.png" class="card-img-top" alt="챌린지이미지" /></a>
+                                                                    <div class="card-body position-absolute">
+                                                                        <span class="card-title">@닉네임</span>
+                                                                        <p class="card-text text-truncate">일반</p>
+                                                                    </div>
+
+                                                                    <div class="card-body">
+                                                                        <ul class="list-group list-group-flush">
+                                                                            <li class="list-group-item"><i class="far fa-eye"></i><span class="ml-2">10,120</span></li>
+                                                                            <li class="list-group-item"><i class="fas fa-heart"></i><span class="ml-2">5,401</span></li>
+                                                                            <li class="list-group-item"><i class="fas fa-comment-alt"></i><span class="ml-2">321</span></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="sub-panel0002" role="tabpanel" aria-labelledby="sub-tab0002">
+                                                        <div class="d-flex">
+                                                            <div class="col">
+                                                                <h6 class="h5 text-center text-gray-800">AI 챌린지</h6>
+                                                                <div class="card dashboard-card">
+                                                                    <span class="badge rounded-pill bg-light"><i class="fas fa-heart"></i><span class="ml-2">468</span></span>
+                                                                    <a href="#none"><img src="../../images/img/img_musicchallenge_thumbnail_05.png" class="card-img-top" alt="챌린지이미지" /></a>
+                                                                    <div class="card-body position-absolute">
+                                                                        <span class="card-title">@닉네임</span>
+                                                                        <p class="card-text text-truncate">챌린지 이름 챌린지 이름 챌린지 이름 챌린지 이름 챌린지 이름</p>
+                                                                    </div>
+
+                                                                    <div class="card-body">
+                                                                        <ul class="list-group list-group-flush">
+                                                                            <li class="list-group-item"><i class="far fa-eye"></i><span class="ml-2">10,120</span></li>
+                                                                            <li class="list-group-item"><i class="fas fa-heart"></i><span class="ml-2">5,401</span></li>
+                                                                            <li class="list-group-item"><i class="fas fa-comment-alt"></i><span class="ml-2">321</span></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <h6 class="h5 text-center text-gray-800">음원 챌린지</h6>
+                                                                <div class="card dashboard-card">
+                                                                    <span class="badge rounded-pill bg-light"><i class="fas fa-heart"></i><span class="ml-2">136</span></span>
+                                                                    <a href="#none"><img src="../../images/img/img_musicchallenge_thumbnail_05.png" class="card-img-top" alt="챌린지이미지" /></a>
+                                                                    <div class="card-body position-absolute">
+                                                                        <span class="card-title">@닉네임</span>
+                                                                        <p class="card-text text-truncate">챌린지 이름</p>
+                                                                    </div>
+
+                                                                    <div class="card-body">
+                                                                        <ul class="list-group list-group-flush">
+                                                                            <li class="list-group-item"><i class="far fa-eye"></i><span class="ml-2">10,120</span></li>
+                                                                            <li class="list-group-item"><i class="fas fa-heart"></i><span class="ml-2">5,401</span></li>
+                                                                            <li class="list-group-item"><i class="fas fa-comment-alt"></i><span class="ml-2">321</span></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <h6 class="h5 text-center text-gray-800">일반</h6>
+                                                                <div class="card dashboard-card">
+                                                                    <span class="badge rounded-pill bg-light"><i class="fas fa-heart"></i><span class="ml-2">468</span></span>
+                                                                    <a href="#none"><img src="../../images/img/img_musicchallenge_thumbnail_05.png" class="card-img-top" alt="챌린지이미지" /></a>
+                                                                    <div class="card-body position-absolute">
+                                                                        <span class="card-title">@닉네임</span>
+                                                                        <p class="card-text text-truncate">일반</p>
+                                                                    </div>
+
+                                                                    <div class="card-body">
+                                                                        <ul class="list-group list-group-flush">
+                                                                            <li class="list-group-item"><i class="far fa-eye"></i><span class="ml-2">10,120</span></li>
+                                                                            <li class="list-group-item"><i class="fas fa-heart"></i><span class="ml-2">5,401</span></li>
+                                                                            <li class="list-group-item"><i class="fas fa-comment-alt"></i><span class="ml-2">321</span></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="sub-panel0003" role="tabpanel" aria-labelledby="sub-tab0003">
+                                                        <div class="d-flex">
+                                                            <div class="col">
+                                                                <h6 class="h5 text-center text-gray-800">AI 챌린지</h6>
+                                                                <div class="card dashboard-card">
+                                                                    <span class="badge rounded-pill bg-light"><i class="fas fa-comment-alt"></i><span class="ml-2">468</span></span>
+                                                                    <a href="#none"><img src="../../images/img/img_musicchallenge_thumbnail_05.png" class="card-img-top" alt="챌린지이미지" /></a>
+                                                                    <div class="card-body position-absolute">
+                                                                        <span class="card-title">@닉네임</span>
+                                                                        <p class="card-text text-truncate">챌린지 이름 챌린지 이름 챌린지 이름 챌린지 이름 챌린지 이름</p>
+                                                                    </div>
+
+                                                                    <div class="card-body">
+                                                                        <ul class="list-group list-group-flush">
+                                                                            <li class="list-group-item"><i class="far fa-eye"></i><span class="ml-2">10,120</span></li>
+                                                                            <li class="list-group-item"><i class="fas fa-heart"></i><span class="ml-2">5,401</span></li>
+                                                                            <li class="list-group-item"><i class="fas fa-comment-alt"></i><span class="ml-2">321</span></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <h6 class="h5 text-center text-gray-800">음원 챌린지</h6>
+                                                                <div class="card dashboard-card">
+                                                                    <span class="badge rounded-pill bg-light"><i class="fas fa-comment-alt"></i><span class="ml-2">136</span></span>
+                                                                    <a href="#none"><img src="../../images/img/img_musicchallenge_thumbnail_05.png" class="card-img-top" alt="챌린지이미지" /></a>
+                                                                    <div class="card-body position-absolute">
+                                                                        <span class="card-title">@닉네임</span>
+                                                                        <p class="card-text text-truncate">챌린지 이름</p>
+                                                                    </div>
+
+                                                                    <div class="card-body">
+                                                                        <ul class="list-group list-group-flush">
+                                                                            <li class="list-group-item"><i class="far fa-eye"></i><span class="ml-2">10,120</span></li>
+                                                                            <li class="list-group-item"><i class="fas fa-heart"></i><span class="ml-2">5,401</span></li>
+                                                                            <li class="list-group-item"><i class="fas fa-comment-alt"></i><span class="ml-2">321</span></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <h6 class="h5 text-center text-gray-800">일반</h6>
+                                                                <div class="card dashboard-card">
+                                                                    <span class="badge rounded-pill bg-light"><i class="fas fa-comment-alt"></i><span class="ml-2">468</span></span>
+                                                                    <a href="#none"><img src="../../images/img/img_musicchallenge_thumbnail_05.png" class="card-img-top" alt="챌린지이미지" /></a>
+                                                                    <div class="card-body position-absolute">
+                                                                        <span class="card-title">@닉네임</span>
+                                                                        <p class="card-text text-truncate">일반</p>
+                                                                    </div>
+
+                                                                    <div class="card-body">
+                                                                        <ul class="list-group list-group-flush">
+                                                                            <li class="list-group-item"><i class="far fa-eye"></i><span class="ml-2">10,120</span></li>
+                                                                            <li class="list-group-item"><i class="fas fa-heart"></i><span class="ml-2">5,401</span></li>
+                                                                            <li class="list-group-item"><i class="fas fa-comment-alt"></i><span class="ml-2">321</span></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                     <!-- //탭 컨텐츠 -->
                                                 </div>
                                             </div>

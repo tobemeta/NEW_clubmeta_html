@@ -84,6 +84,12 @@ optgroup {
 .fz-sm {
     font-size: $font-size-sm;
 }
+.w-10 {
+    width: 10% !important;
+}
+.w-40 {
+    width: 40% !important;
+}
 
 // 모달팝업
 // .modal.show {
@@ -342,8 +348,12 @@ optgroup {
     .form-row {
         height: 100%;
         align-items: center;
-        margin-left: 0;
-        margin-right: 0;
+        div[class^='col-'] {
+            padding: 0 !important;
+            + * {
+                margin-left: 5px;
+            }
+        }
     }
 
     .btn-group {
@@ -369,6 +379,8 @@ optgroup {
 }
 .input-daterange-btn {
     display: flex;
+    margin-right: -5px;
+    margin-left: -5px;
     .input-daterange {
         flex: 1 1 auto;
     }
@@ -489,6 +501,14 @@ optgroup {
             width: 4rem;
             height: 4rem;
             object-fit: cover;
+        }
+        input[type='password'] {
+            display: inline;
+            outline: 0;
+            border: 0;
+            background: transparent;
+            text-align: center;
+            font-size: 1.2rem;
         }
     }
     .card-views {
@@ -665,6 +685,36 @@ optgroup {
 }
 
 //대시보드
+.dashboard-card {
+    .badge {
+        align-self: center;
+        position: absolute;
+        top: 0.5rem;
+        padding: 0.7rem;
+        font-size: 0.8rem;
+        font-weight: 500;
+        box-shadow: 1px 1px 5px #111;
+    }
+    .card-body {
+        &.position-absolute {
+            top: 7.5rem;
+            color: #fff;
+            text-shadow: 1px 1px 5px #111;
+        }
+        .card-img-top {
+            object-fit: cover;
+        }
+        .text-truncate {
+            width: 170px;
+        }
+        .list-group {
+            .list-group-item {
+                padding: 0.55rem 1rem;
+                border-width: 0;
+            }
+        }
+    }
+}
 .ico-new {
     position: relative;
     &::after {

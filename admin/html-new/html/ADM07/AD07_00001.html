@@ -65,8 +65,12 @@
                                                     <div class="form-box-cont">
                                                         <div class="custom-control-wrap">
                                                             <label class="custom-control custom-checkbox custom-control-inline">
-                                                                <input type="checkbox" name="chk" class="custom-control-input" />
+                                                                <input type="checkbox" name="chk" class="custom-control-input" checked />
                                                                 <span class="custom-control-label">처리중</span>
+                                                            </label>
+                                                            <label class="custom-control custom-checkbox custom-control-inline">
+                                                                <input type="checkbox" name="chk" class="custom-control-input" />
+                                                                <span class="custom-control-label">처리중(유저삭제)</span>
                                                             </label>
                                                             <label class="custom-control custom-checkbox custom-control-inline">
                                                                 <input type="checkbox" name="chk" class="custom-control-input" />
@@ -85,13 +89,13 @@
                                                     <div class="form-box-label">검색어</div>
                                                     <div class="form-box-cont">
                                                         <div class="form-row">
-                                                            <div class="col-md-5">
+                                                            <div class="col-2">
                                                                 <select class="custom-select">
-                                                                    <option value="1">최종수정자</option>
+                                                                    <option value="1">닉네임</option>
                                                                 </select>
                                                             </div>
-                                                            <div class="col-md-7 mt-2 mt-md-0">
-                                                                <input type="text" class="form-control" />
+                                                            <div class="flex-fill">
+                                                                <input type="text" class="form-control" placeholder="검색어 입력" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -193,7 +197,7 @@
                                                     </thead>
                                                     <tbody>
                                                         <!-- <tr class="no-records-found">
-                                                        <td colspan="8">조회된 데이터가 없습니다.</td>
+                                                        <td colspan="7">일치하는 검색결과가 없습니다.</td>
                                                     </tr> -->
                                                         <tr class="" data-index="0">
                                                             <td>
@@ -257,7 +261,7 @@
                                             <div class="fixed-table-pagination">
                                                 <!-- 왼쪽 버튼 영역 -->
                                                 <div class="float-left">
-                                                    <button type="button" class="btn btn-outline-dark" data-toggle="modal" onclick="bsConfirm('해당 유저를 정말 삭제 하시겠습니까? 삭제하시면 복구할 수 없습니다.')"><i class="bi bi-x"></i> 삭제</button>
+                                                    <button type="button" class="btn btn-secondary" data-toggle="modal" onclick="bsConfirm('해당 유저를 정말 삭제 하시겠습니까? 삭제하시면 복구할 수 없습니다.')"><i class="bi bi-x"></i> 삭제</button>
                                                 </div>
                                                 <!-- 오른쪽 버튼 영역 -->
                                                 <div class="float-right"></div>
