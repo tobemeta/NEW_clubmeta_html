@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>클럽메타 관리자 - 유저 상세</title>
+        <!-- js -->
+        <script src="../include/head.js"></script>
+        <script src="../../js/custom.js"></script>
+    </head>
+
+    <body>
+        <!-- Page Wrapper -->
+        <div id="wrapper" class="wrapper">
+            <!-- 사이드바 -->
+            <div data-include="../include/sidebar.html"></div>
+            <!-- //사이드바 -->
+
+            <!-- content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column bg-white">
+                <!-- 컨텐츠 본문 -->
+                <div id="content">
+                    <!--  -->
+                    <div data-include="../include/topbar.html"></div>
+
+                    <div class="container-fluid" role="main">
+                        <!-- 페이지 경로 -->
+                        <div class="page-breadcrumb" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="#"><i class="fas fa-home d-flex align-items-center"></i></a>
+                                </li>
+                                <li class="breadcrumb-item">유저관리</li>
+                                <li class="breadcrumb-item">유저 상세</li>
+                            </ol>
+                        </div>
+                        <!-- //페이지 경로 -->
+                        <div class="main">
+                            <!-- 제목 및 등록버튼 -->
+                            <div class="row clearfix mt-4 mb-4">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h2 class="h3 text-gray-800 float-left">유저 상세 정보</h2>
+                                </div>
+                            </div>
+                            <!-- //제목 및 등록버튼 -->
+
+                            <!---//contents--->
+                            <div class="d-flex align-items-center">
+                                <div class="mr-2">
+                                    <div class="profile-img mw-25">
+                                        <img src="../../images/img/img_musicchallenge_thumbnail_05.png" alt="유저의 프로필 이미지" />
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ml-2">
+                                    <div class="form-box">
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label"><label for="">닉네임</label></div>
+                                                <div class="form-box-cont">
+                                                    <div class="form-row">
+                                                        <div class="input-group w-25">
+                                                            <input type="text" class="form-control" />
+                                                        </div>
+                                                        <!-- 오류 메세지 클래스 d-none으로 동작 -->
+                                                        <span class="text-danger ml-2 d-none">*이미 사용 중인 닉네임입니다.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label">이름</div>
+                                                <div class="form-box-cont">
+                                                    <div class="form-row">
+                                                        <span>김메타</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label">계정 상태</div>
+                                                <div class="form-box-cont">
+                                                    <div class="form-row">
+                                                        <div class="d-flex">
+                                                            <label class="custom-control custom-radio custom-control-inline mb-0">
+                                                                <input type="radio" name="rdo2" class="custom-control-input" checked />
+                                                                <span class="custom-control-label">정상</span>
+                                                            </label>
+                                                            <label class="custom-control custom-radio custom-control-inline mb-0">
+                                                                <input type="radio" name="rdo2" class="custom-control-input" />
+                                                                <span class="custom-control-label">휴면</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label">최근 접속일</div>
+                                                <div class="form-box-cont">
+                                                    <div class="form-row">2023-06-09 16:04:20</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix mt-4 mb-4">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h2 class="h3 text-gray-800 float-left">기본 정보</h2>
+                                </div>
+                            </div>
+                            <div class="form-box">
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label"><label for="">아이디</label></div>
+                                        <div class="form-box-cont">
+                                            <div class="form-row">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-box-label"><label for="">가입일자</label></div>
+                                        <div class="form-box-cont col-md-5">
+                                            <div class="form-row">
+                                                <span>2023.06.01</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label">휴대폰</div>
+                                        <div class="form-box-cont">
+                                            <div class="form-row">
+                                                <span>010-1234-1234</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-box-label"><label for="">연동경로</label></div>
+                                        <div class="form-box-cont col-md-5">
+                                            <div class="form-row">
+                                                <span>카카오톡</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label">생년월일</div>
+                                        <div class="form-box-cont">
+                                            <div class="form-row">
+                                                <span>2000.05.05</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-box-label"><label for="">광고성 수신여부</label></div>
+                                        <div class="form-box-cont col-md-5">
+                                            <div class="form-row">
+                                                <span class="mr-2">업푸시</span>
+                                                <span class="mr-2">(Y)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label">성별</div>
+                                        <div class="form-box-cont">
+                                            <div class="form-row">
+                                                <span>남</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-box-label"><label for="">추천인</label></div>
+                                        <div class="form-box-cont col-md-5">
+                                            <div class="form-row">
+                                                <span>하하하</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label">주소</div>
+                                        <div class="form-box-cont">
+                                            <div class="form-row">
+                                                <span>서울 강남구 봉은사로 617 인탑스빌딩</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-box-label">관심 장르</div>
+                                        <div class="form-box-cont col-md-5">
+                                            <div class="form-row">
+                                                <span class="mr-2">케이팝</span>
+                                                <span class="mr-2">/</span>
+                                                <span class="mr-2">트로트</span>
+                                                <span class="mr-2">/</span>
+                                                <span class="mr-2">키즈</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label">자기소개</div>
+                                        <div class="form-box-cont">
+                                            <div class="form-row">
+                                                <span>자기 소개글 자기소개글 영역 최대 200자 자기 소개글</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn-wrap text-center mt-5">
+                                <button type="button" class="btn btn-lg btn-secondary" onclick="bsConfirm('정말 수정을 취소하시겠습니까? 취소하시면 처음부터 재입력해야 합니다.')">취소</button>
+                                <button type="button" class="btn btn-lg btn-primary" onclick="bsConfirm('수정사항을 저장하시겠습니까?')">저장</button>
+                                <!-- 저장버튼 선택 시 오류가 있을 경우, 팝업메세지
+                                 “이미 등록된 아이디입니다.” , “아이디 형식이 맞지 않습니다.”-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll to Top Button-->
+        <div data-include="../include/topbtn.html"></div>
+
+        <!-- Logout Modal-->
+        <div data-include="../include/logoutModal.html"></div>
+        <!-- changePw Modal-->
+        <div data-include="../include/pop/changePwModal.html"></div>
+    </body>
+    <script src="../../datatables/jquery.dataTables.min.js"></script>
+    <script src="../../datatables/dataTables.bootstrap4.min.js"></script>
+
+    <script src="../../lib/chart.js/plugins/chartjs-plugin-datalabels.min.js"></script>
+    <script src="../../lib/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="../../js/demo/datatables-demo.js"></script>
+</html>

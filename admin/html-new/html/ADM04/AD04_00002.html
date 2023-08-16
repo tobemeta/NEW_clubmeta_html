@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>클럽메타 관리자 - 유저 상세</title>
+        <!-- js -->
+        <script src="../include/head.js"></script>
+        <script src="../../js/custom.js"></script>
+    </head>
+
+    <body>
+        <!-- Page Wrapper -->
+        <div id="wrapper" class="wrapper">
+            <!-- 사이드바 -->
+            <div data-include="../include/sidebar.html"></div>
+            <!-- //사이드바 -->
+
+            <!-- content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column bg-white">
+                <!-- 컨텐츠 본문 -->
+                <div id="content">
+                    <!--  -->
+                    <div data-include="../include/topbar.html"></div>
+
+                    <div class="container-fluid" role="main">
+                        <!-- 페이지 경로 -->
+                        <div class="page-breadcrumb" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="#"><i class="fas fa-home d-flex align-items-center"></i></a>
+                                </li>
+                                <li class="breadcrumb-item">유저관리</li>
+                                <li class="breadcrumb-item">유저 상세</li>
+                            </ol>
+                        </div>
+                        <!-- //페이지 경로 -->
+                        <div class="main">
+                            <!-- 제목 및 등록버튼 -->
+                            <div class="row clearfix mt-4 mb-4">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h2 class="h3 text-gray-800 float-left">유저 상세 정보</h2>
+                                </div>
+                            </div>
+                            <!-- //제목 및 등록버튼 -->
+
+                            <!---//contents--->
+                            <div class="d-flex align-items-center">
+                                <div class="mr-2">
+                                    <div class="profile-img mw-25">
+                                        <img src="../../images/img/img_musicchallenge_thumbnail_05.png" alt="유저의 프로필 이미지" />
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ml-2">
+                                    <div class="form-box">
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label"><label for="">닉네임</label></div>
+                                                <div class="form-box-cont">
+                                                    <div class="form-row">
+                                                        <span>metaclub@naver.com</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label">이름</div>
+                                                <div class="form-box-cont">
+                                                    <div class="form-row">
+                                                        <span>김메타</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label">계정 상태</div>
+                                                <div class="form-box-cont">
+                                                    <div class="form-row">
+                                                        <span>정상</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label">최근 접속일</div>
+                                                <div class="form-box-cont">
+                                                    <div class="form-row">
+                                                        <a href="#none">2023-06-09 16:04:20</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dashboard-box mt-4">
+                                <div class="dashboard">
+                                    <dl>
+                                        <dt>Shoe</dt>
+                                        <dd><strong class="fz-lg fc-yellow">264</strong></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>획득한 배지</dt>
+                                        <dd><strong class="fz-lg fc-yellow">4</strong></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>팔로워</dt>
+                                        <dd><strong class="fz-lg fc-yellow">2,439</strong></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>업로드 영상</dt>
+                                        <dd><strong class="fz-lg fc-yellow">10</strong></dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <ul class="nav nav-tabs sub-tab mt-4" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="sub-tab1" data-toggle="tab" data-target="#sub-panel1" type="button" role="tab">유저 정보</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="sub-tab2" data-toggle="tab" data-target="#sub-panel2" type="button" role="tab">인사이트</button>
+                                </li>
+                            </ul>
+                            <!-- 탭컨텐츠 -->
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="sub-panel1" role="tabpanel" aria-labelledby="sub-tab1">
+                                    <div class="row clearfix mt-4 mb-4">
+                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                            <h3 class="h3 text-gray-800 float-left">기본 정보</h3>
+                                        </div>
+                                    </div>
+                                    <div class="form-box">
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label"><label for="">아이디</label></div>
+                                                <div class="form-box-cont">
+                                                    <div class="form-row">
+                                                        <span>metaclub@naver.com</span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-box-label"><label for="">가입일자</label></div>
+                                                <div class="form-box-cont col-md-5">
+                                                    <div class="form-row">
+                                                        <span>2023.06.01</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label">휴대폰</div>
+                                                <div class="form-box-cont">
+                                                    <div class="form-row">
+                                                        <span>010-1234-1234</span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-box-label"><label for="">연동경로</label></div>
+                                                <div class="form-box-cont col-md-5">
+                                                    <div class="form-row">
+                                                        <span>카카오톡</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label">생년월일</div>
+                                                <div class="form-box-cont">
+                                                    <div class="form-row">
+                                                        <span>2000.05.05</span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-box-label"><label for="">광고성 수신여부</label></div>
+                                                <div class="form-box-cont col-md-5">
+                                                    <div class="form-row">
+                                                        <span class="mr-2">업푸시</span>
+                                                        <span class="mr-2">(Y)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label">성별</div>
+                                                <div class="form-box-cont">
+                                                    <div class="form-row">
+                                                        <span>남</span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-box-label"><label for="">추천인</label></div>
+                                                <div class="form-box-cont col-md-5">
+                                                    <div class="form-row">
+                                                        <span>하하하</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label">주소</div>
+                                                <div class="form-box-cont">
+                                                    <div class="form-row">
+                                                        <span>서울 강남구 봉은사로 617 인탑스빌딩</span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-box-label">관심 장르</div>
+                                                <div class="form-box-cont col-md-5">
+                                                    <div class="form-row">
+                                                        <span class="mr-2">케이팝</span>
+                                                        <span class="mr-2">/</span>
+                                                        <span class="mr-2">트로트</span>
+                                                        <span class="mr-2">/</span>
+                                                        <span class="mr-2">키즈</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label">자기소개</div>
+                                                <div class="form-box-cont">
+                                                    <div class="form-row">
+                                                        <span>자기 소개글 자기소개글 영역 최대 200자 자기 소개글</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix mt-4 mb-4">
+                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                            <h3 class="h3 text-gray-800 float-left">신고 정보</h3>
+                                        </div>
+                                    </div>
+                                    <div class="bootstrap-table bootstrap4">
+                                        <div class="fixed-table-toolbar"></div>
+                                        <div class="fixed-table-container" style="padding-bottom: 0px">
+                                            <div class="fixed-table-header" style="display: none">
+                                                <table></table>
+                                            </div>
+                                            <div class="fixed-table-body">
+                                                <div class="fixed-table-loading table table-bordered table-hover" style="top: 42.7969px">
+                                                    <span class="loading-wrap">
+                                                        <span class="loading-text">데이터를 불러오는 중입니다</span>
+                                                        <span class="animation-wrap"><span class="animation-dot"></span></span>
+                                                    </span>
+                                                </div>
+                                                <table id="" class="table table-bordered" data-pagination="true">
+                                                    <tbody>
+                                                        <!-- <tr class="no-records-found">
+                                                        <td colspan="8">해당 데이터가 없습니다.</td>
+                                                        </tr> -->
+                                                        <tr>
+                                                            <th data-field="1" rowspan="2">
+                                                                <div class="th-inner">신고한 누적 횟수</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="2">
+                                                                <div class="th-inner">유저</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="3">
+                                                                <div class="th-inner">영상</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="4">
+                                                                <div class="th-inner">댓글</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="5" rowspan="2">
+                                                                <div class="th-inner">신고한 누적 횟수</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="6">
+                                                                <div class="th-inner">유저</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="7">
+                                                                <div class="th-inner">영상</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="8">
+                                                                <div class="th-inner">댓글</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                        </tr>
+                                                        <tr class="" data-index="0">
+                                                            <td>5</td>
+                                                            <td>2</td>
+                                                            <td>8</td>
+                                                            <td>2</td>
+                                                            <td>12</td>
+                                                            <td>3</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="fixed-table-footer"></div>
+                                        </div>
+
+                                        <div class="fixed-table-pagination">
+                                            <div class="pagination-detail"></div>
+                                            <!-- 왼쪽 버튼 영역 -->
+                                            <div class="float-left"></div>
+                                            <!-- 오른쪽 버튼 영역 -->
+                                            <div class="float-right"></div>
+                                            <div class="pagination">
+                                                <ul class="pagination">
+                                                    <li class="page-item page-pre"><a class="page-link" aria-label="previous page" href="javascript:void(0)">‹</a></li>
+                                                    <li class="page-item active"><a class="page-link" aria-label="to page 1" href="javascript:void(0)">1</a></li>
+                                                    <li class="page-item"><a class="page-link" aria-label="to page 2" href="javascript:void(0)">2</a></li>
+                                                    <li class="page-item page-next"><a class="page-link" aria-label="next page" href="javascript:void(0)">›</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="btn-wrap text-center mt-5">
+                                        <button type="button" class="btn btn-lg btn-secondary" onclick="bsConfirm('해당 유저를 정말 삭제 하시겠습니까?삭제하시면 복구할 수 없습니다.')">삭제</button>
+                                        <button type="button" class="btn btn-lg btn-secondary">수정</button>
+                                        <button type="button" class="btn btn-lg btn-primary">목록</button>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="sub-panel2" role="tabpanel" aria-labelledby="sub-tab2">
+                                    <div class="row mt-3">
+                                        <div class="col-md-4">
+                                            <div class="card shadow dash-chart-box">
+                                                <!-- Card Header - Dropdown -->
+                                                <div class="card-header py-3">
+                                                    <h6 class="m-0 font-weight-bold text-dark">팔로워 성비</h6>
+                                                </div>
+                                                <!-- Card Body -->
+                                                <div class="card-body">
+                                                    <div class="chart-pie pt-4">
+                                                        <div class="chartjs-size-monitor">
+                                                            <div class="chartjs-size-monitor-expand">
+                                                                <div class=""></div>
+                                                            </div>
+                                                            <div class="chartjs-size-monitor-shrink">
+                                                                <div class=""></div>
+                                                            </div>
+                                                        </div>
+
+                                                        <canvas id="myDnChart" width="544" height="216" style="display: block; width: 544px; height: 216px" class="chartjs-render-monitor"></canvas>
+                                                    </div>
+                                                    <div class="chart-total">
+                                                        <p>1,873</p>
+                                                    </div>
+                                                    <div class="form-box mt-3">
+                                                        <div class="form-box-row">
+                                                            <div class="form-box-item">
+                                                                <div class="form-box-label label-s"><label for="">여성</label></div>
+                                                                <div class="form-box-cont d-flex align-items-center">
+                                                                    <span class="align-middle"><strong>1,073명</strong></span>
+                                                                    <span class="align-middle ml-2">70%</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-box-row">
+                                                            <div class="form-box-item">
+                                                                <div class="form-box-label label-s"><label for="">남성</label></div>
+                                                                <div class="form-box-cont d-flex align-items-center">
+                                                                    <span class="align-middle"><strong>800명</strong></span>
+                                                                    <span class="align-middle ml-2">30%</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="card shadow dash-chart-box">
+                                                <div class="card-header py-3">
+                                                    <h6 class="m-0 font-weight-bold text-dark">팔로워 연령대</h6>
+                                                </div>
+                                                <div class="card-body">
+                                                    <!-- 탭 메뉴 -->
+                                                    <ul class="nav nav-tabs btn-tab" role="tablist">
+                                                        <li class="nav-item" role="presentation">
+                                                            <button class="nav-link btn-tab-link active" id="sub-tab02-1" data-toggle="tab" data-target="#sub-panel02-1" type="button" role="tab">전체</button>
+                                                        </li>
+                                                        <li class="nav-item" role="presentation">
+                                                            <button class="nav-link btn-tab-link" id="sub-tab02-2" data-toggle="tab" data-target="#sub-panel02-2" type="button" role="tab">남성</button>
+                                                        </li>
+                                                        <li class="nav-item" role="presentation">
+                                                            <button class="nav-link btn-tab-link" id="sub-tab02-3" data-toggle="tab" data-target="#sub-panel02-3" type="button" role="tab">여성</button>
+                                                        </li>
+                                                    </ul>
+                                                    <!-- //탭 메뉴 -->
+                                                    <!-- 탭 컨탠츠 -->
+                                                    <div class="tab-content mt-4">
+                                                        <div class="tab-pane fade show active" id="sub-panel02-1" role="tabpanel" aria-labelledby="sub-tab02-1">
+                                                            <h4 class="small font-weight-bold">14~18 <span class="float-right">13%</span></h4>
+                                                            <div class="progress mb-4">
+                                                                <div class="progress-bar" role="progressbar" style="width: 13%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <h4 class="small font-weight-bold">19~24 <span class="float-right">50%</span></h4>
+                                                            <div class="progress mb-4">
+                                                                <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <h4 class="small font-weight-bold">25~29 <span class="float-right">25%</span></h4>
+                                                            <div class="progress mb-4">
+                                                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <h4 class="small font-weight-bold">30~40 <span class="float-right">10%</span></h4>
+                                                            <div class="progress mb-4">
+                                                                <div class="progress-bar" role="progressbar" style="width: 10%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <h4 class="small font-weight-bold">41~ <span class="float-right">2%</span></h4>
+                                                            <div class="progress">
+                                                                <div class="progress-bar" role="progressbar" style="width: 2%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tab-pane fade" id="sub-panel02-2" role="tabpanel" aria-labelledby="sub-tab02-2">
+                                                            <h4 class="small font-weight-bold">14~18 <span class="float-right">13%</span></h4>
+                                                            <div class="progress mb-4">
+                                                                <div class="progress-bar" role="progressbar" style="width: 13%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <h4 class="small font-weight-bold">19~24 <span class="float-right">50%</span></h4>
+                                                            <div class="progress mb-4">
+                                                                <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <h4 class="small font-weight-bold">25~29 <span class="float-right">65%</span></h4>
+                                                            <div class="progress mb-4">
+                                                                <div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <h4 class="small font-weight-bold">30~40 <span class="float-right">10%</span></h4>
+                                                            <div class="progress mb-4">
+                                                                <div class="progress-bar" role="progressbar" style="width: 10%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <h4 class="small font-weight-bold">41~ <span class="float-right">2%</span></h4>
+                                                            <div class="progress">
+                                                                <div class="progress-bar" role="progressbar" style="width: 2%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tab-pane fade" id="sub-panel02-3" role="tabpanel" aria-labelledby="sub-tab02-3">
+                                                            <h4 class="small font-weight-bold">14~18 <span class="float-right">13%</span></h4>
+                                                            <div class="progress mb-4">
+                                                                <div class="progress-bar" role="progressbar" style="width: 13%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <h4 class="small font-weight-bold">19~24 <span class="float-right">10%</span></h4>
+                                                            <div class="progress mb-4">
+                                                                <div class="progress-bar" role="progressbar" style="width: 10%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <h4 class="small font-weight-bold">25~29 <span class="float-right">25%</span></h4>
+                                                            <div class="progress mb-4">
+                                                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <h4 class="small font-weight-bold">30~40 <span class="float-right">50%</span></h4>
+                                                            <div class="progress mb-4">
+                                                                <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <h4 class="small font-weight-bold">41~ <span class="float-right">2%</span></h4>
+                                                            <div class="progress">
+                                                                <div class="progress-bar" role="progressbar" style="width: 2%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- //탭 컨텐츠 -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="card shadow dash-chart-box">
+                                                <div class="card-header py-3">
+                                                    <h6 class="m-0 font-weight-bold text-dark">팔로워 지역</h6>
+                                                </div>
+                                                <div class="card-body">
+                                                    <!-- 탭 메뉴 -->
+                                                    <ul class="nav nav-tabs btn-tab" role="tablist">
+                                                        <li class="nav-item" role="presentation">
+                                                            <button class="nav-link btn-tab-link active" id="sub-tab03-1" data-toggle="tab" data-target="#sub-panel03-1" type="button" role="tab">전체</button>
+                                                        </li>
+                                                        <li class="nav-item" role="presentation">
+                                                            <button class="nav-link btn-tab-link" id="sub-tab03-2" data-toggle="tab" data-target="#sub-panel03-2" type="button" role="tab">남성</button>
+                                                        </li>
+                                                        <li class="nav-item" role="presentation">
+                                                            <button class="nav-link btn-tab-link" id="sub-tab03-3" data-toggle="tab" data-target="#sub-panel03-3" type="button" role="tab">여성</button>
+                                                        </li>
+                                                    </ul>
+                                                    <!-- //탭 메뉴 -->
+                                                    <!-- 탭 컨탠츠 -->
+                                                    <div class="tab-content mt-4">
+                                                        <div class="tab-pane fade show active" id="sub-panel03-1" role="tabpanel" aria-labelledby="sub-tab03-1">
+                                                            <h4 class="small font-weight-bold">경기 <span class="float-right">50%</span></h4>
+                                                            <div class="progress mb-4">
+                                                                <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <h4 class="small font-weight-bold">서울 <span class="float-right">70%</span></h4>
+                                                            <div class="progress mb-4">
+                                                                <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <h4 class="small font-weight-bold">부산 <span class="float-right">25%</span></h4>
+                                                            <div class="progress mb-4">
+                                                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <h4 class="small font-weight-bold">광주 <span class="float-right">15%</span></h4>
+                                                            <div class="progress mb-4">
+                                                                <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <h4 class="small font-weight-bold">강원 <span class="float-right">2%</span></h4>
+                                                            <div class="progress">
+                                                                <div class="progress-bar" role="progressbar" style="width: 2%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tab-pane fade" id="sub-panel03-2" role="tabpanel" aria-labelledby="sub-tab03-2">
+                                                            <h4 class="small font-weight-bold">경기 <span class="float-right">80%</span></h4>
+                                                            <div class="progress mb-4">
+                                                                <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <h4 class="small font-weight-bold">서울 <span class="float-right">70%</span></h4>
+                                                            <div class="progress mb-4">
+                                                                <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <h4 class="small font-weight-bold">부산 <span class="float-right">43%</span></h4>
+                                                            <div class="progress mb-4">
+                                                                <div class="progress-bar" role="progressbar" style="width: 43%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <h4 class="small font-weight-bold">광주 <span class="float-right">15%</span></h4>
+                                                            <div class="progress mb-4">
+                                                                <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <h4 class="small font-weight-bold">강원 <span class="float-right">8%</span></h4>
+                                                            <div class="progress">
+                                                                <div class="progress-bar" role="progressbar" style="width: 8%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tab-pane fade" id="sub-panel03-3" role="tabpanel" aria-labelledby="sub-tab03-3">
+                                                            <h4 class="small font-weight-bold">경기 <span class="float-right">90%</span></h4>
+                                                            <div class="progress mb-4">
+                                                                <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <h4 class="small font-weight-bold">서울 <span class="float-right">50%</span></h4>
+                                                            <div class="progress mb-4">
+                                                                <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <h4 class="small font-weight-bold">부산 <span class="float-right">33%</span></h4>
+                                                            <div class="progress mb-4">
+                                                                <div class="progress-bar" role="progressbar" style="width: 33%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <h4 class="small font-weight-bold">광주 <span class="float-right">45%</span></h4>
+                                                            <div class="progress mb-4">
+                                                                <div class="progress-bar" role="progressbar" style="width: 45%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <h4 class="small font-weight-bold">강원 <span class="float-right">8%</span></h4>
+                                                            <div class="progress">
+                                                                <div class="progress-bar" role="progressbar" style="width: 8%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- //탭 컨텐츠 -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-4">
+                                        <div class="col-md-6">
+                                            <div class="card shadow dash-chart-box">
+                                                <div class="card-header py-3">
+                                                    <h6 class="m-0 font-weight-bold text-dark">업로드 유저 연령대</h6>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="chart-bar">
+                                                        <div class="chartjs-size-monitor">
+                                                            <div class="chartjs-size-monitor-expand">
+                                                                <div class=""></div>
+                                                            </div>
+                                                            <div class="chartjs-size-monitor-shrink">
+                                                                <div class=""></div>
+                                                            </div>
+                                                        </div>
+                                                        <canvas id="myBarChart" width="100%" height="320" style="display: block; width: 100%" class="chartjs-render-monitor"></canvas>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card shadow dash-chart-box">
+                                                <!-- Card Header - Dropdown -->
+                                                <div class="card-header py-3">
+                                                    <h6 class="m-0 font-weight-bold text-dark">영상 비중</h6>
+                                                </div>
+                                                <!-- Card Body -->
+                                                <div class="card-body">
+                                                    <div class="row h-100 align-items-center">
+                                                        <div class="chart-pie">
+                                                            <div class="chartjs-size-monitor">
+                                                                <div class="chartjs-size-monitor-expand">
+                                                                    <div class=""></div>
+                                                                </div>
+                                                                <div class="chartjs-size-monitor-shrink">
+                                                                    <div class=""></div>
+                                                                </div>
+                                                            </div>
+                                                            <canvas id="myPieChart" width="" height="216" style="display: block" class="chartjs-render-monitor"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-5 pb-6">
+                                        <div class="col-md-6">
+                                            <div class="card shadow">
+                                                <!-- Card Header - Dropdown -->
+                                                <div class="card-header py-3">
+                                                    <h6 class="m-0 font-weight-bold text-dark">업로드 영상 요약</h6>
+                                                </div>
+                                                <!-- Card Body -->
+                                                <div class="card-body">
+                                                    <div class="bootstrap-table bootstrap4">
+                                                        <div class="fixed-table-toolbar"></div>
+                                                        <div class="fixed-table-container" style="padding-bottom: 0px">
+                                                            <div class="fixed-table-header" style="display: none">
+                                                                <table></table>
+                                                            </div>
+                                                            <div class="fixed-table-body">
+                                                                <div class="fixed-table-loading table table-bordered" style="top: 42.7969px">
+                                                                    <span class="loading-wrap">
+                                                                        <span class="loading-text">데이터를 불러오는 중입니다</span>
+                                                                        <span class="animation-wrap"><span class="animation-dot"></span></span>
+                                                                    </span>
+                                                                </div>
+                                                                <table id="table" class="table table-bordered" data-pagination="true">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <th data-field="0" colspan="3">
+                                                                                <div class="th-inner">업로드 영상 수</div>
+                                                                                <div class="fht-cell"></div>
+                                                                            </th>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <th data-field="1">
+                                                                                <div class="th-inner">AI챌린지</div>
+                                                                                <div class="fht-cell"></div>
+                                                                            </th>
+                                                                            <th data-field="2">
+                                                                                <div class="th-inner">음원 챌린지</div>
+                                                                                <div class="fht-cell"></div>
+                                                                            </th>
+                                                                            <th data-field="3">
+                                                                                <div class="th-inner">일반 영상</div>
+                                                                                <div class="fht-cell"></div>
+                                                                            </th>
+                                                                        </tr>
+                                                                        <tr class="" data-index="0">
+                                                                            <td>43</td>
+                                                                            <td>264</td>
+                                                                            <td>10</td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <div class="fixed-table-footer"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bootstrap-table bootstrap4 mt-4">
+                                                        <div class="fixed-table-toolbar"></div>
+                                                        <div class="fixed-table-container" style="padding-bottom: 0px">
+                                                            <div class="fixed-table-header" style="display: none">
+                                                                <table></table>
+                                                            </div>
+                                                            <div class="fixed-table-body">
+                                                                <div class="fixed-table-loading table table-bordered" style="top: 42.7969px">
+                                                                    <span class="loading-wrap">
+                                                                        <span class="loading-text">데이터를 불러오는 중입니다</span>
+                                                                        <span class="animation-wrap"><span class="animation-dot"></span></span>
+                                                                    </span>
+                                                                </div>
+                                                                <table id="table01" class="table table-bordered" data-pagination="true">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <th data-field="0" colspan="2">
+                                                                                <div class="th-inner">챌린지 오픈 횟수</div>
+                                                                                <div class="fht-cell"></div>
+                                                                            </th>
+                                                                            <th data-field="0" colspan="2">
+                                                                                <div class="th-inner">챌린지 참가 횟수</div>
+                                                                                <div class="fht-cell"></div>
+                                                                            </th>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <th data-field="1">
+                                                                                <div class="th-inner">AI챌린지</div>
+                                                                                <div class="fht-cell"></div>
+                                                                            </th>
+                                                                            <th data-field="2">
+                                                                                <div class="th-inner">음원 챌린지</div>
+                                                                                <div class="fht-cell"></div>
+                                                                            </th>
+                                                                            <th data-field="3">
+                                                                                <div class="th-inner">AI챌린지</div>
+                                                                                <div class="fht-cell"></div>
+                                                                            </th>
+                                                                            <th data-field="4">
+                                                                                <div class="th-inner">음원 챌린지</div>
+                                                                                <div class="fht-cell"></div>
+                                                                            </th>
+                                                                        </tr>
+                                                                        <tr class="" data-index="0">
+                                                                            <td>43</td>
+                                                                            <td>264</td>
+                                                                            <td>10</td>
+                                                                            <td>50</td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <div class="fixed-table-footer"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card shadow mt-4">
+                                                <!-- Card Header - Dropdown -->
+                                                <div class="card-header py-3">
+                                                    <h6 class="m-0 font-weight-bold text-dark">공유</h6>
+                                                </div>
+                                                <!-- Card Body -->
+                                                <div class="card-body">
+                                                    <div class="bootstrap-table bootstrap4">
+                                                        <div class="fixed-table-toolbar"></div>
+                                                        <div class="fixed-table-container" style="padding-bottom: 0px">
+                                                            <div class="fixed-table-header" style="display: none">
+                                                                <table></table>
+                                                            </div>
+                                                            <div class="fixed-table-body">
+                                                                <div class="fixed-table-loading table table-bordered" style="top: 42.7969px">
+                                                                    <span class="loading-wrap">
+                                                                        <span class="loading-text">데이터를 불러오는 중입니다</span>
+                                                                        <span class="animation-wrap"><span class="animation-dot"></span></span>
+                                                                    </span>
+                                                                </div>
+                                                                <table id="table03" class="table table-bordered" data-pagination="true">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <th data-field="1">
+                                                                                <div class="th-inner">프로필 공유</div>
+                                                                                <div class="fht-cell"></div>
+                                                                            </th>
+                                                                            <th data-field="2">
+                                                                                <div class="th-inner">영상 공유</div>
+                                                                                <div class="fht-cell"></div>
+                                                                            </th>
+                                                                        </tr>
+                                                                        <tr class="" data-index="0">
+                                                                            <td>43</td>
+                                                                            <td>24</td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <div class="fixed-table-footer"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card shadow dash-chart-box">
+                                                <!-- Card Header - Dropdown -->
+                                                <div class="card-header py-3">
+                                                    <h6 class="m-0 font-weight-bold text-dark">BEST 영상</h6>
+                                                </div>
+                                                <!-- Card Body -->
+                                                <div class="card-body">
+                                                    <!-- 탭 메뉴 -->
+                                                    <ul class="nav nav-tabs btn-tab" role="tablist">
+                                                        <li class="nav-item" role="presentation">
+                                                            <button class="nav-link btn-tab-link active" id="sub-tab0001" data-toggle="tab" data-target="#sub-panel0001" type="button" role="tab">노출 수</button>
+                                                        </li>
+                                                        <li class="nav-item" role="presentation">
+                                                            <button class="nav-link btn-tab-link" id="sub-tab0002" data-toggle="tab" data-target="#sub-panel0002" type="button" role="tab">좋아요 수</button>
+                                                        </li>
+                                                        <li class="nav-item" role="presentation">
+                                                            <button class="nav-link btn-tab-link" id="sub-tab0003" data-toggle="tab" data-target="#sub-panel0003" type="button" role="tab">댓글 수</button>
+                                                        </li>
+                                                    </ul>
+                                                    <!-- //탭 메뉴 -->
+                                                    <div class="form-row mt-4 align-items-center">
+                                                        <!-- 탭 컨탠츠 -->
+                                                        <div class="tab-content">
+                                                            <div class="tab-pane fade show active" id="sub-panel0001" role="tabpanel" aria-labelledby="sub-tab0001">
+                                                                <div class="d-flex">
+                                                                    <div class="col">
+                                                                        <h6 class="h5 text-center text-gray-800">AI 챌린지</h6>
+                                                                        <div class="card dashboard-card">
+                                                                            <span class="badge rounded-pill bg-light"><i class="far fa-eye"></i><span class="ml-2">468</span></span>
+                                                                            <a href="#none"><img src="../../images/img/img_musicchallenge_thumbnail_05.png" class="card-img-top" alt="챌린지이미지" /></a>
+                                                                            <div class="card-body position-absolute">
+                                                                                <span class="card-title">@닉네임</span>
+                                                                                <p class="card-text text-truncate">챌린지 이름 챌린지 이름 챌린지 이름 챌린지 이름 챌린지 이름</p>
+                                                                            </div>
+
+                                                                            <div class="card-body">
+                                                                                <ul class="list-group list-group-flush">
+                                                                                    <li class="list-group-item"><i class="far fa-eye"></i><span class="ml-2">10,120</span></li>
+                                                                                    <li class="list-group-item"><i class="fas fa-heart"></i><span class="ml-2">5,401</span></li>
+                                                                                    <li class="list-group-item"><i class="fas fa-comment-alt"></i><span class="ml-2">321</span></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <h6 class="h5 text-center text-gray-800">음원 챌린지</h6>
+                                                                        <div class="card dashboard-card">
+                                                                            <span class="badge rounded-pill bg-light"><i class="far fa-eye"></i><span class="ml-2">136</span></span>
+                                                                            <a href="#none"><img src="../../images/img/img_musicchallenge_thumbnail_05.png" class="card-img-top" alt="챌린지이미지" /></a>
+                                                                            <div class="card-body position-absolute">
+                                                                                <span class="card-title">@닉네임</span>
+                                                                                <p class="card-text text-truncate">챌린지 이름</p>
+                                                                            </div>
+
+                                                                            <div class="card-body">
+                                                                                <ul class="list-group list-group-flush">
+                                                                                    <li class="list-group-item"><i class="far fa-eye"></i><span class="ml-2">10,120</span></li>
+                                                                                    <li class="list-group-item"><i class="fas fa-heart"></i><span class="ml-2">5,401</span></li>
+                                                                                    <li class="list-group-item"><i class="fas fa-comment-alt"></i><span class="ml-2">321</span></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <h6 class="h5 text-center text-gray-800">일반</h6>
+                                                                        <div class="card dashboard-card">
+                                                                            <span class="badge rounded-pill bg-light"><i class="far fa-eye"></i><span class="ml-2">468</span></span>
+                                                                            <a href="#none"><img src="../../images/img/img_musicchallenge_thumbnail_05.png" class="card-img-top" alt="챌린지이미지" /></a>
+                                                                            <div class="card-body position-absolute">
+                                                                                <span class="card-title">@닉네임</span>
+                                                                                <p class="card-text text-truncate">일반</p>
+                                                                            </div>
+
+                                                                            <div class="card-body">
+                                                                                <ul class="list-group list-group-flush">
+                                                                                    <li class="list-group-item"><i class="far fa-eye"></i><span class="ml-2">10,120</span></li>
+                                                                                    <li class="list-group-item"><i class="fas fa-heart"></i><span class="ml-2">5,401</span></li>
+                                                                                    <li class="list-group-item"><i class="fas fa-comment-alt"></i><span class="ml-2">321</span></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab-pane fade" id="sub-panel0002" role="tabpanel" aria-labelledby="sub-tab0002">
+                                                                <div class="d-flex">
+                                                                    <div class="col">
+                                                                        <h6 class="h5 text-center text-gray-800">AI 챌린지</h6>
+                                                                        <div class="card dashboard-card">
+                                                                            <span class="badge rounded-pill bg-light"><i class="fas fa-heart"></i><span class="ml-2">468</span></span>
+                                                                            <a href="#none"><img src="../../images/img/img_musicchallenge_thumbnail_05.png" class="card-img-top" alt="챌린지이미지" /></a>
+                                                                            <div class="card-body position-absolute">
+                                                                                <span class="card-title">@닉네임</span>
+                                                                                <p class="card-text text-truncate">챌린지 이름 챌린지 이름 챌린지 이름 챌린지 이름 챌린지 이름</p>
+                                                                            </div>
+
+                                                                            <div class="card-body">
+                                                                                <ul class="list-group list-group-flush">
+                                                                                    <li class="list-group-item"><i class="far fa-eye"></i><span class="ml-2">10,120</span></li>
+                                                                                    <li class="list-group-item"><i class="fas fa-heart"></i><span class="ml-2">5,401</span></li>
+                                                                                    <li class="list-group-item"><i class="fas fa-comment-alt"></i><span class="ml-2">321</span></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <h6 class="h5 text-center text-gray-800">음원 챌린지</h6>
+                                                                        <div class="card dashboard-card">
+                                                                            <span class="badge rounded-pill bg-light"><i class="fas fa-heart"></i><span class="ml-2">136</span></span>
+                                                                            <a href="#none"><img src="../../images/img/img_musicchallenge_thumbnail_05.png" class="card-img-top" alt="챌린지이미지" /></a>
+                                                                            <div class="card-body position-absolute">
+                                                                                <span class="card-title">@닉네임</span>
+                                                                                <p class="card-text text-truncate">챌린지 이름</p>
+                                                                            </div>
+
+                                                                            <div class="card-body">
+                                                                                <ul class="list-group list-group-flush">
+                                                                                    <li class="list-group-item"><i class="far fa-eye"></i><span class="ml-2">10,120</span></li>
+                                                                                    <li class="list-group-item"><i class="fas fa-heart"></i><span class="ml-2">5,401</span></li>
+                                                                                    <li class="list-group-item"><i class="fas fa-comment-alt"></i><span class="ml-2">321</span></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <h6 class="h5 text-center text-gray-800">일반</h6>
+                                                                        <div class="card dashboard-card">
+                                                                            <span class="badge rounded-pill bg-light"><i class="fas fa-heart"></i><span class="ml-2">468</span></span>
+                                                                            <a href="#none"><img src="../../images/img/img_musicchallenge_thumbnail_05.png" class="card-img-top" alt="챌린지이미지" /></a>
+                                                                            <div class="card-body position-absolute">
+                                                                                <span class="card-title">@닉네임</span>
+                                                                                <p class="card-text text-truncate">일반</p>
+                                                                            </div>
+
+                                                                            <div class="card-body">
+                                                                                <ul class="list-group list-group-flush">
+                                                                                    <li class="list-group-item"><i class="far fa-eye"></i><span class="ml-2">10,120</span></li>
+                                                                                    <li class="list-group-item"><i class="fas fa-heart"></i><span class="ml-2">5,401</span></li>
+                                                                                    <li class="list-group-item"><i class="fas fa-comment-alt"></i><span class="ml-2">321</span></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab-pane fade" id="sub-panel0003" role="tabpanel" aria-labelledby="sub-tab0003">
+                                                                <div class="d-flex">
+                                                                    <div class="col">
+                                                                        <h6 class="h5 text-center text-gray-800">AI 챌린지</h6>
+                                                                        <div class="card dashboard-card">
+                                                                            <span class="badge rounded-pill bg-light"><i class="fas fa-comment-alt"></i><span class="ml-2">468</span></span>
+                                                                            <a href="#none"><img src="../../images/img/img_musicchallenge_thumbnail_05.png" class="card-img-top" alt="챌린지이미지" /></a>
+                                                                            <div class="card-body position-absolute">
+                                                                                <span class="card-title">@닉네임</span>
+                                                                                <p class="card-text text-truncate">챌린지 이름 챌린지 이름 챌린지 이름 챌린지 이름 챌린지 이름</p>
+                                                                            </div>
+
+                                                                            <div class="card-body">
+                                                                                <ul class="list-group list-group-flush">
+                                                                                    <li class="list-group-item"><i class="far fa-eye"></i><span class="ml-2">10,120</span></li>
+                                                                                    <li class="list-group-item"><i class="fas fa-heart"></i><span class="ml-2">5,401</span></li>
+                                                                                    <li class="list-group-item"><i class="fas fa-comment-alt"></i><span class="ml-2">321</span></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <h6 class="h5 text-center text-gray-800">음원 챌린지</h6>
+                                                                        <div class="card dashboard-card">
+                                                                            <span class="badge rounded-pill bg-light"><i class="fas fa-comment-alt"></i><span class="ml-2">136</span></span>
+                                                                            <a href="#none"><img src="../../images/img/img_musicchallenge_thumbnail_05.png" class="card-img-top" alt="챌린지이미지" /></a>
+                                                                            <div class="card-body position-absolute">
+                                                                                <span class="card-title">@닉네임</span>
+                                                                                <p class="card-text text-truncate">챌린지 이름</p>
+                                                                            </div>
+
+                                                                            <div class="card-body">
+                                                                                <ul class="list-group list-group-flush">
+                                                                                    <li class="list-group-item"><i class="far fa-eye"></i><span class="ml-2">10,120</span></li>
+                                                                                    <li class="list-group-item"><i class="fas fa-heart"></i><span class="ml-2">5,401</span></li>
+                                                                                    <li class="list-group-item"><i class="fas fa-comment-alt"></i><span class="ml-2">321</span></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <h6 class="h5 text-center text-gray-800">일반</h6>
+                                                                        <div class="card dashboard-card">
+                                                                            <span class="badge rounded-pill bg-light"><i class="fas fa-comment-alt"></i><span class="ml-2">468</span></span>
+                                                                            <a href="#none"><img src="../../images/img/img_musicchallenge_thumbnail_05.png" class="card-img-top" alt="챌린지이미지" /></a>
+                                                                            <div class="card-body position-absolute">
+                                                                                <span class="card-title">@닉네임</span>
+                                                                                <p class="card-text text-truncate">일반</p>
+                                                                            </div>
+
+                                                                            <div class="card-body">
+                                                                                <ul class="list-group list-group-flush">
+                                                                                    <li class="list-group-item"><i class="far fa-eye"></i><span class="ml-2">10,120</span></li>
+                                                                                    <li class="list-group-item"><i class="fas fa-heart"></i><span class="ml-2">5,401</span></li>
+                                                                                    <li class="list-group-item"><i class="fas fa-comment-alt"></i><span class="ml-2">321</span></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- //탭 컨텐츠 -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-5 pb-6">
+                                        <div class="col-md-6"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll to Top Button-->
+        <div data-include="../include/topbtn.html"></div>
+
+        <!-- Logout Modal-->
+        <div data-include="../include/logoutModal.html"></div>
+        <!-- changePw Modal-->
+        <div data-include="../include/pop/changePwModal.html"></div>
+    </body>
+    <script src="../../datatables/jquery.dataTables.min.js"></script>
+    <script src="../../datatables/dataTables.bootstrap4.min.js"></script>
+
+    <script src="../../lib/chart.js/plugins/chartjs-plugin-datalabels.min.js"></script>
+    <script src="../../lib/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="../../js/demo/datatables-demo.js"></script>
+    <script>
+        var ctx = document.getElementById('myDnChart');
+        var myDnChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['여성', '남성'],
+                datasets: [
+                    {
+                        data: [70, 30],
+                        backgroundColor: ['#4e73df', '#1cc88a'],
+                        hoverBackgroundColor: ['#2e59d9', '#17a673'],
+                        hoverBorderColor: 'rgba(234, 236, 244, 1)'
+                    }
+                ]
+            },
+            options: {
+                maintainAspectRatio: false,
+                tooltips: {
+                    backgroundColor: 'rgb(255,255,255)',
+                    bodyFontColor: '#858796',
+                    borderColor: '#dddfeb',
+                    borderWidth: 1,
+                    xPadding: 15,
+                    yPadding: 15,
+                    displayColors: false,
+                    caretPadding: 10
+                },
+                legend: {
+                    display: true,
+                    position: 'bottom'
+                },
+                cutoutPercentage: 80
+            }
+        });
+        // Pie Chart
+        var ctx = document.getElementById('myPieChart');
+        var myPieChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['AI챌린지', '음원챌린지', '일반영상'],
+                datasets: [
+                    {
+                        label: '%',
+                        data: [60, 30, 10],
+                        backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+                        hoverBackgroundColor: ['#2e59d9', '#17a673'],
+                        hoverBorderColor: 'rgba(234, 236, 244, 1)'
+                    }
+                ]
+            },
+            options: {
+                maintainAspectRatio: false,
+                tooltips: {
+                    backgroundColor: 'rgb(255,255,255)',
+                    bodyFontColor: '#858796',
+                    borderColor: '#dddfeb',
+                    borderWidth: 1,
+                    xPadding: 15,
+                    yPadding: 15,
+                    displayColors: false,
+                    caretPadding: 10
+                },
+                legend: {
+                    display: true,
+                    position: 'bottom'
+                }
+            }
+        });
+        // Bar Chart
+        var ctx = document.getElementById('myBarChart');
+        var myBarChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['0~4', '4~8', '8~12', '12~16', '16~20', '20~24'],
+                datasets: [
+                    {
+                        label: '명',
+                        backgroundColor: '#4e73df',
+                        hoverBackgroundColor: '#2e59d9',
+                        borderColor: '#4e73df',
+                        data: [4215, 5312, 1251, 7841, 6821, 3984]
+                    }
+                ]
+            },
+            options: {
+                maintainAspectRatio: false,
+                layout: {
+                    padding: {
+                        left: 10,
+                        right: 25,
+                        top: 25,
+                        bottom: 0
+                    }
+                },
+                scales: {
+                    xAxes: [
+                        {
+                            time: {
+                                unit: 'month'
+                            },
+                            gridLines: {
+                                display: false
+                            },
+                            ticks: {
+                                maxTicksLimit: 6
+                            },
+                            maxBarThickness: 25
+                        }
+                    ],
+                    yAxes: [
+                        {
+                            ticks: {
+                                min: 0,
+                                max: 15000,
+                                display: false,
+                                drawBorder: false
+                                // callback: function (value, index, values) {
+                                //     return number_format(value);
+                                // }
+                            },
+                            gridLines: {
+                                display: false,
+                                drawBorder: false
+                            }
+                        }
+                    ]
+                },
+                legend: {
+                    display: false
+                },
+                tooltips: {
+                    titleMarginBottom: 10,
+                    titleFontColor: '#6e707e',
+                    titleFontSize: 14,
+                    backgroundColor: 'rgb(255,255,255)',
+                    bodyFontColor: '#858796',
+                    borderColor: '#dddfeb',
+                    borderWidth: 1,
+                    xPadding: 15,
+                    yPadding: 15,
+                    displayColors: false,
+                    caretPadding: 10
+                    // callbacks: {
+                    //     label: function (tooltipItem, chart) {
+                    //         var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
+                    //         return number_format(tooltipItem.yLabel) + ' ' + datasetLabel;
+                    //     }
+                    // }
+                }
+            }
+        });
+    </script>
+</html>

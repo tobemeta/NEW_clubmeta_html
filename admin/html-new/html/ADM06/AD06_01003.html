@@ -44,7 +44,7 @@
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                     <h2 class="h3 text-gray-800 float-left">AI 챌린지 참여 영상 상세</h2>
                                     <div class="float-right">
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="">영상 다운로드</button>
+                                        <button type="button" class="btn btn-primary" onclick="bsConfirm('해당 영상을 다운로드 하시겠습니까?')">영상 다운로드</button>
                                     </div>
                                 </div>
                             </div>
@@ -53,7 +53,9 @@
                             <!---//contents--->
                             <div class="d-flex">
                                 <div class="mr-2">
-                                    <div class="preview-img mw-25"><img src="../../images/img/img_musicchallenge_thumbnail_05.png" alt="참여영상프리뷰이미지" /></div>
+                                    <div class="preview-img mw-25">
+                                        <a href="#none"><img src="../../images/img/img_musicchallenge_thumbnail_05.png" alt="참여영상프리뷰이미지" /></a>
+                                    </div>
                                 </div>
                                 <div class="flex-grow-1 ml-2">
                                     <div class="form-box">
@@ -104,13 +106,13 @@
                                                 <div class="form-box-label">사용 음원</div>
                                                 <div class="form-box-cont">
                                                     <div class="form-row">
-                                                        <span><a href="#none">음원명</a></span>
+                                                        <span><a href="#none" data-toggle="modal" data-target="#musicDetailModal">음원명</a></span>
                                                     </div>
                                                 </div>
                                                 <div class="form-box-label">작곡가 명</div>
                                                 <div class="form-box-cont col-md-5">
                                                     <div class="form-row">
-                                                        <span><a href="#none">작곡가이름</a></span>
+                                                        <span><a href="../ADM13_00002.html">작곡가이름</a></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -154,7 +156,7 @@
                                         <div class="form-box-label"><label for="">신고 누적 횟수</label></div>
                                         <div class="form-box-cont col-md-5">
                                             <div class="form-row">
-                                                <a href="#none">1</a>
+                                                <a href="#none" data-toggle="modal" data-target="#reportListPop">1</a>
                                             </div>
                                         </div>
                                     </div>
@@ -225,7 +227,7 @@
                                 </div>
                             </div>
                             <div class="btn-wrap text-center mt-5">
-                                <button type="button" class="btn btn-lg btn-primary">영상 삭제</button>
+                                <button type="button" class="btn btn-lg btn-primary" onclick="bsConfirm('정말 삭제 하시겠습니까? 삭제한 영상은 복구할 수 없습니다.')">영상 삭제</button>
                             </div>
                         </div>
                     </div>
@@ -239,6 +241,241 @@
         <div data-include="../include/logoutModal.html"></div>
         <!-- changePw Modal-->
         <div data-include="../include/pop/changePwModal.html"></div>
+        <div class="modal fade large" id="musicDetailModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title bold">음원 상세</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="d-flex">
+                            <div class="col-auto mr-2">
+                                <div class="preview-img mw-25"><img src="../../images/img/img_aichallenge_thumbnail_01.png" alt="음원앨범이미지" /></div>
+                                <div class="progress mt-3">
+                                    <button type="button" class="play"><i class="fas fa-play"></i></button>
+                                    <button type="button" class="pause d-none"><i class="fas fa-pause"></i></button>
+                                    <div class="progress-bar" role="progressbar" style="width: 13%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 ml-2">
+                                <div class="form-box">
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label"><label for="">음원 타이틀</label></div>
+                                            <div class="form-box-cont">
+                                                <div class="form-row">
+                                                    <a href="#none">음원타이틀음원타이틀음원타이틀</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label">작곡가 명</div>
+                                            <div class="form-box-cont">
+                                                <div class="form-row">
+                                                    <a href="#none">작곡가이름</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label">음원 길이</div>
+                                            <div class="form-box-cont">
+                                                <div class="form-row">
+                                                    <span>00:45</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label">승인일</div>
+                                            <div class="form-box-cont">
+                                                <div class="form-row">
+                                                    <span>2023.06.20</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label">장르</div>
+                                            <div class="form-box-cont">
+                                                <div class="form-row">
+                                                    <span>케이팝/재즈/키즈</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label">해시태그</div>
+                                            <div class="form-box-cont">
+                                                <div class="form-row">
+                                                    <span class="mr-2">#텍스트</span>
+                                                    <span class="mr-2">#텍스트</span>
+                                                    <span class="mr-2">#텍스트</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">취소</button>
+                        <button type="button" class="btn btn-primary btn-lg">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade large" id="reportListPop" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel">신고한 유저</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="title-wrap mt-1">
+                            <div class="left">검색 <strong class="fc-red">5</strong>건 / 전체 <strong class="fc-red">15</strong>건</div>
+                            <div class="right">
+                                <select class="custom-select custom-select-sm">
+                                    <option value="1">10</option>
+                                    <option value="2">25</option>
+                                    <option value="3">50</option>
+                                    <option value="4">100</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="bootstrap-table bootstrap4">
+                            <div class="fixed-table-toolbar"></div>
+                            <div class="fixed-table-container" style="padding-bottom: 0px">
+                                <div class="fixed-table-header" style="display: none">
+                                    <table></table>
+                                </div>
+                                <div class="fixed-table-body">
+                                    <div class="fixed-table-loading table table-bordered table-hover" style="top: 42.7969px">
+                                        <span class="loading-wrap">
+                                            <span class="loading-text">데이터를 불러오는 중입니다</span>
+                                            <span class="animation-wrap"><span class="animation-dot"></span></span>
+                                        </span>
+                                    </div>
+                                    <table id="dataTable1" class="table table-hover table-bordered dataTable no-footer" data-pagination="true">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="0">
+                                                    <div class="th-inner">번호</div>
+                                                    <div class="fht-cell"></div>
+                                                </th>
+                                                <th data-field="1">
+                                                    <div class="th-inner">신고한 유저</div>
+                                                    <div class="fht-cell"></div>
+                                                </th>
+                                                <th data-field="2">
+                                                    <div class="th-inner">신고 사유</div>
+                                                    <div class="fht-cell"></div>
+                                                </th>
+                                                <th data-field="3">
+                                                    <div class="th-inner">신고일자</div>
+                                                    <div class="fht-cell"></div>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="" data-index="0">
+                                                <td>10</td>
+                                                <td><a href="#none">흐흐흐</a></td>
+                                                <td class="text-left">거짓정보</td>
+                                                <td>2023.06.26 16:00:00</td>
+                                            </tr>
+                                            <tr data-index="1">
+                                                <td>9</td>
+                                                <td><a href="#none">metaclub1</a></td>
+                                                <td class="text-left">마음에 들지 않습니다</td>
+                                                <td>2023.06.26 16:00:00</td>
+                                            </tr>
+                                            <tr data-index="2">
+                                                <td>8</td>
+                                                <td><a href="#none">하하하111</a></td>
+                                                <td class="text-left">마음에 들지 않습니다</td>
+                                                <td>2023.06.26 16:00:00</td>
+                                            </tr>
+                                            <tr data-index="3">
+                                                <td>7</td>
+                                                <td><a href="#none">흐흐흐</a></td>
+                                                <td class="text-left">거짓정보</td>
+                                                <td>2023.06.26 16:00:00</td>
+                                            </tr>
+                                            <tr class="" data-index="4">
+                                                <td>6</td>
+                                                <td><a href="#none">흐흐흐</a></td>
+                                                <td class="text-left">거짓정보</td>
+                                                <td>2023.06.26 16:00:00</td>
+                                            </tr>
+                                            <tr data-index="5">
+                                                <td>5</td>
+                                                <td><a href="#none">metaclub1</a></td>
+                                                <td class="text-left">마음에 들지 않습니다</td>
+                                                <td>2023.06.26 16:00:00</td>
+                                            </tr>
+                                            <tr data-index="6">
+                                                <td>4</td>
+                                                <td><a href="#none">하하하111</a></td>
+                                                <td class="text-left">마음에 들지 않습니다</td>
+                                                <td>2023.06.26 16:00:00</td>
+                                            </tr>
+                                            <tr data-index="7">
+                                                <td>3</td>
+                                                <td><a href="#none">흐흐흐</a></td>
+                                                <td class="text-left">거짓정보</td>
+                                                <td>2023.06.26 16:00:00</td>
+                                            </tr>
+
+                                            <tr data-index="8">
+                                                <td>2</td>
+                                                <td><a href="#none">하하하111</a></td>
+                                                <td class="text-left">마음에 들지 않습니다</td>
+                                                <td>2023.06.26 16:00:00</td>
+                                            </tr>
+                                            <tr data-index="9">
+                                                <td>1</td>
+                                                <td><a href="#none">흐흐흐</a></td>
+                                                <td class="text-left">거짓정보</td>
+                                                <td>2023.06.26 16:00:00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="fixed-table-pagination">
+                                <div class="pagination-detail"></div>
+                                <div class="pagination">
+                                    <ul class="pagination">
+                                        <li class="page-item page-pre"><a class="page-link" aria-label="previous page" href="javascript:void(0)">‹</a></li>
+                                        <li class="page-item active"><a class="page-link" aria-label="to page 1" href="javascript:void(0)">1</a></li>
+                                        <li class="page-item"><a class="page-link" aria-label="to page 2" href="javascript:void(0)">2</a></li>
+                                        <li class="page-item page-next"><a class="page-link" aria-label="next page" href="javascript:void(0)">›</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">취소</button>
+                        <button type="button" class="btn btn-primary btn-lg">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
     <script src="../../datatables/jquery.dataTables.min.js"></script>
     <script src="../../datatables/dataTables.bootstrap4.min.js"></script>

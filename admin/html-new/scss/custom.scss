@@ -111,6 +111,17 @@ optgroup {
         }
     }
 }
+.profile-img {
+    height: 150px;
+    width: 150px;
+    border: 1px solid var(--gray);
+    border-radius: 50%;
+    overflow: hidden;
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+}
 .modal-footer {
     justify-content: center;
     .btn {
@@ -496,6 +507,9 @@ optgroup {
         th,
         td {
             text-align: center;
+        }
+        th {
+            background-color: var(--light);
         }
         .data-img {
             width: 4rem;
