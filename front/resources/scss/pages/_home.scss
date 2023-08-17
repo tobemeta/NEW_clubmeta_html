@@ -31,49 +31,8 @@
             z-index: 100;
         }
         position: relative;
-        height: 28rem;
-        .visual-custom {
-            position: absolute;
-            display: flex;
-            justify-content: space-between;
-            bottom: 4rem;
-            left: 1.6rem;
-            right: 1.6rem;
-            z-index: 10;
-        }
-        .custom-left {
-            display: inline-flex;
-            height: 3.2rem;
-            padding: 0.4rem 0.8rem;
-            border-radius: 0.8rem;
-            background: rgba($color: #000000, $alpha: 0.6);
-            align-items: center;
-            gap: 1rem;
-            box-sizing: border-box;
-        }
-        .custom-right {
-            .btn-visual-more {
-                display: block;
-                width: 2.4rem;
-                height: 2.4rem;
-                @include bg($src: '../images/ico/ico_w_list.svg', $po: center -0.3rem);
-            }
-        }
-        .count_insert {
-            display: inline-block;
-            font-size: 1rem;
-            color: #fff;
-        }
-        .swiper-auto-ctl {
-            display: block;
-            width: 2.4rem;
-            height: 2.4rem;
-            @include bg($src: '../images/ico/ico_w_pause.svg', $po: center);
+        height: 77.78vw;
 
-            &.is-stop {
-                background-image: url('../images/ico/ico_w_play.svg');
-            }
-        }
         .swiper-slide {
             a {
                 display: block;
