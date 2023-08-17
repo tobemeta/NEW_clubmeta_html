@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>[탭] Talk | 클럽메타</title>
+    <link rel="stylesheet" href="../../resources/css/common.min.css" />
+    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="header">
+            <div class="header-inner">
+                <div class="header-left">
+                    <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
+                </div>
+                <div class="header-center">
+                    <h1 class="header-title">작곡가 상세</h1>
+                </div>
+                <div class="header-right"></div>
+            </div>
+        </header>
+        <div class="contents">
+            <div class="section">
+                <div class="inner">
+                    <div class="comp-info-area">
+                        <div class="img">
+                            <img src="../../resources/images/img/img_main_profile.png " alt="">
+                        </div>
+                        <div class="info">
+                            <a href="#none" class="user-profile"><strong>닉네임최대15글자숫자특문포함</strong></a>
+                            <p class="text">자기소개글 쓰는 영역으로 최대 200자 입력 가능 띄어쓰기 특수문자 숫자 영문 대소문자 입력 가능하고</p>
+                        </div>
+                        <div class="btn-box">
+                            <button type="button" class="btn btn-primary btn-follow">
+                                <span>팔로우</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="tab-wrap line mt-16">
+                        <div class="tab-items">
+                            <ul>
+                                <li><a href="#" class="tab-button" data-target="tab1">클립</a></li>
+                                <li><a href="#" class="tab-button" data-target="tab2">음원</a></li>
+                                <li class="on"><a href="#" class="tab-button" data-target="tab3">Talk</a></li>
+                            </ul>
+                            <div class="select-box">
+                                <div class="select-sort"></div>
+                                <select title="옵션선택">
+                                    <option value="">인기순</option>
+                                    <option value="1">최신순</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="tab-content">
+                            <!-- <div id="tab1" class="tab-cont open"></div>
+                            <div id="tab2" class="tab-cont"></div> -->
+                            <div id="tab3" class="tab-cont open">
+                                <div class="talk-wrap">
+                                    <div class="input-box ico comment mt-24">
+                                        <input type="text" placeholder="댓글 입력" title="댓글 입력" />
+                                        <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
+                                    </div>
+                                    <!-- 댓글 없는 경우 no-reply class 추가 -->
+                                    <div class="comment-box">
+                                        <ul class="comment-list">
+                                            <li class="comment-item">
+                                                <div class="comment-img">
+                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_04.png"
+                                                        alt="">
+                                                </div>
+                                                <div class="comment-info">
+                                                    <p class="name">닉네임최대열다섯글자닉네임최대</p>
+                                                    <p class="text">댓글 내용 텍스트 내용댓글 내용 텍스트 내용댓글 내용 텍스트 내용댓글 내용 텍스트 내용댓글
+                                                        내용
+                                                        텍스트 내용</p>
+                                                    <p class="date"><span class="date-num">3</span><span
+                                                            class="date-day">일</span> 전</p>
+                                                </div>
+                                                <div class="comment-util">
+                                                    <button type="button" class="more"
+                                                        onclick="ui.popup.open('#bottomViewPop')"><span
+                                                            class="blind">더보기</span></button>
+                                                    <div class="chk-box like">
+                                                        <input type="checkbox" id="chk01">
+                                                        <label for="chk01"><span class="blind">좋아요 수</span></label>
+                                                    </div>
+                                                    <span class="like-num">123</span>
+                                                </div>
+                                            </li>
+                                            <li class="comment-item">
+                                                <div class="comment-img">
+                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_04.png"
+                                                        alt="">
+                                                </div>
+                                                <div class="comment-info">
+                                                    <p class="name">닉네임최대열다섯글자닉네임최대</p>
+                                                    <p class="text">댓글 내용 텍스트 내용댓글 내용 텍스트 내용댓글 내용 텍스트 내용댓글 내용 텍스트 내용댓글
+                                                        내용
+                                                        텍스트 내용</p>
+                                                    <p class="date"><span class="date-num">3</span><span
+                                                            class="date-day">일</span> 전</p>
+                                                </div>
+                                                <div class="comment-util">
+                                                    <button type="button" class="more"
+                                                        onclick="ui.popup.open('#bottomViewPop')"><span
+                                                            class="blind">더보기</span></button>
+                                                    <div class="chk-box like">
+                                                        <input type="checkbox" id="chk01">
+                                                        <label for="chk01"><span class="blind">좋아요 수</span></label>
+                                                    </div>
+                                                    <span class="like-num">123</span>
+                                                </div>
+                                            </li>
+                                            <li class="comment-item">
+                                                <div class="comment-img">
+                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_04.png"
+                                                        alt="">
+                                                </div>
+                                                <div class="comment-info">
+                                                    <p class="name">닉네임최대열다섯글자닉네임최대</p>
+                                                    <p class="text">댓글 내용 텍스트 내용댓글 내용 텍스트 내용댓글 내용 텍스트 내용댓글 내용 텍스트 내용댓글
+                                                        내용
+                                                        텍스트 내용</p>
+                                                    <p class="date"><span class="date-num">3</span><span
+                                                            class="date-day">일</span> 전</p>
+                                                </div>
+                                                <div class="comment-util">
+                                                    <button type="button" class="more"
+                                                        onclick="ui.popup.open('#bottomViewPop')"><span
+                                                            class="blind">더보기</span></button>
+                                                    <div class="chk-box like">
+                                                        <input type="checkbox" id="chk01">
+                                                        <label for="chk01"><span class="blind">좋아요 수</span></label>
+                                                    </div>
+                                                    <span class="like-num">123</span>
+                                                </div>
+                                            </li>
+                                            <li class="comment-item">
+                                                <div class="comment-img">
+                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_04.png"
+                                                        alt="">
+                                                </div>
+                                                <div class="comment-info">
+                                                    <p class="name">닉네임최대열다섯글자닉네임최대</p>
+                                                    <p class="text">댓글 내용 텍스트 내용댓글 내용 텍스트 내용댓글 내용 텍스트 내용댓글 내용 텍스트 내용댓글
+                                                        내용
+                                                        텍스트 내용</p>
+                                                    <p class="date"><span class="date-num">3</span><span
+                                                            class="date-day">일</span> 전</p>
+                                                </div>
+                                                <div class="comment-util">
+                                                    <button type="button" class="more"
+                                                        onclick="ui.popup.open('#bottomViewPop')"><span
+                                                            class="blind">더보기</span></button>
+                                                    <div class="chk-box like">
+                                                        <input type="checkbox" id="chk01">
+                                                        <label for="chk01"><span class="blind">좋아요 수</span></label>
+                                                    </div>
+                                                    <span class="like-num">123</span>
+                                                </div>
+                                            </li>
+                                            <li class="comment-item">
+                                                <div class="comment-img">
+                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_04.png"
+                                                        alt="">
+                                                </div>
+                                                <div class="comment-info">
+                                                    <p class="name">닉네임최대열다섯글자닉네임최대</p>
+                                                    <p class="text">댓글 내용 텍스트 내용댓글 내용 텍스트 내용댓글 내용 텍스트 내용댓글 내용 텍스트 내용댓글
+                                                        내용
+                                                        텍스트 내용</p>
+                                                    <p class="date"><span class="date-num">3</span><span
+                                                            class="date-day">일</span> 전</p>
+                                                </div>
+                                                <div class="comment-util">
+                                                    <button type="button" class="more"
+                                                        onclick="ui.popup.open('#bottomViewPop')"><span
+                                                            class="blind">더보기</span></button>
+                                                    <div class="chk-box like">
+                                                        <input type="checkbox" id="chk01">
+                                                        <label for="chk01"><span class="blind">좋아요 수</span></label>
+                                                    </div>
+                                                    <span class="like-num">123</span>
+                                                </div>
+                                            </li>
+                                            <li class="comment-item">
+                                                <div class="comment-img">
+                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_04.png"
+                                                        alt="">
+                                                </div>
+                                                <div class="comment-info">
+                                                    <p class="name">닉네임최대열다섯글자닉네임최대</p>
+                                                    <p class="text">댓글 내용 텍스트 내용댓글 내용 텍스트 내용댓글 내용 텍스트 내용댓글 내용 텍스트 내용댓글
+                                                        내용
+                                                        텍스트 내용</p>
+                                                    <p class="date"><span class="date-num">3</span><span
+                                                            class="date-day">일</span> 전</p>
+                                                </div>
+                                                <div class="comment-util">
+                                                    <button type="button" class="more"
+                                                        onclick="ui.popup.open('#bottomViewPop')"><span
+                                                            class="blind">더보기</span></button>
+                                                    <div class="chk-box like">
+                                                        <input type="checkbox" id="chk01">
+                                                        <label for="chk01"><span class="blind">좋아요 수</span></label>
+                                                    </div>
+                                                    <span class="like-num">123</span>
+                                                </div>
+                                            </li>
+                                            <li class="comment-item">
+                                                <div class="comment-img">
+                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_04.png"
+                                                        alt="">
+                                                </div>
+                                                <div class="comment-info">
+                                                    <p class="name">닉네임최대열다섯글자닉네임최대</p>
+                                                    <p class="text">댓글 내용 텍스트 내용댓글 내용 텍스트 내용댓글 내용 텍스트 내용댓글 내용 텍스트 내용댓글
+                                                        내용
+                                                        텍스트 내용</p>
+                                                    <p class="date"><span class="date-num">3</span><span
+                                                            class="date-day">일</span> 전</p>
+                                                </div>
+                                                <div class="comment-util">
+                                                    <button type="button" class="more"
+                                                        onclick="ui.popup.open('#bottomViewPop')"><span
+                                                            class="blind">더보기</span></button>
+                                                    <div class="chk-box like">
+                                                        <input type="checkbox" id="chk01">
+                                                        <label for="chk01"><span class="blind">좋아요 수</span></label>
+                                                    </div>
+                                                    <span class="like-num">123</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <div class="no-comment">
+                                            <i class="img" aria-hidden="true"></i>
+                                            <div class="title bold">아직 댓글이 없어요</div>
+                                            <div class="body-title">첫 번째 댓글을 달아보세요!</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="quick_top">
+            <button type="button" class="btn-top">TOP</button>
+        </div>
+    </div>
+    <script>
+        $('.btn-follow').on('click', function () {
+            $(this).toggleClass('is-ing');
+
+            if (!$(this).hasClass('is-ing')) {
+                $(this).find('span').text('팔로우')
+            } else {
+                $(this).find('span').text('팔로잉')
+            }
+        });
+
+    </script>
+</body>
+<article class="layerpopup-box bottom" id="bottomViewPop" role="dialog">
+    <div class="layer-popup">
+        <header class="layer-header">
+            <h1 class="pop-title"></h1>
+            <button type="button" class="btn-close btn-pop-close" title="레이어팝업 닫기"
+                onclick="ui.popup.close('#bottomViewPop')">닫기</button>
+        </header>
+
+        <div class="layer-content">
+            <div class="layer-inner">
+                <div class="comment-more-box">
+                    <ul>
+                        <li>
+                            <button type="button" class="card btn-pop-close">댓글 수정</button>
+                        </li>
+                        <li>
+                            <button type="button" class="card btn-pop-close">댓글 삭제</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- //layer-popup -->
+</article>
+
+</html>

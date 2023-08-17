@@ -3,6 +3,9 @@
     &.line {
         .tab-items {
             height: 3.6rem;
+            &:after {
+                display: none;
+            }
             ul {
                 gap: 1.6rem;
             }
@@ -10,20 +13,26 @@
                 &.on {
                     a,
                     button {
+                        color: #111;
                         border-bottom: 2px solid #111;
                     }
                 }
+                a,
+                button {
+                    height: auto;
+                    padding: 0;
+                    border: none;
+                    background: none;
+                    color: #585858;
+                    box-shadow: none;
+                    border-radius: 0;
+                    box-sizing: $sizing;
+                    line-height: 3.4rem;
+                }
             }
-            a,
-            button {
-                padding: 0;
-                border: none;
-                background: none;
-                color: #111;
-                box-shadow: none;
-                border-radius: 0;
-                box-sizing: content-box;
-            }
+        }
+        .tab-content {
+            margin-top: 0.8rem;
         }
     }
     &.box {
@@ -115,6 +124,22 @@
             box-sizing: $sizing;
             box-shadow: $shadow;
         }
+    }
+    .btn-filter {
+        display: block;
+        position: absolute;
+        top: 0.2rem;
+        right: 1.6rem;
+        width: 3.2rem;
+        height: 3.2rem;
+        background-color: #fff;
+        border: 1px solid #e7e7e7;
+        border-radius: 0.8rem;
+    }
+    .select-box {
+        position: absolute;
+        top: 0;
+        right: 1.6rem;
     }
 }
 .tab-content {

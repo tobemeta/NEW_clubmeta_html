@@ -98,3 +98,46 @@
         @include bg($src: '../images/ico/ico_w_pause.svg');
     }
 }
+.btn-share {
+    @include bg($src: '../images/ico/ico_b_share.svg');
+}
+.btn-filter {
+    @include bg($src: '../images/ico/ico_sort.svg');
+}
+.btn-follow {
+    color: #fff;
+    background-color: $main-color;
+    border: 0;
+    &.btn-primary {
+        &.is-ing {
+            background-color: #ffe0ce;
+            border: 0;
+            color: #111;
+        }
+    }
+    &.is-ing {
+        span {
+            &:before {
+                background: url('../images/ico/ico_check.svg') no-repeat center;
+            }
+        }
+    }
+    span {
+        display: inline-block;
+        position: relative;
+        line-height: 2rem;
+        padding-left: 1.6rem;
+        box-sizing: border-box;
+        &:before {
+            display: block;
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 1.6rem;
+            height: 1.6rem;
+            transform: translateY(-50%);
+            background: url('../images/ico/ico_w_plus.svg') no-repeat center;
+        }
+    }
+}

@@ -7,12 +7,10 @@
         content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
     <meta name="HandheldFriendly" content="true" />
     <meta name="format-detection" content="telephone=no" />
-    <title>음원 홈 | 클럽메타</title>
-    <link rel="stylesheet" href="../../resources/css/lib/swiper.min.css" />
+    <title>[탭] 클립(영상) | 클럽메타</title>
     <link rel="stylesheet" href="../../resources/css/common.min.css" />
     <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
     <script src="../../resources/js/lib/jquery-ui.min.js"></script>
-    <script src="../../resources/js/lib/swiper.min.js"></script>
     <script src="../../resources/js/common.js"></script>
 </head>
 
@@ -21,586 +19,226 @@
         <header class="header">
             <div class="header-inner">
                 <div class="header-left">
-                    <h1 class="header-title">클럽메타</h1>
+                    <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
                 </div>
-                <div class="header-center"></div>
-                <div class="header-right">
-                    <a href="#none" class="btn-search" role="button" title="검색">돋보기</a>
+                <div class="header-center">
+                    <h1 class="header-title">작곡가 상세</h1>
                 </div>
+                <div class="header-right"></div>
             </div>
         </header>
         <div class="contents">
             <div class="section">
-                <div class="category-area r-sound">
-                    <div class="inner">
-                        <div class="title-box">
-                            <h2 class="sub-title">음원</h2>
-                            <a href="#none" class="btn-go" role="button" title="이동"><span class="blind">음원 이동</span></a>
+                <div class="inner">
+                    <div class="comp-info-area">
+                        <div class="img">
+                            <img src="../../resources/images/img/img_main_profile.png " alt="">
                         </div>
-                        <div class="swiper-container rank-swiper list-box sound">
-                            <ol class="swiper-wrapper">
-                                <li class="swiper-slide">
-                                    <div class="sound-area">
-                                        <button type="button" class="btn-play"><span class="blind">재생</span></button>
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_artist_album_01.png"
-                                                alt="음원 이미지" />
-                                        </div>
-                                    </div>
-                                    <a href="#none" role="button" title="음원 이동">
-                                        <div class="info">
-                                            <strong>음원이름음원이름</strong>
-                                            <span>작곡가 명</span>
-                                            <!-- 
-                                                기본으로 num class
-                                                랭킹 증강 : rank-up 추가
-                                                랭킹 하강 : rank-down 추가
-                                                랭킹 홀드 : num
-                                             -->
-                                            <span class="num rank-up">122</span>
-                                        </div>
-                                    </a>
-                                    <div class="chk-box like">
-                                        <input type="checkbox" class="" id="chk" />
-                                        <label for="chk"><span class="blind">관심음원</span></label>
-                                    </div>
-                                </li>
-                                <li class="swiper-slide">
-                                    <div class="sound-area">
-                                        <button type="button" class="btn-play"><span class="blind">재생</span></button>
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_artist_album_02.png"
-                                                alt="음원 이미지" />
-                                        </div>
-                                    </div>
-                                    <a href="#none" role="button" title="음원 이동">
-                                        <div class="info">
-                                            <strong>음원이름음원이름</strong>
-                                            <span>작곡가 명</span>
-                                            <span class="num rank-down">122</span>
-                                        </div>
-                                    </a>
-                                    <div class="chk-box like">
-                                        <input type="checkbox" class="" id="chk1" />
-                                        <label for="chk1"><span class="blind">관심음원</span></label>
-                                    </div>
-                                </li>
-                                <li class="swiper-slide">
-                                    <div class="sound-area">
-                                        <button type="button" class="btn-play"><span class="blind">재생</span></button>
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_artist_album_03.png"
-                                                alt="음원 이미지" />
-                                        </div>
-                                    </div>
-                                    <a href="#none" role="button" title="음원 이동">
-                                        <div class="info">
-                                            <strong>음원이름음원이름</strong>
-                                            <span>작곡가 명</span>
-                                            <span class="num"></span>
-                                        </div>
-                                    </a>
-                                    <div class="chk-box like">
-                                        <input type="checkbox" class="" id="chk2" />
-                                        <label for="chk2"><span class="blind">관심음원</span></label>
-                                    </div>
-                                </li>
-                                <li class="swiper-slide">
-                                    <div class="sound-area">
-                                        <button type="button" class="btn-play"><span class="blind">재생</span></button>
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_artist_album_04.png"
-                                                alt="음원 이미지" />
-                                        </div>
-                                    </div>
-                                    <a href="#none" role="button" title="음원 이동">
-                                        <div class="info">
-                                            <strong>음원이름음원이름</strong>
-                                            <span>작곡가 명</span>
-                                            <span class="num"></span>
-                                        </div>
-                                    </a>
-                                    <div class="chk-box like">
-                                        <input type="checkbox" class="" id="chk3" />
-                                        <label for="chk3"><span class="blind">관심음원</span></label>
-                                    </div>
-                                </li>
-
-                                <li class="swiper-slide">
-                                    <div class="sound-area">
-                                        <button type="button" class="btn-play"><span class="blind">재생</span></button>
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_artist_album_05.png"
-                                                alt="음원 이미지" />
-                                        </div>
-                                    </div>
-                                    <a href="#none" role="button" title="음원 이동">
-                                        <div class="info">
-                                            <strong>음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름</strong>
-                                            <span>작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명</span>
-                                            <span class="num"></span>
-                                        </div>
-                                    </a>
-                                    <div class="chk-box like">
-                                        <input type="checkbox" class="" id="chk4" />
-                                        <label for="chk4"><span class="blind">관심음원</span></label>
-                                    </div>
-                                </li>
-                                <li class="swiper-slide">
-                                    <div class="sound-area">
-                                        <button type="button" class="btn-play"><span class="blind">재생</span></button>
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_artist_album_05.png"
-                                                alt="음원 이미지" />
-                                        </div>
-                                    </div>
-                                    <a href="#none" role="button" title="음원 이동">
-                                        <div class="info">
-                                            <strong>음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름</strong>
-                                            <span>작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명</span>
-                                            <span class="num"></span>
-                                        </div>
-                                    </a>
-                                    <div class="chk-box like">
-                                        <input type="checkbox" class="" id="chk5" />
-                                        <label for="chk5"><span class="blind">관심음원</span></label>
-                                    </div>
-                                </li>
-                                <li class="swiper-slide">
-                                    <div class="sound-area">
-                                        <button type="button" class="btn-play"><span class="blind">재생</span></button>
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_artist_album_05.png"
-                                                alt="음원 이미지" />
-                                        </div>
-                                    </div>
-                                    <a href="#none" role="button" title="음원 이동">
-                                        <div class="info">
-                                            <strong>음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름</strong>
-                                            <span>작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명</span>
-                                            <span class="num"></span>
-                                        </div>
-                                    </a>
-                                    <div class="chk-box like">
-                                        <input type="checkbox" class="" id="chk6" />
-                                        <label for="chk6"><span class="blind">관심음원</span></label>
-                                    </div>
-                                </li>
-                                <li class="swiper-slide">
-                                    <div class="sound-area">
-                                        <button type="button" class="btn-play"><span class="blind">재생</span></button>
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_artist_album_05.png"
-                                                alt="음원 이미지" />
-                                        </div>
-                                    </div>
-                                    <a href="#none" role="button" title="음원 이동">
-                                        <div class="info">
-                                            <strong>음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름</strong>
-                                            <span>작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명</span>
-                                            <span class="num"></span>
-                                        </div>
-                                    </a>
-                                    <div class="chk-box like">
-                                        <input type="checkbox" class="" id="chk7" />
-                                        <label for="chk7"><span class="blind">관심음원</span></label>
-                                    </div>
-                                </li>
-
-                                <li class="swiper-slide">
-                                    <div class="sound-area">
-                                        <button type="button" class="btn-play"><span class="blind">재생</span></button>
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_artist_album_05.png"
-                                                alt="음원 이미지" />
-                                        </div>
-                                    </div>
-                                    <a href="#none" role="button" title="음원 이동">
-                                        <div class="info">
-                                            <strong>음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름</strong>
-                                            <span>작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명</span>
-                                            <span class="num"></span>
-                                        </div>
-                                    </a>
-                                    <div class="chk-box like">
-                                        <input type="checkbox" class="" id="chk8" />
-                                        <label for="chk8"><span class="blind">관심음원</span></label>
-                                    </div>
-                                </li>
-                                <li class="swiper-slide">
-                                    <div class="sound-area">
-                                        <button type="button" class="btn-play"><span class="blind">재생</span></button>
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_artist_album_05.png"
-                                                alt="음원 이미지" />
-                                        </div>
-                                    </div>
-                                    <a href="#none" role="button" title="음원 이동">
-                                        <div class="info">
-                                            <strong>음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름</strong>
-                                            <span>작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명</span>
-                                            <span class="num"></span>
-                                        </div>
-                                    </a>
-                                    <div class="chk-box like">
-                                        <input type="checkbox" class="" id="chk9" />
-                                        <label for="chk9"><span class="blind">관심음원</span></label>
-                                    </div>
-                                </li>
-                                <li class="swiper-slide">
-                                    <div class="sound-area">
-                                        <button type="button" class="btn-play"><span class="blind">재생</span></button>
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_artist_album_05.png"
-                                                alt="음원 이미지" />
-                                        </div>
-                                    </div>
-                                    <a href="#none" role="button" title="음원 이동">
-                                        <div class="info">
-                                            <strong>음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름</strong>
-                                            <span>작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명</span>
-                                            <span class="num"></span>
-                                        </div>
-                                    </a>
-                                    <div class="chk-box like">
-                                        <input type="checkbox" class="" id="chk10" />
-                                        <label for="chk10"><span class="blind">관심음원</span></label>
-                                    </div>
-                                </li>
-                                <li class="swiper-slide">
-                                    <div class="sound-area">
-                                        <button type="button" class="btn-play"><span class="blind">재생</span></button>
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_artist_album_05.png"
-                                                alt="음원 이미지" />
-                                        </div>
-                                    </div>
-                                    <a href="#none" role="button" title="음원 이동">
-                                        <div class="info">
-                                            <strong>음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름</strong>
-                                            <span>작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명</span>
-                                            <span class="num"></span>
-                                        </div>
-                                    </a>
-                                    <div class="chk-box like">
-                                        <input type="checkbox" class="" id="chk11" />
-                                        <label for="chk11"><span class="blind">관심음원</span></label>
-                                    </div>
-                                </li>
-
-                                <li class="swiper-slide">
-                                    <div class="sound-area">
-                                        <button type="button" class="btn-play"><span class="blind">재생</span></button>
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_artist_album_05.png"
-                                                alt="음원 이미지" />
-                                        </div>
-                                    </div>
-                                    <a href="#none" role="button" title="음원 이동">
-                                        <div class="info">
-                                            <strong>음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름</strong>
-                                            <span>작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명</span>
-                                            <span class="num"></span>
-                                        </div>
-                                    </a>
-                                    <div class="chk-box like">
-                                        <input type="checkbox" class="" id="chk12" />
-                                        <label for="chk12"><span class="blind">관심음원</span></label>
-                                    </div>
-                                </li>
-                                <li class="swiper-slide">
-                                    <div class="sound-area">
-                                        <button type="button" class="btn-play"><span class="blind">재생</span></button>
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_artist_album_05.png"
-                                                alt="음원 이미지" />
-                                        </div>
-                                    </div>
-                                    <a href="#none" role="button" title="음원 이동">
-                                        <div class="info">
-                                            <strong>음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름</strong>
-                                            <span>작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명</span>
-                                            <span class="num"></span>
-                                        </div>
-                                    </a>
-                                    <div class="chk-box like">
-                                        <input type="checkbox" class="" id="chk13" />
-                                        <label for="chk13"><span class="blind">관심음원</span></label>
-                                    </div>
-                                </li>
-                                <li class="swiper-slide">
-                                    <div class="sound-area">
-                                        <button type="button" class="btn-play"><span class="blind">재생</span></button>
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_artist_album_05.png"
-                                                alt="음원 이미지" />
-                                        </div>
-                                    </div>
-                                    <a href="#none" role="button" title="음원 이동">
-                                        <div class="info">
-                                            <strong>음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름</strong>
-                                            <span>작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명</span>
-                                            <span class="num rank-up">122</span>
-                                        </div>
-                                    </a>
-                                    <div class="chk-box like">
-                                        <input type="checkbox" class="" id="chk14" />
-                                        <label for="chk14"><span class="blind">관심음원</span></label>
-                                    </div>
-                                </li>
-                                <li class="swiper-slide">
-                                    <div class="sound-area">
-                                        <button type="button" class="btn-play"><span class="blind">재생</span></button>
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_artist_album_05.png"
-                                                alt="음원 이미지" />
-                                        </div>
-                                    </div>
-                                    <a href="#none" role="button" title="음원 이동">
-                                        <div class="info">
-                                            <strong>음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름</strong>
-                                            <span>작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명</span>
-                                            <span class="num rank-down">122</span>
-                                        </div>
-                                    </a>
-                                    <div class="chk-box like">
-                                        <input type="checkbox" class="" id="chk15" />
-                                        <label for="chk15"><span class="blind">관심음원</span></label>
-                                    </div>
-                                </li>
-
-                                <li class="swiper-slide">
-                                    <div class="sound-area">
-                                        <button type="button" class="btn-play"><span class="blind">재생</span></button>
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_artist_album_01.png"
-                                                alt="음원 이미지" />
-                                        </div>
-                                    </div>
-                                    <a href="#none" role="button" title="음원 이동">
-                                        <div class="info">
-                                            <strong>음원이름음원이름</strong>
-                                            <span>작곡가 명</span>
-                                            <span class="num rank-up">122</span>
-                                        </div>
-                                    </a>
-                                    <div class="chk-box like">
-                                        <input type="checkbox" class="" id="chk16" />
-                                        <label for="chk16"><span class="blind">관심음원</span></label>
-                                    </div>
-                                </li>
-                                <li class="swiper-slide">
-                                    <div class="sound-area">
-                                        <button type="button" class="btn-play"><span class="blind">재생</span></button>
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_artist_album_02.png"
-                                                alt="음원 이미지" />
-                                        </div>
-                                    </div>
-                                    <a href="#none" role="button" title="음원 이동">
-                                        <div class="info">
-                                            <strong>음원이름음원이름</strong>
-                                            <span>작곡가 명</span>
-                                            <span class="num rank-down">122</span>
-                                        </div>
-                                    </a>
-                                    <div class="chk-box like">
-                                        <input type="checkbox" class="" id="chk17" />
-                                        <label for="chk17"><span class="blind">관심음원</span></label>
-                                    </div>
-                                </li>
-                                <li class="swiper-slide">
-                                    <div class="sound-area">
-                                        <button type="button" class="btn-play"><span class="blind">재생</span></button>
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_artist_album_03.png"
-                                                alt="음원 이미지" />
-                                        </div>
-                                    </div>
-                                    <a href="#none" role="button" title="음원 이동">
-                                        <div class="info">
-                                            <strong>음원이름음원이름</strong>
-                                            <span>작곡가 명</span>
-                                            <span class="num"></span>
-                                        </div>
-                                    </a>
-                                    <div class="chk-box like">
-                                        <input type="checkbox" class="" id="chk18" />
-                                        <label for="chk18"><span class="blind">관심음원</span></label>
-                                    </div>
-                                </li>
-                                <li class="swiper-slide">
-                                    <div class="sound-area">
-                                        <button type="button" class="btn-play"><span class="blind">재생</span></button>
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_artist_album_04.png"
-                                                alt="음원 이미지" />
-                                        </div>
-                                    </div>
-                                    <a href="#none" role="button" title="음원 이동">
-                                        <div class="info">
-                                            <strong>음원이름음원이름</strong>
-                                            <span>작곡가 명</span>
-                                            <span class="num"></span>
-                                        </div>
-                                    </a>
-                                    <div class="chk-box like">
-                                        <input type="checkbox" class="" id="chk19" />
-                                        <label for="chk19"><span class="blind">관심음원</span></label>
-                                    </div>
-                                </li>
-                            </ol>
+                        <div class="info">
+                            <a href="#none" class="user-profile"><strong>닉네임최대15글자숫자특문포함</strong></a>
+                            <p class="text">자기소개글 쓰는 영역으로 최대 200자 입력 가능 띄어쓰기 특수문자 숫자 영문 대소문자 입력 가능하고</p>
+                        </div>
+                        <div class="btn-box">
+                            <button type="button" class="btn btn-primary btn-follow">
+                                <span>팔로우</span>
+                            </button>
                         </div>
                     </div>
-                </div>
-                <div class="category-area r-tag">
-                    <div class="inner">
-                        <div class="title-box">
-                            <h2 class="sub-title">이달의 랭커</h2>
+                    <div class="tab-wrap line mt-16">
+                        <div class="tab-items">
+                            <ul>
+                                <li class="on"><a href="#" class="tab-button" data-target="tab1">클립</a></li>
+                                <li><a href="#" class="tab-button" data-target="tab2">음원</a></li>
+                                <li><a href="#" class="tab-button" data-target="tab3">Talk</a></li>
+                            </ul>
+                            <button type="button" class="btn-filter" onclick="ui.popup.open('#bottomViewPop')"><span
+                                    class="blind">필터</span></button>
                         </div>
-                        <div class="list-box rank more-list">
-                            <ol class="rank-list">
-                                <li>
-                                    <a href="#none">
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
-                                                alt="유저 이미지">
-                                        </div>
-                                        <div class="info">
-                                            <strong>유저닉네임1</strong>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#none">
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_06.png"
-                                                alt="유저 이미지">
-                                        </div>
-                                        <div class="info">
-                                            <strong>유저닉네임1</strong>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#none">
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_03.png"
-                                                alt="유저 이미지">
-                                        </div>
-                                        <div class="info">
-                                            <strong>유저닉네임1</strong>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#none">
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_02.png"
-                                                alt="유저 이미지">
-                                        </div>
-                                        <div class="info">
-                                            <strong>유저닉네임1</strong>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#none">
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_05.png"
-                                                alt="유저 이미지">
-                                        </div>
-                                        <div class="info">
-                                            <strong>유저닉네임1</strong>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#none">
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_04.png"
-                                                alt="유저 이미지">
-                                        </div>
-                                        <div class="info">
-                                            <strong>유저닉네임1</strong>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ol>
+                        <div class="tab-content">
+                            <div id="tab1" class="tab-cont open">
+                                <div class="challenge-box small">
+                                    <ul>
+                                        <li>
+                                            <a href="#none">
+                                                <div class="img">
+                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
+                                                        alt="챌린지 이미지">
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <div class="img">
+                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_13.png"
+                                                        alt="챌린지 이미지">
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <div class="img">
+                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_12.png"
+                                                        alt="챌린지 이미지">
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <div class="img">
+                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_11.png"
+                                                        alt="챌린지 이미지">
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <div class="img">
+                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_08.png"
+                                                        alt="챌린지 이미지">
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <div class="img">
+                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_07.png"
+                                                        alt="챌린지 이미지">
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <div class="img">
+                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_06.png"
+                                                        alt="챌린지 이미지">
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <div class="img">
+                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_04.png"
+                                                        alt="챌린지 이미지">
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <div class="img">
+                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_02.png"
+                                                        alt="챌린지 이미지">
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <div class="img">
+                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_03.png"
+                                                        alt="챌린지 이미지">
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
 
-                            <div class="btn-box">
-                                <button type="button" class="btn-loadmore">더보기</button>
                             </div>
+                            <!-- <div id="tab2" class="tab-cont">
+                                <div class=""></div>
+                                <ul>
+                                    <li>tese2</li>
+                                </ul>
+                            </div>
+                            <div id="tab3" class="tab-cont">
+                                <div class=""></div>
+                                <ul>
+                                    <li>tese3</li>
+                                </ul>
+                            </div> -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="quick_top">
-        <button type="button" class="btn-top">TOP</button>
+        <div class="quick_top">
+            <button type="button" class="btn-top">TOP</button>
+        </div>
     </div>
     <script>
+        $('.btn-follow').on('click', function () {
+            $(this).toggleClass('is-ing');
 
-        var eventSlideSet = {
-            slidesPerView: 'auto',
-            watchOverflow: true,
-            loop: true,
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false
-            },
-            pagination: {
-                el: '.swiper-pagination'
-            },
-            on: {
-                init: function () {
-
-                    var slideidx = this.slides.length;
-                    $('.event-swiper .swiper-wrapper .swiper-slide').addClass('changed');
-                    $('.visual-custom .current').text(this.realIndex + 1);
-                    $('.visual-custom .total').text(slideidx);
-
-                    $('.swiper-auto-ctl').on('click', function (e) {
-                        e.preventDefault();
-                        $(this).toggleClass('is-stop');
-
-                        if ($(this).hasClass('is-stop')) {
-                            eventSwiper.autoplay.stop();
-                            $(this).attr('aria-label', '슬라이드 자동롤링 시작').find('.blind').text('시작');
-                        } else {
-                            eventSwiper.autoplay.start();
-                            $(this).attr('aria-label', '슬라이드 자동롤링 중지').find('.blind').text('중지');
-                        }
-                    });
-
-                },
-                slideChangeTransitionStart: function () {
-                    var $slide = $('.event-swiper .swiper-wrapper .swiper-slide');
-                    $slide.addClass('changing');
-                    $slide.removeClass('changed');
-                    $('.visual-custom .current').text(this.realIndex + 1);
-                },
-                slideChangeTransitionEnd: function () {
-                    var $slide = $('.event-swiper .swiper-wrapper .swiper-slide');
-                    $slide.removeClass('changing');
-                    $slide.addClass('changed');
-                }
+            if (!$(this).hasClass('is-ing')) {
+                $(this).find('span').text('팔로우')
+            } else {
+                $(this).find('span').text('팔로잉')
             }
-        }
-        const eventSwiper = new Swiper('.event-swiper', eventSlideSet);
+        });
 
-        var rankSlideSet = {
-            watchOverflow: true,
-            spaceBetween: 10,
-            slidesPerView: 'auto',
-            grid: {
-                rows: 4,
-            },
-        };
-        const rankSwiper = new Swiper('.rank-swiper', rankSlideSet);
     </script>
 </body>
+<article class="layerpopup-box bottom" id="bottomViewPop" role="dialog">
+    <div class="layer-popup challPop">
+        <header class="layer-header">
+            <h1 class="pop-title">정렬</h1>
+            <button type="button" class="btn-close btn-pop-close" title="레이어팝업 닫기"
+                onclick="ui.popup.close('#bottomViewPop')">닫기</button>
+        </header>
+
+        <div class="layer-content pb-88">
+            <div class="layer-inner">
+                <div class="rdo-list cell">
+                    <ul>
+                        <li>
+                            <div class="rdo-box cell">
+                                <input type="radio" id="rdo1" name="rdo" checked>
+                                <label for="rdo1">선택항목</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="rdo-box cell">
+                                <input type="radio" id="rdo2" name="rdo">
+                                <label for="rdo2">선택항목</label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="filter-form">
+                    <h2 class="sub-title mt-16 mb-16">필터</h2>
+                    <div class="chk-list">
+                        <ul>
+                            <li>
+                                <div class="chk-box ico-top">
+                                    <input type="checkbox" class="ai" id="chk1" name="chk" checked>
+                                    <label for="chk1">AI챌린지</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="chk-box ico-top">
+                                    <input type="checkbox" class="music" id="chk2" name="chk">
+                                    <label for="chk2">음원챌린지</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="chk-box ico-top">
+                                    <input type="checkbox" class="camera" id="chk3" name="chk">
+                                    <label for="chk3">일반</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="btn-bottom-box">
+            <button type="button" class="btn btn-primary btn-pop-close"
+                onclick="ui.popup.close('#bottomViewPop')">확인</button>
+        </div>
+    </div>
+    <!-- //layer-popup -->
+</article>
 
 </html>

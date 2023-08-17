@@ -147,3 +147,53 @@ a.btn-composer {
         }
     }
 }
+.comp-info-area {
+    .img {
+        width: 10.4rem;
+        height: 10.4rem;
+        margin: 0 auto;
+        border-radius: 10.4rem;
+        overflow: hidden;
+    }
+    .info {
+        a {
+            display: block;
+            margin-top: 1.6rem;
+            text-align: center;
+            line-height: 2.3rem;
+        }
+        .info {
+            margin-top: 1.6rem;
+        }
+        .text {
+            margin-top: 0.8rem;
+            font-size: 1.2rem;
+            line-height: 1.7rem;
+        }
+        & + .btn-box {
+            margin-top: 1.6rem;
+        }
+    }
+    .btn-box {
+        .btn {
+            height: 3.2rem;
+        }
+    }
+}
+.no-clip {
+    width: 21.2rem;
+    height: 21.2rem;
+    margin: 1.6rem auto 0;
+    @include bg($src: '../images/img/img_no_clip.png');
+    background-size: cover;
+    p {
+        padding-top: 100%;
+        text-align: center;
+        line-height: 2.3rem;
+    }
+}
+.talk-wrap {
+    .comment-list {
+        padding-top: 2.4rem;
+    }
+}

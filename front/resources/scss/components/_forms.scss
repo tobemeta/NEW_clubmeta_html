@@ -297,21 +297,21 @@
         }
     }
 }
-.btn-filter {
-    width: 3.2rem;
-    height: 4rem;
-    margin-right: -0.1rem;
-    outline: 0;
-    border: 1px solid #e7e7e7;
-    border-radius: 0.8rem 0 0 0.8rem;
-    background: #fff url(../images/ico-filter.svg) no-repeat center/2.4rem;
-    + .select-box {
-        select,
-        .btn-select {
-            border-radius: 0 0.8rem 0.8rem 0;
-        }
-    }
-}
+// .btn-filter {
+//     width: 3.2rem;
+//     height: 4rem;
+//     margin-right: -0.1rem;
+//     outline: 0;
+//     border: 1px solid #e7e7e7;
+//     border-radius: 0.8rem 0 0 0.8rem;
+//     background: #fff url(../images/ico-filter.svg) no-repeat center/2.4rem;
+//     + .select-box {
+//         select,
+//         .btn-select {
+//             border-radius: 0 0.8rem 0.8rem 0;
+//         }
+//     }
+// }
 .select-options {
     position: absolute;
     padding: 0.4rem;
