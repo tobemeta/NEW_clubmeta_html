@@ -184,6 +184,20 @@ optgroup {
             }
         }
     }
+    .title {
+        width: 40px;
+        height: 40px;
+        margin: 0 auto;
+        background-image: url(../images/img/img-logo.png);
+        background-size: contain;
+        text-indent: -9999em;
+    }
+    .login-img {
+        background-image: url(../images/img/img-clubmeta.png);
+        background-size: cover;
+        background-position: 50%;
+        text-indent: -9999em;
+    }
 }
 
 // topbar
