@@ -93,8 +93,8 @@
 }
 
 .btn-play {
-    @include bg($src: '../images/ico/ico_w_play.svg', $po: center 1.7rem);
+    @include bg($src: '../images/ico/ico_w_play.svg');
     &.is-stop {
-        @include bg($src: '../images/ico/ico_w_pause.svg', $po: center 1.3rem);
+        @include bg($src: '../images/ico/ico_w_pause.svg');
     }
 }

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>AI 챌린지 리스트 팝업 | 클럽메타</title>
+    <link rel="stylesheet" href="../../resources/css/common.min.css" />
+    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+</head>
+
+<body>
+
+    <article class="layerpopup-box bottom is-active is-animation" id="bottomViewPop" role="dialog">
+        <div class="layer-popup challPop">
+            <header class="layer-header">
+                <h1 class="pop-title">정렬</h1>
+                <button type="button" class="btn-close btn-pop-close" title="레이어팝업 닫기"
+                    onclick="ui.popup.close('#bottomViewPop')">닫기</button>
+            </header>
+
+            <div class="layer-content pb-88">
+                <div class="layer-inner">
+                    <div class="rdo-list cell">
+                        <ul>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo1" name="rdo" checked>
+                                    <label for="rdo1">선택항목</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo2" name="rdo">
+                                    <label for="rdo2">선택항목</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="filter-form">
+                        <h2 class="sub-title mt-16 mb-16">필터</h2>
+                        <div class="chk-list wrap">
+                            <ul>
+                                <li>
+                                    <div class="chk-box toggle-cate">
+                                        <input type="checkbox" class="ai" id="chk1" name="chk">
+                                        <label for="chk1">케이팝</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chk-box toggle-cate">
+                                        <input type="checkbox" class="music" id="chk2" name="chk" checked>
+                                        <label for="chk2">힙합/랩</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chk-box toggle-cate">
+                                        <input type="checkbox" class="ai" id="chk3" name="chk" checked>
+                                        <label for="chk3">알앤비/소울</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chk-box toggle-cate">
+                                        <input type="checkbox" class="music" id="chk4" name="chk">
+                                        <label for="chk4">팝/락</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chk-box toggle-cate">
+                                        <input type="checkbox" class="camera" id="chk5" name="chk">
+                                        <label for="chk5">키즈</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chk-box toggle-cate">
+                                        <input type="checkbox" class="ai" id="chk6" name="chk" checked>
+                                        <label for="chk6">트로트</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chk-box toggle-cate">
+                                        <input type="checkbox" class="music" id="chk7" name="chk" checked>
+                                        <label for="chk7">댄스/일로트로닉</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chk-box toggle-cate">
+                                        <input type="checkbox" class="camera" id="chk8" name="chk" checked>
+                                        <label for="chk8">재즈</label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="btn-bottom-box">
+                <button type="button" class="btn btn-primary btn-pop-close"
+                    onclick="ui.popup.close('#bottomViewPop')">확인</button>
+            </div>
+        </div>
+        <!-- //layer-popup -->
+    </article>
+</body>
+
+</html>
+
+<!-- 팝업 -->

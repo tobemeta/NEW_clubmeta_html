@@ -394,7 +394,29 @@
         }
     }
 }
-
+.chk-list {
+    ul {
+        display: flex;
+        gap: 1rem;
+    }
+    li {
+        flex: 1;
+        .chk-box {
+            width: 100%;
+        }
+    }
+    &.wrap {
+        ul {
+            flex-wrap: wrap;
+        }
+        li {
+            flex: none;
+            .chk-box {
+                width: auto;
+            }
+        }
+    }
+}
 .chk-box {
     position: relative;
     display: inline-block;
@@ -450,21 +472,22 @@
 
     &.toggle-cate {
         label {
-            height: 4rem;
-            padding: 1.05rem 4rem 1.05rem 1.6rem;
+            padding: 0.7rem 2.8rem 0.7rem 1.6rem;
             background: #fff;
-            border: 1px solid #b7b7b7;
+            border: 1px solid #e7e7e7;
             border-radius: 1.6rem;
-            text-align: center;
+            line-height: 2rem;
             box-sizing: $sizing;
 
             &:before {
                 left: auto;
                 top: 50%;
                 right: 0.8rem;
+                width: 1.6rem;
+                height: 1.6rem;
                 transform: translateY(-50%);
                 border: none;
-                @include bg($src: '../images/ico/ico_chk_plus.svg', $color: transparent);
+                @include bg($src: '../images/ico/ico_chk_cate.svg', $color: transparent);
             }
         }
         input {
@@ -473,7 +496,7 @@
                 color: $main-color;
 
                 &:before {
-                    @include bg($src: '../images/ico/ico_chk_check.svg', $color: transparent);
+                    @include bg($src: '../images/ico/ico_chk_cate_on.svg', $color: transparent);
                 }
             }
         }
@@ -555,6 +578,98 @@
                 &:before {
                     @include bg($src: '../images/ico/ico_heart_on.svg', $color: transparent);
                 }
+            }
+        }
+    }
+    &.ico-top {
+        label {
+            padding: 3.2rem 0 0.8rem;
+            background: #fff;
+            border: 1px solid #e7e7e7;
+            border-radius: 1.6rem;
+            font-size: 1.4rem;
+            line-height: 2rem;
+            text-align: center;
+            box-sizing: $sizing;
+
+            &:before {
+                left: 50%;
+                top: 0.8rem;
+                width: 2.4rem;
+                height: 2.4rem;
+                transform: translateX(-50%);
+                border: none;
+            }
+        }
+        input {
+            &.ai + label {
+                &:before {
+                    @include bg($src: '../images/ico/ico_chk_ai.svg', $color: transparent);
+                }
+            }
+            &.music + label {
+                &:before {
+                    @include bg($src: '../images/ico/ico_chk_music.svg', $color: transparent);
+                }
+            }
+            &.camera + label {
+                &:before {
+                    @include bg($src: '../images/ico/ico_chk_camera.svg', $color: transparent);
+                }
+            }
+
+            &:checked + label {
+                border-color: $main-color;
+                color: $main-color;
+            }
+            &.ai {
+                &:checked + label {
+                    &:before {
+                        @include bg($src: '../images/ico/ico_chk_ai_on.svg', $color: transparent);
+                    }
+                }
+            }
+            &.music {
+                &:checked + label {
+                    &:before {
+                        @include bg($src: '../images/ico/ico_chk_music_on.svg', $color: transparent);
+                    }
+                }
+            }
+            &.camera {
+                &:checked + label {
+                    &:before {
+                        @include bg($src: '../images/ico/ico_chk_camera_on.svg', $color: transparent);
+                    }
+                }
+            }
+        }
+    }
+}
+.rdo-list {
+    ul {
+        display: flex;
+    }
+    li {
+        flex: 1;
+    }
+    &.cell {
+        padding: 0.4rem;
+        background: #fff;
+        border-radius: 1.6rem;
+        box-shadow: $shadow;
+        box-sizing: $sizing;
+        .rdo-box.cell {
+            label {
+                height: auto;
+                box-shadow: none;
+                text-align: center;
+                padding: 0.4rem 0;
+                line-height: 2.2rem;
+                color: #585858;
+            }
+            input:checked + label {
+                color: $main-color;
             }
         }
     }

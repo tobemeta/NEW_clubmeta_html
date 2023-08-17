@@ -50,3 +50,100 @@
         }
     }
 }
+
+.monthSound-text {
+    margin-bottom: 2.1rem;
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+    color: #585858;
+}
+
+a.btn-composer {
+    display: block;
+    margin-bottom: 0.8rem;
+    padding: 0.6rem 1.6rem;
+    border-radius: 0.8rem;
+    font-size: 1.4rem;
+    color: #e45200;
+    background: #ffe0ce;
+}
+
+.banner-area {
+    &.advert {
+        position: relative;
+        height: 24.44vw;
+        a {
+            display: block;
+        }
+        .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.4rem;
+            font-weight: $bold;
+            z-index: 2;
+        }
+    }
+}
+.banner-swiper {
+    overflow: hidden;
+}
+
+.category-area.fame {
+    ul {
+        li {
+            gap: 1rem;
+        }
+    }
+    a {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        width: 8.8rem;
+        .img {
+            overflow: hidden;
+            width: 100%;
+            height: 8.8rem;
+            border-radius: 50%;
+        }
+        p {
+            line-height: 2.3rem;
+            @include ellipsis();
+        }
+    }
+}
+.category-area.genre {
+    a {
+        display: block;
+        position: relative;
+        border-radius: 2.4rem;
+        overflow: hidden;
+        width: 14.2rem;
+        .img {
+            width: 100%;
+            height: 8.6rem;
+            &:before {
+                display: block;
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.4);
+                z-index: 2;
+            }
+        }
+        p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.4rem;
+            line-height: 2rem;
+            color: #fff;
+            z-index: 3;
+        }
+    }
+}

@@ -111,10 +111,15 @@ const ui = {
                 $tab = $(this).parent();
             const _this = $(this);
 
+            console.log(data);
+
             if ($tab.hasClass('on')) return false;
 
             _this.parent().addClass('on').siblings().removeClass('on');
-            $(data).addClass('open').siblings().removeClass('open');
+            $('#' + data)
+                .addClass('open')
+                .siblings()
+                .removeClass('open');
             // $(id).addClass('open').siblings().removeClass('open');
 
             const tabWrap = _this.closest('.tab-wrap');
