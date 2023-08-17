@@ -140,6 +140,25 @@ optgroup {
             }
         }
     }
+    .sidebar-brand-icon {
+        .logo {
+            align-self: baseline;
+            width: 148px;
+            height: 35px;
+            margin-left: 1.2rem;
+            background: url(../images/img/img_sidebar-logo.png) no-repeat 0 0 / 100%;
+        }
+    }
+    &.toggled {
+        .sidebar-brand-icon {
+            .logo {
+                width: 35px;
+                height: 35px;
+                margin-left: 0;
+                background: url(../images/img/img-logo.png) no-repeat 0 0 / 100%;
+            }
+        }
+    }
 }
 
 // login
@@ -503,7 +522,7 @@ optgroup {
             th,
             td {
                 color: #bbb;
-                text-decoration: line-through;
+                // text-decoration: line-through;
                 a {
                     color: #bbb;
                 }
