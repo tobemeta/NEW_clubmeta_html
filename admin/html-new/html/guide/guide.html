@@ -1,183 +1,723 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>클럽메다 관리자 - 가이드</title>
+        <!-- js -->
+        <script src="../include/head.js"></script>
+        <script src="../../js/custom.js"></script>
+        <link rel="stylesheet" href="../../lib/bootstrap-table/extensions/reorder-rows/bootstrap-table-reorder-rows.min.css" />
+    </head>
 
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>클럽메다 관리자 - 가이드</title>
-    <!-- js -->
-    <script src="../include/head.js"></script>
-    <script src="../../js/custom.js"></script>
-</head>
+    <body>
+        <div id="wrapper" class="wrapper">
+            <!-- 사이드바 -->
+            <div data-include="../include/sidebar.html"></div>
+            <!-- //사이드바 -->
+            <div id="content-wrapper" class="d-flex flex-column bg-white">
+                <div id="content">
+                    <div data-include="../include/topbar.html"></div>
+                    <div class="container-fluid">
+                        <div class="main">
+                            <ul class="nav nav-tabs sub-tab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="sub-tab1" data-toggle="tab" data-target="#sub-panel1" type="button" role="tab">가이드</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="sub-tab2" data-toggle="tab" data-target="#sub-panel2" type="button" role="tab">팝업</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="sub-tab3" data-toggle="tab" data-target="#sub-panel3" type="button" role="tab">테이블</button>
+                                </li>
 
-<body>
-    <div id="wrapper" class="wrapper">
-        <!-- 사이드바 -->
-        <div data-include="../include/sidebar.html"></div>
-        <!-- //사이드바 -->
-        <div id="content-wrapper" class="d-flex flex-column">
-            <div id="content">
-                <div data-include="../include/topbar.html"></div>
-                <div class="container-fluid">
-                    <h2>참고사이트 :</h2>
-                    <a
-                        href="https://getbootstrap.com/docs/4.5/components/alerts/">https://getbootstrap.com/docs/4.5/components/alerts/</a>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="sub-tab4" data-toggle="tab" data-target="#sub-panel4" type="button" role="tab">버튼</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="sub-panel1" role="tabpanel" aria-labelledby="sub-tab1">
+                                    <div class="row clearfix mt-4 mb-4">
+                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                            <h2 class="h3 text-gray-800 float-left">참고사이트</h2>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                            <h6 class="m-0 font-weight-bold text-primary">부트스트랩 홈페이지</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">https://getbootstrap.com/docs/5.3/getting-started/introduction/</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="sub-panel2" role="tabpanel" aria-labelledby="sub-tab2">
+                                    <div class="row clearfix mt-4 mb-4">
+                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                            <h2 class="h3 text-gray-800 float-left">참고사이트</h2>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <a href="https://getbootstrap.com/docs/4.5/components/alerts/">https://getbootstrap.com/docs/4.5/components/alerts/</a>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix mt-4 mb-4">
+                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                            <h2 class="h3 text-gray-800 float-left">모달 팝업 가이드</h2>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="card shadow mb-4">
+                                                <!-- Card Header - Dropdown -->
+                                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                                    <h6 class="m-0 font-weight-bold text-primary">alert1 : bsFormAlert</h6>
+                                                </div>
+                                                <!-- Card Body -->
+                                                <div class="card-body">
+                                                    <p class="text-secondary">목록과 닫기 버튼이 있는 알림창</p>
+                                                    <button type="button" class="btn btn-primary btn-confirm" data-toggle="modal" onclick="bsFormAlert('알림창')">알림 alert 1</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="card shadow mb-4">
+                                                <!-- Card Header - Dropdown -->
+                                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                                    <h6 class="m-0 font-weight-bold text-primary">alert2 : bsFormAlert2</h6>
+                                                </div>
+                                                <!-- Card Body -->
+                                                <div class="card-body">
+                                                    <p class="text-secondary">확인 버튼만 있는 알림창</p>
+                                                    <button type="button" class="btn btn-primary btn-confirm" data-toggle="modal" onclick="bsFormAlert2('알림창')">알림 alert 2</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="card shadow mb-4">
+                                                <!-- Card Header - Dropdown -->
+                                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                                    <h6 class="m-0 font-weight-bold text-primary">alert3 : bsAlert</h6>
+                                                </div>
+                                                <!-- Card Body -->
+                                                <div class="card-body">
+                                                    <p class="text-secondary">닫기 버튼만 있는 알림창</p>
+                                                    <button type="button" class="btn btn-primary btn-confirm" data-toggle="modal" onclick="bsAlert('알림창')">알림 alert 3</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="card shadow mb-4">
+                                                <!-- Card Header - Dropdown -->
+                                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                                    <h6 class="m-0 font-weight-bold text-primary">로그아웃창 : bsLogout</h6>
+                                                </div>
+                                                <!-- Card Body -->
+                                                <div class="card-body">
+                                                    <p class="text-secondary">로그아웃 알림창</p>
+                                                    <button type="button" class="btn btn-primary btn-confirm" data-toggle="modal" onclick="bsLogout()">알림 alert 4</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="card shadow mb-4">
+                                                <!-- Card Header - Dropdown -->
+                                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                                    <h6 class="m-0 font-weight-bold text-primary">alert5 : bsConfirm</h6>
+                                                </div>
+                                                <!-- Card Body -->
+                                                <div class="card-body">
+                                                    <p class="text-secondary">닫기와 확인 버튼이 있는 알림창</p>
+                                                    <button type="button" class="btn btn-primary btn-confirm" data-toggle="modal" onclick="bsConfirm('알림창')">알림 alert 5</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="card shadow mb-4">
+                                                <!-- Card Header - Dropdown -->
+                                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                                    <h6 class="m-0 font-weight-bold text-primary">이게멀까 : bsConfirm2</h6>
+                                                </div>
+                                                <!-- Card Body -->
+                                                <div class="card-body">
+                                                    <p class="text-secondary">이게머지</p>
+                                                    <button type="button" class="btn btn-primary btn-confirm" data-toggle="modal" onclick="bsConfirm2('알림창')">알림 alert 5</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="sub-panel3" role="tabpanel" aria-labelledby="sub-tab3">
+                                    <div class="row clearfix mt-4 mb-4">
+                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                            <h2 class="h3 text-gray-800 float-left">검색영역 테이블</h2>
+                                        </div>
+                                    </div>
+                                    <div class="search-wrap">
+                                        <div class="form-box">
+                                            <div class="form-box-row">
+                                                <div class="form-box-item">
+                                                    <div class="form-box-label"><label for="" class="req">th 텍스트</label></div>
+                                                    <div class="form-box-cont">
+                                                        <div class="custom-control-wrap">
+                                                            <label class="custom-control custom-checkbox custom-control-inline">
+                                                                <input type="checkbox" name="chk" class="custom-control-input" />
+                                                                <span class="custom-control-label">사용</span>
+                                                            </label>
+                                                            <label class="custom-control custom-checkbox custom-control-inline">
+                                                                <input type="checkbox" name="chk" class="custom-control-input" />
+                                                                <span class="custom-control-label">미사용</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-box-row">
+                                                <div class="form-box-item">
+                                                    <div class="form-box-label"><label for="" class="">th 텍스트</label></div>
+                                                    <div class="form-box-cont">
+                                                        <div class="form-row">
+                                                            <div class="col-2">
+                                                                <select class="custom-select">
+                                                                    <option value="1">전체</option>
+                                                                    <option value="1">제목</option>
+                                                                    <option value="1">최초등록ID</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="flex-fill">
+                                                                <input type="text" class="form-control" placeholder="검색어 입력" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
-                    <div class="main">
-                        <div class="row clearfix mt-4 mb-4">
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                <h2 class="h3 text-gray-800 float-left">모달 팝업 가이드</h2>
+                                            <div class="form-box-row">
+                                                <div class="form-box-item">
+                                                    <div class="form-box-label"><label for="" class="">th 텍스트</label></div>
+                                                    <div class="form-box-cont">
+                                                        <div class="input-daterange-btn">
+                                                            <div class="input-group">
+                                                                <input type="date" class="form-control" placeholder="시작일" />
+                                                                <div class="input-group-prepend">
+                                                                    <div class="input-group-text">~</div>
+                                                                </div>
+                                                                <input type="date" class="form-control" placeholder="종료일" />
+                                                            </div>
+
+                                                            <div class="btn-group" role="group" aria-label="기간 선택 버튼">
+                                                                <button type="button" class="btn btn-outline-secondary">오늘</button>
+                                                                <button type="button" class="btn btn-outline-secondary active">7일</button>
+                                                                <button type="button" class="btn btn-outline-secondary">15일</button>
+                                                                <button type="button" class="btn btn-outline-secondary">1개월</button>
+                                                                <button type="button" class="btn btn-outline-secondary">3개월</button>
+                                                                <button type="button" class="btn btn-outline-secondary">1년</button>
+                                                                <!-- active 클래스로  활성화 -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="btn-wrap">
+                                        <button type="submit" class="btn btn-dark"><i class="fa fa-search mr-1"></i> 검색</button>
+                                    </div>
+                                    <hr class="w-100 opacity-7" />
+                                    <div class="row clearfix mt-4 mb-4">
+                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                            <h2 class="h3 text-gray-800 float-left">일반 테이블 column 2</h2>
+                                        </div>
+                                    </div>
+                                    <div class="form-box">
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label"><label for="">th 텍스트</label></div>
+                                                <div class="form-box-cont">
+                                                    <div class="form-row">
+                                                        <span>text</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label"><label for="">th 텍스트</label></div>
+                                                <div class="form-box-cont">
+                                                    <div class="form-row">
+                                                        <span>text</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix mt-4 mb-4">
+                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                            <h2 class="h3 text-gray-800 float-left">일반 테이블 column 4</h2>
+                                        </div>
+                                    </div>
+                                    <div class="form-box">
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label"><label for="">th 텍스트</label></div>
+                                                <div class="form-box-cont col-6">
+                                                    <div class="form-row">
+                                                        <span>text</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-box-item">
+                                                <div class="form-box-label"><label for="">th 텍스트</label></div>
+                                                <div class="form-box-cont col-6">
+                                                    <div class="form-row">
+                                                        <span>text</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label"><label for="">th 텍스트</label></div>
+                                                <div class="form-box-cont col-6">
+                                                    <div class="form-row">
+                                                        <span>text</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-box-item">
+                                                <div class="form-box-label"><label for="">th 텍스트</label></div>
+                                                <div class="form-box-cont col-6">
+                                                    <div class="form-row">
+                                                        <span>text</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr class="w-100 opacity-7" />
+                                    <div class="row clearfix mt-4 mb-4">
+                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                            <h2 class="h3 text-gray-800 float-left">그리드 테이블</h2>
+                                        </div>
+                                    </div>
+                                    <figure>
+                                        <blockquote class="blockquote">
+                                            <p>- dataTable : sort기능이 들어감</p>
+                                        </blockquote>
+                                    </figure>
+                                    <div class="title-wrap">
+                                        <!-- title-wrap 상단에 제목박스가 있으면 mt-5 삭제 / 제목박스가 없으면 mt-5-->
+                                        <div class="left">검색 <strong class="fc-red">5</strong>건 / 전체 <strong class="fc-red">15</strong>건</div>
+                                        <div class="right">
+                                            <select class="custom-select custom-select-sm">
+                                                <option value="1">10</option>
+                                                <option value="2">25</option>
+                                                <option value="3">50</option>
+                                                <option value="4">100</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="bootstrap-table bootstrap4">
+                                        <div class="fixed-table-toolbar"></div>
+                                        <div class="fixed-table-container" style="padding-bottom: 0px">
+                                            <div class="fixed-table-header" style="display: none">
+                                                <table></table>
+                                            </div>
+                                            <div class="fixed-table-body">
+                                                <div class="fixed-table-loading table table-bordered table-hover" style="top: 42.7969px">
+                                                    <span class="loading-wrap">
+                                                        <span class="loading-text">데이터를 불러오는 중입니다</span>
+                                                        <span class="animation-wrap"><span class="animation-dot"></span></span>
+                                                    </span>
+                                                </div>
+                                                <table id="dataTable1" class="table table-hover table-bordered" data-pagination="true">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="no-sorting" data-field="0" data-orderable="false">
+                                                                <div class="th-inner">
+                                                                    <label class="custom-control custom-checkbox only mb-0">
+                                                                        <input type="checkbox" class="custom-control-input" />
+                                                                        <span class="custom-control-label"></span>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="1">
+                                                                <div class="th-inner">번호</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="2">
+                                                                <div class="th-inner">제목</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="3">
+                                                                <div class="th-inner">게시기간</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="4">
+                                                                <div class="th-inner">조회수</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="5">
+                                                                <div class="th-inner">최초 등록ID</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="6">
+                                                                <div class="th-inner">등록일</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="7">
+                                                                <div class="th-inner">최근 수정일</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="8">
+                                                                <div class="th-inner">게시<br />여부</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="9">
+                                                                <div class="th-inner">고정<br />여부</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- <tr class="no-records-found">
+                                                            <td colspan="10">일치하는 검색결과가 없습니다.</td>
+                                                        </tr> -->
+                                                        <tr class="" data-index="0">
+                                                            <td>
+                                                                <label class="custom-control custom-checkbox only mb-0">
+                                                                    <input type="checkbox" class="custom-control-input" />
+                                                                    <span class="custom-control-label"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td>10</td>
+                                                            <td class="text-left text-truncate"><a href="#none">.text-truncate class to truncate the text with an ellipsis.text-truncate class to truncate the text with an ellipsis.text-truncate class to truncate the text with an ellipsis.text-truncate class to truncate the text with an ellipsis</a></td>
+                                                            <td>2023.06.26~2023.07.30</td>
+                                                            <td>11</td>
+                                                            <td>metaclub00</td>
+                                                            <td>2023.06.26</td>
+                                                            <td>2023.06.30</td>
+                                                            <td>
+                                                                <label class="custom-control custom-checkbox only mb-0">
+                                                                    <input type="checkbox" class="custom-control-input" />
+                                                                    <span class="custom-control-label"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td>
+                                                                <label class="custom-control custom-checkbox only mb-0">
+                                                                    <input type="checkbox" class="custom-control-input" />
+                                                                    <span class="custom-control-label"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="tr-disabled" data-index="1">
+                                                            <td>
+                                                                <label class="custom-control custom-checkbox only mb-0">
+                                                                    <input type="checkbox" class="custom-control-input" disabled />
+                                                                    <span class="custom-control-label"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td>9</td>
+                                                            <td class="text-left text-truncate"><a href="#none">.text-truncate class to truncate the text with an ellipsis. .text-truncate class to truncate the text with an ellipsis. .text-truncate class to truncate the text with an ellipsis.</a></td>
+                                                            <td>2023.06.27~2023.09.30</td>
+                                                            <td>121</td>
+                                                            <td>metaclub01</td>
+                                                            <td>2023.06.16</td>
+                                                            <td>2023.06.30</td>
+                                                            <td>
+                                                                <label class="custom-control custom-checkbox only mb-0">
+                                                                    <input type="checkbox" class="custom-control-input" disabled />
+                                                                    <span class="custom-control-label"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td>
+                                                                <label class="custom-control custom-checkbox only mb-0">
+                                                                    <input type="checkbox" class="custom-control-input" disabled />
+                                                                    <span class="custom-control-label"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr data-index="2">
+                                                            <td>
+                                                                <label class="custom-control custom-checkbox only mb-0">
+                                                                    <input type="checkbox" class="custom-control-input" />
+                                                                    <span class="custom-control-label"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td>8</td>
+                                                            <td class="text-left text-truncate"><a href="#none">공지제목2</a></td>
+                                                            <td>2023.06.28~2023.08.30</td>
+                                                            <td>131</td>
+                                                            <td>metaclub02</td>
+                                                            <td>2023.05.26</td>
+                                                            <td>-</td>
+                                                            <td>
+                                                                <label class="custom-control custom-checkbox only mb-0">
+                                                                    <input type="checkbox" class="custom-control-input" />
+                                                                    <span class="custom-control-label"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td>
+                                                                <label class="custom-control custom-checkbox only mb-0">
+                                                                    <input type="checkbox" class="custom-control-input" />
+                                                                    <span class="custom-control-label"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr data-index="3">
+                                                            <td>
+                                                                <label class="custom-control custom-checkbox only mb-0">
+                                                                    <input type="checkbox" class="custom-control-input" />
+                                                                    <span class="custom-control-label"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td>7</td>
+                                                            <td class="text-left text-truncate"><a href="#none">공지제목3</a></td>
+                                                            <td>2023.06.26~2023.08.30</td>
+                                                            <td>151</td>
+                                                            <td>metaclub03</td>
+                                                            <td>2023.04.26</td>
+                                                            <td>2023.06.30</td>
+                                                            <td>
+                                                                <label class="custom-control custom-checkbox only mb-0">
+                                                                    <input type="checkbox" class="custom-control-input" />
+                                                                    <span class="custom-control-label"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td>
+                                                                <label class="custom-control custom-checkbox only mb-0">
+                                                                    <input type="checkbox" class="custom-control-input" />
+                                                                    <span class="custom-control-label"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="fixed-table-pagination">
+                                            <!-- 왼쪽 버튼 영역 -->
+                                            <div class="float-left">
+                                                <button type="button" class="btn btn-secondary" data-toggle="modal" onclick="bsConfirm('해당 공지사항을 정말 삭제 하시겠습니까? 삭제하시면 복구할 수 없습니다.')"><i class="bi bi-x"></i> 삭제</button>
+                                            </div>
+                                            <!-- 오른쪽 버튼 영역 -->
+                                            <div class="float-right">
+                                                <button type="button" class="btn btn-primary" onclick="bsFormAlert2('변경된 설정으로 저장되었습니다.')">저장</button>
+                                            </div>
+                                            <div class="pagination-wrap pagination">
+                                                <!-- 11개 이상 페이지 생성시 page-at-first, page-at-last의 d-none 클래스 삭제-->
+                                                <ul class="pagination">
+                                                    <li class="page-item page-at-first d-none"><a class="page-link" aria-label="previous page" href="javascript:void(0)">‹‹</a></li>
+                                                    <li class="page-item page-pre"><a class="page-link" aria-label="previous page" href="javascript:void(0)">‹</a></li>
+                                                    <li class="page-item active"><a class="page-link" aria-label="to page 1" href="javascript:void(0)">1</a></li>
+                                                    <li class="page-item"><a class="page-link" aria-label="to page 2" href="javascript:void(0)">2</a></li>
+                                                    <li class="page-item page-next"><a class="page-link" aria-label="next page" href="javascript:void(0)">›</a></li>
+                                                    <li class="page-item page-at-last d-none"><a class="page-link" aria-label="next page" href="javascript:void(0)">››</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <figure>
+                                        <blockquote class="blockquote">
+                                            <p>- dataTable : drag and drop 기능이 추가됨</p>
+                                        </blockquote>
+                                    </figure>
+                                    <div class="bootstrap-table bootstrap4">
+                                        <div class="fixed-table-toolbar"></div>
+                                        <div class="fixed-table-container" style="padding-bottom: 0px">
+                                            <div class="fixed-table-header" style="display: none">
+                                                <table></table>
+                                            </div>
+                                            <div class="fixed-table-body">
+                                                <div class="fixed-table-loading table table-bordered table-hover" style="top: 42.7969px">
+                                                    <span class="loading-wrap">
+                                                        <span class="loading-text">데이터를 불러오는 중입니다</span>
+                                                        <span class="animation-wrap"><span class="animation-dot"></span></span>
+                                                    </span>
+                                                </div>
+                                                <table id="dataTable" class="table table-hover table-bordered" data-pagination="true">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="no-sorting" data-field="0" data-orderable="false">
+                                                                <div class="th-inner">순서<br />변경</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th class="no-sorting" data-field="1">
+                                                                <div class="th-inner">번호</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="2">
+                                                                <div class="th-inner">제목</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="3">
+                                                                <div class="th-inner">게시기간</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="4">
+                                                                <div class="th-inner">조회수</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="5">
+                                                                <div class="th-inner">최초 등록ID</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="6">
+                                                                <div class="th-inner">등록일</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="7">
+                                                                <div class="th-inner">최근 수정일</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="8">
+                                                                <div class="th-inner">게시여부</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- <tr class="no-records-found">
+                                                        <td colspan="9">일치하는 검색결과가 없습니다.</td>
+                                                    </tr> -->
+                                                        <tr class="" data-index="0">
+                                                            <td>
+                                                                <a href="#none"><i class="fas fa-grip-lines"></i></a>
+                                                            </td>
+                                                            <td>1</td>
+                                                            <td class="text-left text-truncate"><a href="#none">공지제목</a></td>
+                                                            <td>2023.06.26~2023.07.30</td>
+                                                            <td>11</td>
+                                                            <td>metaclub00</td>
+                                                            <td>2023.06.26</td>
+                                                            <td>2023.06.30</td>
+                                                            <td>사용</td>
+                                                        </tr>
+                                                        <tr data-index="1">
+                                                            <td>
+                                                                <a href="#none"><i class="fas fa-grip-lines"></i></a>
+                                                            </td>
+                                                            <td>-</td>
+                                                            <td class="text-left text-truncate"><a href="#none">공지제목1</a></td>
+                                                            <td>2023.06.27~2023.09.30</td>
+                                                            <td>121</td>
+                                                            <td>metaclub01</td>
+                                                            <td>2023.06.16</td>
+                                                            <td>2023.06.30</td>
+                                                            <td>사용</td>
+                                                        </tr>
+                                                        <tr data-index="2">
+                                                            <td>
+                                                                <a href="#none"><i class="fas fa-grip-lines"></i></a>
+                                                            </td>
+                                                            <td>2</td>
+                                                            <td class="text-left text-truncate"><a href="#none">공지제목2</a></td>
+                                                            <td>2023.06.28~2023.08.30</td>
+                                                            <td>131</td>
+                                                            <td>metaclub02</td>
+                                                            <td>2023.05.26</td>
+                                                            <td>-</td>
+                                                            <td>미사용</td>
+                                                        </tr>
+                                                        <tr data-index="3">
+                                                            <td>
+                                                                <a href="#none"><i class="fas fa-grip-lines"></i></a>
+                                                            </td>
+                                                            <td>3</td>
+                                                            <td class="text-left text-truncate"><a href="#none">공지제목3</a></td>
+                                                            <td>2023.06.26~2023.08.30</td>
+                                                            <td>151</td>
+                                                            <td>metaclub03</td>
+                                                            <td>2023.04.26</td>
+                                                            <td>2023.06.30</td>
+                                                            <td>사용</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="sub-panel4" role="tabpanel" aria-labelledby="sub-tab4"></div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-5">
-                                <div class="card shadow mb-4">
-                                    <!-- Card Header - Dropdown -->
-                                    <div
-                                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h6 class="m-0 font-weight-bold text-primary">alert1 : bsFormAlert</h6>
-                                    </div>
-                                    <!-- Card Body -->
-                                    <div class="card-body">
-                                        <p class="text-secondary">목록과 닫기 버튼이 있는 알림창</p>
-                                        <button type="button" class="btn btn-primary btn-confirm" data-toggle="modal"
-                                            onclick="bsFormAlert('알림창')">알림 alert 1</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-5">
-                                <div class="card shadow mb-4">
-                                    <!-- Card Header - Dropdown -->
-                                    <div
-                                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h6 class="m-0 font-weight-bold text-primary">alert2 : bsFormAlert2</h6>
-                                    </div>
-                                    <!-- Card Body -->
-                                    <div class="card-body">
-                                        <p class="text-secondary">확인 버튼만 있는 알림창</p>
-                                        <button type="button" class="btn btn-primary btn-confirm" data-toggle="modal"
-                                            onclick="bsFormAlert2('알림창')">알림 alert 2</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-5">
-                                <div class="card shadow mb-4">
-                                    <!-- Card Header - Dropdown -->
-                                    <div
-                                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h6 class="m-0 font-weight-bold text-primary">alert3 : bsAlert</h6>
-                                    </div>
-                                    <!-- Card Body -->
-                                    <div class="card-body">
-                                        <p class="text-secondary">닫기 버튼만 있는 알림창</p>
-                                        <button type="button" class="btn btn-primary btn-confirm" data-toggle="modal"
-                                            onclick="bsAlert('알림창')">알림 alert 3</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-5">
-                                <div class="card shadow mb-4">
-                                    <!-- Card Header - Dropdown -->
-                                    <div
-                                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h6 class="m-0 font-weight-bold text-primary">로그아웃창 : bsLogout</h6>
-                                    </div>
-                                    <!-- Card Body -->
-                                    <div class="card-body">
-                                        <p class="text-secondary">로그아웃 알림창</p>
-                                        <button type="button" class="btn btn-primary btn-confirm" data-toggle="modal"
-                                            onclick="bsLogout()">알림 alert 4</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-5">
-                                <div class="card shadow mb-4">
-                                    <!-- Card Header - Dropdown -->
-                                    <div
-                                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h6 class="m-0 font-weight-bold text-primary">alert5 : bsConfirm</h6>
-                                    </div>
-                                    <!-- Card Body -->
-                                    <div class="card-body">
-                                        <p class="text-secondary">닫기와 확인 버튼이 있는 알림창</p>
-                                        <button type="button" class="btn btn-primary btn-confirm" data-toggle="modal"
-                                            onclick="bsConfirm('알림창')">알림 alert 5</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-5">
-                                <div class="card shadow mb-4">
-                                    <!-- Card Header - Dropdown -->
-                                    <div
-                                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h6 class="m-0 font-weight-bold text-primary">이게멀까 : bsConfirm2</h6>
-                                    </div>
-                                    <!-- Card Body -->
-                                    <div class="card-body">
-                                        <p class="text-secondary">이게머지</p>
-                                        <button type="button" class="btn btn-primary btn-confirm" data-toggle="modal"
-                                            onclick="bsConfirm2('알림창')">알림 alert 5</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+                        <div class="main"></div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        <!-- Scroll to Top Button-->
+        <div data-include="../include/topbtn.html"></div>
+
+        <!-- Logout Modal-->
+        <div data-include="../include/logoutModal.html"></div>
+        <!-- modal -->
+        <div class="modal fade" id="modal01" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">비밀번호 변경</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>새롭게 사용하실 비밀번호를 영문, 숫자, 특수문자를 포함한<br />8~20자로 입력해주세요.</p>
+                        <div class="form-group">
+                            <input type="password" class="form-control" aria-describedby="emailHelp" placeholder="현재 비밀번호" />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="신규 비밀번호" />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="신규 비밀번호 확인" />
+                        </div>
+                        <!-- 클래스 .d-none, .d-block으로 show hide 처리-->
+                        <div class="text-danger text-l">
+                            <span>현재 비밀번호가 일치하지 않습니다.</span>
+                            <!-- 비번, 비번확인 불일치 -->
+                            <!-- <span>신규 비밀번호가 일치하지 않습니다.</span> -->
+                            <!-- 동일한 비번 -->
+                            <!-- <span>현재 사용하시는 비밀번호는 사용하실 수 없습니다.</span> -->
+                            <!-- 규칙 불일치 -->
+                            <!-- <span>비밀번호는 영문, 숫자, 특수문자를 포함한 8~20자 이하여야 합니다.</span> -->
+                            <!-- 미입력 시 -->
+                            <!-- <span>신규 비밀번호를 입력해 주세요.</span> -->
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btnFnAlert" type="button" onclick="conAlert('비밀번호 변경이 완료되었습니다.')" class="btn btn-primary btn-lg" data-dismiss="modal">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
     <!-- Scroll to Top Button-->
     <div data-include="../include/topbtn.html"></div>
 
     <!-- Logout Modal-->
     <div data-include="../include/logoutModal.html"></div>
-    <!-- modal -->
-    <div class="modal fade" id="modal01" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">비밀번호 변경</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>새롭게 사용하실 비밀번호를 영문, 숫자, 특수문자를 포함한<br />8~20자로 입력해주세요.</p>
-                    <div class="form-group">
-                        <input type="password" class="form-control" aria-describedby="emailHelp"
-                            placeholder="현재 비밀번호" />
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" placeholder="신규 비밀번호" />
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" placeholder="신규 비밀번호 확인" />
-                    </div>
-                    <!-- 클래스 .d-none, .d-block으로 show hide 처리-->
-                    <div class="text-danger text-l">
-                        <span>현재 비밀번호가 일치하지 않습니다.</span>
-                        <!-- 비번, 비번확인 불일치 -->
-                        <!-- <span>신규 비밀번호가 일치하지 않습니다.</span> -->
-                        <!-- 동일한 비번 -->
-                        <!-- <span>현재 사용하시는 비밀번호는 사용하실 수 없습니다.</span> -->
-                        <!-- 규칙 불일치 -->
-                        <!-- <span>비밀번호는 영문, 숫자, 특수문자를 포함한 8~20자 이하여야 합니다.</span> -->
-                        <!-- 미입력 시 -->
-                        <!-- <span>신규 비밀번호를 입력해 주세요.</span> -->
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button id="btnFnAlert" type="button" onclick="conAlert('비밀번호 변경이 완료되었습니다.')"
-                        class="btn btn-primary btn-lg" data-dismiss="modal">확인</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
+    <!-- changePw Modal-->
+    <div data-include="../include/pop/changePwModal.html"></div>
+    <!-- <div data-include="./AD07_00p01.html"></div> -->
 
+    <script src="../../datatables/jquery.dataTables.min.js"></script>
+    <script src="../../datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="../../js/demo/datatables-demo.js"></script>
+    <script src="../../lib/bootstrap-table/extensions/reorder-rows/bootstrap-table-reorder-rows.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#dataTable tbody').sortable();
+        });
+    </script>
 </html>
