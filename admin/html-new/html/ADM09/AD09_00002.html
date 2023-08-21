@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>클럽메타 관리자 - 이벤트 등록(수정)</title>
+        <!-- js -->
+        <script src="../include/head.js"></script>
+        <script src="../../js/custom.js"></script>
+        <script src="../../lib/ckeditor/ckeditor.js"></script>
+    </head>
+
+    <body>
+        <!-- Page Wrapper -->
+        <div id="wrapper" class="wrapper">
+            <!-- 사이드바 -->
+            <div data-include="../include/sidebar.html"></div>
+            <!-- //사이드바 -->
+
+            <!-- content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column bg-white">
+                <!-- 컨텐츠 본문 -->
+                <div id="content">
+                    <!--  -->
+                    <div data-include="../include/topbar.html"></div>
+
+                    <div class="container-fluid" role="main">
+                        <!-- 페이지 경로 -->
+                        <div class="page-breadcrumb" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="#"><i class="fas fa-home d-flex align-items-center"></i></a>
+                                </li>
+                                <li class="breadcrumb-item">이벤트관리</li>
+                                <li class="breadcrumb-item">이벤트 등록(수정)</li>
+                            </ol>
+                        </div>
+                        <!-- //페이지 경로 -->
+                        <div class="main">
+                            <!-- 제목 및 등록버튼 -->
+                            <div class="row clearfix mt-4 mb-4">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h2 class="h3 text-gray-800 float-left">이벤트 등록(수정)</h2>
+                                </div>
+                            </div>
+                            <!-- //제목 및 등록버튼 -->
+
+                            <!---//contents--->
+                            <form>
+                                <div class="form-box">
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label"><label for="" class="req">제목</label></div>
+                                            <div class="form-box-cont">
+                                                <div class="form-row">
+                                                    <div class="input-group w-100">
+                                                        <input type="text" class="form-control" placeholder="한글, 영문, 숫자, 특수문자 포함 최대 100자" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label"><label for="" class="req">이벤트 썸네일</label></div>
+                                            <div class="form-box-cont">
+                                                <div class="d-flex">
+                                                    <div class="col-auto preview-img p-0"><img src="../../images/img/img_musicchallenge_thumbnail_05.png" alt="썸네일이미지" /></div>
+                                                    <div class="col-fill align-self-end p-0 ml-2">
+                                                        <div class="custom-file">
+                                                            <label class="custom-file-label" for="customFile" data-browse="파일선택">파일선택</label>
+                                                            <input type="file" class="custom-file-input" id="customFile" />
+                                                        </div>
+                                                        <div class="text-secondary mt-1">* 등록종류 : JPG, JPEG, PNG, GIF, BMP, 사이즈 : 312*108, 크기 : 00MB</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label">배너 이미지</div>
+                                            <div class="form-box-cont">
+                                                <div class="d-flex mb-2"><strong class="text-gray-800">[ 홈 배너 ]</strong></div>
+                                                <div class="d-flex">
+                                                    <div class="col-auto preview-img p-0"><img src="../../images/img/img_musicchallenge_thumbnail_05.png" alt="베너이미지" /></div>
+                                                    <div class="col-fill align-self-end p-0 ml-2">
+                                                        <div class="custom-file">
+                                                            <label class="custom-file-label" for="customFile" data-browse="파일선택">파일선택</label>
+                                                            <input type="file" class="custom-file-input" id="customFile1" />
+                                                        </div>
+                                                        <div class="text-secondary mt-1">* 등록종류 : JPG, JPEG, PNG, GIF, BMP, 사이즈 : 360*280, 크기 : 00MB</div>
+                                                    </div>
+                                                </div>
+                                                <hr class="w-100 opacity-50" />
+                                                <div class="d-flex mb-2"><strong class="text-gray-800">[ 음원 배너 ]</strong></div>
+                                                <div class="d-flex">
+                                                    <div class="col-auto preview-img p-0"><img src="../../images/img/img_musicchallenge_thumbnail_05.png" alt="베너이미지" /></div>
+                                                    <div class="col-fill align-self-end p-0 ml-2">
+                                                        <div class="custom-file">
+                                                            <label class="custom-file-label" for="customFile" data-browse="파일선택">파일선택</label>
+                                                            <input type="file" class="custom-file-input" id="customFile2" />
+                                                        </div>
+                                                        <div class="text-secondary mt-1">* 등록종류 : JPG, JPEG, PNG, GIF, BMP, 사이즈 : 360*88, 크기 : 00MB</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label">내용</div>
+                                            <div class="form-box-cont">
+                                                <textarea name="editor1" id="editor1" cols="80"> </textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label"><label for="" class="req">기간</label></div>
+                                            <div class="form-box-cont">
+                                                <div class="input-daterange-btn w-75">
+                                                    <div class="input-group">
+                                                        <input type="date" class="form-control w-25" placeholder="시작일" />
+                                                        <select class="custom-select">
+                                                            <option value="1">00시</option>
+                                                        </select>
+                                                        <select class="custom-select">
+                                                            <option value="1">00분</option>
+                                                        </select>
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text">~</div>
+                                                        </div>
+                                                        <input type="date" class="form-control w-25" placeholder="종료일" />
+                                                        <select class="custom-select">
+                                                            <option value="1">00시</option>
+                                                        </select>
+                                                        <select class="custom-select">
+                                                            <option value="1">00분</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label"><label for="" class="req">게시여부</label></div>
+                                            <div class="form-box-cont">
+                                                <div class="d-flex h-100 align-items-center">
+                                                    <label class="custom-control custom-radio custom-control-inline mb-0">
+                                                        <input type="radio" name="rdo1" class="custom-control-input" checked />
+                                                        <span class="custom-control-label">사용</span>
+                                                    </label>
+                                                    <label class="custom-control custom-radio custom-control-inline mb-0">
+                                                        <input type="radio" name="rdo1" class="custom-control-input" />
+                                                        <span class="custom-control-label">미사용</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label"><label for="" class="">배너사용여부</label></div>
+                                            <div class="form-box-cont">
+                                                <div class="custom-control-wrap">
+                                                    <label class="custom-control custom-checkbox custom-control-inline">
+                                                        <input type="checkbox" name="chk" class="custom-control-input" />
+                                                        <span class="custom-control-label">홈 배너</span>
+                                                    </label>
+                                                    <label class="custom-control custom-checkbox custom-control-inline">
+                                                        <input type="checkbox" name="chk" class="custom-control-input" />
+                                                        <span class="custom-control-label">음원배너</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label">
+                                                <label for="" class="req">상단 고정 선택<span>(이벤트 고정 노출)</span></label>
+                                            </div>
+                                            <div class="form-box-cont">
+                                                <div class="d-flex h-100 align-items-center">
+                                                    <label class="custom-control custom-radio custom-control-inline mb-0">
+                                                        <input type="radio" name="rdo2" class="custom-control-input" />
+                                                        <span class="custom-control-label">사용</span>
+                                                    </label>
+                                                    <label class="custom-control custom-radio custom-control-inline mb-0">
+                                                        <input type="radio" name="rdo2" class="custom-control-input" checked />
+                                                        <span class="custom-control-label">미사용</span>
+                                                    </label>
+                                                    <div class="text-secondary mt-1">* 상단고정 사용 선택 시 리스트의 최상단에 노출됩니다.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label">
+                                                <label for="" class="">외부링크</label>
+                                            </div>
+                                            <div class="form-box-cont">
+                                                <div class="form-row">
+                                                    <div class="input-group w-100">
+                                                        <input type="text" class="form-control" placeholder="연결될 외부 링크를 입력해주세요." />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <div class="btn-wrap text-center mt-5">
+                                <button type="button" class="btn btn-lg btn-secondary" onclick="bsConfirm('이벤트 등록을 취소 하시겠습니까?')">취소</button>
+                                <button type="button" class="btn btn-lg btn-primary" onclick="bsFormAlert2('이벤트 등록을 완료했습니다.')">등록</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll to Top Button-->
+        <div data-include="../include/topbtn.html"></div>
+
+        <!-- Logout Modal-->
+        <div data-include="../include/logoutModal.html"></div>
+        <!-- changePw Modal-->
+        <div data-include="../include/pop/changePwModal.html"></div>
+    </body>
+    <script src="../../datatables/jquery.dataTables.min.js"></script>
+    <script src="../../datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="../../lib/chart.js/plugins/chartjs-plugin-datalabels.min.js"></script>
+    <script src="../../lib/chart.js/Chart.min.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="../../js/demo/datatables-demo.js"></script>
+    <script>
+        CKEDITOR.replace('editor1');
+    </script>
+</html>
