@@ -31,7 +31,6 @@
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="sub-tab3" data-toggle="tab" data-target="#sub-panel3" type="button" role="tab">테이블</button>
                                 </li>
-
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="sub-tab4" data-toggle="tab" data-target="#sub-panel4" type="button" role="tab">버튼</button>
                                 </li>
@@ -644,12 +643,213 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="mt-4">
+                                        <figure>
+                                            <blockquote class="blockquote">
+                                                <p>- 상단 헤더 + 좌측 헤더가 있는 테이블 형식</p>
+                                            </blockquote>
+                                        </figure>
+                                    </div>
+
+                                    <div class="bootstrap-table bootstrap4">
+                                        <div class="fixed-table-toolbar"></div>
+                                        <div class="fixed-table-container" style="padding-bottom: 0px">
+                                            <div class="fixed-table-header" style="display: none">
+                                                <table></table>
+                                            </div>
+                                            <div class="fixed-table-body">
+                                                <div class="fixed-table-loading table table-bordered table-hover" style="top: 42.7969px">
+                                                    <span class="loading-wrap">
+                                                        <span class="loading-text">데이터를 불러오는 중입니다</span>
+                                                        <span class="animation-wrap"><span class="animation-dot"></span></span>
+                                                    </span>
+                                                </div>
+                                                <table id="" class="table table-bordered" data-pagination="true">
+                                                    <tbody>
+                                                        <!-- <tr class="no-records-found">
+                                                        <td colspan="8">해당 데이터가 없습니다.</td>
+                                                        </tr> -->
+                                                        <tr>
+                                                            <th data-field="1" rowspan="2">
+                                                                <div class="th-inner">신고한 누적 횟수</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="2">
+                                                                <div class="th-inner">유저</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="3">
+                                                                <div class="th-inner">영상</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="4">
+                                                                <div class="th-inner">댓글</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="5" rowspan="2">
+                                                                <div class="th-inner">신고한 누적 횟수</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="6">
+                                                                <div class="th-inner">유저</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="7">
+                                                                <div class="th-inner">영상</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="8">
+                                                                <div class="th-inner">댓글</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                        </tr>
+                                                        <tr class="" data-index="0">
+                                                            <td>5</td>
+                                                            <td>2</td>
+                                                            <td>8</td>
+                                                            <td>2</td>
+                                                            <td>12</td>
+                                                            <td>3</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="fixed-table-footer"></div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="tab-pane fade" id="sub-panel4" role="tabpanel" aria-labelledby="sub-tab4"></div>
+                                <div class="tab-pane fade" id="sub-panel4" role="tabpanel" aria-labelledby="sub-tab4">
+                                    <div class="row clearfix mt-4 mb-4">
+                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                            <h2 class="h3 text-gray-800 float-left">버튼</h2>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="col-auto">
+                                            <div class="card">
+                                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                                    <h6 class="m-0 font-weight-bold text-primary">regular</h6>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="d-flex">
+                                                        <div class="ml-2">
+                                                            <button type="button" class="btn btn-primary">btn-primary</button>
+                                                        </div>
+                                                        <div class="ml-2">
+                                                            <button type="button" class="btn btn-secondary">btn-secondary</button>
+                                                        </div>
+                                                        <div class="ml-2">
+                                                            <button type="button" class="btn btn-outline-secondary">btn-secondary</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="card">
+                                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                                    <h6 class="m-0 font-weight-bold text-primary">large</h6>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="d-flex">
+                                                        <div class="ml-2">
+                                                            <button type="button" class="btn btn-primary btn-lg">btn-primary</button>
+                                                        </div>
+                                                        <div class="ml-2">
+                                                            <button type="button" class="btn btn-secondary btn-lg">btn-secondary</button>
+                                                        </div>
+                                                        <div class="ml-2">
+                                                            <button type="button" class="btn btn-outline-secondary btn-lg">btn-secondary</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-secondary mt-2">주로 페이지 하단 버튼영역에 들어감</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="card">
+                                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                                    <h6 class="m-0 font-weight-bold text-primary">small</h6>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="d-flex">
+                                                        <div class="ml-2">
+                                                            <button type="button" class="btn btn-primary btn-sm">btn-primary</button>
+                                                        </div>
+                                                        <div class="ml-2">
+                                                            <button type="button" class="btn btn-secondary btn-sm">btn-secondary</button>
+                                                        </div>
+                                                        <div class="ml-2">
+                                                            <button type="button" class="btn btn-outline-secondary btn-sm">btn-secondary</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-secondary mt-2">주로 그리드 테이블 안에 들어감</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="w-100 opacity-7" />
+                                    <div class="row clearfix mt-4 mb-4">
+                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                            <h2 class="h3 text-gray-800 float-left">페이지 하단 버튼</h2>
+                                        </div>
+                                    </div>
+                                    <div class="btn-wrap text-center mt-5">
+                                        <button type="button" class="btn btn-lg btn-secondary">취소</button>
+                                        <button type="button" class="btn btn-lg btn-primary">등록</button>
+                                    </div>
+
+                                    <hr class="w-100 opacity-7" />
+                                    <div class="row clearfix mt-4 mb-4">
+                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                            <h2 class="h3 text-gray-800 float-left">제목 우측 상단 버튼</h2>
+                                            <div class="float-right">
+                                                <button type="button" class="btn btn-primary">관리자 등록</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr class="w-100 opacity-7" />
+                                    <div class="row clearfix mt-4 mb-4">
+                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                            <h2 class="h3 text-gray-800 float-left">탭 버튼</h2>
+                                        </div>
+                                    </div>
+                                    <ul class="nav nav-tabs btn-tab" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link btn-tab-link active" id="sub-btn-tab1" data-toggle="tab" data-target="#sub-btn-panel01" type="button" role="tab">전체</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link btn-tab-link" id="sub-btn-tab2" data-toggle="tab" data-target="#sub-btn-panel02" type="button" role="tab">남성</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link btn-tab-link" id="sub-btn-tab3" data-toggle="tab" data-target="#sub-btn-panel03" type="button" role="tab">여성</button>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content mt-4">
+                                        <div div class="tab-pane fade show active" id="sub-btn-panel01" role="tabpanel" aria-labelledby="sub-btn-tab1">탭버튼 컨텐츠 영역 1</div>
+                                        <div div class="tab-pane fade" id="sub-btn-panel02" role="tabpanel" aria-labelledby="sub-btn-tab2">탭버튼 컨텐츠 영역 2</div>
+                                        <div div class="tab-pane fade" id="sub-btn-panel03" role="tabpanel" aria-labelledby="sub-btn-tab3">탭버튼 컨텐츠 영역 3</div>
+                                    </div>
+                                    <hr class="w-100 opacity-7" />
+                                    <div class="row clearfix mt-4 mb-4">
+                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                            <h2 class="h3 text-gray-800 float-left">기간선택 버튼 (그룹버튼)</h2>
+                                        </div>
+                                    </div>
+                                    <div class="text-secondary mb-2">active 클래스로 활성화</div>
+                                    <div class="btn-group" role="group" aria-label="기간 선택 버튼">
+                                        <button type="button" class="btn btn-outline-secondary">오늘</button>
+                                        <button type="button" class="btn btn-outline-secondary active">7일</button>
+                                        <button type="button" class="btn btn-outline-secondary">15일</button>
+                                        <button type="button" class="btn btn-outline-secondary">1개월</button>
+                                        <button type="button" class="btn btn-outline-secondary">3개월</button>
+                                        <button type="button" class="btn btn-outline-secondary">전체</button>
+                                        <!-- active 클래스로  활성화 -->
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="main"></div>
                     </div>
                 </div>
             </div>
