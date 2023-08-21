@@ -273,6 +273,23 @@ h1 {
             // min-width: 10.2rem;
         }
     }
+    li {
+        &.1st {
+            &:before {
+                background: url('../images/ico/ico_rank1.svg') no-repeat 0 0;
+            }
+        }
+        &.2nd {
+            &:before {
+                background: url('../images/ico/ico_rank2.svg') no-repeat 0 0;
+            }
+        }
+        &.3rd {
+            &:before {
+                background: url('../images/ico/ico_rank3.svg') no-repeat 0 0;
+            }
+        }
+    }
     a {
         display: flex;
         width: 100%;

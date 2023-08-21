@@ -598,21 +598,6 @@
                     z-index: 1;
                 }
             }
-            &:nth-child(1) {
-                &:before {
-                    background: url('../images/ico/ico_rank1.svg') no-repeat 0 0;
-                }
-            }
-            &:nth-child(2) {
-                &:before {
-                    background: url('../images/ico/ico_rank2.svg') no-repeat 0 0;
-                }
-            }
-            &:nth-child(3) {
-                &:before {
-                    background: url('../images/ico/ico_rank3.svg') no-repeat 0 0;
-                }
-            }
         }
     }
 }
