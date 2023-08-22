@@ -606,6 +606,56 @@ h1 {
     }
 }
 
+.more-box {
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    li {
+        display: flex;
+    }
+    .card {
+        flex: 1;
+        border-radius: 1.6rem;
+        padding: 1.05rem 1.6rem;
+        line-height: 2.3rem;
+        text-align: left;
+    }
+
+    &.ico {
+        .card {
+            position: relative;
+            padding-left: 4.8rem;
+            &:before {
+                display: block;
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 1.6rem;
+                width: 2.4rem;
+                height: 2.4rem;
+                transform: translateY(-50%);
+            }
+            &.original {
+                &:before {
+                    background: url('../images/ico/ico_original.svg') no-repeat 0 0;
+                }
+            }
+            &.block {
+                &:before {
+                    background: url('../images/ico/ico_banned.svg') no-repeat 0 0;
+                }
+            }
+            &.report {
+                &:before {
+                    background: url('../images/ico/ico_redlight.svg') no-repeat 0 0;
+                }
+            }
+        }
+    }
+}
+
 .type {
     .category-area {
         &.r-ai-challenge,

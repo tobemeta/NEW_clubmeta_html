@@ -242,11 +242,10 @@
     }
 }
 .toast-wrap {
-    position: fixed;
-    left: 50%;
-    // width: calc(100% - 4rem);
+    display: flex;
+    justify-content: center;
+    position: relative;
     min-height: 3rem;
-    transform: translateX(-50%);
     pointer-events: none;
     z-index: 999;
     &.top {
@@ -258,7 +257,7 @@
 }
 .toastPop {
     display: none;
-    width: 100%;
+    width: auto;
     .toast-box {
         display: flex;
         align-items: center;
