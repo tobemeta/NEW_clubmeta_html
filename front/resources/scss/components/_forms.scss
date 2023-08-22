@@ -452,6 +452,7 @@
             &:before {
                 background: url('../../resources/images/ico/ico_chkbox_on.svg') no-repeat;
                 border: none;
+                transition: all 0.275s;
             }
         }
         &:disabled + label {
@@ -513,7 +514,7 @@
                 top: 50%;
                 width: 2.4rem;
                 height: 100%;
-                transform: translateY(-50%);
+                transform: translate(0, -50%);
                 border: none;
                 border-radius: 50%;
                 background: #9f9f9f;
@@ -546,7 +547,7 @@
                 &:before {
                     background: $main-color;
                     left: auto;
-                    right: 0;
+                    transform: translate(50%, -50%);
                 }
             }
         }
