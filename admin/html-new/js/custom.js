@@ -23,7 +23,7 @@ const ui = {
             orientation: 'bottom left'
         });
 
-        //dataPicker - month
+        dataPicker - month;
         $('#datePicker-month')
             .datepicker({
                 format: 'yyyy-mm',
