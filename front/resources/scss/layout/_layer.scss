@@ -179,6 +179,7 @@
     .layer-inner {
         padding: 0 1.6rem;
     }
+
     .btn-box {
         display: flex;
         margin-top: auto;
@@ -189,11 +190,14 @@
             background-color: #fff;
             border: 0;
             font-weight: $normal;
-            box-shadow: $shadow;
-            color: #111;
+            border: 1px solid $main-color;
+            color: #ff5c00;
             &.btn-primary {
                 background-color: $main-color;
                 color: #fff;
+            }
+            &.btn-disprimary {
+                border: none;
             }
         }
         & > * + * {

@@ -1,5 +1,29 @@
 .tab-wrap {
     // 기본 pill
+    &.full {
+        .tab-items {
+            ul {
+                padding: 0;
+            }
+            li {
+                flex: 1;
+
+                a,
+                button {
+                    display: block;
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+        &.line {
+            .tab-items {
+                ul {
+                    gap: 0;
+                }
+            }
+        }
+    }
     &.line {
         .tab-items {
             height: 3.6rem;
@@ -14,11 +38,14 @@
                     a,
                     button {
                         color: #111;
-                        border-bottom: 2px solid #111;
+                        &:after {
+                            background-color: #111;
+                        }
                     }
                 }
                 a,
                 button {
+                    position: relative;
                     height: auto;
                     padding: 0;
                     border: none;
@@ -28,6 +55,16 @@
                     border-radius: 0;
                     box-sizing: $sizing;
                     line-height: 3.4rem;
+                    &:after {
+                        display: block;
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 0.2rem;
+                        transition: background-color 0.3s ease;
+                    }
                 }
             }
         }
@@ -108,6 +145,28 @@
                 border-color: $main-color;
                 color: #fff;
             }
+            .ico {
+                &.all {
+                    &:before {
+                        background: url('../images/ico/ico_all.svg') no-repeat 0 0;
+                    }
+                }
+                &.ai {
+                    &:before {
+                        background: url('../images/ico/ico_ai.svg') no-repeat 0 0;
+                    }
+                }
+                &.music {
+                    &:before {
+                        background: url('../images/ico/ico_b_music.svg') no-repeat 0 0;
+                    }
+                }
+                &.cam {
+                    &:before {
+                        background: url('../images/ico/ico_b_camera.svg') no-repeat 0 0;
+                    }
+                }
+            }
         }
         a,
         button {
@@ -123,6 +182,42 @@
             vertical-align: middle;
             box-sizing: $sizing;
             box-shadow: $shadow;
+        }
+        .ico {
+            display: inline-block;
+            position: relative;
+            line-height: 1.9rem;
+            padding-left: 2.8rem;
+            &:before {
+                display: inline-block;
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 2.4rem;
+                height: 2.4rem;
+                transform: translateY(-50%);
+            }
+            &.all {
+                &:before {
+                    background: url('../images/ico/ico_g_all.svg') no-repeat 0 0;
+                }
+            }
+            &.ai {
+                &:before {
+                    background: url('../images/ico/ico_g_ai.svg') no-repeat 0 0;
+                }
+            }
+            &.music {
+                &:before {
+                    background: url('../images/ico/ico_g_music.svg') no-repeat 0 0;
+                }
+            }
+            &.cam {
+                &:before {
+                    background: url('../images/ico/ico_g_camera.svg') no-repeat 0 0;
+                }
+            }
         }
     }
     .btn-filter {

@@ -60,7 +60,15 @@ h1 {
     font-size: $fs-8;
     line-height: 1.2rem;
 }
-
+.text-left {
+    text-align: left;
+}
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}
 .card {
     padding: 1.6rem;
     background: #fff;
@@ -261,6 +269,14 @@ h1 {
             li {
                 height: 13.6rem;
             }
+        }
+    }
+    &.profile {
+        ul {
+            li {
+                height: 16rem;
+            }
+            gap: 1.6rem 1.1rem;
         }
     }
     ul {
@@ -619,8 +635,13 @@ h1 {
         flex: 1;
         border-radius: 1.6rem;
         padding: 1.05rem 1.6rem;
+        font-size: 1.6rem;
         line-height: 2.3rem;
         text-align: left;
+        &.flex {
+            display: flex;
+            justify-content: space-between;
+        }
     }
 
     &.ico {
@@ -648,6 +669,31 @@ h1 {
                 }
             }
             &.report {
+                &:before {
+                    background: url('../images/ico/ico_redlight.svg') no-repeat 0 0;
+                }
+            }
+            &.download {
+                &:before {
+                    background: url('../images/ico/ico_download.svg') no-repeat 0 0;
+                }
+            }
+            &.share {
+                &:before {
+                    background: url('../images/ico/ico_b_share.svg') no-repeat 0 0;
+                }
+            }
+            &.delete {
+                &:before {
+                    background: url('../images/ico/ico_delete.svg') no-repeat 0 0;
+                }
+            }
+            &.view {
+                &:before {
+                    background: url('../images/ico/ico_view.svg') no-repeat 0 0;
+                }
+            }
+            &.accuse {
                 &:before {
                     background: url('../images/ico/ico_redlight.svg') no-repeat 0 0;
                 }

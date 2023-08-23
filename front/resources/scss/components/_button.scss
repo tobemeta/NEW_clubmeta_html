@@ -48,9 +48,14 @@
 .btn-primary {
     @include btn($bg: $main-color, $border: $main-color, $color: #fff);
 }
+.btn-outline {
+    border: 1px solid $main-color;
+    color: $main-color;
+}
 .btn-disprimary {
     @include btn($bg: #e7e7e7 !important, $color: #f50f00 !important);
     border: none;
+    font-weight: $bold;
 }
 .btn-flat {
     @include btn($bg: #fff8f2);

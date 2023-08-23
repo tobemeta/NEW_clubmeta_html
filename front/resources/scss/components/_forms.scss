@@ -520,6 +520,7 @@
                 background: #9f9f9f;
                 box-shadow: $shadow;
                 transition: transform 0.3s ease;
+                z-index: 1;
             }
             &:after {
                 display: block;
@@ -536,7 +537,6 @@
                 border: 1px solid #e7e7e7;
                 border-radius: 0.4rem;
                 box-sizing: $sizing;
-                z-index: -1;
             }
         }
         input {
@@ -776,6 +776,21 @@
             }
             &:disabled + label {
                 background: $disabled;
+            }
+        }
+    }
+    &.right {
+        display: block;
+        label {
+            padding-left: 0;
+            padding-right: 2.6rem;
+            &:before {
+                left: auto;
+                right: 0;
+            }
+            &:after {
+                left: auto;
+                right: 0.4rem;
             }
         }
     }
