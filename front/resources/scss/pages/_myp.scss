@@ -1,0 +1,86 @@
+.profile-area {
+    display: flex;
+    flex-direction: column;
+    .profile-top {
+        display: flex;
+        margin-bottom: 1.6rem;
+        .img {
+            width: 10.4rem;
+            height: 10.4rem;
+            &:after {
+                display: block;
+                content: '';
+                position: absolute;
+                bottom: -0.4rem;
+                right: -0.4rem;
+                width: 3.6rem;
+                height: 3.6rem;
+                @include bg($src: '../images/etc/badge_follow.svg');
+                z-index: 1;
+            }
+            img {
+                border-radius: 50%;
+                overflow: hidden;
+            }
+        }
+        .follow-area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+            gap: 2.4rem;
+            margin-left: 0.4rem;
+            dt,
+            dd {
+                text-align: center;
+            }
+            dt {
+                font-size: 1.2rem;
+                line-height: 1.7rem;
+                color: #585858;
+            }
+            dd {
+                font-weight: $bold;
+                line-height: 2.3rem;
+            }
+        }
+    }
+    .intro-area {
+        margin-bottom: 0.8rem;
+        .nickname {
+            display: block;
+            margin-bottom: 0.8rem;
+            line-height: 2.3rem;
+        }
+    }
+}
+.challenge-box.profile {
+    .util {
+        display: flex;
+        margin-top: 0.4rem;
+        p {
+            display: inline-block;
+            position: relative;
+            flex: 1 1 50%;
+            font-size: 1rem;
+            color: #404040;
+            &:before {
+                display: inline-block;
+                content: '';
+                width: 1.6rem;
+                height: 1.6rem;
+            }
+            &.view:before {
+                @include bg($src: '../images/ico/ico_util_view.svg');
+            }
+            &.like:before {
+                @include bg($src: '../images/ico/ico_util_like.svg');
+            }
+        }
+        span {
+            display: inline-block;
+            vertical-align: top;
+            line-height: 1.4rem;
+        }
+    }
+}

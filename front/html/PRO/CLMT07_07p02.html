@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>신고 리스트 팝업 | 클럽메타</title>
+    <link rel="stylesheet" href="../../resources/css/common.min.css" />
+    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+</head>
+
+<body>
+
+    <article class="layerpopup-box bottom is-active is-animation" id="bottomViewPop" role="dialog">
+        <div class="layer-popup">
+            <header class="layer-header">
+                <h1 class="pop-title"></h1>
+                <button type="button" class="btn-close btn-pop-close" title="레이어팝업 닫기"
+                    onclick="ui.popup.close('#bottomViewPop')">닫기</button>
+            </header>
+
+            <div class="layer-content pb-88">
+                <div class="layer-inner">
+                    <div class="report-box">
+                        <ul>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo01" name="report" checked>
+                                    <label for="rdo01">스팸</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo02" name="report">
+                                    <label for="rdo02">나체 이미지 또는 성적 행위</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo03" name="report">
+                                    <label for="rdo03">혐오 발언 또는 암시</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo04" name="report">
+                                    <label for="rdo04">폭력 또는 위험한 조직</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo05" name="report">
+                                    <label for="rdo05">따돌림이나 괴롭힘</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo06" name="report">
+                                    <label for="rdo06">불법 또는 규제 상품 판매</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo07" name="report">
+                                    <label for="rdo07">지적 재산권 침해</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo08" name="report">
+                                    <label for="rdo08">자살 또는 자해</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo09" name="report">
+                                    <label for="rdo09">섭식 장애</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo10" name="report">
+                                    <label for="rdo10">사기 또는 거짓</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo11" name="report">
+                                    <label for="rdo11">거짓 정보</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="btn-bottom-box">
+                <button type="button" class="btn btn-primary btn-pop-close"
+                    onclick="ui.popup.close('#bottomViewPop')">신고</button>
+            </div>
+        </div>
+        <!-- //layer-popup -->
+    </article>
+</body>
+
+</html>
+
+<!-- 팝업 -->
