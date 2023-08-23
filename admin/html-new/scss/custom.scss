@@ -1114,10 +1114,10 @@ optgroup {
     border-color: var(--primary);
 }
 //datePicker 커스텀
-.datapicker-box {
+.datepicker-box {
     position: relative;
-    .inp-datapicker {
-        + .btn-datapicker {
+    .datepicker {
+        + .btn-datepicker {
             position: absolute;
             top: 4px;
             right: 8px;

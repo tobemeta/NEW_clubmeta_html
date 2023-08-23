@@ -16,7 +16,7 @@ const ui = {
         });
 
         //dataPicker
-        $('input[type=date]').datepicker({
+        $('#datePicker').datepicker({
             format: 'yyyy-mm-dd',
             language: 'ko',
             immediateUpdates: true,
@@ -26,19 +26,23 @@ const ui = {
         //dataPicker - month
         $('#datePicker-month')
             .datepicker({
-                format: 'mm-yyyy',
+                format: 'yyyy-mm',
                 viewMode: 'months',
                 minViewMode: 'months',
                 language: 'ko',
                 immediateUpdates: true,
-                orientation: 'bottom left'
+                orientation: 'bottom left',
+                showOn: 'button',
+                buttonImage: '../images/ico/ico_date_color.svg',
+                buttonImageOnly: true,
+                buttonText: '날짜입력'
             })
             .datepicker('update', new Date());
-        $('.btn-datapicker').on('click', function (e) {
-            $('#datePicker-month').datepicker('show');
+        // $('.btn-datepicker').on('click', function (e) {
+        //     $('#datePicker-month').datepicker('show');
 
-            e.stopPropagation();
-        });
+        //     e.stopPropagation();
+        // });
     },
     menuActive: function () {
         if ($('.sidebar').length) {
