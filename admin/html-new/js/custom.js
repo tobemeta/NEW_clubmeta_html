@@ -14,6 +14,31 @@ const ui = {
             $(this).addClass('d-none');
             $(this).siblings('.play').removeClass('d-none');
         });
+
+        //dataPicker
+        $('input[type=date]').datepicker({
+            format: 'yyyy-mm-dd',
+            language: 'ko',
+            immediateUpdates: true,
+            orientation: 'bottom left'
+        });
+
+        //dataPicker - month
+        $('#datePicker-month')
+            .datepicker({
+                format: 'mm-yyyy',
+                viewMode: 'months',
+                minViewMode: 'months',
+                language: 'ko',
+                immediateUpdates: true,
+                orientation: 'bottom left'
+            })
+            .datepicker('update', new Date());
+        $('.btn-datapicker').on('click', function (e) {
+            $('#datePicker-month').datepicker('show');
+
+            e.stopPropagation();
+        });
     },
     menuActive: function () {
         if ($('.sidebar').length) {

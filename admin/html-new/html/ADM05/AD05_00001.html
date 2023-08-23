@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>클럽메타 관리자 - 랭킹 관리</title>
+        <!-- js -->
+        <script src="../include/head.js"></script>
+        <script src="../../js/custom.js"></script>
+        <link rel="stylesheet" href="../../lib/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" />
+    </head>
+
+    <body>
+        <!-- Page Wrapper -->
+        <div id="wrapper" class="wrapper">
+            <!-- 사이드바 -->
+            <div data-include="../include/sidebar.html"></div>
+            <!-- //사이드바 -->
+
+            <!-- content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column bg-white">
+                <!-- 컨텐츠 본문 -->
+                <div id="content">
+                    <!--  -->
+                    <div data-include="../include/topbar.html"></div>
+
+                    <div class="container-fluid" role="main">
+                        <!-- 페이지 경로 -->
+                        <div class="page-breadcrumb" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <i class="fas fa-home d-flex align-items-center"></i>
+                                </li>
+                                <li class="breadcrumb-item">랭킹관리</li>
+                            </ol>
+                        </div>
+                        <!-- //페이지 경로 -->
+                        <div class="main">
+                            <!-- 제목 및 등록버튼 -->
+                            <div class="row clearfix mt-4 mb-4">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h2 class="h3 text-gray-800 float-left">랭킹관리</h2>
+                                </div>
+                            </div>
+                            <!-- //제목 및 등록버튼 -->
+
+                            <!-- 검색 영역 -->
+                            <div class="search-wrap">
+                                <div class="form-box">
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label"><label for="">검색어</label></div>
+                                            <div class="form-box-cont">
+                                                <div class="form-row">
+                                                    <div class="col-md-2">
+                                                        <select class="custom-select">
+                                                            <option value="1">닉네임</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="flex-fill">
+                                                        <input type="text" class="form-control" placeholder="검색어 입력" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label"><label for="">기간 검색</label></div>
+                                            <div class="form-box-cont">
+                                                <div class="form-row">
+                                                    <div class="col-md-2">
+                                                        <div class="datapicker-box">
+                                                            <input type="text" class="form-control inp-datapicker" id="datePicker-month" />
+                                                            <button type="button" class="btn-datapicker"><i class="far fa-calendar-alt"></i></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn-wrap">
+                                <button type="submit" class="btn btn-dark"><i class="fa fa-search mr-1"></i> 검색</button>
+                            </div>
+                            <!-- //검색 영역 -->
+
+                            <!---//contents--->
+                            <div class="title-wrap mt-5">
+                                <div class="left">전체 <strong class="fc-red">15</strong>건</div>
+                                <div class="right">
+                                    <select class="custom-select custom-select-sm">
+                                        <option value="1">10</option>
+                                        <option value="2">25</option>
+                                        <option value="3">50</option>
+                                        <option value="4">100</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="bootstrap-table bootstrap4">
+                                <div class="fixed-table-toolbar"></div>
+                                <div class="fixed-table-container" style="padding-bottom: 0px">
+                                    <div class="fixed-table-header" style="display: none">
+                                        <table></table>
+                                    </div>
+                                    <div class="fixed-table-body">
+                                        <div class="fixed-table-loading table table-bordered table-hover" style="top: 42.7969px">
+                                            <span class="loading-wrap">
+                                                <span class="loading-text">데이터를 불러오는 중입니다</span>
+                                                <span class="animation-wrap"><span class="animation-dot"></span></span>
+                                            </span>
+                                        </div>
+                                        <table id="dataTable" class="table table-hover table-bordered" data-pagination="true">
+                                            <thead>
+                                                <tr>
+                                                    <th data-field="0">
+                                                        <div class="th-inner">랭킹</div>
+                                                        <div class="fht-cell"></div>
+                                                    </th>
+                                                    <th data-field="1">
+                                                        <div class="th-inner">닉네임</div>
+                                                        <div class="fht-cell"></div>
+                                                    </th>
+                                                    <th data-field="2">
+                                                        <div class="th-inner">입상 횟수</div>
+                                                        <div class="fht-cell"></div>
+                                                    </th>
+                                                    <th data-field="3">
+                                                        <div class="th-inner">챌린지 참여 횟수</div>
+                                                        <div class="fht-cell"></div>
+                                                    </th>
+                                                    <th data-field="4">
+                                                        <div class="th-inner">총 영상 게시 횟수</div>
+                                                        <div class="fht-cell"></div>
+                                                    </th>
+                                                    <th data-field="5">
+                                                        <div class="th-inner">좋아요 횟수</div>
+                                                        <div class="fht-cell"></div>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- <tr class="no-records-found">
+                                                    <td colspan="6">일치하는 검색결과가 없습니다.</td>
+                                                </tr> -->
+                                                <tr class="" data-index="0">
+                                                    <td>1</td>
+                                                    <td><a href="#none">metaclub00</a></td>
+                                                    <td>25</td>
+                                                    <td>27</td>
+                                                    <td>32</td>
+                                                    <td>542</td>
+                                                </tr>
+                                                <tr data-index="1">
+                                                    <td>2</td>
+                                                    <td><a href="#none">metaclub01</a></td>
+                                                    <td>215</td>
+                                                    <td>271</td>
+                                                    <td>312</td>
+                                                    <td>142</td>
+                                                </tr>
+                                                <tr data-index="2">
+                                                    <td>3</td>
+                                                    <td><a href="#none">metaclub02</a></td>
+                                                    <td>26</td>
+                                                    <td>37</td>
+                                                    <td>72</td>
+                                                    <td>42</td>
+                                                </tr>
+                                                <tr data-index="3">
+                                                    <td>4</td>
+                                                    <td><a href="#none">metaclub03</a></td>
+                                                    <td>2</td>
+                                                    <td>17</td>
+                                                    <td>352</td>
+                                                    <td>582</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="fixed-table-footer"></div>
+                                </div>
+                                <div class="fixed-table-pagination">
+                                    <div class="pagination-detail"></div>
+                                    <!-- 왼쪽 버튼 영역 -->
+                                    <div class="float-left"></div>
+                                    <!-- 오른쪽 버튼 영역 -->
+                                    <div class="float-right"></div>
+                                    <div class="pagination">
+                                        <!-- 11개 이상 페이지 생성시 page-at-first, page-at-last의 d-none 클래스 삭제-->
+                                        <ul class="pagination">
+                                            <li class="page-item page-at-first d-none"><a class="page-link" aria-label="previous page" href="javascript:void(0)">‹‹</a></li>
+                                            <li class="page-item page-pre"><a class="page-link" aria-label="previous page" href="javascript:void(0)">‹</a></li>
+                                            <li class="page-item active"><a class="page-link" aria-label="to page 1" href="javascript:void(0)">1</a></li>
+                                            <li class="page-item"><a class="page-link" aria-label="to page 2" href="javascript:void(0)">2</a></li>
+                                            <li class="page-item page-next"><a class="page-link" aria-label="next page" href="javascript:void(0)">›</a></li>
+                                            <li class="page-item page-at-last d-none"><a class="page-link" aria-label="next page" href="javascript:void(0)">››</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll to Top Button-->
+        <div data-include="../include/topbtn.html"></div>
+
+        <!-- Logout Modal-->
+        <div data-include="../include/logoutModal.html"></div>
+        <!-- changePw Modal-->
+        <div data-include="../include/pop/changePwModal.html"></div>
+        <!-- modal -->
+    </body>
+    <script src="../../datatables/jquery.dataTables.min.js"></script>
+    <script src="../../datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="../../js/demo/datatables-demo.js"></script>
+</html>

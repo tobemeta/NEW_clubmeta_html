@@ -1113,3 +1113,16 @@ optgroup {
     background-color: var(--primary);
     border-color: var(--primary);
 }
+//datePicker 커스텀
+.datapicker-box {
+    position: relative;
+    .inp-datapicker {
+        + .btn-datapicker {
+            position: absolute;
+            top: 4px;
+            right: 8px;
+            font-size: 1rem;
+            color: var(--gray-dark);
+        }
+    }
+}
