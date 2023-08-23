@@ -45,5 +45,11 @@
     "src-not-empty": true,
     "attr-no-duplication": true,
     "title-require": true,
-  }
+  },
+  "liveSassCompile.settings.excludeList": [ 
+    "/node_modules/",
+    ".vscode/**",
+    "admin/static/**",
+    "admin/html-new/theme/**"
+  ]
 }

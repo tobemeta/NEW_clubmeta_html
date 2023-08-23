@@ -92,12 +92,6 @@ $(function () {
             } catch (e) {}
         });
     }
-    $('.datepicker').datepicker('update', new Date());
-    $('.btn-datepicker').on('click', function (e) {
-        const associatedInput = $(this).closest('.datepicker-box').find('.datepicker');
-
-        associatedInput.datepicker('show');
-    });
 });
 
 function goUrl(url) {
