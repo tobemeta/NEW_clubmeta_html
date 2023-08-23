@@ -15,34 +15,27 @@ const ui = {
             $(this).siblings('.play').removeClass('d-none');
         });
 
-        //dataPicker
-        $('#datePicker').datepicker({
-            format: 'yyyy-mm-dd',
-            language: 'ko',
-            immediateUpdates: true,
-            orientation: 'bottom left'
-        });
+        //datePicker
+        $('#datePicker')
+            .datepicker({
+                format: 'yyyy-mm-dd',
+                language: 'ko',
+                immediateUpdates: true,
+                orientation: 'bottom left'
+            })
+            .datepicker('update', new Date());
 
-        //dataPicker - month
-        $('#datePicker-month')
+        //datePicker - month
+        $('#dateMonth')
             .datepicker({
                 format: 'yyyy-mm',
                 viewMode: 'months',
                 minViewMode: 'months',
                 language: 'ko',
                 immediateUpdates: true,
-                orientation: 'bottom left',
-                showOn: 'button',
-                buttonImage: '../images/ico/ico_date_color.svg',
-                buttonImageOnly: true,
-                buttonText: '날짜입력'
+                orientation: 'bottom left'
             })
             .datepicker('update', new Date());
-        // $('.btn-datepicker').on('click', function (e) {
-        //     $('#datePicker-month').datepicker('show');
-
-        //     e.stopPropagation();
-        // });
     },
     menuActive: function () {
         if ($('.sidebar').length) {

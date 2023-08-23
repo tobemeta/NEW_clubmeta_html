@@ -1126,3 +1126,20 @@ optgroup {
         }
     }
 }
+.input-group {
+    .datepicker-box {
+        flex: 1;
+        &:first-of-type {
+            .datepicker {
+                border-top-right-radius: 0 !important;
+                border-bottom-right-radius: 0 !important;
+            }
+        }
+        &:last-of-type {
+            .datepicker {
+                border-top-left-radius: 0 !important;
+                border-bottom-left-radius: 0 !important;
+            }
+        }
+    }
+}
