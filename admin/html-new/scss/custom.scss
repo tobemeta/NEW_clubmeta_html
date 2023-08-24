@@ -424,6 +424,7 @@ optgroup {
 input[type='date'] {
     &::-webkit-calendar-picker-indicator {
         background: url(../images/ico/ico_date_color.svg) no-repeat 0 0 / cover;
+        cursor: pointer;
     }
 }
 .input-daterange-btn {
