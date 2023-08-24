@@ -397,18 +397,38 @@ h1 {
 .list-box {
     li {
         display: flex;
-        padding: 0.8rem 1.6rem 0.8rem 0.8rem;
-        border-radius: 2.4rem;
-        background: #fff;
-        box-shadow: $shadow;
         box-sizing: $sizing;
         align-items: center;
         & + li {
             margin-top: 1rem;
         }
+        &.composer {
+            .info {
+                strong {
+                    display: inline-block;
+                    position: relative;
+                    padding-right: 3rem;
+                    &:after {
+                        display: block;
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        right: 0;
+                        width: 2.4rem;
+                        height: 2.4rem;
+                        background: url('../images/ico/ico_composer.svg');
+                        transform: translateY(-50%);
+                    }
+                }
+            }
+        }
     }
 
     a {
+        padding: 0.8rem 1.6rem 0.8rem 0.8rem;
+        box-shadow: $shadow;
+        border-radius: 2.4rem;
+        background: #fff;
         display: flex;
         overflow: hidden;
         flex: 1;
@@ -425,8 +445,10 @@ h1 {
         flex-direction: column;
         justify-content: center;
         margin: 0 0.8rem;
+        font-size: 0;
         strong {
             display: block;
+            font-size: 1.6rem;
             font-weight: $normal;
             line-height: 2.3rem;
             @include ellipsis();
@@ -439,6 +461,18 @@ h1 {
         }
     }
     &.sound {
+        li {
+            padding: 0.8rem 1.6rem 0.8rem 0.8rem;
+            border-radius: 2.4rem;
+            background: #fff;
+            box-shadow: $shadow;
+        }
+        a {
+            display: block;
+            padding: 0;
+            box-shadow: none;
+            background: none;
+        }
         .img {
             min-width: 5.6rem;
             height: 5.6rem;
@@ -462,7 +496,6 @@ h1 {
     }
     &.user {
         li {
-            border: 0.1rem solid #e7e7e7;
             padding: 0;
         }
         .img {
@@ -470,29 +503,113 @@ h1 {
             height: 4.8rem;
             border-radius: 50%;
             overflow: hidden;
+            border: 2px solid #e7e7e7;
+            box-sizing: $sizing;
         }
         a {
-            height: 6.4rem;
-            padding: 0 0.8rem;
             align-items: center;
+            box-sizing: $sizing;
         }
     }
     &.rank {
+        &.sound {
+            li {
+                padding-left: 4.6rem;
+                &:after {
+                    left: 1.6rem;
+                    width: 2.2rem;
+                    height: 2rem;
+                    font-size: 1.4rem;
+                }
+                &:before {
+                    display: none;
+                }
+                &:first-child {
+                    &:after {
+                        top: auto;
+                        left: 1.6rem;
+                        bottom: 3.2rem;
+                        transform: none;
+                    }
+                }
+                &:nth-child(-n + 4) {
+                    &:after {
+                        content: counter(rank);
+                    }
+                    &:before {
+                        display: none;
+                    }
+                }
+            }
+            a {
+                border: 0;
+                padding: 0;
+            }
+        }
         ol {
             counter-reset: rank 0;
         }
         li {
-            padding: 0.8rem 1.6rem;
+            position: relative;
             border: none;
             &:before {
                 display: inline-block;
-                content: counter(rank);
-                counter-increment: rank 1;
-                width: 2rem;
-                height: 2rem;
+                content: '';
                 margin-right: 0.8rem;
                 text-align: center;
             }
+            &:before,
+            &:after {
+                display: flex;
+                position: absolute;
+                left: 0.8rem;
+                width: 2.8rem;
+                height: 2.8rem;
+                transform: translateY(-50%);
+            }
+            &::before {
+                top: 50%;
+                border-radius: 50%;
+                @include bg($src: '../images/ico/ico_rank.svg');
+                background-size: cover;
+            }
+            &::after {
+                content: counter(rank);
+                counter-increment: rank 1;
+                top: calc(50% + 0.08rem);
+                font-size: 1.2rem;
+                font-weight: $bold;
+                align-items: center;
+                justify-content: center;
+            }
+            &:first-child {
+                &::before {
+                    @include bg($src: '../images/ico/ico_rank1.svg');
+                }
+                &::after {
+                    content: '';
+                }
+            }
+            &:nth-child(2) {
+                &::before {
+                    @include bg($src: '../images/ico/ico_rank2.svg');
+                }
+                &::after {
+                    content: '';
+                }
+            }
+            &:nth-child(3) {
+                &::before {
+                    @include bg($src: '../images/ico/ico_rank3.svg');
+                }
+                &::after {
+                    content: '';
+                }
+            }
+        }
+        a {
+            border: 0.1rem solid #e7e7e7;
+            padding-left: 4.2rem;
         }
         &.first {
             li:first-child {
@@ -877,66 +994,14 @@ h1 {
 .category-area.r-rank {
     .rank-list {
         li {
-            position: relative;
-            padding-left: 5rem;
-            width: 100%;
-            border: 0.1rem solid #e7e7e7;
-            padding-left: 4.2rem;
-            &:before,
-            &:after {
-                display: flex;
-                position: absolute;
-                left: 0.8rem;
-                width: 2.8rem;
-                height: 2.8rem;
-                transform: translateY(-50%);
-            }
-            &::before {
-                content: '';
-                top: 50%;
-                border-radius: 50%;
-                @include bg($src: '../images/ico/ico_rank.svg');
-                background-size: cover;
-            }
-            &::after {
-                content: counter(rank);
-                counter-increment: rank 1;
-                top: calc(50% + 0.08rem);
-                font-size: 1.2rem;
-                font-weight: $bold;
-                align-items: center;
-                justify-content: center;
-            }
-            &:first-child {
-                &::before {
-                    @include bg($src: '../images/ico/ico_rank1.svg');
-                }
-                &::after {
-                    content: '';
-                }
-            }
-            &:nth-child(2) {
-                &::before {
-                    @include bg($src: '../images/ico/ico_rank2.svg');
-                }
-                &::after {
-                    content: '';
-                }
-            }
-            &:nth-child(3) {
-                &::before {
-                    @include bg($src: '../images/ico/ico_rank3.svg');
-                }
-                &::after {
-                    content: '';
-                }
-            }
             .img {
                 width: 4.8rem;
                 height: 4.8rem;
                 margin-right: 0;
                 border-radius: 50%;
                 overflow: hidden;
+                border: 2px solid #e7e7e7;
+                box-sizing: $sizing;
             }
         }
     }

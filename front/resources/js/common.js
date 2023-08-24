@@ -761,7 +761,19 @@ const ui = {
                 $(this).find('.blind').text('재생');
             }
         });
+
         // $btnPlay.each(function () {});
+
+        // 팔로워/팔로잉
+        $('.btn-follow').on('click', function () {
+            $(this).toggleClass('is-ing');
+
+            if (!$(this).hasClass('is-ing')) {
+                $(this).find('span').text('팔로우');
+            } else {
+                $(this).find('span').text('팔로잉');
+            }
+        });
     },
     lottie: function (readyEvt, completeEvt) {
         const $lottie = $('[data-lottie]');

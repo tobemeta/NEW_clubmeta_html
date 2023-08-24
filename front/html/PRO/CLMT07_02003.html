@@ -7,7 +7,7 @@
         content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
     <meta name="HandheldFriendly" content="true" />
     <meta name="format-detection" content="telephone=no" />
-    <title>팔로잉 리스트 | 클럽메타</title>
+    <title>팔로워 리스트 | 클럽메타</title>
     <link rel="stylesheet" href="../../resources/css/common.min.css" />
     <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
     <script src="../../resources/js/lib/jquery-ui.min.js"></script>
@@ -35,27 +35,26 @@
                     <div class="tab-wrap box">
                         <div class="tab-items">
                             <ul>
-                                <li>
-                                    <a href="CLMT07_02001.html" class="tab-button"
+                                <li class="on">
+                                    <a href="CLMT07_02003.html" class="tab-button"
                                         data-target="tab1">팔로워&nbsp;<span>671</span>명</a>
                                 </li>
-                                <li class="on">
-                                    <a href="CLMT07_02002.html" class="tab-button"
+                                <li>
+                                    <a href="CLMT07_02004.html" class="tab-button"
                                         data-target="tab2">팔로잉&nbsp;<span>671</span>명</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="tab-content">
-                            <!-- <div id="tab1" class="tab-cont"></div> -->
-                            <div id="tab2" class="tab-cont open">
-                                <div class="follow-list-area">
-                                    <div class="input-box search small">
-                                        <input type="text" placeholder="닉네임으로 검색" title="내용입력">
-                                        <button type="button" class="btn-inp-del" aria-label="입력내용삭제"><span
-                                                class="blind">삭제</span></button>
+                            <div id="tab1" class="tab-cont open">
+                                <div class="follow-list-area none">
+                                    <div class="">
+                                        <p>아직 회원님을 팔로우하고 있는 사용자가 없어요!</p>
                                     </div>
-                                    <div class="sch-result-area">
-                                        <div class="list-box user">
+                                    <div>
+                                        <p>계정을 팔로우하면
+                                            인기영상을 더 빨리 확인할 수 있어요</p>
+                                        <div class="list-box rank user">
                                             <ul>
                                                 <li>
                                                     <a href="#none">
@@ -63,11 +62,9 @@
                                                             <img src="" alt="">
                                                         </div>
                                                         <div class="info">
-                                                            <strong>12유저닉네임1</strong>
+                                                            <strong>tesetsetset</strong>
                                                         </div>
                                                     </a>
-                                                    <button type="button"
-                                                        class="btn-primary btn-follow"><span>팔로워</span></button>
                                                 </li>
                                                 <li>
                                                     <a href="#none">
@@ -75,11 +72,9 @@
                                                             <img src="" alt="">
                                                         </div>
                                                         <div class="info">
-                                                            <strong>12유저닉네임2</strong>
+                                                            <strong>tesetsetset</strong>
                                                         </div>
                                                     </a>
-                                                    <button type="button"
-                                                        class="btn-primary btn-follow"><span>팔로워</span></button>
                                                 </li>
                                                 <li>
                                                     <a href="#none">
@@ -87,56 +82,16 @@
                                                             <img src="" alt="">
                                                         </div>
                                                         <div class="info">
-                                                            <strong>12유저닉네임3</strong>
+                                                            <strong>tesetsetset</strong>
                                                         </div>
                                                     </a>
-                                                    <button type="button"
-                                                        class="btn-primary btn-follow"><span>팔로워</span></button>
-                                                </li>
-                                                <li>
-                                                    <a href="#none">
-                                                        <div class="img">
-                                                            <img src="" alt="">
-                                                        </div>
-                                                        <div class="info">
-                                                            <strong>12유저닉네임4</strong>
-                                                        </div>
-                                                    </a>
-                                                    <button type="button"
-                                                        class="btn-primary btn-follow"><span>팔로워</span></button>
-                                                </li>
-                                                <li>
-                                                    <a href="#none">
-                                                        <div class="img">
-                                                            <img src="" alt="">
-                                                        </div>
-                                                        <div class="info">
-                                                            <strong>12유저닉네임5</strong>
-                                                        </div>
-                                                    </a>
-                                                    <button type="button"
-                                                        class="btn-primary btn-follow"><span>팔로워</span></button>
-                                                </li>
-                                                <li>
-                                                    <a href="#none">
-                                                        <div class="img">
-                                                            <img src="" alt="">
-                                                        </div>
-                                                        <div class="info">
-                                                            <strong>12유저닉네임6</strong>
-                                                        </div>
-                                                    </a>
-                                                    <button type="button"
-                                                        class="btn-primary btn-follow"><span>팔로워</span></button>
-                                                </li>
-                                                <li class="noData" style="display:none">
-                                                    <p>"<span></span>" 검색 결과 없음</p>
                                                 </li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <!-- <div id="tab2" class="tab-cont"></div> -->
                         </div>
                     </div>
                 </div>

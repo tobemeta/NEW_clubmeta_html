@@ -139,7 +139,6 @@
 .user-idpw-box {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 1.6rem;
     &.align-left {
         align-items: flex-start;
@@ -232,6 +231,7 @@
         }
     }
     &.complete {
+        align-items: center;
         margin-top: 1.2rem;
         .image {
             height: 20.8rem;
@@ -241,6 +241,11 @@
     .form-box {
         width: 100%;
         // margin-top: 0.8rem;
+    }
+    & + .btn-bottom-box {
+        .btn-default {
+            border: 1px solid $main-color;
+        }
     }
 }
 //약관동의
@@ -347,6 +352,7 @@
 //관심 카테고리 페이지
 .category-box {
     width: 100%;
+    margin-top: 0.5rem;
     box-sizing: border-box;
     .cell-row {
         display: flex;

@@ -157,6 +157,22 @@
             right: 1.6rem;
         }
     }
+    &.search {
+        &:before {
+            display: block;
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 1.6rem;
+            width: 1.6rem;
+            height: 1.6rem;
+            @include bg($src: '../images/ico/ico_ip_sch.svg');
+            transform: translateY(-50%);
+        }
+        input {
+            padding-left: 3.6rem;
+        }
+    }
     .btn-inp-del {
         display: none;
         position: absolute;
