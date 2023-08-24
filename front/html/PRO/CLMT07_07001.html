@@ -7,11 +7,12 @@
         content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
     <meta name="HandheldFriendly" content="true" />
     <meta name="format-detection" content="telephone=no" />
-    <title>프로필 홈 | 클럽메타</title>
+    <title>유저 프로필 | 클럽메타</title>
     <link rel="stylesheet" href="../../resources/css/common.min.css" />
     <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
     <script src="../../resources/js/lib/jquery-ui.min.js"></script>
     <script src="../../resources/js/common.js"></script>
+
 </head>
 
 <body>
@@ -57,8 +58,8 @@
                             <p class="text-l">자기소개글 쓰는 영역으로 최대 200자 입력 가능 띄어쓰기 특수문자 숫자 영문 대소문자 입력 가능하고</p>
                         </div>
                         <div class="btn-box">
-                            <button type="button" class="btn-s btn-primary">프로필 공유</button>
-                            <a href="#none" role="button" class="btn-s btn-primary" title="프로필 편집 이동">프로필 편집</a>
+                            <button type="button" class="btn-s btn-primary btn-follow"><span>팔로우</span></button>
+                            <a href="#none" role="button" class="btn-s btn-primary" title="상세 이동">작곡가 상세</a>
                         </div>
                     </div>
                 </div>
@@ -362,6 +363,7 @@
         </div>
     </div>
 </body>
+
 <script>
     $(function () {
         var maxLength = 10;
@@ -371,7 +373,17 @@
             $('.intro-area .nickname').text(truncatedText);
         }
     })
+    $('.btn-follow').on('click', function () {
+        $(this).toggleClass('is-ing');
+
+        if (!$(this).hasClass('is-ing')) {
+            $(this).find('span').text('팔로우')
+        } else {
+            $(this).find('span').text('팔로잉')
+        }
+    });
 </script>
+
 <article class="layerpopup-box bottom" id="bottomViewPop" role="dialog">
     <div class="layer-popup">
         <header class="layer-header">

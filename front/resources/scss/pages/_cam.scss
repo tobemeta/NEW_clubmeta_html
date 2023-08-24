@@ -248,8 +248,13 @@ a.btn-composer {
     background-size: cover;
     p {
         padding-top: 100%;
+        font-size: 2rem;
         text-align: center;
         line-height: 2.3rem;
+        & + p {
+            padding-top: 0;
+            font-size: 1.6rem;
+        }
     }
 }
 .talk-wrap {

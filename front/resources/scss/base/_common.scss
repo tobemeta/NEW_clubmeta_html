@@ -290,6 +290,18 @@ h1 {
         }
     }
     li {
+        &.st::before,
+        &.nd::before,
+        &.rd::before {
+            display: block;
+            content: '';
+            position: absolute;
+            top: 0.8rem;
+            left: 0.8rem;
+            width: 2.8rem;
+            height: 2.8rem;
+            z-index: 1;
+        }
         &.st {
             &:before {
                 background: url('../images/ico/ico_rank1.svg') no-repeat 0 0;

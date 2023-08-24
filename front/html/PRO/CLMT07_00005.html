@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>프로필 홈 | 클럽메타</title>
+    <link rel="stylesheet" href="../../resources/css/common.min.css" />
+    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+    <script src="../../resources/js/lib/lottie.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+    <script>
+        $(function () {
+            var maxLength = 10;
+            var text = $('.intro-area .nickname').text();
+            if (text.length > maxLength) {
+                var truncatedText = text.substring(0, maxLength);
+                $('.intro-area .nickname').text(truncatedText);
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="header">
+            <div class="header-inner">
+                <div class="header-left">
+                    <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
+                </div>
+                <div class="header-center">
+                    <h1 class="header-title">프로필</h1>
+                </div>
+                <div class="header-right">
+                    <a href="#none" class="btn-menu" role="button" title="메뉴"></a>
+                </div>
+            </div>
+        </header>
+        <div class="contents">
+            <div class="section">
+                <div class="inner">
+                    <div class="profile-area">
+                        <div class="profile-top">
+                            <div class="img badge">
+                                <img src="../../resources/images/img/img_main_profile.png" alt="">
+                            </div>
+                            <div class="follow-area">
+                                <dl>
+                                    <dt>영상</dt>
+                                    <dd>130</dd>
+                                </dl>
+                                <dl>
+                                    <dt><a href="#none" class="test">팔로워</a></dt>
+                                    <dd>125</dd>
+                                </dl>
+                                <dl>
+                                    <dt><a href="#none">팔로잉</a></dt>
+                                    <dd>529</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="intro-area">
+                            <strong class="nickname">닉네임최대 10글자 닉네임최대 10글자</strong>
+                            <p class="text-l">자기소개글 쓰는 영역으로 최대 200자 입력 가능 띄어쓰기 특수문자 숫자 영문 대소문자 입력 가능하고</p>
+                        </div>
+                        <div class="btn-box">
+                            <button type="button" class="btn-s btn-primary">프로필 공유</button>
+                            <a href="#none" role="button" class="btn-s btn-primary">프로필 편집</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="inner">
+                    <div class="tab-wrap line full">
+                        <div class="tab-items">
+                            <ul>
+                                <li class="on">
+                                    <button type="button" class="tab-button" aria-label="tab1" data-target="tab1"><span
+                                            class="ico all">ALL</span></button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab2" data-target="tab2"><span
+                                            class="ico ai">AI</span></button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab3" data-target="tab3"><span
+                                            class="ico music">음원</span></button>
+                                </li>
+                                <li>
+                                    <button type="button" class="tab-button" aria-label="tab4" data-target="tab4"><span
+                                            class="ico cam">일반</span></button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <div id="tab1" class="tab-cont open">
+                                <div class="no-clip">
+                                    <p>아직 클립이 없어요!</p>
+                                    <p>지금 버튼을 눌러<br />촬영에 도전해보세요!</p>
+                                    <div id="arrowDown" class="lottie_arrowDown _loop _auto"
+                                        data-lottie="../../resources/js/json/arrow_down.json"></div>
+                                </div>
+                            </div>
+                            <div id="tab2" class="tab-cont">
+                                2
+                            </div>
+                            <div id="tab3" class="tab-cont">
+                                3
+                            </div>
+                            <div id="tab4" class="tab-cont">
+                                4
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="quick_top">
+            <button type="button" class="btn-top">TOP</button>
+        </div>
+    </div>
+</body>
+
+<div class="toast-wrap top">
+    <article class="toastPop" id="toastPop2" role="dialog">
+        <div class="toast-box">
+            <p class="toastMsg">비공개 영상입니다.</p>
+            <button type="button" class="btn-close">닫기</button>
+        </div>
+    </article>
+</div>
+<article class="layerpopup-box bottom" id="bottomViewPop" role="dialog">
+    <div class="layer-popup">
+        <header class="layer-header">
+            <h1 class="pop-title"></h1>
+            <button type="button" class="btn-close btn-pop-close" onclick="ui.popup.close('#bottomViewPop')"
+                title="레이어팝업 닫기">닫기</button>
+        </header>
+
+        <div class="layer-content">
+            <div class="layer-inner">
+                <div class="more-box ico">
+                    <ul>
+                        <li>
+                            <a href="#none" class="card download">영상 다운로드하기</a>
+                        </li>
+                        <li>
+                            <a href="#none" class="card share">공유하기</a>
+                        </li>
+                        <li>
+                            <a href="#none" class="card delete">삭제하기</a>
+                        </li>
+                        <li>
+                            <div class="card view flex">
+                                <span>공개 설정 설정 변경</span>
+                                <div class="chk-box toggle">
+                                    <input type="checkbox" id="chk1_7" />
+                                    <label for="chk1_7"></label>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- //layer-content -->
+    </div>
+</article>
+
+</html>

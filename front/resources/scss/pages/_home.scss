@@ -587,16 +587,6 @@
             &:nth-child(2),
             &:nth-child(3) {
                 position: relative;
-                &:before {
-                    display: block;
-                    content: '';
-                    position: absolute;
-                    top: 0.8rem;
-                    left: 0.8rem;
-                    width: 2.8rem;
-                    height: 2.8rem;
-                    z-index: 1;
-                }
             }
         }
     }
