@@ -15,17 +15,13 @@ const ui = {
             $(this).siblings('.play').removeClass('d-none');
         });
 
-        //datePicker
-        $('#datePicker')
-            .datepicker({
-                format: 'yyyy-mm-dd',
-                language: 'ko',
-                immediateUpdates: true,
-                orientation: 'bottom left'
-            })
-            .datepicker('update', new Date());
-
         //datePicker - month
+        $('.btn-datepicker').on('click', function (e) {
+            const associatedInput = $(this).closest('.datepicker-box').find('.datepicker');
+
+            associatedInput.datepicker('show');
+        });
+
         $('#dateMonth')
             .datepicker({
                 format: 'yyyy-mm',

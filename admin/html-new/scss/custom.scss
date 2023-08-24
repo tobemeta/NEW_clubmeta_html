@@ -421,6 +421,11 @@ optgroup {
 }
 .input-group {
 }
+input[type='date'] {
+    &::-webkit-calendar-picker-indicator {
+        background: url(../images/ico/ico_date_color.svg) no-repeat 0 0 / cover;
+    }
+}
 .input-daterange-btn {
     display: flex;
     margin-right: -5px;
@@ -1119,27 +1124,11 @@ optgroup {
     .datepicker {
         + .btn-datepicker {
             position: absolute;
-            top: 4px;
-            right: 8px;
-            font-size: 1rem;
-            color: var(--gray-dark);
-        }
-    }
-}
-.input-group {
-    .datepicker-box {
-        flex: 1;
-        &:first-of-type {
-            .datepicker {
-                border-top-right-radius: 0 !important;
-                border-bottom-right-radius: 0 !important;
-            }
-        }
-        &:last-of-type {
-            .datepicker {
-                border-top-left-radius: 0 !important;
-                border-bottom-left-radius: 0 !important;
-            }
+            top: 9px;
+            right: 12px;
+            width: 18px;
+            height: 18px;
+            background: url(../images/ico/ico_date_color.svg) no-repeat 0 0 / cover;
         }
     }
 }
