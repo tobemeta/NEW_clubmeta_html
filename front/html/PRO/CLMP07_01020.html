@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>비밀번호 변경 | 클럽메타</title>
+        <link rel="stylesheet" href="../../resources/css/common.min.css" />
+        <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+        <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+        <script src="../../resources/js/common.js"></script>
+    </head>
+    <body>
+        <div class="wrap">
+            <header class="header">
+                <div class="header-inner">
+                    <div class="header-left">
+                        <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
+                    </div>
+                    <div class="header-center">
+                        <h1 class="header-title">비밀번호 변경</h1>
+                    </div>
+                    <div class="header-right"></div>
+                </div>
+            </header>
+            <div class="contents pb-96">
+                <div class="section">
+                    <div class="inner">
+                        <div class="user-idpw-box">
+                            <div class="title-box">
+                                <p class="title">현재 비밀번호와<br />새로운 비밀번호를 입력해주세요.</p>
+                                <p class="body-sub-title">영문, 숫자, 특수문자를 포함한 8~20자를 조합하여 입력해주세요.</p>
+                            </div>
+                            <div class="form-box">
+                                <form action="">
+                                    <fieldset>
+                                        <dl>
+                                            <dt><label>현재 비밀번호</label></dt>
+                                            <dd>
+                                                <div class="input-box inp-pw">
+                                                    <input type="password" placeholder="영문, 숫자, 특수문자를 포함한 8~20자" title="내용입력" />
+                                                    <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
+                                                    <a href="#none" class="btn-inp-pw" role="button" aria-label="비밀번호 표시"></a>
+                                                    <span class="validate-txt is-error">현재 비밀번호와 입력한 번호가 다릅니다.</span>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt><label>새 비밀번호</label></dt>
+                                            <dd>
+                                                <div class="input-box inp-pw">
+                                                    <input type="password" placeholder="영문, 숫자, 특수문자를 포함한 8~20자" title="내용입력" />
+                                                    <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
+                                                    <a href="#none" class="btn-inp-pw" role="button" aria-label="비밀번호 표시"></a>
+                                                    <span class="validate-txt is-error">비밀번호는 영문, 숫자, 특수문자를 포함한 8-20자 이내로 입력하셔야 합니다.</span>
+                                                    <!-- <span class="validate-txt is-error">현재 비밀번호와 다른 번호를 입력해 주세요.</span> -->
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt><label>새 비밀번호 확인</label></dt>
+                                            <dd>
+                                                <div class="input-box inp-pw">
+                                                    <input type="password" placeholder="영문, 숫자, 특수문자를 포함한 8~20자" title="내용입력" />
+                                                    <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
+                                                    <a href="#none" class="btn-inp-pw" role="button" aria-label="비밀번호 표시"></a>
+                                                    <span class="validate-txt is-error">입력하신 비밀번호와 비밀번호 확인이 일치하지 않습니다.</span>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                        <div class="btn-bottom-box">
+                                            <button type="button" class="btn-primary" title="확인">확인</button>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
