@@ -667,7 +667,7 @@ h1 {
             }
         }
     }
-    &.noti {
+    &.alarm {
         margin-top: 1.6rem;
         li {
             padding: 0;
@@ -677,7 +677,7 @@ h1 {
             align-items: center;
             gap: 0.8rem;
         }
-        .noti-img {
+        .alarm-img {
             min-width: 4.8rem;
             height: 4.8rem;
             border-radius: 50%;
@@ -686,7 +686,7 @@ h1 {
             border: 2px solid #e7e7e7;
             overflow: hidden;
         }
-        .noti-text {
+        .alarm-text {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -701,7 +701,7 @@ h1 {
                 color: #707070;
             }
         }
-        .noti-freeview {
+        .alarm-freeview {
             min-width: 4.8rem;
             height: 6.4rem;
             border-radius: 1.6rem;
@@ -752,11 +752,11 @@ h1 {
 }
 
 .more-box {
+    & + .more-box {
+        margin-top: 4rem;
+    }
     .title-box {
         margin-bottom: 1.6rem;
-        & ~ .title-box {
-            margin-top: 4rem;
-        }
     }
     ul {
         display: flex;
@@ -832,6 +832,77 @@ h1 {
                 &:before {
                     background: url('../images/ico/ico_redlight.svg') no-repeat 0 0;
                 }
+            }
+            &.alarm {
+                &:before {
+                    background: url('../images/ico/ico_alarm.svg') no-repeat 0 0;
+                }
+            }
+            &.user {
+                &:before {
+                    background: url('../images/ico/ico_b_user.svg') no-repeat 0 0;
+                }
+            }
+            &.bookmark {
+                &:before {
+                    background: url('../images/ico/ico_bookmark.svg') no-repeat 0 0;
+                }
+            }
+            &.privacy {
+                &:before {
+                    background: url('../images/ico/ico_privacy.svg') no-repeat 0 0;
+                }
+            }
+            &.like {
+                &:before {
+                    background: url('../images/ico/ico_like.svg') no-repeat 0 0;
+                }
+            }
+            &.badge {
+                &:before {
+                    background: url('../images/ico/ico_badge.svg') no-repeat 0 0;
+                }
+            }
+            &.wallet {
+                &:before {
+                    background: url('../images/ico/ico_wallet.svg') no-repeat 0 0;
+                }
+            }
+            &.notice {
+                &:before {
+                    background: url('../images/ico/ico_wallet.svg') no-repeat 0 0;
+                }
+            }
+            &.event {
+                &:before {
+                    background: url('../images/ico/ico_wallet.svg') no-repeat 0 0;
+                }
+            }
+            &.qm {
+                &:before {
+                    background: url('../images/ico/ico_wallet.svg') no-repeat 0 0;
+                }
+            }
+            &.app {
+                &:before {
+                    background: url('../images/ico/ico_wallet.svg') no-repeat 0 0;
+                }
+            }
+        }
+    }
+    &.link {
+        .card {
+            position: relative;
+            &:after {
+                display: block;
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: 1.6rem;
+                width: 1.6rem;
+                height: 1.6rem;
+                background: url('../images/ico/ico_s_right.svg') no-repeat 0 0;
+                transform: translateY(-50%);
             }
         }
     }

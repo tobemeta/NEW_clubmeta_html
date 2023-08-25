@@ -78,6 +78,13 @@
             }
         }
     }
+    &.success {
+        flex-direction: column;
+        .validate-txt {
+            color: #404040;
+            display: block;
+        }
+    }
     &.error {
         flex-direction: column;
         input {
