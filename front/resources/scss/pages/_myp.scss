@@ -122,10 +122,37 @@
 }
 
 .follow-list-area {
-    .input-box {
-        margin-top: 2.4rem;
-    }
-    &.none {
+    margin-top: 2.4rem;
+    &.noFollow {
+        display: flex;
+        flex-direction: column;
+        gap: 3.6rem;
+        .top {
+            p {
+                position: relative;
+                padding-top: 20.9rem;
+                text-align: center;
+                line-height: 2.3rem;
+                &:before {
+                    display: block;
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 21.2rem;
+                    height: 20.9rem;
+                    background: url('../images/img/img_no_result.png') no-repeat 0 0;
+                    background-size: cover;
+                }
+            }
+        }
+        .bottom {
+            p {
+                line-height: 2.3rem;
+                font-weight: $bold;
+            }
+        }
         .list-box {
             .info {
                 padding-right: 1.6rem;

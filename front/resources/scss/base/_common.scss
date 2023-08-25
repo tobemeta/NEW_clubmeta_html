@@ -752,6 +752,12 @@ h1 {
 }
 
 .more-box {
+    .title-box {
+        margin-bottom: 1.6rem;
+        & ~ .title-box {
+            margin-top: 4rem;
+        }
+    }
     ul {
         display: flex;
         flex-direction: column;

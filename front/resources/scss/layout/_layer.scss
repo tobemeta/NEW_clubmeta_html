@@ -51,6 +51,9 @@
                 .layer-content {
                     padding: 0 0 7.2rem;
                 }
+                .btn-bottom-box {
+                    background: transparent;
+                }
             }
         }
         .layer-header {
@@ -72,6 +75,8 @@
             padding-left: 1.6rem;
             align-items: center;
             .header-left {
+                display: flex;
+                min-width: 4.8rem;
                 .header-title {
                     padding-left: 1.6rem;
                     text-align: left;
@@ -80,6 +85,7 @@
             .header-center {
                 display: flex;
                 flex: 1;
+                justify-content: center;
             }
             .header-right {
                 width: 4.8rem;
@@ -90,13 +96,14 @@
             padding: 0;
             padding-bottom: 7.2rem;
         }
-        .btn-botton-box {
+        .btn-bottom-box {
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
             margin-top: 0;
             padding: 1.6rem;
+            background: #fff;
         }
     }
     &.msg {
