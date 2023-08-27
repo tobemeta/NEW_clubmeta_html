@@ -1,4 +1,49 @@
 /*********common**********/
+.title {
+    // 제목1
+    font-size: $fs-24;
+    line-height: 2.9rem;
+}
+.sub-title {
+    // 제목2
+    font-size: $fs-20;
+    line-height: 2.4rem;
+}
+.body-title {
+    // 본문1
+    font-size: $fs-16;
+    line-height: 2.3rem;
+}
+.body-sub-title {
+    // 본문2
+    font-size: $fs-14;
+    line-height: 2rem;
+}
+.text-l {
+    // 텍스트1
+    font-size: $fs-12;
+    line-height: 1.7rem;
+}
+.text-m {
+    // 텍스트2
+    font-size: $fs-10;
+    line-height: 1.4rem;
+}
+.text-s {
+    // 텍스트3
+    font-size: $fs-8;
+    line-height: 1.2rem;
+}
+.text-left {
+    text-align: left;
+}
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}
+
 /*font-size*/
 .fs-24 {
     font-size: $fs-24;
@@ -26,6 +71,16 @@
     font-weight: $bold;
 }
 
+// flex
+.flex {
+    display: flex;
+}
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 // margin
 .mg-auto {
     margin: auto !important;
@@ -49,6 +104,12 @@
 }
 .mb-auto {
     margin-bottom: auto !important;
+}
+
+@for $i from 0 through 100 {
+    .hvw-#{$i} {
+        height: $i * 1vw !important;
+    }
 }
 
 @for $i from 0 through 100 {
