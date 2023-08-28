@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>Shoe 히스토리 팝업 | 클럽메타</title>
+    <link rel="stylesheet" href="../../resources/css/common.min.css" />
+    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+</head>
+
+<body>
+    <article class="layerpopup-box full is-active is-animation" id="fullViewPop" role="dialog" data-callback="cbFun">
+        <div class="layer-popup">
+            <header class="layer-header">
+                <div class="header-inner">
+                    <div class="header-left"></div>
+                    <div class="header-center">
+                        <h1 class="pop-title">Shoe 히스토리</h1>
+                        <!-- <div class="input-box">
+                            <input type="text" placeholder="전화번호 또는 이메일" />
+                        </div> -->
+                    </div>
+                    <div class="header-right">
+                        <button type="button" class="btn-close btn-pop-close"
+                            onclick="location.href='CLMT07_01023.html'" title="설정 홈 이동">닫기</button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="layer-content pb-88">
+                <div class="layer-inner">
+                    <div class="rdo-list cell">
+                        <div class="title-box">
+                            <h2 class="sub-title">기간</h2>
+                        </div>
+                        <ul class="half">
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo1_1" name="rdo0" checked />
+                                    <label for="rdo1_1">7일</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo1_2" name="rdo0" />
+                                    <label for="rdo1_2">한달</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo1_3" name="rdo0" />
+                                    <label for="rdo1_3">3개월</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo1_4" name="rdo0"
+                                        onclick="ui.popup.open('#bottomViewPop')" />
+                                    <label for="rdo1_4" id="setDate">직접선택</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="rdo-list cell">
+                        <div class="title-box">
+                            <h2 class="sub-title">거래내역</h2>
+                        </div>
+                        <ul class="auto">
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo2_1" name="rdo1" checked />
+                                    <label for="rdo2_1">전체(지급/차감)</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo2_2" name="rdo1" />
+                                    <label for="rdo2_2">지급</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo2_3" name="rdo1" />
+                                    <label for="rdo2_3">차감</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="rdo-list cell">
+                        <div class="title-box">
+                            <h2 class="sub-title">정렬</h2>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo3_1" name="rdo2" checked />
+                                    <label for="rdo3_1">최신순</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo3_2" name="rdo2" />
+                                    <label for="rdo3_2">오래된 순</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="btn-bottom-box">
+                <button type="button" class="btn btn-primary" onclick="ui.popup.close('#fullViewPop')">확인</button>
+            </div>
+        </div>
+        <!-- //layer-popup -->
+    </article>
+
+    <article class="layerpopup-box bottom" id="bottomViewPop" role="dialog">
+        <div class="layer-popup">
+            <header class="layer-header">
+                <h1 class="pop-title">기간</h1>
+                <button type="button" class="btn-close btn-pop-close" title="레이어팝업 닫기"
+                    onclick="ui.popup.close('#bottomViewPop')">닫기</button>
+            </header>
+
+            <div class="layer-content">
+                <div class="layer-inner">
+                    <div class="more-box">
+                        <ul>
+                            <li><button type="button" class="card">2024.01</button></li>
+                            <li><button type="button" class="card">2023.12</button></li>
+                            <li><button type="button" class="card">2023.11</button></li>
+                            <li><button type="button" class="card">2023.10</button></li>
+                            <li><button type="button" class="card">2023.09</button></li>
+                            <li><button type="button" class="card">2023.08</button></li>
+                            <li><button type="button" class="card">2023.07</button></li>
+                            <li><button type="button" class="card">2023.06</button></li>
+                            <li><button type="button" class="card">2023.05</button></li>
+                            <li><button type="button" class="card">2023.04</button></li>
+                            <li><button type="button" class="card">2023.03</button></li>
+                            <li><button type="button" class="card">2023.02</button></li>
+                            <li><button type="button" class="card">2023.01</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //layer-popup -->
+    </article>
+</body>
+<script>
+    // id 임의작성 변경 가능
+    $('#bottomViewPop .more-box button').on('click', function () {
+        var date = $(this).text();
+        $("#setDate").text(date);
+        ui.popup.close('#bottomViewPop');
+    });
+</script>
+
+</html>

@@ -589,8 +589,6 @@ const ui = {
                 $btnClose.on('click', function (e) {
                     e.preventDefault();
 
-                    console.log(2323);
-
                     $('body').removeClass('lock-body');
 
                     if ($layer.hasClass('full')) {

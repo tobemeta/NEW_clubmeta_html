@@ -16,7 +16,7 @@
 
 <body>
     <article class="layerpopup-box full is-active is-animation" id="fullViewPop" role="dialog" data-callback="cbFun">
-        <div class="layer-popup login">
+        <div class="layer-popup">
             <header class="layer-header">
                 <div class="header-inner">
                     <div class="header-left"></div>
@@ -36,10 +36,115 @@
             <div class="layer-content">
                 <div class="layer-inner">
                     <div class="badge-area">
-                        <div class="badge-rep"></div>
+                        <div class="badge-rep">
+                            <div class="img">
+                                <img src="../../resources/images/ico/ico_badge02.png" alt="" id="repBadgeImage">
+                            </div>
+                            <strong class="body-title bold" id="repBadgeTitle">대표배지이름</strong>
+                            <!-- <strong class="body-title bold">아직 설정한 대표 배지가 없어요</strong> -->
+                            <p class="text-l" id="repBadgeText">클럽메타에서 어떤 활동을 통해 지급된 배지 내용</p>
+                        </div>
                         <div class="badge-box">
                             <ul>
-                                <li></li>
+                                <li>
+                                    <button type="button" onclick="openBottomPopup(this)">
+                                        <div class="img">
+                                            <img src="../../resources/images/ico/ico_badge01.png" alt="">
+                                        </div>
+                                        <p class="body-sub-title">가입축하!</p>
+                                    </button>
+
+                                </li>
+                                <li>
+                                    <button type="button" onclick="openBottomPopup(this)">
+                                        <div class="img">
+                                            <img src="../../resources/images/ico/ico_badge02.png" alt="">
+                                        </div>
+                                        <p class="body-sub-title">첫 챌린지 참가</p>
+                                    </button>
+
+                                </li>
+                                <li>
+                                    <button type="button" onclick="openBottomPopup(this)">
+                                        <div class="img">
+                                            <img src="../../resources/images/ico/ico_badge03.png" alt="">
+                                        </div>
+                                        <p class="body-sub-title">친구초대 1회</p>
+                                    </button>
+
+                                </li>
+                                <li>
+                                    <button type="button" onclick="openBottomPopup(this)">
+                                        <div class="img">
+                                            <img src="../../resources/images/ico/ico_badge04.png" alt="">
+                                        </div>
+                                        <p class="body-sub-title">일반 영상<br>첫 업로드</p>
+                                    </button>
+
+                                </li>
+                                <li>
+                                    <button type="button" onclick="openBottomPopup(this)">
+                                        <div class="img">
+                                            <img src="../../resources/images/ico/ico_badge05.png" alt="">
+                                        </div>
+                                        <p class="body-sub-title">팔로우 10명 돌파</p>
+                                    </button>
+
+                                </li>
+                                <li>
+                                    <button type="button" onclick="openBottomPopup(this)">
+                                        <div class="img">
+                                            <img src="../../resources/images/ico/ico_badge06.png" alt="">
+                                        </div>
+                                        <p class="body-sub-title">투표 10회 달성</p>
+                                    </button>
+
+                                </li>
+                                <li>
+                                    <button type="button" onclick="openBottomPopup(this)">
+                                        <div class="img">
+                                            <img src="../../resources/images/ico/ico_badge00.png" alt="">
+                                        </div>
+                                        <p class="body-sub-title">가입축하</p>
+                                    </button>
+
+                                </li>
+                                <li>
+                                    <button type="button" onclick="openBottomPopup(this)">
+                                        <div class="img">
+                                            <img src="../../resources/images/ico/ico_badge00.png" alt="">
+                                        </div>
+                                        <p class="body-sub-title">첫 챌린지 참가</p>
+                                    </button>
+
+                                </li>
+                                <li>
+                                    <button type="button" onclick="openBottomPopup(this)">
+                                        <div class="img">
+                                            <img src="../../resources/images/ico/ico_badge00.png" alt="">
+                                        </div>
+                                        <p class="body-sub-title">가입축하</p>
+                                    </button>
+
+                                </li>
+                                <li>
+                                    <button type="button" onclick="openBottomPopup(this)">
+                                        <div class="img">
+                                            <img src="../../resources/images/ico/ico_badge00.png" alt="">
+                                        </div>
+                                        <p class="body-sub-title">첫 챌린지 참가</p>
+                                    </button>
+
+                                </li>
+                                <li>
+                                    <button type="button" onclick="openBottomPopup(this)">
+                                        <div class="img">
+                                            <img src="../../resources/images/ico/ico_badge00.png" alt="">
+                                        </div>
+                                        <p class="body-sub-title">가입축하</p>
+                                    </button>
+
+                                </li>
                             </ul>
                         </div>
 
@@ -49,6 +154,67 @@
         </div>
         <!-- //layer-popup -->
     </article>
+
+    <article class="layerpopup-box bottom" id="bottomViewPop" role="dialog">
+        <div class="layer-popup">
+            <header class="layer-header">
+                <h1 class="pop-title"></h1>
+                <button type="button" class="btn-close btn-pop-close" title="레이어팝업 닫기"
+                    onclick="ui.popup.close('#bottomViewPop')">닫기</button>
+            </header>
+
+            <div class="layer-content pb-88">
+                <div class="layer-inner">
+                    <div class="badge-area">
+                        <div class="badge-rep">
+                            <div class="img">
+                                <img src="" alt="" id="badgeImage">
+                            </div>
+                            <strong class="body-title bold" id="badgeTitle"></strong>
+                            <p class="text-l" id="badgeText">내용은 어드민에서 관리한다고하네요!</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-bottom-box">
+                <button type="button" class="btn btn-primary btn-pop-close" onclick="setRepresentativeBadge()">대표 배지로
+                    설정하기</button>
+            </div>
+        </div>
+        <!-- //layer-popup -->
+    </article>
 </body>
+<script>
+    // id 값은 임의작성 변경 가능
+    function openBottomPopup(button) {
+        console.log(this);
+        var imageSrc = $(button).find(".img img").attr("src");
+        var title = $(button).find(".body-sub-title").text();
+        $("#badgeImage").attr("src", imageSrc);
+        $('#badgeTitle').text(title);
+
+        ui.popup.open('#bottomViewPop');
+
+        if (imageSrc.includes("ico_badge00")) {
+            $("#bottomViewPop button.btn-primary").attr("disabled", true);
+        } else {
+            $("#bottomViewPop button.btn-primary").removeAttr("disabled");
+        }
+    }
+
+    function setRepresentativeBadge() {
+        let badgeImageSrc = $("#badgeImage").attr("src");
+        let badgeTitle = $("#badgeTitle").text();
+        let badgeText = $("#badgeText").text();
+
+        $("#repBadgeImage").attr("src", badgeImageSrc);
+        $("#repBadgeTitel").text(badgeTitle);
+        $("#repBadgeText").text(badgeText);
+
+        ui.popup.close('#bottomViewPop');
+    }
+</script>
 
 </html>

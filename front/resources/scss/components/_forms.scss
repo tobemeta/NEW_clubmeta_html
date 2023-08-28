@@ -713,16 +713,57 @@
 .rdo-list {
     ul {
         display: flex;
+        flex-direction: column;
+        &.auto {
+            li {
+                flex: auto;
+            }
+        }
     }
     li {
         flex: 1;
     }
+    &.solo {
+        ul {
+            display: flex;
+            gap: 0.8rem;
+        }
+        li {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            label {
+                line-height: 3.5rem;
+
+                &:before,
+                &:after {
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
     &.cell {
-        padding: 0.4rem;
-        background: #fff;
-        border-radius: 1.6rem;
-        box-shadow: $shadow;
-        box-sizing: $sizing;
+        & + .cell {
+            margin-top: 4rem;
+        }
+        .title-box {
+            margin-bottom: 1.6rem;
+        }
+        ul {
+            padding: 0.4rem;
+            background: #fff;
+            border-radius: 1.6rem;
+            box-shadow: $shadow;
+            box-sizing: $sizing;
+            &.half {
+                flex-wrap: wrap;
+                li {
+                    flex: 50%;
+                }
+            }
+        }
+
         .rdo-box.cell {
             label {
                 height: auto;
@@ -843,8 +884,11 @@
         }
     }
     &.right {
-        display: block;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
         label {
+            flex: 1;
             padding-left: 0;
             padding-right: 2.6rem;
             &:before {
