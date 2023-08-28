@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>좋아요한 음원 리스트 | 클럽메타</title>
+    <link rel="stylesheet" href="../../resources/css/common.min.css" />
+    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="header">
+            <div class="header-inner">
+                <div class="header-left">
+                    <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
+                </div>
+                <div class="header-center">
+                    <h1 class="header-title">좋아요 리스트</h1>
+                </div>
+                <div class="header-right">
+                    <a href="#none" class="btn-menu" role="button" title="메뉴"></a>
+                </div>
+            </div>
+        </header>
+        <div class="contents">
+
+            <div class="section">
+                <div class="inner">
+                    <div class="tab-wrap box full">
+                        <div class="tab-items">
+                            <ul>
+                                <li>
+                                    <a href="CLMT07_01002.html" role="button" class="tab-button" aria-label="tab1"
+                                        data-target="tab1">영상</a>
+                                </li>
+                                <li class="on">
+                                    <a href="#none" role="button" class="tab-button" aria-label="tab2"
+                                        data-target="tab2">음원</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <!-- <div id="tab11" class="tab-cont"></div> -->
+                            <div id="tab2" class="tab-cont open">
+                                <div class="select-box mb-24">
+                                    <div class="select-sort"></div>
+                                    <select title="옵션선택">
+                                        <option value="">최신순</option>
+                                        <option value="1">오래된 순</option>
+                                    </select>
+                                </div>
+                                <div class="list-box sound">
+                                    <!-- data 없을 시 noColl -->
+                                    <ul class="">
+                                        <li>
+                                            <div class="sound-area">
+                                                <button type="button" class="btn-play"><span
+                                                        class="blind">재생</span></button>
+                                                <div class="img">
+                                                    <img src="../../resources/images/img/img_artist_album_01.png"
+                                                        alt="음원 이미지" />
+                                                </div>
+                                            </div>
+                                            <a href="#none" role="button" title="음원 이동">
+                                                <div class="info">
+                                                    <strong>음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름</strong>
+                                                    <span>작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <div class="sound-area">
+                                                <button type="button" class="btn-play"><span
+                                                        class="blind">재생</span></button>
+                                                <div class="img">
+                                                    <img src="../../resources/images/img/img_artist_album_05.png"
+                                                        alt="음원 이미지" />
+                                                </div>
+                                            </div>
+                                            <a href="#none" role="button" title="음원 이동">
+                                                <div class="info">
+                                                    <strong>음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름</strong>
+                                                    <span>작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <div class="sound-area">
+                                                <button type="button" class="btn-play"><span
+                                                        class="blind">재생</span></button>
+                                                <div class="img">
+                                                    <img src="../../resources/images/img/img_artist_album_05.png"
+                                                        alt="음원 이미지" />
+                                                </div>
+                                            </div>
+                                            <a href="#none" role="button" title="음원 이동">
+                                                <div class="info">
+                                                    <strong>음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름</strong>
+                                                    <span>작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <div class="sound-area">
+                                                <button type="button" class="btn-play"><span
+                                                        class="blind">재생</span></button>
+                                                <div class="img">
+                                                    <img src="../../resources/images/img/img_artist_album_05.png"
+                                                        alt="음원 이미지" />
+                                                </div>
+                                            </div>
+                                            <a href="#none" role="button" title="음원 이동">
+                                                <div class="info">
+                                                    <strong>음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름</strong>
+                                                    <span>작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <div class="sound-area">
+                                                <button type="button" class="btn-play"><span
+                                                        class="blind">재생</span></button>
+                                                <div class="img">
+                                                    <img src="../../resources/images/img/img_artist_album_05.png"
+                                                        alt="음원 이미지" />
+                                                </div>
+                                            </div>
+                                            <a href="#none" role="button" title="음원 이동">
+                                                <div class="info">
+                                                    <strong>음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름</strong>
+                                                    <span>작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <div class="sound-area">
+                                                <button type="button" class="btn-play"><span
+                                                        class="blind">재생</span></button>
+                                                <div class="img">
+                                                    <img src="../../resources/images/img/img_artist_album_05.png"
+                                                        alt="음원 이미지" />
+                                                </div>
+                                            </div>
+                                            <a href="#none" role="button" title="음원 이동">
+                                                <div class="info">
+                                                    <strong>음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름</strong>
+                                                    <span>작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <div class="sound-area">
+                                                <button type="button" class="btn-play"><span
+                                                        class="blind">재생</span></button>
+                                                <div class="img">
+                                                    <img src="../../resources/images/img/img_artist_album_05.png"
+                                                        alt="음원 이미지" />
+                                                </div>
+                                            </div>
+                                            <a href="#none" role="button" title="음원 이동">
+                                                <div class="info">
+                                                    <strong>음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름</strong>
+                                                    <span>작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <div class="sound-area">
+                                                <button type="button" class="btn-play"><span
+                                                        class="blind">재생</span></button>
+                                                <div class="img">
+                                                    <img src="../../resources/images/img/img_artist_album_05.png"
+                                                        alt="음원 이미지" />
+                                                </div>
+                                            </div>
+                                            <a href="#none" role="button" title="음원 이동">
+                                                <div class="info">
+                                                    <strong>음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름</strong>
+                                                    <span>작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명작곡가 명</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="noData">
+                                            <p class="sub-title">아직 좋아요를 누른 음원이 없어요</p>
+                                            <span class="body-title">클립에서 더 많은 영상을 확인해 보세요!</span>
+                                            <a href="#none" class="btn btn-outline" role="button" title="클립으로 이동하기">클립으로
+                                                이동하기</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="quick_top">
+            <button type="button" class="btn-top">TOP</button>
+        </div>
+    </div>
+</body>
+
+</html>

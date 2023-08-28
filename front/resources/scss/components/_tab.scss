@@ -73,6 +73,16 @@
         }
     }
     &.box {
+        &.full {
+            .tab-items {
+                li {
+                    a,
+                    button {
+                        padding: 0;
+                    }
+                }
+            }
+        }
         .tab-items {
             height: 4rem;
             margin: 0;
@@ -241,6 +251,7 @@
     }
 }
 .tab-content {
+    margin-top: 2.4rem;
     .tab-cont {
         display: none;
         &.open {

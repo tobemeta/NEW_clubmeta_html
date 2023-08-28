@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>설정 홈 팝업 | 클럽메타</title>
+    <link rel="stylesheet" href="../../resources/css/common.min.css" />
+    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="header">
+            <div class="header-inner">
+                <div class="header-left">
+                    <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
+                </div>
+                <div class="header-center">
+                    <h1 class="header-title">설정</h1>
+                </div>
+                <div class="header-right">
+
+                </div>
+            </div>
+        </header>
+        <div class="contents">
+            <div class="section">
+                <div class="inner">
+                    <div class="more-box">
+                        <div class="title-box">
+                            <h2 class="sub-title">푸시 알림</h2>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="card view flex">
+                                    <span>전체 알림</span>
+                                    <div class="chk-box toggle">
+                                        <input type="checkbox" id="chk1_1" />
+                                        <label for="chk1_1">
+                                            <span class="text"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="more-box">
+                        <div class="title-box">
+                            <h2 class="sub-title">푸시알림 개별 설정</h2>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="card view flex">
+                                    <span>게시물 댓글 및 좋아요</span>
+                                    <div class="chk-box toggle">
+                                        <input type="checkbox" id="chk2_1" />
+                                        <label for="chk2_1"><span class="text"></span></label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="card view flex">
+                                    <span>팔로우 요청</span>
+                                    <div class="chk-box toggle">
+                                        <input type="checkbox" id="chk2_2" />
+                                        <label for="chk2_2"><span class="text"></span></label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="card view flex">
+                                    <span>리워드 지급</span>
+                                    <div class="chk-box toggle">
+                                        <input type="checkbox" id="chk2_3" />
+                                        <label for="chk2_3"><span class="text"></span></label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="card view flex">
+                                    <span>새로운 이벤트</span>
+                                    <div class="chk-box toggle">
+                                        <input type="checkbox" id="chk2_4" />
+                                        <label for="chk2_4"><span class="text"></span></label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="card view flex">
+                                    <span>챌린지 3위 내 입상</span>
+                                    <div class="chk-box toggle">
+                                        <input type="checkbox" id="chk2_5" />
+                                        <label for="chk2_5"><span class="text"></span></label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="card view flex">
+                                    <span>내가 오픈한 챌린지</span>
+                                    <div class="chk-box toggle">
+                                        <input type="checkbox" id="chk2_6" />
+                                        <label for="chk2_6"><span class="text"></span></label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="card view flex">
+                                    <span>팔로우한 작곡가의 음원 / 챌린지</span>
+                                    <div class="chk-box toggle">
+                                        <input type="checkbox" id="chk2_7" />
+                                        <label for="chk2_7"><span class="text"></span></label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="card view flex">
+                                    <span>관심 장르 챌린지 오픈</span>
+                                    <div class="chk-box toggle">
+                                        <input type="checkbox" id="chk2_8" />
+                                        <label for="chk2_8"><span class="text"></span></label>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+<article class="layerpopup-box bottom" id="logoutPop" role="dialog">
+    <div class="layer-popup">
+        <header class="layer-header">
+            <h1 class="pop-title"></h1>
+            <button type="button" class="btn-close btn-pop-close" onclick="ui.popup.close('#logoutPop')"
+                title="레이어팝업 닫기">닫기</button>
+        </header>
+
+        <div class="layer-content">
+            <div class="layer-inner">
+                <p class="text-center">로그아웃 하시겠어요?</p>
+            </div>
+        </div>
+        <div class="btn-bottom-box">
+
+            <button type="button" class="btn btn-outline btn-pop-close"
+                onclick="ui.popup.close('#logoutPop')">취소</button>
+            <a href="../HOM/CLMT03_00001.html" class="btn btn-disprimary">로그아웃</a>
+        </div>
+        <!-- //layer-content -->
+    </div>
+</article>
+
+</html>

@@ -32,7 +32,7 @@
                 </div>
             </header>
 
-            <div class="layer-content">
+            <div class="layer-content pb-88">
                 <div class="layer-inner">
                     <div class="sign-up-box">
                         <div class="profile-box">
@@ -64,8 +64,8 @@
                                             <button type="button" class="btn-delete">전체삭제</button>
                                         </dt>
                                         <dd>
-                                            <div class="text-box">
-                                                <textarea name="" id="" cols="10" rows="10" class="textarea"
+                                            <div class="text-box byte">
+                                                <textarea name="" id="" cols="3" rows="3" class="textarea"
                                                     placeholder="소개글을 입력하세요"></textarea>
                                                 <p class="byte"><span>0 </span>/ 200</p>
                                             </div>
@@ -91,9 +91,15 @@
 <script>
     $('.btn-delete').on('click', function () {
         $('.textarea').val('');
+        $('.byte span').text('0');
     });
 
     $('.textarea').on('input', function () {
+        // $(this).css('height', 'auto');
+        // $(this).height(this.scrollHeight);
+
+        this.style.height = "auto"; // 높이 초기화
+        this.style.height = (this.scrollHeight) + "px"; // 실제 높이 설정
 
         const textLength = $(this).val().length;
         const maxText = 200;
@@ -106,7 +112,7 @@
             $('.byte span').text(maxText)
             alert('200글자 수 제한입니다.')
         }
-    })
+    });
 </script>
 
 </html>
