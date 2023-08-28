@@ -255,6 +255,14 @@
             }
         }
     }
+    &.byte {
+        .textarea {
+            height: auto;
+            min-height: 11rem;
+            overflow-y: hidden;
+            padding-bottom: 2.4rem;
+        }
+    }
     .byte {
         display: block;
         position: absolute;
@@ -573,6 +581,18 @@
                 border-radius: 0.4rem;
                 box-sizing: $sizing;
             }
+            .text {
+                &:after {
+                    display: block;
+                    content: '미수신';
+                    position: absolute;
+                    top: 0.5rem;
+                    left: -3.4rem;
+                    font-size: 1rem;
+                    line-height: 1.4rem;
+                    color: #9f9f9f;
+                }
+            }
         }
         input {
             &:checked + label {
@@ -583,6 +603,14 @@
                     background: $main-color;
                     left: auto;
                     transform: translate(50%, -50%);
+                }
+
+                .text {
+                    &:after {
+                        content: '수신';
+                        left: -2.6rem;
+                        color: $main-color;
+                    }
                 }
             }
         }
