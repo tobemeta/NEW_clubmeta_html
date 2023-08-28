@@ -25,50 +25,7 @@ h1 {
         justify-content: space-between;
     }
 }
-.title {
-    // 제목1
-    font-size: $fs-24;
-    line-height: 2.9rem;
-}
-.sub-title {
-    // 제목2
-    font-size: $fs-20;
-    line-height: 2.4rem;
-}
-.body-title {
-    // 본문1
-    font-size: $fs-16;
-    line-height: 2.3rem;
-}
-.body-sub-title {
-    // 본문2
-    font-size: $fs-14;
-    line-height: 2rem;
-}
-.text-l {
-    // 텍스트1
-    font-size: $fs-12;
-    line-height: 1.7rem;
-}
-.text-m {
-    // 텍스트2
-    font-size: $fs-10;
-    line-height: 1.4rem;
-}
-.text-s {
-    // 텍스트3
-    font-size: $fs-8;
-    line-height: 1.2rem;
-}
-.text-left {
-    text-align: left;
-}
-.text-center {
-    text-align: center;
-}
-.text-right {
-    text-align: right;
-}
+
 .card {
     padding: 1.6rem;
     background: #fff;
@@ -667,7 +624,7 @@ h1 {
             }
         }
     }
-    &.noti {
+    &.alarm {
         margin-top: 1.6rem;
         li {
             padding: 0;
@@ -677,7 +634,7 @@ h1 {
             align-items: center;
             gap: 0.8rem;
         }
-        .noti-img {
+        .alarm-img {
             min-width: 4.8rem;
             height: 4.8rem;
             border-radius: 50%;
@@ -686,7 +643,7 @@ h1 {
             border: 2px solid #e7e7e7;
             overflow: hidden;
         }
-        .noti-text {
+        .alarm-text {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -701,7 +658,7 @@ h1 {
                 color: #707070;
             }
         }
-        .noti-freeview {
+        .alarm-freeview {
             min-width: 4.8rem;
             height: 6.4rem;
             border-radius: 1.6rem;
@@ -711,6 +668,48 @@ h1 {
         .img {
             width: 100%;
             height: 100%;
+        }
+    }
+    &.notice {
+        li {
+            &.new {
+                a {
+                    position: relative;
+                    padding-right: 4rem;
+                    &:after {
+                        display: block;
+                        content: '';
+                        position: absolute;
+                        top: 1.6rem;
+                        right: 1.6rem;
+                        width: 2rem;
+                        height: 2rem;
+                        margin-left: 0.2rem;
+                        border-radius: 50%;
+                        @include bg($src: '../images/ico/ico_o_new.svg');
+                        box-shadow: $shadow;
+                    }
+                }
+            }
+        }
+        a {
+            padding: 1.6rem;
+        }
+    }
+    &.faq {
+        a {
+            position: relative;
+            padding: 1.6rem 1.6rem 1.6rem 4rem;
+            &:before {
+                display: block;
+                content: 'Q.';
+                position: absolute;
+                top: 1.6rem;
+                left: 1.6rem;
+                font-weight: $bold;
+                line-height: 2.3rem;
+                color: $main-color;
+            }
         }
     }
 }
@@ -752,11 +751,11 @@ h1 {
 }
 
 .more-box {
+    & + .more-box {
+        margin-top: 4rem;
+    }
     .title-box {
         margin-bottom: 1.6rem;
-        & ~ .title-box {
-            margin-top: 4rem;
-        }
     }
     ul {
         display: flex;
@@ -832,6 +831,77 @@ h1 {
                 &:before {
                     background: url('../images/ico/ico_redlight.svg') no-repeat 0 0;
                 }
+            }
+            &.alarm {
+                &:before {
+                    background: url('../images/ico/ico_alarm.svg') no-repeat 0 0;
+                }
+            }
+            &.user {
+                &:before {
+                    background: url('../images/ico/ico_b_user.svg') no-repeat 0 0;
+                }
+            }
+            &.bookmark {
+                &:before {
+                    background: url('../images/ico/ico_bookmark.svg') no-repeat 0 0;
+                }
+            }
+            &.privacy {
+                &:before {
+                    background: url('../images/ico/ico_privacy.svg') no-repeat 0 0;
+                }
+            }
+            &.like {
+                &:before {
+                    background: url('../images/ico/ico_like.svg') no-repeat 0 0;
+                }
+            }
+            &.badge {
+                &:before {
+                    background: url('../images/ico/ico_badge.svg') no-repeat 0 0;
+                }
+            }
+            &.wallet {
+                &:before {
+                    background: url('../images/ico/ico_wallet.svg') no-repeat 0 0;
+                }
+            }
+            &.notice {
+                &:before {
+                    background: url('../images/ico/ico_wallet.svg') no-repeat 0 0;
+                }
+            }
+            &.event {
+                &:before {
+                    background: url('../images/ico/ico_wallet.svg') no-repeat 0 0;
+                }
+            }
+            &.qm {
+                &:before {
+                    background: url('../images/ico/ico_wallet.svg') no-repeat 0 0;
+                }
+            }
+            &.app {
+                &:before {
+                    background: url('../images/ico/ico_wallet.svg') no-repeat 0 0;
+                }
+            }
+        }
+    }
+    &.link {
+        .card {
+            position: relative;
+            &:after {
+                display: block;
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: 1.6rem;
+                width: 1.6rem;
+                height: 1.6rem;
+                background: url('../images/ico/ico_s_right.svg') no-repeat 0 0;
+                transform: translateY(-50%);
             }
         }
     }

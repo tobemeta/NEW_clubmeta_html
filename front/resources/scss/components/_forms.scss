@@ -7,12 +7,24 @@
     & + .form-box {
         margin-top: 2rem;
     }
+    dt {
+        &.between {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
     label {
         display: block;
         margin-bottom: 0.4rem;
         padding-left: 1.2rem;
         font-size: 1.6rem;
         line-height: 2.3rem;
+        & + .btn-delete {
+            margin-bottom: 0.4rem;
+            font-size: 1rem;
+            line-height: 1.4rem;
+            color: $main-color;
+        }
     }
     .req {
         position: relative;
@@ -76,6 +88,13 @@
             & + .btn-inp-del {
                 display: none;
             }
+        }
+    }
+    &.success {
+        flex-direction: column;
+        .validate-txt {
+            color: #404040;
+            display: block;
         }
     }
     &.error {

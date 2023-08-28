@@ -112,8 +112,6 @@ const ui = {
                 $tab = $(this).parent();
             const _this = $(this);
 
-            console.log(data);
-
             if ($tab.hasClass('on')) return false;
 
             _this.parent().addClass('on').siblings().removeClass('on');
@@ -126,11 +124,8 @@ const ui = {
             const tabWrap = _this.closest('.tab-wrap');
 
             if (tabWrap.hasClass('line')) {
-                console.log(_this);
             } else if (tabWrap.hasClass('box')) {
-                console.log(33);
             } else {
-                console.log(11);
             }
 
             let itemsWidth = $(this).outerWidth(true);
