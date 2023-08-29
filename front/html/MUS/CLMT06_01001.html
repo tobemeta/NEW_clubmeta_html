@@ -22,7 +22,15 @@
                     <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
                 </div>
                 <div class="header-center">
-                    <h1 class="header-title">인기음원</h1>
+                    <div class="flex-center">
+                        <h1 class="header-title">인기음원</h1>
+                        <div class="tooltip-box orange">
+                            <button type="button" class="tooltip-btn" role="button"><i class="i-ico-tooltip"
+                                    aria-hidden="true">아이콘</i></button>
+                            <div class="tooltip-body" role="tooltip">
+                                이번달 영상에 가장 많이 쓰인 음원의 순위20위<br>*순위는 매일 자정에 바뀌어요!</div>
+                        </div>
+                    </div>
                 </div>
                 <div class="header-right"></div>
             </div>
@@ -267,5 +275,10 @@
         </div>
     </div>
 </body>
+<script>
+    $('.tooltip-btn').on('click', function () {
+        $('.tooltip-body').show();
+    });
+</script>
 
 </html>

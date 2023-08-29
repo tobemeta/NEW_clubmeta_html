@@ -89,7 +89,11 @@
             }
         }
     }
-
+    .flex-center {
+        .header-title {
+            width: auto;
+        }
+    }
     .header-title {
         display: inline-block;
         width: 100%;

@@ -131,6 +131,7 @@ const ui = {
             let itemsWidth = $(this).outerWidth(true);
         });
     },
+    // tooltip: () => {},
     tooltip: {
         className: {
             wrap: '.tooltip-box',
@@ -148,20 +149,32 @@ const ui = {
                 const $wrap = $btn.closest(ui.tooltip.className.wrap);
                 const $cont = $wrap.find(ui.tooltip.className.body);
                 const $winW = $(window).width() - 40;
+                const $bodyW = $(ui.tooltip.className.body).width();
                 const $btnW = $btn.outerWidth();
+                // 추가
                 const $btnX = Math.min($winW + $btnW / 2 - 2, $btn.offset().left) - 20;
                 let $scrollEnd = $(window).height() + $(window).scrollTop();
 
-                if ($(ui.className.bottomFixed + ':visible').length) $scrollEnd = $scrollEnd - $(ui.className.bottomFixed).children().outerHeight();
+                // if ($(ui.className.bottomFixed + ':visible').length) $scrollEnd = $scrollEnd - $(ui.className.bottomFixed).children().outerHeight();
 
                 const $left = Math.max(-4, $btnX);
-                $cont.children(ui.tooltip.className.arrow).css({
-                    left: $left + $btnW / 2
-                });
-                $cont.css({
-                    width: $winW,
-                    left: -$left
-                });
+
+                if ($(this).parent('.tooltip-box').siblings('.header-title').length == 1) {
+                    $cont.children(ui.tooltip.className.arrow).css({
+                        left: 144.5
+                    });
+                    $cont.css({
+                        left: -140
+                    });
+                } else {
+                    $cont.children(ui.tooltip.className.arrow).css({
+                        left: $left + $btnW / 2 - 7
+                    });
+                    $cont.css({
+                        width: $bodyW,
+                        left: -$left
+                    });
+                }
 
                 const $contY = $wrap.offset().top + $wrap.outerHeight() + parseInt($cont.css('margin-top')) + parseInt($cont.css('margin-bottom')) + $cont.outerHeight();
                 if ($cont.hasClass('is-bottom')) {
@@ -180,7 +193,7 @@ const ui = {
 
             if (!$tar.find(ui.tooltip.className.inner).length) $tar.wrapInner('<div class="' + ui.tooltip.className.inner.slice(1) + '"></div>');
             if (!$tar.find(ui.tooltip.className.arrow).length) $tar.prepend('<i class="' + ui.tooltip.className.arrow.slice(1) + '" aria-hidden="true"></i>');
-            if (!$tar.find(ui.tooltip.className.closeBtn).length) $tar.find(ui.tooltip.className.inner).append('<a href="#" class="' + ui.tooltip.className.closeBtn.slice(1) + '" role="button" aria-label="툴팁닫기"></a>');
+            // if (!$tar.find(ui.tooltip.className.closeBtn).length) $tar.find(ui.tooltip.className.inner).append('<a href="#" class="' + ui.tooltip.className.closeBtn.slice(1) + '" role="button" aria-label="툴팁닫기"></a>');
             ui.tooltip.resize();
         },
         aria: function (element) {
@@ -211,7 +224,6 @@ const ui = {
             //열기
             $(document).on('click', ui.tooltip.className.wrap + ' ' + ui.tooltip.className.btn, function (e) {
                 e.preventDefault();
-
                 $cont = $(this).closest(ui.tooltip.className.wrap).find(ui.tooltip.className.body);
                 if ($(this).hasClass('is-pop')) {
                     const $popContent = $cont.html();
@@ -514,10 +526,6 @@ const ui = {
                     $btn.removeClass(ui.select.className.btnActive.slice(1)).focus();
                     $('body').removeClass('lock-body');
                 }
-            });
-
-            $(document).on('change', '.rdo-sel', function () {
-                console.log(23232323232);
             });
 
             //out click
