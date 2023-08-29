@@ -618,3 +618,41 @@
         object-fit: fill;
     }
 }
+
+.updating-box {
+    width: 100%;
+    .center {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .app-logo {
+            width: 12.4rem;
+            height: 12.4rem;
+            margin-bottom: 1.6rem;
+            background-color: $main-color;
+            border-radius: 2.4rem;
+            @include bg($src: '../images/ico/ico_clubmeta.svg');
+            background-size: 8rem 7.6rem;
+            box-shadow: $shadow;
+        }
+        .text-l {
+            margin-top: 0.4rem;
+            color: $disabled-color;
+        }
+    }
+    .bottom {
+        position: absolute;
+        left: 0;
+        bottom: 9.6rem;
+        width: 100%;
+        text-align: center;
+        color: $disabled-color;
+    }
+}
