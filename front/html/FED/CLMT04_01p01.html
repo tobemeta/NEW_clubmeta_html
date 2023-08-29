@@ -35,7 +35,7 @@
             <div class="layer-content">
                 <div class="layer-inner">
                     <!-- 댓글 없는 경우 no-reply class 추가 -->
-                    <div class="comment-box no-reply">
+                    <div class="comment-box">
                         <div class="select-box comment-select">
                             <div class="select-sort"></div>
                             <select title="옵션선택">
@@ -203,6 +203,11 @@
         </article>
     </div>
 </body>
+<script>
+    $('.layer-content').on('scroll', function () {
+        console.log(23);
+    });
+</script>
 
 </html>
 

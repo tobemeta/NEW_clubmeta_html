@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>탈퇴 사유 리스트 선택 팝업 | 클럽메타</title>
+    <link rel="stylesheet" href="../../resources/css/common.min.css" />
+    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="header">
+            <div class="header-inner">
+                <div class="header-left">
+                    <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
+                </div>
+                <div class="header-center">
+                    <h1 class="header-title">회원탈퇴</h1>
+                </div>
+                <div class="header-right"></div>
+            </div>
+        </header>
+        <div class="contents pb-96">
+
+            <div class="section">
+                <div class="inner">
+                    <p class="body-sub-title mt-24">의견을 반영해 더 나은 서비스를 만들 수 있도록 하겠습니다.
+                        회원을 탈퇴하시려는 이유를 선택해 주세요.</p>
+                    <div class="rdo-list solo mt-24">
+                        <ul>
+                            <li>
+                                <div class="rdo-box right">
+                                    <input type="radio" id="rdo1_1" name="rdo">
+                                    <label for="rdo1_1">사용하기 어려움</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box right">
+                                    <input type="radio" id="rdo1_2" name="rdo">
+                                    <label for="rdo1_2">원하는 서비스 없음</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box right">
+                                    <input type="radio" id="rdo1_3" name="rdo">
+                                    <label for="rdo1_3">오류가 있음</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box right">
+                                    <input type="radio" id="rdo1_4" name="rdo">
+                                    <label for="rdo1_4">오류가 있음</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box right">
+                                    <input type="radio" id="rdo1_5" name="rdo">
+                                    <label for="rdo1_5">오류가 있음</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-bottom-box">
+                        <button type="button" class="btn btn-primary" disabled="disabled">다음</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+<script>
+    $('.rdo-list input').on('click', function () {
+        $('.btn-bottom-box button').attr('disabled', false);
+    })
+</script>
+
+</html>

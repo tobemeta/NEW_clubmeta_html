@@ -317,3 +317,54 @@
         }
     }
 }
+.badge-area {
+    margin-top: 1.6rem;
+    .badge-rep {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2.4rem;
+        padding: 2.4rem;
+        background: #fff;
+        border: 1px solid #ff880a;
+        border-radius: 3.2rem;
+        box-sizing: $sizing;
+        box-shadow: $shadow;
+        .img {
+            width: 12rem;
+            height: 12rem;
+            overflow: hidden;
+            margin-bottom: 1.6rem;
+        }
+        .body-title {
+            display: block;
+            margin-bottom: 0.4rem;
+        }
+    }
+    .badge-box {
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.4rem 0.8rem;
+            font-size: 0;
+        }
+        li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: calc((100% - 16px) / 3);
+            font-size: 1.4rem;
+            box-sizing: $sizing;
+        }
+        button {
+            display: block;
+        }
+        .img {
+            width: 7.2rem;
+            height: 7.2rem;
+            overflow: hidden;
+            margin: 1.6rem;
+        }
+    }
+}
