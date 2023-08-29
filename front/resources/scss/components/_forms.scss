@@ -713,7 +713,6 @@
 .rdo-list {
     ul {
         display: flex;
-        flex-direction: column;
         &.auto {
             li {
                 flex: auto;
