@@ -41,12 +41,12 @@
                     <div class="agreement-box">
                         <ul class="agree-chk-grp">
                             <!-- 2023-07-28 삭제 -->
-                            <!-- <li class="chk-all">
-                                    <div class="chk-box">
-                                        <input type="checkbox" id="chk1_all" name="chk_all" />
-                                        <label for="chk1_all">전체 약관에 동의합니다.</label>
-                                    </div>
-                                </li> -->
+                            <li class="chk-all">
+                                <div class="chk-box">
+                                    <input type="checkbox" id="chk1_all" name="chk_all" />
+                                    <label for="chk1_all">전체 약관에 동의합니다.</label>
+                                </div>
+                            </li>
                             <li>
                                 <div class="chk-box">
                                     <input type="checkbox" id="chk1_2" name="chk" />
@@ -95,7 +95,8 @@
                             <li>
                                 <div class="chk-box">
                                     <!-- 2023-07-28 name 변경 -->
-                                    <input type="checkbox" id="chk1_9" name="chk_c" />
+                                    <!-- 2023-08-30 class 추가 -->
+                                    <input type="checkbox" id="chk1_9" class="chk-select" name="chk" />
                                     <label for="chk1_9">[선택] 마케팅 활용 수신 동의</label>
                                 </div>
                                 <a href="#none" class="btn-right" role="button" aria-label="약관 상세보기"></a>
@@ -112,7 +113,7 @@
                     </div>
                     <div class="btn-bottom-box">
                         <!-- 2023-07-28 -->
-                        <button type="button" class="btn-primary" title="전체 동의하고 인증하기" disabled>전체 동의하고 인증하기</button>
+                        <button type="button" class="btn-primary" title="전체 동의하고 인증하기" disabled>PASS 본인인증하기</button>
                     </div>
                 </div>
             </div>
@@ -120,19 +121,30 @@
     </div>
 </body>
 <!-- 2023-07-28 추가 -->
+<!-- 2023-08-30 수정 -->
 <script>
     var $inpchk = $('.agree-chk-grp input[name="chk"]');
+    var $inpchkAll = $('.agree-chk-grp input[name="chk_all"]');
     var $btnPrimary = $('.btn-primary');
+    var checkedCount = $inpchk.filter(':checked').length;
 
     $inpchk.on('change', function () {
-        var checkedCount = $inpchk.filter(':checked').length;
-
         $btnPrimary.prop('disabled', checkedCount < 3);
+
+        if ($inpchk.not($('.chk-select')).filter(':checked').length >= 3) {
+            $btnPrimary.prop('disabled', false);
+        } else {
+            $btnPrimary.prop('disabled', true);
+        }
     });
 
-    $btnPrimary.on('click', function () {
-
-    })
+    $inpchkAll.on('change', function () {
+        if ($(this).is(":checked")) {
+            $btnPrimary.prop('disabled', false);
+        } else {
+            $btnPrimary.prop('disabled', true);
+        }
+    });
 </script>
 
 </html>
