@@ -58,7 +58,7 @@
     font-weight: $bold;
 }
 .btn-flat {
-    @include btn($bg: #fff8f2);
+    @include btn($bg: #fff8f2, $color: $main-color);
     border: none;
 }
 .btn-ghost {
@@ -145,4 +145,10 @@
             background: url('../images/ico/ico_w_plus.svg') no-repeat center;
         }
     }
+}
+.btn-coment {
+    display: block;
+    width: 2.4rem;
+    height: 2.4rem;
+    @include bg($src: '../images/ico/ico_coment.svg');
 }

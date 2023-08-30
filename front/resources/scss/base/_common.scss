@@ -465,13 +465,15 @@ h1 {
     }
 
     a {
-        padding: 0.8rem 1.6rem 0.8rem 0.8rem;
-        box-shadow: $shadow;
-        border-radius: 2.4rem;
-        background: #fff;
-        display: flex;
-        overflow: hidden;
-        flex: 1;
+        &:not(.btn-coment) {
+            padding: 0.8rem 1.6rem 0.8rem 0.8rem;
+            box-shadow: $shadow;
+            border-radius: 2.4rem;
+            background: #fff;
+            display: flex;
+            overflow: hidden;
+            flex: 1;
+        }
     }
     .img {
         flex: 0 0 auto;
@@ -515,10 +517,15 @@ h1 {
             }
         }
         a {
-            display: block;
-            padding: 0;
-            box-shadow: none;
-            background: none;
+            &:not(.btn-coment) {
+                display: block;
+                padding: 0;
+                box-shadow: none;
+                background: none;
+            }
+            &.btn-coment {
+                margin-right: 0.4rem;
+            }
         }
         .img {
             min-width: 5.6rem;
