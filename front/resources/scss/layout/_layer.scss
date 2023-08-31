@@ -29,6 +29,8 @@
     }
 
     &.full {
+        height: 100vh;
+        box-sizing: $sizing;
         .layer-popup {
             padding: 0;
             max-width: 100%;
@@ -138,7 +140,12 @@
         }
     }
 }
-
+// statusBar 관련
+.status-relative {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
 .layer-popup {
     display: flex;
     flex-direction: column;

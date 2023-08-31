@@ -101,28 +101,3 @@ body.login {
         }
     }
 }
-
-.no-internet-area {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 43.4rem;
-
-    .sub-title {
-        display: block;
-        margin-bottom: 0.4rem;
-    }
-    &:before {
-        display: block;
-        content: '';
-        position: absolute;
-        top: 17.2rem;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 25.8rem;
-        height: 25.8rem;
-        @include bg($src: '../images/bg/bg_no_internet.svg');
-    }
-}

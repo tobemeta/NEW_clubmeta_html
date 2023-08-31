@@ -16,12 +16,19 @@ const ui = {
         let scrolling;
         const $header = $('.header');
         const headerHeight = $header.height();
-        // 2023-08-11 개발 수정
-        const statusBarHeight = window.statusBarHeight || 0;
+        // 2023-08-31 개발 수정
+        const statusBarHeight = location.pathname.includes('v2/page/login') ? 0 : window.statusBarHeight || 0;
 
-        // 2023-08-11 개발 수정
+        // 2023-08-31 개발 수정
         $(document).ready(function () {
             $header.css('padding-top', statusBarHeight + 'px');
+
+            if ($('.layerpopup-box.full.is-active').length) {
+                $('body').css('background-color', '#fff');
+                $('.layerpopup-box.full').css('padding-top', statusBarHeight + 'px');
+                $('.layerpopup-box.full').css('box-sizing', 'border-box');
+                $('.layer-popup').wrap('<div class="status-relative"></div>');
+            }
         });
 
         $(window).on('scroll', (e) => {
