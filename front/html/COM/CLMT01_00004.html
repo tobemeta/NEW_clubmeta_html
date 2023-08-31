@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>로딩실패(탭) | 클럽메타</title>
+    <link rel="stylesheet" href="../../resources/css/common.min.css" />
+    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="header">
+            <div class="header-inner search">
+                <!-- 검색 시 search class 추가 -->
+                <div class="header-left">
+                    <a href="javascript:history.back();" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
+                </div>
+                <div class="header-center">
+                    <div class="input-box small">
+                        <input type="text" placeholder="전화번호 또는 이메일" title="내용입력" value="그린" />
+                        <button type="button" class="btn-inp-del" aria-label="입력내용삭제"><span
+                                class="blind">삭제</span></button>
+                    </div>
+                </div>
+                <div class="header-right"></div>
+            </div>
+            <div class="tab-wrap search-tab">
+                <div class="tab-items">
+                    <ul>
+                        <li class="on"><a href="../COM/CLMT01_02002.html" class="tab-button" role="button" title="인기"
+                                data-name="all">인기</a></li>
+                        <li><a href="../COM/CLMT01_02003.html" class="tab-button" role="button" title="챌린지"
+                                data-name="tab1">챌린지</a></li>
+                        <li><a href="../COM/CLMT01_02005.html" class="tab-button" role="button" title="음원"
+                                data-name="tab2">음원</a></li>
+                        <li><a href="../COM/CLMT01_02004.html" class="tab-button" role="button" title="유저"
+                                data-name="tab3">유저</a></li>
+                        <li><a href="../COM/CLMT01_02006.html" class="tab-button" role="button" title="태그"
+                                data-name="tab4">태그</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <div class="contents">
+            <div class="no-internet-area">
+                <p class="body-title">로딩에 실패했습니다.<br />다시 시도해 주세요.</p>
+            </div>
+        </div>
+
+        <div class="btn-bottom-box">
+            <a href="#none" class="btn btn-primary" role="button" title="인터넷 다시연결">다시연결</a>
+        </div>
+    </div>
+</body>
+<div data-include="./back/CLMT01_01p01.html"></div>
+
+</html>
