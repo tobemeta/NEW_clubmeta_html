@@ -45,6 +45,9 @@
 .btn-default {
     @include btn();
 }
+.btn-default {
+    color: $main-color;
+}
 .btn-primary {
     @include btn($bg: $main-color, $border: $main-color, $color: #fff);
 }
