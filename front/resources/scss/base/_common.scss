@@ -414,19 +414,21 @@ h1 {
         }
         &.composer {
             .info {
+                flex-direction: row;
+                justify-content: flex-start;
                 strong {
                     display: inline-block;
                     position: relative;
-                    padding-right: 3rem;
+                    padding-right: 5.5rem;
                     &:after {
                         display: block;
                         content: '';
                         position: absolute;
                         top: 50%;
                         right: 0;
-                        width: 2.4rem;
-                        height: 2.4rem;
-                        background: url('../images/ico/ico_composer.svg');
+                        width: 4.6rem;
+                        height: 1.7rem;
+                        background: url('../images/ico/ico_note.svg') no-repeat center;
                         transform: translateY(-50%);
                     }
                 }
@@ -725,6 +727,18 @@ h1 {
         margin-top: 1.6rem;
         li {
             padding: 0;
+            &.caution {
+                .alarm-img {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: none;
+                    .img {
+                        width: 3rem;
+                        height: 3rem;
+                    }
+                }
+            }
         }
         a {
             padding: 0.8rem;
@@ -747,6 +761,7 @@ h1 {
             flex: 1 1 auto;
             gap: 0.4rem;
             .text {
+                margin-right: 0.8rem;
                 line-height: 2.3rem;
             }
             .time-text {

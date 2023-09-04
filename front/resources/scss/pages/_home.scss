@@ -386,18 +386,18 @@
     }
     ol {
         counter-reset: rank 0;
-    }
-    li {
-        padding: 0.8rem 1.6rem;
-        width: calc(100% - 2.8rem);
-        &:before {
-            display: inline-block;
-            content: counter(rank);
-            counter-increment: rank 1;
-            width: 2rem;
-            height: 2rem;
-            margin-right: 0.8rem;
-            text-align: center;
+        li {
+            padding: 0.8rem 1.6rem;
+            width: calc(100% - 2.8rem);
+            &:before {
+                display: inline-block;
+                content: counter(rank);
+                counter-increment: rank 1;
+                width: 2rem;
+                height: 2rem;
+                margin-right: 0.8rem;
+                text-align: center;
+            }
         }
     }
 }
