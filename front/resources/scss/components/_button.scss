@@ -65,7 +65,7 @@
     border: none;
 }
 .btn-ghost {
-    @include btn($bg: none);
+    @include btn($bg: none, $color: $main-color);
 }
 
 .btn-back {
@@ -146,6 +146,25 @@
             height: 1.6rem;
             transform: translateY(-50%);
             background: url('../images/ico/ico_w_plus.svg') no-repeat center;
+        }
+    }
+}
+.btn-download {
+    span {
+        display: inline-block;
+        position: relative;
+        padding-left: 3.2rem;
+        box-sizing: border-box;
+        &:before {
+            display: block;
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 2.4rem;
+            height: 2.4rem;
+            transform: translateY(-50%);
+            background: url('../images/ico/ico_w_download.svg') no-repeat center;
         }
     }
 }

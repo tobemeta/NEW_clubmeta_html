@@ -1,8 +1,50 @@
+// 작곡가 안내화면
+.composer-info-area {
+    margin-top: 2.4rem;
+    text-align: center;
+    h2.sub-title {
+        & ~ h2.sub-title {
+            margin-bottom: 0.8rem;
+        }
+    }
+
+    span.body-title {
+        display: block;
+        margin-bottom: 0.4rem;
+        color: #404040;
+    }
+
+    p.text-l {
+        color: #282828;
+    }
+
+    .btn-box {
+        margin-bottom: 4rem;
+    }
+
+    .img {
+        width: 14rem;
+        height: 10.2rem;
+        margin: 0 auto;
+    }
+
+    .btn-link {
+        display: block;
+        margin-top: 1.6rem;
+        background: #ffe0ce;
+        border-radius: 0.8rem;
+        font-size: 1.4rem;
+        line-height: 3.2rem;
+        color: $main-dark-color;
+    }
+}
+
 .challPop-slider {
     .chall-swiper {
         .swiper-slide {
             width: 260px;
             opacity: 1;
+
             .img {
                 &:after {
                     display: block;
@@ -16,6 +58,7 @@
                 }
             }
         }
+
         .swiper-slide-active {
             .img {
                 &:after {
@@ -23,17 +66,21 @@
                 }
             }
         }
+
         .card {
             display: flex;
             flex-direction: column;
             height: 40.8rem;
             margin: 1.2rem 0 2.4rem 0;
+
             &.vinyl {
                 padding-top: 9rem;
+
                 .img {
                     height: 22.8rem;
                     z-index: 2;
                 }
+
                 &:after {
                     display: block;
                     content: '';
@@ -46,6 +93,7 @@
                     transform: translateX(-50%);
                 }
             }
+
             .img {
                 height: 30.4rem;
                 overflow: hidden;
@@ -90,9 +138,11 @@ a.btn-composer {
     &.advert {
         position: relative;
         height: 24.44vw;
+
         a {
             display: block;
         }
+
         .text {
             position: absolute;
             top: 50%;
@@ -104,6 +154,7 @@ a.btn-composer {
         }
     }
 }
+
 .banner-swiper {
     overflow: hidden;
 }
@@ -114,23 +165,27 @@ a.btn-composer {
             gap: 1rem;
         }
     }
+
     a {
         display: flex;
         flex-direction: column;
         gap: 0.8rem;
         width: 8.8rem;
+
         .img {
             overflow: hidden;
             width: 100%;
             height: 8.8rem;
             border-radius: 50%;
         }
+
         p {
             line-height: 2.3rem;
             @include ellipsis();
         }
     }
 }
+
 .category-area.genre {
     a {
         display: block;
@@ -138,9 +193,11 @@ a.btn-composer {
         border-radius: 2.4rem;
         overflow: hidden;
         width: 14.2rem;
+
         .img {
             width: 100%;
             height: 8.6rem;
+
             &:before {
                 display: block;
                 content: '';
@@ -153,6 +210,7 @@ a.btn-composer {
                 z-index: 2;
             }
         }
+
         p {
             position: absolute;
             top: 50%;
@@ -165,6 +223,7 @@ a.btn-composer {
         }
     }
 }
+
 .comp-info-area {
     .img {
         width: 10.4rem;
@@ -173,6 +232,7 @@ a.btn-composer {
         border-radius: 10.4rem;
         overflow: hidden;
     }
+
     .info {
         a {
             display: block;
@@ -180,53 +240,66 @@ a.btn-composer {
             text-align: center;
             line-height: 2.3rem;
         }
+
         .info {
             margin-top: 1.6rem;
         }
+
         .text {
             margin-top: 0.8rem;
             font-size: 1.2rem;
             line-height: 1.7rem;
         }
+
         & + .btn-box {
             margin-top: 1.6rem;
         }
     }
+
     .btn-box {
         .btn {
             height: 3.2rem;
         }
     }
 }
+
 .music-info-area {
     .info {
         display: flex;
         gap: 1.6rem;
+
         .info-right {
             display: flex;
             flex-direction: column;
             flex: 1;
         }
+
         .cont {
             display: flex;
             margin-bottom: 0.8rem;
+
             .cont-left {
                 flex: 1;
                 font-size: 0;
             }
+
             .chk-box {
                 width: 2.4rem;
             }
+
             .sub-title {
                 max-height: 4.8rem;
                 margin-bottom: 0.2rem;
                 overflow: hidden;
             }
+
             .text-l {
                 display: block;
                 color: #585858;
+
                 span {
                     display: block;
+
                     &:after {
                         display: inline-block;
                         content: '';
@@ -238,6 +311,7 @@ a.btn-composer {
                     }
                 }
             }
+
             .text-m {
                 display: block;
                 text-align: center;
@@ -245,24 +319,29 @@ a.btn-composer {
             }
         }
     }
+
     .img {
         overflow: hidden;
         width: 10.2rem;
         height: 10.2rem;
         border-radius: 2.4rem;
     }
+
     .btn-box {
         margin: 2.4rem 0;
     }
+
     .playbar-area {
         margin-bottom: 2.4rem;
     }
+
     .genre-list {
         ul {
             display: flex;
             flex-wrap: wrap;
             gap: 0.8rem;
         }
+
         li {
             padding: 0.2rem 0.8rem;
             border-radius: 8px;
@@ -273,29 +352,35 @@ a.btn-composer {
         }
     }
 }
+
 .no-clip {
     width: 21.2rem;
     height: 21.2rem;
     margin: 1.6rem auto 0;
     @include bg($src: '../images/img/img_no_clip.png');
     background-size: cover;
+
     p {
         padding-top: 100%;
         font-size: 2rem;
         text-align: center;
         line-height: 2.3rem;
+
         & + p {
             padding-top: 0;
             font-size: 1.6rem;
         }
     }
 }
+
 .talk-wrap {
     .comment-list {
         padding-top: 2.4rem;
     }
+
     .no-comment {
         margin-top: 0.8rem;
+
         .img {
             margin-bottom: 0.4rem;
         }

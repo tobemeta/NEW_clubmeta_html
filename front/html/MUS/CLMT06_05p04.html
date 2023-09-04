@@ -13,19 +13,20 @@
     <script src="../../resources/js/lib/jquery-ui.min.js"></script>
     <script src="../../resources/js/common.js"></script>
     <style>
+        /* 스크롤 애니메이션 css */
         .inline-photo {
-            border: 1em solid #fff;
-            border-bottom: 4em solid #fff;
-            border-radius: .25em;
-            box-shadow: 1em 1em 2em .25em rgba(0, 0, 0, .2);
-            margin: 2em auto;
             opacity: 0;
             transform: translateY(4em) rotateZ(-5deg);
             transition: transform 4s .25s cubic-bezier(0, 1, .3, 1),
                 opacity .3s .25s ease-out;
-            max-width: 600px;
-            width: 90%;
+            width: 259px;
+            height: 259px;
+            margin-top: 4rem;
             will-change: transform, opacity;
+        }
+
+        .inline-photo:first-child {
+            margin-top: 2.4rem
         }
 
         .inline-photo.is-visible {
@@ -41,7 +42,9 @@
             <header class="layer-header">
                 <div class="header-inner">
                     <div class="header-left"></div>
-                    <div class="header-center"></div>
+                    <div class="header-center">
+                        <h1 class="blind">작곡가 안내</h1>
+                    </div>
                     <div class="header-right">
                         <button type="button" class="btn-close btn-pop-close" title="레이어팝업 닫기">닫기</button>
                     </div>
@@ -49,19 +52,50 @@
             </header>
 
             <div class="layer-content">
-                <img src="https://cssanimation.rocks/levelup/public/03/02-end/images/pizza2.jpg"
-                    class="inline-photo show-on-scroll">
-                <div class="">
-                    <img src="" alt="">
+                <div class="layer-inner">
+                    <div class="composer-info-area">
+                        <span class="body-title">음원을 등록해</span>
+                        <h2 class="sub-title">클럽메타만의 작곡가가 되어봐요!</h2>
+
+                        <img src="../../resources/images/img/img_dancing.png" alt=""
+                            class="inline-photo show-on-scroll">
+                        <h2 class="sub-title">내가 등록한 음원으로<br>챌린지를 열어봐요!</h2>
+                        <p class="text-l">내가 만든 음원으로 챌린지를 열어,<br>여러 사람들과 공유하고 즐길 수 있어요!</p>
+
+                        <img src="../../resources/images/img/img_communicating.png" alt=""
+                            class="inline-photo show-on-scroll">
+                        <h2 class="sub-title">다른 사용자들과<br>소통할 수 있어요!</h2>
+                        <p class="text-l">Talk을 통해 음원에 대한 반응을 살펴보고,<br>또 새로운 영감을 얻을 수 있어요!</p>
+
+                        <img src="../../resources/images/img/img_uploading.png" alt=""
+                            class="inline-photo show-on-scroll">
+                        <h2 class="sub-title">음원을 등록하고<br>수익을 창출하세요!</h2>
+                        <p class="text-l">음원을 등록하고, 챌린지를 통해<br>수익을 창출할 수 있어요!</p>
+
+                        <p class="sub-title mt-40 mb-49">내가 만든 콘텐츠의 업로드와 성과 확인,<br>정산까지 모두 한 곳에서!</p>
+
+                        <div class="btn-box">
+                            <a href="" role="button" class="btn-l btn-primary btn-download" download
+                                title="작곡가웹 안내 및 가이드 PDF파일 다운로드">
+                                <span>자세히 알아보기</span>
+                            </a>
+                        </div>
+                        <div class="img">
+                            <img src="../../resources/images/img/img_logo.svg" alt="" class="">
+                        </div>
+                        <p class="sub-title mt-4 ">지금 클럽메타에서<br>작곡가가 되어보세요</p>
+                        <p class="body-title mt-40">웹에서 접속하세요</p>
+                        <a href="https://clubmeta.song-writer.com" class="btn-link">https://clubmeta.song-writer.com</a>
+                    </div>
                 </div>
             </div>
         </div>
         <!-- //layer-popup -->
     </article>
     <script>
-        // Detect request animation frame
+        /* 스크롤 애니메이션 script */
+
         var scroll = window.requestAnimationFrame ||
-            // IE Fallback
             function (callback) { window.setTimeout(callback, 1000 / 60) };
         var elementsToShow = document.querySelectorAll('.show-on-scroll');
 
@@ -77,13 +111,11 @@
 
             scroll(loop);
         }
-
-        // Call the loop for the first time
         loop();
 
-        // Helper function from: http://stackoverflow.com/a/7557433/274826
+
         function isElementInViewport(el) {
-            // special bonus for those using jQuery
+
             if (typeof jQuery === "function" && el instanceof jQuery) {
                 el = el[0];
             }
