@@ -34,6 +34,9 @@
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="sub-tab4" data-toggle="tab" data-target="#sub-panel4" type="button" role="tab">버튼</button>
                                 </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="sub-tab5" data-toggle="tab" data-target="#sub-panel5" type="button" role="tab">컴포넌트</button>
+                                </li>
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="sub-panel1" role="tabpanel" aria-labelledby="sub-tab1">
@@ -846,6 +849,121 @@
                                         <button type="button" class="btn btn-outline-secondary">3개월</button>
                                         <button type="button" class="btn btn-outline-secondary">전체</button>
                                         <!-- active 클래스로  활성화 -->
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="sub-panel5" role="tabpanel" aria-labelledby="sub-tab5">
+                                    <div class="row clearfix mt-4 mb-4">
+                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                            <h2 class="h3 text-gray-800 float-left">datePicker</h2>
+                                        </div>
+                                    </div>
+                                    <div class="form-box">
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label"><label for="">단일</label></div>
+                                                <div class="form-box-cont">
+                                                    <div class="form-row">
+                                                        <div class="col-2">
+                                                            <input type="date" class="form-control" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label"><label for="">월 선택 달력</label></div>
+                                                <div class="form-box-cont">
+                                                    <div class="form-row">
+                                                        <div class="datepicker-box">
+                                                            <input type="text" class="form-control datepicker month" id="dateMonth" />
+                                                            <button type="button" class="btn-datepicker"></button>
+                                                        </div>
+                                                        <div class="text-secondary ml-2">* datePicker 라이브러리 사용</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label"><label for="">기간 선택</label></div>
+                                                <div class="form-box-cont">
+                                                    <div class="input-daterange-btn">
+                                                        <div class="input-group">
+                                                            <input type="date" class="form-control" placeholder="시작일" />
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">~</div>
+                                                            </div>
+                                                            <input type="date" class="form-control" placeholder="종료일" />
+                                                        </div>
+
+                                                        <div class="btn-group" role="group" aria-label="기간 선택 버튼">
+                                                            <button type="button" class="btn btn-outline-secondary">오늘</button>
+                                                            <button type="button" class="btn btn-outline-secondary active">7일</button>
+                                                            <button type="button" class="btn btn-outline-secondary">15일</button>
+                                                            <button type="button" class="btn btn-outline-secondary">1개월</button>
+                                                            <button type="button" class="btn btn-outline-secondary">3개월</button>
+                                                            <button type="button" class="btn btn-outline-secondary">전체</button>
+                                                            <!-- active 클래스로  활성화 -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label"><label for="">기간 선택 (체크박스)</label></div>
+                                                <div class="form-box-cont">
+                                                    <div class="form-row">
+                                                        <div class="input-daterange-btn col-5">
+                                                            <div class="input-group">
+                                                                <input type="date" class="form-control w-25" placeholder="시작일" />
+                                                                <div class="input-group-prepend">
+                                                                    <div class="input-group-text">~</div>
+                                                                </div>
+                                                                <input type="date" class="form-control w-25" placeholder="종료일" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="co1-2 ml-2">
+                                                            <div class="custom-control-wrap">
+                                                                <label class="custom-control custom-checkbox custom-control-inline">
+                                                                    <input type="checkbox" name="chk" class="custom-control-input" />
+                                                                    <span class="custom-control-label">기간 설정 안함</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label"><label for="">기간+시간선택</label></div>
+                                                <div class="form-box-cont">
+                                                    <div class="input-daterange-btn w-75">
+                                                        <div class="input-group">
+                                                            <input type="date" class="form-control w-25" placeholder="시작일" />
+                                                            <select class="custom-select">
+                                                                <option value="1">00시</option>
+                                                            </select>
+                                                            <select class="custom-select">
+                                                                <option value="1">00분</option>
+                                                            </select>
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text">~</div>
+                                                            </div>
+                                                            <input type="date" class="form-control w-25" placeholder="종료일" />
+                                                            <select class="custom-select">
+                                                                <option value="1">00시</option>
+                                                            </select>
+                                                            <select class="custom-select">
+                                                                <option value="1">00분</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -1,0 +1,174 @@
+<div class="modal fade large" id="shoeAmountPop" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalLabel">지급/차감</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="search-wrap">
+                    <div class="form-box">
+                        <div class="form-box-row">
+                            <div class="form-box-item">
+                                <div class="form-box-label">닉네임</div>
+                                <div class="form-box-cont">
+                                    <div class="form-row">
+                                        <div class="flex-fill">
+                                            <input type="text" class="form-control" placeholder="닉네임 입력" />
+                                        </div>
+                                        <div class="col-auto ml-2">
+                                            <button type="submit" class="btn btn-dark"><i class="fa fa-search"></i> 검색</button>
+                                        </div>
+                                        <!-- 데이터가 없는 경우, -->
+                                        <!-- <div class="text-danger w-100">존재하지 않는 닉네임입니다.</div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix mt-4 mb-2">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <h6 class="h5 text-gray-800 float-left">&lsquo;<span>김메타</span>&rsquo; 님의 리워드(Shoe) 내역</h6>
+                    </div>
+                </div>
+                <div class="bootstrap-table bootstrap4">
+                    <div class="fixed-table-toolbar"></div>
+                    <div class="fixed-table-container" style="padding-bottom: 0px">
+                        <div class="fixed-table-header" style="display: none">
+                            <table></table>
+                        </div>
+                        <div class="fixed-table-body">
+                            <div class="fixed-table-loading table table-bordered table-hover" style="top: 42.7969px">
+                                <span class="loading-wrap">
+                                    <span class="loading-text">데이터를 불러오는 중입니다</span>
+                                    <span class="animation-wrap"><span class="animation-dot"></span></span>
+                                </span>
+                            </div>
+                            <table id="" class="table table-hover table-bordered dataTable no-footer" data-pagination="true">
+                                <thead>
+                                    <tr>
+                                        <th data-field="0">
+                                            <div class="th-inner">리워드 제목</div>
+                                            <div class="fht-cell"></div>
+                                        </th>
+                                        <th data-field="1">
+                                            <div class="th-inner">일자</div>
+                                            <div class="fht-cell"></div>
+                                        </th>
+                                        <th data-field="2">
+                                            <div class="th-inner">shoe</div>
+                                            <div class="fht-cell"></div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="" data-index="0">
+                                        <td class="text-left">투비챌린지 참가</td>
+                                        <td>2023-06-09 16:04:20</td>
+                                        <td>+100</td>
+                                    </tr>
+                                    <tr data-index="1">
+                                        <td class="text-left">11챌린지 참가</td>
+                                        <td>2023-06-09 12:04:20</td>
+                                        <td>-20</td>
+                                    </tr>
+                                    <tr data-index="2">
+                                        <td class="text-left">00챌린지 참가</td>
+                                        <td>2023-06-06 16:04:20</td>
+                                        <td>+20</td>
+                                    </tr>
+                                    <tr data-index="3">
+                                        <td class="text-left">랄랄챌린지 참가</td>
+                                        <td>2023-06-09 16:04:20</td>
+                                        <td>+10</td>
+                                    </tr>
+                                    <tr data-index="4">
+                                        <td class="text-left">홀홀챌린지 참가</td>
+                                        <td>2023-06-09 16:04:20</td>
+                                        <td>+1000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix mt-4 mb-2">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <h6 class="h5 text-gray-800 float-left">shoe 지급과 차감</h6>
+                    </div>
+                </div>
+                <form>
+                    <div class="form-box">
+                        <div class="form-box-row">
+                            <div class="form-box-item">
+                                <div class="form-box-label">총 보유 shoe</div>
+                                <div class="form-box-cont">
+                                    <div class="form-row">
+                                        <input type="text" class="form-control" readonly />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-box-row">
+                            <div class="form-box-item">
+                                <div class="form-box-label">shoe 지급</div>
+                                <div class="form-box-cont">
+                                    <div class="form-row">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">+</span>
+                                            </div>
+                                            <input type="number" class="form-control custom-number" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-box-row">
+                            <div class="form-box-item">
+                                <div class="form-box-label">shoe 차감</div>
+                                <div class="form-box-cont">
+                                    <div class="form-row">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">&minus;</span>
+                                            </div>
+                                            <input type="text" class="form-control custom-number" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-box-row">
+                            <div class="form-box-item">
+                                <div class="form-box-label">제목</div>
+                                <div class="form-box-cont">
+                                    <div class="form-row">
+                                        <input type="text" class="form-control" placeholder="제목 입력 (최대 50자)" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-box-row">
+                            <div class="form-box-item">
+                                <div class="form-box-label">메모(선택)</div>
+                                <div class="form-box-cont">
+                                    <div class="form-row">
+                                        <input type="text" class="form-control" placeholder="메모 입력 (최대 50자)" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">취소</button>
+                <button type="button" class="btn btn-primary btn-lg" onclick="bsFormAlert2('등록을 완료했습니다.')">등록</button>
+            </div>
+        </div>
+    </div>
+</div>

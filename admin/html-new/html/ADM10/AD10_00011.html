@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>클럽메타 관리자 - 정산 신청 내역 관리</title>
+        <!-- js -->
+        <script src="../include/head.js"></script>
+        <script src="../../js/custom.js"></script>
+    </head>
+
+    <body>
+        <div id="wrapper" class="wrapper">
+            <!-- 사이드바 -->
+            <div data-include="../include/sidebar.html"></div>
+            <!-- //사이드바 -->
+            <div id="content-wrapper" class="d-flex flex-column bg-white">
+                <!-- 컨텐츠 본문 -->
+                <div id="content">
+                    <!--  -->
+                    <div data-include="../include/topbar.html"></div>
+
+                    <div class="container-fluid" role="main">
+                        <!-- 페이지 경로 -->
+                        <div class="page-breadcrumb" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <i class="fas fa-home d-flex align-items-center"></i>
+                                </li>
+                                <li class="breadcrumb-item">Shoe/MDT 관리</li>
+                                <li class="breadcrumb-item">정산 신청 내역 관리</li>
+                            </ol>
+                        </div>
+                        <!-- //페이지 경로 -->
+                        <div class="main">
+                            <!-- 제목 및 등록버튼 -->
+                            <div class="row clearfix mt-4 mb-4">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h2 class="h3 text-gray-800 float-left">정산 신청 내역 관리</h2>
+                                    <!-- 추후 MDT 개발 후, 노출 -->
+                                    <!-- <div class="float-right d-flex">
+                                        <div class="alert alert-secondary p-2 m-0 mr-2"><span>현재 교환 비율 100 shoe = 1MDT</span></div>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#abjRatePop">교환비율</button>
+                                    </div> -->
+                                </div>
+                            </div>
+                            <!-- //제목 및 등록버튼 -->
+                            <!-- 검색 영역 -->
+                            <div class="search-wrap">
+                                <div class="form-box">
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label">상태</div>
+                                            <div class="form-box-cont">
+                                                <div class="custom-control-wrap">
+                                                    <label class="custom-control custom-checkbox custom-control-inline">
+                                                        <input type="checkbox" name="chk" class="custom-control-input" checked />
+                                                        <span class="custom-control-label">정산신청</span>
+                                                    </label>
+                                                    <label class="custom-control custom-checkbox custom-control-inline">
+                                                        <input type="checkbox" name="chk" class="custom-control-input" checked />
+                                                        <span class="custom-control-label">지급완료</span>
+                                                    </label>
+                                                    <label class="custom-control custom-checkbox custom-control-inline">
+                                                        <input type="checkbox" name="chk" class="custom-control-input" checked />
+                                                        <span class="custom-control-label">반려</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label">검색어</div>
+                                            <div class="form-box-cont">
+                                                <div class="form-row">
+                                                    <div class="col-2">
+                                                        <select class="custom-select">
+                                                            <option value="1">전체</option>
+                                                            <option value="2">닉네임</option>
+                                                            <option value="3">내역</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="flex-fill">
+                                                        <input type="text" class="form-control" placeholder="검색어 입력" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label">등록기간</div>
+                                            <div class="form-box-cont">
+                                                <div class="input-daterange-btn">
+                                                    <div class="input-group">
+                                                        <input type="date" class="form-control" placeholder="시작일" />
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text">~</div>
+                                                        </div>
+                                                        <input type="date" class="form-control" placeholder="종료일" />
+                                                    </div>
+
+                                                    <div class="btn-group" role="group" aria-label="기간 선택 버튼">
+                                                        <button type="button" class="btn btn-outline-secondary">오늘</button>
+                                                        <button type="button" class="btn btn-outline-secondary active">7일</button>
+                                                        <button type="button" class="btn btn-outline-secondary">15일</button>
+                                                        <button type="button" class="btn btn-outline-secondary">1개월</button>
+                                                        <button type="button" class="btn btn-outline-secondary">3개월</button>
+                                                        <button type="button" class="btn btn-outline-secondary">1년</button>
+                                                        <!-- active 클래스로  활성화 -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn-wrap">
+                                <button type="submit" class="btn btn-dark"><i class="fa fa-search mr-1"></i> 검색</button>
+                            </div>
+                            <div class="title-wrap mt-5">
+                                <div class="left">검색 <strong class="fc-red">5</strong>건 / 전체 <strong class="fc-red">15</strong>건</div>
+                                <div class="right">
+                                    <select class="custom-select custom-select-sm">
+                                        <option value="1">10</option>
+                                        <option value="2">25</option>
+                                        <option value="3">50</option>
+                                        <option value="4">100</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="bootstrap-table bootstrap4">
+                                <div class="fixed-table-toolbar"></div>
+                                <div class="fixed-table-container" style="padding-bottom: 0px">
+                                    <div class="fixed-table-header" style="display: none">
+                                        <table></table>
+                                    </div>
+                                    <div class="fixed-table-body">
+                                        <div class="fixed-table-loading table table-bordered table-hover" style="top: 42.7969px">
+                                            <span class="loading-wrap">
+                                                <span class="loading-text">데이터를 불러오는 중입니다</span>
+                                                <span class="animation-wrap"><span class="animation-dot"></span></span>
+                                            </span>
+                                        </div>
+                                        <table id="dataTableOrder" class="table table-hover table-bordered" data-pagination="true">
+                                            <thead>
+                                                <tr>
+                                                    <th class="no-sorting" data-field="0">
+                                                        <div class="th-inner">번호</div>
+                                                        <div class="fht-cell"></div>
+                                                    </th>
+                                                    <th data-field="1">
+                                                        <div class="th-inner">닉네임</div>
+                                                        <div class="fht-cell"></div>
+                                                    </th>
+                                                    <th data-field="2">
+                                                        <div class="th-inner">이름</div>
+                                                        <div class="fht-cell"></div>
+                                                    </th>
+                                                    <th data-field="3">
+                                                        <div class="th-inner">이메일</div>
+                                                        <div class="fht-cell"></div>
+                                                    </th>
+                                                    <th data-field="4">
+                                                        <div class="th-inner">내역</div>
+                                                        <div class="fht-cell"></div>
+                                                    </th>
+                                                    <th data-field="5">
+                                                        <div class="th-inner">신청일자</div>
+                                                        <div class="fht-cell"></div>
+                                                    </th>
+                                                    <th data-field="6">
+                                                        <div class="th-inner">정산일자</div>
+                                                        <div class="fht-cell"></div>
+                                                    </th>
+                                                    <th data-field="7">
+                                                        <div class="th-inner">차감 shoe</div>
+                                                        <div class="fht-cell"></div>
+                                                    </th>
+                                                    <th data-field="8">
+                                                        <div class="th-inner">정산액</div>
+                                                        <div class="fht-cell"></div>
+                                                    </th>
+                                                    <th data-field="9">
+                                                        <div class="th-inner">누적금액</div>
+                                                        <div class="fht-cell"></div>
+                                                    </th>
+                                                    <th data-field="10">
+                                                        <div class="th-inner">상태</div>
+                                                        <div class="fht-cell"></div>
+                                                    </th>
+                                                    <th class="no-sorting" data-field="11">
+                                                        <div class="th-inner">비고</div>
+                                                        <div class="fht-cell"></div>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- <tr class="no-records-found">
+                                                <td colspan="12">일치하는 검색결과가 없습니다.</td>
+                                            </tr> -->
+                                                <tr data-index="0">
+                                                    <td>6</td>
+                                                    <td><a href="#none">닉네임1</a></td>
+                                                    <td>김메타</td>
+                                                    <td>clubmeta1@club.com</td>
+                                                    <td class="text-left">작곡가 음원 정산</td>
+                                                    <td>2023.08.11<br />03:22:49</td>
+                                                    <td>2023.08.11<br />03:22:49</td>
+                                                    <td>100</td>
+                                                    <td class="text-right"><span class="mr-2">100</span>원</td>
+                                                    <td class="text-right"><span class="mr-2">100</span>원</td>
+                                                    <td>지급완료</td>
+                                                    <td class="text-left"></td>
+                                                </tr>
+                                                <tr data-index="1">
+                                                    <td>5</td>
+                                                    <td><a href="#none">닉네임2</a></td>
+                                                    <td>박메타</td>
+                                                    <td>clubmeta2@club.com</td>
+                                                    <td class="text-left">-</td>
+                                                    <td>2023.07.11<br />03:22:49</td>
+                                                    <td></td>
+                                                    <td>20</td>
+                                                    <td class="text-right"><span class="mr-2"></span>원</td>
+                                                    <td class="text-right"><span class="mr-2"></span>원</td>
+                                                    <td><a href="#none" data-toggle="modal" data-target="#calcStatPop">정산신청</a></td>
+                                                    <td class="text-left"></td>
+                                                </tr>
+                                                <tr data-index="2">
+                                                    <td>4</td>
+                                                    <td><a href="#none">닉네임3</a></td>
+                                                    <td>이메타</td>
+                                                    <td>clubmeta3@club.com</td>
+                                                    <td class="text-left">작곡가 음원 정산</td>
+                                                    <td>2023.08.11<br />03:22:49</td>
+                                                    <td>2023.06.01<br />03:22:49</td>
+                                                    <td>20</td>
+                                                    <td class="text-right"><span class="mr-2">320</span>원</td>
+                                                    <td class="text-right"><span class="mr-2"></span>원</td>
+                                                    <td>지급완료</td>
+                                                    <td class="text-left"></td>
+                                                </tr>
+                                                <tr data-index="3">
+                                                    <td>3</td>
+                                                    <td><a href="#none">닉네임4</a></td>
+                                                    <td>최메타</td>
+                                                    <td>clubmeta4@club.com</td>
+                                                    <td class="text-left">작곡가 음원 정산123</td>
+                                                    <td>2023.08.11<br />03:22:49</td>
+                                                    <td>-</td>
+                                                    <td>10</td>
+                                                    <td class="text-right"><span class="mr-2">-</span>원</td>
+                                                    <td class="text-right"><span class="mr-2">-</span>원</td>
+                                                    <td>반려</td>
+                                                    <td class="text-left">반려사유 노출</td>
+                                                </tr>
+                                                <tr data-index="4">
+                                                    <td>2</td>
+                                                    <td><a href="#none">닉네임5</a></td>
+                                                    <td>양메타</td>
+                                                    <td>clubmeta5@club.com</td>
+                                                    <td class="text-left">-</td>
+                                                    <td>2023.08.11<br />03:22:49</td>
+                                                    <td></td>
+                                                    <td>10</td>
+                                                    <td class="text-right"><span class="mr-2"></span>원</td>
+                                                    <td class="text-right"><span class="mr-2"></span>원</td>
+                                                    <td><a href="#none" data-toggle="modal" data-target="#calcStatPop">정산신청</a></td>
+                                                    <td class="text-left"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="fixed-table-pagination">
+                                        <!-- 왼쪽 버튼 영역 -->
+                                        <div class="float-left"></div>
+                                        <!-- 오른쪽 버튼 영역 -->
+                                        <div class="float-right"></div>
+                                        <div class="pagination-wrap pagination">
+                                            <!-- 11개 이상 페이지 생성시 page-at-first, page-at-last의 d-none 클래스 삭제-->
+                                            <ul class="pagination">
+                                                <li class="page-item page-at-first d-none"><a class="page-link" aria-label="previous page" href="javascript:void(0)">‹‹</a></li>
+                                                <li class="page-item page-pre"><a class="page-link" aria-label="previous page" href="javascript:void(0)">‹</a></li>
+                                                <li class="page-item active"><a class="page-link" aria-label="to page 1" href="javascript:void(0)">1</a></li>
+                                                <li class="page-item"><a class="page-link" aria-label="to page 2" href="javascript:void(0)">2</a></li>
+                                                <li class="page-item page-next"><a class="page-link" aria-label="next page" href="javascript:void(0)">›</a></li>
+                                                <li class="page-item page-at-last d-none"><a class="page-link" aria-label="next page" href="javascript:void(0)">››</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!---//contents--->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- content Wrapper -->
+        <!-- modal popup -->
+        <div class="modal fade" id="calcStatPop" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel">정산 상태 변경</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="row clearfix mb-2">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h6 class="h5 text-gray-800 float-left">상태변경</h6>
+                                </div>
+                            </div>
+                            <div class="d-flex h-100 align-items-center">
+                                <label class="custom-control custom-radio custom-control-inline mb-0">
+                                    <input type="radio" name="rdo1" class="custom-control-input" />
+                                    <span class="custom-control-label">지급완료</span>
+                                </label>
+                                <label class="custom-control custom-radio custom-control-inline mb-0">
+                                    <input type="radio" name="rdo1" class="custom-control-input" />
+                                    <span class="custom-control-label">반려</span>
+                                </label>
+                            </div>
+
+                            <div class="row clearfix mt-4 mb-2">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h6 class="h5 text-gray-800 float-left">지급액</h6>
+                                </div>
+                            </div>
+                            <input type="number" class="form-control" />
+                            <div class="row clearfix mt-4 mb-2">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h6 class="h5 text-gray-800 float-left">정산 지급/반려 사유 입력</h6>
+                                </div>
+                            </div>
+                            <textarea class="form-control" rows="6" placeholder="내역 입력 (최대 50자)"></textarea>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">취소</button>
+                        <button type="button" class="btn btn-primary btn-lg" onclick="bsFormAlert2('등록을 완료했습니다.')">등록</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 추후 MDT 개발 후, 노출 -->
+        <div class="modal fade" id="abjRatePop" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel2">Shoe/MDT 교환 비율 조정</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="row clearfix mb-2">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h6 class="h5 text-gray-800 float-left">Shoe/MDT 교환 비율</h6>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="text-gray-600">shoe</div>
+                                <div class="input-group ml-3">
+                                    <input type="number" class="form-control text-right" />
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">Shoe</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center p-2"><i class="fas fa-equals"></i></div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="text-gray-600">MDT</div>
+                                <div class="input-group ml-3">
+                                    <input type="number" class="form-control text-right" />
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">MDT</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">취소</button>
+                        <button type="button" class="btn btn-primary btn-lg" onclick="bsFormAlert2('등록을 완료했습니다.')">등록</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <!-- Scroll to Top Button-->
+    <div data-include="../include/topbtn.html"></div>
+
+    <!-- Logout Modal-->
+    <div data-include="../include/logoutModal.html"></div>
+    <!-- changePw Modal-->
+    <div data-include="../include/pop/changePwModal.html"></div>
+    <!-- <div data-include="./AD07_00p01.html"></div> -->
+
+    <script src="../../datatables/jquery.dataTables.min.js"></script>
+    <script src="../../datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="../../js/demo/datatables-demo.js"></script>
+    <script>
+        $('#dataTableOrder').DataTable({
+            order: [[0, 'desc']]
+        });
+    </script>
+</html>

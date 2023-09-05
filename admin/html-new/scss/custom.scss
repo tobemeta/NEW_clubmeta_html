@@ -670,6 +670,9 @@ input[type='date'] {
 .table.dataTable > thead .no-sorting:after {
     display: none;
 }
+.table.dataTable > thead .no-sorting {
+    pointer-events: none;
+}
 .bootstrap-table {
     .dataTables_length,
     .dataTables_filter,
@@ -1132,4 +1135,17 @@ input[type='date'] {
             background: url(../images/ico/ico_date_color.svg) no-repeat 0 0 / cover;
         }
     }
+}
+
+//input number
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+    -moz-appearance: textfield;
 }
