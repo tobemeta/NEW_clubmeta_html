@@ -368,3 +368,109 @@
         }
     }
 }
+.wallet-area {
+    .wallet-info {
+        position: relative;
+        margin-top: 4.6rem;
+        padding: 1.6rem;
+        border: 1px solid #ff880a;
+        border-radius: 2.4rem;
+        background-color: #fff;
+        font-size: 0;
+        text-align: right;
+        box-shadow: $shadow;
+        box-sizing: $sizing;
+        &:after {
+            display: block;
+            content: '';
+            position: absolute;
+            top: -5rem;
+            left: 1rem;
+            width: 10rem;
+            height: 10rem;
+        }
+        &.shoe {
+            &:after {
+                @include bg($src: '../images/ico/ico_shoe.svg');
+            }
+        }
+        &.mdt {
+            &:after {
+                @include bg($src: '../images/ico/ico_mdt.svg');
+            }
+        }
+        p {
+            font-size: 1.4rem;
+            line-height: 2rem;
+        }
+        em {
+            font-size: 0.8rem;
+            line-height: 1.2rem;
+        }
+        .sum {
+            display: inline-block;
+            margin-right: 0.4rem;
+            font-size: 2.4rem;
+            line-height: 2.9rem;
+        }
+        .btn-box {
+            margin-top: 1rem;
+        }
+    }
+}
+
+.list-box.wallet {
+    margin-top: 1.6rem;
+    .card {
+        border-radius: 2.4rem;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        gap: 0.2rem;
+        max-width: 100%;
+        div {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .top {
+            font-size: 1.4rem;
+            line-height: 2rem;
+        }
+        .bottom {
+            font-size: 1.2rem;
+            line-height: 1.7rem;
+        }
+    }
+    .reason {
+        display: block;
+        flex: 1;
+        @include ellipsis();
+    }
+    .add {
+        &.plus {
+            &:before {
+                display: inline-block;
+                content: '+';
+            }
+        }
+        &.minus {
+            &:before {
+                display: inline-block;
+                content: '-';
+            }
+        }
+    }
+    .date {
+        color: #707070;
+    }
+    .plus {
+        color: #306aff;
+    }
+    .minus {
+        color: #e92dff;
+    }
+    .sum {
+        color: #404040;
+    }
+}

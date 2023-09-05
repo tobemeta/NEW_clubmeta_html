@@ -29,7 +29,6 @@
     }
 
     &.full {
-        height: 100vh;
         box-sizing: $sizing;
         .layer-popup {
             padding: 0;
@@ -39,6 +38,10 @@
             .layer-popup {
                 min-height: 100%;
                 border-radius: 0;
+            }
+            &.is-animation {
+                background-color: transparent;
+                transition: none;
             }
         }
         .layer-popup {
