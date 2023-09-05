@@ -15,28 +15,32 @@
 </head>
 
 <body>
-    <div class="wrap">
-        <header class="header">
-            <div class="header-inner">
-                <div class="header-left">
-                    <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
+    <article class="layerpopup-box full is-active is-animation" id="fullViewPop" role="dialog">
+        <div class="layer-popup">
+            <header class="layer-header">
+                <div class="header-inner">
+                    <div class="header-left"></div>
+                    <div class="header-center">
+                        <h1 class="pop-title">알림 타임라인</h1>
+                    </div>
+                    <div class="header-right"><button type="button" class="btn-close"
+                            onclick="ui.popup.close('#fullViewPop')" title="레이어팝업 닫기">닫기</button></div>
                 </div>
-                <div class="header-center">
-                    <h1 class="header-title">알림 타임라인</h1>
-                </div>
-                <div class="header-right"></div>
-            </div>
-        </header>
-        <div class="contents">
-            <div class="section alarm-list-box">
-                <div class="no-result">
-                    <i class="img" aria-hidden="true"></i>
-                    <div class="title">알림이 없어요</div>
-                    <div class="body-sub-title">새로운 소식이 있으면 알려드릴게요!</div>
+            </header>
+            <div class="layer-content">
+                <div class="layer-inner">
+                    <div class="section alarm-list-box">
+                        <div class="no-result">
+                            <i class="img" aria-hidden="true"></i>
+                            <div class="title">알림이 없어요</div>
+                            <div class="body-sub-title">새로운 소식이 있으면 알려드릴게요!</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </article>
+
 </body>
 
 </html>

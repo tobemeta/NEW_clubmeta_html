@@ -15,330 +15,337 @@
 </head>
 
 <body>
-    <div class="wrap">
-        <header class="header">
-            <div class="header-inner">
-                <div class="header-left">
-                    <!-- 2023-09-04 디자인 변경 class 수정 -->
-                    <a href="#none" class="btn-close" role="button" title="홈 이동">홈으로 이동</a>
+    <article class="layerpopup-box full is-active is-animation" id="fullViewPop" role="dialog">
+        <div class="layer-popup">
+            <header class="layer-header">
+                <div class="header-inner">
+                    <div class="header-left"></div>
+                    <div class="header-center">
+                        <h1 class="pop-title">알림 타임라인</h1>
+                    </div>
+                    <div class="header-right"><button type="button" class="btn-close"
+                            onclick="ui.popup.close('#fullViewPop')" title="레이어팝업 닫기">닫기</button></div>
                 </div>
-                <div class="header-center">
-                    <h1 class="header-title">알림 타임라인</h1>
-                </div>
-                <div class="header-right">
-
-                </div>
-            </div>
-        </header>
-        <div class="contents">
-            <div class="section">
-                <div class="inner">
-                    <div class="title-box">
-                        <h2 class="sub-title">오늘</h2>
+            </header>
+            <div class="layer-content">
+                <div class="layer-inner">
+                    <div class="section">
+                        <div class="title-box">
+                            <h2 class="sub-title">오늘</h2>
+                        </div>
+                        <!-- 2023-08-25 noit -> alarm class변경 -->
+                        <div class="list-box alarm">
+                            <ul>
+                                <li>
+                                    <a href="#none">
+                                        <div class="alarm-img">
+                                            <div class="img">
+                                                <img src="../../resources/images/img/img_profile_example_01.png"
+                                                    alt="유저 프로필" />
+                                            </div>
+                                        </div>
+                                        <div class="alarm-text">
+                                            <p class="text"><span class="user">닉네임닉네임</span> 님이 관심있는 ‘힙합‘ AI 챌린지가
+                                                오픈했어요! 
+                                            </p>
+                                            <p class="time-text"><span class="time">5</span><em>분</em>전</p>
+                                        </div>
+                                        <div class="alarm-freeview">
+                                            <div class="img">
+                                                <!-- 2023-09-04 이미지 없을때, onerror 추가 -->
+                                                <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
+                                                    onerror="this.closest('.alarm-freeview').remove();"
+                                                    alt="AI챌린지 이미지" />
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="alarm-img">
+                                            <div class="img">
+                                                <img src="../../resources/images/img/img_profile_example_01.png"
+                                                    alt="유저 프로필" />
+                                            </div>
+                                        </div>
+                                        <div class="alarm-text">
+                                            <p class="text"><span class="user">닉네임닉네임</span> 님이 관심있는 ‘힙합‘ AI 챌린지가
+                                                오픈했어요! 
+                                            </p>
+                                            <p class="time-text"><span class="time">5</span><em>분</em>전</p>
+                                        </div>
+                                        <div class="alarm-freeview">
+                                            <div class="img">
+                                                <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
+                                                    onerror="this.closest('.alarm-freeview').remove();"
+                                                    alt="AI챌린지 이미지" />
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="alarm-img">
+                                            <div class="img">
+                                                <img src="../../resources/images/img/img_profile_example_01.png"
+                                                    alt="유저 프로필" />
+                                            </div>
+                                        </div>
+                                        <div class="alarm-text">
+                                            <p class="text"><span class="user">닉네임닉네임</span> 님이 관심있는 ‘힙합‘ AI 챌린지가
+                                                오픈했어요! 
+                                            </p>
+                                            <p class="time-text"><span class="time">5</span><em>분</em>전</p>
+                                        </div>
+                                        <div class="alarm-freeview">
+                                            <div class="img">
+                                                <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
+                                                    onerror="this.closest('.alarm-freeview').remove();"
+                                                    alt="AI챌린지 이미지" />
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <!-- 2023-08-25 noit -> alarm class변경 -->
-                    <div class="list-box alarm">
-                        <ul>
-                            <li>
-                                <a href="#none">
-                                    <div class="alarm-img">
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_profile_example_01.png"
-                                                alt="유저 프로필" />
+                    <div class="section">
+                        <div class="title-box">
+                            <h2 class="sub-title">어제</h2>
+                        </div>
+                        <div class="list-box alarm">
+                            <ul>
+                                <li>
+                                    <a href="#none">
+                                        <div class="alarm-img">
+                                            <div class="img">
+                                                <img src="../../resources/images/img/img_profile_example_01.png"
+                                                    alt="유저 프로필" />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="alarm-text">
-                                        <p class="text"><span class="user">닉네임닉네임</span> 님이 관심있는 ‘힙합‘ AI 챌린지가 오픈했어요! 
-                                        </p>
-                                        <p class="time-text"><span class="time">5</span><em>분</em>전</p>
-                                    </div>
-                                    <div class="alarm-freeview">
-                                        <div class="img">
-                                            <!-- 2023-09-04 이미지 없을때, onerror 추가 -->
-                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
-                                                onerror="this.closest('.alarm-freeview').remove();" alt="AI챌린지 이미지" />
+                                        <div class="alarm-text">
+                                            <p class="text"><span class="user">닉네임닉네임</span> 님이 관심있는 ‘힙합‘ AI 챌린지가
+                                                오픈했어요! 
+                                            </p>
+                                            <p class="time-text"><span class="time">5</span><em>분</em>전</p>
                                         </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#none">
-                                    <div class="alarm-img">
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_profile_example_01.png"
-                                                alt="유저 프로필" />
+                                        <div class="alarm-freeview">
+                                            <div class="img">
+                                                <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
+                                                    onerror="this.closest('.alarm-freeview').remove();"
+                                                    alt="AI챌린지 이미지" />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="alarm-text">
-                                        <p class="text"><span class="user">닉네임닉네임</span> 님이 관심있는 ‘힙합‘ AI 챌린지가 오픈했어요! 
-                                        </p>
-                                        <p class="time-text"><span class="time">5</span><em>분</em>전</p>
-                                    </div>
-                                    <div class="alarm-freeview">
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
-                                                onerror="this.closest('.alarm-freeview').remove();" alt="AI챌린지 이미지" />
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#none">
-                                    <div class="alarm-img">
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_profile_example_01.png"
-                                                alt="유저 프로필" />
-                                        </div>
-                                    </div>
-                                    <div class="alarm-text">
-                                        <p class="text"><span class="user">닉네임닉네임</span> 님이 관심있는 ‘힙합‘ AI 챌린지가 오픈했어요! 
-                                        </p>
-                                        <p class="time-text"><span class="time">5</span><em>분</em>전</p>
-                                    </div>
-                                    <div class="alarm-freeview">
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
-                                                onerror="this.closest('.alarm-freeview').remove();" alt="AI챌린지 이미지" />
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="section">
-                <div class="inner">
-                    <div class="title-box">
-                        <h2 class="sub-title">어제</h2>
+                    <div class="section">
+                        <div class="title-box">
+                            <h2 class="sub-title">이번 주</h2>
+                        </div>
+                        <div class="list-box alarm">
+                            <ul>
+                                <li>
+                                    <a href="#none">
+                                        <div class="alarm-img">
+                                            <div class="img">
+                                                <img src="../../resources/images/img/img_profile_example_01.png"
+                                                    alt="유저 프로필" />
+                                            </div>
+                                        </div>
+                                        <div class="alarm-text">
+                                            <p class="text"><span class="user">닉네임닉네임</span> 님이 관심있는 ‘힙합‘ AI 챌린지가
+                                                오픈했어요! 
+                                            </p>
+                                            <p class="time-text"><span class="time">5</span><em>분</em>전</p>
+                                        </div>
+                                        <div class="alarm-freeview">
+                                            <div class="img">
+                                                <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
+                                                    onerror="this.closest('.alarm-freeview').remove();"
+                                                    alt="AI챌린지 이미지" />
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="list-box alarm">
-                        <ul>
-                            <li>
-                                <a href="#none">
-                                    <div class="alarm-img">
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_profile_example_01.png"
-                                                alt="유저 프로필" />
+                    <div class="section">
+                        <div class="title-box">
+                            <h2 class="sub-title">이번 달</h2>
+                        </div>
+                        <div class="list-box alarm">
+                            <ul>
+                                <li>
+                                    <a href="#none">
+                                        <div class="alarm-img">
+                                            <div class="img">
+                                                <img src="../../resources/images/img/img_profile_example_01.png"
+                                                    alt="유저 프로필" />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="alarm-text">
-                                        <p class="text"><span class="user">닉네임닉네임</span> 님이 관심있는 ‘힙합‘ AI 챌린지가 오픈했어요! 
-                                        </p>
-                                        <p class="time-text"><span class="time">5</span><em>분</em>전</p>
-                                    </div>
-                                    <div class="alarm-freeview">
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
-                                                onerror="this.closest('.alarm-freeview').remove();" alt="AI챌린지 이미지" />
+                                        <div class="alarm-text">
+                                            <p class="text"><span class="user">닉네임닉네임</span> 님이 관심있는 ‘힙합‘ AI 챌린지가
+                                                오픈했어요! 
+                                            </p>
+                                            <p class="time-text"><span class="time">5</span><em>분</em>전</p>
                                         </div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
+                                        <div class="alarm-freeview">
+                                            <div class="img">
+                                                <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
+                                                    onerror="this.closest('.alarm-freeview').remove();"
+                                                    alt="AI챌린지 이미지" />
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="alarm-img">
+                                            <div class="img">
+                                                <img src="../../resources/images/img/img_profile_example_01.png"
+                                                    alt="유저 프로필" />
+                                            </div>
+                                        </div>
+                                        <div class="alarm-text">
+                                            <p class="text"><span class="user">닉네임닉네임</span> 님이 관심있는 ‘힙합‘ AI 챌린지가
+                                                오픈했어요! 
+                                            </p>
+                                            <p class="time-text"><span class="time">5</span><em>분</em>전</p>
+                                        </div>
+                                        <div class="alarm-freeview">
+                                            <div class="img">
+                                                <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
+                                                    onerror="this.closest('.alarm-freeview').remove();"
+                                                    alt="AI챌린지 이미지" />
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="section">
-                <div class="inner">
-                    <div class="title-box">
-                        <h2 class="sub-title">이번 주</h2>
-                    </div>
-                    <div class="list-box alarm">
-                        <ul>
-                            <li>
-                                <a href="#none">
-                                    <div class="alarm-img">
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_profile_example_01.png"
-                                                alt="유저 프로필" />
+                    <div class="section">
+                        <div class="title-box">
+                            <h2 class="sub-title">이전 알림</h2>
+                        </div>
+                        <div class="list-box alarm">
+                            <ul>
+                                <li>
+                                    <a href="#none">
+                                        <div class="alarm-img">
+                                            <div class="img">
+                                                <img src="../../resources/images/img/img_profile_example_01.png"
+                                                    alt="유저 프로필" />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="alarm-text">
-                                        <p class="text"><span class="user">닉네임닉네임</span> 님이 관심있는 ‘힙합‘ AI 챌린지가 오픈했어요! 
-                                        </p>
-                                        <p class="time-text"><span class="time">5</span><em>분</em>전</p>
-                                    </div>
-                                    <div class="alarm-freeview">
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
-                                                onerror="this.closest('.alarm-freeview').remove();" alt="AI챌린지 이미지" />
+                                        <div class="alarm-text">
+                                            <p class="text"><span class="user">닉네임닉네임</span> 님이 관심있는 ‘힙합‘ AI 챌린지가
+                                                오픈했어요! 
+                                            </p>
+                                            <p class="time-text"><span class="time">5</span><em>분</em>전</p>
                                         </div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="section">
-                <div class="inner">
-                    <div class="title-box">
-                        <h2 class="sub-title">이번 달</h2>
-                    </div>
-                    <div class="list-box alarm">
-                        <ul>
-                            <li>
-                                <a href="#none">
-                                    <div class="alarm-img">
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_profile_example_01.png"
-                                                alt="유저 프로필" />
+                                        <div class="alarm-freeview">
+                                            <div class="img">
+                                                <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
+                                                    onerror="this.closest('.alarm-freeview').remove();"
+                                                    alt="AI챌린지 이미지" />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="alarm-text">
-                                        <p class="text"><span class="user">닉네임닉네임</span> 님이 관심있는 ‘힙합‘ AI 챌린지가 오픈했어요! 
-                                        </p>
-                                        <p class="time-text"><span class="time">5</span><em>분</em>전</p>
-                                    </div>
-                                    <div class="alarm-freeview">
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
-                                                onerror="this.closest('.alarm-freeview').remove();" alt="AI챌린지 이미지" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="alarm-img">
+                                            <div class="img">
+                                                <img src="../../resources/images/img/img_profile_example_01.png"
+                                                    alt="유저 프로필" />
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#none">
-                                    <div class="alarm-img">
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_profile_example_01.png"
-                                                alt="유저 프로필" />
+                                        <div class="alarm-text">
+                                            <p class="text"><span class="user">닉네임닉네임</span> 님이 관심있는 ‘힙합‘ AI 챌린지가
+                                                오픈했어요! 
+                                            </p>
+                                            <p class="time-text"><span class="time">5</span><em>분</em>전</p>
                                         </div>
-                                    </div>
-                                    <div class="alarm-text">
-                                        <p class="text"><span class="user">닉네임닉네임</span> 님이 관심있는 ‘힙합‘ AI 챌린지가 오픈했어요! 
-                                        </p>
-                                        <p class="time-text"><span class="time">5</span><em>분</em>전</p>
-                                    </div>
-                                    <div class="alarm-freeview">
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
-                                                onerror="this.closest('.alarm-freeview').remove();" alt="AI챌린지 이미지" />
+                                        <div class="alarm-freeview">
+                                            <div class="img">
+                                                <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
+                                                    onerror="this.closest('.alarm-freeview').remove();"
+                                                    alt="AI챌린지 이미지" />
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="section">
-                <div class="inner">
-                    <div class="title-box">
-                        <h2 class="sub-title">이전 알림</h2>
-                    </div>
-                    <div class="list-box alarm">
-                        <ul>
-                            <li>
-                                <a href="#none">
-                                    <div class="alarm-img">
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_profile_example_01.png"
-                                                alt="유저 프로필" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="alarm-img">
+                                            <div class="img">
+                                                <img src="../../resources/images/img/img_profile_example_01.png"
+                                                    alt="유저 프로필" />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="alarm-text">
-                                        <p class="text"><span class="user">닉네임닉네임</span> 님이 관심있는 ‘힙합‘ AI 챌린지가 오픈했어요! 
-                                        </p>
-                                        <p class="time-text"><span class="time">5</span><em>분</em>전</p>
-                                    </div>
-                                    <div class="alarm-freeview">
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
-                                                onerror="this.closest('.alarm-freeview').remove();" alt="AI챌린지 이미지" />
+                                        <div class="alarm-text">
+                                            <p class="text"><span class="user">닉네임닉네임</span> 님이 관심있는 ‘힙합‘ AI 챌린지가
+                                                오픈했어요! 
+                                            </p>
+                                            <p class="time-text"><span class="time">5</span><em>분</em>전</p>
                                         </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#none">
-                                    <div class="alarm-img">
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_profile_example_01.png"
-                                                alt="유저 프로필" />
+                                        <div class="alarm-freeview">
+                                            <div class="img">
+                                                <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
+                                                    onerror="this.closest('.alarm-freeview').remove();"
+                                                    alt="AI챌린지 이미지" />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="alarm-text">
-                                        <p class="text"><span class="user">닉네임닉네임</span> 님이 관심있는 ‘힙합‘ AI 챌린지가 오픈했어요! 
-                                        </p>
-                                        <p class="time-text"><span class="time">5</span><em>분</em>전</p>
-                                    </div>
-                                    <div class="alarm-freeview">
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
-                                                onerror="this.closest('.alarm-freeview').remove();" alt="AI챌린지 이미지" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="alarm-img">
+                                            <div class="img">
+                                                <img src="../../resources/images/img/img_profile_example_01.png"
+                                                    onerror="this.style.display='none';" alt="유저 프로필" />
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#none">
-                                    <div class="alarm-img">
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_profile_example_01.png"
-                                                alt="유저 프로필" />
+                                        <div class="alarm-text">
+                                            <p class="text"><span class="user">닉네임닉네임</span> 님이 관심있는 ‘힙합‘ AI 챌린지가
+                                                오픈했어요! 
+                                            </p>
+                                            <p class="time-text"><span class="time">5</span><em>분</em>전</p>
                                         </div>
-                                    </div>
-                                    <div class="alarm-text">
-                                        <p class="text"><span class="user">닉네임닉네임</span> 님이 관심있는 ‘힙합‘ AI 챌린지가 오픈했어요! 
-                                        </p>
-                                        <p class="time-text"><span class="time">5</span><em>분</em>전</p>
-                                    </div>
-                                    <div class="alarm-freeview">
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
-                                                onerror="this.closest('.alarm-freeview').remove();" alt="AI챌린지 이미지" />
+                                        <div class="alarm-freeview">
+                                            <div class="img">
+                                                <img src="" onerror="this.closest('.alarm-freeview').remove();"
+                                                    alt="AI챌린지 이미지" />
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#none">
-                                    <div class="alarm-img">
-                                        <div class="img">
-                                            <img src="../../resources/images/img/img_profile_example_01.png"
-                                                onerror="this.style.display='none';" alt="유저 프로필" />
+                                    </a>
+                                </li>
+                                <!-- 2023-09-04 주의 class -->
+                                <li class="caution">
+                                    <a href="#none">
+                                        <div class="alarm-img">
+                                            <div class="img">
+                                                <img src="../../resources/images/ico/ico_caution.svg" alt="주의 아이콘" />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="alarm-text">
-                                        <p class="text"><span class="user">닉네임닉네임</span> 님이 관심있는 ‘힙합‘ AI 챌린지가 오픈했어요! 
-                                        </p>
-                                        <p class="time-text"><span class="time">5</span><em>분</em>전</p>
-                                    </div>
-                                    <div class="alarm-freeview">
-                                        <div class="img">
-                                            <img src="" onerror="this.closest('.alarm-freeview').remove();"
-                                                alt="AI챌린지 이미지" />
+                                        <div class="alarm-text">
+                                            <p class="text">7월 12일 작성한 ‘댓글내용’ 댓글이 커뮤니티 가이드 규칙에 위배되어 삭제 처리되었습니다.</p>
+                                            <p class="time-text"><span class="time">5</span><em>분</em>전</p>
                                         </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <!-- 2023-09-04 주의 class -->
-                            <li class="caution">
-                                <a href="#none">
-                                    <div class="alarm-img">
-                                        <div class="img">
-                                            <img src="../../resources/images/ico/ico_caution.svg" alt="주의 아이콘" />
-                                        </div>
-                                    </div>
-                                    <div class="alarm-text">
-                                        <p class="text">7월 12일 작성한 ‘댓글내용’ 댓글이 커뮤니티 가이드 규칙에 위배되어 삭제 처리되었습니다.</p>
-                                        <p class="time-text"><span class="time">5</span><em>분</em>전</p>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="quick_top">
-            <button type="button" class="btn-top">TOP</button>
-        </div>
-    </div>
+    </article>
 </body>
 <script>
     // 2023-09-04 경고 일때, 
