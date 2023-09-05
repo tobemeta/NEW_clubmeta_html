@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>내 지갑 등록 팝업 | 클럽메타</title>
+    <link rel="stylesheet" href="../../resources/css/common.min.css" />
+    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+</head>
+
+<body>
+    <article class="layerpopup-box full is-active is-animation" id="fullViewPop" role="dialog" data-callback="cbFun">
+        <div class="layer-popup">
+            <header class="layer-header">
+                <div class="header-inner">
+                    <div class="header-left"></div>
+                    <div class="header-center">
+                        <h1 class="pop-title">MDT로 전환</h1>
+                    </div>
+                    <div class="header-right">
+                        <button type="button" class="btn-close btn-pop-close" title="설정 홈 이동">닫기</button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="layer-content pb-88">
+                <div class="layer-inner">
+                    <div class="form-box mt-24">
+                        <dl class="shoe">
+                            <dt>
+                                <label for="f1" class="shoe">Shoe</label>
+                                <p>잔액 <span class="balance">1234</span> Shoe</p>
+                            </dt>
+                            <dd>
+                                <div class="input-box">
+                                    <input type="number" placeholder="" title="내용입력" class="">
+                                    <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
+                                    <span class="unit">1 Shoe = 1.123 MDT (2023.08.29 KST 12:01)</span>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt><label for="f2" class="mdt">MDT</label></dt>
+                            <dd>
+                                <div class="input-box">
+                                    <input type="number" placeholder="Shoe 입력시 자동으로 전환됩니다" title="내용입력" readonly>
+                                    <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-bottom-box">
+                <button type="button" id="convert" class="btn btn-primary" disabled="disabled"
+                    onclick="ui.popup.close('#fullViewPop')">전환하기</button>
+            </div>
+        </div>
+        <!-- //layer-popup -->
+    </article>
+</body>
+<script>
+    $('dl.shoe input').on('keyup', function () {
+        var mdtNum = $(this).val() * 1.123;
+
+        if ($(this).val() == "") {
+            $('#convert').prop('disabled', true)
+        } else {
+            $('#convert').prop('disabled', false)
+        }
+
+        $('dl.shoe').siblings('dl').find('input').val(mdtNum)
+    })
+</script>
+
+</html>

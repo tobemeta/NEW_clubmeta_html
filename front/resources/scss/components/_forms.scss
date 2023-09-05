@@ -25,6 +25,35 @@
             line-height: 1.4rem;
             color: $main-color;
         }
+        &.shoe {
+            position: relative;
+            padding-left: 2.8rem;
+            &:before {
+                display: block;
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 2.4rem;
+                height: 2.4rem;
+                @include bg($src: '../images/ico/ico_shoe_s.svg');
+            }
+        }
+        &.mdt {
+            position: relative;
+            padding-left: 2.8rem;
+            &:before {
+                display: block;
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 2.4rem;
+                height: 2.4rem;
+                @include bg($src: '../images/ico/ico_mdt.svg');
+                background-size: cover;
+            }
+        }
     }
     .req {
         position: relative;
@@ -88,6 +117,14 @@
             & + .btn-inp-del {
                 display: none;
             }
+        }
+        &:read-only {
+            &:focus {
+                border: 1px solid $form-bColor;
+            }
+        }
+        &[type='number'] {
+            text-align: right;
         }
     }
     &.success {
