@@ -58,9 +58,10 @@
                             <li>
                                 <a href="#none" class="card alarm">푸시알림 설정</a>
                             </li>
-                            <li>
+                            <!-- 2023-09-05 마크업 삭제 -->
+                            <!-- <li>
                                 <a href="#none" class="card shoe">Shoe 히스토리</a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a href="#none" class="card wallet">내 지갑</a>
                             </li>
@@ -97,7 +98,8 @@
                                 <a href="#none" class="card event">이벤트</a>
                             </li>
                             <li>
-                                <a href="#none" class="card qm">카카오채널 문의하기</a>
+                                <!-- 2023-09-05 class(qm -> kakao) 변경 -->
+                                <a href="#none" class="card kakao">카카오채널 문의하기</a>
                             </li>
                             <li>
                                 <a href="#none" class="card app">앱 버전 업데이트</a>
@@ -107,9 +109,11 @@
                     <div class="more-box">
                         <ul>
                             <li>
-                                <button type="button" class="card" onclick="ui.popup.open('#logoutPop')">로그아웃</button>
+                                <!-- 2023-09-05 no-shadow class 추가 -->
+                                <button type="button" class="card no-shadow"
+                                    onclick="ui.popup.open('#logoutPop')">로그아웃</button>
                             </li>
-                            <li><a href="#none" class="card">회원탈퇴</a></li>
+                            <li><a href="#none" class="card no-shadow">회원탈퇴</a></li>
                         </ul>
                     </div>
                 </div>

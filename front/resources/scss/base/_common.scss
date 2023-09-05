@@ -888,6 +888,9 @@ h1 {
             display: flex;
             justify-content: space-between;
         }
+        &.no-shadow {
+            box-shadow: none;
+        }
     }
 
     &.ico {
@@ -1002,6 +1005,41 @@ h1 {
             &.service {
                 &:before {
                     background: url('../images/ico/ico_service.svg') no-repeat center;
+                }
+            }
+            &.policy {
+                &:before {
+                    background: url('../images/ico/ico_policy.svg') no-repeat center;
+                }
+            }
+            &.guide {
+                &:before {
+                    background: url('../images/ico/ico_guide.svg') no-repeat center;
+                }
+            }
+            &.source {
+                &:before {
+                    background: url('../images/ico/ico_source.svg') no-repeat center;
+                }
+            }
+            &.notice {
+                &:before {
+                    background: url('../images/ico/ico_notice.svg') no-repeat center;
+                }
+            }
+            &.event {
+                &:before {
+                    background: url('../images/ico/ico_event.svg') no-repeat center;
+                }
+            }
+            &.kakao {
+                &:before {
+                    background: url('../images/ico/ico_kakao.svg') no-repeat center;
+                }
+            }
+            &.app {
+                &:before {
+                    background: url('../images/ico/ico_phone.svg') no-repeat center;
                 }
             }
         }
