@@ -354,9 +354,7 @@ a.btn-composer {
 }
 
 .no-clip {
-    width: 21.2rem;
-    height: 21.2rem;
-    margin: 1.6rem auto 0;
+    height: 100vw;
     @include bg($src: '../images/img/img_no_clip.png');
     background-size: cover;
 
