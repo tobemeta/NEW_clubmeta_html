@@ -144,12 +144,16 @@
                                             <div class="card shadow mb-4">
                                                 <!-- Card Header - Dropdown -->
                                                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                                    <h6 class="m-0 font-weight-bold text-primary">이게멀까 : bsConfirm2</h6>
+                                                    <h6 class="m-0 font-weight-bold text-primary">modal 팝업</h6>
                                                 </div>
                                                 <!-- Card Body -->
                                                 <div class="card-body">
-                                                    <p class="text-secondary">이게머지</p>
-                                                    <button type="button" class="btn btn-primary btn-confirm" data-toggle="modal" onclick="bsConfirm2('알림창')">알림 alert 5</button>
+                                                    <button type="button" class="btn btn-primary btn-confirm" data-toggle="modal" data-target="#smallPop">width 300px</button>
+                                                    <button type="button" class="btn btn-primary btn-confirm" data-toggle="modal" data-target="#defaultPop">width 500px (default)</button>
+                                                    <button type="button" class="btn btn-primary btn-confirm" data-toggle="modal" data-target="#largePop">width 800px</button>
+                                                    <button type="button" class="btn btn-primary btn-confirm" data-toggle="modal" data-target="#extraLargePop">width 1140px</button>
+                                                    <hr />
+                                                    <button type="button" class="btn btn-primary btn-confirm" data-toggle="modal" data-target="#scrollPop">content에 scroll이 생기는 팝업</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -268,7 +272,7 @@
                                         <div class="form-box-row">
                                             <div class="form-box-item">
                                                 <div class="form-box-label"><label for="">th 텍스트</label></div>
-                                                <div class="form-box-cont col-6">
+                                                <div class="form-box-cont">
                                                     <div class="form-row">
                                                         <span>text</span>
                                                     </div>
@@ -276,7 +280,7 @@
                                             </div>
                                             <div class="form-box-item">
                                                 <div class="form-box-label"><label for="">th 텍스트</label></div>
-                                                <div class="form-box-cont col-6">
+                                                <div class="form-box-cont">
                                                     <div class="form-row">
                                                         <span>text</span>
                                                     </div>
@@ -286,7 +290,7 @@
                                         <div class="form-box-row">
                                             <div class="form-box-item">
                                                 <div class="form-box-label"><label for="">th 텍스트</label></div>
-                                                <div class="form-box-cont col-6">
+                                                <div class="form-box-cont">
                                                     <div class="form-row">
                                                         <span>text</span>
                                                     </div>
@@ -294,7 +298,7 @@
                                             </div>
                                             <div class="form-box-item">
                                                 <div class="form-box-label"><label for="">th 텍스트</label></div>
-                                                <div class="form-box-cont col-6">
+                                                <div class="form-box-cont">
                                                     <div class="form-row">
                                                         <span>text</span>
                                                     </div>
@@ -854,6 +858,206 @@
                                 <div class="tab-pane fade" id="sub-panel5" role="tabpanel" aria-labelledby="sub-tab5">
                                     <div class="row clearfix mt-4 mb-4">
                                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                            <h2 class="h3 text-gray-800 float-left">기본 폼</h2>
+                                        </div>
+                                    </div>
+                                    <div class="form-box">
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label"><label for="">input (text/number)</label></div>
+                                                <div class="form-box-cont">
+                                                    <input type="text" class="form-control" placeholder="text input - w 100%" />
+                                                    <br />
+                                                    <input type="text" class="form-control w-75" placeholder="text input - w 75%" />
+                                                    <br />
+                                                    <input type="number" class="form-control w-50" placeholder="number input - w 50%" />
+                                                    <br />
+                                                    <input type="number" class="form-control w-25" placeholder="number input - w 25%" />
+                                                    <br />
+                                                    <input type="text" class="form-control" placeholder="readonly" readonly />
+                                                    <br />
+                                                    <input type="number" class="form-control" placeholder="disabled" disabled />
+                                                    <div class="row clearfix mt-4 mb-2">
+                                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                            <h6 class="h5 text-gray-800 float-left">column 2 이상</h6>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-secondary mb-1">style 1</div>
+                                                    <div class="d-flex">
+                                                        <input type="number" class="form-control mr-1" placeholder="" />
+                                                        <input type="text" class="form-control" placeholder="" />
+                                                    </div>
+                                                    <br />
+                                                    <div class="d-flex">
+                                                        <input type="number" class="form-control mr-1" placeholder="" />
+                                                        <input type="text" class="form-control mr-1" placeholder="" />
+                                                        <input type="text" class="form-control" placeholder="" />
+                                                    </div>
+                                                    <div class="text-secondary mt-2 mb-1">style 2</div>
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" />
+                                                        <input type="text" class="form-control" />
+                                                    </div>
+                                                    <br />
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" />
+                                                        <input type="text" class="form-control" />
+                                                        <input type="text" class="form-control" />
+                                                    </div>
+                                                    <div class="row clearfix mt-4 mb-2">
+                                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                            <h6 class="h5 text-gray-800 float-left">버튼 혹은 텍스트와 결합</h6>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" />
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text">Shoe</span>
+                                                        </div>
+                                                    </div>
+                                                    <br />
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">+</span>
+                                                        </div>
+                                                        <input type="number" class="form-control custom-number" />
+                                                    </div>
+                                                    <br />
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" />
+                                                        <div class="input-group-append">
+                                                            <button class="btn btn-outline-secondary" type="button">검색</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label"><label for="">select box</label></div>
+                                                <div class="form-box-cont">
+                                                    <div class="form-row">
+                                                        <select class="custom-select">
+                                                            <option value="1">공지사항</option>
+                                                            <option value="2">FAQ</option>
+                                                            <option value="3">작곡가웹 공지사항</option>
+                                                            <option value="4">작곡가웹 FAQ</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label"><label for="">select box + input</label></div>
+                                                <div class="form-box-cont">
+                                                    <div class="form-row">
+                                                        <div class="col-2">
+                                                            <select class="custom-select">
+                                                                <option value="1">전체</option>
+                                                                <option value="2">닉네임</option>
+                                                                <option value="3">내역</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="flex-fill">
+                                                            <input type="text" class="form-control" placeholder="검색어 입력" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label"><label for="">textarea</label></div>
+                                                <div class="form-box-cont">
+                                                    <div class="form-row">
+                                                        <textarea class="form-control" rows="3"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label"><label for="">checkbox</label></div>
+                                                <div class="form-box-cont">
+                                                    <div class="custom-control-wrap">
+                                                        <label class="custom-control custom-checkbox custom-control-inline">
+                                                            <input type="checkbox" name="chkSeveral" class="custom-control-input" />
+                                                            <span class="custom-control-label">여러개의</span>
+                                                        </label>
+                                                        <label class="custom-control custom-checkbox custom-control-inline">
+                                                            <input type="checkbox" name="chkSeveral" class="custom-control-input" />
+                                                            <span class="custom-control-label">선택지가</span>
+                                                        </label>
+                                                        <label class="custom-control custom-checkbox custom-control-inline">
+                                                            <input type="checkbox" name="chkSeveral" class="custom-control-input" />
+                                                            <span class="custom-control-label">있는</span>
+                                                        </label>
+                                                        <label class="custom-control custom-checkbox custom-control-inline">
+                                                            <input type="checkbox" name="chkSeveral" class="custom-control-input" />
+                                                            <span class="custom-control-label">체크박스</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="custom-control-wrap">
+                                                        <label class="custom-control custom-checkbox">
+                                                            <input type="checkbox" name="chkOne" class="custom-control-input" />
+                                                            <span class="custom-control-label">단일 체크박스</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="text-secondary mt-2 mb-1">체크박스만</div>
+                                                    <label class="custom-control custom-checkbox only">
+                                                        <input type="checkbox" class="custom-control-input" />
+                                                        <span class="custom-control-label"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-box-item">
+                                                <div class="form-box-label"><label for="">radio</label></div>
+                                                <div class="form-box-cont">
+                                                    <div class="d-flex">
+                                                        <label class="custom-control custom-radio custom-control-inline mb-0">
+                                                            <input type="radio" name="rdo2" class="custom-control-input" checked />
+                                                            <span class="custom-control-label">다중 선택지가</span>
+                                                        </label>
+                                                        <label class="custom-control custom-radio custom-control-inline mb-0">
+                                                            <input type="radio" name="rdo2" class="custom-control-input" />
+                                                            <span class="custom-control-label">있는</span>
+                                                        </label>
+                                                        <label class="custom-control custom-radio custom-control-inline mb-0">
+                                                            <input type="radio" name="rdo2" class="custom-control-input" />
+                                                            <span class="custom-control-label">라디오</span>
+                                                        </label>
+                                                    </div>
+                                                    <br />
+                                                    <label class="custom-control custom-radio custom-control-inline mb-0">
+                                                        <input type="radio" name="rdo00" class="custom-control-input" />
+                                                        <span class="custom-control-label">단일 라디오</span>
+                                                    </label>
+                                                    <div class="text-secondary mt-2 mb-1">라디오만</div>
+                                                    <label class="custom-control custom-radio only">
+                                                        <input type="radio" name="rdo00" class="custom-control-input" />
+                                                        <span class="custom-control-label"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-box-row">
+                                            <div class="form-box-item">
+                                                <div class="form-box-label"><label for="">file</label></div>
+                                                <div class="form-box-cont">
+                                                    <div class="form-row">
+                                                        <div class="custom-file w-50">
+                                                            <label class="custom-file-label" for="customFile03" data-browse="파일선택">파일선택</label>
+                                                            <input type="file" class="custom-file-input" id="customFile03" />
+                                                        </div>
+                                                        <div class="text-secondary w-100 mt-1">* 15초~최대 1분, WAV 파일 권장(지원 파일 포맷: WAV, MP3), 크기 : 1GB , MP3 파일은 320kbps 이상만</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix mt-4 mb-4">
+                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                             <h2 class="h3 text-gray-800 float-left">datePicker</h2>
                                         </div>
                                     </div>
@@ -1013,6 +1217,124 @@
                     </div>
                     <div class="modal-footer">
                         <button id="btnFnAlert" type="button" onclick="conAlert('비밀번호 변경이 완료되었습니다.')" class="btn btn-primary btn-lg" data-dismiss="modal">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="smallPop" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel">modal-sm</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row clearfix mb-2">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <h6 class="h5 text-gray-800 float-left">modal-dialog에 클래스 modal-sm</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal" aria-label="Close">닫기</button>
+                        <button type="button" class="btn btn-primary btn-lg">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="defaultPop" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel1">modal default</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row clearfix mb-2">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <h6 class="h5 text-gray-800 float-left">default size</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal" aria-label="Close">닫기</button>
+                        <button type="button" class="btn btn-primary btn-lg">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="largePop" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel2">modal large</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row clearfix mb-2">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <h6 class="h5 text-gray-800 float-left">modal-dialog에 클래스 modal-lg</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal" aria-label="Close">닫기</button>
+                        <button type="button" class="btn btn-primary btn-lg">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="extraLargePop" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel3">modal extra large</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row clearfix mb-2">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <h6 class="h5 text-gray-800 float-left">modal-dialog에 클래스 modal-xl</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal" aria-label="Close">닫기</button>
+                        <button type="button" class="btn btn-primary btn-lg">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="scrollPop" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel5">modal scrolling</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row clearfix mb-2">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <h6 class="h5 text-gray-800 float-left">modal-dialog에 클래스 modal-dialog-scrollable</h6>
+                            </div>
+                        </div>
+                        <div class="bg-primary text-center pt-5" style="height: 2000px">
+                            <span class="text-light">modal body</span>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal" aria-label="Close">닫기</button>
+                        <button type="button" class="btn btn-primary btn-lg">확인</button>
                     </div>
                 </div>
             </div>
