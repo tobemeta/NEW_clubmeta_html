@@ -12,34 +12,6 @@
     <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
     <script src="../../resources/js/lib/jquery-ui.min.js"></script>
     <script src="../../resources/js/common.js"></script>
-    <style>
-        .keyboard--on body {
-            position: fixed;
-        }
-
-        .keyboard--on .write__dim {
-            opacity: 1;
-            pointer-events: initial;
-        }
-
-        .write__dim {
-            opacity: 0;
-            pointer-events: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 11;
-            background: rgba(0, 0, 0, 0.5);
-            transition: opacity 0.3s;
-        }
-
-        .comment-inp-box {
-            z-index: 12;
-            background: #fff;
-        }
-    </style>
 </head>
 
 <body>
@@ -225,11 +197,10 @@
             <!-- //layer-content -->
             <div class="comment-inp-box">
                 <div class="input-box ico comment">
-                    <input type="text" placeholder="댓글 입력" onclick="active()" title="내용입력" />
+                    <input type="text" placeholder="댓글 입력" title="내용입력" />
                     <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
                 </div>
             </div>
-            <div class="write__dim" touchstart="reset()" onclick="reset()"></div>
         </div>
 
         <!-- //layer-popup -->
@@ -287,35 +258,6 @@
     function removeComment() {
         ui.popup.close('#msgBox')
         ui.popup.close('#bottomViewPop')
-    }
-
-    let iosAsideGap = 0;
-    let scroll;
-    let scrollDetail;
-    const bodyEl = document.body;
-    const htmlEl = document.getElementsByTagName('html')[0];
-
-
-    function scrollMove() {
-        const currentVisualViewport = window.visualViewport.height;
-        if (htmlEl.classList.contains('keyboard--on')) {
-            const scrollHeight = window.document.scrollingElement.scrollHeight;
-            iosAsideGap = scrollHeight - currentVisualViewport;
-            window.scrollTo(0, iosAsideGap);
-            bodyEl.style.top = `${-(scroll - iosAsideGap)}px`;
-        }
-    }
-    window.visualViewport.onresize = scrollMove;
-
-    function active() {
-        scroll = window.scrollY;
-        htmlEl.classList.add('keyboard--on');
-        bodyEl.style.top = `${-scroll}px`;
-    }
-    function reset() {
-        htmlEl.classList.remove('keyboard--on');
-        bodyEl.style.removeProperty('top');
-        window.scrollTo(0, scroll)
     }
 </script>
 
