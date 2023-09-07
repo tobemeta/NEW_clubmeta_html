@@ -1,9 +1,21 @@
+.layer-header {
+    .comment-num,
+    .comment-unit {
+        font-size: 1.4rem;
+        color: #585858;
+    }
+    .comment-num {
+        margin-left: 1rem;
+    }
+}
+
 .report-box {
     ul {
         display: flex;
         flex-direction: column;
         gap: 0.8rem;
     }
+
     .rdo-box.cell {
         label {
             height: auto;
@@ -14,6 +26,7 @@
         }
     }
 }
+
 .comment {
     .layer-content {
         &::-webkit-scrollbar {
@@ -23,8 +36,10 @@
             background: transparent;
         }
     }
+
     .header-center {
         align-items: center;
+
         p {
             margin-left: 1rem;
             font-size: 1.4rem;
@@ -33,21 +48,25 @@
         }
     }
 }
+
 .comment-box {
     &.no-reply {
         .select-box,
         .comment-list {
             display: none;
         }
+
         .no-comment {
             display: flex;
         }
     }
+
     .no-comment {
         display: none;
         flex-direction: column;
         align-items: center;
         margin-top: 12.4rem;
+
         .img {
             display: block;
             width: 21.2rem;
@@ -56,6 +75,7 @@
             background-size: cover;
             @include bg($src: '../images/img/img_no_result.png');
         }
+
         .title {
             margin-bottom: 0.4rem;
             font-size: 2rem;
@@ -63,13 +83,16 @@
         }
     }
 }
+
 .comment-inp-box {
     margin-top: auto;
     padding: 2.4rem 1.6rem 2.4rem 1.6rem;
     box-sizing: $sizing;
+
     .text-box {
         .textarea {
             min-height: 4.8rem;
+
             &::-webkit-scrollbar {
                 display: none;
                 width: 0;
@@ -79,6 +102,7 @@
         }
     }
 }
+
 .comment-select {
     position: absolute;
     top: 4.8rem;
@@ -87,19 +111,23 @@
     background: #fff;
     padding: 2.4rem 1.6rem;
     z-index: 10;
+
     .btn-select:after {
         right: 2rem;
     }
 }
+
 .comment-list {
     display: flex;
     flex-direction: column;
     gap: 2.4rem;
     padding-top: 8.8rem;
 }
+
 .comment-item {
     display: flex;
     gap: 0.8rem;
+
     .comment-img {
         overflow: hidden;
         min-width: 3.2rem;
@@ -109,18 +137,22 @@
         box-sizing: $sizing;
         @include imgCenter();
     }
+
     .comment-info {
         flex: 1;
         padding-right: 0.8rem;
+
         .name {
             font-size: 1.4rem;
             line-height: 2rem;
             color: #404040;
         }
+
         .text {
             margin-top: 0.4rem;
             line-height: 2.3rem;
         }
+
         .date {
             margin-top: 0.8rem;
             font-size: 1.2rem;
@@ -129,10 +161,12 @@
         }
     }
 }
+
 .comment-util {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     .more {
         display: block;
         width: 2.4rem;
@@ -141,11 +175,13 @@
         @include bg($src: '../images/ico/ico_more.svg', $po: center);
         transform: rotate(-90deg);
     }
+
     .like-num {
         font-size: 1rem;
         color: #404040;
     }
 }
+
 .comment-more-box {
     .card {
         padding: 1.05rem 1.6rem;
