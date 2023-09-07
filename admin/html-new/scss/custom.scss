@@ -383,6 +383,7 @@ optgroup {
         flex: 1 1 auto;
         padding: 0.3rem 0.8rem;
         min-height: 2.8rem;
+        word-break: break-all;
         // &:not(.d-flex) {
         //   display: flex;
         //   flex-direction: column;
