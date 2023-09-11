@@ -241,8 +241,9 @@ optgroup {
                 height: 1.8rem;
                 width: 1.8rem;
                 margin-right: 0.4rem;
-                border: 1px solid rgba(255, 255, 255, 0.85);
+                padding: 1px;
                 border-radius: 1.8rem;
+                background-color: rgba(255, 255, 255, 0.85);
                 overflow: hidden;
                 img {
                     width: 100%;
