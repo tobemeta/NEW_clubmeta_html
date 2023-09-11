@@ -174,3 +174,10 @@
     height: 2.4rem;
     @include bg($src: '../images/ico/ico_coment.svg');
 }
+
+.btn-menu {
+    display: block;
+    width: 4.8rem;
+    height: 4.8rem;
+    @include bg($src: '../images/ico/ico_set.svg');
+}
