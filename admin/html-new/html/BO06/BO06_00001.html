@@ -39,8 +39,13 @@
                                 <div class="col-md-6">
                                     <div class="d-flex flex-column">
                                         <div class="card shadow dash-chart-box">
-                                            <div class="card-header py-3">
-                                                <h6 class="m-0 font-weight-bold text-dark">알림</h6>
+                                            <div class="card-header py-3 clearfix">
+                                                <div class="float-left">
+                                                    <h6 class="m-0 font-weight-bold text-dark mt-1">알림</h6>
+                                                </div>
+                                                <div class="float-right">
+                                                    <button type="button" data-toggle="modal" data-target="#alramListPop"><i class="fas fa-chevron-right text-gray-700"></i></button>
+                                                </div>
                                             </div>
                                             <div class="card-body">
                                                 <div class="bootstrap-table bootstrap4">
@@ -803,6 +808,283 @@
         <div data-include="../include/logoutModal.html"></div>
         <!-- changePw Modal-->
         <div data-include="../include/pop/changePwModal.html"></div>
+        <!-- modal -->
+        <div class="modal fade" id="alramListPop" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel">알림 리스트</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="bootstrap-table bootstrap4">
+                            <div class="fixed-table-toolbar"></div>
+                            <div class="fixed-table-container" style="padding-bottom: 0px">
+                                <div class="fixed-table-header" style="display: none">
+                                    <table></table>
+                                </div>
+                                <div class="fixed-table-body">
+                                    <div class="fixed-table-loading table table-borderless" style="top: 42.7969px">
+                                        <span class="loading-wrap">
+                                            <span class="loading-text">데이터를 불러오는 중입니다</span>
+                                            <span class="animation-wrap"><span class="animation-dot"></span></span>
+                                        </span>
+                                    </div>
+                                    <table id="" class="table table-borderless" data-pagination="true">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="0">
+                                                    <div class="th-inner fz-lg text-left">2023.07.24</div>
+                                                    <div class="fht-cell"></div>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr data-index="0">
+                                                <td class="p-0 pt-2">
+                                                    <table id="" class="table table-borderless table-hover" data-pagination="true">
+                                                        <thead>
+                                                            <tr>
+                                                                <th data-field="0">
+                                                                    <div class="th-inner text-left bg-white text-secondary">14:25:02</div>
+                                                                    <div class="fht-cell"></div>
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr data-index="0">
+                                                                <td class="text-left">음원승인이 완료되었습니다. 음원승인이 완료되었습니다. 음원승인이 완료되었습니다. 음원승인이 완료되었습니다.음원승인이 완료되었습니다. 음원승인이 완료되었습니다.음원승인이 완료되었습니다. 음원승인이 완료되었습니다.음원승인이 완료되었습니다. 음원승인이 완료되었습니다.</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr data-index="1">
+                                                <td class="p-0 pt-2">
+                                                    <table id="" class="table table-borderless table-hover" data-pagination="true">
+                                                        <thead>
+                                                            <tr>
+                                                                <th data-field="0">
+                                                                    <div class="th-inner text-left bg-white text-secondary">14:27:22</div>
+                                                                    <div class="fht-cell"></div>
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr data-index="0">
+                                                                <td class="text-left">신청한 정산 금액이 지급되었습니다. 신청한 정산 금액이 지급되었습니다. 신청한 정산 금액이 지급되었습니다.</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr data-index="2">
+                                                <td class="p-0 pt-2">
+                                                    <table id="" class="table table-borderless table-hover" data-pagination="true">
+                                                        <thead>
+                                                            <tr>
+                                                                <th data-field="0">
+                                                                    <div class="th-inner text-left bg-white text-secondary">18:28:02</div>
+                                                                    <div class="fht-cell"></div>
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr data-index="0">
+                                                                <td class="text-left">[챌린지명] 개최한 음원 챌린지가 종료되었습니다. 3일 내로 투표를 진행해주세요.</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bootstrap-table bootstrap4 mt-4">
+                            <div class="fixed-table-toolbar"></div>
+                            <div class="fixed-table-container" style="padding-bottom: 0px">
+                                <div class="fixed-table-header" style="display: none">
+                                    <table></table>
+                                </div>
+                                <div class="fixed-table-body">
+                                    <div class="fixed-table-loading table table-borderless" style="top: 42.7969px">
+                                        <span class="loading-wrap">
+                                            <span class="loading-text">데이터를 불러오는 중입니다</span>
+                                            <span class="animation-wrap"><span class="animation-dot"></span></span>
+                                        </span>
+                                    </div>
+                                    <table id="" class="table table-borderless" data-pagination="true">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="0">
+                                                    <div class="th-inner fz-lg text-left">2023.07.22</div>
+                                                    <div class="fht-cell"></div>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr data-index="0">
+                                                <td class="p-0 pt-2">
+                                                    <table id="" class="table table-borderless table-hover" data-pagination="true">
+                                                        <thead>
+                                                            <tr>
+                                                                <th data-field="0">
+                                                                    <div class="th-inner text-left bg-white text-secondary">14:25:02</div>
+                                                                    <div class="fht-cell"></div>
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr data-index="0">
+                                                                <td class="text-left">음원승인이 완료되었습니다. 음원승인이 완료되었습니다.</td>
+                                                            </tr>
+                                                            <tr data-index="1">
+                                                                <td class="text-left">음원승인이 완료되었습니다. 음원승인이 완료되었습니다.</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr data-index="1">
+                                                <td class="p-0 pt-2">
+                                                    <table id="" class="table table-borderless table-hover" data-pagination="true">
+                                                        <thead>
+                                                            <tr>
+                                                                <th data-field="0">
+                                                                    <div class="th-inner text-left bg-white text-secondary">14:27:22</div>
+                                                                    <div class="fht-cell"></div>
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr data-index="0">
+                                                                <td class="text-left">음원승인이 완료되었습니다. 음원승인이 완료되었습니다. 음원승인이 완료되었습니다. 음원승인이 완료되었습니다.음원승인이 완료되었습니다. 음원승인이 완료되었습니다.</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr data-index="2">
+                                                <td class="p-0 pt-2">
+                                                    <table id="" class="table table-borderless table-hover" data-pagination="true">
+                                                        <thead>
+                                                            <tr>
+                                                                <th data-field="0">
+                                                                    <div class="th-inner text-left bg-white text-secondary">18:28:02</div>
+                                                                    <div class="fht-cell"></div>
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr data-index="0">
+                                                                <td class="text-left">음원승인이 완료되었습니다. 음원승인이 완료되었습니다. 음원승인이 완료되었습니다. 음원승인이 완료되었습니다.음원승인이 완료되었습니다. 음원승인이 완료되었습니다.음원승인이 완료되었습니다. 음원승인이 완료되었습니다.음원승인이 완료되었습니다. 음원승인이 완료되었습니다.</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bootstrap-table bootstrap4 mt-4">
+                            <div class="fixed-table-toolbar"></div>
+                            <div class="fixed-table-container" style="padding-bottom: 0px">
+                                <div class="fixed-table-header" style="display: none">
+                                    <table></table>
+                                </div>
+                                <div class="fixed-table-body">
+                                    <div class="fixed-table-loading table table-borderless" style="top: 42.7969px">
+                                        <span class="loading-wrap">
+                                            <span class="loading-text">데이터를 불러오는 중입니다</span>
+                                            <span class="animation-wrap"><span class="animation-dot"></span></span>
+                                        </span>
+                                    </div>
+                                    <table id="" class="table table-borderless" data-pagination="true">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="0">
+                                                    <div class="th-inner fz-lg text-left">2023.07.20</div>
+                                                    <div class="fht-cell"></div>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr data-index="0">
+                                                <td class="p-0 pt-2">
+                                                    <table id="" class="table table-borderless table-hover" data-pagination="true">
+                                                        <thead>
+                                                            <tr>
+                                                                <th data-field="0">
+                                                                    <div class="th-inner text-left bg-white text-secondary">14:25:02</div>
+                                                                    <div class="fht-cell"></div>
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr data-index="0">
+                                                                <td class="text-left">음원승인이 완료되었습니다. 음원승인이 완료되었습니다. 음원승인이 완료되었습니다. 음원승인이 완료되었습니다.음원승인이 완료되었습니다. 음원승인이 완료되었습니다.</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr data-index="1">
+                                                <td class="p-0 pt-2">
+                                                    <table id="" class="table table-borderless table-hover" data-pagination="true">
+                                                        <thead>
+                                                            <tr>
+                                                                <th data-field="0">
+                                                                    <div class="th-inner text-left bg-white text-secondary">14:27:22</div>
+                                                                    <div class="fht-cell"></div>
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr data-index="0">
+                                                                <td class="text-left">음원승인이 완료되었습니다. 음원승인이 완료되었습니다. 음원승인이 완료되었습니다. 음원승인이 완료되었습니다.</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr data-index="2">
+                                                <td class="p-0 pt-2">
+                                                    <table id="" class="table table-borderless table-hover" data-pagination="true">
+                                                        <thead>
+                                                            <tr>
+                                                                <th data-field="0">
+                                                                    <div class="th-inner text-left bg-white text-secondary">18:28:02</div>
+                                                                    <div class="fht-cell"></div>
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr data-index="0">
+                                                                <td class="text-left">음원승인이 완료되었습니다. 음원승인이 완료되었습니다. 음원승인이 완료되었습니다. 음원승인이 완료되었습니다.음원승인이 완료되었습니다. 음원승인이 완료되었습니다.</td>
+                                                            </tr>
+                                                            <tr data-index="1">
+                                                                <td class="text-left">음원승인이 완료되었습니다. 음원승인이 완료되었습니다.</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer"></div>
+                </div>
+            </div>
+        </div>
     </body>
     <script src="../../datatables/jquery.dataTables.min.js"></script>
     <script src="../../datatables/dataTables.bootstrap4.min.js"></script>
