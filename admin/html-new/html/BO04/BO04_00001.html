@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>클럽메다 작곡가웹 - 로그인</title>
+    <script src="../include/head.js"></script>
+    <script src="../../js/custom.js"></script>
+    <link href="../../css/login.min.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="log-content-wrap flex-column">
+        <div class="log-content row mt-auto">
+            <div class="log-visu-box col">
+                <div class="visu-img"></div>
+                <p>하나의 ID로 클럽메타 앱과 작곡가 웹<br>서비스 모두를 편리하게 이용하실 수 있어요!</p>
+            </div>
+
+            <div class="visu-form col d-flex flex-column">
+                <p class="title text-center mb-50">클럽메타와 함께 최고의 노래와<br> 댄스를 손안에서 즐겨보세요!</p>
+                <form action="" class="needs-validation" novalidate>
+                    <div class="form-box">
+                        <div class="input-box col-md-auto mb-3">
+                            <!-- <label for="validationCustom01"><span class="blind">test</span></label> -->
+                            <input type="text" class="form-control" id="validationCustom01" placeholder="아이디 (이메일) 입력"
+                                value="" required>
+                            <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"><span
+                                    class="blind">입력내용 삭제</span></a>
+                        </div>
+                        <div class="input-box col-md-auto">
+                            <!-- <label for="validationCustom02">First name</label> -->
+                            <input type="password" class="form-control" id="validationCustom02" value=""
+                                placeholder="영문, 숫자, 특수문자를 포함한 8~20자" required>
+                            <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"><span
+                                    class="blind">입력내용 삭제</span></a>
+                            <a href="#none" class="btn-inp-pw" role="button" aria-label="비밀번호 표시"></a>
+                        </div>
+                        <div class="invalid-feedback">이메일 또는 비밀번호를 확인해주세요.</div>
+                        <div class="invalid-feedback">회원정보가 없습니다. 회원가입을 해주세요.</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block btn-lg mt-3">로그인</button>
+
+                </form>
+                <div class="option-box d-flex justify-content-between mt-3 ">
+                    <div class="left">
+                        <div class="chk-box">
+                            <label class="custom-control custom-checkbox">
+                                <input type="checkbox" name="chkOne" class="custom-control-input">
+                                <span class="custom-control-label">자동로그인</span>
+                            </label>
+                            <!-- <input type="checkbox" class="custom-control-input" id="chk1_1" />
+                            <label for="chk1_1">자동로그인</label> -->
+                        </div>
+                    </div>
+                    <div class="right">
+                        <button type="button" class="btn-txt" title="ID 찾기">ID 찾기</button>
+                        <button type="button" class="btn-txt" title="비밀번호 찾기">비밀번호 찾기</button>
+                    </div>
+                </div>
+
+                <div class="social-box">
+                    <ul>
+                        <li class="kakao"><a href="#none" role="button" aria-label="카카오 계정으로 로그인"></a></li>
+                        <li class="naver"><a href="#none" role="button" aria-label="네이버 계정으로 로그인"></a></li>
+                        <li class="google last"><a href="#none" role="button" aria-label="구글 계정으로 로그인"></a></li>
+                        <li class="apple"><a href="#none" role="button" aria-label="애플 계정으로 로그인"></a></li>
+                    </ul>
+                </div>
+
+                <button type="button" class="btn btn-primary btn-lg btn-block btn-flat">회원가입</button>
+            </div>
+        </div>
+        <div class="log-footer mb-3 mt-auto">
+            <address>
+                <ul>
+                    <li><a href="#none">이용약관</a></li>
+                    <li><a href="#none">개인정보처리방침</a></li>
+                </ul>
+            </address>
+            <p class="copyright">TOBEMETA, ALL RIGHTS RESERVED.</p>
+        </div>
+    </div>
+
+
+</body>
+<script>
+    (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
+</script>
+
+</html>

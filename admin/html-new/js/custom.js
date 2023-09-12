@@ -32,6 +32,46 @@ const ui = {
                 orientation: 'bottom left'
             })
             .datepicker('update', new Date());
+
+        var inpBox = $('.input-box');
+        var inp = $('.input-box .form-control');
+
+        inpBox.each(function () {
+            inp.on('input', function () {
+                var inpType = $(this).attr('type');
+
+                if ($(this).val() != '') {
+                    if (inpType === 'password') {
+                        $(this).parent(inpBox).addClass('pw');
+                    }
+                    $(this).parent(inpBox).addClass('focus');
+                } else {
+                    $(this).parent(inpBox).removeClass('focus');
+                    $(this).parent(inpBox).removeClass('pw');
+                }
+            });
+        });
+        $(document).on('click', '.btn-inp-del', function () {
+            var $inp = $(this).siblings('input', 'textarea');
+            $inp.val('').change().focus();
+            $(this).parents('.input-box').removeClass('focus');
+        });
+
+        $(document).on('click', '.btn-inp-pw', function (e) {
+            e.preventDefault();
+
+            $(this).toggleClass('is-show');
+            $(this).attr('aria-label', '비밀번호 숨김');
+
+            const $inp = $(this).siblings('input');
+
+            if ($(this).hasClass('is-show')) {
+                $inp.prop('type', 'text');
+            } else {
+                $inp.prop('type', 'password');
+                $(this).attr('aria-label', '비밀번호 표시');
+            }
+        });
     },
     menuActive: function () {
         if ($('.sidebar').length) {
