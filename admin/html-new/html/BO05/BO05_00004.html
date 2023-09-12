@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>클럽메타 관리자 - 관심 카테고리 선택</title>
+        <!-- js -->
+        <script src="../include/head.js"></script>
+        <script src="../../js/custom.js"></script>
+    </head>
+
+    <body>
+        <!-- Page Wrapper -->
+        <div id="wrapper" class="wrapper">
+            <!-- content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column bg-white">
+                <!-- 컨텐츠 본문 -->
+                <div id="content">
+                    <div class="container-fluid p-0" role="main">
+                        <div class="main">
+                            <div class="d-flex align-items-center justify-content-center flex-column vh-100">
+                                <div class="row clearfix mt-4 mb-4">
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <h2 class="h3 text-gray-800 float-left">관심장르 선택</h2>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="title-box">
+                                            <p class="title h4 text-gray-900">회원가입을 축하드립니다!</p>
+                                            <div class="body-sub-title text-gray-600">
+                                                <span>평소에 즐겨 듣는 장르를 선택해주세요!<br />클럽메타에서 다양한 장르의 음원을 먼저 만나 보실 수 있습니다.</span>
+                                            </div>
+                                        </div>
+                                        <div class="category-box">
+                                            <ul class="cell-row list-unstyled">
+                                                <li class="ctg-cell">
+                                                    <input type="checkbox" id="cg_chk_01" name="chk" />
+                                                    <i class="kpop" aria-hidden="true"></i>
+                                                    <label for="cg_chk_01">케이팝</label>
+                                                </li>
+                                                <li class="ctg-cell">
+                                                    <input type="checkbox" id="cg_chk_02" name="chk" />
+                                                    <i class="hiphop" aria-hidden="true"></i>
+                                                    <label for="cg_chk_02">힙합 / 랩</label>
+                                                </li>
+                                                <li class="ctg-cell">
+                                                    <input type="checkbox" id="cg_chk_03" name="chk" />
+                                                    <i class="soul" aria-hidden="true"></i>
+                                                    <label for="cg_chk_03">알앤비 / 소울</label>
+                                                </li>
+                                                <li class="ctg-cell">
+                                                    <input type="checkbox" id="cg_chk_04" name="chk" />
+                                                    <i class="pop" aria-hidden="true"></i>
+                                                    <label for="cg_chk_04">팝 / 락</label>
+                                                </li>
+                                                <li class="ctg-cell">
+                                                    <input type="checkbox" id="cg_chk_08" name="chk" />
+                                                    <i class="jazz" aria-hidden="true"></i>
+                                                    <label for="cg_chk_08">재즈</label>
+                                                </li>
+                                            </ul>
+                                            <ul class="cell-row list-unstyled">
+                                                <li class="ctg-cell">
+                                                    <input type="checkbox" id="cg_chk_06" name="chk" />
+                                                    <i class="tert" aria-hidden="true"></i>
+                                                    <label for="cg_chk_06">트로트</label>
+                                                </li>
+                                                <li class="ctg-cell">
+                                                    <input type="checkbox" id="cg_chk_07" name="chk" />
+                                                    <i class="dance" aria-hidden="true"></i>
+                                                    <label for="cg_chk_07">댄스/일렉트로닉</label>
+                                                </li>
+                                                <li class="ctg-cell">
+                                                    <input type="checkbox" id="cg_chk_05" name="chk" />
+                                                    <i class="kids" aria-hidden="true"></i>
+                                                    <label for="cg_chk_05">키즈</label>
+                                                </li>
+                                                <li class="ctg-cell">
+                                                    <input type="checkbox" id="cg_chk_09" name="chk_all" />
+                                                    <i class="all" aria-hidden="true"></i>
+                                                    <label for="cg_chk_09">모든 장르</label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="mt-4">
+                                            <div class="btn-wrap text-center">
+                                                <button type="button" class="btn btn-secondary btn-lg" title="건너뛰기">건너뛰기</button>
+                                                <button type="button" class="btn btn-primary btn-lg" title="확인" disabled>확인</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll to Top Button-->
+        <div data-include="../include/topbtn.html"></div>
+
+        <!-- modal -->
+    </body>
+    <!-- Page level custom scripts -->
+    <script>
+        var $inpchk = $('.category-box input');
+        var $chkAll = $('.category-box input[name="chk_all"]');
+        var $btnPrimary = $('.btn-primary');
+
+        $chkAll.on('click', function () {
+            var isChecked = $chkAll.prop('checked');
+            $inpchk.prop('checked', isChecked);
+            $btnPrimary.prop('disabled', !isChecked || $inpchk.filter(':checked').length === 0);
+        });
+
+        $inpchk.on('change', function () {
+            var checkedCount = $inpchk.filter(':checked').length;
+            $chkAll.prop('checked', $inpchk.length === checkedCount);
+            $btnPrimary.prop('disabled', checkedCount === 0);
+        });
+    </script>
+</html>

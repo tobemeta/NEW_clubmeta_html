@@ -1,0 +1,63 @@
+<div class="modal fade" id="pwReapplyPop" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalLabel1">비밀번호 변경</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="user-idpw-box">
+                    <div class="title-box">
+                        <p class="title h3 text-gray-800">현재 비밀번호와<br />새로운 비밀번호를 입력해주세요.</p>
+                        <p class="body-sub-title text-gray-600">영문, 숫자, 특수문자를 포함한 8~20자를 조합하여 입력해주세요.</p>
+                    </div>
+                    <div class="form-box">
+                        <form action="">
+                            <fieldset>
+                                <dl>
+                                    <dt><label>현재 비밀번호</label></dt>
+                                    <dd>
+                                        <div class="input-box inp-pw">
+                                            <input type="password" placeholder="영문, 숫자, 특수문자를 포함한 8~20자" title="내용입력" />
+                                            <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
+                                            <a href="#none" class="btn-inp-pw" role="button" aria-label="비밀번호 표시"></a>
+                                            <span class="validate-txt is-error text-danger">현재 비밀번호와 입력한 번호가 다릅니다.</span>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt><label>새 비밀번호</label></dt>
+                                    <dd>
+                                        <div class="input-box inp-pw">
+                                            <input type="password" placeholder="영문, 숫자, 특수문자를 포함한 8~20자" title="내용입력" />
+                                            <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
+                                            <a href="#none" class="btn-inp-pw" role="button" aria-label="비밀번호 표시"></a>
+                                            <span class="validate-txt is-error text-danger">비밀번호는 영문, 숫자, 특수문자를 포함한 8-20자 이내로 입력하셔야 합니다.</span>
+                                            <!-- <span class="validate-txt is-error text-danger">현재 비밀번호와 다른 번호를 입력해 주세요.</span> -->
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt><label>새 비밀번호 확인</label></dt>
+                                    <dd>
+                                        <div class="input-box inp-pw">
+                                            <input type="password" placeholder="영문, 숫자, 특수문자를 포함한 8~20자" title="내용입력" />
+                                            <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
+                                            <a href="#none" class="btn-inp-pw" role="button" aria-label="비밀번호 표시"></a>
+                                            <span class="validate-txt is-error text-danger">입력하신 비밀번호와 비밀번호 확인이 일치하지 않습니다.</span>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" title="확인">확인</button>
+            </div>
+        </div>
+    </div>
+</div>

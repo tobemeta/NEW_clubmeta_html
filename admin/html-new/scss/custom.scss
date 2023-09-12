@@ -240,7 +240,7 @@ optgroup {
             .profil-img {
                 height: 1.8rem;
                 width: 1.8rem;
-                margin-right: 0.4rem;
+                margin-right: 0.2rem;
                 padding: 1px;
                 border-radius: 1.8rem;
                 background-color: rgba(255, 255, 255, 0.85);
@@ -1176,4 +1176,269 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type='number'] {
     -moz-appearance: textfield;
+}
+
+// badge css
+.custom-badge-secondary {
+    color: #fff;
+    font-weight: normal;
+}
+
+@mixin bg($src: null, $repeat: no-repeat, $po: center, $on: null, $color: null) {
+    @if $src != null {
+        background-image: url($src);
+    }
+    background-repeat: $repeat;
+    background-position: $po;
+    background-color: $color;
+    @if $on != null {
+        &:hover,
+        &:focus {
+            background-image: url($src + '_on');
+        }
+    }
+}
+$shadow: 0px 4px 12px 0px rgba(20, 36, 91, 0.18);
+// 작곡가 로그인/회원가입 화면
+.user-idpw-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    &.align-left {
+        align-items: flex-start;
+    }
+
+    &.pass {
+        padding-top: 10rem;
+    }
+    .image {
+        width: 100%;
+        height: 21.2rem;
+        @include bg($src: '../images/img/img_no_search.png');
+        background-size: contain;
+    }
+    .title-box {
+        .title {
+            margin: 0;
+        }
+        .body-sub-title {
+            margin-top: 0.4rem;
+        }
+    }
+    .user-sch-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        align-self: stretch;
+        margin: 0 2.4rem;
+        padding: 1.6rem;
+        border-radius: 2.4rem;
+        background-color: #fff;
+        font-size: 1.4rem;
+        text-align: center;
+        color: #585858;
+        line-height: 1.9rem;
+        box-shadow: $shadow;
+        strong {
+            font-size: 1.6rem;
+            color: #111;
+            line-height: 2.3rem;
+        }
+        + .body-title {
+            color: #585858;
+        }
+        &:before {
+            display: none;
+            content: '';
+            position: absolute;
+            top: 1.6rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4.8rem;
+            height: 4.8rem;
+            background-size: cover;
+        }
+
+        &.kakao {
+            position: relative;
+            padding-top: 7.2rem;
+            &::before {
+                display: block;
+                @include bg($src: '../images/btn/btn_kakao.png');
+            }
+        }
+        &.naver {
+            position: relative;
+            padding-top: 7.2rem;
+            &::before {
+                display: block;
+                @include bg($src: '../images/btn/btn_naver.png');
+            }
+        }
+        &.google {
+            position: relative;
+            padding-top: 7.2rem;
+            &::before {
+                display: block;
+                @include bg($src: '../images/btn/btn_google.png');
+            }
+        }
+        &.apple {
+            position: relative;
+            padding-top: 7.2rem;
+            &::before {
+                display: block;
+                @include bg($src: '../images/btn/btn_apple.png');
+            }
+        }
+    }
+    // &.complete {
+    //     align-items: center;
+    //     margin-top: 1.2rem;
+    //     .image {
+    //         height: 20.8rem;
+    //         @include bg($src: '../images/img/img_found.png');
+    //     }
+    // }
+    .form-box {
+        width: 100%;
+        // margin-top: 0.8rem;
+    }
+    & + .btn-bottom-box {
+        .btn-default {
+            border: 1px solid var(--primary);
+        }
+    }
+}
+
+//주소찾기 팝업
+.address-result-box {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 16px;
+    .card {
+        padding: 0;
+        box-sizing: border-box;
+        a {
+            display: block;
+            width: auto;
+            height: 100%;
+            padding: 16px;
+        }
+        .body-sub-title {
+            font-size: 14px;
+        }
+        p {
+            color: #707070;
+        }
+    }
+    .no-data {
+        display: none;
+        height: 100px;
+        font-size: 14px;
+        line-height: 20px;
+        color: #404040;
+    }
+    &.nodata {
+        .no-data {
+            display: block;
+        }
+    }
+}
+
+//관심 카테고리 페이지
+.category-box {
+    width: 100%;
+    margin-top: 5px;
+    box-sizing: border-box;
+    .cell-row {
+        display: flex;
+        gap: 16px;
+        margin-top: 24px;
+    }
+    .ctg-cell {
+        position: relative;
+        width: 104px;
+        text-align: center;
+        i {
+            position: relative;
+            display: block;
+            width: 104px;
+            height: 104px;
+            margin-bottom: 8px;
+            border-radius: 52px;
+            background-size: 104px;
+            box-sizing: border-box;
+            &.kpop {
+                @include bg($src: '../images/img/img_category_01.png');
+            }
+            &.hiphop {
+                @include bg($src: '../images/img/img_category_02.png');
+            }
+            &.soul {
+                @include bg($src: '../images/img/img_category_03.png');
+            }
+            &.pop {
+                @include bg($src: '../images/img/img_category_04.png');
+            }
+            &.jazz {
+                @include bg($src: '../images/img/img_category_05.png');
+            }
+            &.tert {
+                @include bg($src: '../images/img/img_category_06.png');
+            }
+            &.dance {
+                @include bg($src: '../images/img/img_category_07.png');
+            }
+            &.kids {
+                @include bg($src: '../images/img/img_category_08.png');
+            }
+            &.all {
+                @include bg($src: '../images/img/img_category_09.png');
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: block;
+                width: 100%;
+                height: 100%;
+                border-radius: 104px;
+                background-color: #d3d3d3;
+                opacity: 0.5;
+            }
+        }
+        input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            z-index: 15;
+            &:checked {
+                + i {
+                    border: 2px solid #fff;
+                    box-shadow: $shadow;
+                    &::before {
+                        opacity: 0;
+                    }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 40px;
+                        left: 40px;
+                        display: block;
+                        width: 24px;
+                        height: 24px;
+                        @include bg($src: '../images/ico/ico_w_check.svg');
+                    }
+                }
+            }
+        }
+    }
 }
