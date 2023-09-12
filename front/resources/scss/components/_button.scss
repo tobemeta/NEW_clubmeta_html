@@ -175,6 +175,11 @@
     @include bg($src: '../images/ico/ico_coment.svg');
 }
 
-.btn-menu {
+.btn-set {
     @include bg($src: '../images/ico/ico_set.svg');
+}
+
+.btn-menu {
+    @include bg($src: '../images/ico/ico_more.svg');
+    transform: rotate(-90deg);
 }
