@@ -1063,11 +1063,12 @@
         <button type="button" class="btn-top">TOP</button>
     </div>
     <script>
-
+        // 2023-09-14 수정
         var eventSlideSet = {
-            slidesPerView: 'auto',
+            // slidesPerView: 1,
             watchOverflow: true,
             loop: true,
+            loopedSlides: 1,
             autoplay: {
                 delay: 2500,
                 disableOnInteraction: false
@@ -1077,8 +1078,12 @@
             },
             on: {
                 init: function () {
+                    // 2023-09-14 수정
+                    var duplicate = this.loopedSlides * 2;
+                    var slideidx = this.slides.length - duplicate;
 
-                    var slideidx = this.slides.length;
+                    // 가상 slide 뺀 slide 총 개수
+                    console.log(slideidx)
                     $('.event-swiper .swiper-wrapper .swiper-slide').addClass('changed');
                     $('.visual-custom .current').text(this.realIndex + 1);
                     $('.visual-custom .total').text(slideidx);
@@ -1095,7 +1100,6 @@
                             $(this).attr('aria-label', '슬라이드 자동롤링 중지').find('.blind').text('중지');
                         }
                     });
-
                 },
                 slideChangeTransitionStart: function () {
                     var $slide = $('.event-swiper .swiper-wrapper .swiper-slide');
