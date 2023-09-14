@@ -28,6 +28,12 @@ const ui = {
                 $('.layerpopup-box.full').css('padding-top', statusBarHeight + 'px');
                 $('.layerpopup-box.full').css('box-sizing', 'border-box');
                 $('.layer-popup').wrap('<div class="status-relative"></div>');
+
+                setTimeout(function () {
+                    if ($('.layerpopup-box.full').find('.chall-swiper')) {
+                        $('.layerpopup-box.full').removeAttr('style');
+                    }
+                }, 10);
             }
         });
 
