@@ -42,7 +42,7 @@
 .challPop-slider {
     .chall-swiper {
         .swiper-slide {
-            width: 260px;
+            width: 72.22vw;
             opacity: 1;
 
             .img {
@@ -70,7 +70,7 @@
         .card {
             display: flex;
             flex-direction: column;
-            height: 40.8rem;
+            height: auto;
             margin: 1.2rem 0 2.4rem 0;
 
             &.vinyl {
@@ -95,7 +95,7 @@
             }
 
             .img {
-                height: 30.4rem;
+                height: 84.44vw;
                 overflow: hidden;
                 margin-bottom: 1.6rem;
                 border-radius: 2.4rem;
@@ -104,12 +104,12 @@
             .tag {
                 margin: 0 auto;
                 margin-bottom: 0.4rem;
-                font-size: 1.4rem;
+                font-size: 3.89vw;
             }
 
             .date {
                 margin: 0 auto;
-                font-size: 1.4rem;
+                font-size: 3.89vw;
                 color: #585858;
                 line-height: 2rem;
             }
