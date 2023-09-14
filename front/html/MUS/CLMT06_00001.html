@@ -1439,9 +1439,10 @@
         <button type="button" class="btn-top">TOP</button>
     </div>
     <script>
-
+        // 2023-09-14 수정
         var bannerSlideSet = {
-            slidesPerView: 'auto',
+            // slidesPerView: 'auto',
+            loopedSlides: 1,
             watchOverflow: true,
             loop: true,
             autoplay: {
@@ -1454,8 +1455,13 @@
             on: {
                 init: function () {
 
-                    var slideidx = this.slides.length;
-                    $('.banner-swiper .swiper-wrapper .swiper-slide').addClass('changed');
+                    // 2023-09-14 수정
+                    var duplicate = this.loopedSlides * 2;
+                    var slideidx = this.slides.length - duplicate;
+
+                    // 가상 slide 뺀 slide 총 개수
+                    console.log(slideidx)
+                    $('.event-swiper .swiper-wrapper .swiper-slide').addClass('changed');
                     $('.visual-custom .current').text(this.realIndex + 1);
                     $('.visual-custom .total').text(slideidx);
 

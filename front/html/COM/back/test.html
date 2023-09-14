@@ -10,11 +10,10 @@
     <title>AI 챌린지 리스트 팝업 | 클럽메타</title>
     <link rel="stylesheet"
         href="https://app-dev-v2.club-meta.io:10443/rsc/front_v2/css/common.min.css?v=20230913213815>" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/css/swiper.css" />
+    <link rel="stylesheet" href="https://app-dev-v2.club-meta.io:10443/rsc/front_v2/css/lib/swiper.min.css" />
     <script src="https://app-dev-v2.club-meta.io:10443/rsc/front_v2/js/lib/jquery-3.7.0.min.js"></script>
     <script src="https://app-dev-v2.club-meta.io:10443/rsc/front_v2/js/lib/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/js/swiper.js"></script>
-    <!-- <script src="https://app-dev-v2.club-meta.io:10443/rsc/front_v2/js/lib/swiper.min.js"></script> -->
+    <script src="https://app-dev-v2.club-meta.io:10443/rsc/front_v2/js/lib/swiper.min.js"></script>
     <script src="https://app-dev-v2.club-meta.io:10443/rsc/front_v2/js/lib/lottie.min.js"></script>
     <script src="https://app-dev-v2.club-meta.io:10443/rsc/front_v2/js/common.js?v=20230913213815>"></script>
     <script src="https://app-dev-v2.club-meta.io:10443/rsc/front_v2/js/commonutil.js?v=20230913213815>"></script>
@@ -25,58 +24,80 @@
 </head>
 
 <body>
-
-    <article class="layerpopup-box full is-active is-animation" id="fullViewPop" role="dialog">
-        <div class="layer-popup challPop">
-            <header class="layer-header">
-                <!-- <h1 class="pop-title">AI챌린지를 선택하세요</h1>
-                <button type="button" class="btn-close btn-pop-close" title="레이어팝업 닫기" onclick="ui.popup.close('#bottomViewPop')">닫기</button> -->
-
-                <div class="header-inner">
-                    <div class="header-left"></div>
-                    <div class="header-center">
-                        <h1 class="pop-title">AI챌린지를 선택하세요</h1>
+    <!-- 2023-09-14 class 수정 -->
+    <article class="layerpopup-box full is-active is-animation" id="fullViewPop" role="dialog" data-target="noFull">
+        <div class="status-relative">
+            <div class="layer-popup challPop">
+                <header class="layer-header">
+                    <div class="header-inner">
+                        <div class="header-left"></div>
+                        <div class="header-center">
+                            <h1 class="pop-title">AI챌린지를 선택하세요</h1>
+                        </div>
+                        <div class="header-right">
+                            <button type="button" class="btn-close btn-pop-close" title="레이어팝업 닫기"
+                                onclick="fn_close();">닫기</button>
+                        </div>
                     </div>
-                    <div class="header-right">
-                        <button type="button" class="btn-close btn-pop-close" title="레이어팝업 닫기"
-                            onclick="fn_close();">닫기</button>
-                    </div>
-                </div>
-            </header>
+                </header>
 
-            <div class="layer-content pb-72">
-                <div class="challPop-slider">
-                    <div class="swiper-container chall-swiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <a href="#none" class="card" role="button" title="해당 클립으로 이동">
-                                    <div class="img">
-                                        <img src="https://app-dev-v2.club-meta.io:10443/rsc/front_v2/images/img/img_aichallenge_thumbnail_01.png"
-                                            alt="">
-                                    </div>
-                                    <p class="tag blue">그린챌린지</p>
-                                    <p class="date">2022.11.11 ~ 2022.11.22</p>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="#none" class="card" role="button" title="해당 클립으로 이동">
-                                    <div class="img">
-                                        <img src="https://app-dev-v2.club-meta.io:10443/rsc/front_v2/images/img/img_aichallenge_thumbnail_01.png"
-                                            alt="">
-                                    </div>
-                                    <p class="tag blue">그린챌린지</p>
-                                    <p class="date">2022.11.11 ~ 2022.11.22</p>
-                                </a>
+                <div class="layer-content pb-72" id="contentView">
+                    <div class="challPop-slider">
+                        <div class="swiper-container chall-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a href="#none" class="card" role="button" title="해당 클립으로 이동">
+                                        <div class="img">
+                                            <img src="/rsc/front_v2/images/img/img_aichallenge_thumbnail_01.png" alt="">
+                                        </div>
+                                        <p class="tag blue">그린챌린지</p>
+                                        <p class="date">2022.11.11 ~ 2022.11.22</p>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#none" class="card" role="button" title="해당 클립으로 이동">
+                                        <div class="img">
+                                            <img src="/rsc/front_v2/images/img/img_aichallenge_thumbnail_02.png" alt="">
+                                        </div>
+                                        <p class="tag blue">그린챌린지</p>
+                                        <p class="date">2022.11.11 ~ 2022.11.22</p>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#none" class="card" role="button" title="해당 클립으로 이동">
+                                        <div class="img">
+                                            <img src="/rsc/front_v2/images/img/img_aichallenge_thumbnail_03.png" alt="">
+                                        </div>
+                                        <p class="tag blue">그린챌린지</p>
+                                        <p class="date">2022.11.11 ~ 2022.11.22</p>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="btn-bottom-box">
-                <!-- 2023-08-23 class 추가 -->
-                <a href="javascript:fn_goDetail();" class="btn btn-outline" title="상세화면 이동" role="button">상세보기</a>
-                <button type="button" class="btn btn-primary btn-pop-close" onclick="fn_goCam();">참여하기</button>
+                <div class="btn-bottom-box" id="contentButtonView">
+                    <!-- 2023-08-23 class 추가 -->
+                    <a href="javascript:fn_goDetail();" class="btn btn-outline" title="상세화면 이동" role="button">상세보기</a>
+                    <!-- 2023-09-14 bottom->full 수정 -->
+                    <button type="button" class="btn btn-primary btn-pop-close" onclick="fn_goCam();">참여하기</button>
+                </div>
+
+                <div class="layer-content pb-96" id="emptyView" style="display: none;">
+                    <div class="layer-inner">
+                        <div class="no-clip">
+                            <p>진행중인 챌린지가 없습니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn-bottom-box" id="emptyButtonView" style="display: none;">
+                    <!-- 2023-08-23 class 추가 -->
+                    <a href="javascript:fn_goHome();" class="btn btn-outline" title="홈으로 이동" role="button">홈으로 가기</a>
+                    <button type="button" class="btn btn-primary btn-pop-close" onclick="fn_goAIOpen()">AI챌린지
+                        오픈하기</button>
+                </div>
             </div>
         </div>
         <!-- //layer-popup -->
@@ -85,7 +106,6 @@
     <script type="text/javascript">
 
         setting();
-
         function setting() {
             const challSlideSet = {
                 loop: true,
@@ -101,24 +121,14 @@
                 },
             };
             const challSwiper = new Swiper('.chall-swiper', challSlideSet);
-            // 이벤트 핸들러 등록
-            // challSwiper.on('slideChange', function () {
-            //     console.log('slideChange 이벤트 발생');
-            //     var activeSlideIndex = challSwiper.activeIndex;
-            //     console.log('활성 슬라이드 인덱스:', activeSlideIndex);
-            //     var data = list[activeSlideIndex];
-            //     if (data.ptcpYn === "Y") {
-            //         $(".btn-bottom-box button").prop("disabled", true);
-            //     } else {
-            //         $(".btn-bottom-box button").prop("disabled", false);
-            //     }
-            // });
-            // challSwiper.on('swiperTransitionEnd', function () {
-            //     console.log('swiperTransitionEnd 이벤트 발생');
-            // });
-            return challSwiper;
+
         }
     </script>
+
+
+
+
+
 </body>
 <!-- <script>
     const challSlideSet = {
