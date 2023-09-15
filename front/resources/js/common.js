@@ -31,7 +31,6 @@ const ui = {
 
                 if ($('.layerpopup-box.full').find('.chall-swiper')) {
                     setTimeout(function () {
-                        console.log(232323);
                         $('.layerpopup-box.full').removeAttr('style');
                     }, 50);
                 }
