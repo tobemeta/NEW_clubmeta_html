@@ -1,75 +1,86 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title>클럽메타 관리자 - 관심 카테고리 선택</title>
-        <!-- js -->
-        <script src="../include/head.js"></script>
-        <script src="../../js/custom.js"></script>
-    </head>
 
-    <body>
-        <!-- Page Wrapper -->
-        <div id="wrapper" class="wrapper">
-            <!-- content Wrapper -->
-            <div id="content-wrapper" class="d-flex flex-column bg-white">
-                <!-- 컨텐츠 본문 -->
-                <div id="content">
-                    <div class="container-fluid p-0" role="main">
-                        <div class="main">
-                            <div class="d-flex align-items-center justify-content-center flex-column vh-100">
-                                <div class="row clearfix mt-4 mb-4">
-                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                        <h2 class="h3 text-gray-800 float-left">비밀번호 재설정</h2>
-                                    </div>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>클럽메타 관리자 - 비밀번호 재설정</title>
+    <!-- js -->
+    <script src="../include/head.js"></script>
+    <script src="../../js/custom.js"></script>
+</head>
+
+<body>
+    <!-- Page Wrapper -->
+    <div id="wrapper" class="wrapper">
+        <!-- content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column bg-gray">
+            <!-- 컨텐츠 본문 -->
+            <div id="content">
+                <div class="container-fluid p-0" role="main">
+                    <div class="main">
+                        <div class="d-flex align-items-center justify-content-center flex-column vh-100">
+                            <div class="row clearfix mt-4 mb-4">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h2 class="h3 float-left">비밀번호 재설정</h2>
                                 </div>
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="user-idpw-box">
-                                            <div class="title-box">
-                                                <p class="title h4 text-gray-900">새로운 비밀번호를 입력해주세요.</p>
-                                                <p class="body-sub-title text-gray-600">영문, 숫자, 특수문자를 포함한 8~20자를 조합하여 입력해주세요.</p>
-                                            </div>
-                                            <div class="form-box border-0">
-                                                <form action="">
-                                                    <fieldset>
-                                                        <dl>
-                                                            <dt><label>새 비밀번호</label></dt>
-                                                            <dd>
-                                                                <div class="input-group input-box inp-pw">
-                                                                    <input type="password" class="form-control" placeholder="영문, 숫자, 특수문자를 포함한 8~20자" title="내용입력" />
-                                                                    <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
-                                                                    <a href="#none" class="btn-inp-pw" role="button" aria-label="비밀번호 표시"></a>
-                                                                </div>
-                                                                <div class="mt-2">
-                                                                    <span class="text-danger validate-txt is-error">비밀번호는 영문, 숫자, 특수문자를 포함한 8-20자 이내로 입력하셔야 합니다.</span>
-                                                                    <!-- <span class="text-danger validate-txt is-error">현재 비밀번호와 다른 번호를 입력해 주세요</span> -->
-                                                                </div>
-                                                            </dd>
-                                                        </dl>
-                                                        <dl>
-                                                            <dt><label>비밀번호 확인</label></dt>
-                                                            <dd>
-                                                                <div class="input-group input-box inp-pw">
-                                                                    <input type="password" class="form-control" placeholder="영문, 숫자, 특수문자를 포함한 8~20자" title="내용입력" />
-                                                                    <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
-                                                                    <a href="#none" class="btn-inp-pw" role="button" aria-label="비밀번호 표시"></a>
-                                                                </div>
-                                                                <div class="mt-2">
-                                                                    <span class="text-danger validate-txt is-error">입력하신 비밀번호와 비밀번호 확인이 일치하지 않습니다.</span>
-                                                                </div>
-                                                            </dd>
-                                                        </dl>
-                                                    </fieldset>
-                                                </form>
-                                            </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="user-idpw-box">
+                                        <div class="title-box">
+                                            <p class="title h4 text-gray-900">새로운 비밀번호를 입력해주세요.</p>
+                                            <p class="body-sub-title text-gray-600">영문, 숫자, 특수문자를 포함한 8~20자를 조합하여
+                                                입력해주세요.</p>
                                         </div>
-                                        <div class="mt-4">
-                                            <div class="btn-wrap text-center">
-                                                <button type="button" class="btn btn-primary btn-lg" title="확인">확인</button>
-                                            </div>
+                                        <div class="form-box border-0">
+                                            <form action="">
+                                                <fieldset>
+                                                    <dl>
+                                                        <dt><label>새 비밀번호</label></dt>
+                                                        <dd>
+                                                            <div class="input-group input-box inp-pw">
+                                                                <input type="password" class="form-control"
+                                                                    placeholder="영문, 숫자, 특수문자를 포함한 8~20자"
+                                                                    title="내용입력" />
+                                                                <a href="#none" class="btn-inp-del" role="button"
+                                                                    aria-label="입력내용삭제"></a>
+                                                                <a href="#none" class="btn-inp-pw" role="button"
+                                                                    aria-label="비밀번호 표시"></a>
+                                                            </div>
+                                                            <div class="mt-2">
+                                                                <span class="text-danger validate-txt is-error">비밀번호는
+                                                                    영문, 숫자, 특수문자를 포함한 8-20자 이내로 입력하셔야 합니다.</span>
+                                                                <!-- <span class="text-danger validate-txt is-error">현재 비밀번호와 다른 번호를 입력해 주세요</span> -->
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt><label>비밀번호 확인</label></dt>
+                                                        <dd>
+                                                            <div class="input-group input-box inp-pw">
+                                                                <input type="password" class="form-control"
+                                                                    placeholder="영문, 숫자, 특수문자를 포함한 8~20자"
+                                                                    title="내용입력" />
+                                                                <a href="#none" class="btn-inp-del" role="button"
+                                                                    aria-label="입력내용삭제"></a>
+                                                                <a href="#none" class="btn-inp-pw" role="button"
+                                                                    aria-label="비밀번호 표시"></a>
+                                                            </div>
+                                                            <div class="mt-2">
+                                                                <span class="text-danger validate-txt is-error">입력하신
+                                                                    비밀번호와 비밀번호 확인이 일치하지 않습니다.</span>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                </fieldset>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4">
+                                        <div class="btn-wrap text-center">
+                                            <button type="button" class="btn btn-primary btn-lg" title="확인">확인</button>
                                         </div>
                                     </div>
                                 </div>
@@ -79,9 +90,11 @@
                 </div>
             </div>
         </div>
-        <!-- Scroll to Top Button-->
-        <div data-include="../include/topbtn.html"></div>
+    </div>
+    <!-- Scroll to Top Button-->
+    <div data-include="../include/topbtn.html"></div>
 
-        <!-- modal -->
-    </body>
+    <!-- modal -->
+</body>
+
 </html>
