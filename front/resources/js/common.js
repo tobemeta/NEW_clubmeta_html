@@ -29,7 +29,7 @@ const ui = {
                 $('.layerpopup-box.full').css('box-sizing', 'border-box');
                 $('.layer-popup').wrap('<div class="status-relative"></div>');
 
-                if ($('.layerpopup-box.full').find('.chall-swiper')) {
+                if ($('.layerpopup-box.full .chall-swiper').length) {
                     setTimeout(function () {
                         $('.layerpopup-box.full').removeAttr('style');
                     }, 50);

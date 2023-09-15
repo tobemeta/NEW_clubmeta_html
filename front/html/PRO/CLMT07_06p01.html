@@ -94,6 +94,9 @@
         $('.byte span').text('0');
     });
 
+    var vScrollDown = $(".textarea").prop('scrollHeight');
+    $(".textarea").scrollTop(vScrollDown);
+
     $('.textarea').on('input', function () {
         // $(this).css('height', 'auto');
         // $(this).height(this.scrollHeight);

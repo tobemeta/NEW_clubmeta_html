@@ -41,6 +41,7 @@
 
 .challPop-slider {
     .chall-swiper {
+        overflow: visible;
         .swiper-slide {
             width: 72.22vw;
             opacity: 1;
@@ -71,13 +72,14 @@
             display: flex;
             flex-direction: column;
             height: auto;
-            margin: 1.2rem 0 2.4rem 0;
+            margin: 2.4rem 0 0;
 
             &.vinyl {
-                padding-top: 9rem;
-
+                padding-top: 25vw;
+                position: relative;
+                box-sizing: border-box;
                 .img {
-                    height: 22.8rem;
+                    height: 63.33vw;
                     z-index: 2;
                 }
 
@@ -87,9 +89,10 @@
                     position: absolute;
                     top: 2.5rem;
                     left: 50%;
-                    width: 15.2rem;
-                    height: 15.2rem;
+                    width: 42.22vw;
+                    height: 42.22vw;
                     background: url('../images/img/img_vinyl.png') no-repeat 0 0;
+                    background-size: cover;
                     transform: translateX(-50%);
                 }
             }
