@@ -29,11 +29,12 @@ const ui = {
                 $('.layerpopup-box.full').css('box-sizing', 'border-box');
                 $('.layer-popup').wrap('<div class="status-relative"></div>');
 
-                setTimeout(function () {
-                    if ($('.layerpopup-box.full').find('.chall-swiper')) {
+                if ($('.layerpopup-box.full').find('.chall-swiper')) {
+                    setTimeout(function () {
+                        console.log(232323);
                         $('.layerpopup-box.full').removeAttr('style');
-                    }
-                }, 10);
+                    }, 50);
+                }
             }
         });
 
