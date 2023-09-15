@@ -1,4 +1,8 @@
 @charset "UTF-8";
+.bg-log {
+    background-color: #f8f9fa;
+}
+
 .blind {
     position: absolute;
     top: -9999px;
@@ -95,15 +99,23 @@
             text-align: center;
         }
     }
-    .visu-form {
+    .log-form {
         padding: 20px;
         border: 1px solid #e3e6f0;
         background: #fff;
         .form-box {
             border-bottom: none;
+            label {
+                display: block;
+                margin: 0;
+            }
+            .text-danger {
+                display: none;
+                margin-top: 5px;
+            }
         }
         .was-validated {
-            .invalid-feedback {
+            .text-danger {
                 display: block;
             }
             .input-box.focus {
@@ -190,7 +202,7 @@
                         padding: 1rem 1.6rem;
                         border-radius: 0.8rem;
                         background-color: #dee2e6;
-                        font-size: 1rem;
+                        font-size: 14px;
                         line-height: 1.4rem;
                         text-align: center;
                         box-sizing: border-box;
@@ -223,7 +235,7 @@
                 a {
                     background-image: url('../images/ico/ico_apple.svg');
                     background-color: #111111;
-                    background-size: 30px;
+                    background-size: 25px;
                 }
             }
         }

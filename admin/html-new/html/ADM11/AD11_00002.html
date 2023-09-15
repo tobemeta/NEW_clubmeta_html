@@ -1,305 +1,216 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title>클럽메타 관리자 - 배지 등록</title>
-        <!-- js -->
-        <script src="../include/head.js"></script>
-        <script src="../../js/custom.js"></script>
-    </head>
 
-    <body>
-        <!-- Page Wrapper -->
-        <div id="wrapper" class="wrapper">
-            <!-- 사이드바 -->
-            <div data-include="../include/sidebar.html"></div>
-            <!-- //사이드바 -->
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>클럽메타 관리자 - 배지 등록</title>
+    <!-- js -->
+    <script src="../include/head.js"></script>
+    <script src="../../js/custom.js"></script>
+</head>
 
-            <!-- content Wrapper -->
-            <div id="content-wrapper" class="d-flex flex-column bg-white">
-                <!-- 컨텐츠 본문 -->
-                <div id="content">
-                    <!--  -->
-                    <div data-include="../include/topbar.html"></div>
+<body>
+    <!-- Page Wrapper -->
+    <div id="wrapper" class="wrapper">
+        <!-- 사이드바 -->
+        <div data-include="../include/sidebar.html"></div>
+        <!-- //사이드바 -->
 
-                    <div class="container-fluid" role="main">
-                        <!-- 페이지 경로 -->
-                        <div class="page-breadcrumb" aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <a href="#"><i class="fas fa-home d-flex align-items-center"></i></a>
-                                </li>
-                                <li class="breadcrumb-item">배지관리</li>
-                                <li class="breadcrumb-item">배지 등록</li>
-                            </ol>
+        <!-- content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column bg-white">
+            <!-- 컨텐츠 본문 -->
+            <div id="content">
+                <!--  -->
+                <div data-include="../include/topbar.html"></div>
+
+                <div class="container-fluid" role="main">
+                    <!-- 페이지 경로 -->
+                    <div class="page-breadcrumb" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="#"><i class="fas fa-home d-flex align-items-center"></i></a>
+                            </li>
+                            <li class="breadcrumb-item">배지관리</li>
+                            <li class="breadcrumb-item">배지 등록</li>
+                        </ol>
+                    </div>
+                    <!-- //페이지 경로 -->
+                    <div class="main">
+                        <!-- 제목 및 등록버튼 -->
+                        <div class="row clearfix mt-4 mb-4">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <h2 class="h3 text-gray-800 float-left">배지 등록</h2>
+                            </div>
                         </div>
-                        <!-- //페이지 경로 -->
-                        <div class="main">
-                            <!-- 제목 및 등록버튼 -->
-                            <div class="row clearfix mt-4 mb-4">
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                    <h2 class="h3 text-gray-800 float-left">배지 등록</h2>
-                                </div>
-                            </div>
-                            <!-- //제목 및 등록버튼 -->
+                        <!-- //제목 및 등록버튼 -->
 
-                            <!---//contents--->
-                            <form>
-                                <div class="form-box">
-                                    <div class="form-box-row">
-                                        <div class="form-box-item">
-                                            <div class="form-box-label"><label for="">배지 이미지</label></div>
-                                            <div class="form-box-cont">
-                                                <!-- 썸네일 크기는 앱의 최대 사이즈 확인 후 변경예정 -->
-                                                <div class="preview-img -fix"><img src="../../images/img/img_musicchallenge_thumbnail_05.png" alt="썸네일이미지" /></div>
-                                                <div class="mt-2">
-                                                    <div class="custom-file w-50">
-                                                        <label class="custom-file-label" for="customFile" data-browse="파일선택">파일선택</label>
-                                                        <input type="file" class="custom-file-input" id="customFile" />
-                                                    </div>
-                                                    <div class="text-secondary mt-1">* 등록종류 : JPG, JPEG, PNG, BMP, 사이즈 : 480*480, 크기 : 10MB</div>
+                        <!---//contents--->
+                        <form>
+                            <div class="form-box">
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label"><label for="">배지 이미지</label></div>
+                                        <div class="form-box-cont">
+                                            <!-- 썸네일 크기는 앱의 최대 사이즈 확인 후 변경예정 -->
+                                            <div class="preview-img -fix"><img
+                                                    src="../../images/img/img_musicchallenge_thumbnail_05.png"
+                                                    alt="썸네일이미지" /></div>
+                                            <div class="mt-2">
+                                                <div class="custom-file w-50">
+                                                    <label class="custom-file-label" for="customFile"
+                                                        data-browse="파일선택">파일선택</label>
+                                                    <input type="file" class="custom-file-input" id="customFile" />
                                                 </div>
+                                                <div class="text-secondary mt-1">* 등록종류 : JPG, JPEG, PNG, BMP, 사이즈 :
+                                                    480*480, 크기 : 10MB</div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-box-row">
-                                        <div class="form-box-item">
-                                            <div class="form-box-label">배지 명</div>
-                                            <div class="form-box-cont">
-                                                <div class="form-row">
-                                                    <div class="input-group w-50">
-                                                        <input type="text" class="form-control" placeholder="한글, 영문, 숫자, 특수기호 포함 최대 10자" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-box-row">
-                                        <div class="form-box-item">
-                                            <div class="form-box-label">조건</div>
-                                            <div class="form-box-cont p-0">
-                                                <div class="form-box-item border-bottom">
-                                                    <div class="form-box-cont col-6">
-                                                        <div class="d-flex h-100 align-items-center justify-content-between">
-                                                            <label class="custom-control custom-radio custom-control-inline mb-0">
-                                                                <input type="radio" name="rdo1" class="custom-control-input" checked />
-                                                                <span class="custom-control-label">가입 후</span>
-                                                            </label>
-                                                            <div class="d-flex h-100 align-items-center">
-                                                                <input type="text" class="form-control ml-5" />
-                                                                <span class="ml-2">일</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-box-cont border-left col-6">
-                                                        <div class="d-flex h-100 align-items-center justify-content-between">
-                                                            <label class="custom-control custom-radio custom-control-inline mb-0">
-                                                                <input type="radio" name="rdo1" class="custom-control-input" />
-                                                                <span class="custom-control-label">AI챌린지 오픈 횟수</span>
-                                                            </label>
-                                                            <div class="d-flex h-100 align-items-center">
-                                                                <input type="text" class="form-control ml-5" disabled />
-                                                                <span class="ml-2">회</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-box-item border-bottom">
-                                                    <div class="form-box-cont col-6">
-                                                        <div class="d-flex h-100 align-items-center justify-content-between">
-                                                            <label class="custom-control custom-radio custom-control-inline mb-0">
-                                                                <input type="radio" name="rdo1" class="custom-control-input" />
-                                                                <span class="custom-control-label">연속 출석체크</span>
-                                                            </label>
-                                                            <div class="d-flex h-100 align-items-center">
-                                                                <input type="text" class="form-control ml-5" disabled />
-                                                                <span class="ml-2">회</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-box-cont border-left col-6">
-                                                        <div class="d-flex h-100 align-items-center justify-content-between">
-                                                            <label class="custom-control custom-radio custom-control-inline mb-0">
-                                                                <input type="radio" name="rdo1" class="custom-control-input" />
-                                                                <span class="custom-control-label">챌린지 3위 내 입상</span>
-                                                            </label>
-                                                            <div class="d-flex h-100 align-items-center">
-                                                                <input type="text" class="form-control ml-5" disabled />
-                                                                <span class="ml-2">회</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-box-item border-bottom">
-                                                    <div class="form-box-cont col-6">
-                                                        <div class="d-flex h-100 align-items-center justify-content-between">
-                                                            <label class="custom-control custom-radio custom-control-inline mb-0">
-                                                                <input type="radio" name="rdo1" class="custom-control-input" />
-                                                                <span class="custom-control-label">챌린지 영상 업로드</span>
-                                                            </label>
-                                                            <div class="d-flex h-100 align-items-center">
-                                                                <input type="text" class="form-control ml-5" disabled />
-                                                                <span class="ml-2">회</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-box-cont border-left col-6">
-                                                        <div class="d-flex h-100 align-items-center justify-content-between">
-                                                            <label class="custom-control custom-radio custom-control-inline mb-0">
-                                                                <input type="radio" name="rdo1" class="custom-control-input" />
-                                                                <span class="custom-control-label">챌린지 1위</span>
-                                                            </label>
-                                                            <div class="d-flex h-100 align-items-center">
-                                                                <input type="text" class="form-control ml-5" disabled />
-                                                                <span class="ml-2">회</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-box-item border-bottom">
-                                                    <div class="form-box-cont col-6">
-                                                        <div class="d-flex h-100 align-items-center justify-content-between">
-                                                            <label class="custom-control custom-radio custom-control-inline mb-0">
-                                                                <input type="radio" name="rdo1" class="custom-control-input" />
-                                                                <span class="custom-control-label">일반 영상 업로드</span>
-                                                            </label>
-                                                            <div class="d-flex h-100 align-items-center">
-                                                                <input type="text" class="form-control ml-5" disabled />
-                                                                <span class="ml-2">회</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-box-cont border-left col-6">
-                                                        <div class="d-flex h-100 align-items-center justify-content-between">
-                                                            <label class="custom-control custom-radio custom-control-inline mb-0">
-                                                                <input type="radio" name="rdo1" class="custom-control-input" />
-                                                                <span class="custom-control-label">팔로워</span>
-                                                            </label>
-                                                            <div class="d-flex h-100 align-items-center">
-                                                                <input type="text" class="form-control ml-5" disabled />
-                                                                <span class="ml-2">회</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-box-item border-bottom">
-                                                    <div class="form-box-cont col-6">
-                                                        <div class="d-flex h-100 align-items-center justify-content-between">
-                                                            <label class="custom-control custom-radio custom-control-inline mb-0">
-                                                                <input type="radio" name="rdo1" class="custom-control-input" />
-                                                                <span class="custom-control-label">친구초대</span>
-                                                            </label>
-                                                            <div class="d-flex h-100 align-items-center">
-                                                                <input type="text" class="form-control ml-5" disabled />
-                                                                <span class="ml-2">회</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-box-cont border-left col-6">
-                                                        <div class="d-flex h-100 align-items-center justify-content-between">
-                                                            <label class="custom-control custom-radio custom-control-inline mb-0">
-                                                                <input type="radio" name="rdo1" class="custom-control-input" />
-                                                                <span class="custom-control-label">이달의 랭커</span>
-                                                            </label>
-                                                            <div class="d-flex h-100 align-items-center">
-                                                                <input type="text" class="form-control ml-5" disabled />
-                                                                <span class="ml-2">회</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-box-item border-bottom">
-                                                    <div class="form-box-cont col-6">
-                                                        <div class="d-flex h-100 align-items-center justify-content-between">
-                                                            <label class="custom-control custom-radio custom-control-inline mb-0">
-                                                                <input type="radio" name="rdo1" class="custom-control-input" />
-                                                                <span class="custom-control-label">투표</span>
-                                                            </label>
-                                                            <div class="d-flex h-100 align-items-center">
-                                                                <input type="text" class="form-control ml-5" disabled />
-                                                                <span class="ml-2">회</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-box-cont border-left col-6">
-                                                        <div class="d-flex h-100 align-items-center justify-content-between">
-                                                            <label class="custom-control custom-radio custom-control-inline mb-0">
-                                                                <input type="radio" name="rdo1" class="custom-control-input" />
-                                                                <span class="custom-control-label">댓글</span>
-                                                            </label>
-                                                            <div class="d-flex h-100 align-items-center">
-                                                                <input type="text" class="form-control ml-5" disabled />
-                                                                <span class="ml-2">회</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-box-item">
-                                                    <div class="form-box-cont col-6">
-                                                        <div class="d-flex h-100 align-items-center justify-content-between">
-                                                            <label class="custom-control custom-radio custom-control-inline mb-0">
-                                                                <input type="radio" name="rdo1" class="custom-control-input" />
-                                                                <span class="custom-control-label">좋아요</span>
-                                                            </label>
-                                                            <div class="d-flex h-100 align-items-center">
-                                                                <input type="text" class="form-control ml-5" disabled />
-                                                                <span class="ml-2">회</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-box-cont border-left col-6"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-box-row">
-                                        <div class="form-box-item">
-                                            <div class="form-box-label">설명</div>
-                                            <div class="form-box-cont">
-                                                <div class="form-row">
-                                                    <div class="input-group w-100">
-                                                        <textarea class="form-control" cols="30" rows="5" placeholder="한글, 영문, 숫자, 특수기호 포함 최대 100자"></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-box-row">
-                                        <div class="form-box-item">
-                                            <div class="form-box-label">최초 등록 관리자</div>
-                                            <div class="form-box-cont">
-                                                <div class="form-row">
-                                                    <span class="mr-2">YYYY.MM.DD</span>
-                                                    <span class="mr-2">clubmeta11</span>
+                                </div>
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label">배지 명</div>
+                                        <div class="form-box-cont">
+                                            <div class="form-row">
+                                                <div class="input-group w-50">
+                                                    <input type="text" class="form-control"
+                                                        placeholder="한글, 영문, 숫자, 특수기호 포함 최대 10자" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </form>
-                            <div class="btn-wrap text-center mt-5">
-                                <button type="button" class="btn btn-lg btn-secondary" onclick="bsConfirm('배지 등록을 취소 하시겠습니까?')">취소</button>
-                                <button type="button" class="btn btn-lg btn-primary" onclick="bsAlert('배지 등록을 완료했습니다.')">등록</button>
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label">조건</div>
+                                        <div class="form-box-cont">
+                                            <!-- 2023-09-15 마크업 변경 -->
+                                            <div class="form-row">
+                                                <div class="col-md-6 mt-10">
+                                                    <select class="custom-select" id="selectedOption">
+                                                        <option value="1">가입 후</option>
+                                                        <option value="2">영상 업로드</option>
+                                                        <option value="3">친구초대</option>
+                                                        <option value="4">챌린지 1위</option>
+                                                        <option value="5">팔로워</option>
+                                                        <option value="6">이달의 랭커</option>
+                                                        <option value="7">댓글 작성</option>
+                                                        <option value="8">댓글 받음</option>
+                                                        <option value="9">다른 영상에 좋아요</option>
+                                                        <option value="10">내 영상에 좋아요 받음</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <div class="d-flex custom-control-wrap" id="radioButtons">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label">설명</div>
+                                        <div class="form-box-cont">
+                                            <div class="form-row">
+                                                <div class="input-group w-100">
+                                                    <textarea class="form-control" cols="30" rows="5"
+                                                        placeholder="한글, 영문, 숫자, 특수기호 포함 최대 100자"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label">최초 등록 관리자</div>
+                                        <div class="form-box-cont">
+                                            <div class="form-row">
+                                                <span class="mr-2">YYYY.MM.DD</span>
+                                                <span class="mr-2">clubmeta11</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                        </form>
+                        <div class="btn-wrap text-center mt-5">
+                            <button type="button" class="btn btn-lg btn-secondary"
+                                onclick="bsConfirm('배지 등록을 취소 하시겠습니까?')">취소</button>
+                            <button type="button" class="btn btn-lg btn-primary"
+                                onclick="bsAlert('배지 등록을 완료했습니다.')">등록</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Scroll to Top Button-->
-        <div data-include="../include/topbtn.html"></div>
+    </div>
+    <!-- Scroll to Top Button-->
+    <div data-include="../include/topbtn.html"></div>
 
-        <!-- Logout Modal-->
-        <div data-include="../include/logoutModal.html"></div>
-        <!-- changePw Modal-->
-        <div data-include="../include/pop/changePwModal.html"></div>
-    </body>
-    <script src="../../datatables/jquery.dataTables.min.js"></script>
-    <script src="../../datatables/dataTables.bootstrap4.min.js"></script>
-    <script src="../../lib/chart.js/plugins/chartjs-plugin-datalabels.min.js"></script>
-    <script src="../../lib/chart.js/Chart.min.js"></script>
-    <!-- Page level custom scripts -->
-    <script src="../../js/demo/datatables-demo.js"></script>
+    <!-- Logout Modal-->
+    <div data-include="../include/logoutModal.html"></div>
+    <!-- changePw Modal-->
+    <div data-include="../include/pop/changePwModal.html"></div>
+</body>
+<script src="../../datatables/jquery.dataTables.min.js"></script>
+<script src="../../datatables/dataTables.bootstrap4.min.js"></script>
+<script src="../../lib/chart.js/plugins/chartjs-plugin-datalabels.min.js"></script>
+<script src="../../lib/chart.js/Chart.min.js"></script>
+<!-- Page level custom scripts -->
+<script src="../../js/demo/datatables-demo.js"></script>
+<script>
+    // 2023-09-15 js 추가
+    createRadioButtons(['30일', '100일']);
+
+    $('#selectedOption').change(function () {
+        var selectedOption = $(this).val();
+        var radioButtonsContainer = $('#radioButtons');
+        radioButtonsContainer.empty();
+
+        switch (selectedOption) {
+            case '2':
+                createRadioButtons(['1회', '10회', '300회']);
+                break;
+            case '3':
+                createRadioButtons(['1회', '10회', '20회']);
+                break;
+            case '4':
+            case '6':
+                createRadioButtons(['1회', '5회', '10회']);
+                break;
+            case '5':
+                createRadioButtons(['1명', '100명', '200명']);
+                break;
+            case '7':
+            case '8':
+                createRadioButtons(['5회', '30회', '100회']);
+                break;
+            case '9':
+            case '10':
+                createRadioButtons(['1회', '10회', '100회']);
+                break;
+            default:
+                createRadioButtons([]);
+                break;
+        }
+    });
+
+    // 라디오 버튼을 생성하는 함수
+    function createRadioButtons(options) {
+        var radioButtonsContainer = $('#radioButtons');
+
+        $.each(options, function (index, option) {
+            var radioButton = $('<label class="custom-control custom-radio custom-control-inline mb-0">').html(`
+      <input type="radio" name="rdo2" class="custom-control-input" />
+      <span class="custom-control-label">${option}</span>
+    `);
+            radioButtonsContainer.append(radioButton);
+        });
+    }
+</script>
+
 </html>
