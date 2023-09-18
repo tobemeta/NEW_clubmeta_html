@@ -47,7 +47,7 @@
     .chall-swiper {
         overflow: visible;
         .swiper-slide {
-            width: 72.22vw;
+            width: 260px;
             opacity: 1;
 
             .img {
@@ -75,7 +75,7 @@
         .card {
             display: flex;
             flex-direction: column;
-            height: auto;
+            height: 40.8rem;
             margin: 2.4rem 0 0;
 
             &.vinyl {
@@ -83,7 +83,7 @@
                 position: relative;
                 box-sizing: border-box;
                 .img {
-                    height: 63.33vw;
+                    height: 304px;
                     z-index: 2;
                 }
 
@@ -93,8 +93,8 @@
                     position: absolute;
                     top: 2.5rem;
                     left: 50%;
-                    width: 42.22vw;
-                    height: 42.22vw;
+                    width: 15.2rem;
+                    height: 15.2rem;
                     background: url('../images/img/img_vinyl.png') no-repeat 0 0;
                     background-size: cover;
                     transform: translateX(-50%);
@@ -102,7 +102,7 @@
             }
 
             .img {
-                height: 84.44vw;
+                height: 304px;
                 overflow: hidden;
                 margin-bottom: 1.6rem;
                 border-radius: 2.4rem;
@@ -111,12 +111,12 @@
             .tag {
                 margin: 0 auto;
                 margin-bottom: 0.4rem;
-                font-size: 3.89vw;
+                font-size: 1.4rem;
             }
 
             .date {
                 margin: 0 auto;
-                font-size: 3.89vw;
+                font-size: 1.4rem;
                 color: #585858;
                 line-height: 2rem;
             }
@@ -144,7 +144,7 @@ a.btn-composer {
 .banner-area {
     &.advert {
         position: relative;
-        height: 24.44vw;
+        height: 88px;
 
         a {
             display: block;
