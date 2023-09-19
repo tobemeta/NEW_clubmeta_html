@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>클럽메타 관리자 - 관심 카테고리 선택</title>
+    <!-- js -->
+    <script src="../include/head.js"></script>
+    <script src="../../js/custom.js"></script>
+</head>
+
+<body>
+    <!-- Page Wrapper -->
+    <div id="wrapper" class="wrapper">
+        <!-- content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column bg-white">
+            <!-- 컨텐츠 본문 -->
+            <div id="content">
+                <div class="container-fluid p-0" role="main">
+                    <div class="main">
+                        <div class="d-flex align-items-center justify-content-center flex-column vh-100">
+                            <div class="row clearfix mt-4 mb-4">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h2 class="h3 float-left mb-0">약관동의</h2>
+                                </div>
+                            </div>
+                            <div class="card min-w-500">
+                                <div class="card-body">
+                                    <div class="title-box">
+                                        <p class="body-sub-title">클럽메타 서비스 이용을 위한 개인정보 수집 및 활용 동의와 서비스 이용약관 동의가 필요합니다.
+                                            <br /><span class="text-danger">(*14세 미만의 미성년자 서비스 가입불가)</span>
+                                        </p>
+                                    </div>
+
+                                    <div class="btn-wrap text-center">
+                                        <button type="button" class="btn btn-lg btn-secondary" title="취소"
+                                            data-toggle="modal" onclick="bsConfirm('회원가입을 취소하시겠습니까?')">취소</button>
+                                        <button type="button" class="btn btn-lg btn-primary"
+                                            title="전체 동의하고 인증하기">다음</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var $inpchk = $('.agree-chk-grp input[name="chk"]');
+    var $inpchkAll = $('.agree-chk-grp input[name="chk_all"]');
+    var $btnPrimary = $('.btn-primary');
+    var checkedCount = $inpchk.filter(':checked').length;
+
+    $inpchk.on('change', function () {
+        $btnPrimary.prop('disabled', checkedCount < 3);
+
+        if ($inpchk.not($('.chk-select')).filter(':checked').length >= 3) {
+            $btnPrimary.prop('disabled', false);
+        } else {
+            $btnPrimary.prop('disabled', true);
+        }
+
+        if (!$(this).prop("checked")) {
+            $inpchkAll.prop("checked", false);
+        }
+    });
+
+    $inpchkAll.on('change', function () {
+        $inpchk.prop("checked", $inpchkAll.prop("checked"));
+        if ($(this).is(":checked")) {
+            $btnPrimary.prop('disabled', false);
+        } else {
+            $btnPrimary.prop('disabled', true);
+        }
+    });
+</script>
+
+</html>

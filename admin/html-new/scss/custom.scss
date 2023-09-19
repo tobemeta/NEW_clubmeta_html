@@ -22,6 +22,12 @@ $mobile-aos-size: 360px;
     }
 }
 
+@for $i from 0 through 10000 {
+    .max-w-#{$i} {
+        max-width: $i * 1px !important;
+    }
+}
+
 // common
 body {
     font-family: 'Noto Sans KR', 'Roboto', sans-serif;
@@ -1630,6 +1636,35 @@ $shadow: 0px 4px 12px 0px rgba(20, 36, 91, 0.18);
             display: block;
         }
     }
+}
+
+// 약관동의
+.agree-chk-grp {
+    padding: 0;
+    li {
+        position: relative;
+    }
+    .btn-right {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 2.3rem;
+        @include bg($src: '../images/ico/ico_g_right.svg', $po: right center);
+        background-size: 25px;
+        z-index: 10;
+    }
+}
+
+.agree-cont {
+    width: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+    padding: 0.8rem;
+    border: 1px solid #e3e6f0;
+    border-radius: 0.35rem;
+    height: 100px;
 }
 
 //관심 카테고리 페이지
