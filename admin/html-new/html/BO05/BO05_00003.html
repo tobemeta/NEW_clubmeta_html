@@ -23,22 +23,178 @@
                         <div class="d-flex align-items-center justify-content-center flex-column vh-100">
                             <div class="row clearfix mt-4 mb-4">
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                    <h2 class="h3 float-left mb-0">약관동의</h2>
+                                    <h2 class="h3 float-left mb-0">기본정보 입력</h2>
                                 </div>
                             </div>
                             <div class="card min-w-500">
                                 <div class="card-body">
-                                    <div class="title-box">
-                                        <p class="body-sub-title">클럽메타 서비스 이용을 위한 개인정보 수집 및 활용 동의와 서비스 이용약관 동의가 필요합니다.
-                                            <br /><span class="text-danger">(*14세 미만의 미성년자 서비스 가입불가)</span>
-                                        </p>
-                                    </div>
+                                    <div class="sign-up-box">
+                                        <div class="d-flex mb-4">
+                                            <div class="profile-box">
+                                                <div class="prf-img">
+                                                    <img src="../../images/img/img_category_07.png" />
+                                                    <label for="file" class="file"><button type="button"
+                                                            class="prf-apply" title="프로필 선택"></button></label>
+                                                    <input type="file" class="ip-file" id="file" name="file">
+                                                    <!-- <button type="button" class="prf-apply"></button> -->
+                                                    <!-- <button type="button" class="btn btn-primary btn-confirm"
+                                                        data-toggle="modal"
+                                                        onclick="bsFormAlert2('이미지는 10MB 이하의 JPG, PNG, BMP 형식의 파일만 등록할 수 있어요.')">확인</button> -->
+                                                </div>
+                                            </div>
+                                            <div class="user-info-card">
+                                                <dl>
+                                                    <dt class="req">이름<span class="blind">필수</span></dt>
+                                                    <dd>김메타</dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt>휴대폰 번호</dt>
+                                                    <dd>010-1234-5678</dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt>생년월일</dt>
+                                                    <dd>1993.01.01</dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                        <div class="form-box border-0">
+                                            <form action="">
+                                                <fieldset>
+                                                    <dl>
+                                                        <dt><label>아이디</label></dt>
+                                                        <dd>
+                                                            <div class="input-box">
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="아이디 (이메일) 입력" title="아이디 입력" />
+                                                                <a href="#none" class="btn-inp-del" role="button"
+                                                                    aria-label="입력내용삭제"><span class="blind">입력내용
+                                                                        삭제</span></a>
+                                                            </div>
+                                                            <div class="mt-1">
+                                                                <span class="text-danger validate-txt is-error">이미 등록된
+                                                                    아이디입니다.</span>
+                                                                <span class="text-danger validate-txt is-error">아이디 형식이
+                                                                    맞지 않습니다.</span>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt><label>비밀번호</label></dt>
+                                                        <dd>
+                                                            <div class="input-box inp-pw">
+                                                                <input type="password" class="form-control"
+                                                                    title="비밀번호 입력"
+                                                                    placeholder="영문, 숫자, 특수문자를 포함한 8~20자" />
+                                                                <a href="#none" class="btn-inp-del" role="button"
+                                                                    aria-label="입력내용삭제"></a>
+                                                                <a href="#none" class="btn-inp-pw" role="button"
+                                                                    aria-label="입력내용삭제"></a>
 
-                                    <div class="btn-wrap text-center">
-                                        <button type="button" class="btn btn-lg btn-secondary" title="취소"
-                                            data-toggle="modal" onclick="bsConfirm('회원가입을 취소하시겠습니까?')">취소</button>
-                                        <button type="button" class="btn btn-lg btn-primary"
-                                            title="전체 동의하고 인증하기">다음</button>
+                                                            </div>
+                                                            <div class="mt-1">
+                                                                <span class="text-danger validate-txt is-error">비밀번호는
+                                                                    영문, 숫자, 특수문자 포함 8-20자 이내로 입력하셔야 합니다.</span>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt><label>비밀번호 확인</label></dt>
+                                                        <dd>
+                                                            <div class="input-box inp-pw">
+                                                                <input type="password" class="form-control"
+                                                                    title="비밀번호 입력"
+                                                                    placeholder="영문, 숫자, 특수문자를 포함한 8~20자" />
+                                                                <a href="#none" class="btn-inp-del" role="button"
+                                                                    aria-label="입력내용삭제"></a>
+                                                                <a href="#none" class="btn-inp-pw" role="button"
+                                                                    aria-label="입력내용삭제"></a>
+
+                                                            </div>
+                                                            <div class="mt-1">
+                                                                <span class="text-danger validate-txt is-error">입력하신
+                                                                    비밀번호와 비밀번호 확인이 일치하지 않습니다.</span>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt><label>닉네임</label></dt>
+                                                        <dd>
+                                                            <div class="input-box">
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="한글, 영문, 숫자, 특수문자 포함 최대 15자 이내"
+                                                                    title="닉네임 입력" />
+                                                                <a href="#none" class="btn-inp-del" role="button"
+                                                                    aria-label="입력내용삭제"><span class="blind">입력내용
+                                                                        삭제</span></a>
+                                                            </div>
+                                                            <div class="mt-1">
+                                                                <span class="text-danger validate-txt is-error">닉네임을
+                                                                    입력해주세요.</span>
+                                                                <span class="text-danger validate-txt is-error">이미 사용중인
+                                                                    닉네임입니다.</span>
+                                                                <span class="text-danger validate-txt is-error">닉네임 생성
+                                                                    규칙을 확인하고
+                                                                    진행해주세요.</span>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt><label>주소</label></dt>
+                                                        <dd>
+                                                            <div class="d-flex">
+                                                                <div class="input-box w-50">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="주소 검색" title="주소 입력" />
+                                                                    <a href="#none" class="btn-inp-del" role="button"
+                                                                        aria-label="입력내용삭제"><span class="blind">입력내용
+                                                                            삭제</span></a>
+                                                                </div>
+                                                                <div class="ml-2">
+                                                                    <button type="button"
+                                                                        class="btn btn-primary">주소검색</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-box mt-2">
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="상세주소(선택)" title="상세주소 입력" />
+                                                                <a href="#none" class="btn-inp-del" role="button"
+                                                                    aria-label="입력내용삭제"><span class="blind">입력내용
+                                                                        삭제</span></a>
+                                                            </div>
+                                                            <div class="mt-1">
+                                                                <span class="text-danger validate-txt is-error">닉네임을
+                                                                    입력해주세요.</span>
+                                                                <span class="text-danger validate-txt is-error">이미 사용중인
+                                                                    닉네임입니다.</span>
+                                                                <span class="text-danger validate-txt is-error">닉네임 생성
+                                                                    규칙을 확인하고
+                                                                    진행해주세요.</span>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                    <dl class="mb-0">
+                                                        <dt><label>추천인 닉네임 (선택)</label></dt>
+                                                        <dd>
+                                                            <div class="input-box">
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="한글, 영문, 숫자, 특수문자 포함 최대 15자 이내"
+                                                                    title="닉네임 입력" />
+                                                                <a href="#none" class="btn-inp-del" role="button"
+                                                                    aria-label="입력내용삭제"><span class="blind">입력내용
+                                                                        삭제</span></a>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                </fieldset>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4">
+                                        <div class="btn-wrap text-center">
+                                            <button type="button" class="btn btn-secondary btn-lg"
+                                                title="취소">취소</button>
+                                            <button type="button" class="btn btn-primary btn-lg" title="다음">다음</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

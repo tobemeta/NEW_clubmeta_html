@@ -1264,6 +1264,7 @@ $shadow: 0px 4px 12px 0px rgba(20, 36, 91, 0.18);
     &.is-show {
         background: url('../images/btn/btn_ip_pw_on.svg') no-repeat center;
     }
+    z-index: 11;
 }
 
 .input-box {
@@ -1598,6 +1599,71 @@ $shadow: 0px 4px 12px 0px rgba(20, 36, 91, 0.18);
     & + .btn-bottom-box {
         .btn-default {
             border: 1px solid var(--primary);
+        }
+    }
+}
+
+//회원정보 입력
+.sign-up-box {
+    .profile-box {
+        .prf-img {
+            position: relative;
+            img {
+                width: 10.4rem;
+                height: 10.4rem;
+                border-radius: 50%;
+                border: 1px solid #ddd;
+                overflow: hidden;
+                object-fit: cover;
+            }
+        }
+
+        .prf-apply {
+            width: 3rem;
+            height: 3rem;
+            @include bg($src: '../images/btn/btn_pf_pic.png');
+            background-size: cover;
+            pointer-events: none;
+        }
+        .file {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 3rem;
+            height: 3rem;
+            margin-bottom: 0;
+            cursor: pointer;
+        }
+        .ip-file {
+            display: none;
+        }
+    }
+    .user-info-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        flex: 1;
+        margin-left: 10%;
+        dl {
+            display: flex;
+            margin: 0;
+        }
+        dt {
+            width: 30%;
+        }
+    }
+    .form-box {
+        dl {
+            display: flex;
+        }
+        dt {
+            min-width: 20%;
+            line-height: 35px;
+        }
+        dd {
+            margin-left: 10px;
+            margin-bottom: 0;
+            flex: 1;
         }
     }
 }
