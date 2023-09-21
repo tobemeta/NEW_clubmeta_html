@@ -21,6 +21,15 @@ const ui = {
 
         // 2023-08-31 개발 수정
         $(document).ready(function () {
+            var userAgent = navigator.userAgent.toLowerCase();
+
+            // Android 디바이스라면
+            if (userAgent.indexOf('android') > -1) {
+            }
+            // iOS 디바이스라면
+            // else if (userAgent.indexOf('iphone') > -1 || userAgent.indexOf('ipad') > -1) {
+            // }
+
             $header.css('padding-top', statusBarHeight + 'px');
 
             if ($('.layerpopup-box.full.is-active').length) {
