@@ -611,3 +611,30 @@
         }
     }
 }
+
+.shoe-way {
+    .top {
+        padding-top: 15.6rem;
+        position: relative;
+        &:after {
+            display: block;
+            content: '';
+            position: absolute;
+            top: 24px;
+            left: 50%;
+            width: 11.6rem;
+            height: 11.6rem;
+            @include bg($src: '../images/ico/ico_shoe2.svg', $po: center);
+            transform: translateX(-50%);
+        }
+        .body-sub-title {
+            padding: 0 1.6rem;
+        }
+    }
+    .bottom {
+        margin-top: 1.6rem;
+        .img {
+            height: 100vw;
+        }
+    }
+}

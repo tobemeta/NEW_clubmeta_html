@@ -7,7 +7,7 @@
         content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
     <meta name="HandheldFriendly" content="true" />
     <meta name="format-detection" content="telephone=no" />
-    <title>AI 챌린지 리스트(Data 없음) 팝업 | 클럽메타</title>
+    <title>슈 획득 방법 팝업 | 클럽메타</title>
     <link rel="stylesheet" href="../../resources/css/common.min.css" />
     <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
     <script src="../../resources/js/lib/jquery-ui.min.js"></script>
@@ -15,15 +15,13 @@
 </head>
 
 <body>
-    <!-- 2023-09-14 class 수정 -->
-    <article class="layerpopup-box full is-active is-animation" id="fullViewPop" role="dialog">
-        <div class="layer-popup challPop">
-            <!-- 2023-09-14 마크업수정 -->
+    <article class="layerpopup-box full is-active is-animation" id="fullViewPop" role="dialog" data-callback="cbFun">
+        <div class="layer-popup">
             <header class="layer-header">
                 <div class="header-inner">
                     <div class="header-left"></div>
                     <div class="header-center">
-                        <h1 class="pop-title">AI챌린지를 선택하세요</h1>
+                        <h1 class="pop-title">슈 획득 방법</h1>
                     </div>
                     <div class="header-right">
                         <button type="button" class="btn-close btn-pop-close" title="레이어팝업 닫기"
@@ -32,22 +30,23 @@
                 </div>
             </header>
 
-            <div class="layer-content pb-96">
+            <div class="layer-content">
                 <div class="layer-inner">
-                    <div class="no-clip">
-                        <p>진행중인 챌린지가 없습니다.</p>
+                    <div class="shoe-way">
+                        <div class="top">
+                            <p class="body-sub-title text-center">클럽메타에서 다양한 활동을 통해<br />
+                                Shoe를 획득할 수 있어요!<br />
+                                클럽메타를 제대로 즐기고 싶다면 Shoe를 모아보세요!</p>
+                        </div>
+                        <div class="bottom">
+                            <div class="img">
+                                <img src="../../resources/images/img/img_shoe_wayinfo.png" alt="">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="btn-bottom-box">
-                <a href="#none" class="btn btn-outline" title="홈으로 이동" role="button">홈으로 가기</a>
-                <!-- 2023-09-14 bottom->full 수정 -->
-                <button type="button" class="btn btn-primary btn-pop-close"
-                    onclick="ui.popup.close('#fullViewPop')">AI챌린지 오픈하기</button>
-            </div>
         </div>
-        <!-- //layer-popup -->
     </article>
 </body>
 

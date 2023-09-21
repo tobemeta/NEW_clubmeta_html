@@ -19,7 +19,7 @@
 <body>
     <!-- 2023-09-14 class 수정 -->
     <article class="layerpopup-box full is-active is-animation" id="fullViewPop" role="dialog">
-        <div class="layer-popup">
+        <div class="layer-popup challPop">
             <!-- 2023-09-14 마크업수정 -->
             <header class="layer-header">
                 <div class="header-inner">
@@ -114,6 +114,8 @@
         centeredSlides: true,
         slidesPerView: 'auto',
         slideToClickedSlide: true,
+        // 2023-09-21 추가
+        touchMoveStopPropagation: false,
         effect: 'coverflow',
         coverflowEffect: {
             rotate: 0,
