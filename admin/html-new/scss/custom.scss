@@ -648,6 +648,9 @@ input[type='date'] {
         .custom-control-inline:last-child {
             margin-right: 0;
         }
+        a.text-truncate {
+            margin: 0 auto;
+        }
     }
     a.text-truncate {
         display: block;
@@ -678,6 +681,7 @@ input[type='date'] {
         padding: 0.5rem;
     }
 }
+
 .table-nodata {
     text-align: center !important;
     padding: 2rem 0 !important;
@@ -870,6 +874,11 @@ input[type='date'] {
     word-break: keep-all;
     white-space: nowrap;
     display: flex;
+    &.half {
+        dl {
+            width: 50%;
+        }
+    }
     > div {
         display: flex;
         width: 100%;
