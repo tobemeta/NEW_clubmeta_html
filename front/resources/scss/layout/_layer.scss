@@ -343,11 +343,23 @@
 }
 
 .msg-box {
+    .lottie-box {
+        width: 15rem;
+        height: 15rem;
+        margin: 0 auto 1.6rem;
+    }
     .info-box {
         display: flex;
         flex-direction: column;
         gap: 2.4rem;
-        .title {
+        .check {
+            font-size: 0;
+            dt {
+                color: #585858;
+            }
+            .body-title {
+                color: $main-color;
+            }
         }
     }
     .info-list-box {

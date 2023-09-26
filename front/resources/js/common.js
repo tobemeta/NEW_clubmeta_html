@@ -11,6 +11,7 @@ const ui = {
         _this.tooltip.init();
         _this.select.init();
         _this.lottie();
+        _this.lottie2();
     },
     header: () => {
         let scrolling;
@@ -827,23 +828,68 @@ const ui = {
 
                     $this.data('lottie-opt', $lottieOpt);
 
-                    // $lottieOpt.addEventListener('config_ready', function () {
-                    //     if (!!readyEvt) readyEvt(_this, $lottieOpt);
-                    // });
+                    $lottieOpt.addEventListener('config_ready', function () {
+                        if (!!readyEvt) readyEvt(_this, $lottieOpt);
+                    });
 
-                    // if ($loopOpt) {
-                    //     $lottieOpt.addEventListener('loopComplete', function () {
-                    //         if (!!completeEvt) completeEvt(_this, $lottieOpt);
-                    //     });
-                    // } else {
-                    //     $lottieOpt.addEventListener('complete', function () {
-                    //         if (!!completeEvt) completeEvt(_this, $lottieOpt);
-                    //     });
-                    // }
+                    if ($loopOpt) {
+                        $lottieOpt.addEventListener('loopComplete', function () {
+                            if (!!completeEvt) completeEvt(_this, $lottieOpt);
+                        });
+                    } else {
+                        $lottieOpt.addEventListener('complete', function () {
+                            if (!!completeEvt) completeEvt(_this, $lottieOpt);
+                        });
+                    }
                 }
             });
         };
         $lottieInit();
+    },
+
+    lottie2: function () {
+        const $lottie = $('[data-lottie]');
+        if (!$lottie.length) return;
+        if (!location.host) {
+            return console.log('lottie는 서버에서만 지원됩니다.');
+        }
+        const $lottieInit = function () {
+            $lottie.each(function () {
+                const $this = $(this);
+                // $(this).empty();
+                if (!$this.hasClass('lottie__init')) {
+                    const $data = $this.data('lottie');
+                    $this.addClass('lottie__init').removeAttr('data-lottie').aria('hidden', true);
+                    const $loopOpt = $this.hasClass('_loop');
+                    const $stopOpt = $this.hasClass('_stop');
+                    const $sclAnimation = $this.data('animation');
+                    let $autoplayOpt = true;
+                    if ($sclAnimation || $stopOpt) {
+                        $autoplayOpt = false;
+                    }
+                    const $lottieOpt = lottie.loadAnimation({
+                        container: this,
+                        renderer: 'svg',
+                        loop: $loopOpt,
+                        autoplay: $autoplayOpt,
+                        path: $data
+                    });
+                    $(this).data('lottie-opt', $lottieOpt);
+                }
+            });
+        };
+        if (typeof lottie === 'undefined') {
+            let $url = '/js/lib/lottie.min.js';
+            const $path = ui.Common.getUrlPath();
+            if ($path) {
+                $url = $path + $url;
+            } else {
+                $url = '../..' + $url;
+            }
+            ui.Util.loadScript($url, $lottieInit);
+        } else {
+            $lottieInit();
+        }
     }
 };
 
