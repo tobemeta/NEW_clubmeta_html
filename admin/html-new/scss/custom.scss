@@ -28,6 +28,18 @@ $mobile-aos-size: 360px;
     }
 }
 
+@for $i from 0 through 10000 {
+    .min-h-#{$i} {
+        min-height: $i * 1px !important;
+    }
+}
+
+@for $i from 0 through 10000 {
+    .max-h-#{$i} {
+        max-height: $i * 1px !important;
+    }
+}
+
 // common
 body {
     font-family: 'Noto Sans KR', 'Roboto', sans-serif;

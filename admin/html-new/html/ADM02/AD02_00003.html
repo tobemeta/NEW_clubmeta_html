@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>클럽메타 관리자 - 이벤트 등록(수정)</title>
+        <!-- js -->
+        <script src="../include/head.js"></script>
+        <script src="../../js/custom.js"></script>
+        <script src="../../lib/ckeditor/ckeditor.js"></script>
+    </head>
+
+    <body>
+        <!-- Page Wrapper -->
+        <div id="wrapper" class="wrapper">
+            <!-- 사이드바 -->
+            <div data-include="../include/sidebar.html"></div>
+            <!-- //사이드바 -->
+
+            <!-- content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column bg-white">
+                <!-- 컨텐츠 본문 -->
+                <div id="content">
+                    <!--  -->
+                    <div data-include="../include/topbar.html"></div>
+
+                    <div class="container-fluid" role="main">
+                        <!-- 페이지 경로 -->
+                        <div class="page-breadcrumb" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="#"><i class="fas fa-home d-flex align-items-center"></i></a>
+                                </li>
+                                <li class="breadcrumb-item">시스템 점검 관리 리스트</li>
+                                <li class="breadcrumb-item">시스템 점검 등록</li>
+                            </ol>
+                        </div>
+                        <!-- //페이지 경로 -->
+                        <div class="main">
+                            <!-- 제목 및 등록버튼 -->
+                            <div class="row clearfix mt-4 mb-4">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h2 class="h3 text-gray-800 float-left">시스템 점검 등록</h2>
+                                </div>
+                            </div>
+                            <!-- //제목 및 등록버튼 -->
+
+                            <!---//contents--->
+                            <form>
+                                <div class="form-box">
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label"><label for="">제목</label></div>
+                                            <div class="form-box-cont">
+                                                <div class="form-row">
+                                                    <div class="input-group w-100">
+                                                        <input type="text" class="form-control" placeholder="한글, 영문, 숫자, 특수기호 포함 최대 20자" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label">내용</div>
+                                            <div class="form-box-cont">
+                                                <textarea name="editor1" id="editor1" cols="80" placeholder="한글, 영문, 숫자, 특수기호 포함 최대 100자"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label">게시기간</div>
+                                            <div class="form-box-cont">
+                                                <div class="input-daterange-btn w-25">
+                                                    <div class="input-group">
+                                                        <input type="date" class="form-control" placeholder="시작일" />
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text">~</div>
+                                                        </div>
+                                                        <input type="date" class="form-control" placeholder="종료일" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label"><label for="">점검일시</label></div>
+                                            <div class="form-box-cont">
+                                                <div class="input-daterange-btn w-75">
+                                                    <div class="input-group">
+                                                        <input type="date" class="form-control w-25" placeholder="시작일" />
+                                                        <select class="custom-select">
+                                                            <option value="1">00시</option>
+                                                        </select>
+                                                        <select class="custom-select">
+                                                            <option value="1">00분</option>
+                                                        </select>
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text">~</div>
+                                                        </div>
+                                                        <input type="date" class="form-control w-25" placeholder="종료일" />
+                                                        <select class="custom-select">
+                                                            <option value="1">00시</option>
+                                                        </select>
+                                                        <select class="custom-select">
+                                                            <option value="1">00분</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-box-row">
+                                        <div class="form-box-item">
+                                            <div class="form-box-label">최초 등록 관리자</div>
+                                            <div class="form-box-cont">
+                                                <div class="form-row">
+                                                    <span class="mr-2">YYYY.MM.DD</span>
+                                                    <span class="mr-2">clubmeta11</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <div class="btn-wrap text-center mt-5">
+                                <button type="button" class="btn btn-lg btn-secondary" onclick="bsConfirm('시스템 점검 등록을 취소 하시겠습니까?')">취소</button>
+                                <button type="button" class="btn btn-lg btn-primary" onclick="bsFormAlert2('시스템 점검 등록을 완료했습니다.')">등록</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll to Top Button-->
+        <div data-include="../include/topbtn.html"></div>
+
+        <!-- Logout Modal-->
+        <div data-include="../include/logoutModal.html"></div>
+        <!-- changePw Modal-->
+        <div data-include="../include/pop/changePwModal.html"></div>
+    </body>
+    <script src="../../datatables/jquery.dataTables.min.js"></script>
+    <script src="../../datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="../../lib/chart.js/plugins/chartjs-plugin-datalabels.min.js"></script>
+    <script src="../../lib/chart.js/Chart.min.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="../../js/demo/datatables-demo.js"></script>
+    <script>
+        CKEDITOR.replace('editor1');
+    </script>
+</html>
