@@ -1,146 +1,139 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>설정 홈 팝업 | 클럽메타</title>
+        <link rel="stylesheet" href="../../resources/css/common.min.css" />
+        <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+        <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+        <script src="../../resources/js/common.js"></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="format-detection" content="telephone=no" />
-    <title>설정 홈 팝업 | 클럽메타</title>
-    <link rel="stylesheet" href="../../resources/css/common.min.css" />
-    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
-    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
-    <script src="../../resources/js/common.js"></script>
-</head>
-
-<body>
-    <div class="wrap">
-        <header class="header">
-            <div class="header-inner">
-                <div class="header-left">
-                    <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
+    <body>
+        <div class="wrap">
+            <header class="header">
+                <div class="header-inner">
+                    <div class="header-left">
+                        <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
+                    </div>
+                    <div class="header-center">
+                        <h1 class="header-title">설정</h1>
+                    </div>
+                    <div class="header-right"></div>
                 </div>
-                <div class="header-center">
-                    <h1 class="header-title">설정</h1>
-                </div>
-                <div class="header-right"></div>
-            </div>
-        </header>
-        <div class="contents">
-            <div class="section">
-                <div class="inner">
-                    <div class="more-box ico link">
-                        <div class="title-box">
-                            <h2 class="sub-title">계정</h2>
-                        </div>
-                        <ul>
-                            <li>
-                                <a href="#none" class="card user">프로필 편집</a>
-                            </li>
-                            <li>
-                                <a href="#none" class="card privacy">개인정보 변경</a>
-                            </li>
-                            <li>
-                                <a href="#none" class="card like">좋아요 리스트</a>
-                            </li>
-                            <li>
-                                <a href="#none" class="card badge">배지 설정</a>
-                            </li>
-                            <li>
-                                <a href="#none" class="card bookmark">북마크</a>
-                            </li>
-                            <li>
-                                <a href="#none" class="card block">차단영상 관리</a>
-                            </li>
-                            <li>
-                                <a href="#none" class="card alarm">푸시알림 설정</a>
-                            </li>
-                            <!-- 2023-09-05 마크업 삭제 -->
-                            <!-- <li>
+            </header>
+            <div class="contents">
+                <div class="section">
+                    <div class="inner">
+                        <div class="more-box ico link">
+                            <div class="title-box">
+                                <h2 class="sub-title">계정</h2>
+                            </div>
+                            <ul>
+                                <li>
+                                    <a href="#none" class="card user">프로필 편집</a>
+                                </li>
+                                <li>
+                                    <a href="#none" class="card privacy">개인정보 변경</a>
+                                </li>
+                                <li>
+                                    <a href="#none" class="card like">좋아요 리스트</a>
+                                </li>
+                                <li>
+                                    <a href="#none" class="card badge">배지 설정</a>
+                                </li>
+                                <li>
+                                    <a href="#none" class="card bookmark">북마크</a>
+                                </li>
+                                <li>
+                                    <a href="#none" class="card block">차단영상 관리</a>
+                                </li>
+                                <li>
+                                    <a href="#none" class="card alarm">푸시알림 설정</a>
+                                </li>
+                                <!-- 2023-09-05 마크업 삭제 -->
+                                <!-- <li>
                                 <a href="#none" class="card shoe">Shoe 히스토리</a>
                             </li> -->
-                            <li>
-                                <a href="#none" class="card wallet">내 지갑</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="more-box ico link">
-                        <div class="title-box">
-                            <h2 class="sub-title">약관</h2>
+                                <li>
+                                    <a href="#none" class="card wallet">내 지갑</a>
+                                </li>
+                            </ul>
                         </div>
-                        <ul>
-                            <li>
-                                <a href="#none" class="card service">서비스 이용약관</a>
-                            </li>
-                            <li>
-                                <a href="#none" class="card policy">개인정보 처리방침</a>
-                            </li>
-                            <li>
+                        <div class="more-box ico link">
+                            <div class="title-box">
+                                <h2 class="sub-title">약관</h2>
+                            </div>
+                            <ul>
+                                <li>
+                                    <a href="#none" class="card service">서비스 이용약관</a>
+                                </li>
+                                <li>
+                                    <a href="#none" class="card policy">개인정보 처리방침</a>
+                                </li>
+                                <!-- 2023-10-04 기획수정으로 삭제 -->
+                                <!-- <li>
                                 <a href="#none" class="card guide">커뮤니티 가이드</a>
-                            </li>
-                            <li>
-                                <a href="#none" class="card source">오픈소스 라이선스</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="more-box ico link">
-                        <div class="title-box">
-                            <h2 class="sub-title">서비스</h2>
+                            </li> -->
+                                <li>
+                                    <a href="#none" class="card source">오픈소스 라이선스</a>
+                                </li>
+                            </ul>
                         </div>
-                        <ul>
-                            <li>
-                                <a href="#none" class="card notice">공지사항/FAQ</a>
-                            </li>
-                            <li>
-                                <a href="#none" class="card event">이벤트</a>
-                            </li>
-                            <li>
-                                <!-- 2023-09-05 class(qm -> kakao) 변경 -->
-                                <a href="#none" class="card kakao">카카오채널 문의하기</a>
-                            </li>
-                            <li>
-                                <a href="#none" class="card app">앱 버전 업데이트</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="more-box">
-                        <ul>
-                            <li>
-                                <!-- 2023-09-05 no-shadow class 추가 -->
-                                <button type="button" class="card no-shadow"
-                                    onclick="ui.popup.open('#logoutPop')">로그아웃</button>
-                            </li>
-                            <li><a href="#none" class="card no-shadow">회원탈퇴</a></li>
-                        </ul>
+                        <div class="more-box ico link">
+                            <div class="title-box">
+                                <h2 class="sub-title">서비스</h2>
+                            </div>
+                            <ul>
+                                <li>
+                                    <a href="#none" class="card notice">공지사항/FAQ</a>
+                                </li>
+                                <li>
+                                    <a href="#none" class="card event">이벤트</a>
+                                </li>
+                                <li>
+                                    <!-- 2023-09-05 class(qm -> kakao) 변경 -->
+                                    <a href="#none" class="card kakao">카카오채널 문의하기</a>
+                                </li>
+                                <li>
+                                    <a href="#none" class="card app">앱 버전 업데이트</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="more-box">
+                            <ul>
+                                <li>
+                                    <!-- 2023-09-05 no-shadow class 추가 -->
+                                    <button type="button" class="card no-shadow" onclick="ui.popup.open('#logoutPop')">로그아웃</button>
+                                </li>
+                                <li><a href="#none" class="card no-shadow">회원탈퇴</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
-    </div>
-</body>
-<article class="layerpopup-box bottom" id="logoutPop" role="dialog">
-    <div class="layer-popup">
-        <header class="layer-header">
-            <h1 class="pop-title"></h1>
-            <button type="button" class="btn-close btn-pop-close" onclick="ui.popup.close('#logoutPop')"
-                title="레이어팝업 닫기">닫기</button>
-        </header>
+    </body>
+    <article class="layerpopup-box bottom" id="logoutPop" role="dialog">
+        <div class="layer-popup">
+            <header class="layer-header">
+                <h1 class="pop-title"></h1>
+                <button type="button" class="btn-close btn-pop-close" onclick="ui.popup.close('#logoutPop')" title="레이어팝업 닫기">닫기</button>
+            </header>
 
-        <div class="layer-content">
-            <div class="layer-inner">
-                <p class="text-center">로그아웃 하시겠어요?</p>
+            <div class="layer-content">
+                <div class="layer-inner">
+                    <p class="text-center">로그아웃 하시겠어요?</p>
+                </div>
             </div>
+            <div class="btn-bottom-box">
+                <button type="button" class="btn btn-outline btn-pop-close" onclick="ui.popup.close('#logoutPop')">취소</button>
+                <a href="../HOM/CLMT03_00001.html" class="btn btn-disprimary">로그아웃</a>
+            </div>
+            <!-- //layer-content -->
         </div>
-        <div class="btn-bottom-box">
-
-            <button type="button" class="btn btn-outline btn-pop-close"
-                onclick="ui.popup.close('#logoutPop')">취소</button>
-            <a href="../HOM/CLMT03_00001.html" class="btn btn-disprimary">로그아웃</a>
-        </div>
-        <!-- //layer-content -->
-    </div>
-</article>
-
+    </article>
 </html>
