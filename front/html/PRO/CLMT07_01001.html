@@ -1,48 +1,64 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-        <meta name="HandheldFriendly" content="true" />
-        <meta name="format-detection" content="telephone=no" />
-        <title>개인정보 변경 | 클럽메타</title>
-        <link rel="stylesheet" href="../../resources/css/common.min.css" />
-        <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
-        <script src="../../resources/js/lib/jquery-ui.min.js"></script>
-        <script src="../../resources/js/common.js"></script>
-    </head>
-    <body>
-        <div class="wrap">
-            <header class="header">
-                <div class="header-inner">
-                    <div class="header-left">
-                        <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
-                    </div>
-                    <div class="header-center">
-                        <h1 class="header-title">개인정보 변경</h1>
-                    </div>
-                    <div class="header-right"></div>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>개인정보 변경 | 클럽메타</title>
+    <link rel="stylesheet" href="../../resources/css/common.min.css" />
+    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+    <script src="../../resources/js/common.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="header">
+            <div class="header-inner">
+                <div class="header-left">
+                    <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
                 </div>
-            </header>
-            <div class="contents pb-96">
-                <div class="section">
-                    <div class="inner">
-                        <div class="more-box">
-                            <ul>
-                                <li>
-                                    <a href="#none" class="card">비밀번호 변경</a>
-                                </li>
-                                <li>
-                                    <a href="#none" class="card">주소 변경</a>
-                                </li>
-                                <li>
-                                    <a href="#none" class="card">휴대폰 번호 및 이름 변경</a>
-                                </li>
-                            </ul>
-                        </div>
+                <div class="header-center">
+                    <h1 class="header-title">개인정보 변경</h1>
+                </div>
+                <div class="header-right"></div>
+            </div>
+        </header>
+        <div class="contents pb-96">
+            <div class="section">
+                <div class="inner">
+                    <div class="more-box">
+                        <ul>
+                            <li>
+                                <a href="#none" class="card">비밀번호 변경</a>
+                            </li>
+                            <li>
+                                <a href="#none" class="card">주소 변경</a>
+                            </li>
+                            <li>
+                                <a href="#none" class="card">휴대폰 번호 및 이름 변경</a>
+                            </li>
+                            <!-- 2023-10-04 기획 수정 추가 -->
+                            <li>
+                                <div class="card view flex">
+                                    <span>마케팅 활용 동의</span>
+                                    <div class="chk-box toggle">
+                                        <input type="checkbox" id="chk1" />
+                                        <label for="chk1">
+                                            <span class="text agree"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>

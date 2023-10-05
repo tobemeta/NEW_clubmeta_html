@@ -630,6 +630,11 @@
                     line-height: 1.4rem;
                     color: #9f9f9f;
                 }
+                &.agree {
+                    &:after {
+                        content: '미동의';
+                    }
+                }
             }
         }
         input {
@@ -648,6 +653,11 @@
                         content: '수신';
                         left: -2.6rem;
                         color: $main-color;
+                    }
+                    &.agree {
+                        &:after {
+                            content: '동의';
+                        }
                     }
                 }
             }
