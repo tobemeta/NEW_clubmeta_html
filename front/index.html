@@ -1,1155 +1,1153 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <title>클럽메타 - 메뉴표</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-        <meta name="keywords" content="" />
-        <meta name="description" content="" />
-        <script src="./resources/js/lib/jquery-3.7.0.min.js"></script>
-        <script src="./resources/js/temp/makeMenuTable.min.js"></script>
-        <style>
-            * {
-                padding: 0;
-                margin: 0;
-            }
 
-            #wrap {
-                padding: 10px;
-                min-width: 1080px;
-            }
+<head>
+    <meta charset="UTF-8" />
+    <title>클럽메타 - 메뉴표</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <script src="./resources/js/lib/jquery-3.7.0.min.js"></script>
+    <script src="./resources/js/temp/makeMenuTable.min.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
 
-            .flex {
-                display: flex;
-                flex-direction: column;
-            }
+        #wrap {
+            padding: 10px;
+            min-width: 1080px;
+        }
 
-            .tltW {
-                position: relative;
-            }
+        .flex {
+            display: flex;
+            flex-direction: column;
+        }
 
-            .tltW h1 {
-                height: 30px;
-                background: #000;
-                color: #fff;
-                text-align: center;
-                font-size: 20px;
-                line-height: 30px;
-            }
+        .tltW {
+            position: relative;
+        }
 
-            .updateW {
-                flex: 1;
-                display: flex;
-                justify-content: end;
-                /* position: absolute;
+        .tltW h1 {
+            height: 30px;
+            background: #000;
+            color: #fff;
+            text-align: center;
+            font-size: 20px;
+            line-height: 30px;
+        }
+
+        .updateW {
+            flex: 1;
+            display: flex;
+            justify-content: end;
+            /* position: absolute;
                 right: 10px;
                 top: 0; */
-                height: 30px;
-                line-height: 30px;
-                font-size: 12px;
-                /* color: #fff; */
-            }
+            height: 30px;
+            line-height: 30px;
+            font-size: 12px;
+            /* color: #fff; */
+        }
 
-            .updateW p + p:before {
-                content: '|';
-                display: inline-block;
-                padding: 0 10px;
-                vertical-align: top;
-                font-weight: normal;
-            }
+        .updateW p+p:before {
+            content: '|';
+            display: inline-block;
+            padding: 0 10px;
+            vertical-align: top;
+            font-weight: normal;
+        }
 
-            .notice {
-                padding: 10px 0;
-                text-align: right;
-                font-size: 12px;
-                font-weight: bold;
-            }
+        .notice {
+            padding: 10px 0;
+            text-align: right;
+            font-size: 12px;
+            font-weight: bold;
+        }
 
-            .link {
-            }
+        .link {}
 
-            .link a {
-                color: #fff;
-            }
+        .link a {
+            color: #fff;
+        }
 
-            table {
-                table-layout: fixed;
-                width: 100%;
-                min-width: 1080px;
-                border-collapse: collapse;
-                border-spacing: 0;
-            }
+        table {
+            table-layout: fixed;
+            width: 100%;
+            min-width: 1080px;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
 
-            th,
-            td {
-                height: 24px;
-                padding: 0 5px;
-                border: 1px solid #000;
-                font-size: 12px;
-                color: #000;
-                font-size: 12px;
-            }
+        th,
+        td {
+            height: 24px;
+            padding: 0 5px;
+            border: 1px solid #000;
+            font-size: 12px;
+            color: #000;
+            font-size: 12px;
+        }
 
-            thead th {
-                background: #595959;
-                text-align: center;
-                color: #fff;
-            }
+        thead th {
+            background: #595959;
+            text-align: center;
+            color: #fff;
+        }
 
-            tbody .num {
-                background: #d9d9d9;
-                text-align: center;
-            }
+        tbody .num {
+            background: #d9d9d9;
+            text-align: center;
+        }
 
-            table td.boderTd {
-                height: 0;
-                padding: 0;
-                border-color: #000;
-            }
+        table td.boderTd {
+            height: 0;
+            padding: 0;
+            border-color: #000;
+        }
 
-            caption {
-                visibility: hidden;
-                position: absolute;
-                left: -9999em;
-                top: -9999em;
-            }
+        caption {
+            visibility: hidden;
+            position: absolute;
+            left: -9999em;
+            top: -9999em;
+        }
 
-            .incomplete td {
-                background: #d9d9d9;
-            }
+        .incomplete td {
+            background: #d9d9d9;
+        }
 
-            .num {
-            }
+        .num {}
 
-            .type {
-                text-align: center;
-                font-weight: bold;
-            }
+        .type {
+            text-align: center;
+            font-weight: bold;
+        }
 
-            .depth1 {
-                font-weight: bold;
-            }
+        .depth1 {
+            font-weight: bold;
+        }
 
-            .depth1,
-            .depth2,
-            .depth3,
-            .depth4 {
-            }
+        .depth1,
+        .depth2,
+        .depth3,
+        .depth4 {}
 
-            .id {
-                text-align: center;
-            }
+        .id {
+            text-align: center;
+        }
 
-            .path {
-            }
+        .path {}
 
-            .path a {
-                display: block;
-                text-decoration: none;
-                color: blue;
-            }
+        .path a {
+            display: block;
+            text-decoration: none;
+            color: blue;
+        }
 
-            .path a:hover {
-                text-decoration: underline;
-            }
+        .path a:hover {
+            text-decoration: underline;
+        }
 
-            .native {
-                text-align: center;
-            }
+        .native {
+            text-align: center;
+        }
 
-            .complete,
-            .mod {
-                text-align: center;
-            }
+        .complete,
+        .mod {
+            text-align: center;
+        }
 
-            .complete span {
-                color: blue;
-            }
+        .complete span {
+            color: blue;
+        }
 
-            .mod span {
-                color: red;
-            }
+        .mod span {
+            color: red;
+        }
 
-            .etc {
-            }
-        </style>
-    </head>
+        .etc {}
+    </style>
+</head>
 
-    <body>
-        <div id="wrap">
-            <div class="flex">
-                <div class="tltW">
-                    <h1>클럽메타 - 퍼블리스트</h1>
-                </div>
-                <div class="updateW">
-                    <p class="page">화면 (완료 / 전체) : <span class="cnt">0</span> / <span class="total">0</span></p>
-                    <p class="update">업데이트 : <span></span></p>
-                    <!-- <p class="link"><a href="download.html" title="파일 다운로드 바로가기">다운로드</a></p> -->
-                </div>
-                <p class="notice">※ 업데이트일자와 완료일자가 같은 경우 파란색으로 표시(신규페이지) / 화면전체는 목록상 전체</p>
+<body>
+    <div id="wrap">
+        <div class="flex">
+            <div class="tltW">
+                <h1>클럽메타 - 퍼블리스트</h1>
             </div>
-
-            <div id="menuTable"></div>
+            <div class="updateW">
+                <p class="page">화면 (완료 / 전체) : <span class="cnt">0</span> / <span class="total">0</span></p>
+                <p class="update">업데이트 : <span></span></p>
+                <!-- <p class="link"><a href="download.html" title="파일 다운로드 바로가기">다운로드</a></p> -->
+            </div>
+            <p class="notice">※ 업데이트일자와 완료일자가 같은 경우 파란색으로 표시(신규페이지) / 화면전체는 목록상 전체</p>
         </div>
-    </body>
 
-    <script>
-        $(document).ready(function () {
-            $('#menuTable').makeMenuTable({
-                json: menuTableList,
-                header: menuTableHeader,
-                colSize: menuColSize,
-                menuDefault: menuDefault,
-                path_prefix: 'html/',
-                update: '2023-10-04'
-            });
+        <div id="menuTable"></div>
+    </div>
+</body>
+
+<script>
+    $(document).ready(function () {
+        $('#menuTable').makeMenuTable({
+            json: menuTableList,
+            header: menuTableHeader,
+            colSize: menuColSize,
+            menuDefault: menuDefault,
+            path_prefix: 'html/',
+            update: '2023-10-04'
         });
-        // '1Depth', '2Depth', '3Depth', '4Depth', '5Depth', 'native',
-        // 120, 130, 130, 130, 130, 50,
-        var menuTableHeader = ['구분', '화면명', '화면ID', '경로', '완료일자', '수정일자', '비고'],
-            // menuColSize = [5 + '%', 10 + '%', '*', 100, '*', 100, 100, 200];
-            menuColSize = [5 + '%', 9 + '%', '*', 10 + '%', '*', 8 + '%', 8 + '%', 25 + '%'];
+    });
+    // '1Depth', '2Depth', '3Depth', '4Depth', '5Depth', 'native',
+    // 120, 130, 130, 130, 130, 50,
+    var menuTableHeader = ['구분', '화면명', '화면ID', '경로', '완료일자', '수정일자', '비고'],
+        // menuColSize = [5 + '%', 10 + '%', '*', 100, '*', 100, 100, 200];
+        menuColSize = [5 + '%', 9 + '%', '*', 10 + '%', '*', 8 + '%', 8 + '%', 25 + '%'];
 
-        // var menuTableHeader = ['구분', '1Depth', '2Depth', '3Depth', '4Depth', '경로', '완료일자', '비고'],
-        // 	menuColSize = [40, 100, 150, 150, 150, 150, '*', 100, 200];
+    // var menuTableHeader = ['구분', '1Depth', '2Depth', '3Depth', '4Depth', '경로', '완료일자', '비고'],
+    // 	menuColSize = [40, 100, 150, 150, 150, 150, '*', 100, 200];
 
-        var menuDefault = {
-            type: '',
-            // depth1: '',
-            // depth2: '',
-            // depth3: '',
-            // depth4: '',
-            // depth5: '',
-            name: '',
-            id: '',
-            path: '',
-            // native: '',
-            complete: '',
-            mod: '',
+    var menuDefault = {
+        type: '',
+        // depth1: '',
+        // depth2: '',
+        // depth3: '',
+        // depth4: '',
+        // depth5: '',
+        name: '',
+        id: '',
+        path: '',
+        // native: '',
+        complete: '',
+        mod: '',
+        etc: ''
+    };
+
+    var menuTableList = [
+        // 공통
+        {
+            type: '앱실행',
+            name: '네트워크/통신오류',
+            id: 'CLMT01_00002',
+            path: 'COM/CLMT01_00002.html',
+            complete: '2023-07-24',
+            mod: '2023-07-25',
+            etc: 'class 삭제 - 수정날짜 주석 참고'
+        },
+        {
+            name: '필수 업데이트 안내 팝업',
+            id: 'CLMT01_01p07',
+            path: 'COM/CLMT01_01p07.html',
+            complete: '2023-09-22',
+            etc: '추가화면'
+        },
+        {
+            name: '업데이트 안내 (선택) 팝업',
+            id: 'CLMT01_01p09',
+            path: 'COM/CLMT01_01p09.html',
+            complete: '2023-09-22',
+            etc: '추가화면'
+        },
+        {
+            name: '리워드 지급 팝업',
+            id: 'CLMT01_01p10',
+            path: 'COM/CLMT01_01p10.html',
+            complete: '2023-09-22',
+            etc: '추가화면'
+        },
+        {
+            type: '시스템',
+            name: '시스템 공지 팝업',
+            id: 'CLMT01_01p02',
+            path: 'COM/CLMT01_01p02.html',
+            complete: '2023-09-22',
+            etc: '추가화면'
+        },
+        // {
+        //     name: '시스템 안내 페이지',
+        //     id: 'CLMT01_01001',
+        //     etc: '화면 삭제'
+        // },
+        {
+            type: '로딩 실패',
+            name: '로딩 실패 (전체화면)',
+            id: 'CLMT01_00003',
+            path: 'COM/CLMT01_00003.html',
+            complete: '2023-08-31',
             etc: ''
-        };
+        },
+        {
+            name: '로딩 실패 (탭메뉴)',
+            id: 'CLMT01_00004',
+            path: 'COM/CLMT01_00004.html',
+            complete: '2023-08-31',
+            etc: ''
+        },
+        {
+            name: '로딩 실패 (바텀시트)',
+            id: 'CLMT01_01p05',
+            path: 'COM/CLMT01_01p05.html',
+            complete: '2023-08-31',
+            etc: ''
+        },
+        {
+            type: 'Shoe 획득 방법',
+            name: 'Shoe 획득 방법',
+            id: 'CLMT01_01p06',
+            path: 'COM/CLMT01_01p06.html',
+            complete: '2023-10-04',
+            etc: '전체 이미지로 변경'
+        },
+        {
+            name: '보유 shoe 부족 알림 팝업',
+            id: 'CLMT01_01p08',
+            path: 'COM/CLMT01_01p08.html',
+            complete: '2023-09-22',
+            etc: '추가화면'
+        },
+        {
+            type: '전체 검색',
+            name: '검색 전 추천 리스트 화면',
+            id: 'CLMT01_02001',
+            path: 'COM/CLMT01_02001.html',
+            complete: '2023-07-21',
+            etc: ''
+        },
+        {
+            name: '[탭] 전체 ',
+            id: 'CLMT01_02002',
+            path: 'COM/CLMT01_02002.html',
+            complete: '2023-07-21',
+            mod: '2023-08-02',
+            // etc: '마크업 삭제 주석 참고'
+            etc: '마크업 수정 주석 참고'
+        },
+        {
+            name: '[탭] 챌린지 리스트',
+            id: 'CLMT01_02003',
+            path: 'COM/CLMT01_02003.html',
+            complete: '2023-07-21',
+            mod: '2023-07-28',
+            etc: '마크업 삭제 주석 참고'
+        },
+        {
+            name: '[탭] 유저 리스트',
+            id: 'CLMT01_02004',
+            path: 'COM/CLMT01_02004.html',
+            complete: '2023-07-21',
+            mod: '2023-07-28',
+            etc: '마크업 삭제 주석 참고'
+        },
+        {
+            name: '[탭] 음원 리스트',
+            id: 'CLMT01_02005',
+            path: 'COM/CLMT01_02005.html',
+            complete: '2023-07-21',
+            mod: '2023-08-02',
+            // etc: '마크업 삭제 주석 참고'
+            etc: '마크업 수정 주석 참고'
+        },
+        {
+            name: '[탭] 해시태그 리스트',
+            id: 'CLMT01_02006',
+            path: 'COM/CLMT01_02006.html',
+            complete: '2023-07-21',
+            mod: '2023-07-28',
+            etc: '마크업 삭제 주석 참고'
+        },
+        {
+            name: '해시태그 상세 화면',
+            id: 'CLMT01_02007',
+            path: 'COM/CLMT01_02007.html',
+            complete: '2023-07-21',
+            etc: ''
+        },
+        {
+            name: '검색 결과 (Data 없음)',
+            id: 'CLMT01_02008',
+            path: 'COM/CLMT01_02008.html',
+            complete: '2023-07-21',
+            etc: ''
+        },
+        {
+            name: '[탭] 영상 리스트 (Data 없음)',
+            id: 'CLMT01_02009',
+            path: 'COM/CLMT01_02009.html',
+            complete: '2023-08-30',
+            etc: ''
+        },
+        {
+            name: '[탭] 음원 리스트 (Data 없음)',
+            id: 'CLMT01_02010',
+            path: 'COM/CLMT01_02010.html',
+            complete: '2023-08-30',
+            etc: ''
+        },
+        {
+            name: '[탭] 유저 리스트 (Data 없음)',
+            id: 'CLMT01_02011',
+            path: 'COM/CLMT01_02011.html',
+            complete: '2023-08-30',
+            etc: ''
+        },
+        {
+            name: '[탭] 태그 리스트 (Data 없음)',
+            id: 'CLMT01_02012',
+            path: 'COM/CLMT01_02012.html',
+            complete: '2023-08-30',
+            etc: ''
+        },
 
-        var menuTableList = [
-            // 공통
-            {
-                type: '앱실행',
-                name: '네트워크/통신오류',
-                id: 'CLMT01_00002',
-                path: 'COM/CLMT01_00002.html',
-                complete: '2023-07-24',
-                mod: '2023-07-25',
-                etc: 'class 삭제 - 수정날짜 주석 참고'
-            },
-            {
-                name: '필수 업데이트 안내 팝업',
-                id: 'CLMT01_01p07',
-                path: 'COM/CLMT01_01p07.html',
-                complete: '2023-09-22',
-                etc: '추가화면'
-            },
-            {
-                name: '업데이트 안내 (선택) 팝업',
-                id: 'CLMT01_01p09',
-                path: 'COM/CLMT01_01p09.html',
-                complete: '2023-09-22',
-                etc: '추가화면'
-            },
-            {
-                name: '리워드 지급 팝업',
-                id: 'CLMT01_01p10',
-                path: 'COM/CLMT01_01p10.html',
-                complete: '2023-09-22',
-                etc: '추가화면'
-            },
-            {
-                type: '시스템',
-                name: '시스템 공지 팝업',
-                id: 'CLMT01_01p02',
-                path: 'COM/CLMT01_01p02.html',
-                complete: '2023-09-22',
-                etc: '추가화면'
-            },
-            // {
-            //     name: '시스템 안내 페이지',
-            //     id: 'CLMT01_01001',
-            //     etc: '화면 삭제'
-            // },
-            {
-                type: '로딩 실패',
-                name: '로딩 실패 (전체화면)',
-                id: 'CLMT01_00003',
-                path: 'COM/CLMT01_00003.html',
-                complete: '2023-08-31',
-                etc: ''
-            },
-            {
-                name: '로딩 실패 (탭메뉴)',
-                id: 'CLMT01_00004',
-                path: 'COM/CLMT01_00004.html',
-                complete: '2023-08-31',
-                etc: ''
-            },
-            {
-                name: '로딩 실패 (바텀시트)',
-                id: 'CLMT01_01p05',
-                path: 'COM/CLMT01_01p05.html',
-                complete: '2023-08-31',
-                etc: ''
-            },
-            {
-                type: 'Shoe 획득 방법',
-                name: 'Shoe 획득 방법',
-                id: 'CLMT01_01p06',
-                path: 'COM/CLMT01_01p06.html',
-                complete: '2023-10-04',
-                etc: '전체 이미지로 변경'
-            },
-            {
-                name: '보유 shoe 부족 알림 팝업',
-                id: 'CLMT01_01p08',
-                path: 'COM/CLMT01_01p08.html',
-                complete: '2023-09-22',
-                etc: '추가화면'
-            },
-            {
-                type: '전체 검색',
-                name: '검색 전 추천 리스트 화면',
-                id: 'CLMT01_02001',
-                path: 'COM/CLMT01_02001.html',
-                complete: '2023-07-21',
-                etc: ''
-            },
-            {
-                name: '[탭] 전체 ',
-                id: 'CLMT01_02002',
-                path: 'COM/CLMT01_02002.html',
-                complete: '2023-07-21',
-                mod: '2023-08-02',
-                // etc: '마크업 삭제 주석 참고'
-                etc: '마크업 수정 주석 참고'
-            },
-            {
-                name: '[탭] 챌린지 리스트',
-                id: 'CLMT01_02003',
-                path: 'COM/CLMT01_02003.html',
-                complete: '2023-07-21',
-                mod: '2023-07-28',
-                etc: '마크업 삭제 주석 참고'
-            },
-            {
-                name: '[탭] 유저 리스트',
-                id: 'CLMT01_02004',
-                path: 'COM/CLMT01_02004.html',
-                complete: '2023-07-21',
-                mod: '2023-07-28',
-                etc: '마크업 삭제 주석 참고'
-            },
-            {
-                name: '[탭] 음원 리스트',
-                id: 'CLMT01_02005',
-                path: 'COM/CLMT01_02005.html',
-                complete: '2023-07-21',
-                mod: '2023-08-02',
-                // etc: '마크업 삭제 주석 참고'
-                etc: '마크업 수정 주석 참고'
-            },
-            {
-                name: '[탭] 해시태그 리스트',
-                id: 'CLMT01_02006',
-                path: 'COM/CLMT01_02006.html',
-                complete: '2023-07-21',
-                mod: '2023-07-28',
-                etc: '마크업 삭제 주석 참고'
-            },
-            {
-                name: '해시태그 상세 화면',
-                id: 'CLMT01_02007',
-                path: 'COM/CLMT01_02007.html',
-                complete: '2023-07-21',
-                etc: ''
-            },
-            {
-                name: '검색 결과 (Data 없음)',
-                id: 'CLMT01_02008',
-                path: 'COM/CLMT01_02008.html',
-                complete: '2023-07-21',
-                etc: ''
-            },
-            {
-                name: '[탭] 영상 리스트 (Data 없음)',
-                id: 'CLMT01_02009',
-                path: 'COM/CLMT01_02009.html',
-                complete: '2023-08-30',
-                etc: ''
-            },
-            {
-                name: '[탭] 음원 리스트 (Data 없음)',
-                id: 'CLMT01_02010',
-                path: 'COM/CLMT01_02010.html',
-                complete: '2023-08-30',
-                etc: ''
-            },
-            {
-                name: '[탭] 유저 리스트 (Data 없음)',
-                id: 'CLMT01_02011',
-                path: 'COM/CLMT01_02011.html',
-                complete: '2023-08-30',
-                etc: ''
-            },
-            {
-                name: '[탭] 태그 리스트 (Data 없음)',
-                id: 'CLMT01_02012',
-                path: 'COM/CLMT01_02012.html',
-                complete: '2023-08-30',
-                etc: ''
-            },
+        //////////////로그인 및 회원가입
+        {
+            type: '로그인 및 회원가입',
+            name: '로그인 팝업',
+            id: 'CLMT02_00p01',
+            path: 'LOG/CLMT02_00p01.html',
+            complete: '2023-07-25',
+            etc: ''
+        },
+        {
+            name: '아이디 찾기 안내',
+            id: 'CLMT02_01001',
+            path: 'LOG/CLMT02_01001.html',
+            complete: '2023-07-25',
+            mod: '2023-07-28',
+            etc: '로그인&회원가입 v0.85으로 수정, 주석 참고'
+        },
+        {
+            name: '아이디 찾기 결과',
+            id: 'CLMT02_01002',
+            path: 'LOG/CLMT02_01002.html',
+            complete: '2023-07-25',
+            etc: ''
+        },
+        {
+            name: '회원 정보 (Data 없음)',
+            id: 'CLMT02_01p01',
+            path: 'LOG/CLMT02_01p01.html',
+            complete: '2023-07-25',
+            etc: ''
+        },
+        {
+            name: '비밀번호 찾기(안내)',
+            id: 'CLMT02_01003',
+            path: 'LOG/CLMT02_01003.html',
+            complete: '2023-07-25',
+            mod: '2023-07-28',
+            etc: '로그인&회원가입 v0.85으로 수정, 주석 참고'
+        },
+        {
+            name: '비밀번호 재설정',
+            id: 'CLMT02_01004',
+            path: 'LOG/CLMT02_01004.html',
+            complete: '2023-07-25',
+            etc: ''
+        },
+        {
+            name: '이용약관',
+            id: 'CLMT02_02001',
+            path: 'LOG/CLMT02_02001.html',
+            complete: '2023-07-25',
+            mod: '2023-07-28',
+            etc: '로그인&회원가입 v0.85으로 수정, 주석 참고'
+        },
+        {
+            name: '약관 상세 팝업',
+            id: 'CLMT02_02002',
+            path: 'LOG/CLMT02_02002.html',
+            complete: '2023-07-25',
+            mod: '2023-07-28',
+            etc: '로그인&회원가입 v0.85으로 수정, 주석 참고'
+        },
+        {
+            name: '기본정보 입력',
+            id: 'CLMT02_02003',
+            path: 'LOG/CLMT02_02003.html',
+            complete: '2023-07-25',
+            mod: '2023-08-31',
+            etc: '디자인 수정으로인해 마크업 수정, 주석 참고'
+            // mod: '2023-08-02',
+            // etc: '로그인&회원가입 v0.85으로 수정, 주석 참고'
+        },
+        {
+            name: '주소 검색 - 결과 유',
+            id: 'CLMT02_02p01',
+            path: 'LOG/CLMT02_02p01.html',
+            complete: '2023-07-25',
+            etc: ''
+        },
+        {
+            name: '주소 검색 - 결과 무',
+            id: 'CLMT02_02p06',
+            path: 'LOG/CLMT02_02p06.html',
+            complete: '2023-07-28',
+            etc: '로그인&회원가입 v0.85으로 추가 페이지'
+        },
+        {
+            name: '관심 카테고리 선택',
+            id: 'CLMT02_02004',
+            path: 'LOG/CLMT02_02004.html',
+            complete: '2023-07-25',
+            mod: '2023-08-09',
+            etc: '하단 script 수정'
+        },
+        {
+            name: '회원가입 완료 오류',
+            id: 'CLMT02_02p02',
+            path: 'LOG/CLMT02_02p02.html',
+            complete: '2023-07-25',
+            etc: ''
+        },
+        {
+            name: '프로필 이미지 등록 오류',
+            id: 'CLMT02_02p03',
+            path: 'LOG/CLMT02_02p03.html',
+            complete: '2023-07-25',
+            etc: ''
+        },
+        {
+            name: '인증 정보 상이 안내',
+            id: 'CLMT02_02p04',
+            path: 'LOG/CLMT02_02p04.html',
+            complete: '2023-09-25',
+            etc: '추가화면'
+        },
+        {
+            name: '기가입 회원 안내',
+            id: 'CLMT02_02p05',
+            path: 'LOG/CLMT02_02p05.html',
+            complete: '2023-09-25',
+            etc: '추가화면'
+        },
 
-            //////////////로그인 및 회원가입
-            {
-                type: '로그인 및 회원가입',
-                name: '로그인 팝업',
-                id: 'CLMT02_00p01',
-                path: 'LOG/CLMT02_00p01.html',
-                complete: '2023-07-25',
-                etc: ''
-            },
-            {
-                name: '아이디 찾기 안내',
-                id: 'CLMT02_01001',
-                path: 'LOG/CLMT02_01001.html',
-                complete: '2023-07-25',
-                mod: '2023-07-28',
-                etc: '로그인&회원가입 v0.85으로 수정, 주석 참고'
-            },
-            {
-                name: '아이디 찾기 결과',
-                id: 'CLMT02_01002',
-                path: 'LOG/CLMT02_01002.html',
-                complete: '2023-07-25',
-                etc: ''
-            },
-            {
-                name: '회원 정보 (Data 없음)',
-                id: 'CLMT02_01p01',
-                path: 'LOG/CLMT02_01p01.html',
-                complete: '2023-07-25',
-                etc: ''
-            },
-            {
-                name: '비밀번호 찾기(안내)',
-                id: 'CLMT02_01003',
-                path: 'LOG/CLMT02_01003.html',
-                complete: '2023-07-25',
-                mod: '2023-07-28',
-                etc: '로그인&회원가입 v0.85으로 수정, 주석 참고'
-            },
-            {
-                name: '비밀번호 재설정',
-                id: 'CLMT02_01004',
-                path: 'LOG/CLMT02_01004.html',
-                complete: '2023-07-25',
-                etc: ''
-            },
-            {
-                name: '이용약관',
-                id: 'CLMT02_02001',
-                path: 'LOG/CLMT02_02001.html',
-                complete: '2023-07-25',
-                mod: '2023-07-28',
-                etc: '로그인&회원가입 v0.85으로 수정, 주석 참고'
-            },
-            {
-                name: '약관 상세 팝업',
-                id: 'CLMT02_02002',
-                path: 'LOG/CLMT02_02002.html',
-                complete: '2023-07-25',
-                mod: '2023-07-28',
-                etc: '로그인&회원가입 v0.85으로 수정, 주석 참고'
-            },
-            {
-                name: '기본정보 입력',
-                id: 'CLMT02_02003',
-                path: 'LOG/CLMT02_02003.html',
-                complete: '2023-07-25',
-                mod: '2023-08-31',
-                etc: '디자인 수정으로인해 마크업 수정, 주석 참고'
-                // mod: '2023-08-02',
-                // etc: '로그인&회원가입 v0.85으로 수정, 주석 참고'
-            },
-            {
-                name: '주소 검색 - 결과 유',
-                id: 'CLMT02_02p01',
-                path: 'LOG/CLMT02_02p01.html',
-                complete: '2023-07-25',
-                etc: ''
-            },
-            {
-                name: '주소 검색 - 결과 무',
-                id: 'CLMT02_02p06',
-                path: 'LOG/CLMT02_02p06.html',
-                complete: '2023-07-28',
-                etc: '로그인&회원가입 v0.85으로 추가 페이지'
-            },
-            {
-                name: '관심 카테고리 선택',
-                id: 'CLMT02_02004',
-                path: 'LOG/CLMT02_02004.html',
-                complete: '2023-07-25',
-                mod: '2023-08-09',
-                etc: '하단 script 수정'
-            },
-            {
-                name: '회원가입 완료 오류',
-                id: 'CLMT02_02p02',
-                path: 'LOG/CLMT02_02p02.html',
-                complete: '2023-07-25',
-                etc: ''
-            },
-            {
-                name: '프로필 이미지 등록 오류',
-                id: 'CLMT02_02p03',
-                path: 'LOG/CLMT02_02p03.html',
-                complete: '2023-07-25',
-                etc: ''
-            },
-            {
-                name: '인증 정보 상이 안내',
-                id: 'CLMT02_02p04',
-                path: 'LOG/CLMT02_02p04.html',
-                complete: '2023-09-25',
-                etc: '추가화면'
-            },
-            {
-                name: '기가입 회원 안내',
-                id: 'CLMT02_02p05',
-                path: 'LOG/CLMT02_02p05.html',
-                complete: '2023-09-25',
-                etc: '추가화면'
-            },
+        //////////////홈
+        {
+            type: '홈',
+            name: '홈 화면',
+            id: 'CLMT03_00001',
+            path: 'HOM/CLMT03_00001.html',
+            complete: '2023-09-14',
+            etc: 'script 수정'
+        },
+        {
+            name: '알림 리스트',
+            id: 'CLMT03_01p01',
+            path: 'HOM/CLMT03_01p01.html',
+            complete: '2023-08-09',
+            // mod: '2023-08-28',
+            // etc: 'class 변경'
+            mod: '2023-09-04',
+            etc: '화면 ID 변경으로 마크업 변경'
+        },
+        {
+            name: '알림 리스트(Data 없음)',
+            id: 'CLMT03_01p02',
+            path: 'HOM/CLMT03_01p02.html',
+            complete: '2023-08-09',
+            mod: '2023-09-04',
+            etc: '화면 ID 변경으로 마크업 변경'
+        },
+        {
+            name: 'AI 챌린지 리스트',
+            id: 'CLMT03_02001',
+            path: 'HOM/CLMT03_02001.html',
+            complete: '2023-08-09',
+            etc: ''
+        },
+        {
+            name: 'AI 챌린지 상세',
+            id: 'CLMT03_02002',
+            path: 'HOM/CLMT03_02002.html',
+            complete: '2023-08-09',
+            mod: '2023-08-21',
+            etc: 'class 추가 2023-08-21 주석 참조'
+        },
+        {
+            name: '음원 챌린지 리스트',
+            id: 'CLMT03_03001',
+            path: 'HOM/CLMT03_03001.html',
+            complete: '2023-08-09',
+            mod: '2023-08-10',
+            etc: ''
+        },
+        {
+            name: '음원 챌린지 상세',
+            id: 'CLMT03_03002',
+            path: 'HOM/CLMT03_03002.html',
+            complete: '2023-08-09',
+            mod: '2023-08-21',
+            etc: 'class 추가 2023-08-21 주석 참조'
+        },
+        {
+            name: '비회원 회원가입 안내 팝업',
+            id: 'CLMT03_04p01',
+            path: 'HOM/CLMT03_04p01.html',
+            complete: '2023-08-09',
+            etc: ''
+        },
 
-            //////////////홈
-            {
-                type: '홈',
-                name: '홈 화면',
-                id: 'CLMT03_00001',
-                path: 'HOM/CLMT03_00001.html',
-                complete: '2023-09-14',
-                etc: 'script 수정'
-            },
-            {
-                name: '알림 리스트',
-                id: 'CLMT03_01p01',
-                path: 'HOM/CLMT03_01p01.html',
-                complete: '2023-08-09',
-                // mod: '2023-08-28',
-                // etc: 'class 변경'
-                mod: '2023-09-04',
-                etc: '화면 ID 변경으로 마크업 변경'
-            },
-            {
-                name: '알림 리스트(Data 없음)',
-                id: 'CLMT03_01p02',
-                path: 'HOM/CLMT03_01p02.html',
-                complete: '2023-08-09',
-                mod: '2023-09-04',
-                etc: '화면 ID 변경으로 마크업 변경'
-            },
-            {
-                name: 'AI 챌린지 리스트',
-                id: 'CLMT03_02001',
-                path: 'HOM/CLMT03_02001.html',
-                complete: '2023-08-09',
-                etc: ''
-            },
-            {
-                name: 'AI 챌린지 상세',
-                id: 'CLMT03_02002',
-                path: 'HOM/CLMT03_02002.html',
-                complete: '2023-08-09',
-                mod: '2023-08-21',
-                etc: 'class 추가 2023-08-21 주석 참조'
-            },
-            {
-                name: '음원 챌린지 리스트',
-                id: 'CLMT03_03001',
-                path: 'HOM/CLMT03_03001.html',
-                complete: '2023-08-09',
-                mod: '2023-08-10',
-                etc: ''
-            },
-            {
-                name: '음원 챌린지 상세',
-                id: 'CLMT03_03002',
-                path: 'HOM/CLMT03_03002.html',
-                complete: '2023-08-09',
-                mod: '2023-08-21',
-                etc: 'class 추가 2023-08-21 주석 참조'
-            },
-            {
-                name: '비회원 회원가입 안내 팝업',
-                id: 'CLMT03_04p01',
-                path: 'HOM/CLMT03_04p01.html',
-                complete: '2023-08-09',
-                etc: ''
-            },
+        ///////////피드
+        {
+            type: '피드',
+            name: '더보기 리스트 팝업',
+            id: 'CLMT04_00p01',
+            path: 'FED/CLMT04_00p01.html',
+            complete: '2023-08-08',
+            mod: '2023-08-22',
+            etc: 'class 수정'
+        },
+        {
+            name: '영상 신고 리스트 팝업',
+            id: 'CLMT04_00p02',
+            path: 'FED/CLMT04_00p02.html',
+            complete: '2023-08-08',
+            etc: ''
+        },
+        {
+            name: '댓글 팝업',
+            id: 'CLMT04_01p01',
+            path: 'FED/CLMT04_01p01.html',
+            complete: '2023-08-08',
+            etc: ''
+        },
+        {
+            name: '댓글 신고 리스트 팝업',
+            id: 'CLMT04_01p02',
+            path: 'FED/CLMT04_01p02.html',
+            complete: '2023-08-08',
+            etc: ''
+        },
+        {
+            name: '댓글 더보기 팝업',
+            id: 'CLMT04_01p03',
+            path: 'FED/CLMT04_01p03.html',
+            complete: '2023-08-08',
+            mod: '2023-08-22',
+            etc: 'class 수정'
+        },
+        {
+            name: '댓글 삭제 확인 팝업',
+            id: 'CLMT04_01p04',
+            path: 'FED/CLMT04_01p04.html',
+            complete: '2023-08-08',
+            etc: ''
+        },
 
-            ///////////피드
-            {
-                type: '피드',
-                name: '더보기 리스트 팝업',
-                id: 'CLMT04_00p01',
-                path: 'FED/CLMT04_00p01.html',
-                complete: '2023-08-08',
-                mod: '2023-08-22',
-                etc: 'class 수정'
-            },
-            {
-                name: '영상 신고 리스트 팝업',
-                id: 'CLMT04_00p02',
-                path: 'FED/CLMT04_00p02.html',
-                complete: '2023-08-08',
-                etc: ''
-            },
-            {
-                name: '댓글 팝업',
-                id: 'CLMT04_01p01',
-                path: 'FED/CLMT04_01p01.html',
-                complete: '2023-08-08',
-                etc: ''
-            },
-            {
-                name: '댓글 신고 리스트 팝업',
-                id: 'CLMT04_01p02',
-                path: 'FED/CLMT04_01p02.html',
-                complete: '2023-08-08',
-                etc: ''
-            },
-            {
-                name: '댓글 더보기 팝업',
-                id: 'CLMT04_01p03',
-                path: 'FED/CLMT04_01p03.html',
-                complete: '2023-08-08',
-                mod: '2023-08-22',
-                etc: 'class 수정'
-            },
-            {
-                name: '댓글 삭제 확인 팝업',
-                id: 'CLMT04_01p04',
-                path: 'FED/CLMT04_01p04.html',
-                complete: '2023-08-08',
-                etc: ''
-            },
+        // ////////////촬영
+        {
+            type: '촬영',
+            name: 'AI 챌린지 리스트 팝업',
+            id: 'CLMT05_01p02',
+            path: 'CAM/CLMT05_01p02.html',
+            complete: '2023-08-14',
+            mod: '2023-09-20',
+            etc: 'layer-popup에 challPop class 추가'
+        },
+        {
+            name: 'AI 챌린지 리스트 팝업 (Data 없음)',
+            id: 'CLMT05_01p04',
+            path: 'CAM/CLMT05_01p04.html',
+            complete: '2023-09-06',
+            mod: '2023-09-20',
+            etc: 'layer-popup에 challPop class 추가'
+        },
+        {
+            name: '음원 챌린지 리스트 팝업',
+            id: 'CLMT05_03p02',
+            path: 'CAM/CLMT05_03p02.html',
+            complete: '2023-08-14',
+            mod: '2023-09-20',
+            etc: 'layer-popup에 challPop class 추가'
+        },
+        {
+            name: '음원 챌린지 리스트 팝업 (Data 없음)',
+            id: 'CLMT05_03p04',
+            path: 'CAM/CLMT05_03p04.html',
+            complete: '2023-09-06',
+            mod: '2023-09-20',
+            etc: 'layer-popup에 challPop class 추가'
+        },
 
-            // ////////////촬영
-            {
-                type: '촬영',
-                name: 'AI 챌린지 리스트 팝업',
-                id: 'CLMT05_01p02',
-                path: 'CAM/CLMT05_01p02.html',
-                complete: '2023-08-14',
-                mod: '2023-09-20',
-                etc: 'layer-popup에 challPop class 추가'
-            },
-            {
-                name: 'AI 챌린지 리스트 팝업 (Data 없음)',
-                id: 'CLMT05_01p04',
-                path: 'CAM/CLMT05_01p04.html',
-                complete: '2023-09-06',
-                mod: '2023-09-20',
-                etc: 'layer-popup에 challPop class 추가'
-            },
-            {
-                name: '음원 챌린지 리스트 팝업',
-                id: 'CLMT05_03p02',
-                path: 'CAM/CLMT05_03p02.html',
-                complete: '2023-08-14',
-                mod: '2023-09-20',
-                etc: 'layer-popup에 challPop class 추가'
-            },
-            {
-                name: '음원 챌린지 리스트 팝업 (Data 없음)',
-                id: 'CLMT05_03p04',
-                path: 'CAM/CLMT05_03p04.html',
-                complete: '2023-09-06',
-                mod: '2023-09-20',
-                etc: 'layer-popup에 challPop class 추가'
-            },
+        /////////음원
+        {
+            type: '음원',
+            name: '음원 홈',
+            id: 'CLMT06_00001',
+            path: 'MUS/CLMT06_00001.html',
+            complete: '2023-08-17',
+            // mod: '2023-08-30',
+            // etc: '댓글버튼 추가'
+            mod: '2023-09-14',
+            etc: 'script 수정'
+        },
+        {
+            name: '인기 음원 리스트',
+            id: 'CLMT06_01001',
+            path: 'MUS/CLMT06_01001.html',
+            complete: '2023-08-17',
+            // mod: '2023-08-30',
+            // etc: '문구 삭제 및 수정'
+            mod: '2023-09-04',
+            etc: '디자인 변경 first class 삭제'
+        },
+        {
+            name: '최신 리스트',
+            id: 'CLMT06_02001',
+            path: 'MUS/CLMT06_02001.html',
+            complete: '2023-08-17',
+            mod: '2023-08-22',
+            etc: '랭킹 변화 삭제'
+        },
+        {
+            name: '작곡가상세 [탭] 클립(영상)',
+            id: 'CLMT06_03001',
+            path: 'MUS/CLMT06_03001.html',
+            complete: '2023-08-17',
+            mod: '2023-09-20',
+            etc: 'challPop class 삭제'
+        },
+        {
+            name: '작곡가상세 [탭] 클립(영상)(Data 없음)',
+            id: 'CLMT06_03002',
+            path: 'MUS/CLMT06_03002.html',
+            complete: '2023-08-17',
+            mod: '2023-09-20',
+            etc: 'challPop class 삭제'
+        },
+        {
+            name: '작곡가상세 [탭] 음원',
+            id: 'CLMT06_03003',
+            path: 'MUS/CLMT06_03003.html',
+            complete: '2023-08-17',
+            mod: '2023-08-29',
+            etc: 'class 추가'
+        },
+        {
+            name: '작곡가상세 [탭] Talk',
+            id: 'CLMT06_03004',
+            path: 'MUS/CLMT06_03004.html',
+            complete: '2023-08-17',
+            mod: '2023-08-24',
+            etc: '하단 스크립트 삭제'
+        },
+        {
+            name: '작곡가상세 [탭] Talk(Data 없음)',
+            id: 'CLMT06_03005',
+            path: 'MUS/CLMT06_03005.html',
+            complete: '2023-08-17',
+            mod: '2023-08-24',
+            etc: '하단 스크립트 삭제'
+        },
+        {
+            name: '음원상세 [탭] 클립(영상)',
+            id: 'CLMT06_04001',
+            path: 'MUS/CLMT06_04001.html',
+            complete: '2023-08-17',
+            mod: '2023-08-30',
+            etc: '문구 수정'
+        },
+        {
+            name: '음원상세 [탭] 클립(영상)(Data 없음)',
+            id: 'CLMT06_04002',
+            path: 'MUS/CLMT06_04002.html',
+            complete: '2023-08-17',
+            mod: '2023-09-20',
+            etc: 'challPop class 삭제'
+        },
+        {
+            name: '음원상세 [탭] Talk',
+            id: 'CLMT06_04003',
+            path: 'MUS/CLMT06_04003.html',
+            complete: '2023-08-17',
+            mod: '2023-08-30',
+            etc: '문구 수정'
+        },
+        {
+            name: '음원상세 [탭] Talk(Data 없음)',
+            id: 'CLMT06_04004',
+            path: 'MUS/CLMT06_04004.html',
+            complete: '2023-08-17',
+            mod: '2023-08-24',
+            etc: '하단 스크립트 삭제'
+        },
+        {
+            name: '필터 및 정렬(공통)',
+            id: 'CLMT06_05p01',
+            path: 'MUS/CLMT06_05p01.html',
+            complete: '2023-08-17',
+            mod: '2023-09-20',
+            etc: 'challPop class 삭제'
+        },
+        {
+            name: '장르 필터 및 정렬',
+            id: 'CLMT06_05p02',
+            path: 'MUS/CLMT06_05p02.html',
+            complete: '2023-08-17',
+            mod: '2023-09-20',
+            etc: 'challPop class 삭제'
+        },
+        {
+            name: '장르별 리스트',
+            id: 'CLMT06_06001',
+            path: 'MUS/CLMT06_06001.html',
+            complete: '2023-08-22',
+            etc: ''
+        },
+        {
+            name: '작곡가웹 안내화면',
+            id: 'CLMT06_05p04',
+            path: 'MUS/CLMT06_05p04.html',
+            complete: '2023-09-04',
+            etc: ''
+        },
 
-            /////////음원
-            {
-                type: '음원',
-                name: '음원 홈',
-                id: 'CLMT06_00001',
-                path: 'MUS/CLMT06_00001.html',
-                complete: '2023-08-17',
-                // mod: '2023-08-30',
-                // etc: '댓글버튼 추가'
-                mod: '2023-09-14',
-                etc: 'script 수정'
-            },
-            {
-                name: '인기 음원 리스트',
-                id: 'CLMT06_01001',
-                path: 'MUS/CLMT06_01001.html',
-                complete: '2023-08-17',
-                // mod: '2023-08-30',
-                // etc: '문구 삭제 및 수정'
-                mod: '2023-09-04',
-                etc: '디자인 변경 first class 삭제'
-            },
-            {
-                name: '최신 리스트',
-                id: 'CLMT06_02001',
-                path: 'MUS/CLMT06_02001.html',
-                complete: '2023-08-17',
-                mod: '2023-08-22',
-                etc: '랭킹 변화 삭제'
-            },
-            {
-                name: '작곡가상세 [탭] 클립(영상)',
-                id: 'CLMT06_03001',
-                path: 'MUS/CLMT06_03001.html',
-                complete: '2023-08-17',
-                mod: '2023-09-20',
-                etc: 'challPop class 삭제'
-            },
-            {
-                name: '작곡가상세 [탭] 클립(영상)(Data 없음)',
-                id: 'CLMT06_03002',
-                path: 'MUS/CLMT06_03002.html',
-                complete: '2023-08-17',
-                mod: '2023-09-20',
-                etc: 'challPop class 삭제'
-            },
-            {
-                name: '작곡가상세 [탭] 음원',
-                id: 'CLMT06_03003',
-                path: 'MUS/CLMT06_03003.html',
-                complete: '2023-08-17',
-                mod: '2023-08-29',
-                etc: 'class 추가'
-            },
-            {
-                name: '작곡가상세 [탭] Talk',
-                id: 'CLMT06_03004',
-                path: 'MUS/CLMT06_03004.html',
-                complete: '2023-08-17',
-                mod: '2023-08-24',
-                etc: '하단 스크립트 삭제'
-            },
-            {
-                name: '작곡가상세 [탭] Talk(Data 없음)',
-                id: 'CLMT06_03005',
-                path: 'MUS/CLMT06_03005.html',
-                complete: '2023-08-17',
-                mod: '2023-08-24',
-                etc: '하단 스크립트 삭제'
-            },
-            {
-                name: '음원상세 [탭] 클립(영상)',
-                id: 'CLMT06_04001',
-                path: 'MUS/CLMT06_04001.html',
-                complete: '2023-08-17',
-                mod: '2023-08-30',
-                etc: '문구 수정'
-            },
-            {
-                name: '음원상세 [탭] 클립(영상)(Data 없음)',
-                id: 'CLMT06_04002',
-                path: 'MUS/CLMT06_04002.html',
-                complete: '2023-08-17',
-                mod: '2023-09-20',
-                etc: 'challPop class 삭제'
-            },
-            {
-                name: '음원상세 [탭] Talk',
-                id: 'CLMT06_04003',
-                path: 'MUS/CLMT06_04003.html',
-                complete: '2023-08-17',
-                mod: '2023-08-30',
-                etc: '문구 수정'
-            },
-            {
-                name: '음원상세 [탭] Talk(Data 없음)',
-                id: 'CLMT06_04004',
-                path: 'MUS/CLMT06_04004.html',
-                complete: '2023-08-17',
-                mod: '2023-08-24',
-                etc: '하단 스크립트 삭제'
-            },
-            {
-                name: '필터 및 정렬(공통)',
-                id: 'CLMT06_05p01',
-                path: 'MUS/CLMT06_05p01.html',
-                complete: '2023-08-17',
-                mod: '2023-09-20',
-                etc: 'challPop class 삭제'
-            },
-            {
-                name: '장르 필터 및 정렬',
-                id: 'CLMT06_05p02',
-                path: 'MUS/CLMT06_05p02.html',
-                complete: '2023-08-17',
-                mod: '2023-09-20',
-                etc: 'challPop class 삭제'
-            },
-            {
-                name: '장르별 리스트',
-                id: 'CLMT06_06001',
-                path: 'MUS/CLMT06_06001.html',
-                complete: '2023-08-22',
-                etc: ''
-            },
-            {
-                name: '작곡가웹 안내화면',
-                id: 'CLMT06_05p04',
-                path: 'MUS/CLMT06_05p04.html',
-                complete: '2023-09-04',
-                etc: ''
-            },
+        //////마이페이지
+        {
+            type: '마이페이지',
+            name: '프로필 홈 ([탭] 전체)',
+            id: 'CLMT07_00001',
+            path: 'PRO/CLMT07_00001.html',
+            complete: '2023-08-28',
+            mod: '2023-09-12',
+            etc: 'class 변경'
+        },
+        {
+            name: '[탭] 일반영상',
+            id: 'CLMT07_00002',
+            etc: ''
+        },
+        {
+            name: '[탭] 내가 오픈한 챌린지',
+            id: 'CLMT07_00003',
+            etc: ''
+        },
+        {
+            name: '[탭] 내가 참여한 챌린지',
+            id: 'CLMT07_00004',
+            etc: ''
+        },
+        {
+            name: '영상 리스트 (Data 없음)',
+            id: 'CLMT07_00005',
+            path: 'PRO/CLMT07_00005.html',
+            complete: '2023-08-28',
+            mod: '2023-09-05',
+            etc: '마크업 수정'
+        },
+        {
+            name: '개별 영상 설정 팝업',
+            id: 'CLMT07_00p01',
+            path: 'PRO/CLMT07_00p01.html',
+            complete: '2023-08-28',
+            etc: ''
+        },
+        {
+            name: '설정 홈 팝업',
+            id: 'CLMT07_01023',
+            path: 'PRO/CLMT07_01023.html',
+            complete: '2023-08-28',
+            mod: '2023-10-04',
+            etc: '기획수정'
+        },
+        {
+            name: '개인정보 변경',
+            id: 'CLMT07_01001',
+            path: 'PRO/CLMT07_01001.html',
+            complete: '2023-08-28',
+            mod: '2023-10-05',
+            etc: '기획 수정으로 추가'
+        },
 
-            //////마이페이지
-            {
-                type: '마이페이지',
-                name: '프로필 홈 ([탭] 전체)',
-                id: 'CLMT07_00001',
-                path: 'PRO/CLMT07_00001.html',
-                complete: '2023-08-28',
-                mod: '2023-09-12',
-                etc: 'class 변경'
-            },
-            {
-                name: '[탭] 일반영상',
-                id: 'CLMT07_00002',
-                etc: ''
-            },
-            {
-                name: '[탭] 내가 오픈한 챌린지',
-                id: 'CLMT07_00003',
-                etc: ''
-            },
-            {
-                name: '[탭] 내가 참여한 챌린지',
-                id: 'CLMT07_00004',
-                etc: ''
-            },
-            {
-                name: '영상 리스트 (Data 없음)',
-                id: 'CLMT07_00005',
-                path: 'PRO/CLMT07_00005.html',
-                complete: '2023-08-28',
-                mod: '2023-09-05',
-                etc: '마크업 수정'
-            },
-            {
-                name: '개별 영상 설정 팝업',
-                id: 'CLMT07_00p01',
-                path: 'PRO/CLMT07_00p01.html',
-                complete: '2023-08-28',
-                etc: ''
-            },
-            {
-                name: '설정 홈 팝업',
-                id: 'CLMT07_01023',
-                path: 'PRO/CLMT07_01023.html',
-                complete: '2023-08-28',
-                mod: '2023-10-04',
-                etc: '기획수정'
-            },
-            {
-                name: '개인정보 변경',
-                id: 'CLMT07_01001',
-                path: 'PRO/CLMT07_01001.html',
-                complete: '2023-08-28',
-                etc: ''
-            },
+        {
+            name: '비밀번호 변경',
+            id: 'CLMT07_01020',
+            path: 'PRO/CLMT07_01020.html',
+            complete: '2023-08-28',
+            etc: ''
+        },
+        {
+            name: '주소 변경',
+            id: 'CLMT07_01021',
+            path: 'PRO/CLMT07_01021.html',
+            complete: '2023-08-28',
+            etc: ''
+        },
+        {
+            name: '휴대폰 번호 및 이름 변경',
+            id: 'CLMT07_01019',
+            path: 'PRO/CLMT07_01019.html',
+            complete: '2023-08-28',
+            etc: ''
+        },
+        {
+            name: '휴대폰 번호 및 이름 변경 완료',
+            id: 'CLMT07_01022',
+            path: 'PRO/CLMT07_01022.html',
+            complete: '2023-08-28',
+            etc: ''
+        },
 
-            {
-                name: '비밀번호 변경',
-                id: 'CLMT07_01020',
-                path: 'PRO/CLMT07_01020.html',
-                complete: '2023-08-28',
-                etc: ''
-            },
-            {
-                name: '주소 변경',
-                id: 'CLMT07_01021',
-                path: 'PRO/CLMT07_01021.html',
-                complete: '2023-08-28',
-                etc: ''
-            },
-            {
-                name: '휴대폰 번호 및 이름 변경',
-                id: 'CLMT07_01019',
-                path: 'PRO/CLMT07_01019.html',
-                complete: '2023-08-28',
-                etc: ''
-            },
-            {
-                name: '휴대폰 번호 및 이름 변경 완료',
-                id: 'CLMT07_01022',
-                path: 'PRO/CLMT07_01022.html',
-                complete: '2023-08-28',
-                etc: ''
-            },
+        {
+            name: '[탭] 좋아요한 영상 리스트',
+            id: 'CLMT07_01002',
+            path: 'PRO/CLMT07_01002.html',
+            complete: '2023-08-28',
+            mod: '2023-09-12',
+            etc: '마크업 삭제'
+        },
+        {
+            name: '[탭] 좋아요한 음원 리스트',
+            id: 'CLMT07_01003',
+            path: 'PRO/CLMT07_01003.html',
+            complete: '2023-08-28',
+            etc: ''
+        },
+        {
+            name: '북마크 영상 리스트',
+            id: 'CLMT07_01004',
+            path: 'PRO/CLMT07_01004.html',
+            complete: '2023-08-28',
+            mod: '2023-09-12',
+            etc: '마크업 삭제'
+        },
+        {
+            name: '북마크 영상 리스트 (Data 없음)',
+            id: 'CLMT07_01018',
+            path: 'PRO/ㅔCLMT07_01018.html',
+            complete: '2023-08-28',
+            mod: '2023-09-12',
+            etc: '마크업 삭제'
+        },
+        {
+            name: '영상차단리스트',
+            id: 'CLMT07_01016',
+            path: 'PRO/CLMT07_01016.html',
+            complete: '2023-08-28',
+            etc: ''
+        },
+        {
+            name: '알림 설정',
+            id: 'CLMT07_01006',
+            path: 'PRO/CLMT07_01006.html',
+            complete: '2023-08-28',
+            etc: ''
+        },
+        {
+            name: '이용약관 팝업',
+            id: 'CLMT07_01p02',
+            path: 'PRO/CLMT07_01p02.html',
+            complete: '2023-08-28',
+            etc: ''
+        },
+        {
+            name: '개인정보 처리방침 팝업',
+            id: 'CLMT07_01p03',
+            path: 'PRO/CLMT07_01p03.html',
+            complete: '2023-08-28',
+            etc: ''
+        },
+        {
+            name: '커뮤니티 가이드 팝업',
+            id: 'CLMT07_01p04',
+            path: 'PRO/CLMT07_01p04.html',
+            complete: '2023-08-28',
+            etc: ''
+        },
+        {
+            name: '오픈소스 라이선스',
+            id: 'CLMT07_01p06',
+            path: 'PRO/CLMT07_01p06.html',
+            complete: '2023-08-28',
+            etc: ''
+        },
+        {
+            name: '[탭] 공지사항 리스트',
+            id: 'CLMT07_01007',
+            path: 'PRO/CLMT07_01007.html',
+            complete: '2023-08-28',
+            etc: ''
+        },
+        {
+            name: '공지사항 상세',
+            id: 'CLMT07_01008',
+            path: 'PRO/CLMT07_01008.html',
+            complete: '2023-08-28',
+            etc: ''
+        },
+        {
+            name: '[탭] FAQ 리스트',
+            id: 'CLMT07_01009',
+            path: 'PRO/CLMT07_01009.html',
+            complete: '2023-08-28',
+            etc: ''
+        },
+        {
+            name: 'FAQ 상세',
+            id: 'CLMT07_01010',
+            path: 'PRO/CLMT07_01010.html',
+            complete: '2023-08-28',
+            etc: ''
+        },
+        {
+            name: '이벤트 리스트',
+            id: 'CLMT07_01011',
+            path: 'PRO/CLMT07_01011.html',
+            complete: '2023-08-28',
+            etc: ''
+        },
+        {
+            name: '이벤트 상세',
+            id: 'CLMT07_01012',
+            path: 'PRO/CLMT07_01012.html',
+            complete: '2023-08-28',
+            etc: ''
+        },
+        {
+            name: '앱버전 정보 및 업데이트',
+            id: 'CLMT07_01013',
+            path: 'PRO/CLMT07_01013.html',
+            complete: '2023-08-28',
+            etc: ''
+        },
+        {
+            name: '탈퇴 사유 리스트 선택',
+            id: 'CLMT07_01014',
+            path: 'PRO/CLMT07_01014.html',
+            complete: '2023-08-28',
+            etc: ''
+        },
+        {
+            name: '약관 확인(shoe 복구 불가 고지 동의)',
+            id: 'CLMT07_01015',
+            path: 'PRO/CLMT07_01015.html',
+            complete: '2023-08-31',
+            etc: ''
+        },
+        {
+            name: '탈퇴 확인 완료',
+            id: 'CLMT07_01017',
+            path: 'PRO/CLMT07_01017.html',
+            complete: '2023-08-31',
+            etc: ''
+        },
+        {
+            name: '로그아웃 확인',
+            id: 'CLMT07_01p05',
+            path: 'PRO/CLMT07_01p05.html',
+            complete: '2023-08-28',
+            etc: ''
+        },
+        {
+            name: '[텝] 팔로워 리스트',
+            id: 'CLMT07_02001',
+            path: 'PRO/CLMT07_02001.html',
+            complete: '2023-08-28',
+            etc: ''
+        },
+        {
+            name: '[탭] 팔로잉 리스트',
+            id: 'CLMT07_02002',
+            path: 'PRO/CLMT07_02002.html',
+            complete: '2023-08-28',
+            etc: ''
+        },
+        {
+            name: '[탭]Shoe',
+            id: 'CLMT07_04001',
+            path: 'PRO/CLMT07_04001.html',
+            complete: '2023-09-05',
+            etc: ''
+        },
+        {
+            name: '[탭]MDT',
+            id: 'CLMT07_04002',
+            path: 'PRO/CLMT07_04002.html',
+            complete: '2023-09-05',
+            etc: ''
+        },
+        {
+            name: '지갑등록',
+            id: 'CLMT07_04p01',
+            path: 'PRO/CLMT07_04p01.html',
+            complete: '2023-09-05',
+            etc: ''
+        },
+        {
+            name: 'MDT로 전환 / Shoe로 전환',
+            id: 'CLMT07_04p02',
+            path: 'PRO/CLMT07_04p02.html',
+            complete: '2023-09-05',
+            etc: ''
+        },
+        {
+            name: '내 지갑 필터',
+            id: 'CLMT07_03p02',
+            path: 'PRO/CLMT07_03p02.html',
+            complete: '2023-09-05',
+            etc: ''
+        },
+        {
+            name: '내 지갑 필터',
+            id: 'CLMT07_03p03',
+            path: 'PRO/CLMT07_03p03.html',
+            complete: '2023-09-05',
+            etc: ''
+        },
+        {
+            name: '뱃지',
+            id: 'CLMT07_05p01',
+            path: 'PRO/CLMT07_05p01.html',
+            complete: '2023-08-28',
+            etc: ''
+        },
+        {
+            name: '대표 뱃지 설정',
+            id: 'CLMT07_05p02',
+            path: 'PRO/CLMT07_05p01.html',
+            complete: '2023-08-28',
+            etc: ''
+        },
+        {
+            name: '프로필 편집 팝업',
+            id: 'CLMT07_06p01',
+            path: 'PRO/CLMT07_06p01.html',
+            complete: '2023-08-28',
+            etc: ''
+        },
+        {
+            name: '유저 프로필',
+            id: 'CLMT07_07001',
+            path: 'PRO/CLMT07_07001.html',
+            complete: '2023-08-28',
+            mod: '2023-09-12',
+            etc: '마크업 수정'
+        },
+        {
+            name: '공유 신고 선택 리스트 팝업',
+            id: 'CLMT07_07p01',
+            path: 'PRO/CLMT07_07p01.html',
+            complete: '2023-08-28',
+            etc: ''
+        },
+        {
+            name: '신고리스트 팝업',
+            id: 'CLMT07_07p02',
+            path: 'PRO/CLMT07_07p02.html',
+            complete: '2023-08-28',
+            etc: ''
+        },
+        {
+            name: '신고 완료 팝업',
+            id: 'CLMT07_07p03',
+            path: 'PRO/CLMT07_07p03.html',
+            complete: '2023-08-28',
+            etc: ''
+        }
+    ];
+</script>
 
-            {
-                name: '[탭] 좋아요한 영상 리스트',
-                id: 'CLMT07_01002',
-                path: 'PRO/CLMT07_01002.html',
-                complete: '2023-08-28',
-                mod: '2023-09-12',
-                etc: '마크업 삭제'
-            },
-            {
-                name: '[탭] 좋아요한 음원 리스트',
-                id: 'CLMT07_01003',
-                path: 'PRO/CLMT07_01003.html',
-                complete: '2023-08-28',
-                etc: ''
-            },
-            {
-                name: '북마크 영상 리스트',
-                id: 'CLMT07_01004',
-                path: 'PRO/CLMT07_01004.html',
-                complete: '2023-08-28',
-                mod: '2023-09-12',
-                etc: '마크업 삭제'
-            },
-            {
-                name: '북마크 영상 리스트 (Data 없음)',
-                id: 'CLMT07_01018',
-                path: 'PRO/ㅔCLMT07_01018.html',
-                complete: '2023-08-28',
-                mod: '2023-09-12',
-                etc: '마크업 삭제'
-            },
-            {
-                name: '영상차단리스트',
-                id: 'CLMT07_01016',
-                path: 'PRO/CLMT07_01016.html',
-                complete: '2023-08-28',
-                etc: ''
-            },
-            {
-                name: '알림 설정',
-                id: 'CLMT07_01006',
-                path: 'PRO/CLMT07_01006.html',
-                complete: '2023-08-28',
-                etc: ''
-            },
-            {
-                name: '이용약관 팝업',
-                id: 'CLMT07_01p02',
-                path: 'PRO/CLMT07_01p02.html',
-                complete: '2023-08-28',
-                etc: ''
-            },
-            {
-                name: '개인정보 처리방침 팝업',
-                id: 'CLMT07_01p03',
-                path: 'PRO/CLMT07_01p03.html',
-                complete: '2023-08-28',
-                etc: ''
-            },
-            {
-                name: '커뮤니티 가이드 팝업',
-                id: 'CLMT07_01p04',
-                path: 'PRO/CLMT07_01p04.html',
-                complete: '2023-08-28',
-                etc: ''
-            },
-            {
-                name: '오픈소스 라이선스',
-                id: 'CLMT07_01p06',
-                path: 'PRO/CLMT07_01p06.html',
-                complete: '2023-08-28',
-                etc: ''
-            },
-            {
-                name: '[탭] 공지사항 리스트',
-                id: 'CLMT07_01007',
-                path: 'PRO/CLMT07_01007.html',
-                complete: '2023-08-28',
-                etc: ''
-            },
-            {
-                name: '공지사항 상세',
-                id: 'CLMT07_01008',
-                path: 'PRO/CLMT07_01008.html',
-                complete: '2023-08-28',
-                etc: ''
-            },
-            {
-                name: '[탭] FAQ 리스트',
-                id: 'CLMT07_01009',
-                path: 'PRO/CLMT07_01009.html',
-                complete: '2023-08-28',
-                etc: ''
-            },
-            {
-                name: 'FAQ 상세',
-                id: 'CLMT07_01010',
-                path: 'PRO/CLMT07_01010.html',
-                complete: '2023-08-28',
-                etc: ''
-            },
-            {
-                name: '이벤트 리스트',
-                id: 'CLMT07_01011',
-                path: 'PRO/CLMT07_01011.html',
-                complete: '2023-08-28',
-                etc: ''
-            },
-            {
-                name: '이벤트 상세',
-                id: 'CLMT07_01012',
-                path: 'PRO/CLMT07_01012.html',
-                complete: '2023-08-28',
-                etc: ''
-            },
-            {
-                name: '앱버전 정보 및 업데이트',
-                id: 'CLMT07_01013',
-                path: 'PRO/CLMT07_01013.html',
-                complete: '2023-08-28',
-                etc: ''
-            },
-            {
-                name: '탈퇴 사유 리스트 선택',
-                id: 'CLMT07_01014',
-                path: 'PRO/CLMT07_01014.html',
-                complete: '2023-08-28',
-                etc: ''
-            },
-            {
-                name: '약관 확인(shoe 복구 불가 고지 동의)',
-                id: 'CLMT07_01015',
-                path: 'PRO/CLMT07_01015.html',
-                complete: '2023-08-31',
-                etc: ''
-            },
-            {
-                name: '탈퇴 확인 완료',
-                id: 'CLMT07_01017',
-                path: 'PRO/CLMT07_01017.html',
-                complete: '2023-08-31',
-                etc: ''
-            },
-            {
-                name: '로그아웃 확인',
-                id: 'CLMT07_01p05',
-                path: 'PRO/CLMT07_01p05.html',
-                complete: '2023-08-28',
-                etc: ''
-            },
-            {
-                name: '[텝] 팔로워 리스트',
-                id: 'CLMT07_02001',
-                path: 'PRO/CLMT07_02001.html',
-                complete: '2023-08-28',
-                etc: ''
-            },
-            {
-                name: '[탭] 팔로잉 리스트',
-                id: 'CLMT07_02002',
-                path: 'PRO/CLMT07_02002.html',
-                complete: '2023-08-28',
-                etc: ''
-            },
-            {
-                name: '[탭]Shoe',
-                id: 'CLMT07_04001',
-                path: 'PRO/CLMT07_04001.html',
-                complete: '2023-09-05',
-                etc: ''
-            },
-            {
-                name: '[탭]MDT',
-                id: 'CLMT07_04002',
-                path: 'PRO/CLMT07_04002.html',
-                complete: '2023-09-05',
-                etc: ''
-            },
-            {
-                name: '지갑등록',
-                id: 'CLMT07_04p01',
-                path: 'PRO/CLMT07_04p01.html',
-                complete: '2023-09-05',
-                etc: ''
-            },
-            {
-                name: 'MDT로 전환 / Shoe로 전환',
-                id: 'CLMT07_04p02',
-                path: 'PRO/CLMT07_04p02.html',
-                complete: '2023-09-05',
-                etc: ''
-            },
-            {
-                name: '내 지갑 필터',
-                id: 'CLMT07_03p02',
-                path: 'PRO/CLMT07_03p02.html',
-                complete: '2023-09-05',
-                etc: ''
-            },
-            {
-                name: '내 지갑 필터',
-                id: 'CLMT07_03p03',
-                path: 'PRO/CLMT07_03p03.html',
-                complete: '2023-09-05',
-                etc: ''
-            },
-            {
-                name: '뱃지',
-                id: 'CLMT07_05p01',
-                path: 'PRO/CLMT07_05p01.html',
-                complete: '2023-08-28',
-                etc: ''
-            },
-            {
-                name: '대표 뱃지 설정',
-                id: 'CLMT07_05p02',
-                path: 'PRO/CLMT07_05p01.html',
-                complete: '2023-08-28',
-                etc: ''
-            },
-            {
-                name: '프로필 편집 팝업',
-                id: 'CLMT07_06p01',
-                path: 'PRO/CLMT07_06p01.html',
-                complete: '2023-08-28',
-                etc: ''
-            },
-            {
-                name: '유저 프로필',
-                id: 'CLMT07_07001',
-                path: 'PRO/CLMT07_07001.html',
-                complete: '2023-08-28',
-                mod: '2023-09-12',
-                etc: '마크업 수정'
-            },
-            {
-                name: '공유 신고 선택 리스트 팝업',
-                id: 'CLMT07_07p01',
-                path: 'PRO/CLMT07_07p01.html',
-                complete: '2023-08-28',
-                etc: ''
-            },
-            {
-                name: '신고리스트 팝업',
-                id: 'CLMT07_07p02',
-                path: 'PRO/CLMT07_07p02.html',
-                complete: '2023-08-28',
-                etc: ''
-            },
-            {
-                name: '신고 완료 팝업',
-                id: 'CLMT07_07p03',
-                path: 'PRO/CLMT07_07p03.html',
-                complete: '2023-08-28',
-                etc: ''
-            }
-        ];
-    </script>
 </html>
