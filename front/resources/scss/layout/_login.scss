@@ -686,22 +686,26 @@
     height: 100vh;
     padding: 0 1.6rem;
     box-sizing: $sizing;
+    .sub-title {
+        margin-bottom: 3.2rem;
+    }
     .body-title {
         position: relative;
         padding-top: 25.8rem;
+        text-align: center;
         &:before {
             display: flex;
             align-items: center;
             justify-content: center;
-            content: '이미지 추가예정';
+            content: '';
             position: absolute;
-            top: 0;
+            top: -1.6rem;
             left: 50%;
             transform: translateX(-50%);
             width: 25.8rem;
             height: 25.8rem;
-            color: #0f0ae3;
-            background: #c4c4c4;
+            @include bg($src: '../images/img/img_secession.png');
+            background-size: cover;
         }
     }
 }
