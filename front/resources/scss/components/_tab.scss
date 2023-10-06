@@ -157,6 +157,7 @@
             button {
                 background: $main-color;
                 border-color: $main-color;
+                box-shadow: $shadow;
                 color: #fff;
             }
             .ico {
@@ -184,14 +185,15 @@
         }
         a,
         button {
+            display: flex;
+            align-items: center;
             height: 3.2rem;
-            padding: 0.65rem 1.6rem;
+            padding: 0 1.6rem;
             border: 1px solid #cfcfcf;
             border-radius: 1.6rem;
             font-size: 1.6rem;
             text-align: center;
             color: #585858;
-            line-height: 1.9rem;
             vertical-align: middle;
             box-sizing: $sizing;
             box-shadow: $shadow;

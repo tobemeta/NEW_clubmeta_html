@@ -323,7 +323,16 @@
 .select-box {
     position: relative;
     display: flex;
-
+    &.solo {
+        .btn-select-solo {
+            display: block !important;
+            margin-left: 0.1rem;
+            border-radius: 0 0.8rem 0.8rem 0;
+        }
+        .btn-select {
+            display: none !important;
+        }
+    }
     .select-sort {
         width: 3.2rem;
         @include bg($src: '../images/ico/ico_sort.svg', $color: #fff);
@@ -338,6 +347,7 @@
     }
 
     select,
+    .btn-select-solo,
     .btn-select {
         width: 100%;
         height: 4rem;
@@ -356,6 +366,7 @@
             display: none;
         }
     }
+    .btn-select-solo,
     .btn-select {
         background-color: #fff;
         white-space: nowrap;

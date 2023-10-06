@@ -145,7 +145,9 @@
     }
 
     &.pass {
-        padding-top: 10rem;
+        height: calc(100vh - 120px);
+        justify-content: center;
+        margin-top: -2.4rem;
     }
     .image {
         width: 100%;
@@ -165,6 +167,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-align: center;
+        p {
+            word-break: keep-all;
+        }
     }
     .card {
         align-self: stretch;
@@ -375,11 +381,11 @@
 //관심 카테고리 페이지
 .category-box {
     width: 100%;
-    margin-top: 0.5rem;
+    margin-top: 2.4rem;
     box-sizing: border-box;
     .cell-row {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         + .cell-row {
             margin-top: 2.4rem;
         }
@@ -713,14 +719,18 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    position: relative;
+    height: calc(100vh - 72px);
     padding: 0 1.6rem;
     box-sizing: $sizing;
+    align-items: center;
 
     .sub-title {
         display: block;
-        position: relative;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         margin-bottom: 0.4rem;
         padding-top: 25.8rem;
         box-sizing: $sizing;
@@ -762,11 +772,11 @@
 }
 .header + .contents {
     .no-internet-area {
-        height: 100vw;
+        height: calc(100vh - 176px);
     }
 }
 .layerpopup-box.bottom {
     .no-internet-area {
-        height: 100vw;
+        height: calc(70vh - 132px);
     }
 }

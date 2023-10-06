@@ -127,7 +127,20 @@ const ui = {
     tab: () => {
         const $tabBtn = $('.tab-button');
 
-        $tabBtn.off('click').on('click', function () {
+        $tabBtn.on('click', function () {
+            const $tabBtnLeft = $(this).offset().left;
+            const $tabCont = $('.tab-items ul');
+            const tabContCenter = $tabCont.width() / 2;
+            const currentScrollLeft = $tabCont.scrollLeft();
+            const scrollLeft = currentScrollLeft + $tabBtnLeft - tabContCenter + $(this).width() / 2;
+
+            $tabCont.stop().animate(
+                {
+                    scrollLeft: scrollLeft
+                },
+                500
+            );
+
             var data = $(this).data('target'),
                 id = $(this).attr('href'),
                 $tab = $(this).parent();
@@ -141,18 +154,8 @@ const ui = {
                 .siblings()
                 .removeClass('open');
             // $(id).addClass('open').siblings().removeClass('open');
-
-            const tabWrap = _this.closest('.tab-wrap');
-
-            if (tabWrap.hasClass('line')) {
-            } else if (tabWrap.hasClass('box')) {
-            } else {
-            }
-
-            let itemsWidth = $(this).outerWidth(true);
         });
     },
-    // tooltip: () => {},
     tooltip: {
         className: {
             wrap: '.tooltip-box',
@@ -335,6 +338,7 @@ const ui = {
     select: {
         className: {
             wrap: '.select-box',
+            wrapSolo: '.select-box.solo',
             btn: '.btn-select',
             btnActive: '.open',
             optionsWrap: '.select-options',

@@ -208,6 +208,7 @@
             .util-list {
                 justify-content: space-between;
                 p {
+                    flex: 1;
                     display: inline-block;
                     position: relative;
                     padding-left: 1.8rem;
@@ -215,7 +216,9 @@
                     font-size: 1.2rem;
                     line-height: 1.7rem;
                     color: #585858;
-                    @include ellipsis();
+                    .num {
+                        @include ellipsis();
+                    }
                     &:before {
                         display: block;
                         content: '';
@@ -531,6 +534,7 @@
             min-width: 10rem;
             padding-left: 3.2rem;
             box-sizing: $sizing;
+            color: #404040;
             &:before {
                 display: block;
                 content: '';
