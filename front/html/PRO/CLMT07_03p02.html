@@ -133,20 +133,89 @@
             <div class="layer-content">
                 <div class="layer-inner">
                     <div class="more-box">
+                        <!-- 2023-10-06 button -> radio 변경 -->
                         <ul>
-                            <li><button type="button" class="card">2024.01</button></li>
-                            <li><button type="button" class="card">2023.12</button></li>
-                            <li><button type="button" class="card">2023.11</button></li>
-                            <li><button type="button" class="card">2023.10</button></li>
-                            <li><button type="button" class="card">2023.09</button></li>
-                            <li><button type="button" class="card">2023.08</button></li>
-                            <li><button type="button" class="card">2023.07</button></li>
-                            <li><button type="button" class="card">2023.06</button></li>
-                            <li><button type="button" class="card">2023.05</button></li>
-                            <li><button type="button" class="card">2023.04</button></li>
-                            <li><button type="button" class="card">2023.03</button></li>
-                            <li><button type="button" class="card">2023.02</button></li>
-                            <li><button type="button" class="card">2023.01</button></li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo1" name="date" checked />
+                                    <label for="rdo1">2024.01</label>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo2" name="date" />
+                                    <label for="rdo2">2023.12</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo3" name="date" />
+                                    <label for="rdo3">2023.11</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo4" name="date" />
+                                    <label for="rdo4">2023.10</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo5" name="date" />
+                                    <label for="rdo5">2023.09</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo6" name="date" />
+                                    <label for="rdo6">2023.08</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo7" name="date" />
+                                    <label for="rdo7">2023.07</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo8" name="date" />
+                                    <label for="rdo8">2023.06</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo9" name="date" />
+                                    <label for="rdo9">2023.05</label>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo10" name="date" />
+                                    <label for="rdo10">2023.04</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo11" name="date" />
+                                    <label for="rdo11">2023.03</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo12" name="date" />
+                                    <label for="rdo12">2023.02</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo13" name="date" />
+                                    <label for="rdo13">2023.01</label>
+                                </div>
+                            </li>
+
                         </ul>
                     </div>
                 </div>
@@ -157,8 +226,10 @@
 </body>
 <script>
     // id 임의작성 변경 가능
-    $('#bottomViewPop .more-box button').on('click', function () {
-        var date = $(this).text();
+    // 2023-10-06 스크립트 변경
+    $('#bottomViewPop .more-box input[type="radio"]').on('click', function () {
+
+        var date = $(this).siblings('label').text();
         $("#setDate").text(date);
         ui.popup.close('#bottomViewPop');
     });

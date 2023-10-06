@@ -35,7 +35,7 @@ const ui = {
                 $('body').css('background-color', '#fff');
                 $('.layerpopup-box.full').css('padding-top', statusBarHeight + 'px');
                 $('.layerpopup-box.full').css('box-sizing', 'border-box');
-                $('.layer-popup').wrap('<div class="status-relative"></div>');
+                $('.layerpopup-box.full .layer-popup').wrap('<div class="status-relative"></div>');
 
                 if ($('.layerpopup-box.full .chall-swiper').length) {
                     setTimeout(function () {
@@ -564,6 +564,7 @@ const ui = {
     popup: {
         zIndex: 1001,
         popCnt: 0,
+
         toast: function (target) {
             var $toastPop = $(target),
                 delayTime = 3000;
@@ -596,6 +597,20 @@ const ui = {
 
             $(document).ready(function () {
                 $('body').addClass('lock-body');
+            });
+
+            $('.layerpopup-box.bottom').on('click', function (e) {
+                console.log(2323);
+                if ($layer.is('.layerpopup-box.bottom')) {
+                    $('body').removeClass('lock-body');
+
+                    $layer.removeClass('is-animation');
+                    let eventEnd = () => {
+                        $layer.removeClass('is-active');
+                        $layer.off('transitionend', eventEnd);
+                    };
+                    $layer.on('transitionend', eventEnd);
+                }
             });
 
             $layer.each(function () {
@@ -845,51 +860,6 @@ const ui = {
         };
         $lottieInit();
     }
-
-    // lottie2: function () {
-    //     const $lottie = $('[data-lottie]');
-    //     if (!$lottie.length) return;
-    //     if (!location.host) {
-    //         return console.log('lottie는 서버에서만 지원됩니다.');
-    //     }
-    //     const $lottieInit = function () {
-    //         $lottie.each(function () {
-    //             const $this = $(this);
-    //             // $(this).empty();
-    //             if (!$this.hasClass('lottie__init')) {
-    //                 const $data = $this.data('lottie');
-    //                 $this.addClass('lottie__init').removeAttr('data-lottie').aria('hidden', true);
-    //                 const $loopOpt = $this.hasClass('_loop');
-    //                 const $stopOpt = $this.hasClass('_stop');
-    //                 const $sclAnimation = $this.data('animation');
-    //                 let $autoplayOpt = true;
-    //                 if ($sclAnimation || $stopOpt) {
-    //                     $autoplayOpt = false;
-    //                 }
-    //                 const $lottieOpt = lottie.loadAnimation({
-    //                     container: this,
-    //                     renderer: 'svg',
-    //                     loop: $loopOpt,
-    //                     autoplay: $autoplayOpt,
-    //                     path: $data
-    //                 });
-    //                 $(this).data('lottie-opt', $lottieOpt);
-    //             }
-    //         });
-    //     };
-    //     if (typeof lottie === 'undefined') {
-    //         let $url = '/js/lib/lottie.min.js';
-    //         const $path = ui.Common.getUrlPath();
-    //         if ($path) {
-    //             $url = $path + $url;
-    //         } else {
-    //             $url = '../..' + $url;
-    //         }
-    //         ui.Util.loadScript($url, $lottieInit);
-    //     } else {
-    //         $lottieInit();
-    //     }
-    // }
 };
 
 $(document).ready(() => {
