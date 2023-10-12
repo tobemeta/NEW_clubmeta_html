@@ -7,7 +7,7 @@
         content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
     <meta name="HandheldFriendly" content="true" />
     <meta name="format-detection" content="telephone=no" />
-    <title>내 지갑 필터 팝업 | 클럽메타</title>
+    <title>레이아웃 | 클럽메타</title>
     <link rel="stylesheet" href="../../resources/css/common.min.css" />
     <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
     <script src="../../resources/js/lib/jquery-ui.min.js"></script>
@@ -15,22 +15,21 @@
 </head>
 
 <body>
-    <article class="layerpopup-box full is-active is-animation" id="fullViewPop" role="dialog" data-callback="cbFun">
-        <div class="layer-popup">
-            <header class="layer-header">
-                <div class="header-inner">
-                    <!-- 2023-10-06 기획수정 -->
-                    <div class="header-left"><a href="#none" class="btn-back btn-pop-close" role="button"
-                            title="뒤로가기">뒤로가기</a></div>
-                    <div class="header-center">
-                        <h1 class="pop-title">내 지갑 필터</h1>
-                    </div>
-                    <div class="header-right"></div>
+    <div class="wrap">
+        <header class="header">
+            <div class="header-inner">
+                <div class="header-left">
+                    <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
                 </div>
-            </header>
-
-            <div class="layer-content pb-88">
-                <div class="layer-inner">
+                <div class="header-center">
+                    <h1 class="header-title">내 지갑 필터</h1>
+                </div>
+                <div class="header-right"></div>
+            </div>
+        </header>
+        <div class="contents">
+            <div class="section mt-8">
+                <div class="inner">
                     <div class="rdo-list cell mt-24">
                         <div class="title-box">
                             <h2 class="sub-title">기간</h2>
@@ -110,14 +109,15 @@
 
                 </div>
             </div>
-
             <div class="btn-bottom-box">
                 <button type="button" class="btn btn-primary" onclick="ui.popup.close('#fullViewPop')">확인</button>
             </div>
         </div>
-        <!-- //layer-popup -->
-    </article>
 
+        <div class="quick_top">
+            <button type="button" class="btn-top">TOP</button>
+        </div>
+    </div>
     <article class="layerpopup-box bottom" id="bottomViewPop" role="dialog">
         <div class="layer-popup">
             <header class="layer-header">
