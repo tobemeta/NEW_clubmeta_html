@@ -602,23 +602,22 @@ const ui = {
             $(document).ready(function () {
                 $('body').addClass('lock-body');
             });
+            $layer.on('click', function (e) {
+                const $layerPopup = $layer.find('.layer-popup');
 
-            $('.layerpopup-box.bottom').on('click', function (e) {
-                if ($layer.is('.layerpopup-box.bottom')) {
+                if ($layerPopup.has(e.target).length === 0) {
                     $('body').removeClass('lock-body');
-
                     $layer.removeClass('is-animation');
                     let eventEnd = () => {
                         $layer.removeClass('is-active');
                         $layer.off('transitionend', eventEnd);
                     };
                     $layer.on('transitionend', eventEnd);
+                    return;
                 }
             });
 
             $layer.each(function () {
-                let $btnClose = $layer.find('.btn-pop-close');
-                let $btnConfirm = $layer.find('.btn-pop-confirm');
                 // const callback = $layer.data('callback');
 
                 $layer.addClass('is-active');
@@ -632,61 +631,13 @@ const ui = {
                         $layer.find('.layer-content').css('padding-bottom', btnBoxHeight);
                     }
                 }
-
-                $btnClose.on('click', function (e) {
-                    e.preventDefault();
-
-                    $('body').removeClass('lock-body');
-
-                    if ($layer.hasClass('full')) {
-                        $layer.removeClass('is-active');
-                        $layer.find('.layer-content').removeAttr('style');
-                    } else {
-                        $layer.removeClass('is-animation');
-                        let eventEnd = () => {
-                            $layer.removeClass('is-active');
-                            $layer.off('transitionend', eventEnd);
-                        };
-                        $layer.on('transitionend', eventEnd);
-                    }
-                });
-
-                $btnConfirm.on('click', function (e) {
-                    e.preventDefault();
-
-                    $('body').removeClass('lock-body');
-
-                    if ($layer.hasClass('full')) {
-                        $layer.removeClass('is-active');
-                        $layer.find('.layer-content').removeAttr('style');
-                    } else {
-                        $layer.removeClass('is-animation');
-                        let eventEnd = () => {
-                            $layer.removeClass('is-active');
-                            $layer.off('transitionend', eventEnd);
-                        };
-                        $layer.on('transitionend', eventEnd);
-                    }
-
-                    //콜백함수 경우
-                    let callback = $layer.data('callback');
-
-                    if (callback) {
-                        ui.popup.close(target, popOpen);
-
-                        let callbackFunction = window[callback];
-
-                        if (typeof callbackFunction === 'function') {
-                            callbackFunction(target, popOpen, param);
-                        }
-                    }
-                });
             });
         },
         close: function (target, popOpen, param, callback) {
             console.log('팝업닫기 : ' + target.selector);
-
             let $layer = $(target);
+            let $btnClose = $layer.find('.btn-pop-close');
+            let $btnConfirm = $layer.find('.btn-pop-confirm');
 
             $('body').removeClass('lock-body');
 
@@ -709,6 +660,55 @@ const ui = {
                     callbackFunction(target, popOpen, param);
                 }
             }
+
+            $btnClose.on('click', function (e) {
+                e.preventDefault();
+
+                $('body').removeClass('lock-body');
+
+                if ($layer.hasClass('full')) {
+                    $layer.removeClass('is-active');
+                    $layer.find('.layer-content').removeAttr('style');
+                } else {
+                    $layer.removeClass('is-animation');
+                    let eventEnd = () => {
+                        $layer.removeClass('is-active');
+                        $layer.off('transitionend', eventEnd);
+                    };
+                    $layer.on('transitionend', eventEnd);
+                }
+            });
+
+            $btnConfirm.on('click', function (e) {
+                e.preventDefault();
+
+                $('body').removeClass('lock-body');
+
+                if ($layer.hasClass('full')) {
+                    $layer.removeClass('is-active');
+                    $layer.find('.layer-content').removeAttr('style');
+                } else {
+                    $layer.removeClass('is-animation');
+                    let eventEnd = () => {
+                        $layer.removeClass('is-active');
+                        $layer.off('transitionend', eventEnd);
+                    };
+                    $layer.on('transitionend', eventEnd);
+                }
+
+                //콜백함수 경우
+                let callback = $layer.data('callback');
+
+                if (callback) {
+                    ui.popup.close(target, popOpen);
+
+                    let callbackFunction = window[callback];
+
+                    if (typeof callbackFunction === 'function') {
+                        callbackFunction(target, popOpen, param);
+                    }
+                }
+            });
         },
         callbackPopup: function (message, callback) {
             var popupHtml = `

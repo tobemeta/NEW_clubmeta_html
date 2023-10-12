@@ -16,6 +16,7 @@
 
         .layer-popup {
             bottom: 0;
+            z-index: $z-layer + 1;
         }
 
         &.is-animation {
