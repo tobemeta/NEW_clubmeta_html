@@ -604,7 +604,6 @@ const ui = {
             });
 
             $('.layerpopup-box.bottom').on('click', function (e) {
-                console.log(2323);
                 if ($layer.is('.layerpopup-box.bottom')) {
                     $('body').removeClass('lock-body');
 
