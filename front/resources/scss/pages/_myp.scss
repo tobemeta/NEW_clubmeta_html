@@ -90,9 +90,10 @@
         position: absolute;
         top: 0.8rem;
         right: 0.8rem;
-        width: 2.4rem;
-        height: 2.4rem;
-        @include bg($src: '../images/ico/ico_w_more.svg');
+        width: 4rem;
+        height: 4rem;
+        @include bg($src: '../images/ico/ico_w_more.svg', $po: 8px 0);
+        background-size: 2.4rem;
         z-index: 10;
     }
 
