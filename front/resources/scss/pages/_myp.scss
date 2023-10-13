@@ -233,6 +233,7 @@
             font-size: 1.2rem;
             z-index: 1;
             transform: translateY(-50%);
+            border-radius: 0.8rem;
         }
 
         .noData {
@@ -460,6 +461,7 @@
         }
 
         &.mdt {
+            border-color: #b7b7b7;
             &:after {
                 @include bg($src: '../images/ico/ico_mdt.svg');
             }
@@ -615,6 +617,18 @@
 
 .notice-info-img {
     height: calc(100vh - 48px);
+}
+
+// 패스 인증
+.pass-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    padding: 0 1.6rem;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    box-sizing: $sizing;
 }
 
 // 마케팅 동의 결과

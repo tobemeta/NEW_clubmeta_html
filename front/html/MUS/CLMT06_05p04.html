@@ -14,6 +14,27 @@
     <script src="../../resources/js/common.js"></script>
     <style>
         /* 스크롤 애니메이션 css */
+        /* 2023-10-13 피드백 반영으로 수정 */
+        .header-box {
+            opacity: 0;
+            transition: opacity .5s .25s ease-out;
+        }
+
+        .header-box.is-visible {
+            opacity: 1;
+        }
+
+        .heading {
+            transform: translate(0, calc(-50% + 5em));
+            transition: transform 4s .25s cubic-bezier(0, 1, .3, 1),
+                filter 10s 2s ease-out;
+            will-change: transform;
+        }
+
+        .is-visible .heading {
+            transform: translate(0, -50%);
+        }
+
         .inline-photo {
             opacity: 0;
             transform: translateY(4em) rotateZ(-5deg);
@@ -54,9 +75,11 @@
             <div class="layer-content">
                 <div class="layer-inner">
                     <div class="composer-info-area">
-                        <span class="body-title">음원을 등록해</span>
-                        <h2 class="sub-title">클럽메타만의 작곡가가 되어봐요!</h2>
-
+                        <!-- 2023-10-13 피드백 반영 -->
+                        <div class="header-box show-on-scroll">
+                            <span class="body-title heading">음원을 등록해</span>
+                            <h2 class="sub-title heading">클럽메타만의 작곡가가 되어봐요!</h2>
+                        </div>
                         <img src="../../resources/images/img/img_dancing.png" alt=""
                             class="inline-photo show-on-scroll">
                         <h2 class="sub-title">내가 등록한 음원으로<br>챌린지를 열어봐요!</h2>
@@ -94,43 +117,41 @@
     </article>
     <script>
         /* 스크롤 애니메이션 script */
+        // 2023-10-13 수정
+        $(document).ready(function () {
 
-        var scroll = window.requestAnimationFrame ||
-            function (callback) { window.setTimeout(callback, 1000 / 60) };
-        var elementsToShow = document.querySelectorAll('.show-on-scroll');
+            var elementsToShow = $('.show-on-scroll');
 
-        function loop() {
+            function loop() {
+                elementsToShow.each(function () {
+                    if (isElementInViewport($(this))) {
+                        $(this).addClass('is-visible');
+                    } else {
+                        $(this).removeClass('is-visible');
+                    }
+                });
 
-            Array.prototype.forEach.call(elementsToShow, function (element) {
-                if (isElementInViewport(element)) {
-                    element.classList.add('is-visible');
-                } else {
-                    element.classList.remove('is-visible');
-                }
+                window.requestAnimationFrame(loop);
+            }
+
+            setTimeout(function () {
+                $(window).on('load', function () {
+                    loop();
+                })
             });
 
-            scroll(loop);
-        }
-        loop();
 
-
-        function isElementInViewport(el) {
-
-            if (typeof jQuery === "function" && el instanceof jQuery) {
-                el = el[0];
+            function isElementInViewport($el) {
+                var rect = $el[0].getBoundingClientRect();
+                return (
+                    (rect.top <= 0 && rect.bottom >= 0) ||
+                    (rect.bottom >= ($(window).height() || $(document).height()) && rect.top <= ($(window).height() || $(document).height())) ||
+                    (rect.top >= 0 && rect.bottom <= ($(window).height() || $(document).height()))
+                );
             }
-            var rect = el.getBoundingClientRect();
-            return (
-                (rect.top <= 0
-                    && rect.bottom >= 0)
-                ||
-                (rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) &&
-                    rect.top <= (window.innerHeight || document.documentElement.clientHeight))
-                ||
-                (rect.top >= 0 &&
-                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
-            );
-        }
+
+        });
+
     </script>
 </body>
 

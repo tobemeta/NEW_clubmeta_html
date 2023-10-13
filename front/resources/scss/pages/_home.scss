@@ -208,14 +208,16 @@
             .util-list {
                 justify-content: space-between;
                 p {
-                    flex: 1;
-                    display: inline-block;
+                    display: inline-flex;
                     position: relative;
+                    width: calc(100% / 3);
                     padding-left: 1.8rem;
                     padding-right: 1.2rem;
                     font-size: 1.2rem;
+                    box-sizing: $sizing;
                     line-height: 1.7rem;
                     color: #585858;
+
                     .num {
                         @include ellipsis();
                     }

@@ -336,6 +336,7 @@
     background-color: #fff;
     box-sizing: border-box;
     dt {
+        color: #404040;
         &.req {
             position: relative;
             &:after {
@@ -360,9 +361,11 @@
         align-items: center;
         justify-content: space-between;
         height: 4rem;
+        dt {
+        }
     }
     dd {
-        color: $dis-color;
+        color: #111;
     }
 }
 .address-box {
