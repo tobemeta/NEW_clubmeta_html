@@ -652,16 +652,15 @@
 .updating-box {
     width: 100%;
     .center {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        position: fixed;
+        top: 50%;
+        left: 50%;
         width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        transform: translate(-50%, -50%);
         .app-logo {
             width: 12.4rem;
             height: 12.4rem;
@@ -678,7 +677,7 @@
         }
     }
     .bottom {
-        position: absolute;
+        position: fixed;
         left: 0;
         bottom: 9.6rem;
         width: 100%;
