@@ -42,7 +42,7 @@
                         <div class="title-box">
                             <div class="flex">
                                 <h2 class="sub-title">음원</h2>
-                                <div class="tooltip-box orange">
+                                <div class="tooltip-box orange left">
                                     <button type="button" class="tooltip-btn" role="button"><i class="i-ico-tooltip"
                                             aria-hidden="true">아이콘</i></button>
                                     <div class="tooltip-body" role="tooltip">
@@ -1464,7 +1464,6 @@
                     var slideidx = this.slides.length - duplicate;
 
                     // 가상 slide 뺀 slide 총 개수
-                    console.log(slideidx)
                     $('.event-swiper .swiper-wrapper .swiper-slide').addClass('changed');
                     $('.visual-custom .current').text(this.realIndex + 1);
                     $('.visual-custom .total').text(slideidx);

@@ -182,23 +182,50 @@ const ui = {
                 // if ($(ui.className.bottomFixed + ':visible').length) $scrollEnd = $scrollEnd - $(ui.className.bottomFixed).children().outerHeight();
 
                 const $left = Math.max(-4, $btnX);
-
-                if ($(this).parent('.tooltip-box').siblings('.header-title').length == 1) {
+                if ($(this).parent('.tooltip-box').hasClass('left')) {
+                    console.log(11111);
                     $cont.children(ui.tooltip.className.arrow).css({
-                        left: 144.5
-                    });
-                    $cont.css({
-                        left: -140
-                    });
-                } else {
-                    $cont.children(ui.tooltip.className.arrow).css({
+                        // left: 144.5
                         left: $left + $btnW / 2 - 7
                     });
                     $cont.css({
-                        width: $bodyW,
+                        // left: -140
+                        width: 'auto',
                         left: -$left
                     });
+                } else {
+                    console.log(2222);
+                    $cont.children(ui.tooltip.className.arrow).css({
+                        // left: 144.5
+                        left: 101 + 'px'
+                    });
+                    $cont.css({
+                        // left: -140
+                        width: 'auto',
+                        left: -50 + '%',
+                        transform: 'translateX(calc(-50% + 22px))'
+                    });
                 }
+
+                // if ($(this).parent('.tooltip-box').siblings('.header-title').length == 1) {
+                //     $cont.children(ui.tooltip.className.arrow).css({
+                //         // left: 144.5
+                //         left: $left + $btnW / 2
+                //     });
+                //     $cont.css({
+                //         // left: -140
+                //         width: 'auto',
+                //         left: -$left
+                //     });
+                // } else {
+                //     $cont.children(ui.tooltip.className.arrow).css({
+                //         left: $left + $btnW / 2 - 7
+                //     });
+                //     $cont.css({
+                //         width: $bodyW,
+                //         left: -$left
+                //     });
+                // }
 
                 const $contY = $wrap.offset().top + $wrap.outerHeight() + parseInt($cont.css('margin-top')) + parseInt($cont.css('margin-bottom')) + $cont.outerHeight();
                 if ($cont.hasClass('is-bottom')) {
