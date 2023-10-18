@@ -1,323 +1,249 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title>클럽메타 관리자 - AI챌린지 등록</title>
-        <!-- js -->
-        <script src="../include/head.js"></script>
-        <script src="../../js/custom.js"></script>
-    </head>
 
-    <body>
-        <!-- Page Wrapper -->
-        <div id="wrapper" class="wrapper">
-            <!-- 사이드바 -->
-            <div data-include="../include/sidebar.html"></div>
-            <!-- //사이드바 -->
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>클럽메타 관리자 - AI챌린지 등록</title>
+    <!-- js -->
+    <script src="../include/head.js"></script>
+    <script src="../../js/custom.js"></script>
+</head>
 
-            <!-- content Wrapper -->
-            <div id="content-wrapper" class="d-flex flex-column bg-white">
-                <!-- 컨텐츠 본문 -->
-                <div id="content">
-                    <!--  -->
-                    <div data-include="../include/topbar.html"></div>
+<body>
+    <!-- Page Wrapper -->
+    <div id="wrapper" class="wrapper">
+        <!-- 사이드바 -->
+        <div data-include="../include/sidebar.html"></div>
+        <!-- //사이드바 -->
 
-                    <div class="container-fluid" role="main">
-                        <!-- 페이지 경로 -->
-                        <div class="page-breadcrumb" aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <a href="#"><i class="fas fa-home d-flex align-items-center"></i></a>
-                                </li>
-                                <li class="breadcrumb-item">영상관리</li>
-                                <li class="breadcrumb-item">AI 챌린지 리스트</li>
-                                <li class="breadcrumb-item">AI 챌린지 등록</li>
-                            </ol>
+        <!-- content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column bg-white">
+            <!-- 컨텐츠 본문 -->
+            <div id="content">
+                <!--  -->
+                <div data-include="../include/topbar.html"></div>
+
+                <div class="container-fluid" role="main">
+                    <!-- 페이지 경로 -->
+                    <div class="page-breadcrumb" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="#"><i class="fas fa-home d-flex align-items-center"></i></a>
+                            </li>
+                            <li class="breadcrumb-item">영상관리</li>
+                            <li class="breadcrumb-item">AI 챌린지 리스트</li>
+                            <li class="breadcrumb-item">AI 챌린지 등록</li>
+                        </ol>
+                    </div>
+                    <!-- //페이지 경로 -->
+                    <div class="main">
+                        <!-- 제목 및 등록버튼 -->
+                        <div class="row clearfix mt-4 mb-4">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <h2 class="h3 text-gray-800 float-left">AI 챌린지 등록</h2>
+                            </div>
                         </div>
-                        <!-- //페이지 경로 -->
-                        <div class="main">
-                            <!-- 제목 및 등록버튼 -->
-                            <div class="row clearfix mt-4 mb-4">
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                    <h2 class="h3 text-gray-800 float-left">AI 챌린지 등록</h2>
+                        <!-- //제목 및 등록버튼 -->
+
+                        <!---//contents--->
+                        <form>
+                            <div class="form-box">
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label"><label for="">썸네일</label></div>
+                                        <div class="form-box-cont">
+                                            <div class="form-row">
+                                                <div class="d-flex w-100">
+                                                    <div class="preview-img mw-25 mr-2"><img
+                                                            src="../../images/img/img_musicchallenge_thumbnail_05.png"
+                                                            alt="썸네일이미지" /></div>
+                                                    <div class="flex-grow-1 ml-2 align-self-end">
+                                                        <div class="custom-file w-50">
+                                                            <label class="custom-file-label" for="customFile"
+                                                                data-browse="파일선택">파일선택</label>
+                                                            <input type="file" class="custom-file-input"
+                                                                id="customFile" />
+                                                        </div>
+                                                        <!-- 문구 기획에서 확인 후 변경예정 -->
+                                                        <!-- 2023-10-18 기획 크기 수정 -->
+                                                        <div class="text-secondary mt-1">*등록종류 : JPG, JPEG, PNG, BMP,
+                                                            사이즈 : 480*640, 크기 : 200KB</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- //제목 및 등록버튼 -->
-
-                            <!---//contents--->
-                            <form>
-                                <div class="form-box">
-                                    <div class="form-box-row">
-                                        <div class="form-box-item">
-                                            <div class="form-box-label"><label for="">썸네일</label></div>
-                                            <div class="form-box-cont">
-                                                <div class="form-row">
-                                                    <div class="d-flex w-100">
-                                                        <div class="preview-img mw-25 mr-2"><img src="../../images/img/img_musicchallenge_thumbnail_05.png" alt="썸네일이미지" /></div>
-                                                        <div class="flex-grow-1 ml-2 align-self-end">
-                                                            <div class="custom-file w-50">
-                                                                <label class="custom-file-label" for="customFile" data-browse="파일선택">파일선택</label>
-                                                                <input type="file" class="custom-file-input" id="customFile" />
-                                                            </div>
-                                                            <!-- 문구 기획에서 확인 후 변경예정 -->
-                                                            <div class="text-secondary mt-1">*등록종류 : JPG, JPEG, PNG, BMP, 사이즈 : 480*640, 크기 : 10MB</div>
-                                                        </div>
-                                                    </div>
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label">기준영상</div>
+                                        <div class="form-box-cont">
+                                            <div class="form-row">
+                                                <div class="custom-file w-25">
+                                                    <label class="custom-file-label" for="customFile01"
+                                                        data-browse="파일선택">파일선택</label>
+                                                    <input type="file" class="custom-file-input" id="customFile01" />
+                                                </div>
+                                                <!-- 문구 기획에서 확인 후 변경예정 -->
+                                                <div class="text-secondary w-100 mt-1">*등록종류: MP4, 용량: 1GB</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label">챌린지 명</div>
+                                        <div class="form-box-cont">
+                                            <div class="form-row">
+                                                <div class="input-group w-100">
+                                                    <input type="text" class="form-control"
+                                                        placeholder="한글, 영문, 숫자, 특수기호 포함 최대 50자" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-box-row">
-                                        <div class="form-box-item">
-                                            <div class="form-box-label">기준영상</div>
-                                            <div class="form-box-cont">
-                                                <div class="form-row">
-                                                    <div class="custom-file w-25">
-                                                        <label class="custom-file-label" for="customFile01" data-browse="파일선택">파일선택</label>
-                                                        <input type="file" class="custom-file-input" id="customFile01" />
+                                </div>
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label">음원</div>
+                                        <div class="form-box-cont">
+                                            <div class="form-row flex-column align-items-start">
+                                                <div class="custom-file w-25">
+                                                    <label class="custom-file-label" for="customFile03"
+                                                        data-browse="파일선택">파일선택</label>
+                                                    <input type="file" class="custom-file-input" id="customFile03" />
+                                                </div>
+                                                <div class="input-group w-50 mt-1">
+                                                    <input type="text" class="form-control"
+                                                        placeholder="음원검색을 선택해 사용할 음원을 검색하세요." />
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-outline-secondary" type="button"
+                                                            id="button-addon2" data-toggle="modal"
+                                                            data-target="#musicListModal">음원 검색</button>
                                                     </div>
-                                                    <!-- 문구 기획에서 확인 후 변경예정 -->
-                                                    <div class="text-secondary w-100 mt-1">*등록종류: MP4, 용량: 1GB</div>
+                                                </div>
+                                                <div class="text-secondary w-100 mt-1">*음원을 업로드 할 경우 음원 검색을 통해 해당 음원을 꼭
+                                                    선택해주세요.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label">기간</div>
+                                        <div class="form-box-cont">
+                                            <div class="input-daterange-btn w-75">
+                                                <div class="input-group">
+                                                    <input type="date" class="form-control w-25" placeholder="시작일" />
+                                                    <select class="custom-select">
+                                                        <option value="1">00시</option>
+                                                    </select>
+                                                    <select class="custom-select">
+                                                        <option value="1">00분</option>
+                                                    </select>
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text">~</div>
+                                                    </div>
+                                                    <input type="date" class="form-control w-25" placeholder="종료일" />
+                                                    <select class="custom-select">
+                                                        <option value="1">00시</option>
+                                                    </select>
+                                                    <select class="custom-select">
+                                                        <option value="1">00분</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-box-row">
-                                        <div class="form-box-item">
-                                            <div class="form-box-label">챌린지 명</div>
-                                            <div class="form-box-cont">
-                                                <div class="form-row">
-                                                    <div class="input-group w-100">
-                                                        <input type="text" class="form-control" placeholder="한글, 영문, 숫자, 특수기호 포함 최대 50자" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-box-row">
-                                        <div class="form-box-item">
-                                            <div class="form-box-label">음원</div>
-                                            <div class="form-box-cont">
-                                                <div class="form-row flex-column align-items-start">
-                                                    <div class="custom-file w-25">
-                                                        <label class="custom-file-label" for="customFile03" data-browse="파일선택">파일선택</label>
-                                                        <input type="file" class="custom-file-input" id="customFile03" />
-                                                    </div>
-                                                    <div class="input-group w-50 mt-1">
-                                                        <input type="text" class="form-control" placeholder="음원검색을 선택해 사용할 음원을 검색하세요." />
-                                                        <div class="input-group-append">
-                                                            <button class="btn btn-outline-secondary" type="button" id="button-addon2" data-toggle="modal" data-target="#musicListModal">음원 검색</button>
-                                                        </div>
-                                                    </div>
-                                                    <div class="text-secondary w-100 mt-1">*음원을 업로드 할 경우 음원 검색을 통해 해당 음원을 꼭 선택해주세요.</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-box-row">
-                                        <div class="form-box-item">
-                                            <div class="form-box-label">기간</div>
-                                            <div class="form-box-cont">
-                                                <div class="input-daterange-btn w-75">
-                                                    <div class="input-group">
-                                                        <input type="date" class="form-control w-25" placeholder="시작일" />
-                                                        <select class="custom-select">
-                                                            <option value="1">00시</option>
-                                                        </select>
-                                                        <select class="custom-select">
-                                                            <option value="1">00분</option>
-                                                        </select>
-                                                        <div class="input-group-prepend">
-                                                            <div class="input-group-text">~</div>
-                                                        </div>
-                                                        <input type="date" class="form-control w-25" placeholder="종료일" />
-                                                        <select class="custom-select">
-                                                            <option value="1">00시</option>
-                                                        </select>
-                                                        <select class="custom-select">
-                                                            <option value="1">00분</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-box-row">
-                                        <div class="form-box-item">
-                                            <div class="form-box-label">리워드</div>
-                                            <div class="form-box-cont">
-                                                <div class="form-row">
-                                                    <div class="w-100">
-                                                        <ul class="dashboard-list">
-                                                            <li>
-                                                                <div class="tit">
-                                                                    <strong>랭킹 1위</strong>
-                                                                    <span>
-                                                                        <div class="input-group w-100 mb-1">
-                                                                            <input type="text" class="form-control" aria-describedby="rank02" placeholder="숫자 입력" />
-                                                                            <div class="input-group-append">
-                                                                                <span class="input-group-text">Shoe</span>
-                                                                            </div>
+                                </div>
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label">리워드</div>
+                                        <div class="form-box-cont">
+                                            <div class="form-row">
+                                                <div class="w-100">
+                                                    <ul class="dashboard-list">
+                                                        <li>
+                                                            <div class="tit">
+                                                                <strong>랭킹 1위</strong>
+                                                                <span>
+                                                                    <div class="input-group w-100 mb-1">
+                                                                        <input type="text" class="form-control"
+                                                                            aria-describedby="rank02"
+                                                                            placeholder="숫자 입력" />
+                                                                        <div class="input-group-append">
+                                                                            <span class="input-group-text">Shoe</span>
                                                                         </div>
-                                                                    </span>
-                                                                </div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="tit">
-                                                                    <strong>랭킹 2위</strong>
-                                                                    <span>
-                                                                        <div class="input-group w-100 mb-1">
-                                                                            <input type="text" class="form-control" aria-describedby="rank02" placeholder="숫자 입력" />
-                                                                            <div class="input-group-append">
-                                                                                <span class="input-group-text">Shoe</span>
-                                                                            </div>
-                                                                        </div>
-                                                                    </span>
-                                                                </div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="tit">
-                                                                    <strong>랭킹 3위</strong>
-                                                                    <span>
-                                                                        <div class="input-group w-100 mb-1">
-                                                                            <input type="text" class="form-control" aria-describedby="rank02" placeholder="숫자 입력" />
-                                                                            <div class="input-group-append">
-                                                                                <span class="input-group-text">Shoe</span>
-                                                                            </div>
-                                                                        </div>
-                                                                    </span>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="d-flex align-items-center w-100 mt-2">
-                                                        <div class="col-1"><span>참가 리워드 지급</span></div>
-                                                        <div class="col-6">
-                                                            <div class="d-flex">
-                                                                <label class="custom-control custom-radio custom-control-inline mb-0">
-                                                                    <input type="radio" name="rdo1" class="custom-control-input" />
-                                                                    <span class="custom-control-label">사용</span>
-                                                                </label>
-                                                                <label class="custom-control custom-radio custom-control-inline mb-0">
-                                                                    <input type="radio" name="rdo1" class="custom-control-input" checked />
-                                                                    <span class="custom-control-label">미사용</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="d-flex align-items-center w-100 mt-2">
-                                                        <div class="col-auto"><span>참가 리워드</span></div>
-                                                        <div class="col-6">
-                                                            <div class="d-flex align-items-center">
-                                                                <div class="col-md-4 p-0">
-                                                                    <div class="input-group">
-                                                                        <input type="text" class="form-control" placeholder="숫자 입력" disabled />
                                                                     </div>
-                                                                </div>
-
-                                                                <div class="col-auto">
-                                                                    <span>Shoe</span>
-                                                                </div>
+                                                                </span>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-box-row">
-                                        <div class="form-box-item">
-                                            <div class="form-box-label">해시태그</div>
-                                            <div class="form-box-cont">
-                                                <div class="form-row">
-                                                    <div class="input-group w-100">
-                                                        <input type="text" class="form-control" placeholder="단어별 구분은 ‘#’으로 띄어쓰기 없이 한글, 영문, 숫자, 특수기호 포함 최대 50자" />
-                                                    </div>
-                                                    <div class="text-secondary w-100 mt-1">* 해시태그 입력 시 통합 검색에 활용됩니다.</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-box-row">
-                                        <div class="form-box-item">
-                                            <div class="form-box-label">챌린지 설명</div>
-                                            <div class="form-box-cont">
-                                                <div class="form-row">
-                                                    <div class="input-group">
-                                                        <textarea class="form-control" rows="8" placeholder="한글, 영문, 숫자, 특수기호 포함 최대 300자"></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-box-row">
-                                        <div class="form-box-item">
-                                            <div class="form-box-label">투표 형식</div>
-                                            <div class="form-box-cont">
-                                                <div class="form-row">
-                                                    <div class="d-flex">
-                                                        <label class="custom-control custom-radio custom-control-inline mb-0">
-                                                            <input type="radio" name="rdo2" class="custom-control-input" checked />
-                                                            <span class="custom-control-label">해당 없음</span>
-                                                        </label>
-                                                        <label class="custom-control custom-radio custom-control-inline mb-0">
-                                                            <input type="radio" name="rdo2" class="custom-control-input" />
-                                                            <span class="custom-control-label">1일1회</span>
-                                                        </label>
-                                                        <label class="custom-control custom-radio custom-control-inline mb-0">
-                                                            <input type="radio" name="rdo2" class="custom-control-input" />
-                                                            <span class="custom-control-label">기간 내 1회</span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-box-row">
-                                        <div class="form-box-item">
-                                            <div class="form-box-label">심사 기준</div>
-                                            <div class="form-box-cont">
-                                                <div class="form-row">
-                                                    <div class="d-flex align-items-center w-100 mt-2">
-                                                        <div class="col-auto"><span>AI 점수 &times;</span></div>
-                                                        <div class="col-6">
-                                                            <div class="d-flex align-items-center">
-                                                                <div class="col-md-4 p-0">
-                                                                    <div class="input-group">
-                                                                        <input type="text" class="form-control" placeholder="숫자 입력" />
+                                                        </li>
+                                                        <li>
+                                                            <div class="tit">
+                                                                <strong>랭킹 2위</strong>
+                                                                <span>
+                                                                    <div class="input-group w-100 mb-1">
+                                                                        <input type="text" class="form-control"
+                                                                            aria-describedby="rank02"
+                                                                            placeholder="숫자 입력" />
+                                                                        <div class="input-group-append">
+                                                                            <span class="input-group-text">Shoe</span>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
+                                                                </span>
                                                             </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="tit">
+                                                                <strong>랭킹 3위</strong>
+                                                                <span>
+                                                                    <div class="input-group w-100 mb-1">
+                                                                        <input type="text" class="form-control"
+                                                                            aria-describedby="rank02"
+                                                                            placeholder="숫자 입력" />
+                                                                        <div class="input-group-append">
+                                                                            <span class="input-group-text">Shoe</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="d-flex align-items-center w-100 mt-2">
+                                                    <div class="col-1"><span>참가 리워드 지급</span></div>
+                                                    <div class="col-6">
+                                                        <div class="d-flex">
+                                                            <label
+                                                                class="custom-control custom-radio custom-control-inline mb-0">
+                                                                <input type="radio" name="rdo1"
+                                                                    class="custom-control-input" />
+                                                                <span class="custom-control-label">사용</span>
+                                                            </label>
+                                                            <label
+                                                                class="custom-control custom-radio custom-control-inline mb-0">
+                                                                <input type="radio" name="rdo1"
+                                                                    class="custom-control-input" checked />
+                                                                <span class="custom-control-label">미사용</span>
+                                                            </label>
                                                         </div>
                                                     </div>
-                                                    <div class="text-secondary w-100 mt-1">* 참가 영상의 AI점수와 기간 내 획득한 투표 수, 댓글 수, 좋아요 수, 기간 내 외부로 공유된 횟수를 입력한 숫자와 곱해 점수로 환산, 전부 더해 총점이 높은 순으로 랭킹이 정해집니다.</div>
-                                                    <hr class="w-100 opacity-50" />
-                                                    <span>횟수(개수)당 점수 입력</span>
-                                                    <div class="d-flex align-items-center w-100 mt-2">
-                                                        <div class="col-auto"><span>투표 &times;</span></div>
-                                                        <div class="col-md-1 p-0">
-                                                            <div class="input-group">
-                                                                <input type="text" class="form-control" placeholder="숫자 입력" />
+                                                </div>
+                                                <div class="d-flex align-items-center w-100 mt-2">
+                                                    <div class="col-auto"><span>참가 리워드</span></div>
+                                                    <div class="col-6">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="col-md-4 p-0">
+                                                                <div class="input-group">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="숫자 입력" disabled />
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="col-auto"><span>&#x2b; 댓글 &times;</span></div>
-                                                        <div class="col-md-1 p-0">
-                                                            <div class="input-group">
-                                                                <input type="text" class="form-control" placeholder="숫자 입력" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-auto"><span>&#x2b; 좋아요 &times;</span></div>
-                                                        <div class="col-md-1 p-0">
-                                                            <div class="input-group">
-                                                                <input type="text" class="form-control" placeholder="숫자 입력" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-auto"><span>&#x2b; 공유 &times;</span></div>
-                                                        <div class="col-md-1 p-0">
-                                                            <div class="input-group">
-                                                                <input type="text" class="form-control" placeholder="숫자 입력" />
+
+                                                            <div class="col-auto">
+                                                                <span>Shoe</span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -326,375 +252,535 @@
                                         </div>
                                     </div>
                                 </div>
-                            </form>
-
-                            <div class="btn-wrap text-center mt-5">
-                                <button type="button" class="btn btn-lg btn-secondary">취소</button>
-                                <button type="button" class="btn btn-lg btn-primary" onclick="bsFormAlert2('챌린지 등록을 완료했습니다.')">등록</button>
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label">해시태그</div>
+                                        <div class="form-box-cont">
+                                            <div class="form-row">
+                                                <div class="input-group w-100">
+                                                    <input type="text" class="form-control"
+                                                        placeholder="단어별 구분은 ‘#’으로 띄어쓰기 없이 한글, 영문, 숫자, 특수기호 포함 최대 50자" />
+                                                </div>
+                                                <div class="text-secondary w-100 mt-1">* 해시태그 입력 시 통합 검색에 활용됩니다.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label">챌린지 설명</div>
+                                        <div class="form-box-cont">
+                                            <div class="form-row">
+                                                <div class="input-group">
+                                                    <textarea class="form-control" rows="8"
+                                                        placeholder="한글, 영문, 숫자, 특수기호 포함 최대 300자"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label">투표 형식</div>
+                                        <div class="form-box-cont">
+                                            <div class="form-row">
+                                                <div class="d-flex">
+                                                    <label
+                                                        class="custom-control custom-radio custom-control-inline mb-0">
+                                                        <input type="radio" name="rdo2" class="custom-control-input"
+                                                            checked />
+                                                        <span class="custom-control-label">해당 없음</span>
+                                                    </label>
+                                                    <label
+                                                        class="custom-control custom-radio custom-control-inline mb-0">
+                                                        <input type="radio" name="rdo2" class="custom-control-input" />
+                                                        <span class="custom-control-label">1일1회</span>
+                                                    </label>
+                                                    <label
+                                                        class="custom-control custom-radio custom-control-inline mb-0">
+                                                        <input type="radio" name="rdo2" class="custom-control-input" />
+                                                        <span class="custom-control-label">기간 내 1회</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label">심사 기준</div>
+                                        <div class="form-box-cont">
+                                            <div class="form-row">
+                                                <div class="d-flex align-items-center w-100 mt-2">
+                                                    <div class="col-auto"><span>AI 점수 &times;</span></div>
+                                                    <div class="col-6">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="col-md-4 p-0">
+                                                                <div class="input-group">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="숫자 입력" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-secondary w-100 mt-1">* 참가 영상의 AI점수와 기간 내 획득한 투표 수, 댓글
+                                                    수, 좋아요 수, 기간 내 외부로 공유된 횟수를 입력한 숫자와 곱해 점수로 환산, 전부 더해 총점이 높은 순으로 랭킹이
+                                                    정해집니다.</div>
+                                                <hr class="w-100 opacity-50" />
+                                                <span>횟수(개수)당 점수 입력</span>
+                                                <div class="d-flex align-items-center w-100 mt-2">
+                                                    <div class="col-auto"><span>투표 &times;</span></div>
+                                                    <div class="col-md-1 p-0">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="숫자 입력" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto"><span>&#x2b; 댓글 &times;</span></div>
+                                                    <div class="col-md-1 p-0">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="숫자 입력" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto"><span>&#x2b; 좋아요 &times;</span></div>
+                                                    <div class="col-md-1 p-0">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="숫자 입력" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto"><span>&#x2b; 공유 &times;</span></div>
+                                                    <div class="col-md-1 p-0">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="숫자 입력" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                        </form>
+
+                        <div class="btn-wrap text-center mt-5">
+                            <button type="button" class="btn btn-lg btn-secondary">취소</button>
+                            <button type="button" class="btn btn-lg btn-primary"
+                                onclick="bsFormAlert2('챌린지 등록을 완료했습니다.')">등록</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Scroll to Top Button-->
-        <div data-include="../include/topbtn.html"></div>
+    </div>
+    <!-- Scroll to Top Button-->
+    <div data-include="../include/topbtn.html"></div>
 
-        <!-- Logout Modal-->
-        <div data-include="../include/logoutModal.html"></div>
-        <!-- changePw Modal-->
-        <div data-include="../include/pop/changePwModal.html"></div>
-        <div class="modal fade large" id="musicListModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">음원리스트</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+    <!-- Logout Modal-->
+    <div data-include="../include/logoutModal.html"></div>
+    <!-- changePw Modal-->
+    <div data-include="../include/pop/changePwModal.html"></div>
+    <div class="modal fade large" id="musicListModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">음원리스트</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="d-flex mb-4">
+                        <div class="col-4 p-0 mr-1">
+                            <select class="custom-select">
+                                <option value="1">전체</option>
+                                <option value="1">작곡가명</option>
+                                <option value="1">음원명</option>
+                            </select>
+                        </div>
+                        <div class="flex-grow-1 mr-1">
+                            <input type="text" class="form-control" placeholder="검색어 입력" />
+                        </div>
+                        <button type="submit" class="btn btn-dark"><i class="fa fa-search mr-1"></i> 검색</button>
                     </div>
-
-                    <div class="modal-body">
-                        <div class="d-flex mb-4">
-                            <div class="col-4 p-0 mr-1">
-                                <select class="custom-select">
-                                    <option value="1">전체</option>
-                                    <option value="1">작곡가명</option>
-                                    <option value="1">음원명</option>
-                                </select>
-                            </div>
-                            <div class="flex-grow-1 mr-1">
-                                <input type="text" class="form-control" placeholder="검색어 입력" />
-                            </div>
-                            <button type="submit" class="btn btn-dark"><i class="fa fa-search mr-1"></i> 검색</button>
+                    <div class="title-wrap">
+                        <div class="left">전체 <strong class="fc-red">15</strong>건</div>
+                        <div class="right">
+                            <select class="custom-select custom-select-sm">
+                                <option value="1">10</option>
+                                <option value="2">25</option>
+                                <option value="3">50</option>
+                                <option value="4">100</option>
+                            </select>
                         </div>
-                        <div class="title-wrap">
-                            <div class="left">전체 <strong class="fc-red">15</strong>건</div>
-                            <div class="right">
-                                <select class="custom-select custom-select-sm">
-                                    <option value="1">10</option>
-                                    <option value="2">25</option>
-                                    <option value="3">50</option>
-                                    <option value="4">100</option>
-                                </select>
+                    </div>
+                    <div class="bootstrap-table bootstrap4">
+                        <div class="fixed-table-toolbar"></div>
+                        <div class="fixed-table-container" style="padding-bottom: 0px">
+                            <div class="fixed-table-header" style="display: none">
+                                <table></table>
                             </div>
-                        </div>
-                        <div class="bootstrap-table bootstrap4">
-                            <div class="fixed-table-toolbar"></div>
-                            <div class="fixed-table-container" style="padding-bottom: 0px">
-                                <div class="fixed-table-header" style="display: none">
-                                    <table></table>
+                            <div class="fixed-table-body">
+                                <div class="fixed-table-loading table table-bordered table-hover"
+                                    style="top: 42.7969px">
+                                    <span class="loading-wrap">
+                                        <span class="loading-text">데이터를 불러오는 중입니다</span>
+                                        <span class="animation-wrap"><span class="animation-dot"></span></span>
+                                    </span>
                                 </div>
-                                <div class="fixed-table-body">
-                                    <div class="fixed-table-loading table table-bordered table-hover" style="top: 42.7969px">
-                                        <span class="loading-wrap">
-                                            <span class="loading-text">데이터를 불러오는 중입니다</span>
-                                            <span class="animation-wrap"><span class="animation-dot"></span></span>
-                                        </span>
-                                    </div>
-                                    <table id="dataTable1" class="table table-hover table-bordered" data-pagination="true">
-                                        <thead>
-                                            <tr>
-                                                <th data-field="1">
-                                                    <div class="th-inner">음원</div>
-                                                    <div class="fht-cell"></div>
-                                                </th>
-                                                <th data-field="2">
-                                                    <div class="th-inner">작곡가명</div>
-                                                    <div class="fht-cell"></div>
-                                                </th>
-                                                <th class="no-sorting" data-field="3">
-                                                    <div class="th-inner">길이</div>
-                                                    <div class="fht-cell"></div>
-                                                </th>
-                                                <th class="no-sorting" data-field="4">
-                                                    <div class="th-inner">듣기</div>
-                                                    <div class="fht-cell"></div>
-                                                </th>
-                                                <th class="no-sorting" data-field="5">
-                                                    <div class="th-inner">선택</div>
-                                                    <div class="fht-cell"></div>
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <!-- <tr class="no-records-found">
+                                <table id="dataTable1" class="table table-hover table-bordered" data-pagination="true">
+                                    <thead>
+                                        <tr>
+                                            <th data-field="1">
+                                                <div class="th-inner">음원</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                            <th data-field="2">
+                                                <div class="th-inner">작곡가명</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                            <th class="no-sorting" data-field="3">
+                                                <div class="th-inner">길이</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                            <th class="no-sorting" data-field="4">
+                                                <div class="th-inner">듣기</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                            <th class="no-sorting" data-field="5">
+                                                <div class="th-inner">선택</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- <tr class="no-records-found">
                                             <td colspan="4">해당 데이터가 없습니다.</td>
                                             </tr> -->
-                                            <tr class="" data-index="0">
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="col-auto">
-                                                            <img class="data-img" src="../../images/img/img_aichallenge_thumbnail_01.png" alt="" />
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <span>음원 타이틀명67</span>
-                                                        </div>
+                                        <tr class="" data-index="0">
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="col-auto">
+                                                        <img class="data-img"
+                                                            src="../../images/img/img_aichallenge_thumbnail_01.png"
+                                                            alt="" />
                                                     </div>
-                                                </td>
-                                                <td>작곡가명567</td>
-                                                <td>00:45</td>
-                                                <td>
-                                                    <button type="button" class="play"><i class="fas fa-play"></i></button>
-                                                    <button type="button" class="pause d-none"><i class="fas fa-pause"></i></button>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-checkbox">
-                                                        <input type="radio" class="btn-check custom-control-input" name="singleRadioGrp" id="btn-check" autocomplete="off" />
-                                                        <label class="btn btn-outline-secondary" for="btn-check">선택</label>
+                                                    <div class="col-auto">
+                                                        <span>음원 타이틀명67</span>
                                                     </div>
-                                                </td>
-                                            </tr>
-                                            <tr data-index="1">
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="col-auto">
-                                                            <img class="data-img" src="../../images/img/img_aichallenge_thumbnail_01.png" alt="" />
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <span>음원 타이틀명67867</span>
-                                                        </div>
+                                                </div>
+                                            </td>
+                                            <td>작곡가명567</td>
+                                            <td>00:45</td>
+                                            <td>
+                                                <button type="button" class="play"><i class="fas fa-play"></i></button>
+                                                <button type="button" class="pause d-none"><i
+                                                        class="fas fa-pause"></i></button>
+                                            </td>
+                                            <td>
+                                                <div class="custom-checkbox">
+                                                    <input type="radio" class="btn-check custom-control-input"
+                                                        name="singleRadioGrp" id="btn-check" autocomplete="off" />
+                                                    <label class="btn btn-outline-secondary" for="btn-check">선택</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr data-index="1">
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="col-auto">
+                                                        <img class="data-img"
+                                                            src="../../images/img/img_aichallenge_thumbnail_01.png"
+                                                            alt="" />
                                                     </div>
-                                                </td>
-                                                <td>작곡가명679</td>
-                                                <td>00:45</td>
-                                                <td>
-                                                    <button type="button" class="play"><i class="fas fa-play"></i></button>
-                                                    <button type="button" class="pause d-none"><i class="fas fa-pause"></i></button>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-checkbox">
-                                                        <input type="radio" class="btn-check custom-control-input" name="singleRadioGrp" id="btn-check1" autocomplete="off" />
-                                                        <label class="btn btn-outline-secondary" for="btn-check1">선택</label>
+                                                    <div class="col-auto">
+                                                        <span>음원 타이틀명67867</span>
                                                     </div>
-                                                </td>
-                                            </tr>
-                                            <tr data-index="2">
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="col-auto">
-                                                            <img class="data-img" src="../../images/img/img_aichallenge_thumbnail_01.png" alt="" />
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <span>음원 타이틀명89890</span>
-                                                        </div>
+                                                </div>
+                                            </td>
+                                            <td>작곡가명679</td>
+                                            <td>00:45</td>
+                                            <td>
+                                                <button type="button" class="play"><i class="fas fa-play"></i></button>
+                                                <button type="button" class="pause d-none"><i
+                                                        class="fas fa-pause"></i></button>
+                                            </td>
+                                            <td>
+                                                <div class="custom-checkbox">
+                                                    <input type="radio" class="btn-check custom-control-input"
+                                                        name="singleRadioGrp" id="btn-check1" autocomplete="off" />
+                                                    <label class="btn btn-outline-secondary" for="btn-check1">선택</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr data-index="2">
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="col-auto">
+                                                        <img class="data-img"
+                                                            src="../../images/img/img_aichallenge_thumbnail_01.png"
+                                                            alt="" />
                                                     </div>
-                                                </td>
-                                                <td>작곡가명567</td>
-                                                <td>00:45</td>
-                                                <td>
-                                                    <button type="button" class="play"><i class="fas fa-play"></i></button>
-                                                    <button type="button" class="pause d-none"><i class="fas fa-pause"></i></button>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-checkbox">
-                                                        <input type="radio" class="btn-check custom-control-input" name="singleRadioGrp" id="btn-check2" autocomplete="off" />
-                                                        <label class="btn btn-outline-secondary" for="btn-check2">선택</label>
+                                                    <div class="col-auto">
+                                                        <span>음원 타이틀명89890</span>
                                                     </div>
-                                                </td>
-                                            </tr>
-                                            <tr data-index="3">
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="col-auto">
-                                                            <img class="data-img" src="../../images/img/img_aichallenge_thumbnail_01.png" alt="" />
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <span>음원 타이틀명7</span>
-                                                        </div>
+                                                </div>
+                                            </td>
+                                            <td>작곡가명567</td>
+                                            <td>00:45</td>
+                                            <td>
+                                                <button type="button" class="play"><i class="fas fa-play"></i></button>
+                                                <button type="button" class="pause d-none"><i
+                                                        class="fas fa-pause"></i></button>
+                                            </td>
+                                            <td>
+                                                <div class="custom-checkbox">
+                                                    <input type="radio" class="btn-check custom-control-input"
+                                                        name="singleRadioGrp" id="btn-check2" autocomplete="off" />
+                                                    <label class="btn btn-outline-secondary" for="btn-check2">선택</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr data-index="3">
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="col-auto">
+                                                        <img class="data-img"
+                                                            src="../../images/img/img_aichallenge_thumbnail_01.png"
+                                                            alt="" />
                                                     </div>
-                                                </td>
-                                                <td>작곡가명7</td>
-                                                <td>00:45</td>
-                                                <td>
-                                                    <button type="button" class="play"><i class="fas fa-play"></i></button>
-                                                    <button type="button" class="pause d-none"><i class="fas fa-pause"></i></button>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-checkbox">
-                                                        <input type="radio" class="btn-check custom-control-input" name="singleRadioGrp" id="btn-check3" autocomplete="off" />
-                                                        <label class="btn btn-outline-secondary" for="btn-check3">선택</label>
+                                                    <div class="col-auto">
+                                                        <span>음원 타이틀명7</span>
                                                     </div>
-                                                </td>
-                                            </tr>
-                                            <tr data-index="4">
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="col-auto">
-                                                            <img class="data-img" src="../../images/img/img_aichallenge_thumbnail_01.png" alt="" />
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <span>음원 타이틀명6</span>
-                                                        </div>
+                                                </div>
+                                            </td>
+                                            <td>작곡가명7</td>
+                                            <td>00:45</td>
+                                            <td>
+                                                <button type="button" class="play"><i class="fas fa-play"></i></button>
+                                                <button type="button" class="pause d-none"><i
+                                                        class="fas fa-pause"></i></button>
+                                            </td>
+                                            <td>
+                                                <div class="custom-checkbox">
+                                                    <input type="radio" class="btn-check custom-control-input"
+                                                        name="singleRadioGrp" id="btn-check3" autocomplete="off" />
+                                                    <label class="btn btn-outline-secondary" for="btn-check3">선택</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr data-index="4">
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="col-auto">
+                                                        <img class="data-img"
+                                                            src="../../images/img/img_aichallenge_thumbnail_01.png"
+                                                            alt="" />
                                                     </div>
-                                                </td>
-                                                <td>작곡가명44</td>
-                                                <td>00:45</td>
-                                                <td>
-                                                    <button type="button" class="play"><i class="fas fa-play"></i></button>
-                                                    <button type="button" class="pause d-none"><i class="fas fa-pause"></i></button>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-checkbox">
-                                                        <input type="radio" class="btn-check custom-control-input" name="singleRadioGrp" id="btn-check4" autocomplete="off" />
-                                                        <label class="btn btn-outline-secondary" for="btn-check4">선택</label>
+                                                    <div class="col-auto">
+                                                        <span>음원 타이틀명6</span>
                                                     </div>
-                                                </td>
-                                            </tr>
-                                            <tr data-index="5">
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="col-auto">
-                                                            <img class="data-img" src="../../images/img/img_aichallenge_thumbnail_01.png" alt="" />
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <span>음원 타이틀명456</span>
-                                                        </div>
+                                                </div>
+                                            </td>
+                                            <td>작곡가명44</td>
+                                            <td>00:45</td>
+                                            <td>
+                                                <button type="button" class="play"><i class="fas fa-play"></i></button>
+                                                <button type="button" class="pause d-none"><i
+                                                        class="fas fa-pause"></i></button>
+                                            </td>
+                                            <td>
+                                                <div class="custom-checkbox">
+                                                    <input type="radio" class="btn-check custom-control-input"
+                                                        name="singleRadioGrp" id="btn-check4" autocomplete="off" />
+                                                    <label class="btn btn-outline-secondary" for="btn-check4">선택</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr data-index="5">
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="col-auto">
+                                                        <img class="data-img"
+                                                            src="../../images/img/img_aichallenge_thumbnail_01.png"
+                                                            alt="" />
                                                     </div>
-                                                </td>
-                                                <td>작곡가명67978</td>
-                                                <td>00:45</td>
-                                                <td>
-                                                    <button type="button" class="play"><i class="fas fa-play"></i></button>
-                                                    <button type="button" class="pause d-none"><i class="fas fa-pause"></i></button>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-checkbox">
-                                                        <input type="radio" class="btn-check custom-control-input" name="singleRadioGrp" id="btn-check5" autocomplete="off" />
-                                                        <label class="btn btn-outline-secondary" for="btn-check5">선택</label>
+                                                    <div class="col-auto">
+                                                        <span>음원 타이틀명456</span>
                                                     </div>
-                                                </td>
-                                            </tr>
-                                            <tr data-index="6">
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="col-auto">
-                                                            <img class="data-img" src="../../images/img/img_aichallenge_thumbnail_01.png" alt="" />
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <span>음원 타이틀명546</span>
-                                                        </div>
+                                                </div>
+                                            </td>
+                                            <td>작곡가명67978</td>
+                                            <td>00:45</td>
+                                            <td>
+                                                <button type="button" class="play"><i class="fas fa-play"></i></button>
+                                                <button type="button" class="pause d-none"><i
+                                                        class="fas fa-pause"></i></button>
+                                            </td>
+                                            <td>
+                                                <div class="custom-checkbox">
+                                                    <input type="radio" class="btn-check custom-control-input"
+                                                        name="singleRadioGrp" id="btn-check5" autocomplete="off" />
+                                                    <label class="btn btn-outline-secondary" for="btn-check5">선택</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr data-index="6">
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="col-auto">
+                                                        <img class="data-img"
+                                                            src="../../images/img/img_aichallenge_thumbnail_01.png"
+                                                            alt="" />
                                                     </div>
-                                                </td>
-                                                <td>작곡가명asdf</td>
-                                                <td>00:45</td>
-                                                <td>
-                                                    <button type="button" class="play"><i class="fas fa-play"></i></button>
-                                                    <button type="button" class="pause d-none"><i class="fas fa-pause"></i></button>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-checkbox">
-                                                        <input type="radio" class="btn-check custom-control-input" name="singleRadioGrp" id="btn-check6" autocomplete="off" />
-                                                        <label class="btn btn-outline-secondary" for="btn-check6">선택</label>
+                                                    <div class="col-auto">
+                                                        <span>음원 타이틀명546</span>
                                                     </div>
-                                                </td>
-                                            </tr>
-                                            <tr data-index="7">
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="col-auto">
-                                                            <img class="data-img" src="../../images/img/img_aichallenge_thumbnail_01.png" alt="" />
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <span>음원 타이틀명333</span>
-                                                        </div>
+                                                </div>
+                                            </td>
+                                            <td>작곡가명asdf</td>
+                                            <td>00:45</td>
+                                            <td>
+                                                <button type="button" class="play"><i class="fas fa-play"></i></button>
+                                                <button type="button" class="pause d-none"><i
+                                                        class="fas fa-pause"></i></button>
+                                            </td>
+                                            <td>
+                                                <div class="custom-checkbox">
+                                                    <input type="radio" class="btn-check custom-control-input"
+                                                        name="singleRadioGrp" id="btn-check6" autocomplete="off" />
+                                                    <label class="btn btn-outline-secondary" for="btn-check6">선택</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr data-index="7">
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="col-auto">
+                                                        <img class="data-img"
+                                                            src="../../images/img/img_aichallenge_thumbnail_01.png"
+                                                            alt="" />
                                                     </div>
-                                                </td>
-                                                <td>작곡가명22</td>
-                                                <td>00:45</td>
-                                                <td>
-                                                    <button type="button" class="play"><i class="fas fa-play"></i></button>
-                                                    <button type="button" class="pause d-none"><i class="fas fa-pause"></i></button>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-checkbox">
-                                                        <input type="radio" class="btn-check custom-control-input" name="singleRadioGrp" id="btn-check7" autocomplete="off" />
-                                                        <label class="btn btn-outline-secondary" for="btn-check7">선택</label>
+                                                    <div class="col-auto">
+                                                        <span>음원 타이틀명333</span>
                                                     </div>
-                                                </td>
-                                            </tr>
-                                            <tr data-index="8">
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="col-auto">
-                                                            <img class="data-img" src="../../images/img/img_aichallenge_thumbnail_01.png" alt="" />
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <span>음원 타이틀명1</span>
-                                                        </div>
+                                                </div>
+                                            </td>
+                                            <td>작곡가명22</td>
+                                            <td>00:45</td>
+                                            <td>
+                                                <button type="button" class="play"><i class="fas fa-play"></i></button>
+                                                <button type="button" class="pause d-none"><i
+                                                        class="fas fa-pause"></i></button>
+                                            </td>
+                                            <td>
+                                                <div class="custom-checkbox">
+                                                    <input type="radio" class="btn-check custom-control-input"
+                                                        name="singleRadioGrp" id="btn-check7" autocomplete="off" />
+                                                    <label class="btn btn-outline-secondary" for="btn-check7">선택</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr data-index="8">
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="col-auto">
+                                                        <img class="data-img"
+                                                            src="../../images/img/img_aichallenge_thumbnail_01.png"
+                                                            alt="" />
                                                     </div>
-                                                </td>
-                                                <td>작곡가명44</td>
-                                                <td>00:45</td>
-                                                <td>
-                                                    <button type="button" class="play"><i class="fas fa-play"></i></button>
-                                                    <button type="button" class="pause d-none"><i class="fas fa-pause"></i></button>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-checkbox">
-                                                        <input type="radio" class="btn-check custom-control-input" name="singleRadioGrp" id="btn-check8" autocomplete="off" />
-                                                        <label class="btn btn-outline-secondary" for="btn-check7">선택</label>
+                                                    <div class="col-auto">
+                                                        <span>음원 타이틀명1</span>
                                                     </div>
-                                                </td>
-                                            </tr>
-                                            <tr data-index="9">
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="col-auto">
-                                                            <img class="data-img" src="../../images/img/img_aichallenge_thumbnail_01.png" alt="" />
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <span>음원 타이틀명22</span>
-                                                        </div>
+                                                </div>
+                                            </td>
+                                            <td>작곡가명44</td>
+                                            <td>00:45</td>
+                                            <td>
+                                                <button type="button" class="play"><i class="fas fa-play"></i></button>
+                                                <button type="button" class="pause d-none"><i
+                                                        class="fas fa-pause"></i></button>
+                                            </td>
+                                            <td>
+                                                <div class="custom-checkbox">
+                                                    <input type="radio" class="btn-check custom-control-input"
+                                                        name="singleRadioGrp" id="btn-check8" autocomplete="off" />
+                                                    <label class="btn btn-outline-secondary" for="btn-check7">선택</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr data-index="9">
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="col-auto">
+                                                        <img class="data-img"
+                                                            src="../../images/img/img_aichallenge_thumbnail_01.png"
+                                                            alt="" />
                                                     </div>
-                                                </td>
-                                                <td>작곡가명345</td>
-                                                <td>00:45</td>
-                                                <td>
-                                                    <button type="button" class="play"><i class="fas fa-play"></i></button>
-                                                    <button type="button" class="pause d-none"><i class="fas fa-pause"></i></button>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-checkbox">
-                                                        <input type="radio" class="btn-check custom-control-input" name="singleRadioGrp" id="btn-check9" autocomplete="off" />
-                                                        <label class="btn btn-outline-secondary" for="btn-check7">선택</label>
+                                                    <div class="col-auto">
+                                                        <span>음원 타이틀명22</span>
                                                     </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="fixed-table-footer"></div>
+                                                </div>
+                                            </td>
+                                            <td>작곡가명345</td>
+                                            <td>00:45</td>
+                                            <td>
+                                                <button type="button" class="play"><i class="fas fa-play"></i></button>
+                                                <button type="button" class="pause d-none"><i
+                                                        class="fas fa-pause"></i></button>
+                                            </td>
+                                            <td>
+                                                <div class="custom-checkbox">
+                                                    <input type="radio" class="btn-check custom-control-input"
+                                                        name="singleRadioGrp" id="btn-check9" autocomplete="off" />
+                                                    <label class="btn btn-outline-secondary" for="btn-check7">선택</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
-                            <div class="fixed-table-pagination">
-                                <div class="pagination-detail"></div>
-                                <!-- 왼쪽 버튼 영역 -->
-                                <div class="float-left"></div>
-                                <!-- 오른쪽 버튼 영역 -->
-                                <div class="float-right"></div>
-                                <div class="pagination">
-                                    <ul class="pagination">
-                                        <li class="page-item page-pre"><a class="page-link" aria-label="previous page" href="javascript:void(0)">‹</a></li>
-                                        <li class="page-item active"><a class="page-link" aria-label="to page 1" href="javascript:void(0)">1</a></li>
-                                        <li class="page-item"><a class="page-link" aria-label="to page 2" href="javascript:void(0)">2</a></li>
-                                        <li class="page-item page-next"><a class="page-link" aria-label="next page" href="javascript:void(0)">›</a></li>
-                                    </ul>
-                                </div>
+                            <div class="fixed-table-footer"></div>
+                        </div>
+                        <div class="fixed-table-pagination">
+                            <div class="pagination-detail"></div>
+                            <!-- 왼쪽 버튼 영역 -->
+                            <div class="float-left"></div>
+                            <!-- 오른쪽 버튼 영역 -->
+                            <div class="float-right"></div>
+                            <div class="pagination">
+                                <ul class="pagination">
+                                    <li class="page-item page-pre"><a class="page-link" aria-label="previous page"
+                                            href="javascript:void(0)">‹</a></li>
+                                    <li class="page-item active"><a class="page-link" aria-label="to page 1"
+                                            href="javascript:void(0)">1</a></li>
+                                    <li class="page-item"><a class="page-link" aria-label="to page 2"
+                                            href="javascript:void(0)">2</a></li>
+                                    <li class="page-item page-next"><a class="page-link" aria-label="next page"
+                                            href="javascript:void(0)">›</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <!-- <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">취소</button> -->
-                        <!-- <button type="button" class="btn btn-primary btn-lg">확인</button> -->
-                    </div>
+                </div>
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">취소</button> -->
+                    <!-- <button type="button" class="btn btn-primary btn-lg">확인</button> -->
                 </div>
             </div>
         </div>
-    </body>
-    <script src="../../datatables/jquery.dataTables.min.js"></script>
-    <script src="../../datatables/dataTables.bootstrap4.min.js"></script>
-    <script src="../../lib/chart.js/plugins/chartjs-plugin-datalabels.min.js"></script>
-    <script src="../../lib/chart.js/Chart.min.js"></script>
-    <!-- Page level custom scripts -->
-    <script src="../../js/demo/datatables-demo.js"></script>
+    </div>
+</body>
+<script src="../../datatables/jquery.dataTables.min.js"></script>
+<script src="../../datatables/dataTables.bootstrap4.min.js"></script>
+<script src="../../lib/chart.js/plugins/chartjs-plugin-datalabels.min.js"></script>
+<script src="../../lib/chart.js/Chart.min.js"></script>
+<!-- Page level custom scripts -->
+<script src="../../js/demo/datatables-demo.js"></script>
+
 </html>
