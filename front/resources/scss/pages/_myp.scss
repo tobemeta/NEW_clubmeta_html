@@ -618,7 +618,9 @@
 .notice-info-img {
     height: calc(100vh - 48px);
 }
-
+.banner_img {
+    @include img();
+}
 // 패스 인증
 .pass-box {
     position: absolute;

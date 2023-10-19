@@ -11,6 +11,20 @@
     overflow: hidden;
     text-overflow: ellipsis;
 } //webkit 2줄 말줄임
+@mixin img() {
+    position: relative;
+    img {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        max-width: 100%;
+        min-width: 100%;
+        min-height: 100%;
+        margin: 0;
+    }
+}
 @mixin imgCenter() {
     position: relative;
     img {
