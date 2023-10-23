@@ -187,6 +187,7 @@ a.btn-composer {
         }
 
         p {
+            text-align: center;
             line-height: 2.3rem;
             @include ellipsis();
         }

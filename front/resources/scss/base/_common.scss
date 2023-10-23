@@ -529,10 +529,11 @@ h1 {
             }
         }
         .img {
-            min-width: 5.6rem;
+            width: 5.6rem;
             height: 5.6rem;
             border-radius: 1.6rem;
             overflow: hidden;
+            flex-shrink: 0;
         }
     }
     .sound-area {
