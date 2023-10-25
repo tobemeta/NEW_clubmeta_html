@@ -1,193 +1,177 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>팔로워 리스트 | 클럽메타</title>
+        <link rel="stylesheet" href="../../resources/css/common.min.css" />
+        <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+        <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+        <script src="../../resources/js/common.js"></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="format-detection" content="telephone=no" />
-    <title>팔로워 리스트 | 클럽메타</title>
-    <link rel="stylesheet" href="../../resources/css/common.min.css" />
-    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
-    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
-    <script src="../../resources/js/common.js"></script>
-</head>
-
-<body>
-    <div class="wrap">
-        <header class="header">
-            <div class="header-inner">
-                <div class="header-left">
-                    <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
+    <body>
+        <div class="wrap">
+            <header class="header">
+                <div class="header-inner">
+                    <div class="header-left">
+                        <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
+                    </div>
+                    <div class="header-center">
+                        <h1 class="header-title">닉네임최대10글자</h1>
+                    </div>
+                    <div class="header-right"></div>
                 </div>
-                <div class="header-center">
-                    <h1 class="header-title">닉네임최대10글자</h1>
-                </div>
-                <div class="header-right"></div>
-            </div>
-        </header>
-        <div class="contents">
-            <div class="section">
-                <div class="inner">
-                    <div class="tab-wrap box">
-                        <div class="tab-items">
-                            <ul>
-                                <li class="on">
-                                    <a href="CLMT07_02001.html" class="tab-button"
-                                        data-target="tab1">팔로워&nbsp;<span>671</span>명</a>
-                                </li>
-                                <li>
-                                    <a href="CLMT07_02002.html" class="tab-button"
-                                        data-target="tab2">팔로잉&nbsp;<span>671</span>명</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="tab-content">
-                            <div id="tab1" class="tab-cont open">
-                                <div class="follow-list-area">
-                                    <div class="input-box search small">
-                                        <input type="text" placeholder="닉네임으로 검색" title="내용입력">
-                                        <button type="button" class="btn-inp-del" aria-label="입력내용삭제"><span
-                                                class="blind">삭제</span></button>
-                                    </div>
-                                    <div class="sch-result-area">
-                                        <div class="list-box user">
-                                            <ul>
-                                                <li class="composer">
-                                                    <a href="#none">
-                                                        <div class="img">
-                                                            <img src="" alt="">
-                                                        </div>
-                                                        <div class="info">
-                                                            <strong>12유저닉네임1</strong>
-                                                        </div>
-                                                    </a>
-                                                    <!-- 2023-10-13 피드백 반영 텍스트 수정 -->
-                                                    <button type="button"
-                                                        class="btn-primary btn-follow"><span>팔로잉</span></button>
-                                                </li>
-                                                <li>
-                                                    <a href="#none">
-                                                        <div class="img">
-                                                            <img src="" alt="">
-                                                        </div>
-                                                        <div class="info">
-                                                            <strong>12유저닉네임2</strong>
-                                                        </div>
-                                                    </a>
-                                                    <button type="button"
-                                                        class="btn-primary btn-follow"><span>팔로잉</span></button>
-                                                </li>
-                                                <li>
-                                                    <a href="#none">
-                                                        <div class="img">
-                                                            <img src="" alt="">
-                                                        </div>
-                                                        <div class="info">
-                                                            <strong>12유저닉네임3</strong>
-                                                        </div>
-                                                    </a>
-                                                    <button type="button"
-                                                        class="btn-primary btn-follow"><span>팔로잉</span></button>
-                                                </li>
-                                                <li>
-                                                    <a href="#none">
-                                                        <div class="img">
-                                                            <img src="" alt="">
-                                                        </div>
-                                                        <div class="info">
-                                                            <strong>12유저닉네임4</strong>
-                                                        </div>
-                                                    </a>
-                                                    <button type="button"
-                                                        class="btn-primary btn-follow"><span>팔로잉</span></button>
-                                                </li>
-                                                <li>
-                                                    <a href="#none">
-                                                        <div class="img">
-                                                            <img src="" alt="">
-                                                        </div>
-                                                        <div class="info">
-                                                            <strong>12유저닉네임5</strong>
-                                                        </div>
-                                                    </a>
-                                                    <button type="button"
-                                                        class="btn-primary btn-follow"><span>팔로잉</span></button>
-                                                </li>
-                                                <li>
-                                                    <a href="#none">
-                                                        <div class="img">
-                                                            <img src="" alt="">
-                                                        </div>
-                                                        <div class="info">
-                                                            <strong>12유저닉네임6</strong>
-                                                        </div>
-                                                    </a>
-                                                    <button type="button"
-                                                        class="btn-primary btn-follow"><span>팔로잉</span></button>
-                                                </li>
-                                                <li class="noData" style="display:none">
-                                                    <p>"<span></span>" 검색 결과 없음</p>
-                                                </li>
-                                            </ul>
+            </header>
+            <div class="contents">
+                <div class="section">
+                    <div class="inner">
+                        <div class="tab-wrap box">
+                            <div class="tab-items">
+                                <ul>
+                                    <li class="on">
+                                        <a href="CLMT07_02001.html" class="tab-button" data-target="tab1">팔로워&nbsp;<span>671</span>명</a>
+                                    </li>
+                                    <li>
+                                        <a href="CLMT07_02002.html" class="tab-button" data-target="tab2">팔로잉&nbsp;<span>671</span>명</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-content">
+                                <div id="tab1" class="tab-cont open">
+                                    <div class="follow-list-area">
+                                        <div class="input-box search small">
+                                            <input type="text" placeholder="닉네임으로 검색" title="내용입력" />
+                                            <button type="button" class="btn-inp-del" aria-label="입력내용삭제"><span class="blind">삭제</span></button>
+                                        </div>
+                                        <div class="sch-result-area">
+                                            <div class="list-box user">
+                                                <ul>
+                                                    <li class="composer">
+                                                        <a href="#none">
+                                                            <div class="img">
+                                                                <img src="../../resources/images/temp/temp-img-0.jpg" alt="" />
+                                                            </div>
+                                                            <div class="info">
+                                                                <strong>12유저닉네임1</strong>
+                                                            </div>
+                                                        </a>
+                                                        <!-- 2023-10-13 피드백 반영 텍스트 수정 -->
+                                                        <button type="button" class="btn-primary btn-follow"><span>팔로잉</span></button>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#none">
+                                                            <div class="img">
+                                                                <img src="../../resources/images/temp/temp-img-1.jpg" alt="" />
+                                                            </div>
+                                                            <div class="info">
+                                                                <strong>12유저닉네임2</strong>
+                                                            </div>
+                                                        </a>
+                                                        <button type="button" class="btn-primary btn-follow"><span>팔로잉</span></button>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#none">
+                                                            <div class="img">
+                                                                <img src="../../resources/images/temp/temp-img-2.jpg" alt="" />
+                                                            </div>
+                                                            <div class="info">
+                                                                <strong>12유저닉네임3</strong>
+                                                            </div>
+                                                        </a>
+                                                        <button type="button" class="btn-primary btn-follow"><span>팔로잉</span></button>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#none">
+                                                            <div class="img">
+                                                                <img src="" alt="" />
+                                                            </div>
+                                                            <div class="info">
+                                                                <strong>12유저닉네임4</strong>
+                                                            </div>
+                                                        </a>
+                                                        <button type="button" class="btn-primary btn-follow"><span>팔로잉</span></button>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#none">
+                                                            <div class="img">
+                                                                <img src="" alt="" />
+                                                            </div>
+                                                            <div class="info">
+                                                                <strong>12유저닉네임5</strong>
+                                                            </div>
+                                                        </a>
+                                                        <button type="button" class="btn-primary btn-follow"><span>팔로잉</span></button>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#none">
+                                                            <div class="img">
+                                                                <img src="" alt="" />
+                                                            </div>
+                                                            <div class="info">
+                                                                <strong>12유저닉네임6</strong>
+                                                            </div>
+                                                        </a>
+                                                        <button type="button" class="btn-primary btn-follow"><span>팔로잉</span></button>
+                                                    </li>
+                                                    <li class="noData" style="display: none">
+                                                        <p>"<span></span>" 검색 결과 없음</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-
-
+                                <!-- <div id="tab2" class="tab-cont"></div> -->
                             </div>
-                            <!-- <div id="tab2" class="tab-cont"></div> -->
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="quick_top">
+                <button type="button" class="btn-top">TOP</button>
+            </div>
         </div>
+    </body>
+    <script>
+        const schInput = $('.input-box.search input');
+        const listItems = $('.sch-result-area li');
 
-        <div class="quick_top">
-            <button type="button" class="btn-top">TOP</button>
-        </div>
-    </div>
-</body>
-<script>
+        schInput.on('input', function () {
+            const searchText = $(this).val().trim().toLowerCase();
 
+            if (searchText === '') {
+                listItems.show();
+                $('.noData').hide();
+                return;
+            }
 
-    const schInput = $('.input-box.search input');
-    const listItems = $(".sch-result-area li");
+            let hasResults = false;
 
-    schInput.on("input", function () {
-        const searchText = $(this).val().trim().toLowerCase();
+            listItems.each(function () {
+                const linkText = $(this).find('a').text().toLowerCase();
+                if (linkText.includes(searchText)) {
+                    $(this).show();
+                    hasResults = true;
+                } else {
+                    $(this).hide();
+                }
+            });
 
-        if (searchText === "") {
-            listItems.show();
-            $(".noData").hide();
-            return;
-        }
-
-        let hasResults = false;
-
-        listItems.each(function () {
-            const linkText = $(this).find("a").text().toLowerCase();
-            if (linkText.includes(searchText)) {
-                $(this).show();
-                hasResults = true;
+            if (hasResults) {
+                $('.noData').hide();
             } else {
-                $(this).hide();
+                $('.noData').show().find('span').text(searchText);
             }
         });
 
-        if (hasResults) {
-            $(".noData").hide();
-        } else {
-            $(".noData").show().find('span').text(searchText);
-        }
-    });
-
-    $(".btn-inp-del").on("click", function () {
-        $("input[type='text']").val("");
-        listItems.show();
-        $(".noData").hide();
-    });
-</script>
-
+        $('.btn-inp-del').on('click', function () {
+            $("input[type='text']").val('');
+            listItems.show();
+            $('.noData').hide();
+        });
+    </script>
 </html>
