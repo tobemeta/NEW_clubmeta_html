@@ -555,12 +555,13 @@ h1 {
             padding: 0;
         }
         .img {
-            min-width: 4.8rem;
+            width: 4.8rem;
             height: 4.8rem;
             border-radius: 50%;
             overflow: hidden;
             border: 2px solid #e7e7e7;
             box-sizing: $sizing;
+            flex-shrink: 0;
         }
         a {
             align-items: center;
@@ -744,13 +745,14 @@ h1 {
             gap: 0.8rem;
         }
         .alarm-img {
-            min-width: 4.8rem;
+            width: 4.8rem;
             height: 4.8rem;
             border-radius: 50%;
             box-sizing: $sizing;
             overflow: hidden;
             border: 2px solid #e7e7e7;
             overflow: hidden;
+            flex-shrink: 0;
         }
         .alarm-text {
             display: flex;
@@ -769,11 +771,12 @@ h1 {
             }
         }
         .alarm-freeview {
-            min-width: 4.8rem;
+            width: 4.8rem;
             height: 6.4rem;
             border-radius: 1.6rem;
             box-shadow: $shadow;
             overflow: hidden;
+            flex-shrink: 0;
         }
         .img {
             width: 100%;
