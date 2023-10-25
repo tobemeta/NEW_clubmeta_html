@@ -130,11 +130,12 @@
 
     .comment-img {
         overflow: hidden;
-        min-width: 3.2rem;
+        width: 3.2rem;
         height: 3.2rem;
         border: 2px solid #fff;
         border-radius: 50%;
         box-sizing: $sizing;
+        flex-shrink: 0;
         @include imgCenter();
     }
 

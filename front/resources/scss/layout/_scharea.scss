@@ -19,8 +19,8 @@
         }
         .btn-del {
             width: 2.4rem;
-            min-width: 2.4rem;
             height: 2.4rem;
+            flex-shrink: 0;
         }
     }
 

@@ -125,7 +125,7 @@
             flex-direction: column;
             margin-top: -1.8rem;
             .user-img {
-                min-width: 3.6rem;
+                width: 3.6rem;
                 height: 3.6rem;
                 margin-bottom: 0.8rem;
                 border-radius: 50%;
@@ -134,6 +134,7 @@
                 @include imgCenter();
                 border: 2px solid #fff;
                 box-shadow: $shadow;
+                flex-shrink: 0;
             }
             .user-name {
                 font-size: 1.4rem;
@@ -535,10 +536,11 @@
         }
         dt {
             position: relative;
-            min-width: 10rem;
+            width: 10rem;
             padding-left: 3.2rem;
             box-sizing: $sizing;
             color: #404040;
+            flex-shrink: 0;
             &:before {
                 display: block;
                 content: '';

@@ -1094,7 +1094,7 @@ h1 {
             li {
                 width: 14.1rem;
                 height: auto;
-                min-width: 14.1rem;
+                flex-shrink: 0;
             }
         }
         a {
@@ -1115,7 +1115,7 @@ h1 {
             }
             .info {
                 .user-img {
-                    min-width: 3.2rem;
+                    width: 3.2rem;
                     height: 3.2rem;
                     margin-right: 0.4rem;
                     border-radius: 50%;
@@ -1124,6 +1124,7 @@ h1 {
                     @include imgCenter();
                     border: 2px solid #fff;
                     box-shadow: $shadow;
+                    flex-shrink: 0;
                 }
             }
             &.card {
