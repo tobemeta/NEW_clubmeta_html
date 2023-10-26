@@ -719,7 +719,18 @@
             background-size: cover;
         }
     }
+
+    &.type2 {
+        height: calc(100vh - 48px);
+        .body-title {
+            &:before {
+                @include bg($src: '../images/img/img_secession02.png');
+            }
+        }
+    }
 }
+// 유저 신고 후 및 탈퇴 유저 프로필 진입시
+
 .no-internet-area {
     display: flex;
     flex-direction: column;

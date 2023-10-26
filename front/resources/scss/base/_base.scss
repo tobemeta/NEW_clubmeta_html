@@ -76,10 +76,16 @@
 .gray {
     color: $gray;
 }
+.red {
+    color: $red-color;
+}
 
 // flex
 .flex {
     display: flex;
+}
+.flex-inline {
+    display: inline-flex;
 }
 .flex-center {
     display: flex;
