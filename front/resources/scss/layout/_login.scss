@@ -584,6 +584,13 @@
             display: flex;
             padding: 1.6rem;
             border-top: 1px solid #e7e7e7;
+            .body-sub-title {
+                width: 100%;
+                word-break: break-all;
+                img {
+                    max-width: 100%;
+                }
+            }
         }
     }
     &.-img {
@@ -690,11 +697,15 @@
 }
 // 탈퇴 확인
 .secede-area {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     padding: 0 1.6rem;
     box-sizing: $sizing;
     .sub-title {
@@ -704,6 +715,7 @@
         position: relative;
         padding-top: 25.8rem;
         text-align: center;
+        word-break: break-all;
         &:before {
             display: flex;
             align-items: center;
@@ -721,7 +733,6 @@
     }
 
     &.type2 {
-        height: calc(100vh - 48px);
         .body-title {
             &:before {
                 @include bg($src: '../images/img/img_secession02.png');

@@ -292,6 +292,11 @@
             height: auto;
             overflow: hidden;
             border-radius: 2.4rem;
+            .img {
+                img {
+                    position: relative;
+                }
+            }
             &:before {
                 display: block;
                 content: '';
