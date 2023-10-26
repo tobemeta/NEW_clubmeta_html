@@ -56,11 +56,22 @@
                         <p class="mb-24">소학교 때 책상을 같이 했던 아이들의 이름과 패, 경, 옥 이런 이국소녀들의 이름과 벌써 아기 어머니된 계집애들의 이름과, 가난한 이웃
                             사람들의 이름과, 비둘기, 강아지, 토끼, 노새, 노루, 프랑시스 잠, 라이너 마리아 릴케 이런 시인의 이름을 불러 봅니다.</p>
                     </div>
+                    <p class="body-title red">탈퇴 시 회원님께서 보유하고 있는 Shoe는 즉시 회수되며, 재가입 시 다시 복구되지 않습니다.</p>
+                    <!-- 2023-10-26 추가 및 변경 -->
+                    <div class="rdo-box right mt-24">
+                        <input type="radio" id="rdo01" name="agree">
+                        <label for="rdo01">위 내용을 확인했고, 동의합니다.</label>
+                    </div>
+                        
+                    <div class="btn-box mt-16">
+                        <button type="button" class="btn btn-primary" disabled="disabled" onclick="secede()">다음</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <article class="layerpopup-box bottom is-active is-animation" id="bottomViewPop" role="dialog">
+    <!-- 2023-10-26 삭제 -->
+    <!-- <article class="layerpopup-box bottom is-active is-animation" id="bottomViewPop" role="dialog">
         <div class="layer-popup">
             <header class="layer-header">
                 <h1 class="pop-title"></h1>
@@ -70,11 +81,7 @@
 
             <div class="layer-content pb-88">
                 <div class="layer-inner">
-                    <p class="body-title">탈퇴 시 회원님께서 보유하고 있는 Shoe는 즉시 회수되며, 재가입 시 다시 복구되지 않습니다.</p>
-                    <div class="rdo-box right mt-24">
-                        <input type="radio" id="rdo01" name="agree">
-                        <label for="rdo01">위 내용을 확인했고, 동의합니다.</label>
-                    </div>
+                    
 
                 </div>
             </div>
@@ -84,12 +91,11 @@
                     onclick="secede()">다음</button>
             </div>
         </div>
-        <!-- //layer-popup -->
-    </article>
+    </article> -->
 </body>
 <script>
     var $inpAgree = $('input[name="agree"]')
-    var $btnPrimary = $('.layerpopup-box.bottom .btn-primary')
+    var $btnPrimary = $('.btn-primary')
     $inpAgree.on('change', function () {
         if ($(this).is(":checked")) {
             $btnPrimary.prop('disabled', false);
@@ -100,7 +106,6 @@
 
     function secede() {
         location.href = 'CLMT07_01017.html';
-        ui.popup.close('#bottomViewPop');
     }
 </script>
 
