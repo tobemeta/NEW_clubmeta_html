@@ -315,6 +315,8 @@
             border-radius: 50%;
             overflow: hidden;
             object-fit: cover;
+            border: 0.2rem solid #cfcfcf;
+            box-sizing: border-box;
         }
         .prf-apply {
             position: absolute;

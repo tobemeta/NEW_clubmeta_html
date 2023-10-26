@@ -22,15 +22,15 @@
 
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   // "editor.formatOnSave": true,
-  "[html]": {
-    "editor.formatOnSave": true
-  },
+  // "[html]": {
+  //   "editor.formatOnSave": true
+  // },
   "[scss]": {
     "editor.formatOnSave": true
   },
-  "[javascript]": {
-    "editor.formatOnSave": true
-  },
+  // "[javascript]": {
+  //   "editor.formatOnSave": true
+  // },
   "prettier.tabWidth": 4,
   "prettier.singleQuote": true,
   "prettier.printWidth": 9999,
