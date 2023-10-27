@@ -217,6 +217,21 @@ h1 {
         left: 0;
         background-position: right;
     }
+    &.r-rank {
+        .rank-list {
+            li {
+                .img {
+                    width: 4.8rem;
+                    height: 4.8rem;
+                    margin-right: 0;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    border: 2px solid #e7e7e7;
+                    box-sizing: $sizing;
+                }
+            }
+        }
+    }
 }
 
 .challenge-box {
@@ -1224,21 +1239,6 @@ h1 {
 
             &.is-stop {
                 background-image: url('../images/ico/ico_w_play.svg');
-            }
-        }
-    }
-}
-.category-area.r-rank {
-    .rank-list {
-        li {
-            .img {
-                width: 4.8rem;
-                height: 4.8rem;
-                margin-right: 0;
-                border-radius: 50%;
-                overflow: hidden;
-                border: 2px solid #e7e7e7;
-                box-sizing: $sizing;
             }
         }
     }
