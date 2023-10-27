@@ -533,8 +533,19 @@
     }
 }
 
-.notice-info-img {
-    height: calc(100vh - 48px);
+.notice-info-cont {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    margin-top: 2.4rem;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    text-align: center;
+    word-break: break-all;
+    color: #000;
+    img {
+        max-width: 100%;
+    }
 }
 .banner_img {
     @include img();
