@@ -1,11 +1,6 @@
-// html,
 body {
-    // min-width: $min-width;
-    // width: 100%;
     height: -vh(100);
     background-color: $main-bg-color;
-}
-body {
     color: $base-color;
     font-weight: $normal;
     &.popup-open,
