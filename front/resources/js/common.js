@@ -2,6 +2,7 @@ const ui = {
     init: function () {
         const _this = this;
 
+        _this.vhChk();
         _this.header();
         _this.top();
         _this.tab();
@@ -11,6 +12,10 @@ const ui = {
         _this.tooltip.init();
         _this.select.init();
         _this.lottie();
+    },
+    vhChk: function () {
+        const $vh = window.innerHeight * 0.01;
+        $('html').css('--vh', $vh + 'px');
     },
     header: () => {
         let scrolling;
@@ -895,3 +900,7 @@ const ui = {
 $(document).ready(() => {
     ui.init();
 });
+
+$(window).on('resize', function(){
+    ui.vhChk();
+})

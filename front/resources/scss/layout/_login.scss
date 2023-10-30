@@ -145,7 +145,7 @@
     }
 
     &.pass {
-        height: calc(100vh - 120px);
+        height: -vh(100, 120px, true);
         justify-content: center;
         margin-top: -2.4rem;
     }
@@ -749,7 +749,7 @@
     flex-direction: column;
     justify-content: center;
     position: relative;
-    height: calc(100vh - 72px);
+    height: -vh(100, 72px, true);
     padding: 0 1.6rem;
     box-sizing: $sizing;
     align-items: center;
@@ -801,11 +801,11 @@
 }
 .header + .contents {
     .no-internet-area {
-        height: calc(100vh - 176px);
+        height: -vh(100, 176px, true);
     }
 }
 .layerpopup-box.bottom {
     .no-internet-area {
-        height: calc(70vh - 132px);
+        height: -vh(70, 132px, true);
     }
 }

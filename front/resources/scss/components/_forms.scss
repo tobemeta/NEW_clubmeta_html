@@ -462,7 +462,7 @@
             padding: 2rem;
         }
         ul {
-            max-height: 60vh;
+            max-height: -vh(60);
             overflow: hidden;
             overflow-y: auto;
         }
