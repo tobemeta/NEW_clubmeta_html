@@ -136,7 +136,7 @@
         border-radius: 50%;
         box-sizing: $sizing;
         flex-shrink: 0;
-        @include imgCenter();
+        @include img();
     }
 
     .comment-info {

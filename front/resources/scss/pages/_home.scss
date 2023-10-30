@@ -131,7 +131,7 @@
                 border-radius: 50%;
                 box-sizing: $sizing;
                 overflow: hidden;
-                @include imgCenter();
+                @include img();
                 border: 2px solid #fff;
                 box-shadow: $shadow;
                 flex-shrink: 0;

@@ -12,7 +12,7 @@ body {
 }
 
 .wrap {
-    width: 100%;
+    height: 100%;
     &.lock-wrap {
         overflow: hidden;
     }
@@ -40,7 +40,7 @@ body.login {
 }
 
 .contents {
-    // padding-bottom: 2.4rem;
+    height: 100%;
     box-sizing: $sizing;
 }
 
@@ -62,7 +62,7 @@ body.login {
 }
 
 .img {
-    @include imgCenter();
+    @include img();
 }
 
 .quick_top {

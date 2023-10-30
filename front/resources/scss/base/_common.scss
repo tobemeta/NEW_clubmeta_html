@@ -342,7 +342,7 @@ h1 {
             box-shadow: $shadow;
             border-radius: 2.4rem;
             overflow: hidden;
-            @include imgCenter();
+            @include img();
             img {
                 border-radius: 2.4rem;
             }
@@ -1136,7 +1136,7 @@ h1 {
                     border-radius: 50%;
                     box-sizing: $sizing;
                     overflow: hidden;
-                    @include imgCenter();
+                    @include img();
                     border: 2px solid #fff;
                     box-shadow: $shadow;
                     flex-shrink: 0;

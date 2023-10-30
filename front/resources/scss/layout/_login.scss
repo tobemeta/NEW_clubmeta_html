@@ -703,7 +703,7 @@
     top: 50%;
     left: 50%;
     width: 100%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, calc(-50% - 4.8rem));
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -735,6 +735,7 @@
     }
 
     &.type2 {
+        transform: translate(-50%, -50%);
         .body-title {
             &:before {
                 @include bg($src: '../images/img/img_secession02.png');
