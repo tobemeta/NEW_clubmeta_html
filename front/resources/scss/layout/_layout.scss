@@ -1,5 +1,5 @@
 body {
-    height: 100%;
+    min-height: -vh(100);
     background-color: $main-bg-color;
     color: $base-color;
     font-weight: $normal;
@@ -12,7 +12,6 @@ body {
 }
 
 .wrap {
-    height: 100%;
     &.lock-wrap {
         overflow: hidden;
     }
@@ -37,10 +36,6 @@ body.login {
     .btn-more {
         color: #585858;
     }
-}
-
-.contents {
-    box-sizing: $sizing;
 }
 
 .section {
