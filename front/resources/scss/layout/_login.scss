@@ -664,7 +664,7 @@
 .updating-box {
     width: 100%;
     .center {
-        position: fixed;
+        position: absolute;
         top: 50%;
         left: 50%;
         width: 100%;
@@ -689,7 +689,7 @@
         }
     }
     .bottom {
-        position: fixed;
+        position: absolute;
         left: 0;
         bottom: 9.6rem;
         width: 100%;
@@ -699,7 +699,7 @@
 }
 // 탈퇴 확인
 .secede-area {
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
     width: 100%;
