@@ -1081,10 +1081,10 @@
             },
             on: {
                 init: function () {
-                    // 2023-09-14 수정
-                    var duplicate = this.loopedSlides * 2;
-                    var slideidx = this.slides.length - duplicate;
-
+                    // 2023-10-30 수정                    
+                    // var duplicate = this.loopedSlides * 2;
+                    var slideidx = this.slides.length;
+                    
                     // 가상 slide 뺀 slide 총 개수
                     console.log(slideidx)
                     $('.event-swiper .swiper-wrapper .swiper-slide').addClass('changed');
