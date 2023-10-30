@@ -479,12 +479,13 @@
             justify-content: space-around;
             margin-top: 1.6rem;
             p {
-                display: inline-block;
+                display: inline-flex;
                 position: relative;
+                max-width: calc(100% / 3);
                 padding-left: 1.8rem;
-                padding-right: 1.2rem;
                 font-size: 1.2rem;
                 line-height: 1.7rem;
+                box-sizing: $sizing;
                 color: #585858;
                 &:before {
                     display: block;
@@ -506,6 +507,9 @@
                 }
                 span {
                     display: inline-block;
+                    &.num {
+                        @include ellipsis();
+                    }
                 }
             }
         }
