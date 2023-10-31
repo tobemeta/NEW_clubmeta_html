@@ -245,7 +245,7 @@
                             </div>
                             <div class="btn-wrap text-center mt-5">
                                 <button type="button" class="btn btn-lg btn-secondary" onclick="bsConfirm('정말 수정을 취소하시겠습니까? 취소하시면 처음부터 재입력해야 합니다.')">취소</button>
-                                <button type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#pwReapplyPop">저장</button>
+                                <button type="button" class="btn btn-lg btn-primary" onclick="bsConfirm('수정사항을 저장하시겠습니까?')">저장</button>
                                 <!-- 저장버튼 선택 시 오류가 있을 경우, 팝업메세지
                                  “이미 등록된 아이디입니다.” , “아이디 형식이 맞지 않습니다.”-->
                             </div>
@@ -261,8 +261,6 @@
         <div data-include="../include/logoutModal.html"></div>
         <!-- changePw Modal-->
         <div data-include="../include/pop/changePwModal.html"></div>
-
-        <div data-include="BO07_00p01.html"></div>
     </body>
     <script src="../../datatables/jquery.dataTables.min.js"></script>
     <script src="../../datatables/dataTables.bootstrap4.min.js"></script>

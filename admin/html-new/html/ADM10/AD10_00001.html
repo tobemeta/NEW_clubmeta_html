@@ -1,568 +1,518 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>클럽메타 관리자 - Shoe 내역</title>
+        <!-- js -->
+        <script src="../include/head.js"></script>
+        <script src="../../js/custom.js"></script>
+    </head>
 
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>클럽메타 관리자 - Shoe 내역</title>
-    <!-- js -->
-    <script src="../include/head.js"></script>
-    <script src="../../js/custom.js"></script>
-</head>
+    <body>
+        <div id="wrapper" class="wrapper">
+            <!-- 사이드바 -->
+            <div data-include="../include/sidebar.html"></div>
+            <!-- //사이드바 -->
+            <div id="content-wrapper" class="d-flex flex-column bg-white">
+                <!-- 컨텐츠 본문 -->
+                <div id="content">
+                    <!--  -->
+                    <div data-include="../include/topbar.html"></div>
 
-<body>
-    <div id="wrapper" class="wrapper">
-        <!-- 사이드바 -->
-        <div data-include="../include/sidebar.html"></div>
-        <!-- //사이드바 -->
-        <div id="content-wrapper" class="d-flex flex-column bg-white">
-            <!-- 컨텐츠 본문 -->
-            <div id="content">
-                <!--  -->
-                <div data-include="../include/topbar.html"></div>
-
-                <div class="container-fluid" role="main">
-                    <!-- 페이지 경로 -->
-                    <div class="page-breadcrumb" aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item">
-                                <i class="fas fa-home d-flex align-items-center"></i>
-                            </li>
-                            <li class="breadcrumb-item">Shoe/MDT 관리</li>
-                            <li class="breadcrumb-item">Shoe 내역</li>
-                        </ol>
-                    </div>
-                    <!-- //페이지 경로 -->
-                    <div class="main">
-                        <!-- 제목 및 등록버튼 -->
-                        <div class="row clearfix mt-4 mb-4">
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                <h2 class="h3 text-gray-800 float-left">Shoe 내역</h2>
-                                <div class="float-right">
-                                    <button type="button" class="btn btn-primary" data-toggle="modal"
-                                        data-target="#shoeAmountPop">지급/차감</button>
+                    <div class="container-fluid" role="main">
+                        <!-- 페이지 경로 -->
+                        <div class="page-breadcrumb" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <i class="fas fa-home d-flex align-items-center"></i>
+                                </li>
+                                <li class="breadcrumb-item">Shoe/MDT 관리</li>
+                                <li class="breadcrumb-item">Shoe 내역</li>
+                            </ol>
+                        </div>
+                        <!-- //페이지 경로 -->
+                        <div class="main">
+                            <!-- 제목 및 등록버튼 -->
+                            <div class="row clearfix mt-4 mb-4">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h2 class="h3 text-gray-800 float-left">Shoe 내역</h2>
+                                    <div class="float-right">
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#shoeAmountPop">지급/차감</button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- //제목 및 등록버튼 -->
-                        <!-- 탭 메뉴 -->
-                        <ul class="nav nav-tabs sub-tab" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="sub-tab1" data-toggle="tab"
-                                    data-target="#sub-panel1" type="button" role="tab">전체</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="sub-tab2" data-toggle="tab" data-target="#sub-panel2"
-                                    type="button" role="tab">AI챌린지</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="sub-tab3" data-toggle="tab" data-target="#sub-panel3"
-                                    type="button" role="tab">음원챌린지</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="sub-tab4" data-toggle="tab" data-target="#sub-panel4"
-                                    type="button" role="tab">로그인</button>
-                            </li>
+                            <!-- //제목 및 등록버튼 -->
+                            <!-- 탭 메뉴 -->
+                            <ul class="nav nav-tabs sub-tab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="sub-tab1" data-toggle="tab" data-target="#sub-panel1" type="button" role="tab">전체</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="sub-tab2" data-toggle="tab" data-target="#sub-panel2" type="button" role="tab">AI챌린지</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="sub-tab3" data-toggle="tab" data-target="#sub-panel3" type="button" role="tab">음원챌린지</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="sub-tab4" data-toggle="tab" data-target="#sub-panel4" type="button" role="tab">로그인</button>
+                                </li>
 
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="sub-tab5" data-toggle="tab" data-target="#sub-panel5"
-                                    type="button" role="tab">추천인</button>
-                            </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="sub-tab5" data-toggle="tab" data-target="#sub-panel5" type="button" role="tab">추천인</button>
+                                </li>
 
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="sub-tab6" data-toggle="tab" data-target="#sub-panel6"
-                                    type="button" role="tab">작곡가</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="sub-tab7" data-toggle="tab" data-target="#sub-panel7"
-                                    type="button" role="tab">배지</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="sub-tab8" data-toggle="tab" data-target="#sub-panel8"
-                                    type="button" role="tab">투표</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="sub-tab9" data-toggle="tab" data-target="#sub-panel9"
-                                    type="button" role="tab">기타</button>
-                            </li>
-                        </ul>
-                        <!-- //탭 메뉴 -->
-                        <!-- 탭 컨탠츠 -->
-                        <div class="tab-content">
-                            <div class="tab-pane fade show active" id="sub-panel1" role="tabpanel"
-                                aria-labelledby="sub-tab1">
-                                <div class="dashboard-box mb-4">
-                                    <div class="dashboard">
-                                        <dl>
-                                            <dt>총 누적 지급 Shoe</dt>
-                                            <dd><strong class="fz-lg fc-yellow">851,512,521,250</strong></dd>
-                                        </dl>
-                                        <dl>
-                                            <dt>총 누적 차감 Shoe</dt>
-                                            <dd><strong class="fz-lg fc-yellow">-414,271,562,200</strong></dd>
-                                        </dl>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="sub-tab6" data-toggle="tab" data-target="#sub-panel6" type="button" role="tab">작곡가</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="sub-tab7" data-toggle="tab" data-target="#sub-panel7" type="button" role="tab">배지</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="sub-tab8" data-toggle="tab" data-target="#sub-panel8" type="button" role="tab">투표</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="sub-tab9" data-toggle="tab" data-target="#sub-panel9" type="button" role="tab">기타</button>
+                                </li>
+                            </ul>
+                            <!-- //탭 메뉴 -->
+                            <!-- 탭 컨탠츠 -->
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="sub-panel1" role="tabpanel" aria-labelledby="sub-tab1">
+                                    <div class="dashboard-box mb-4">
+                                        <div class="dashboard">
+                                            <dl>
+                                                <dt>총 누적 지급 Shoe</dt>
+                                                <dd><strong class="fz-lg fc-yellow">851,512,521,250</strong></dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>총 누적 차감 Shoe</dt>
+                                                <dd><strong class="fz-lg fc-yellow">-414,271,562,200</strong></dd>
+                                            </dl>
+                                        </div>
                                     </div>
-                                </div>
-                                <!-- 검색 영역 -->
-                                <div class="search-wrap">
-                                    <div class="form-box">
-                                        <div class="form-box-row">
-                                            <div class="form-box-item">
-                                                <div class="form-box-label">구분</div>
-                                                <div class="form-box-cont">
-                                                    <div class="custom-control-wrap">
-                                                        <label
-                                                            class="custom-control custom-checkbox custom-control-inline">
-                                                            <input type="checkbox" name="chk"
-                                                                class="custom-control-input" checked />
-                                                            <span class="custom-control-label">지급</span>
-                                                        </label>
-                                                        <label
-                                                            class="custom-control custom-checkbox custom-control-inline">
-                                                            <input type="checkbox" name="chk"
-                                                                class="custom-control-input" checked />
-                                                            <span class="custom-control-label">차감</span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-box-row">
-                                            <div class="form-box-item">
-                                                <div class="form-box-label">검색어</div>
-                                                <div class="form-box-cont">
-                                                    <div class="form-row">
-                                                        <div class="col-2">
-                                                            <select class="custom-select">
-                                                                <option value="1">전체</option>
-                                                                <option value="2">닉네임</option>
-                                                                <option value="3">리워드 제목</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="flex-fill">
-                                                            <input type="text" class="form-control"
-                                                                placeholder="검색어 입력" />
+                                    <!-- 검색 영역 -->
+                                    <div class="search-wrap">
+                                        <div class="form-box">
+                                            <div class="form-box-row">
+                                                <div class="form-box-item">
+                                                    <div class="form-box-label">구분</div>
+                                                    <div class="form-box-cont">
+                                                        <div class="custom-control-wrap">
+                                                            <label class="custom-control custom-checkbox custom-control-inline">
+                                                                <input type="checkbox" name="chk" class="custom-control-input" checked />
+                                                                <span class="custom-control-label">지급</span>
+                                                            </label>
+                                                            <label class="custom-control custom-checkbox custom-control-inline">
+                                                                <input type="checkbox" name="chk" class="custom-control-input" checked />
+                                                                <span class="custom-control-label">차감</span>
+                                                            </label>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-
-                                        <div class="form-box-row">
-                                            <div class="form-box-item">
-                                                <div class="form-box-label">등록기간</div>
-                                                <div class="form-box-cont">
-                                                    <div class="input-daterange-btn">
-                                                        <div class="input-group">
-                                                            <input type="date" class="form-control" placeholder="시작일" />
-                                                            <div class="input-group-prepend">
-                                                                <div class="input-group-text">~</div>
+                                            <div class="form-box-row">
+                                                <div class="form-box-item">
+                                                    <div class="form-box-label">검색어</div>
+                                                    <div class="form-box-cont">
+                                                        <div class="form-row">
+                                                            <div class="col-2">
+                                                                <select class="custom-select">
+                                                                    <option value="1">전체</option>
+                                                                    <option value="2">닉네임</option>
+                                                                    <option value="3">리워드 제목</option>
+                                                                </select>
                                                             </div>
-                                                            <input type="date" class="form-control" placeholder="종료일" />
+                                                            <div class="flex-fill">
+                                                                <input type="text" class="form-control" placeholder="검색어 입력" />
+                                                            </div>
                                                         </div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
-                                                        <div class="btn-group" role="group" aria-label="기간 선택 버튼">
-                                                            <button type="button"
-                                                                class="btn btn-outline-secondary">오늘</button>
-                                                            <button type="button"
-                                                                class="btn btn-outline-secondary active">7일</button>
-                                                            <button type="button"
-                                                                class="btn btn-outline-secondary">15일</button>
-                                                            <button type="button"
-                                                                class="btn btn-outline-secondary">1개월</button>
-                                                            <button type="button"
-                                                                class="btn btn-outline-secondary">3개월</button>
-                                                            <button type="button"
-                                                                class="btn btn-outline-secondary">1년</button>
-                                                            <!-- active 클래스로  활성화 -->
+                                            <div class="form-box-row">
+                                                <div class="form-box-item">
+                                                    <div class="form-box-label">등록기간</div>
+                                                    <div class="form-box-cont">
+                                                        <div class="input-daterange-btn">
+                                                            <div class="input-group">
+                                                                <input type="date" class="form-control" placeholder="시작일" />
+                                                                <div class="input-group-prepend">
+                                                                    <div class="input-group-text">~</div>
+                                                                </div>
+                                                                <input type="date" class="form-control" placeholder="종료일" />
+                                                            </div>
+
+                                                            <div class="btn-group" role="group" aria-label="기간 선택 버튼">
+                                                                <button type="button" class="btn btn-outline-secondary">오늘</button>
+                                                                <button type="button" class="btn btn-outline-secondary active">7일</button>
+                                                                <button type="button" class="btn btn-outline-secondary">15일</button>
+                                                                <button type="button" class="btn btn-outline-secondary">1개월</button>
+                                                                <button type="button" class="btn btn-outline-secondary">3개월</button>
+                                                                <button type="button" class="btn btn-outline-secondary">1년</button>
+                                                                <!-- active 클래스로  활성화 -->
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="btn-wrap">
-                                    <button type="submit" class="btn btn-dark"><i class="fa fa-search mr-1"></i>
-                                        검색</button>
-                                </div>
-                                <div class="title-wrap mt-5">
-                                    <div class="left">검색 <strong class="fc-red">5</strong>건 / 전체 <strong
-                                            class="fc-red">15</strong>건</div>
-                                    <div class="right">
-                                        <select class="custom-select custom-select-sm">
-                                            <option value="1">10</option>
-                                            <option value="2">25</option>
-                                            <option value="3">50</option>
-                                            <option value="4">100</option>
-                                        </select>
+                                    <div class="btn-wrap">
+                                        <button type="submit" class="btn btn-dark"><i class="fa fa-search mr-1"></i> 검색</button>
                                     </div>
-                                </div>
-                                <div class="bootstrap-table bootstrap4">
-                                    <div class="fixed-table-toolbar"></div>
-                                    <div class="fixed-table-container" style="padding-bottom: 0px">
-                                        <div class="fixed-table-header" style="display: none">
-                                            <table></table>
+                                    <div class="title-wrap mt-5">
+                                        <div class="left">검색 <strong class="fc-red">5</strong>건 / 전체 <strong class="fc-red">15</strong>건</div>
+                                        <div class="right">
+                                            <select class="custom-select custom-select-sm">
+                                                <option value="1">10</option>
+                                                <option value="2">25</option>
+                                                <option value="3">50</option>
+                                                <option value="4">100</option>
+                                            </select>
                                         </div>
-                                        <div class="fixed-table-body">
-                                            <div class="fixed-table-loading table table-bordered table-hover"
-                                                style="top: 42.7969px">
-                                                <span class="loading-wrap">
-                                                    <span class="loading-text">데이터를 불러오는 중입니다</span>
-                                                    <span class="animation-wrap"><span
-                                                            class="animation-dot"></span></span>
-                                                </span>
+                                    </div>
+                                    <div class="bootstrap-table bootstrap4">
+                                        <div class="fixed-table-toolbar"></div>
+                                        <div class="fixed-table-container" style="padding-bottom: 0px">
+                                            <div class="fixed-table-header" style="display: none">
+                                                <table></table>
                                             </div>
-                                            <table id="dataTableOrder" class="table table-hover table-bordered"
-                                                data-pagination="true">
-                                                <thead>
-                                                    <tr>
-                                                        <th class="no-sorting" data-field="0">
-                                                            <div class="th-inner">번호</div>
-                                                            <div class="fht-cell"></div>
-                                                        </th>
-                                                        <th data-field="1">
-                                                            <div class="th-inner">닉네임</div>
-                                                            <div class="fht-cell"></div>
-                                                        </th>
-                                                        <th data-field="2">
-                                                            <div class="th-inner">리워드 제목</div>
-                                                            <div class="fht-cell"></div>
-                                                        </th>
-                                                        <th data-field="3">
-                                                            <div class="th-inner">일자</div>
-                                                            <div class="fht-cell"></div>
-                                                        </th>
-                                                        <th data-field="4">
-                                                            <div class="th-inner">Shoe</div>
-                                                            <div class="fht-cell"></div>
-                                                        </th>
-                                                        <th class="no-sorting" data-field="5">
-                                                            <div class="th-inner">총 누적 shoe</div>
-                                                            <div class="fht-cell"></div>
-                                                        </th>
-                                                        <th class="no-sorting" data-field="6">
-                                                            <div class="th-inner">구분</div>
-                                                            <div class="fht-cell"></div>
-                                                        </th>
-                                                        <th class="no-sorting" data-field="7">
-                                                            <div class="th-inner">비고</div>
-                                                            <div class="fht-cell"></div>
-                                                        </th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <!-- <tr class="no-records-found">
+                                            <div class="fixed-table-body">
+                                                <div class="fixed-table-loading table table-bordered table-hover" style="top: 42.7969px">
+                                                    <span class="loading-wrap">
+                                                        <span class="loading-text">데이터를 불러오는 중입니다</span>
+                                                        <span class="animation-wrap"><span class="animation-dot"></span></span>
+                                                    </span>
+                                                </div>
+                                                <table id="dataTableOrder" class="table table-hover table-bordered" data-pagination="true">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="no-sorting" data-field="0">
+                                                                <div class="th-inner">번호</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="1">
+                                                                <div class="th-inner">닉네임</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="2">
+                                                                <div class="th-inner">리워드 제목</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="3">
+                                                                <div class="th-inner">일자</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th data-field="4">
+                                                                <div class="th-inner">Shoe</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th class="no-sorting" data-field="5">
+                                                                <div class="th-inner">총 누적 shoe</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th class="no-sorting" data-field="6">
+                                                                <div class="th-inner">구분</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                            <th class="no-sorting" data-field="7">
+                                                                <div class="th-inner">비고</div>
+                                                                <div class="fht-cell"></div>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- <tr class="no-records-found">
                                                         <td colspan="7">일치하는 검색결과가 없습니다.</td>
                                                     </tr> -->
-                                                    <tr class="" data-index="0">
-                                                        <td>25</td>
-                                                        <td><a href="../ADM04/AD04_00002.html">닉네임1</a></td>
-                                                        <td class="text-left">투비챌린지 참가</td>
-                                                        <td>2023.06.26 16:00:00</td>
-                                                        <td>+100</td>
-                                                        <td>251,100</td>
-                                                        <td>지급</td>
-                                                        <td class="text-left"></td>
-                                                    </tr>
-                                                    <tr data-index="1">
-                                                        <td>24</td>
-                                                        <td><a href="../ADM04/AD04_00002.html">닉네임2</a></td>
-                                                        <td class="text-left">작곡가 음원 등록 리워드</td>
-                                                        <td>2023.06.26 16:00:00</td>
-                                                        <td>+20</td>
-                                                        <td>-21,520</td>
-                                                        <td>지급</td>
-                                                        <td class="text-left"></td>
-                                                    </tr>
-                                                    <tr data-index="2">
-                                                        <td>23</td>
-                                                        <td><a href="../ADM04/AD04_00002.html">닉네임3</a></td>
-                                                        <td class="text-left">로그인 리워드</td>
-                                                        <td>2023.06.26 16:00:00</td>
-                                                        <td>+20</td>
-                                                        <td>-51,200</td>
-                                                        <td>지급</td>
-                                                        <td class="text-left"></td>
-                                                    </tr>
-                                                    <tr data-index="3">
-                                                        <td>22</td>
-                                                        <td><a href="../ADM04/AD04_00002.html">닉네임4</a></td>
-                                                        <td class="text-left">00챌린지 오픈</td>
-                                                        <td>2023.06.26 16:00:00</td>
-                                                        <td>-10</td>
-                                                        <td>-51,200</td>
-                                                        <td>차감</td>
-                                                        <td class="text-left"></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="fixed-table-pagination">
-                                            <!-- 왼쪽 버튼 영역 -->
-                                            <div class="float-left"></div>
-                                            <!-- 오른쪽 버튼 영역 -->
-                                            <div class="float-right"></div>
-                                            <div class="pagination-wrap pagination">
-                                                <!-- 11개 이상 페이지 생성시 page-at-first, page-at-last의 d-none 클래스 삭제-->
-                                                <ul class="pagination">
-                                                    <li class="page-item page-at-first d-none"><a class="page-link"
-                                                            aria-label="previous page" href="javascript:void(0)">‹‹</a>
-                                                    </li>
-                                                    <li class="page-item page-pre"><a class="page-link"
-                                                            aria-label="previous page" href="javascript:void(0)">‹</a>
-                                                    </li>
-                                                    <li class="page-item active"><a class="page-link"
-                                                            aria-label="to page 1" href="javascript:void(0)">1</a></li>
-                                                    <li class="page-item"><a class="page-link" aria-label="to page 2"
-                                                            href="javascript:void(0)">2</a></li>
-                                                    <li class="page-item page-next"><a class="page-link"
-                                                            aria-label="next page" href="javascript:void(0)">›</a></li>
-                                                    <li class="page-item page-at-last d-none"><a class="page-link"
-                                                            aria-label="next page" href="javascript:void(0)">››</a></li>
-                                                </ul>
+                                                        <tr class="" data-index="0">
+                                                            <td>25</td>
+                                                            <td><a href="../ADM04/AD04_00002.html">닉네임1</a></td>
+                                                            <td class="text-left">투비챌린지 참가</td>
+                                                            <td>2023.06.26 16:00:00</td>
+                                                            <td>+100</td>
+                                                            <td>251,100</td>
+                                                            <td>지급</td>
+                                                            <td class="text-left"></td>
+                                                        </tr>
+                                                        <tr data-index="1">
+                                                            <td>24</td>
+                                                            <td><a href="../ADM04/AD04_00002.html">닉네임2</a></td>
+                                                            <td class="text-left">작곡가 음원 등록 리워드</td>
+                                                            <td>2023.06.26 16:00:00</td>
+                                                            <td>+20</td>
+                                                            <td>-21,520</td>
+                                                            <td>지급</td>
+                                                            <td class="text-left"></td>
+                                                        </tr>
+                                                        <tr data-index="2">
+                                                            <td>23</td>
+                                                            <td><a href="../ADM04/AD04_00002.html">닉네임3</a></td>
+                                                            <td class="text-left">로그인 리워드</td>
+                                                            <td>2023.06.26 16:00:00</td>
+                                                            <td>+20</td>
+                                                            <td>-51,200</td>
+                                                            <td>지급</td>
+                                                            <td class="text-left"></td>
+                                                        </tr>
+                                                        <tr data-index="3">
+                                                            <td>22</td>
+                                                            <td><a href="../ADM04/AD04_00002.html">닉네임4</a></td>
+                                                            <td class="text-left">00챌린지 오픈</td>
+                                                            <td>2023.06.26 16:00:00</td>
+                                                            <td>-10</td>
+                                                            <td>-51,200</td>
+                                                            <td>차감</td>
+                                                            <td class="text-left"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="fixed-table-pagination">
+                                                <!-- 왼쪽 버튼 영역 -->
+                                                <div class="float-left"></div>
+                                                <!-- 오른쪽 버튼 영역 -->
+                                                <div class="float-right"></div>
+                                                <div class="pagination-wrap pagination">
+                                                    <!-- 11개 이상 페이지 생성시 page-at-first, page-at-last의 d-none 클래스 삭제-->
+                                                    <ul class="pagination">
+                                                        <li class="page-item page-at-first d-none"><a class="page-link" aria-label="previous page" href="javascript:void(0)">‹‹</a></li>
+                                                        <li class="page-item page-pre"><a class="page-link" aria-label="previous page" href="javascript:void(0)">‹</a></li>
+                                                        <li class="page-item active"><a class="page-link" aria-label="to page 1" href="javascript:void(0)">1</a></li>
+                                                        <li class="page-item"><a class="page-link" aria-label="to page 2" href="javascript:void(0)">2</a></li>
+                                                        <li class="page-item page-next"><a class="page-link" aria-label="next page" href="javascript:void(0)">›</a></li>
+                                                        <li class="page-item page-at-last d-none"><a class="page-link" aria-label="next page" href="javascript:void(0)">››</a></li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="tab-pane fade" id="sub-panel2" role="tabpanel" aria-labelledby="sub-tab2">AD10_00002</div>
+                                <div class="tab-pane fade" id="sub-panel3" role="tabpanel" aria-labelledby="sub-tab3">AD10_00003</div>
+                                <div class="tab-pane fade" id="sub-panel4" role="tabpanel" aria-labelledby="sub-tab4">AD10_00004</div>
+                                <div class="tab-pane fade" id="sub-panel5" role="tabpanel" aria-labelledby="sub-tab5">AD10_00005</div>
+                                <div class="tab-pane fade" id="sub-panel6" role="tabpanel" aria-labelledby="sub-tab6">AD10_00006</div>
+                                <div class="tab-pane fade" id="sub-panel7" role="tabpanel" aria-labelledby="sub-tab7">AD10_00007</div>
+                                <div class="tab-pane fade" id="sub-panel8" role="tabpanel" aria-labelledby="sub-tab8">AD10_00008</div>
+                                <div class="tab-pane fade" id="sub-panel9" role="tabpanel" aria-labelledby="sub-tab9">AD10_00009</div>
                             </div>
-                            <div class="tab-pane fade" id="sub-panel2" role="tabpanel" aria-labelledby="sub-tab2">
-                                AD10_00002</div>
-                            <div class="tab-pane fade" id="sub-panel3" role="tabpanel" aria-labelledby="sub-tab3">
-                                AD10_00003</div>
-                            <div class="tab-pane fade" id="sub-panel4" role="tabpanel" aria-labelledby="sub-tab4">
-                                AD10_00004</div>
-                            <div class="tab-pane fade" id="sub-panel5" role="tabpanel" aria-labelledby="sub-tab5">
-                                AD10_00005</div>
-                            <div class="tab-pane fade" id="sub-panel6" role="tabpanel" aria-labelledby="sub-tab6">
-                                AD10_00006</div>
-                            <div class="tab-pane fade" id="sub-panel7" role="tabpanel" aria-labelledby="sub-tab7">
-                                AD10_00007</div>
-                            <div class="tab-pane fade" id="sub-panel8" role="tabpanel" aria-labelledby="sub-tab8">
-                                AD10_00008</div>
-                            <div class="tab-pane fade" id="sub-panel9" role="tabpanel" aria-labelledby="sub-tab9">
-                                AD10_00009</div>
+                            <!-- //탭 컨텐츠 -->
                         </div>
-                        <!-- //탭 컨텐츠 -->
+                        <!---//contents--->
                     </div>
-                    <!---//contents--->
                 </div>
             </div>
         </div>
-    </div>
-    <!-- content Wrapper -->
-    <!-- modal popup -->
-    <div class="modal fade large" id="shoeAmountPop" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="ModalLabel">지급/차감</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="search-wrap">
-                        <div class="form-box">
-                            <div class="form-box-row">
-                                <div class="form-box-item">
-                                    <div class="form-box-label">닉네임</div>
-                                    <div class="form-box-cont">
-                                        <div class="form-row">
-                                            <div class="flex-fill">
-                                                <!-- 2023-10-19 텍스트 수정 -->
-                                                <input type="text" class="form-control" placeholder="닉네임 전체를 입력해주세요" />
+        <!-- content Wrapper -->
+        <!-- modal popup -->
+        <div class="modal fade large" id="shoeAmountPop" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel">지급/차감</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="search-wrap">
+                            <div class="form-box">
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label">닉네임</div>
+                                        <div class="form-box-cont">
+                                            <div class="form-row">
+                                                <div class="flex-fill">
+                                                    <!-- 2023-10-19 텍스트 수정 -->
+                                                    <input type="text" class="form-control" placeholder="닉네임 전체를 입력해주세요" />
+                                                </div>
+                                                <div class="col-auto ml-2">
+                                                    <button type="submit" class="btn btn-dark"><i class="fa fa-search"></i> 검색</button>
+                                                </div>
+                                                <!-- 데이터가 없는 경우, -->
+                                                <!-- <div class="text-danger w-100">존재하지 않는 닉네임입니다.</div> -->
                                             </div>
-                                            <div class="col-auto ml-2">
-                                                <button type="submit" class="btn btn-dark"><i class="fa fa-search"></i>
-                                                    검색</button>
-                                            </div>
-                                            <!-- 데이터가 없는 경우, -->
-                                            <!-- <div class="text-danger w-100">존재하지 않는 닉네임입니다.</div> -->
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row clearfix mt-4 mb-2">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <h6 class="h5 text-gray-800 float-left">&lsquo;<span>김메타</span>&rsquo; 님의 리워드(Shoe) 내역</h6>
-                        </div>
-                    </div>
-                    <div class="bootstrap-table bootstrap4">
-                        <div class="fixed-table-toolbar"></div>
-                        <div class="fixed-table-container" style="padding-bottom: 0px">
-                            <div class="fixed-table-header" style="display: none">
-                                <table></table>
+                        <div class="row clearfix mt-4 mb-2">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <h6 class="h5 text-gray-800 float-left">&lsquo;<span>김메타</span>&rsquo; 님의 리워드(Shoe) 내역</h6>
                             </div>
-                            <div class="fixed-table-body">
-                                <div class="fixed-table-loading table table-bordered table-hover"
-                                    style="top: 42.7969px">
-                                    <span class="loading-wrap">
-                                        <span class="loading-text">데이터를 불러오는 중입니다</span>
-                                        <span class="animation-wrap"><span class="animation-dot"></span></span>
-                                    </span>
+                        </div>
+                        <div class="bootstrap-table bootstrap4">
+                            <div class="fixed-table-toolbar"></div>
+                            <div class="fixed-table-container" style="padding-bottom: 0px">
+                                <div class="fixed-table-header" style="display: none">
+                                    <table></table>
                                 </div>
-                                <table id="" class="table table-hover table-bordered dataTable no-footer"
-                                    data-pagination="true">
-                                    <thead>
-                                        <tr>
-                                            <th data-field="0">
-                                                <div class="th-inner">리워드 제목</div>
-                                                <div class="fht-cell"></div>
-                                            </th>
-                                            <th data-field="1">
-                                                <div class="th-inner">일자</div>
-                                                <div class="fht-cell"></div>
-                                            </th>
-                                            <th data-field="2">
-                                                <div class="th-inner">shoe</div>
-                                                <div class="fht-cell"></div>
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="" data-index="0">
-                                            <td class="text-left">투비챌린지 참가</td>
-                                            <td>2023-06-09 16:04:20</td>
-                                            <td>+100</td>
-                                        </tr>
-                                        <tr data-index="1">
-                                            <td class="text-left">11챌린지 참가</td>
-                                            <td>2023-06-09 12:04:20</td>
-                                            <td>-20</td>
-                                        </tr>
-                                        <tr data-index="2">
-                                            <td class="text-left">00챌린지 참가</td>
-                                            <td>2023-06-06 16:04:20</td>
-                                            <td>+20</td>
-                                        </tr>
-                                        <tr data-index="3">
-                                            <td class="text-left">랄랄챌린지 참가</td>
-                                            <td>2023-06-09 16:04:20</td>
-                                            <td>+10</td>
-                                        </tr>
-                                        <tr data-index="4">
-                                            <td class="text-left">홀홀챌린지 참가</td>
-                                            <td>2023-06-09 16:04:20</td>
-                                            <td>+1000</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <div class="fixed-table-body">
+                                    <div class="fixed-table-loading table table-bordered table-hover" style="top: 42.7969px">
+                                        <span class="loading-wrap">
+                                            <span class="loading-text">데이터를 불러오는 중입니다</span>
+                                            <span class="animation-wrap"><span class="animation-dot"></span></span>
+                                        </span>
+                                    </div>
+                                    <table id="" class="table table-hover table-bordered dataTable no-footer" data-pagination="true">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="0">
+                                                    <div class="th-inner">리워드 제목</div>
+                                                    <div class="fht-cell"></div>
+                                                </th>
+                                                <th data-field="1">
+                                                    <div class="th-inner">일자</div>
+                                                    <div class="fht-cell"></div>
+                                                </th>
+                                                <th data-field="2">
+                                                    <div class="th-inner">shoe</div>
+                                                    <div class="fht-cell"></div>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="" data-index="0">
+                                                <td class="text-left">투비챌린지 참가</td>
+                                                <td>2023-06-09 16:04:20</td>
+                                                <td>+100</td>
+                                            </tr>
+                                            <tr data-index="1">
+                                                <td class="text-left">11챌린지 참가</td>
+                                                <td>2023-06-09 12:04:20</td>
+                                                <td>-20</td>
+                                            </tr>
+                                            <tr data-index="2">
+                                                <td class="text-left">00챌린지 참가</td>
+                                                <td>2023-06-06 16:04:20</td>
+                                                <td>+20</td>
+                                            </tr>
+                                            <tr data-index="3">
+                                                <td class="text-left">랄랄챌린지 참가</td>
+                                                <td>2023-06-09 16:04:20</td>
+                                                <td>+10</td>
+                                            </tr>
+                                            <tr data-index="4">
+                                                <td class="text-left">홀홀챌린지 참가</td>
+                                                <td>2023-06-09 16:04:20</td>
+                                                <td>+1000</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row clearfix mt-4 mb-2">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <h6 class="h5 text-gray-800 float-left">shoe 지급과 차감</h6>
+                        <div class="row clearfix mt-4 mb-2">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <h6 class="h5 text-gray-800 float-left">shoe 지급과 차감</h6>
+                            </div>
                         </div>
-                    </div>
-                    <form>
-                        <div class="form-box">
-                            <div class="form-box-row">
-                                <div class="form-box-item">
-                                    <div class="form-box-label">총 보유 shoe</div>
-                                    <div class="form-box-cont">
-                                        <div class="form-row">
-                                            <!-- 2023-10-19 마크업 변경 -->
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" readonly />
-                                                <div class="input-group-append">
-                                                    <span class="input-group-text">Shoe</span>
+                        <form>
+                            <div class="form-box">
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label">총 보유 shoe</div>
+                                        <div class="form-box-cont">
+                                            <div class="form-row">
+                                                <!-- 2023-10-19 마크업 변경 -->
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" readonly />
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">Shoe</span>
+                                                    </div>
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-box-row">
-                                <div class="form-box-item">
-                                    <div class="form-box-label">shoe 지급</div>
-                                    <div class="form-box-cont">
-                                        <div class="form-row">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text">+</span>
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label">shoe 지급</div>
+                                        <div class="form-box-cont">
+                                            <div class="form-row">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">+</span>
+                                                    </div>
+                                                    <input type="number" class="form-control custom-number" />
                                                 </div>
-                                                <input type="number" class="form-control custom-number" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label">shoe 차감</div>
+                                        <div class="form-box-cont">
+                                            <div class="form-row">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">&minus;</span>
+                                                    </div>
+                                                    <input type="text" class="form-control custom-number" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label">제목</div>
+                                        <div class="form-box-cont">
+                                            <div class="form-row">
+                                                <input type="text" class="form-control" placeholder="제목 입력 (최대 50자)" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-box-row">
+                                    <div class="form-box-item">
+                                        <div class="form-box-label">메모(선택)</div>
+                                        <div class="form-box-cont">
+                                            <div class="form-row">
+                                                <input type="text" class="form-control" placeholder="메모 입력 (최대 50자)" />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-box-row">
-                                <div class="form-box-item">
-                                    <div class="form-box-label">shoe 차감</div>
-                                    <div class="form-box-cont">
-                                        <div class="form-row">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text">&minus;</span>
-                                                </div>
-                                                <input type="text" class="form-control custom-number" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-box-row">
-                                <div class="form-box-item">
-                                    <div class="form-box-label">제목</div>
-                                    <div class="form-box-cont">
-                                        <div class="form-row">
-                                            <input type="text" class="form-control" placeholder="제목 입력 (최대 50자)" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-box-row">
-                                <div class="form-box-item">
-                                    <div class="form-box-label">메모(선택)</div>
-                                    <div class="form-box-cont">
-                                        <div class="form-row">
-                                            <input type="text" class="form-control" placeholder="메모 입력 (최대 50자)" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">취소</button>
-                    <button type="button" class="btn btn-primary btn-lg"
-                        onclick="bsFormAlert2('등록을 완료했습니다.')">등록</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">취소</button>
+                        <button type="button" class="btn btn-primary btn-lg" onclick="bsFormAlert2('등록을 완료했습니다.')">등록</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</body>
+    </body>
 
-<!-- Scroll to Top Button-->
-<div data-include="../include/topbtn.html"></div>
+    <!-- Scroll to Top Button-->
+    <div data-include="../include/topbtn.html"></div>
 
-<!-- Logout Modal-->
-<div data-include="../include/logoutModal.html"></div>
-<!-- changePw Modal-->
-<div data-include="../include/pop/changePwModal.html"></div>
-<!-- <div data-include="./AD07_00p01.html"></div> -->
+    <!-- Logout Modal-->
+    <div data-include="../include/logoutModal.html"></div>
+    <!-- changePw Modal-->
+    <div data-include="../include/pop/changePwModal.html"></div>
+    <!-- <div data-include="./AD07_00p01.html"></div> -->
 
-<script src="../../datatables/jquery.dataTables.min.js"></script>
-<script src="../../datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="../../datatables/jquery.dataTables.min.js"></script>
+    <script src="../../datatables/dataTables.bootstrap4.min.js"></script>
 
-<!-- Page level custom scripts -->
-<script src="../../js/demo/datatables-demo.js"></script>
-<script>
-    $('#dataTableOrder').DataTable({
-        order: [[0, 'desc']]
-    });
+    <!-- Page level custom scripts -->
+    <script src="../../js/demo/datatables-demo.js"></script>
+    <script>
+        $('#dataTableOrder').DataTable({
+            order: [[0, 'desc']]
+        });
 
-    $('#dataTableOrder1').DataTable({
-        order: [[0, 'desc']]
-    });
-</script>
-
+        $('#dataTableOrder1').DataTable({
+            order: [[0, 'desc']]
+        });
+    </script>
 </html>
