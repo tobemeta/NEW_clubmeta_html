@@ -12,6 +12,8 @@ const ui = {
         _this.tooltip.init();
         _this.select.init();
         _this.lottie();
+
+        ui.Device.check();
     },
     vhChk: function () {
         const $vh = window.innerHeight * 0.01;
@@ -871,10 +873,160 @@ const ui = {
     }
 };
 
+//PC 디바이스 체크
+ui.PC = {
+    window: function () {
+        return navigator.userAgent.match(/windows/i) == null ? false : true;
+    },
+    mac: function () {
+        return navigator.userAgent.match(/macintosh/i) == null ? false : true;
+    },
+    chrome: function () {
+        return navigator.userAgent.match(/chrome/i) == null ? false : true;
+    },
+    firefox: function () {
+        return navigator.userAgent.match(/firefox/i) == null ? false : true;
+    },
+    opera: function () {
+        return navigator.userAgent.match(/opera|OPR/i) == null ? false : true;
+    },
+    safari: function () {
+        return navigator.userAgent.match(/safari/i) == null ? false : true;
+    },
+    edge: function () {
+        return navigator.userAgent.match(/edge/i) == null ? false : true;
+    },
+    msie: function () {
+        return navigator.userAgent.match(/rv:11.0|msie/i) == null ? false : true;
+    },
+    ie11: function () {
+        return navigator.userAgent.match(/rv:11.0/i) == null ? false : true;
+    },
+    ie10: function () {
+        return navigator.userAgent.match(/msie 10.0/i) == null ? false : true;
+    },
+    ie9: function () {
+        return navigator.userAgent.match(/msie 9.0/i) == null ? false : true;
+    },
+    ie8: function () {
+        return navigator.userAgent.match(/msie 8.0/i) == null ? false : true;
+    },
+    any: function () {
+        return ui.PC.window() || ui.PC.mac();
+    },
+    check: function () {
+        if (ui.PC.any()) {
+            $('html').addClass('pc');
+            if (ui.PC.window()) $('html').addClass('window');
+            if (ui.PC.mac()) $('html').addClass('mac');
+            if (ui.PC.msie()) $('html').addClass('msie');
+            if (ui.PC.ie11()) $('html').addClass('ie11');
+            if (ui.PC.ie10()) $('html').addClass('ie10');
+            if (ui.PC.ie9()) $('html').addClass('ie9');
+            if (ui.PC.ie8()) $('html').addClass('ie8');
+            if (ui.PC.edge()) {
+                $('html').addClass('edge');
+            } else if (ui.PC.opera()) {
+                $('html').addClass('opera');
+            } else if (ui.PC.chrome()) {
+                $('html').addClass('chrome');
+            } else if (ui.PC.safari()) {
+                $('html').addClass('safari');
+            } else if (ui.PC.firefox()) {
+                $('html').addClass('firefox');
+            }
+        }
+    }
+};
+
+//모바일 디바이스 체크
+ui.Mobile = {
+    Android: function () {
+        return navigator.userAgent.match(/Android/i) == null ? false : true;
+    },
+    BlackBerry: function () {
+        return navigator.userAgent.match(/BlackBerry/i) == null ? false : true;
+    },
+    iOS: function () {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i) == null ? false : true;
+    },
+    iPhone: function () {
+        return navigator.userAgent.match(/iPhone/i) == null ? false : true;
+    },
+    iPad: function () {
+        return navigator.userAgent.match(/iPad/i) == null ? false : true;
+    },
+    Opera: function () {
+        return navigator.userAgent.match(/Opera Mini/i) == null ? false : true;
+    },
+    Windows: function () {
+        return navigator.userAgent.match(/IEMobile/i) == null ? false : true;
+    },
+    tablet: function () {
+        if (ui.Mobile.any()) {
+            if (window.screen.width < window.screen.height) {
+                return window.screen.width > 760 ? true : false;
+            } else {
+                return window.screen.height > 760 ? true : false;
+            }
+        }
+    },
+    any: function () {
+        return ui.Mobile.Android() || ui.Mobile.iOS() || ui.Mobile.BlackBerry() || ui.Mobile.Opera() || ui.Mobile.Windows();
+    },
+    check: function () {
+        if (ui.Mobile.any()) {
+            $('html').addClass('mobile');
+            if (ui.Mobile.tablet()) $('html').addClass('tablet');
+        }
+        if (ui.Mobile.iOS()) $('html').addClass('ios');
+        if (ui.Mobile.Android()) $('html').addClass('android');
+    }
+};
+
+//디바이스체크 실행
+ui.Device = {
+    screenH: window.screen.height,
+    screenW: window.screen.width,
+    check: function () {
+        ui.Mobile.check();
+        ui.PC.check();
+        if (ui.Mobile.any()) {
+            const $pixelRatio = Math.round(window.devicePixelRatio);
+            if (!!$pixelRatio) $('html').addClass('pixel-ratio-' + $pixelRatio);
+        }
+
+        //가로, 세로 회전시
+        if (ui.Mobile.any()) {
+            if (window.orientation == 0) {
+                $('html').removeClass('landscape');
+            } else {
+                $('html').addClass('landscape');
+            }
+            $(window).on('orientationchange', function () {
+                if (window.orientation == 0) {
+                    $('html').removeClass('landscape');
+                } else {
+                    $('html').addClass('landscape');
+                }
+            });
+        }
+
+        // 최소기준 디바이스(가로)크기보다 작으면 meta[name="viewport"] 수정
+        const deviceMinWidth = 320;
+        if ($(window).width() < deviceMinWidth) {
+            const $viewport = $('meta[name="viewport"]');
+            // const $content = $viewport.attr('content');
+            const $newContent = 'width=' + deviceMinWidth + ',user-scalable=no,viewport-fit=cover';
+            $viewport.attr('content', $newContent);
+        }
+    }
+};
+
 $(document).ready(() => {
     ui.init();
 });
 
-$(window).on('resize', function(){
+$(window).on('resize', function () {
     ui.vhChk();
-})
+});
