@@ -1,94 +1,90 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>팔로워 리스트 | 클럽메타</title>
+        <link rel="stylesheet" href="../../resources/css/common.min.css" />
+        <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+        <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+        <script src="../../resources/js/common.js"></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="format-detection" content="telephone=no" />
-    <title>팔로워 리스트 | 클럽메타</title>
-    <link rel="stylesheet" href="../../resources/css/common.min.css" />
-    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
-    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
-    <script src="../../resources/js/common.js"></script>
-</head>
-
-<body>
-    <div class="wrap">
-        <header class="header">
-            <div class="header-inner">
-                <div class="header-left">
-                    <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
+    <body>
+        <div class="wrap">
+            <header class="header">
+                <div class="header-inner">
+                    <div class="header-left">
+                        <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
+                    </div>
+                    <div class="header-center">
+                        <h1 class="header-title">닉네임최대10글자</h1>
+                    </div>
+                    <div class="header-right"></div>
                 </div>
-                <div class="header-center">
-                    <h1 class="header-title">닉네임최대10글자</h1>
-                </div>
-                <div class="header-right"></div>
-            </div>
-        </header>
-        <div class="contents">
-            <div class="section">
-                <div class="inner">
-                    <div class="tab-wrap box">
-                        <div class="tab-items">
-                            <ul>
-                                <li>
-                                    <a href="CLMT07_02003.html" class="tab-button"
-                                        data-target="tab1">팔로워&nbsp;<span>0</span>명</a>
-                                </li>
-                                <li class="on">
-                                    <a href="CLMT07_02004.html" class="tab-button"
-                                        data-target="tab2">팔로잉&nbsp;<span>0</span>명</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="tab-content">
-                            <!-- <div id="tab1" class="tab-cont"></div> -->
-                            <div id="tab2" class="tab-cont open">
-                                <div class="follow-list-area noFollow">
-                                    <div class="top">
-                                        <p>아직 팔로우하고 있는 사용자가 없어요!</p>
-                                    </div>
-                                    <div class="bottom">
-                                        <p>계정을 팔로우하면<br />
-                                            인기영상을 더 빨리 확인할 수 있어요</p>
-                                        <div class="list-box rank user">
-                                            <ul>
-                                                <li>
-                                                    <a href="#none">
-                                                        <div class="img">
-                                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_13.png"
-                                                                alt="">
-                                                        </div>
-                                                        <div class="info">
-                                                            <strong>유저닉네임1</strong>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#none">
-                                                        <div class="img">
-                                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_07.png"
-                                                                alt="">
-                                                        </div>
-                                                        <div class="info">
-                                                            <strong>유저닉네임3</strong>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#none">
-                                                        <div class="img">
-                                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
-                                                                alt="">
-                                                        </div>
-                                                        <div class="info">
-                                                            <strong>유저닉네임6</strong>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                            </ul>
+            </header>
+            <div class="contents">
+                <div class="section">
+                    <div class="inner">
+                        <div class="tab-wrap box">
+                            <div class="tab-items">
+                                <ul>
+                                    <li>
+                                        <a href="CLMT07_02003.html" class="tab-button" data-target="tab1">팔로워&nbsp;<span>0</span>명</a>
+                                    </li>
+                                    <li class="on">
+                                        <a href="CLMT07_02004.html" class="tab-button" data-target="tab2">팔로잉&nbsp;<span>0</span>명</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-content">
+                                <!-- <div id="tab1" class="tab-cont"></div> -->
+                                <div id="tab2" class="tab-cont open">
+                                    <div class="follow-list-area noFollow">
+                                        <div class="top">
+                                            <p>아직 팔로우하고 있는 사용자가 없어요!</p>
+                                        </div>
+                                        <div class="bottom">
+                                            <p>
+                                                계정을 팔로우하면<br />
+                                                인기영상을 더 빨리 확인할 수 있어요
+                                            </p>
+                                            <div class="list-box rank user">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#none">
+                                                            <div class="img">
+                                                                <img src="../../resources/images/img/img_aichallenge_thumbnail_13.png" alt="" />
+                                                            </div>
+                                                            <div class="info">
+                                                                <strong>유저닉네임1</strong>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#none">
+                                                            <div class="img">
+                                                                <img src="../../resources/images/img/img_aichallenge_thumbnail_07.png" alt="" />
+                                                            </div>
+                                                            <div class="info">
+                                                                <strong>유저닉네임3</strong>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#none">
+                                                            <div class="img">
+                                                                <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png" alt="" />
+                                                            </div>
+                                                            <div class="info">
+                                                                <strong>유저닉네임6</strong>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -97,54 +93,48 @@
                     </div>
                 </div>
             </div>
+
+            <div class="quick_top">
+                <button type="button" class="btn-top">TOP</button>
+            </div>
         </div>
+    </body>
+    <script>
+        const schInput = $('.input-box.search input');
+        const listItems = $('.sch-result-area li');
 
-        <div class="quick_top">
-            <button type="button" class="btn-top">TOP</button>
-        </div>
-    </div>
-</body>
-<script>
+        schInput.on('input', function () {
+            const searchText = $(this).val().trim().toLowerCase();
 
+            if (searchText === '') {
+                listItems.show();
+                $('.noData').hide();
+                return;
+            }
 
-    const schInput = $('.input-box.search input');
-    const listItems = $(".sch-result-area li");
+            let hasResults = false;
 
-    schInput.on("input", function () {
-        const searchText = $(this).val().trim().toLowerCase();
+            listItems.each(function () {
+                const linkText = $(this).find('a').text().toLowerCase();
+                if (linkText.includes(searchText)) {
+                    $(this).show();
+                    hasResults = true;
+                } else {
+                    $(this).hide();
+                }
+            });
 
-        if (searchText === "") {
-            listItems.show();
-            $(".noData").hide();
-            return;
-        }
-
-        let hasResults = false;
-
-        listItems.each(function () {
-            const linkText = $(this).find("a").text().toLowerCase();
-            if (linkText.includes(searchText)) {
-                $(this).show();
-                hasResults = true;
+            if (hasResults) {
+                $('.noData').hide();
             } else {
-                $(this).hide();
+                $('.noData').show().find('span').text(searchText);
             }
         });
 
-        if (hasResults) {
-            $(".noData").hide();
-        } else {
-            $(".noData").show().find('span').text(searchText);
-        }
-    });
-
-    $(".btn-inp-del").on("click", function () {
-        $("input[type='text']").val("");
-        listItems.show();
-        $(".noData").hide();
-    });
-
-
-</script>
-
+        $('.btn-inp-del').on('click', function () {
+            $("input[type='text']").val('');
+            listItems.show();
+            $('.noData').hide();
+        });
+    </script>
 </html>

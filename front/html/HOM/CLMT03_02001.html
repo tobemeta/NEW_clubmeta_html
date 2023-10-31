@@ -1,170 +1,165 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>AI 챌린지 리스트 | 클럽메타</title>
+        <link rel="stylesheet" href="../../resources/css/common.min.css" />
+        <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+        <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+        <script src="../../resources/js/common.js"></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="format-detection" content="telephone=no" />
-    <title>AI 챌린지 리스트 | 클럽메타</title>
-    <link rel="stylesheet" href="../../resources/css/common.min.css" />
-    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
-    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
-    <script src="../../resources/js/common.js"></script>
-</head>
-
-<body>
-    <div class="wrap">
-        <header class="header">
-            <div class="header-inner search">
-                <div class="header-left">
-                    <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
-                </div>
-                <div class="header-center">
-                    <div class="input-box small">
-                        <input type="text" class="inp-search" placeholder="#원하는 AI챌린지를 검색하세요!" title="내용입력"
-                            data-name="search" />
-                        <button type="button" class="btn-inp-del" aria-label="입력내용삭제"><span
-                                class="blind">삭제</span></button>
+    <body>
+        <div class="wrap">
+            <header class="header">
+                <div class="header-inner search">
+                    <div class="header-left">
+                        <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
                     </div>
-                </div>
-                <!-- <div class="header-right"></div> -->
-            </div>
-        </header>
-        <div class="contents">
-            <div class="section">
-                <div class="inner">
-                    <div class="title-box flex">
-                        <h1>AI챌린지</h1>
-                        <div>
-                            <div class="select-box">
-                                <div class="select-sort"></div>
-                                <select title="옵션선택">
-                                    <option value="">인기순</option>
-                                    <option value="1">최신순</option>
-                                </select>
-                            </div>
+                    <div class="header-center">
+                        <div class="input-box small">
+                            <input type="text" class="inp-search" placeholder="#원하는 AI챌린지를 검색하세요!" title="내용입력" data-name="search" />
+                            <button type="button" class="btn-inp-del" aria-label="입력내용삭제"><span class="blind">삭제</span></button>
                         </div>
                     </div>
-                    <div class="card-list-box">
-                        <ul>
-                            <!-- new 가 붙는 경우 class -->
-                            <li class="card chall-card new">
-                                <div class="chall-info">
-                                    <div class="info-cont">
-                                        <p class="tag blue">그린챌린지글자수오바하면 말줄임</p>
-                                        <p class="music-title">I Don’t – Charlie Puth</p>
-                                        <div>
-                                            <ul class="tag-list">
-                                                <li class="tag">댄스</li>
-                                                <li class="tag">쉬운댄스</li>
-                                                <li class="tag">인기인기인기인기인기인기</li>
-                                            </ul>
-                                        </div>
-                                        <div class="util-list">
-                                            <p class="like"><span class="num">55</span><span class="unit">K</span></p>
-                                            <p class="veiw"><span class="num">55</span><span class="unit">K</span></p>
-                                            <p class="number"><span class="num">55</span><span class="unit">K</span></p>
-                                        </div>
-                                    </div>
-                                    <div class="info-img img">
-                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_05.png" alt="">
-                                        <p class="time">00:15</p>
-                                    </div>
+                    <!-- <div class="header-right"></div> -->
+                </div>
+            </header>
+            <div class="contents">
+                <div class="section">
+                    <div class="inner">
+                        <div class="title-box flex">
+                            <h1>AI챌린지</h1>
+                            <div>
+                                <div class="select-box">
+                                    <div class="select-sort"></div>
+                                    <select title="옵션선택">
+                                        <option value="">인기순</option>
+                                        <option value="1">최신순</option>
+                                    </select>
                                 </div>
-                                <div class="btn-box">
-                                    <a href="#none" class="btn btn-primary">참가</a>
-                                </div>
-                            </li>
-                            <li class="card chall-card">
-                                <div class="chall-info">
-                                    <div class="info-cont">
-                                        <p class="tag blue">그린챌린지 말줄임</p>
-                                        <p class="music-title">I Don’t – Charlie Puth</p>
-                                        <div>
-                                            <ul class="tag-list">
-                                                <li class="tag">댄스</li>
-                                                <li class="tag">쉬운댄스</li>
-                                                <li class="tag">인기인기인기인기인기인기</li>
-                                            </ul>
+                            </div>
+                        </div>
+                        <div class="card-list-box">
+                            <ul>
+                                <!-- new 가 붙는 경우 class -->
+                                <li class="card chall-card new">
+                                    <div class="chall-info">
+                                        <div class="info-cont">
+                                            <p class="tag blue">그린챌린지글자수오바하면 말줄임</p>
+                                            <p class="music-title">I Don’t – Charlie Puth</p>
+                                            <div>
+                                                <ul class="tag-list">
+                                                    <li class="tag">댄스</li>
+                                                    <li class="tag">쉬운댄스</li>
+                                                    <li class="tag">인기인기인기인기인기인기</li>
+                                                </ul>
+                                            </div>
+                                            <div class="util-list">
+                                                <p class="like"><span class="num">55</span><span class="unit">K</span></p>
+                                                <p class="veiw"><span class="num">55</span><span class="unit">K</span></p>
+                                                <p class="number"><span class="num">55</span><span class="unit">K</span></p>
+                                            </div>
                                         </div>
-                                        <div class="util-list">
-                                            <p class="like"><span class="num">55</span><span class="unit">K</span></p>
-                                            <p class="veiw"><span class="num">55</span><span class="unit">K</span></p>
-                                            <p class="number"><span class="num">55</span><span class="unit">K</span></p>
-                                        </div>
-                                    </div>
-                                    <div class="info-img img">
-                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_05.png" alt="">
-                                        <p class="time">00:15</p>
-                                    </div>
-                                </div>
-                                <div class="btn-box">
-                                    <!-- 2023-10-13 피드백 반영 -->
-                                    <a href="#none" class="btn disabled">참가 완료</a>
-                                </div>
-                            </li>
-                            <li class="card chall-card">
-                                <div class="chall-info">
-                                    <div class="info-cont">
-                                        <p class="tag blue">챌린지2</p>
-                                        <p class="music-title">I Don’t – Charlie Puth</p>
-                                        <div>
-                                            <ul class="tag-list">
-                                                <li class="tag">댄스</li>
-                                                <li class="tag">쉬운댄스</li>
-                                                <li class="tag">인기인기인기인기인기인기</li>
-                                            </ul>
-                                        </div>
-                                        <div class="util-list">
-                                            <p class="like"><span class="num">55</span><span class="unit">K</span></p>
-                                            <p class="veiw"><span class="num">55</span><span class="unit">K</span></p>
-                                            <p class="number"><span class="num">55</span><span class="unit">K</span></p>
+                                        <div class="info-img img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_05.png" alt="" />
+                                            <p class="time">00:15</p>
                                         </div>
                                     </div>
-                                    <div class="info-img img">
-                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_05.png" alt="">
-                                        <p class="time">00:15</p>
+                                    <div class="btn-box">
+                                        <a href="#none" class="btn btn-primary">참가</a>
                                     </div>
-                                </div>
-                                <div class="btn-box">
-                                    <a href="#none" class="btn disabled">종료</a>
-                                </div>
-                            </li>
-                            <li class="card chall-card">
-                                <div class="chall-info">
-                                    <div class="info-cont">
-                                        <p class="tag blue">그린챌린지글자수오바하면 말줄임</p>
-                                        <p class="music-title">I Don’t – Charlie Puth</p>
-                                        <div>
-                                            <ul class="tag-list">
-                                                <li class="tag">댄스</li>
-                                                <li class="tag">쉬운댄스</li>
-                                                <li class="tag">인기인기인기인기인기인기</li>
-                                            </ul>
+                                </li>
+                                <li class="card chall-card">
+                                    <div class="chall-info">
+                                        <div class="info-cont">
+                                            <p class="tag blue">그린챌린지 말줄임</p>
+                                            <p class="music-title">I Don’t – Charlie Puth</p>
+                                            <div>
+                                                <ul class="tag-list">
+                                                    <li class="tag">댄스</li>
+                                                    <li class="tag">쉬운댄스</li>
+                                                    <li class="tag">인기인기인기인기인기인기</li>
+                                                </ul>
+                                            </div>
+                                            <div class="util-list">
+                                                <p class="like"><span class="num">55</span><span class="unit">K</span></p>
+                                                <p class="veiw"><span class="num">55</span><span class="unit">K</span></p>
+                                                <p class="number"><span class="num">55</span><span class="unit">K</span></p>
+                                            </div>
                                         </div>
-                                        <div class="util-list">
-                                            <p class="like"><span class="num">55</span><span class="unit">K</span></p>
-                                            <p class="veiw"><span class="num">55</span><span class="unit">K</span></p>
-                                            <p class="number"><span class="num">55</span><span class="unit">K</span></p>
+                                        <div class="info-img img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_05.png" alt="" />
+                                            <p class="time">00:15</p>
                                         </div>
                                     </div>
-                                    <div class="info-img img">
-                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_05.png" alt="">
-                                        <p class="time">00:15</p>
+                                    <div class="btn-box">
+                                        <!-- 2023-10-13 피드백 반영 -->
+                                        <a href="#none" class="btn disabled">참가 완료</a>
                                     </div>
-                                </div>
-                                <!-- <div class="btn-box">
+                                </li>
+                                <li class="card chall-card">
+                                    <div class="chall-info">
+                                        <div class="info-cont">
+                                            <p class="tag blue">챌린지2</p>
+                                            <p class="music-title">I Don’t – Charlie Puth</p>
+                                            <div>
+                                                <ul class="tag-list">
+                                                    <li class="tag">댄스</li>
+                                                    <li class="tag">쉬운댄스</li>
+                                                    <li class="tag">인기인기인기인기인기인기</li>
+                                                </ul>
+                                            </div>
+                                            <div class="util-list">
+                                                <p class="like"><span class="num">55</span><span class="unit">K</span></p>
+                                                <p class="veiw"><span class="num">55</span><span class="unit">K</span></p>
+                                                <p class="number"><span class="num">55</span><span class="unit">K</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="info-img img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_05.png" alt="" />
+                                            <p class="time">00:15</p>
+                                        </div>
+                                    </div>
+                                    <div class="btn-box">
+                                        <a href="#none" class="btn disabled">종료</a>
+                                    </div>
+                                </li>
+                                <li class="card chall-card">
+                                    <div class="chall-info">
+                                        <div class="info-cont">
+                                            <p class="tag blue">그린챌린지글자수오바하면 말줄임</p>
+                                            <p class="music-title">I Don’t – Charlie Puth</p>
+                                            <div>
+                                                <ul class="tag-list">
+                                                    <li class="tag">댄스</li>
+                                                    <li class="tag">쉬운댄스</li>
+                                                    <li class="tag">인기인기인기인기인기인기</li>
+                                                </ul>
+                                            </div>
+                                            <div class="util-list">
+                                                <p class="like"><span class="num">55</span><span class="unit">K</span></p>
+                                                <p class="veiw"><span class="num">55</span><span class="unit">K</span></p>
+                                                <p class="number"><span class="num">55</span><span class="unit">K</span></p>
+                                            </div>
+                                        </div>
+                                        <div class="info-img img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_05.png" alt="" />
+                                            <p class="time">00:15</p>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="btn-box">
                                     <a href="#none" class="btn btn-primary">참가</a>
                                 </div> -->
-                            </li>
-                        </ul>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</body>
-
+    </body>
 </html>

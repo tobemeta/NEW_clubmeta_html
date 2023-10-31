@@ -1,46 +1,41 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>알림 리스트 | 클럽메타</title>
+        <link rel="stylesheet" href="../../resources/css/common.min.css" />
+        <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+        <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+        <script src="../../resources/js/common.js"></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="format-detection" content="telephone=no" />
-    <title>알림 리스트 | 클럽메타</title>
-    <link rel="stylesheet" href="../../resources/css/common.min.css" />
-    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
-    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
-    <script src="../../resources/js/common.js"></script>
-</head>
-
-<body>
-    <article class="layerpopup-box full is-active is-animation" id="fullViewPop" role="dialog">
-        <div class="layer-popup">
-            <header class="layer-header">
-                <div class="header-inner">
-                    <div class="header-left"></div>
-                    <div class="header-center">
-                        <h1 class="pop-title">알림 타임라인</h1>
+    <body>
+        <article class="layerpopup-box full is-active is-animation" id="fullViewPop" role="dialog">
+            <div class="layer-popup">
+                <header class="layer-header">
+                    <div class="header-inner">
+                        <div class="header-left"></div>
+                        <div class="header-center">
+                            <h1 class="pop-title">알림 타임라인</h1>
+                        </div>
+                        <div class="header-right"><button type="button" class="btn-close" onclick="ui.popup.close('#fullViewPop')" title="레이어팝업 닫기">닫기</button></div>
                     </div>
-                    <div class="header-right"><button type="button" class="btn-close"
-                            onclick="ui.popup.close('#fullViewPop')" title="레이어팝업 닫기">닫기</button></div>
-                </div>
-            </header>
-            <div class="layer-content">
-                <div class="layer-inner">
-                    <div class="section alarm-list-box">
-                        <div class="no-result">
-                            <i class="img" aria-hidden="true"></i>
-                            <div class="title">알림이 없어요</div>
-                            <div class="body-sub-title">새로운 소식이 있으면 알려드릴게요!</div>
+                </header>
+                <div class="layer-content">
+                    <div class="layer-inner">
+                        <div class="section alarm-list-box">
+                            <div class="no-result">
+                                <i class="img" aria-hidden="true"></i>
+                                <div class="title">알림이 없어요</div>
+                                <div class="body-sub-title">새로운 소식이 있으면 알려드릴게요!</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </article>
-
-</body>
-
+        </article>
+    </body>
 </html>

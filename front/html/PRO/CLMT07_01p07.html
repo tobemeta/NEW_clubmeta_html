@@ -1,48 +1,44 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>마케팅 활용 동의 처리 결과 팝업 | 클럽메타</title>
+        <link rel="stylesheet" href="../../resources/css/common.min.css" />
+        <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+        <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+        <script src="../../resources/js/common.js"></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="format-detection" content="telephone=no" />
-    <title>마케팅 활용 동의 처리 결과 팝업 | 클럽메타</title>
-    <link rel="stylesheet" href="../../resources/css/common.min.css" />
-    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
-    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
-    <script src="../../resources/js/common.js"></script>
-</head>
-
-<body>
-    <article class="layerpopup-box msg is-active is-animation" id="msgBox" role="dialog">
-        <div class="layer-popup msg-box">
-            <div class="title-box">
-                <strong class="sub-title bold">마케팅 활용 동의 처리 결과</strong>
-            </div>
-            <div class="msg">
-                <div class="marketing-cont">
-                    <dl>
-                        <dt>전송자</dt>
-                        <dd>클럽메타</dd>
-                    </dl>
-                    <dl>
-                        <dt>일시</dt>
-                        <dd>2023년 10월 4일</dd>
-                    </dl>
-                    <dl>
-                        <dt>내용</dt>
-                        <dd>마케팅 활용 동의 철회 완료</dd>
-                    </dl>
-                    <p class="text-l text-left">마케팅 활용 동의는 마이프로필 > 설정 > 개인정보 변경에서 수정 가능합니다</p>
+    <body>
+        <article class="layerpopup-box msg is-active is-animation" id="msgBox" role="dialog">
+            <div class="layer-popup msg-box">
+                <div class="title-box">
+                    <strong class="sub-title bold">마케팅 활용 동의 처리 결과</strong>
+                </div>
+                <div class="msg">
+                    <div class="marketing-cont">
+                        <dl>
+                            <dt>전송자</dt>
+                            <dd>클럽메타</dd>
+                        </dl>
+                        <dl>
+                            <dt>일시</dt>
+                            <dd>2023년 10월 4일</dd>
+                        </dl>
+                        <dl>
+                            <dt>내용</dt>
+                            <dd>마케팅 활용 동의 철회 완료</dd>
+                        </dl>
+                        <p class="text-l text-left">마케팅 활용 동의는 마이프로필 > 설정 > 개인정보 변경에서 수정 가능합니다</p>
+                    </div>
+                </div>
+                <div class="btn-box">
+                    <button type="button" class="btn btn-primary btn-pop-confirm" onclick="ui.popup.close('#msgBox')" title="확인">확인</button>
                 </div>
             </div>
-            <div class="btn-box">
-                <button type="button" class="btn btn-primary btn-pop-confirm" onclick="ui.popup.close('#msgBox')"
-                    title="확인">확인</button>
-            </div>
-        </div>
-    </article>
-</body>
-
+        </article>
+    </body>
 </html>

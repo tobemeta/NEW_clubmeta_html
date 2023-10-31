@@ -1,473 +1,406 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>유저 프로필 | 클럽메타</title>
+        <link rel="stylesheet" href="../../resources/css/common.min.css" />
+        <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+        <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+        <script src="../../resources/js/common.js"></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="format-detection" content="telephone=no" />
-    <title>유저 프로필 | 클럽메타</title>
-    <link rel="stylesheet" href="../../resources/css/common.min.css" />
-    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
-    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
-    <script src="../../resources/js/common.js"></script>
-
-</head>
-
-<body>
-    <div class="wrap">
-        <header class="header">
-            <div class="header-inner">
-                <div class="header-left">
-                    <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
+    <body>
+        <div class="wrap">
+            <header class="header">
+                <div class="header-inner">
+                    <div class="header-left">
+                        <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
+                    </div>
+                    <div class="header-center">
+                        <h1 class="header-title">프로필</h1>
+                    </div>
+                    <div class="header-right">
+                        <!-- 2023-09-12 마크업 변경 -->
+                        <button type="button" class="btn-menu" title="공유 신고 선택 리스트" onclick="ui.popup.open('#reportList')"></button>
+                    </div>
                 </div>
-                <div class="header-center">
-                    <h1 class="header-title">프로필</h1>
-                </div>
-                <div class="header-right">
-                    <!-- 2023-09-12 마크업 변경 -->
-                    <button type="button" class="btn-menu" title="공유 신고 선택 리스트"
-                        onclick="ui.popup.open('#reportList')"></button>
-                </div>
-            </div>
-        </header>
-        <div class="contents">
-            <div class="section">
-                <div class="inner">
-                    <div class="profile-area">
-                        <div class="profile-top">
-                            <!-- 2023-09-12 마크업 수정 -->
-                            <div class="user-img">
-                                <div class="img">
-                                    <img src="../../resources/images/img/img_main_profile.png" alt="">
+            </header>
+            <div class="contents">
+                <div class="section">
+                    <div class="inner">
+                        <div class="profile-area">
+                            <div class="profile-top">
+                                <!-- 2023-09-12 마크업 수정 -->
+                                <div class="user-img">
+                                    <div class="img">
+                                        <img src="../../resources/images/img/img_main_profile.png" alt="" />
+                                    </div>
+                                    <img src="../../resources/images/ico/ico_badge03.png" alt="" class="badge" />
                                 </div>
-                                <img src="../../resources/images/ico/ico_badge03.png" alt="" class="badge">
+                                <div class="follow-area">
+                                    <dl>
+                                        <dt>영상</dt>
+                                        <dd>130</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt><a href="#none" class="test">팔로워</a></dt>
+                                        <dd>125</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt><a href="#none">팔로잉</a></dt>
+                                        <dd>529</dd>
+                                    </dl>
+                                </div>
                             </div>
-                            <div class="follow-area">
-                                <dl>
-                                    <dt>영상</dt>
-                                    <dd>130</dd>
-                                </dl>
-                                <dl>
-                                    <dt><a href="#none" class="test">팔로워</a></dt>
-                                    <dd>125</dd>
-                                </dl>
-                                <dl>
-                                    <dt><a href="#none">팔로잉</a></dt>
-                                    <dd>529</dd>
-                                </dl>
+                            <div class="intro-area">
+                                <strong class="nickname">닉네임최대 10글자 닉네임최대 10글자</strong>
+                                <p class="text-l">자기소개글 쓰는 영역으로 최대 200자 입력 가능 띄어쓰기 특수문자 숫자 영문 대소문자 입력 가능하고</p>
                             </div>
-                        </div>
-                        <div class="intro-area">
-                            <strong class="nickname">닉네임최대 10글자 닉네임최대 10글자</strong>
-                            <p class="text-l">자기소개글 쓰는 영역으로 최대 200자 입력 가능 띄어쓰기 특수문자 숫자 영문 대소문자 입력 가능하고</p>
-                        </div>
-                        <div class="btn-box">
-                            <button type="button" class="btn-s btn-primary btn-follow"><span>팔로우</span></button>
-                            <a href="#none" role="button" class="btn-s btn-primary" title="상세 이동">작곡가 상세</a>
+                            <div class="btn-box">
+                                <button type="button" class="btn-s btn-primary btn-follow"><span>팔로우</span></button>
+                                <a href="#none" role="button" class="btn-s btn-primary" title="상세 이동">작곡가 상세</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="section">
-                <div class="inner">
-                    <div class="tab-wrap line full">
-                        <div class="tab-items">
-                            <ul>
-                                <li class="on">
-                                    <button type="button" class="tab-button" aria-label="tab1" data-target="tab1"><span
-                                            class="ico all">ALL</span></button>
-                                </li>
-                                <li>
-                                    <button type="button" class="tab-button" aria-label="tab2" data-target="tab2"><span
-                                            class="ico ai">AI</span></button>
-                                </li>
-                                <li>
-                                    <button type="button" class="tab-button" aria-label="tab3" data-target="tab3"><span
-                                            class="ico music">음원</span></button>
-                                </li>
-                                <li>
-                                    <button type="button" class="tab-button" aria-label="tab4" data-target="tab4"><span
-                                            class="ico cam">일반</span></button>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="tab-content">
-                            <div id="tab1" class="tab-cont open">
-                                <div class="challenge-box mycoll">
-                                    <ul>
-                                        <!-- 
+                <div class="section">
+                    <div class="inner">
+                        <div class="tab-wrap line full">
+                            <div class="tab-items">
+                                <ul>
+                                    <li class="on">
+                                        <button type="button" class="tab-button" aria-label="tab1" data-target="tab1"><span class="ico all">ALL</span></button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="tab-button" aria-label="tab2" data-target="tab2"><span class="ico ai">AI</span></button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="tab-button" aria-label="tab3" data-target="tab3"><span class="ico music">음원</span></button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="tab-button" aria-label="tab4" data-target="tab4"><span class="ico cam">일반</span></button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-content">
+                                <div id="tab1" class="tab-cont open">
+                                    <div class="challenge-box mycoll">
+                                        <ul>
+                                            <!-- 
                                             2023-08-21 수정
                                             순위 class 
                                             1위 : st (Fisrst)
                                             2위 : nd (Second)
                                             3위 : rd (Third)
                                          -->
-                                        <li class="secret">
-                                            <a href="#none">
-                                                <div class="img">
-                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
-                                                        alt="챌린지 이미지">
+                                            <li class="secret">
+                                                <a href="#none">
+                                                    <div class="img">
+                                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png" alt="챌린지 이미지" />
+                                                    </div>
+                                                </a>
+                                                <div class="util">
+                                                    <p class="view"><span class="num">55</span><span class="unit">K</span></p>
+                                                    <p class="like"><span class="num">55</span><span class="unit">K</span></p>
                                                 </div>
-                                            </a>
-                                            <div class="util">
-                                                <p class="view"><span class="num">55</span><span class="unit">K</span>
-                                                </p>
-                                                <p class="like"><span class="num">55</span><span class="unit">K</span>
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li class="st">
-                                            <a href="#none">
-                                                <div class="img">
-                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_02.png"
-                                                        alt="챌린지 이미지">
+                                            </li>
+                                            <li class="st">
+                                                <a href="#none">
+                                                    <div class="img">
+                                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_02.png" alt="챌린지 이미지" />
+                                                    </div>
+                                                </a>
+                                                <div class="util">
+                                                    <p class="view"><span class="num">55</span><span class="unit">K</span></p>
+                                                    <p class="like"><span class="num">55</span><span class="unit">K</span></p>
                                                 </div>
-                                            </a>
-                                            <div class="util">
-                                                <p class="view"><span class="num">55</span><span class="unit">K</span>
-                                                </p>
-                                                <p class="like"><span class="num">55</span><span class="unit">K</span>
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li class="">
-                                            <a href="#none">
-                                                <div class="img">
-                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_03.png"
-                                                        alt="챌린지 이미지">
+                                            </li>
+                                            <li class="">
+                                                <a href="#none">
+                                                    <div class="img">
+                                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_03.png" alt="챌린지 이미지" />
+                                                    </div>
+                                                </a>
+                                                <div class="util">
+                                                    <p class="view"><span class="num">55</span><span class="unit">K</span></p>
+                                                    <p class="like"><span class="num">55</span><span class="unit">K</span></p>
                                                 </div>
-                                            </a>
-                                            <div class="util">
-                                                <p class="view"><span class="num">55</span><span class="unit">K</span>
-                                                </p>
-                                                <p class="like"><span class="num">55</span><span class="unit">K</span>
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li class="secret">
-                                            <a href="#none">
-                                                <div class="img">
-                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_04.png"
-                                                        alt="챌린지 이미지">
+                                            </li>
+                                            <li class="secret">
+                                                <a href="#none">
+                                                    <div class="img">
+                                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_04.png" alt="챌린지 이미지" />
+                                                    </div>
+                                                </a>
+                                                <div class="util">
+                                                    <p class="view"><span class="num">55</span><span class="unit">K</span></p>
+                                                    <p class="like"><span class="num">55</span><span class="unit">K</span></p>
                                                 </div>
-                                            </a>
-                                            <div class="util">
-                                                <p class="view"><span class="num">55</span><span class="unit">K</span>
-                                                </p>
-                                                <p class="like"><span class="num">55</span><span class="unit">K</span>
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li class="nd">
-                                            <a href="#none">
-                                                <div class="img">
-                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_05.png"
-                                                        alt="챌린지 이미지">
+                                            </li>
+                                            <li class="nd">
+                                                <a href="#none">
+                                                    <div class="img">
+                                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_05.png" alt="챌린지 이미지" />
+                                                    </div>
+                                                </a>
+                                                <div class="util">
+                                                    <p class="view"><span class="num">55</span><span class="unit">K</span></p>
+                                                    <p class="like"><span class="num">55</span><span class="unit">K</span></p>
                                                 </div>
-                                            </a>
-                                            <div class="util">
-                                                <p class="view"><span class="num">55</span><span class="unit">K</span>
-                                                </p>
-                                                <p class="like"><span class="num">55</span><span class="unit">K</span>
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li class="rd">
-                                            <a href="#none">
-                                                <div class="img">
-                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_06.png"
-                                                        alt="챌린지 이미지">
+                                            </li>
+                                            <li class="rd">
+                                                <a href="#none">
+                                                    <div class="img">
+                                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_06.png" alt="챌린지 이미지" />
+                                                    </div>
+                                                </a>
+                                                <div class="util">
+                                                    <p class="view"><span class="num">55</span><span class="unit">K</span></p>
+                                                    <p class="like"><span class="num">55</span><span class="unit">K</span></p>
                                                 </div>
-                                            </a>
-                                            <div class="util">
-                                                <p class="view"><span class="num">55</span><span class="unit">K</span>
-                                                </p>
-                                                <p class="like"><span class="num">55</span><span class="unit">K</span>
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href="#none">
-                                                <div class="img">
-                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_07.png"
-                                                        alt="챌린지 이미지">
+                                            </li>
+                                            <li>
+                                                <a href="#none">
+                                                    <div class="img">
+                                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_07.png" alt="챌린지 이미지" />
+                                                    </div>
+                                                </a>
+                                                <div class="util">
+                                                    <p class="view"><span class="num">55</span><span class="unit">K</span></p>
+                                                    <p class="like"><span class="num">55</span><span class="unit">K</span></p>
                                                 </div>
-                                            </a>
-                                            <div class="util">
-                                                <p class="view"><span class="num">55</span><span class="unit">K</span>
-                                                </p>
-                                                <p class="like"><span class="num">55</span><span class="unit">K</span>
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href="#none">
-                                                <div class="img">
-                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_08.png"
-                                                        alt="챌린지 이미지">
+                                            </li>
+                                            <li>
+                                                <a href="#none">
+                                                    <div class="img">
+                                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_08.png" alt="챌린지 이미지" />
+                                                    </div>
+                                                </a>
+                                                <div class="util">
+                                                    <p class="view"><span class="num">55</span><span class="unit">K</span></p>
+                                                    <p class="like"><span class="num">55</span><span class="unit">K</span></p>
                                                 </div>
-                                            </a>
-                                            <div class="util">
-                                                <p class="view"><span class="num">55</span><span class="unit">K</span>
-                                                </p>
-                                                <p class="like"><span class="num">55</span><span class="unit">K</span>
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href="#none">
-                                                <div class="img">
-                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_09.png"
-                                                        alt="챌린지 이미지">
+                                            </li>
+                                            <li>
+                                                <a href="#none">
+                                                    <div class="img">
+                                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_09.png" alt="챌린지 이미지" />
+                                                    </div>
+                                                </a>
+                                                <div class="util">
+                                                    <p class="view"><span class="num">55</span><span class="unit">K</span></p>
+                                                    <p class="like"><span class="num">55</span><span class="unit">K</span></p>
                                                 </div>
-                                            </a>
-                                            <div class="util">
-                                                <p class="view"><span class="num">55</span><span class="unit">K</span>
-                                                </p>
-                                                <p class="like"><span class="num">55</span><span class="unit">K</span>
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href="#none">
-                                                <div class="img">
-                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_10.png"
-                                                        alt="챌린지 이미지">
+                                            </li>
+                                            <li>
+                                                <a href="#none">
+                                                    <div class="img">
+                                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_10.png" alt="챌린지 이미지" />
+                                                    </div>
+                                                </a>
+                                                <div class="util">
+                                                    <p class="view"><span class="num">55</span><span class="unit">K</span></p>
+                                                    <p class="like"><span class="num">55</span><span class="unit">K</span></p>
                                                 </div>
-                                            </a>
-                                            <div class="util">
-                                                <p class="view"><span class="num">55</span><span class="unit">K</span>
-                                                </p>
-                                                <p class="like"><span class="num">55</span><span class="unit">K</span>
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li class="">
-                                            <a href="#none">
-                                                <div class="img">
-                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
-                                                        alt="챌린지 이미지">
+                                            </li>
+                                            <li class="">
+                                                <a href="#none">
+                                                    <div class="img">
+                                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png" alt="챌린지 이미지" />
+                                                    </div>
+                                                </a>
+                                                <div class="util">
+                                                    <p class="view"><span class="num">55</span><span class="unit">K</span></p>
+                                                    <p class="like"><span class="num">55</span><span class="unit">K</span></p>
                                                 </div>
-                                            </a>
-                                            <div class="util">
-                                                <p class="view"><span class="num">55</span><span class="unit">K</span>
-                                                </p>
-                                                <p class="like"><span class="num">55</span><span class="unit">K</span>
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li class="">
-                                            <a href="#none">
-                                                <div class="img">
-                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_02.png"
-                                                        alt="챌린지 이미지">
+                                            </li>
+                                            <li class="">
+                                                <a href="#none">
+                                                    <div class="img">
+                                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_02.png" alt="챌린지 이미지" />
+                                                    </div>
+                                                </a>
+                                                <div class="util">
+                                                    <p class="view"><span class="num">55</span><span class="unit">K</span></p>
+                                                    <p class="like"><span class="num">55</span><span class="unit">K</span></p>
                                                 </div>
-                                            </a>
-                                            <div class="util">
-                                                <p class="view"><span class="num">55</span><span class="unit">K</span>
-                                                </p>
-                                                <p class="like"><span class="num">55</span><span class="unit">K</span>
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li class="">
-                                            <a href="#none">
-                                                <div class="img">
-                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_03.png"
-                                                        alt="챌린지 이미지">
+                                            </li>
+                                            <li class="">
+                                                <a href="#none">
+                                                    <div class="img">
+                                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_03.png" alt="챌린지 이미지" />
+                                                    </div>
+                                                </a>
+                                                <div class="util">
+                                                    <p class="view"><span class="num">55</span><span class="unit">K</span></p>
+                                                    <p class="like"><span class="num">55</span><span class="unit">K</span></p>
                                                 </div>
-                                            </a>
-                                            <div class="util">
-                                                <p class="view"><span class="num">55</span><span class="unit">K</span>
-                                                </p>
-                                                <p class="like"><span class="num">55</span><span class="unit">K</span>
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li class="secret">
-                                            <a href="#none">
-                                                <div class="img">
-                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_04.png"
-                                                        alt="챌린지 이미지">
+                                            </li>
+                                            <li class="secret">
+                                                <a href="#none">
+                                                    <div class="img">
+                                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_04.png" alt="챌린지 이미지" />
+                                                    </div>
+                                                </a>
+                                                <div class="util">
+                                                    <p class="view"><span class="num">55</span><span class="unit">K</span></p>
+                                                    <p class="like"><span class="num">55</span><span class="unit">K</span></p>
                                                 </div>
-                                            </a>
-                                            <div class="util">
-                                                <p class="view"><span class="num">55</span><span class="unit">K</span>
-                                                </p>
-                                                <p class="like"><span class="num">55</span><span class="unit">K</span>
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href="#none">
-                                                <div class="img">
-                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_05.png"
-                                                        alt="챌린지 이미지">
+                                            </li>
+                                            <li>
+                                                <a href="#none">
+                                                    <div class="img">
+                                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_05.png" alt="챌린지 이미지" />
+                                                    </div>
+                                                </a>
+                                                <div class="util">
+                                                    <p class="view"><span class="num">55</span><span class="unit">K</span></p>
+                                                    <p class="like"><span class="num">55</span><span class="unit">K</span></p>
                                                 </div>
-                                            </a>
-                                            <div class="util">
-                                                <p class="view"><span class="num">55</span><span class="unit">K</span>
-                                                </p>
-                                                <p class="like"><span class="num">55</span><span class="unit">K</span>
-                                                </p>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                            <div id="tab2" class="tab-cont">
-                                2
-                            </div>
-                            <div id="tab3" class="tab-cont">
-                                3
-                            </div>
-                            <div id="tab4" class="tab-cont">
-                                4
+                                <div id="tab2" class="tab-cont">2</div>
+                                <div id="tab3" class="tab-cont">3</div>
+                                <div id="tab4" class="tab-cont">4</div>
                             </div>
                         </div>
                     </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="quick_top">
-            <button type="button" class="btn-top">TOP</button>
-        </div>
-    </div>
-</body>
-
-<script>
-    $(function () {
-        var maxLength = 10;
-        var text = $('.intro-area .nickname').text();
-        if (text.length > maxLength) {
-            var truncatedText = text.substring(0, maxLength);
-            $('.intro-area .nickname').text(truncatedText);
-        }
-
-    });
-</script>
-
-
-<article class="layerpopup-box bottom" id="shareReportPop" role="dialog">
-    <div class="layer-popup">
-        <header class="layer-header">
-            <h1 class="pop-title"></h1>
-            <button type="button" class="btn-close btn-pop-close" onclick="ui.popup.close('#shareReportPop')"
-                title="레이어팝업 닫기">닫기</button>
-        </header>
-
-        <div class="layer-content">
-            <div class="layer-inner">
-                <div class="more-box ico">
-                    <ul>
-                        <li>
-                            <a href="#none" class="card share">프로필 공유하기</a>
-                        </li>
-                        <li>
-                            <a href="#none" class="card accuse" onclick="ui.popup.open('#reportList');">프로필 신고</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- //layer-content -->
-    </div>
-</article>
-
-<article class="layerpopup-box bottom" id="reportList" role="dialog">
-    <div class="layer-popup">
-        <header class="layer-header">
-            <h1 class="pop-title"></h1>
-            <button type="button" class="btn-close btn-pop-close" title="레이어팝업 닫기"
-                onclick="ui.popup.close('#reportList')">닫기</button>
-        </header>
-
-        <div class="layer-content pb-88">
-            <div class="layer-inner">
-                <div class="report-box">
-                    <ul>
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo01" name="report" checked>
-                                <label for="rdo01">스팸</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo02" name="report">
-                                <label for="rdo02">나체 이미지 또는 성적 행위</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo03" name="report">
-                                <label for="rdo03">혐오 발언 또는 암시</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo04" name="report">
-                                <label for="rdo04">폭력 또는 위험한 조직</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo05" name="report">
-                                <label for="rdo05">따돌림이나 괴롭힘</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo06" name="report">
-                                <label for="rdo06">불법 또는 규제 상품 판매</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo07" name="report">
-                                <label for="rdo07">지적 재산권 침해</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo08" name="report">
-                                <label for="rdo08">자살 또는 자해</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo09" name="report">
-                                <label for="rdo09">섭식 장애</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo10" name="report">
-                                <label for="rdo10">사기 또는 거짓</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo11" name="report">
-                                <label for="rdo11">거짓 정보</label>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
             </div>
 
+            <div class="quick_top">
+                <button type="button" class="btn-top">TOP</button>
+            </div>
         </div>
+    </body>
 
-        <div class="btn-bottom-box">
-            <button type="button" class="btn btn-primary btn-pop-close"
-                onclick="ui.popup.close('#reportList')">신고</button>
+    <script>
+        $(function () {
+            var maxLength = 10;
+            var text = $('.intro-area .nickname').text();
+            if (text.length > maxLength) {
+                var truncatedText = text.substring(0, maxLength);
+                $('.intro-area .nickname').text(truncatedText);
+            }
+        });
+    </script>
+
+    <article class="layerpopup-box bottom" id="shareReportPop" role="dialog">
+        <div class="layer-popup">
+            <header class="layer-header">
+                <h1 class="pop-title"></h1>
+                <button type="button" class="btn-close btn-pop-close" onclick="ui.popup.close('#shareReportPop')" title="레이어팝업 닫기">닫기</button>
+            </header>
+
+            <div class="layer-content">
+                <div class="layer-inner">
+                    <div class="more-box ico">
+                        <ul>
+                            <li>
+                                <a href="#none" class="card share">프로필 공유하기</a>
+                            </li>
+                            <li>
+                                <a href="#none" class="card accuse" onclick="ui.popup.open('#reportList');">프로필 신고</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- //layer-content -->
         </div>
-    </div>
-    <!-- //layer-popup -->
-</article>
+    </article>
 
+    <article class="layerpopup-box bottom" id="reportList" role="dialog">
+        <div class="layer-popup">
+            <header class="layer-header">
+                <h1 class="pop-title"></h1>
+                <button type="button" class="btn-close btn-pop-close" title="레이어팝업 닫기" onclick="ui.popup.close('#reportList')">닫기</button>
+            </header>
+
+            <div class="layer-content pb-88">
+                <div class="layer-inner">
+                    <div class="report-box">
+                        <ul>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo01" name="report" checked />
+                                    <label for="rdo01">스팸</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo02" name="report" />
+                                    <label for="rdo02">나체 이미지 또는 성적 행위</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo03" name="report" />
+                                    <label for="rdo03">혐오 발언 또는 암시</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo04" name="report" />
+                                    <label for="rdo04">폭력 또는 위험한 조직</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo05" name="report" />
+                                    <label for="rdo05">따돌림이나 괴롭힘</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo06" name="report" />
+                                    <label for="rdo06">불법 또는 규제 상품 판매</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo07" name="report" />
+                                    <label for="rdo07">지적 재산권 침해</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo08" name="report" />
+                                    <label for="rdo08">자살 또는 자해</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo09" name="report" />
+                                    <label for="rdo09">섭식 장애</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo10" name="report" />
+                                    <label for="rdo10">사기 또는 거짓</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo11" name="report" />
+                                    <label for="rdo11">거짓 정보</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-bottom-box">
+                <button type="button" class="btn btn-primary btn-pop-close" onclick="ui.popup.close('#reportList')">신고</button>
+            </div>
+        </div>
+        <!-- //layer-popup -->
+    </article>
 </html>

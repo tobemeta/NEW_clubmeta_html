@@ -1,294 +1,244 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>차단영상 관리 | 클럽메타</title>
+        <link rel="stylesheet" href="../../resources/css/common.min.css" />
+        <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+        <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+        <script src="../../resources/js/common.js"></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="format-detection" content="telephone=no" />
-    <title>차단영상 관리 | 클럽메타</title>
-    <link rel="stylesheet" href="../../resources/css/common.min.css" />
-    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
-    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
-    <script src="../../resources/js/common.js"></script>
-</head>
-
-<body>
-    <div class="wrap">
-        <header class="header">
-            <div class="header-inner">
-                <div class="header-left">
-                    <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
+    <body>
+        <div class="wrap">
+            <header class="header">
+                <div class="header-inner">
+                    <div class="header-left">
+                        <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
+                    </div>
+                    <div class="header-center">
+                        <h1 class="header-title">차단영상 관리</h1>
+                    </div>
+                    <!-- 2023-09-12 마크업삭제 -->
+                    <div class="header-right"></div>
                 </div>
-                <div class="header-center">
-                    <h1 class="header-title">차단영상 관리</h1>
-                </div>
-                <!-- 2023-09-12 마크업삭제 -->
-                <div class="header-right"></div>
-            </div>
-        </header>
-        <div class="contents">
-
-            <div class="section">
-                <div class="inner">
-                    <div class="challenge-box mycoll">
-                        <!-- data 없을시 noColl -->
-                        <ul class="">
-                            <!-- 
+            </header>
+            <div class="contents">
+                <div class="section">
+                    <div class="inner">
+                        <div class="challenge-box mycoll">
+                            <!-- data 없을시 noColl -->
+                            <ul class="">
+                                <!-- 
                                 2023-08-21 수정
                                 순위 class 
                                 1위 : st (Fisrst)
                                 2위 : nd (Second)
                                 3위 : rd (Third)
                              -->
-                            <li class="secret">
-                                <a href="#none">
-                                    <div class="img">
-                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
-                                            alt="챌린지 이미지">
+                                <li class="secret">
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png" alt="챌린지 이미지" />
+                                        </div>
+                                    </a>
+                                    <button type="button" class="btn-clear">해제</button>
+                                    <div class="util">
+                                        <p class="view"><span class="num">55</span><span class="unit">K</span></p>
+                                        <p class="like"><span class="num">55</span><span class="unit">K</span></p>
                                     </div>
-                                </a>
-                                <button type="button" class="btn-clear">해제</button>
-                                <div class="util">
-                                    <p class="view"><span class="num">55</span><span class="unit">K</span>
-                                    </p>
-                                    <p class="like"><span class="num">55</span><span class="unit">K</span>
-                                    </p>
-                                </div>
-                            </li>
-                            <li class="st">
-                                <a href="#none">
-                                    <div class="img">
-                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_02.png"
-                                            alt="챌린지 이미지">
+                                </li>
+                                <li class="st">
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_02.png" alt="챌린지 이미지" />
+                                        </div>
+                                    </a>
+                                    <button type="button" class="btn-clear">해제</button>
+                                    <div class="util">
+                                        <p class="view"><span class="num">55</span><span class="unit">K</span></p>
+                                        <p class="like"><span class="num">55</span><span class="unit">K</span></p>
                                     </div>
-                                </a>
-                                <button type="button" class="btn-clear">해제</button>
-                                <div class="util">
-                                    <p class="view"><span class="num">55</span><span class="unit">K</span>
-                                    </p>
-                                    <p class="like"><span class="num">55</span><span class="unit">K</span>
-                                    </p>
-                                </div>
-                            </li>
-                            <li class="">
-                                <a href="#none">
-                                    <div class="img">
-                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_03.png"
-                                            alt="챌린지 이미지">
+                                </li>
+                                <li class="">
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_03.png" alt="챌린지 이미지" />
+                                        </div>
+                                    </a>
+                                    <button type="button" class="btn-clear">해제</button>
+                                    <div class="util">
+                                        <p class="view"><span class="num">55</span><span class="unit">K</span></p>
+                                        <p class="like"><span class="num">55</span><span class="unit">K</span></p>
                                     </div>
-                                </a>
-                                <button type="button" class="btn-clear">해제</button>
-                                <div class="util">
-                                    <p class="view"><span class="num">55</span><span class="unit">K</span>
-                                    </p>
-                                    <p class="like"><span class="num">55</span><span class="unit">K</span>
-                                    </p>
-                                </div>
-                            </li>
-                            <li class="secret">
-                                <a href="#none">
-                                    <div class="img">
-                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_04.png"
-                                            alt="챌린지 이미지">
+                                </li>
+                                <li class="secret">
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_04.png" alt="챌린지 이미지" />
+                                        </div>
+                                    </a>
+                                    <button type="button" class="btn-clear">해제</button>
+                                    <div class="util">
+                                        <p class="view"><span class="num">55</span><span class="unit">K</span></p>
+                                        <p class="like"><span class="num">55</span><span class="unit">K</span></p>
                                     </div>
-                                </a>
-                                <button type="button" class="btn-clear">해제</button>
-                                <div class="util">
-                                    <p class="view"><span class="num">55</span><span class="unit">K</span>
-                                    </p>
-                                    <p class="like"><span class="num">55</span><span class="unit">K</span>
-                                    </p>
-                                </div>
-                            </li>
-                            <li class="nd">
-                                <a href="#none">
-                                    <div class="img">
-                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_05.png"
-                                            alt="챌린지 이미지">
+                                </li>
+                                <li class="nd">
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_05.png" alt="챌린지 이미지" />
+                                        </div>
+                                    </a>
+                                    <button type="button" class="btn-clear">해제</button>
+                                    <div class="util">
+                                        <p class="view"><span class="num">55</span><span class="unit">K</span></p>
+                                        <p class="like"><span class="num">55</span><span class="unit">K</span></p>
                                     </div>
-                                </a>
-                                <button type="button" class="btn-clear">해제</button>
-                                <div class="util">
-                                    <p class="view"><span class="num">55</span><span class="unit">K</span>
-                                    </p>
-                                    <p class="like"><span class="num">55</span><span class="unit">K</span>
-                                    </p>
-                                </div>
-                            </li>
-                            <li class="rd">
-                                <a href="#none">
-                                    <div class="img">
-                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_06.png"
-                                            alt="챌린지 이미지">
+                                </li>
+                                <li class="rd">
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_06.png" alt="챌린지 이미지" />
+                                        </div>
+                                    </a>
+                                    <button type="button" class="btn-clear">해제</button>
+                                    <div class="util">
+                                        <p class="view"><span class="num">55</span><span class="unit">K</span></p>
+                                        <p class="like"><span class="num">55</span><span class="unit">K</span></p>
                                     </div>
-                                </a>
-                                <button type="button" class="btn-clear">해제</button>
-                                <div class="util">
-                                    <p class="view"><span class="num">55</span><span class="unit">K</span>
-                                    </p>
-                                    <p class="like"><span class="num">55</span><span class="unit">K</span>
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#none">
-                                    <div class="img">
-                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_07.png"
-                                            alt="챌린지 이미지">
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_07.png" alt="챌린지 이미지" />
+                                        </div>
+                                    </a>
+                                    <button type="button" class="btn-clear">해제</button>
+                                    <div class="util">
+                                        <p class="view"><span class="num">55</span><span class="unit">K</span></p>
+                                        <p class="like"><span class="num">55</span><span class="unit">K</span></p>
                                     </div>
-                                </a>
-                                <button type="button" class="btn-clear">해제</button>
-                                <div class="util">
-                                    <p class="view"><span class="num">55</span><span class="unit">K</span>
-                                    </p>
-                                    <p class="like"><span class="num">55</span><span class="unit">K</span>
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#none">
-                                    <div class="img">
-                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_08.png"
-                                            alt="챌린지 이미지">
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_08.png" alt="챌린지 이미지" />
+                                        </div>
+                                    </a>
+                                    <button type="button" class="btn-clear">해제</button>
+                                    <div class="util">
+                                        <p class="view"><span class="num">55</span><span class="unit">K</span></p>
+                                        <p class="like"><span class="num">55</span><span class="unit">K</span></p>
                                     </div>
-                                </a>
-                                <button type="button" class="btn-clear">해제</button>
-                                <div class="util">
-                                    <p class="view"><span class="num">55</span><span class="unit">K</span>
-                                    </p>
-                                    <p class="like"><span class="num">55</span><span class="unit">K</span>
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#none">
-                                    <div class="img">
-                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_09.png"
-                                            alt="챌린지 이미지">
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_09.png" alt="챌린지 이미지" />
+                                        </div>
+                                    </a>
+                                    <button type="button" class="btn-clear">해제</button>
+                                    <div class="util">
+                                        <p class="view"><span class="num">55</span><span class="unit">K</span></p>
+                                        <p class="like"><span class="num">55</span><span class="unit">K</span></p>
                                     </div>
-                                </a>
-                                <button type="button" class="btn-clear">해제</button>
-                                <div class="util">
-                                    <p class="view"><span class="num">55</span><span class="unit">K</span>
-                                    </p>
-                                    <p class="like"><span class="num">55</span><span class="unit">K</span>
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#none">
-                                    <div class="img">
-                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_10.png"
-                                            alt="챌린지 이미지">
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_10.png" alt="챌린지 이미지" />
+                                        </div>
+                                    </a>
+                                    <button type="button" class="btn-clear">해제</button>
+                                    <div class="util">
+                                        <p class="view"><span class="num">55</span><span class="unit">K</span></p>
+                                        <p class="like"><span class="num">55</span><span class="unit">K</span></p>
                                     </div>
-                                </a>
-                                <button type="button" class="btn-clear">해제</button>
-                                <div class="util">
-                                    <p class="view"><span class="num">55</span><span class="unit">K</span>
-                                    </p>
-                                    <p class="like"><span class="num">55</span><span class="unit">K</span>
-                                    </p>
-                                </div>
-                            </li>
-                            <li class="">
-                                <a href="#none">
-                                    <div class="img">
-                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
-                                            alt="챌린지 이미지">
+                                </li>
+                                <li class="">
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png" alt="챌린지 이미지" />
+                                        </div>
+                                    </a>
+                                    <button type="button" class="btn-clear">해제</button>
+                                    <div class="util">
+                                        <p class="view"><span class="num">55</span><span class="unit">K</span></p>
+                                        <p class="like"><span class="num">55</span><span class="unit">K</span></p>
                                     </div>
-                                </a>
-                                <button type="button" class="btn-clear">해제</button>
-                                <div class="util">
-                                    <p class="view"><span class="num">55</span><span class="unit">K</span>
-                                    </p>
-                                    <p class="like"><span class="num">55</span><span class="unit">K</span>
-                                    </p>
-                                </div>
-                            </li>
-                            <li class="">
-                                <a href="#none">
-                                    <div class="img">
-                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_02.png"
-                                            alt="챌린지 이미지">
+                                </li>
+                                <li class="">
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_02.png" alt="챌린지 이미지" />
+                                        </div>
+                                    </a>
+                                    <button type="button" class="btn-clear">해제</button>
+                                    <div class="util">
+                                        <p class="view"><span class="num">55</span><span class="unit">K</span></p>
+                                        <p class="like"><span class="num">55</span><span class="unit">K</span></p>
                                     </div>
-                                </a>
-                                <button type="button" class="btn-clear">해제</button>
-                                <div class="util">
-                                    <p class="view"><span class="num">55</span><span class="unit">K</span>
-                                    </p>
-                                    <p class="like"><span class="num">55</span><span class="unit">K</span>
-                                    </p>
-                                </div>
-                            </li>
-                            <li class="">
-                                <a href="#none">
-                                    <div class="img">
-                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_03.png"
-                                            alt="챌린지 이미지">
+                                </li>
+                                <li class="">
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_03.png" alt="챌린지 이미지" />
+                                        </div>
+                                    </a>
+                                    <button type="button" class="btn-clear">해제</button>
+                                    <div class="util">
+                                        <p class="view"><span class="num">55</span><span class="unit">K</span></p>
+                                        <p class="like"><span class="num">55</span><span class="unit">K</span></p>
                                     </div>
-                                </a>
-                                <button type="button" class="btn-clear">해제</button>
-                                <div class="util">
-                                    <p class="view"><span class="num">55</span><span class="unit">K</span>
-                                    </p>
-                                    <p class="like"><span class="num">55</span><span class="unit">K</span>
-                                    </p>
-                                </div>
-                            </li>
-                            <li class="secret">
-                                <a href="#none">
-                                    <div class="img">
-                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_04.png"
-                                            alt="챌린지 이미지">
+                                </li>
+                                <li class="secret">
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_04.png" alt="챌린지 이미지" />
+                                        </div>
+                                    </a>
+                                    <button type="button" class="btn-clear">해제</button>
+                                    <div class="util">
+                                        <p class="view"><span class="num">55</span><span class="unit">K</span></p>
+                                        <p class="like"><span class="num">55</span><span class="unit">K</span></p>
                                     </div>
-                                </a>
-                                <button type="button" class="btn-clear">해제</button>
-                                <div class="util">
-                                    <p class="view"><span class="num">55</span><span class="unit">K</span>
-                                    </p>
-                                    <p class="like"><span class="num">55</span><span class="unit">K</span>
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#none">
-                                    <div class="img">
-                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_05.png"
-                                            alt="챌린지 이미지">
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_05.png" alt="챌린지 이미지" />
+                                        </div>
+                                    </a>
+                                    <button type="button" class="btn-clear">해제</button>
+                                    <div class="util">
+                                        <p class="view"><span class="num">55</span><span class="unit">K</span></p>
+                                        <p class="like"><span class="num">55</span><span class="unit">K</span></p>
                                     </div>
-                                </a>
-                                <button type="button" class="btn-clear">해제</button>
-                                <div class="util">
-                                    <p class="view"><span class="num">55</span><span class="unit">K</span>
-                                    </p>
-                                    <p class="like"><span class="num">55</span><span class="unit">K</span>
-                                    </p>
-                                </div>
-                            </li>
-                            <li class="noData">
-                                <p class="sub-title">아직 북마크한 영상이 없어요</p>
-                                <span class="body-title">클립에서 더 많은 영상을 확인해 보세요!</span>
-                                <a href="#none" class="btn btn-outline" role="button" title="클립으로 이동하기">클립으로
-                                    이동하기</a>
-                            </li>
-                        </ul>
+                                </li>
+                                <li class="noData">
+                                    <p class="sub-title">아직 북마크한 영상이 없어요</p>
+                                    <span class="body-title">클립에서 더 많은 영상을 확인해 보세요!</span>
+                                    <a href="#none" class="btn btn-outline" role="button" title="클립으로 이동하기">클립으로 이동하기</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="quick_top">
-            <button type="button" class="btn-top">TOP</button>
+            <div class="quick_top">
+                <button type="button" class="btn-top">TOP</button>
+            </div>
         </div>
-    </div>
-</body>
-<script>
-    // 해제
-    $('.btn-clear').on('click', function () {
-        $(this).parent('li').remove();
-    })
-</script>
-
+    </body>
+    <script>
+        // 해제
+        $('.btn-clear').on('click', function () {
+            $(this).parent('li').remove();
+        });
+    </script>
 </html>

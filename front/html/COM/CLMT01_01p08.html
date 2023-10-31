@@ -1,35 +1,31 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>보유 shoe 부족 알림 팝업 | 클럽메타</title>
+        <link rel="stylesheet" href="../../resources/css/common.min.css" />
+        <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+        <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+        <script src="../../resources/js/common.js"></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="format-detection" content="telephone=no" />
-    <title>보유 shoe 부족 알림 팝업 | 클럽메타</title>
-    <link rel="stylesheet" href="../../resources/css/common.min.css" />
-    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
-    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
-    <script src="../../resources/js/common.js"></script>
-</head>
-
-<body>
-    <article class="layerpopup-box msg is-active is-animation" id="msgBox" role="dialog">
-        <div class="layer-popup msg-box">
-            <div class="title-box">
-                <strong class="sub-title bold">보유한 Shoe가 부족합니다.</strong>
+    <body>
+        <article class="layerpopup-box msg is-active is-animation" id="msgBox" role="dialog">
+            <div class="layer-popup msg-box">
+                <div class="title-box">
+                    <strong class="sub-title bold">보유한 Shoe가 부족합니다.</strong>
+                </div>
+                <p class="msg">Shoe를 획득할 수 있는 다양한<br />활동이 있어요!</p>
+                <div class="btn-box">
+                    <button type="button" class="btn btn-outline btn-pop-close" title="취소" onclick="ui.popup.close('#msgBox')">취소</button>
+                    <a href="#none" class="btn btn-primary" title="확인하러 가기">확인하러 가기</a>
+                </div>
             </div>
-            <p class="msg">Shoe를 획득할 수 있는 다양한<br>활동이 있어요!</p>
-            <div class="btn-box">
-                <button type="button" class="btn btn-outline btn-pop-close" title="취소"
-                    onclick="ui.popup.close('#msgBox')">취소</button>
-                <a href="#none" class="btn btn-primary" title="확인하러 가기">확인하러 가기</a>
-            </div>
-        </div>
-    </article>
-</body>
-
+        </article>
+    </body>
 </html>
 
 <!-- 팝업 -->

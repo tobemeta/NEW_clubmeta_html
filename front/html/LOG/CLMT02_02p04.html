@@ -1,34 +1,30 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>인증 정보 상이 안내 팝업 | 클럽메타</title>
+        <link rel="stylesheet" href="../../resources/css/common.min.css" />
+        <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+        <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+        <script src="../../resources/js/common.js"></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="format-detection" content="telephone=no" />
-    <title>인증 정보 상이 안내 팝업 | 클럽메타</title>
-    <link rel="stylesheet" href="../../resources/css/common.min.css" />
-    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
-    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
-    <script src="../../resources/js/common.js"></script>
-</head>
-
-<body>
-    <article class="layerpopup-box msg is-active is-animation" id="msgBox" role="dialog">
-        <div class="layer-popup msg-box">
-            <div class="title-box">
-                <strong class="sub-title bold">입력한 정보가 다릅니다.</strong>
+    <body>
+        <article class="layerpopup-box msg is-active is-animation" id="msgBox" role="dialog">
+            <div class="layer-popup msg-box">
+                <div class="title-box">
+                    <strong class="sub-title bold">입력한 정보가 다릅니다.</strong>
+                </div>
+                <p class="msg">소셜 회원가입 정보와 PASS본인인증<br />입력 정보가 다릅니다.<br />다시 확인해 주세요.</p>
+                <div class="btn-box">
+                    <button type="button" class="btn-primary btn-pop-confirm" onclick="ui.popup.close('#msgBox')" title="확인">확인</button>
+                </div>
             </div>
-            <p class="msg">소셜 회원가입 정보와 PASS본인인증<br>입력 정보가 다릅니다.<br>다시 확인해 주세요.</p>
-            <div class="btn-box">
-                <button type="button" class="btn-primary btn-pop-confirm" onclick="ui.popup.close('#msgBox')"
-                    title="확인">확인</button>
-            </div>
-        </div>
-    </article>
-</body>
-
+        </article>
+    </body>
 </html>
 
 <!-- 팝업 -->

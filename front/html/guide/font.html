@@ -1,81 +1,78 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>텍스트 | 클럽메타</title>
+        <link rel="stylesheet" href="../../resources/css/common.min.css" />
+        <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+        <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+        <script src="../../resources/js/common.js"></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="format-detection" content="telephone=no" />
-    <title>텍스트 | 클럽메타</title>
-    <link rel="stylesheet" href="../../resources/css/common.min.css" />
-    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
-    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
-    <script src="../../resources/js/common.js"></script>
-</head>
-
-<body>
-    <div class="wrap">
-        <header class="header">
-            <div class="header-inner">
-                <div class="header-left">
-                    <button class="btn-back" title="뒤로가기">뒤로가기</button>
-                </div>
-                <div class="header-center">
-                    <h1 class="header-title">텍스트</h1>
-                    <!-- <div class="input-box">
+    <body>
+        <div class="wrap">
+            <header class="header">
+                <div class="header-inner">
+                    <div class="header-left">
+                        <button class="btn-back" title="뒤로가기">뒤로가기</button>
+                    </div>
+                    <div class="header-center">
+                        <h1 class="header-title">텍스트</h1>
+                        <!-- <div class="input-box">
                             <input type="text" placeholder="전화번호 또는 이메일" />
                         </div> -->
+                    </div>
+                    <div class="header-right">
+                        <button type="button" class="btn-search" title="검색">돋보기</button>
+                        <!-- <button type="button" class="btn-close" title="닫기">닫기</button> -->
+                    </div>
                 </div>
-                <div class="header-right">
-                    <button type="button" class="btn-search" title="검색">돋보기</button>
-                    <!-- <button type="button" class="btn-close" title="닫기">닫기</button> -->
+            </header>
+            <div class="contents">
+                <div class="tab-wrap">
+                    <div class="tab-items" style="margin: 0">
+                        <ul>
+                            <li class="on"><a href="../guide/font.html">텍스트</a></li>
+                            <li><a href="../guide/button.html">버튼</a></li>
+                            <li><a href="../guide/form.html">폼요소</a></li>
+                            <li><a href="../guide/popup.html">팝업</a></li>
+                            <li><a href="../guide/tab.html">탭</a></li>
+                            <li><a href="../guide/tooltip.html">툴팁</a></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </header>
-        <div class="contents">
-            <div class="tab-wrap">
-                <div class="tab-items" style="margin: 0">
-                    <ul>
-                        <li class="on"><a href="../guide/font.html">텍스트</a></li>
-                        <li><a href="../guide/button.html">버튼</a></li>
-                        <li><a href="../guide/form.html">폼요소</a></li>
-                        <li><a href="../guide/popup.html">팝업</a></li>
-                        <li><a href="../guide/tab.html">탭</a></li>
-                        <li><a href="../guide/tooltip.html">툴팁</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="section">
-                <div class="inner">
-                    <h1>텍스트</h1>
-                    <ul class="mt-20">
-                        <li class="mt-8">
-                            <div class="title">제목 1 / 프리텐다드 medium 24</div>
-                        </li>
-                        <li class="mt-8">
-                            <div class="sub-title">제목 2 / 프리텐다드 medium 20</div>
-                        </li>
-                        <li class="mt-8">
-                            <div class="body-title">본문 1 / 프리텐다드 medium 16</div>
-                        </li>
-                        <li class="mt-8">
-                            <div class="body-sub-title">본문 2 / 프리텐다드 medium 14</div>
-                        </li>
-                        <li class="mt-8">
-                            <div class="text">작은텍스트 1 / 프리텐다드 medium 12</div>
-                        </li>
-                        <li class="mt-8">
-                            <div class="sub-text">작은텍스트 2 / 프리텐다드 medium 10</div>
-                        </li>
-                        <li class="mt-8">
-                            <div class="title">작은텍스트 3 / 프리텐다드 medium 8</div>
-                        </li>
-                    </ul>
+                <div class="section">
+                    <div class="inner">
+                        <h1>텍스트</h1>
+                        <ul class="mt-20">
+                            <li class="mt-8">
+                                <div class="title">제목 1 / 프리텐다드 medium 24</div>
+                            </li>
+                            <li class="mt-8">
+                                <div class="sub-title">제목 2 / 프리텐다드 medium 20</div>
+                            </li>
+                            <li class="mt-8">
+                                <div class="body-title">본문 1 / 프리텐다드 medium 16</div>
+                            </li>
+                            <li class="mt-8">
+                                <div class="body-sub-title">본문 2 / 프리텐다드 medium 14</div>
+                            </li>
+                            <li class="mt-8">
+                                <div class="text">작은텍스트 1 / 프리텐다드 medium 12</div>
+                            </li>
+                            <li class="mt-8">
+                                <div class="sub-text">작은텍스트 2 / 프리텐다드 medium 10</div>
+                            </li>
+                            <li class="mt-8">
+                                <div class="title">작은텍스트 3 / 프리텐다드 medium 8</div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</body>
-
+    </body>
 </html>

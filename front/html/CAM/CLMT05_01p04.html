@@ -1,56 +1,51 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>AI 챌린지 리스트(Data 없음) 팝업 | 클럽메타</title>
+        <link rel="stylesheet" href="../../resources/css/common.min.css" />
+        <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+        <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+        <script src="../../resources/js/common.js"></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="format-detection" content="telephone=no" />
-    <title>AI 챌린지 리스트(Data 없음) 팝업 | 클럽메타</title>
-    <link rel="stylesheet" href="../../resources/css/common.min.css" />
-    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
-    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
-    <script src="../../resources/js/common.js"></script>
-</head>
-
-<body>
-    <!-- 2023-09-14 class 수정 -->
-    <article class="layerpopup-box full is-active is-animation" id="fullViewPop" role="dialog">
-        <div class="layer-popup challPop">
-            <!-- 2023-09-14 마크업수정 -->
-            <header class="layer-header">
-                <div class="header-inner">
-                    <div class="header-left"></div>
-                    <div class="header-center">
-                        <h1 class="pop-title">AI챌린지를 선택하세요</h1>
+    <body>
+        <!-- 2023-09-14 class 수정 -->
+        <article class="layerpopup-box full is-active is-animation" id="fullViewPop" role="dialog">
+            <div class="layer-popup challPop">
+                <!-- 2023-09-14 마크업수정 -->
+                <header class="layer-header">
+                    <div class="header-inner">
+                        <div class="header-left"></div>
+                        <div class="header-center">
+                            <h1 class="pop-title">AI챌린지를 선택하세요</h1>
+                        </div>
+                        <div class="header-right">
+                            <button type="button" class="btn-close btn-pop-close" title="레이어팝업 닫기" onclick="ui.popup.close('#fullViewPop')">닫기</button>
+                        </div>
                     </div>
-                    <div class="header-right">
-                        <button type="button" class="btn-close btn-pop-close" title="레이어팝업 닫기"
-                            onclick="ui.popup.close('#fullViewPop')">닫기</button>
-                    </div>
-                </div>
-            </header>
+                </header>
 
-            <div class="layer-content pb-96">
-                <div class="layer-inner">
-                    <div class="no-clip">
-                        <p>진행중인 챌린지가 없습니다.</p>
+                <div class="layer-content pb-96">
+                    <div class="layer-inner">
+                        <div class="no-clip">
+                            <p>진행중인 챌린지가 없습니다.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="btn-bottom-box">
-                <a href="#none" class="btn btn-outline" title="홈으로 이동" role="button">홈으로 가기</a>
-                <!-- 2023-09-14 bottom->full 수정 -->
-                <button type="button" class="btn btn-primary btn-pop-close"
-                    onclick="ui.popup.close('#fullViewPop')">AI챌린지 오픈하기</button>
+                <div class="btn-bottom-box">
+                    <a href="#none" class="btn btn-outline" title="홈으로 이동" role="button">홈으로 가기</a>
+                    <!-- 2023-09-14 bottom->full 수정 -->
+                    <button type="button" class="btn btn-primary btn-pop-close" onclick="ui.popup.close('#fullViewPop')">AI챌린지 오픈하기</button>
+                </div>
             </div>
-        </div>
-        <!-- //layer-popup -->
-    </article>
-</body>
-
+            <!-- //layer-popup -->
+        </article>
+    </body>
 </html>
 
 <!-- 팝업 -->

@@ -1,63 +1,61 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>내 지갑 | 클럽메타</title>
+        <link rel="stylesheet" href="../../resources/css/common.min.css" />
+        <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+        <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+        <script src="../../resources/js/common.js"></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="format-detection" content="telephone=no" />
-    <title>내 지갑 | 클럽메타</title>
-    <link rel="stylesheet" href="../../resources/css/common.min.css" />
-    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
-    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
-    <script src="../../resources/js/common.js"></script>
-</head>
-
-<body>
-    <div class="wrap">
-        <header class="header">
-            <div class="header-inner">
-                <div class="header-left">
-                    <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
+    <body>
+        <div class="wrap">
+            <header class="header">
+                <div class="header-inner">
+                    <div class="header-left">
+                        <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
+                    </div>
+                    <div class="header-center">
+                        <h1 class="header-title">내 지갑</h1>
+                    </div>
+                    <div class="header-right"></div>
                 </div>
-                <div class="header-center">
-                    <h1 class="header-title">내 지갑</h1>
-                </div>
-                <div class="header-right"></div>
-            </div>
-        </header>
-        <div class="contents">
-            <div class="section mt-8">
-                <div class="inner">
-                    <div class="wallet-area">
-                        <div class="wallet-info shoe">
-                            <p><span class="sum">1239</span>Shoe</p>
-                        </div>
-                        <!-- 2023-10-06 마크업 수정 -->
-                        <div class="select-box solo mt-20">
-                            <div class="select-sort"></div>
-                            <button class="btn-select-solo" onclick="filter()">7일 ∙ 전체(지급/차감) ∙ 최신순</button>
-                        </div>
+            </header>
+            <div class="contents">
+                <div class="section mt-8">
+                    <div class="inner">
+                        <div class="wallet-area">
+                            <div class="wallet-info shoe">
+                                <p><span class="sum">1239</span>Shoe</p>
+                            </div>
+                            <!-- 2023-10-06 마크업 수정 -->
+                            <div class="select-box solo mt-20">
+                                <div class="select-sort"></div>
+                                <button class="btn-select-solo" onclick="filter()">7일 ∙ 전체(지급/차감) ∙ 최신순</button>
+                            </div>
 
-                        <div class="list-box wallet">
-                            <ul>
-                                <li>
-                                    <div class="card">
-                                        <div class="top">
-                                            <p class="reason">로그인 리워드</p>
-                                            <span class="add plus">10 Shoe</span>
+                            <div class="list-box wallet">
+                                <ul>
+                                    <li>
+                                        <div class="card">
+                                            <div class="top">
+                                                <p class="reason">로그인 리워드</p>
+                                                <span class="add plus">10 Shoe</span>
+                                            </div>
+                                            <div class="bottom">
+                                                <span class="date">2023.07.20 13:05</span>
+                                                <span class="sum">1239</span>
+                                            </div>
                                         </div>
-                                        <div class="bottom">
-                                            <span class="date">2023.07.20 13:05</span>
-                                            <span class="sum">1239</span>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                                    </li>
+                                </ul>
+                            </div>
 
-                        <!-- <div class="tab-wrap line">
+                            <!-- <div class="tab-wrap line">
                             <div class="tab-items">
                                 <ul class="center">
                                     <li class="on">
@@ -174,297 +172,289 @@
                                 </div>
                             </div>
                         </div> -->
+                        </div>
                     </div>
-
                 </div>
             </div>
-        </div>
 
-        <div class="quick_top">
-            <button type="button" class="btn-top">TOP</button>
-        </div>
-    </div>
-</body>
-<article class="layerpopup-box full" id="fullViewPop" role="dialog" data-callback="cbFun">
-    <div class="layer-popup">
-        <header class="layer-header">
-            <div class="header-inner">
-                <div class="header-left"></div>
-                <div class="header-center">
-                    <h1 class="pop-title">지갑등록</h1>
-                </div>
-                <div class="header-right">
-                    <button type="button" class="btn-close btn-pop-close" title="설정 홈 이동">닫기</button>
-                </div>
-            </div>
-        </header>
-
-        <div class="layer-content pb-88">
-            <div class="layer-inner">
-                <div class="form-box mt-24">
-                    <dl>
-                        <dt><label for="f1">Klip 지갑 주소</label></dt>
-                        <dd>
-                            <div class="input-box">
-                                <input type="text" id="regText" placeholder="" title="내용입력">
-                                <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
-                            </div>
-                        </dd>
-                    </dl>
-                </div>
+            <div class="quick_top">
+                <button type="button" class="btn-top">TOP</button>
             </div>
         </div>
-
-        <div class="btn-bottom-box">
-            <button type="button" class="btn btn-primary" onclick="reg()">등록</button>
-        </div>
-    </div>
-    <!-- //layer-popup -->
-</article>
-
-<!-- 2023-10-06 마크업 추가 -->
-<article class="layerpopup-box full" id="filter" role="dialog" data-callback="cbFun">
-    <div class="layer-popup">
-        <header class="layer-header">
-            <div class="header-inner">
-                <!-- 2023-10-06 기획수정 -->
-                <div class="header-left"><a href="#none" class="btn-back btn-pop-close" role="button"
-                        title="뒤로가기">뒤로가기</a></div>
-                <div class="header-center">
-                    <h1 class="pop-title">내 지갑 필터</h1>
-                </div>
-                <div class="header-right"></div>
-            </div>
-        </header>
-
-        <div class="layer-content pb-88">
-            <div class="layer-inner">
-                <div class="rdo-list cell mt-24">
-                    <div class="title-box">
-                        <h2 class="sub-title">기간</h2>
+    </body>
+    <article class="layerpopup-box full" id="fullViewPop" role="dialog" data-callback="cbFun">
+        <div class="layer-popup">
+            <header class="layer-header">
+                <div class="header-inner">
+                    <div class="header-left"></div>
+                    <div class="header-center">
+                        <h1 class="pop-title">지갑등록</h1>
                     </div>
-                    <ul class="half">
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo1_1" name="rdo0" checked />
-                                <label for="rdo1_1">7일</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo1_2" name="rdo0" />
-                                <label for="rdo1_2">한달</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo1_3" name="rdo0" />
-                                <label for="rdo1_3">3개월</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo1_4" name="rdo0" onclick="ui.popup.open('#bottomViewPop')" />
-                                <label for="rdo1_4" id="setDate">직접선택</label>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="rdo-list cell">
-                    <div class="title-box">
-                        <h2 class="sub-title">거래내역</h2>
+                    <div class="header-right">
+                        <button type="button" class="btn-close btn-pop-close" title="설정 홈 이동">닫기</button>
                     </div>
-                    <ul class="auto">
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo2_1" name="rdo1" checked />
-                                <label for="rdo2_1">전체(지급/차감)</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo2_2" name="rdo1" />
-                                <label for="rdo2_2">지급</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo2_3" name="rdo1" />
-                                <label for="rdo2_3">차감</label>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
-                <div class="rdo-list cell">
-                    <div class="title-box">
-                        <h2 class="sub-title">정렬</h2>
+            </header>
+
+            <div class="layer-content pb-88">
+                <div class="layer-inner">
+                    <div class="form-box mt-24">
+                        <dl>
+                            <dt><label for="f1">Klip 지갑 주소</label></dt>
+                            <dd>
+                                <div class="input-box">
+                                    <input type="text" id="regText" placeholder="" title="내용입력" />
+                                    <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
+                                </div>
+                            </dd>
+                        </dl>
                     </div>
-                    <ul>
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo3_1" name="rdo2" checked />
-                                <label for="rdo3_1">최신순</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo3_2" name="rdo2" />
-                                <label for="rdo3_2">오래된 순</label>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="btn-bottom-box">
-            <button type="button" class="btn btn-primary" onclick="ui.popup.close('#filter')">확인</button>
-        </div>
-    </div>
-    <!-- //layer-popup -->
-</article>
-
-<article class="layerpopup-box bottom" id="bottomViewPop" role="dialog">
-    <div class="layer-popup">
-        <header class="layer-header">
-            <h1 class="pop-title">기간</h1>
-            <button type="button" class="btn-close btn-pop-close" title="레이어팝업 닫기"
-                onclick="ui.popup.close('#bottomViewPop')">닫기</button>
-        </header>
-
-        <div class="layer-content">
-            <div class="layer-inner">
-                <div class="more-box">
-                    <!-- 2023-10-06 button -> radio 변경 -->
-                    <ul>
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo1" name="date" checked />
-                                <label for="rdo1">2024.01</label>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo2" name="date" />
-                                <label for="rdo2">2023.12</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo3" name="date" />
-                                <label for="rdo3">2023.11</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo4" name="date" />
-                                <label for="rdo4">2023.10</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo5" name="date" />
-                                <label for="rdo5">2023.09</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo6" name="date" />
-                                <label for="rdo6">2023.08</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo7" name="date" />
-                                <label for="rdo7">2023.07</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo8" name="date" />
-                                <label for="rdo8">2023.06</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo9" name="date" />
-                                <label for="rdo9">2023.05</label>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo10" name="date" />
-                                <label for="rdo10">2023.04</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo11" name="date" />
-                                <label for="rdo11">2023.03</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo12" name="date" />
-                                <label for="rdo12">2023.02</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo13" name="date" />
-                                <label for="rdo13">2023.01</label>
-                            </div>
-                        </li>
-
-                    </ul>
                 </div>
             </div>
+
+            <div class="btn-bottom-box">
+                <button type="button" class="btn btn-primary" onclick="reg()">등록</button>
+            </div>
         </div>
-    </div>
-    <!-- //layer-popup -->
-</article>
-<script>
-    function copy() {
+        <!-- //layer-popup -->
+    </article>
 
-        var copyText = $(".copy-text").val();
-        var text = $("<input>");
-        $("body").append(text);
-        text.val(copyText).select();
-        document.execCommand('copy');
-        text.remove();
-        alert("텍스트가 복사되었습니다.");
-    }
+    <!-- 2023-10-06 마크업 추가 -->
+    <article class="layerpopup-box full" id="filter" role="dialog" data-callback="cbFun">
+        <div class="layer-popup">
+            <header class="layer-header">
+                <div class="header-inner">
+                    <!-- 2023-10-06 기획수정 -->
+                    <div class="header-left"><a href="#none" class="btn-back btn-pop-close" role="button" title="뒤로가기">뒤로가기</a></div>
+                    <div class="header-center">
+                        <h1 class="pop-title">내 지갑 필터</h1>
+                    </div>
+                    <div class="header-right"></div>
+                </div>
+            </header>
 
-    function reg() {
-        ui.popup.close('#fullViewPop');
+            <div class="layer-content pb-88">
+                <div class="layer-inner">
+                    <div class="rdo-list cell mt-24">
+                        <div class="title-box">
+                            <h2 class="sub-title">기간</h2>
+                        </div>
+                        <ul class="half">
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo1_1" name="rdo0" checked />
+                                    <label for="rdo1_1">7일</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo1_2" name="rdo0" />
+                                    <label for="rdo1_2">한달</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo1_3" name="rdo0" />
+                                    <label for="rdo1_3">3개월</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo1_4" name="rdo0" onclick="ui.popup.open('#bottomViewPop')" />
+                                    <label for="rdo1_4" id="setDate">직접선택</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="rdo-list cell">
+                        <div class="title-box">
+                            <h2 class="sub-title">거래내역</h2>
+                        </div>
+                        <ul class="auto">
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo2_1" name="rdo1" checked />
+                                    <label for="rdo2_1">전체(지급/차감)</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo2_2" name="rdo1" />
+                                    <label for="rdo2_2">지급</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo2_3" name="rdo1" />
+                                    <label for="rdo2_3">차감</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="rdo-list cell">
+                        <div class="title-box">
+                            <h2 class="sub-title">정렬</h2>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo3_1" name="rdo2" checked />
+                                    <label for="rdo3_1">최신순</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo3_2" name="rdo2" />
+                                    <label for="rdo3_2">오래된 순</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-        var regText = $('#regText').val();
+            <div class="btn-bottom-box">
+                <button type="button" class="btn btn-primary" onclick="ui.popup.close('#filter')">확인</button>
+            </div>
+        </div>
+        <!-- //layer-popup -->
+    </article>
 
-        $('.btn-reg').hide().siblings('.copy').show()
-        $('.copy-text').val(regText);
+    <article class="layerpopup-box bottom" id="bottomViewPop" role="dialog">
+        <div class="layer-popup">
+            <header class="layer-header">
+                <h1 class="pop-title">기간</h1>
+                <button type="button" class="btn-close btn-pop-close" title="레이어팝업 닫기" onclick="ui.popup.close('#bottomViewPop')">닫기</button>
+            </header>
 
-    }
+            <div class="layer-content">
+                <div class="layer-inner">
+                    <div class="more-box">
+                        <!-- 2023-10-06 button -> radio 변경 -->
+                        <ul>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo1" name="date" checked />
+                                    <label for="rdo1">2024.01</label>
+                                </div>
+                            </li>
 
-    $(function () {
-        $('.sum').each(function () {
-            var num = $(this).text();
-            var formattedText = addCommas(num);
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo2" name="date" />
+                                    <label for="rdo2">2023.12</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo3" name="date" />
+                                    <label for="rdo3">2023.11</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo4" name="date" />
+                                    <label for="rdo4">2023.10</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo5" name="date" />
+                                    <label for="rdo5">2023.09</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo6" name="date" />
+                                    <label for="rdo6">2023.08</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo7" name="date" />
+                                    <label for="rdo7">2023.07</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo8" name="date" />
+                                    <label for="rdo8">2023.06</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo9" name="date" />
+                                    <label for="rdo9">2023.05</label>
+                                </div>
+                            </li>
 
-            $(this).text(formattedText);
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo10" name="date" />
+                                    <label for="rdo10">2023.04</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo11" name="date" />
+                                    <label for="rdo11">2023.03</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo12" name="date" />
+                                    <label for="rdo12">2023.02</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo13" name="date" />
+                                    <label for="rdo13">2023.01</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //layer-popup -->
+    </article>
+    <script>
+        function copy() {
+            var copyText = $('.copy-text').val();
+            var text = $('<input>');
+            $('body').append(text);
+            text.val(copyText).select();
+            document.execCommand('copy');
+            text.remove();
+            alert('텍스트가 복사되었습니다.');
+        }
 
-            function addCommas(numberString) {
-                return numberString.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-            }
+        function reg() {
+            ui.popup.close('#fullViewPop');
+
+            var regText = $('#regText').val();
+
+            $('.btn-reg').hide().siblings('.copy').show();
+            $('.copy-text').val(regText);
+        }
+
+        $(function () {
+            $('.sum').each(function () {
+                var num = $(this).text();
+                var formattedText = addCommas(num);
+
+                $(this).text(formattedText);
+
+                function addCommas(numberString) {
+                    return numberString.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                }
+            });
         });
-    });
 
-    // 2023-10-06 마크업 추가
-    function filter() {
-        ui.popup.open('#filter');
-    }
-</script>
-
+        // 2023-10-06 마크업 추가
+        function filter() {
+            ui.popup.open('#filter');
+        }
+    </script>
 </html>

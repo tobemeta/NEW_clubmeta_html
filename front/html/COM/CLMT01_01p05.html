@@ -1,41 +1,37 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>로딩실패(바텀시트) | 클럽메타</title>
+        <link rel="stylesheet" href="../../resources/css/common.min.css" />
+        <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+        <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+        <script src="../../resources/js/common.js"></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="format-detection" content="telephone=no" />
-    <title>로딩실패(바텀시트) | 클럽메타</title>
-    <link rel="stylesheet" href="../../resources/css/common.min.css" />
-    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
-    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
-    <script src="../../resources/js/common.js"></script>
-</head>
-
-<body>
-    <article class="layerpopup-box bottom is-active is-animation" id="bottomViewPop" role="dialog">
-        <div class="layer-popup">
-            <header class="layer-header">
-                <h1 class="pop-title"></h1>
-                <button type="button" class="btn-close btn-pop-close" title="레이어팝업 닫기">닫기</button>
-            </header>
-            <div class="layer-content pb-72">
-                <div class="layer=-inner">
-                    <div class="no-internet-area">
-                        <p class="body-title">로딩에 실패했습니다.<br />다시 시도해 주세요.</p>
+    <body>
+        <article class="layerpopup-box bottom is-active is-animation" id="bottomViewPop" role="dialog">
+            <div class="layer-popup">
+                <header class="layer-header">
+                    <h1 class="pop-title"></h1>
+                    <button type="button" class="btn-close btn-pop-close" title="레이어팝업 닫기">닫기</button>
+                </header>
+                <div class="layer-content pb-72">
+                    <div class="layer=-inner">
+                        <div class="no-internet-area">
+                            <p class="body-title">로딩에 실패했습니다.<br />다시 시도해 주세요.</p>
+                        </div>
                     </div>
                 </div>
-
+                <!-- //layer-content -->
+                <div class="btn-bottom-box">
+                    <button type="button" class="btn-primary btn-l btn-pop-confirm" title="인터넷 다시연결">다시연결</button>
+                </div>
             </div>
-            <!-- //layer-content -->
-            <div class="btn-bottom-box">
-                <button type="button" class="btn-primary btn-l btn-pop-confirm" title="인터넷 다시연결">다시연결</button>
-            </div>
-        </div>
-        <!-- //layer-popup -->
-    </article>
-</body>
-
+            <!-- //layer-popup -->
+        </article>
+    </body>
 </html>

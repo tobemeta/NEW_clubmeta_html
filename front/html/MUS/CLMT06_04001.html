@@ -1,177 +1,163 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>[탭] 클립(영상) | 클럽메타</title>
+        <link rel="stylesheet" href="../../resources/css/common.min.css" />
+        <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+        <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+        <script src="../../resources/js/common.js"></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="format-detection" content="telephone=no" />
-    <title>[탭] 클립(영상) | 클럽메타</title>
-    <link rel="stylesheet" href="../../resources/css/common.min.css" />
-    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
-    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
-    <script src="../../resources/js/common.js"></script>
-</head>
-
-<body>
-    <div class="wrap">
-        <header class="header">
-            <div class="header-inner">
-                <div class="header-left">
-                    <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
-                </div>
-                <div class="header-center">
-                    <h1 class="header-title"></h1>
-                </div>
-                <div class="header-right">
-                    <a href="#none" class="btn-share" role="button" title="공유하기"><span class="blind">공유하기</span></a>
-                </div>
-            </div>
-        </header>
-        <div class="contents">
-            <div class="section">
-                <div class="inner">
-                    <div class="music-info-area">
-                        <div class="info">
-                            <div class="img info-left">
-                                <img src="../../resources/images/img/img_musicchallenge_thumbnail_03.png" alt="">
-                            </div>
-                            <div class="info-right">
-                                <div class="cont">
-                                    <div class="cont-left">
-                                        <p class="sub-title">음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름</p>
-                                        <a href="#none" class="text-l"><span>작곡가 명작곡가 명</span></a>
-                                    </div>
-                                    <div class="chk-box like">
-                                        <input type="checkbox" id="chk_like">
-                                        <label for="chk_like"></label>
-                                        <span class="like-num text-m">123</span>
-                                    </div>
-                                </div>
-                                <div class="genre-list">
-                                    <ul>
-                                        <li>POP</li>
-                                        <li>재즈</li>
-                                        <li>일렉트로닉</li>
-                                        <li>힙합/랩</li>
-                                        <li>힙합/랩</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="btn-box">
-                            <button type="button" class="btn btn-s btn-primary">AI챌린지 오픈</button>
-                            <button type="button" class="btn btn-s btn-primary">일반 촬영</button>
-                            <!-- <button type="button" class="btn btn-s btn-primary">해당 음원으로 촬영</button> -->
-                        </div>
-                        <div class="playbar-area">
-                            <button class="btn-play is-stop"><span class="blind">정지</span></button>
-                            <div class="bar-area">
-                                <div class="bar" style="width:80%"></div>
-                            </div>
-                            <p class="timer">00:45</p>
-                        </div>
+    <body>
+        <div class="wrap">
+            <header class="header">
+                <div class="header-inner">
+                    <div class="header-left">
+                        <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
                     </div>
-                    <div class="tab-wrap line mt-16">
-                        <div class="tab-items">
-                            <ul>
-                                <li class="on"><a href="#" class="tab-button" data-target="tab1">클립</a></li>
-                                <!-- 2023-08-30 문구(talk -> 댓글) 수정 -->
-                                <li><a href="#" class="tab-button" data-target="tab2">댓글</a></li>
-                            </ul>
-                            <button type="button" class="btn-filter" onclick="ui.popup.open('#bottomViewPop')"><span
-                                    class="blind">필터</span></button>
-                        </div>
-                        <div class="tab-content">
-                            <div id="tab1" class="tab-cont open">
-                                <div class="challenge-box small">
-                                    <ul>
-                                        <li>
-                                            <a href="#none">
-                                                <div class="img">
-                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png"
-                                                        alt="챌린지 이미지">
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#none">
-                                                <div class="img">
-                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_13.png"
-                                                        alt="챌린지 이미지">
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#none">
-                                                <div class="img">
-                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_12.png"
-                                                        alt="챌린지 이미지">
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#none">
-                                                <div class="img">
-                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_11.png"
-                                                        alt="챌린지 이미지">
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#none">
-                                                <div class="img">
-                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_08.png"
-                                                        alt="챌린지 이미지">
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#none">
-                                                <div class="img">
-                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_07.png"
-                                                        alt="챌린지 이미지">
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#none">
-                                                <div class="img">
-                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_06.png"
-                                                        alt="챌린지 이미지">
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#none">
-                                                <div class="img">
-                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_04.png"
-                                                        alt="챌린지 이미지">
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#none">
-                                                <div class="img">
-                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_02.png"
-                                                        alt="챌린지 이미지">
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#none">
-                                                <div class="img">
-                                                    <img src="../../resources/images/img/img_aichallenge_thumbnail_03.png"
-                                                        alt="챌린지 이미지">
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
+                    <div class="header-center">
+                        <h1 class="header-title"></h1>
+                    </div>
+                    <div class="header-right">
+                        <a href="#none" class="btn-share" role="button" title="공유하기"><span class="blind">공유하기</span></a>
+                    </div>
+                </div>
+            </header>
+            <div class="contents">
+                <div class="section">
+                    <div class="inner">
+                        <div class="music-info-area">
+                            <div class="info">
+                                <div class="img info-left">
+                                    <img src="../../resources/images/img/img_musicchallenge_thumbnail_03.png" alt="" />
                                 </div>
-
+                                <div class="info-right">
+                                    <div class="cont">
+                                        <div class="cont-left">
+                                            <p class="sub-title">음원이름음원이름음원이름음원이름음원이름음원이름음원이름음원이름</p>
+                                            <a href="#none" class="text-l"><span>작곡가 명작곡가 명</span></a>
+                                        </div>
+                                        <div class="chk-box like">
+                                            <input type="checkbox" id="chk_like" />
+                                            <label for="chk_like"></label>
+                                            <span class="like-num text-m">123</span>
+                                        </div>
+                                    </div>
+                                    <div class="genre-list">
+                                        <ul>
+                                            <li>POP</li>
+                                            <li>재즈</li>
+                                            <li>일렉트로닉</li>
+                                            <li>힙합/랩</li>
+                                            <li>힙합/랩</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-                            <!-- <div id="tab2" class="tab-cont">
+                            <div class="btn-box">
+                                <button type="button" class="btn btn-s btn-primary">AI챌린지 오픈</button>
+                                <button type="button" class="btn btn-s btn-primary">일반 촬영</button>
+                                <!-- <button type="button" class="btn btn-s btn-primary">해당 음원으로 촬영</button> -->
+                            </div>
+                            <div class="playbar-area">
+                                <button class="btn-play is-stop"><span class="blind">정지</span></button>
+                                <div class="bar-area">
+                                    <div class="bar" style="width: 80%"></div>
+                                </div>
+                                <p class="timer">00:45</p>
+                            </div>
+                        </div>
+                        <div class="tab-wrap line mt-16">
+                            <div class="tab-items">
+                                <ul>
+                                    <li class="on"><a href="#" class="tab-button" data-target="tab1">클립</a></li>
+                                    <!-- 2023-08-30 문구(talk -> 댓글) 수정 -->
+                                    <li><a href="#" class="tab-button" data-target="tab2">댓글</a></li>
+                                </ul>
+                                <button type="button" class="btn-filter" onclick="ui.popup.open('#bottomViewPop')"><span class="blind">필터</span></button>
+                            </div>
+                            <div class="tab-content">
+                                <div id="tab1" class="tab-cont open">
+                                    <div class="challenge-box small">
+                                        <ul>
+                                            <li>
+                                                <a href="#none">
+                                                    <div class="img">
+                                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png" alt="챌린지 이미지" />
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#none">
+                                                    <div class="img">
+                                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_13.png" alt="챌린지 이미지" />
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#none">
+                                                    <div class="img">
+                                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_12.png" alt="챌린지 이미지" />
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#none">
+                                                    <div class="img">
+                                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_11.png" alt="챌린지 이미지" />
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#none">
+                                                    <div class="img">
+                                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_08.png" alt="챌린지 이미지" />
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#none">
+                                                    <div class="img">
+                                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_07.png" alt="챌린지 이미지" />
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#none">
+                                                    <div class="img">
+                                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_06.png" alt="챌린지 이미지" />
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#none">
+                                                    <div class="img">
+                                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_04.png" alt="챌린지 이미지" />
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#none">
+                                                    <div class="img">
+                                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_02.png" alt="챌린지 이미지" />
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#none">
+                                                    <div class="img">
+                                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_03.png" alt="챌린지 이미지" />
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- <div id="tab2" class="tab-cont">
                                 <div class=""></div>
                                 <ul>
                                     <li>tese2</li>
@@ -183,81 +169,77 @@
                                     <li>tese3</li>
                                 </ul>
                             </div> -->
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="quick_top">
+                <button type="button" class="btn-top">TOP</button>
+            </div>
         </div>
+        <!-- 2023-08-24 스크립트 삭제 -->
+    </body>
+    <article class="layerpopup-box bottom" id="bottomViewPop" role="dialog">
+        <!-- 2023-09-20 challPop class 삭제 -->
+        <div class="layer-popup">
+            <header class="layer-header">
+                <h1 class="pop-title">정렬</h1>
+                <button type="button" class="btn-close btn-pop-close" title="레이어팝업 닫기" onclick="ui.popup.close('#bottomViewPop')">닫기</button>
+            </header>
 
-        <div class="quick_top">
-            <button type="button" class="btn-top">TOP</button>
-        </div>
-    </div>
-    <!-- 2023-08-24 스크립트 삭제 -->
-</body>
-<article class="layerpopup-box bottom" id="bottomViewPop" role="dialog">
-    <!-- 2023-09-20 challPop class 삭제 -->
-    <div class="layer-popup">
-        <header class="layer-header">
-            <h1 class="pop-title">정렬</h1>
-            <button type="button" class="btn-close btn-pop-close" title="레이어팝업 닫기"
-                onclick="ui.popup.close('#bottomViewPop')">닫기</button>
-        </header>
-
-        <div class="layer-content pb-88">
-            <div class="layer-inner">
-                <div class="rdo-list cell">
-                    <ul>
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo1" name="rdo" checked>
-                                <label for="rdo1">선택항목</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="rdo-box cell">
-                                <input type="radio" id="rdo2" name="rdo">
-                                <label for="rdo2">선택항목</label>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="filter-form">
-                    <h2 class="sub-title mt-16 mb-16">필터</h2>
-                    <div class="chk-list">
+            <div class="layer-content pb-88">
+                <div class="layer-inner">
+                    <div class="rdo-list cell">
                         <ul>
                             <li>
-                                <div class="chk-box ico-top">
-                                    <input type="checkbox" class="ai" id="chk1" name="chk" checked>
-                                    <label for="chk1">AI챌린지</label>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo1" name="rdo" checked />
+                                    <label for="rdo1">선택항목</label>
                                 </div>
                             </li>
                             <li>
-                                <div class="chk-box ico-top">
-                                    <input type="checkbox" class="music" id="chk2" name="chk">
-                                    <label for="chk2">음원챌린지</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="chk-box ico-top">
-                                    <input type="checkbox" class="camera" id="chk3" name="chk">
-                                    <label for="chk3">일반</label>
+                                <div class="rdo-box cell">
+                                    <input type="radio" id="rdo2" name="rdo" />
+                                    <label for="rdo2">선택항목</label>
                                 </div>
                             </li>
                         </ul>
                     </div>
-                </div>
 
+                    <div class="filter-form">
+                        <h2 class="sub-title mt-16 mb-16">필터</h2>
+                        <div class="chk-list">
+                            <ul>
+                                <li>
+                                    <div class="chk-box ico-top">
+                                        <input type="checkbox" class="ai" id="chk1" name="chk" checked />
+                                        <label for="chk1">AI챌린지</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chk-box ico-top">
+                                        <input type="checkbox" class="music" id="chk2" name="chk" />
+                                        <label for="chk2">음원챌린지</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chk-box ico-top">
+                                        <input type="checkbox" class="camera" id="chk3" name="chk" />
+                                        <label for="chk3">일반</label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-bottom-box">
+                <button type="button" class="btn btn-primary btn-pop-close" onclick="ui.popup.close('#bottomViewPop')">확인</button>
             </div>
         </div>
-
-        <div class="btn-bottom-box">
-            <button type="button" class="btn btn-primary btn-pop-close"
-                onclick="ui.popup.close('#bottomViewPop')">확인</button>
-        </div>
-    </div>
-    <!-- //layer-popup -->
-</article>
-
+        <!-- //layer-popup -->
+    </article>
 </html>

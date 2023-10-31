@@ -1,144 +1,123 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>공지사항 상세 | 클럽메타</title>
+        <link rel="stylesheet" href="../../resources/css/common.min.css" />
+        <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+        <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+        <script src="../../resources/js/common.js"></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="format-detection" content="telephone=no" />
-    <title>공지사항 상세 | 클럽메타</title>
-    <link rel="stylesheet" href="../../resources/css/common.min.css" />
-    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
-    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
-    <script src="../../resources/js/common.js"></script>
-</head>
-
-<body>
-    <div class="wrap">
-        <header class="header">
-            <div class="header-inner">
-                <div class="header-left">
-                    <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
+    <body>
+        <div class="wrap">
+            <header class="header">
+                <div class="header-inner">
+                    <div class="header-left">
+                        <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
+                    </div>
+                    <div class="header-center">
+                        <h1 class="header-title">공지사항 / FAQ</h1>
+                    </div>
+                    <div class="header-right"></div>
                 </div>
-                <div class="header-center">
-                    <h1 class="header-title">공지사항 / FAQ</h1>
-                </div>
-                <div class="header-right"></div>
-            </div>
-        </header>
-        <div class="contents">
-            <div class="section">
-                <div class="inner">
-                    <div class="tab-wrap box">
-                        <div class="tab-items">
-                            <ul>
-                                <li class="on">
-                                    <a href="#none" class="tab-button" data-target="tab1">공지사항</a>
-                                </li>
-                                <li>
-                                    <a href="#none" class="tab-button" data-target="tab2">FAQ</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="tab-content">
-                            <div id="tab1" class="tab-cont open">
-                                <div class="notice-area">
-                                    <div class="list-box notice">
-                                        <ul>
-                                            <li class="new">
-                                                <a href="#none">
-                                                    <div class="notice-info">
-                                                        <p class="body-title">공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목
-                                                            공지사항 제목
-                                                            공지사항
-                                                            제
-                                                        </p>
-                                                        <span class="text-l date">2023.07.18</span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#none">
-                                                    <div class="notice-info">
-                                                        <p class="">공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항
-                                                            제
-                                                        </p>
-                                                        <span class="text-l date">2023.07.18</span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#none">
-                                                    <div class="notice-info">
-                                                        <p class="">공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항
-                                                            제
-                                                        </p>
-                                                        <span class="text-l date">2023.07.18</span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#none">
-                                                    <div class="notice-info">
-                                                        <p class="">공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항
-                                                            제
-                                                        </p>
-                                                        <span class="text-l date">2023.07.18</span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#none">
-                                                    <div class="notice-info">
-                                                        <p class="">공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항
-                                                            제
-                                                        </p>
-                                                        <span class="text-l date">2023.07.18</span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#none" class="">
-                                                    <div class="notice-info">
-                                                        <p class="">공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항
-                                                            제
-                                                        </p>
-                                                        <span class="text-l date">2023.07.18</span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#none">
-                                                    <div class="notice-info">
-                                                        <p class="">공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항
-                                                            제
-                                                        </p>
-                                                        <span class="text-l date">2023.07.18</span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#none">
-                                                    <div class="notice-info">
-                                                        <p class="">공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항
-                                                            제
-                                                        </p>
-                                                        <span class="text-l date">2023.07.18</span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                        </ul>
+            </header>
+            <div class="contents">
+                <div class="section">
+                    <div class="inner">
+                        <div class="tab-wrap box">
+                            <div class="tab-items">
+                                <ul>
+                                    <li class="on">
+                                        <a href="#none" class="tab-button" data-target="tab1">공지사항</a>
+                                    </li>
+                                    <li>
+                                        <a href="#none" class="tab-button" data-target="tab2">FAQ</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-content">
+                                <div id="tab1" class="tab-cont open">
+                                    <div class="notice-area">
+                                        <div class="list-box notice">
+                                            <ul>
+                                                <li class="new">
+                                                    <a href="#none">
+                                                        <div class="notice-info">
+                                                            <p class="body-title">공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제</p>
+                                                            <span class="text-l date">2023.07.18</span>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#none">
+                                                        <div class="notice-info">
+                                                            <p class="">공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제</p>
+                                                            <span class="text-l date">2023.07.18</span>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#none">
+                                                        <div class="notice-info">
+                                                            <p class="">공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제</p>
+                                                            <span class="text-l date">2023.07.18</span>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#none">
+                                                        <div class="notice-info">
+                                                            <p class="">공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제</p>
+                                                            <span class="text-l date">2023.07.18</span>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#none">
+                                                        <div class="notice-info">
+                                                            <p class="">공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제</p>
+                                                            <span class="text-l date">2023.07.18</span>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#none" class="">
+                                                        <div class="notice-info">
+                                                            <p class="">공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제</p>
+                                                            <span class="text-l date">2023.07.18</span>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#none">
+                                                        <div class="notice-info">
+                                                            <p class="">공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제</p>
+                                                            <span class="text-l date">2023.07.18</span>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#none">
+                                                        <div class="notice-info">
+                                                            <p class="">공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제목 공지사항 제</p>
+                                                            <span class="text-l date">2023.07.18</span>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
+                                <!-- <div id="tab2" class="tab-cont"></div> -->
                             </div>
-                            <!-- <div id="tab2" class="tab-cont"></div> -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</body>
-
+    </body>
 </html>

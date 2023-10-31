@@ -1,61 +1,55 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>영상 신고 리스트 팝업 | 클럽메타</title>
+        <link rel="stylesheet" href="../../resources/css/common.min.css" />
+        <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+        <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+        <script src="../../resources/js/common.js"></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="format-detection" content="telephone=no" />
-    <title>영상 신고 리스트 팝업 | 클럽메타</title>
-    <link rel="stylesheet" href="../../resources/css/common.min.css" />
-    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
-    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
-    <script src="../../resources/js/common.js"></script>
-</head>
+    <body>
+        <article class="layerpopup-box bottom is-active is-animation" id="bottomViewPop" role="dialog">
+            <div class="layer-popup">
+                <header class="layer-header">
+                    <h1 class="pop-title"></h1>
+                    <button type="button" class="btn-close btn-pop-close" onclick="ui.popup.close('#bottomViewPop')" title="레이어팝업 닫기">닫기</button>
+                </header>
 
-<body>
-    <article class="layerpopup-box bottom is-active is-animation" id="bottomViewPop" role="dialog">
-        <div class="layer-popup">
-            <header class="layer-header">
-                <h1 class="pop-title"></h1>
-                <button type="button" class="btn-close btn-pop-close" onclick="ui.popup.close('#bottomViewPop')"
-                    title="레이어팝업 닫기">닫기</button>
-            </header>
-
-            <div class="layer-content">
-                <div class="layer-inner">
-                    <!-- 2023-08-22 class 수정 -->
-                    <div class="more-box ico">
-                        <ul>
-                            <li>
-                                <a href="#none" class="card original">원본 영상으로 이동</a>
-                            </li>
-                            <li>
-                                <button type="button" class="card block" onclick="ui.popup.toast('#toastPop')">게시물
-                                    차단</button>
-                            </li>
-                            <li>
-                                <button tyep="button" class="card report">게시물 신고</button>
-                            </li>
-                        </ul>
+                <div class="layer-content">
+                    <div class="layer-inner">
+                        <!-- 2023-08-22 class 수정 -->
+                        <div class="more-box ico">
+                            <ul>
+                                <li>
+                                    <a href="#none" class="card original">원본 영상으로 이동</a>
+                                </li>
+                                <li>
+                                    <button type="button" class="card block" onclick="ui.popup.toast('#toastPop')">게시물 차단</button>
+                                </li>
+                                <li>
+                                    <button tyep="button" class="card report">게시물 신고</button>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-
             </div>
-        </div>
-        <!-- //layer-popup -->
-    </article>
-
-    <div class="toast-wrap top">
-        <article class="toastPop" id="toastPop" role="dialog">
-            <div class="toast-box">
-                <p class="toastMsg check">해당 영상이 차단되었습니다.</p>
-            </div>
+            <!-- //layer-popup -->
         </article>
-    </div>
-</body>
 
+        <div class="toast-wrap top">
+            <article class="toastPop" id="toastPop" role="dialog">
+                <div class="toast-box">
+                    <p class="toastMsg check">해당 영상이 차단되었습니다.</p>
+                </div>
+            </article>
+        </div>
+    </body>
 </html>
 
 <!-- 팝업 -->

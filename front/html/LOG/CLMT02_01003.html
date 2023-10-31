@@ -1,67 +1,62 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>비밀번호 찾기 | 클럽메타</title>
+        <link rel="stylesheet" href="../../resources/css/common.min.css" />
+        <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+        <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+        <script src="../../resources/js/common.js"></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="format-detection" content="telephone=no" />
-    <title>비밀번호 찾기 | 클럽메타</title>
-    <link rel="stylesheet" href="../../resources/css/common.min.css" />
-    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
-    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
-    <script src="../../resources/js/common.js"></script>
-</head>
-
-<body>
-    <div class="wrap">
-        <header class="header">
-            <div class="header-inner">
-                <div class="header-left">
-                    <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
+    <body>
+        <div class="wrap">
+            <header class="header">
+                <div class="header-inner">
+                    <div class="header-left">
+                        <a href="#none" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
+                    </div>
+                    <div class="header-center">
+                        <h1 class="header-title">비밀번호 찾기</h1>
+                    </div>
+                    <div class="header-right"></div>
                 </div>
-                <div class="header-center">
-                    <h1 class="header-title">비밀번호 찾기</h1>
-                </div>
-                <div class="header-right"></div>
-            </div>
-        </header>
-        <div class="contents pb-96">
-            <div class="section">
-                <div class="inner">
-                    <div class="user-idpw-box align-left">
-                        <div class="body-title">
-                            <p>비밀번호가 생각나지 않으세요?</p>
-                            <!-- 2023-07-28 수정 -->
-                            <p>PASS 본인인증을 통해 비밀번호를 찾을 수 있습니다.</p>
-                        </div>
-                        <div class="form-box">
-                            <form action="">
-                                <fieldset>
-                                    <dl>
-                                        <dt><label>아이디</label></dt>
-                                        <dd>
-                                            <div class="input-box">
-                                                <input type="text" title="내용입력" placeholder="아이디 (이메일) 입력" />
-                                                <a href="#none" class="btn-inp-del" role="button"
-                                                    aria-label="입력내용삭제"></a>
-                                                <span class="validate-txt">이메일을 확인해 주세요.</span>
-                                            </div>
-                                        </dd>
-                                    </dl>
-                                    <div class="btn-bottom-box">
-                                        <button type="button" class="btn-primary" title="PASS 본인인증" disabled>PASS
-                                            본인인증</button>
-                                    </div>
-                                </fieldset>
-                            </form>
+            </header>
+            <div class="contents pb-96">
+                <div class="section">
+                    <div class="inner">
+                        <div class="user-idpw-box align-left">
+                            <div class="body-title">
+                                <p>비밀번호가 생각나지 않으세요?</p>
+                                <!-- 2023-07-28 수정 -->
+                                <p>PASS 본인인증을 통해 비밀번호를 찾을 수 있습니다.</p>
+                            </div>
+                            <div class="form-box">
+                                <form action="">
+                                    <fieldset>
+                                        <dl>
+                                            <dt><label>아이디</label></dt>
+                                            <dd>
+                                                <div class="input-box">
+                                                    <input type="text" title="내용입력" placeholder="아이디 (이메일) 입력" />
+                                                    <a href="#none" class="btn-inp-del" role="button" aria-label="입력내용삭제"></a>
+                                                    <span class="validate-txt">이메일을 확인해 주세요.</span>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                        <div class="btn-bottom-box">
+                                            <button type="button" class="btn-primary" title="PASS 본인인증" disabled>PASS 본인인증</button>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</body>
-
+    </body>
 </html>

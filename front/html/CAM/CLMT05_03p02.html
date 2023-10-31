@@ -1,131 +1,125 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>음원 챌린지 리스트 팝업 | 클럽메타</title>
+        <link rel="stylesheet" href="../../resources/css/lib/swiper-11.0.3.min.css" />
+        <link rel="stylesheet" href="../../resources/css/common.min.css" />
+        <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+        <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+        <script src="../../resources/js/lib/swiper-11.0.3.min.js"></script>
+        <script src="../../resources/js/common.js"></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="format-detection" content="telephone=no" />
-    <title>음원 챌린지 리스트 팝업 | 클럽메타</title>
-    <link rel="stylesheet" href="../../resources/css/lib/swiper-11.0.3.min.css" />
-    <link rel="stylesheet" href="../../resources/css/common.min.css" />
-    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
-    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
-    <script src="../../resources/js/lib/swiper-11.0.3.min.js"></script>
-    <script src="../../resources/js/common.js"></script>
-</head>
-
-<body>
-    <!-- 2023-09-14 class 수정 -->
-    <article class="layerpopup-box full is-active is-animation" id="fullViewPop" role="dialog">
-        <div class="layer-popup challPop">
-            <!-- 2023-09-14 마크업수정 -->
-            <header class="layer-header">
-                <div class="header-inner">
-                    <div class="header-left"></div>
-                    <div class="header-center">
-                        <h1 class="pop-title">음원 챌린지를 선택하세요</h1>
+    <body>
+        <!-- 2023-09-14 class 수정 -->
+        <article class="layerpopup-box full is-active is-animation" id="fullViewPop" role="dialog">
+            <div class="layer-popup challPop">
+                <!-- 2023-09-14 마크업수정 -->
+                <header class="layer-header">
+                    <div class="header-inner">
+                        <div class="header-left"></div>
+                        <div class="header-center">
+                            <h1 class="pop-title">음원 챌린지를 선택하세요</h1>
+                        </div>
+                        <div class="header-right">
+                            <button type="button" class="btn-close btn-pop-close" title="레이어팝업 닫기" onclick="ui.popup.close('#fullViewPop')">닫기</button>
+                        </div>
                     </div>
-                    <div class="header-right">
-                        <button type="button" class="btn-close btn-pop-close" title="레이어팝업 닫기"
-                            onclick="ui.popup.close('#fullViewPop')">닫기</button>
-                    </div>
-                </div>
-            </header>
+                </header>
 
-            <div class="layer-content pb-72">
-                <div class="challPop-slider">
-                    <div class="swiper-container chall-swiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <!-- 2023-08-28 class 추가 -->
-                                <a href="#none" class="card vinyl" role="button" title="해당 클립으로 이동">
-                                    <div class="img">
-                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png" alt="">
-                                    </div>
-                                    <p class="tag blue">그린챌린지</p>
-                                    <p class="date">2022.11.11 ~ 2022.11.22</p>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="#none" class="card" role="button" title="해당 클립으로 이동">
-                                    <div class="img">
-                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png" alt="">
-                                    </div>
-                                    <p class="tag blue">그린챌린지</p>
-                                    <p class="date">2022.11.11 ~ 2022.11.22</p>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="#none" class="card" role="button" title="해당 클립으로 이동">
-                                    <div class="img">
-                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png" alt="">
-                                    </div>
-                                    <p class="tag blue">그린챌린지</p>
-                                    <p class="date">2022.11.11 ~ 2022.11.22</p>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="#none" class="card" role="button" title="해당 클립으로 이동">
-                                    <div class="img">
-                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png" alt="">
-                                    </div>
-                                    <p class="tag blue">그린챌린지</p>
-                                    <p class="date">2022.11.11 ~ 2022.11.22</p>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="#none" class="card" role="button" title="해당 클립으로 이동">
-                                    <div class="img">
-                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png" alt="">
-                                    </div>
-                                    <p class="tag blue">그린챌린지</p>
-                                    <p class="date">2022.11.11 ~ 2022.11.22</p>
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="#none" class="card" role="button" title="해당 클립으로 이동">
-                                    <div class="img">
-                                        <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png" alt="">
-                                    </div>
-                                    <p class="tag blue">그린챌린지</p>
-                                    <p class="date">2022.11.11 ~ 2022.11.22</p>
-                                </a>
+                <div class="layer-content pb-72">
+                    <div class="challPop-slider">
+                        <div class="swiper-container chall-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <!-- 2023-08-28 class 추가 -->
+                                    <a href="#none" class="card vinyl" role="button" title="해당 클립으로 이동">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png" alt="" />
+                                        </div>
+                                        <p class="tag blue">그린챌린지</p>
+                                        <p class="date">2022.11.11 ~ 2022.11.22</p>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#none" class="card" role="button" title="해당 클립으로 이동">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png" alt="" />
+                                        </div>
+                                        <p class="tag blue">그린챌린지</p>
+                                        <p class="date">2022.11.11 ~ 2022.11.22</p>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#none" class="card" role="button" title="해당 클립으로 이동">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png" alt="" />
+                                        </div>
+                                        <p class="tag blue">그린챌린지</p>
+                                        <p class="date">2022.11.11 ~ 2022.11.22</p>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#none" class="card" role="button" title="해당 클립으로 이동">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png" alt="" />
+                                        </div>
+                                        <p class="tag blue">그린챌린지</p>
+                                        <p class="date">2022.11.11 ~ 2022.11.22</p>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#none" class="card" role="button" title="해당 클립으로 이동">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png" alt="" />
+                                        </div>
+                                        <p class="tag blue">그린챌린지</p>
+                                        <p class="date">2022.11.11 ~ 2022.11.22</p>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#none" class="card" role="button" title="해당 클립으로 이동">
+                                        <div class="img">
+                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png" alt="" />
+                                        </div>
+                                        <p class="tag blue">그린챌린지</p>
+                                        <p class="date">2022.11.11 ~ 2022.11.22</p>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="btn-bottom-box">
+                    <a href="#none" class="btn btn-outline" title="상세화면 이동" role="button">상세보기</a>
+                    <!-- 2023-09-14 bottom->full 수정 -->
+                    <button type="button" class="btn btn-primary btn-pop-close" onclick="ui.popup.close('#fullViewPop')">참여하기</button>
+                </div>
             </div>
-
-            <div class="btn-bottom-box">
-                <a href="#none" class="btn btn-outline" title="상세화면 이동" role="button">상세보기</a>
-                <!-- 2023-09-14 bottom->full 수정 -->
-                <button type="button" class="btn btn-primary btn-pop-close"
-                    onclick="ui.popup.close('#fullViewPop')">참여하기</button>
-            </div>
-        </div>
-        <!-- //layer-popup -->
-    </article>
-</body>
-<script>
-    const challSlideSet = {
-        loop: true,
-        centeredSlides: true,
-        slidesPerView: 'auto',
-        slideToClickedSlide: true,
-        effect: 'coverflow',
-        coverflowEffect: {
-            rotate: 0,
-            stretch: -50,
-            slideShadows: false,
-            depth: 300,
-        },
-
-    };
-    const challSwiper = new Swiper('.chall-swiper', challSlideSet);
-</script>
-
+            <!-- //layer-popup -->
+        </article>
+    </body>
+    <script>
+        const challSlideSet = {
+            loop: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            slideToClickedSlide: true,
+            effect: 'coverflow',
+            coverflowEffect: {
+                rotate: 0,
+                stretch: -50,
+                slideShadows: false,
+                depth: 300
+            }
+        };
+        const challSwiper = new Swiper('.chall-swiper', challSlideSet);
+    </script>
 </html>
 
 <!-- 팝업 -->

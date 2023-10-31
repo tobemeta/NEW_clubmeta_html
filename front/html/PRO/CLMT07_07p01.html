@@ -1,45 +1,41 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>공유 신고 선택 리스트 팝업 | 클럽메타</title>
+        <link rel="stylesheet" href="../../resources/css/common.min.css" />
+        <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+        <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+        <script src="../../resources/js/common.js"></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="format-detection" content="telephone=no" />
-    <title>공유 신고 선택 리스트 팝업 | 클럽메타</title>
-    <link rel="stylesheet" href="../../resources/css/common.min.css" />
-    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
-    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
-    <script src="../../resources/js/common.js"></script>
-</head>
+    <body>
+        <article class="layerpopup-box bottom is-active is-animation" id="bottomViewPop" role="dialog">
+            <div class="layer-popup">
+                <header class="layer-header">
+                    <h1 class="pop-title"></h1>
+                    <button type="button" class="btn-close btn-pop-close" onclick="ui.popup.close('#bottomViewPop')" title="레이어팝업 닫기">닫기</button>
+                </header>
 
-<body>
-    <article class="layerpopup-box bottom is-active is-animation" id="bottomViewPop" role="dialog">
-        <div class="layer-popup">
-            <header class="layer-header">
-                <h1 class="pop-title"></h1>
-                <button type="button" class="btn-close btn-pop-close" onclick="ui.popup.close('#bottomViewPop')"
-                    title="레이어팝업 닫기">닫기</button>
-            </header>
-
-            <div class="layer-content">
-                <div class="layer-inner">
-                    <div class="more-box ico">
-                        <ul>
-                            <li>
-                                <a href="#none" class="card share">프로필 공유하기</a>
-                            </li>
-                            <li>
-                                <a href="#none" class="card accuse">프로필 신고</a>
-                            </li>
-                        </ul>
+                <div class="layer-content">
+                    <div class="layer-inner">
+                        <div class="more-box ico">
+                            <ul>
+                                <li>
+                                    <a href="#none" class="card share">프로필 공유하기</a>
+                                </li>
+                                <li>
+                                    <a href="#none" class="card accuse">프로필 신고</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+                <!-- //layer-content -->
             </div>
-            <!-- //layer-content -->
-        </div>
-    </article>
-</body>
-
+        </article>
+    </body>
 </html>
