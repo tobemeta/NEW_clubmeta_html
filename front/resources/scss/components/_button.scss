@@ -101,9 +101,10 @@
 }
 
 .btn-play {
-    @include bg($src: '../images/ico/ico_w_play.svg');
+    @include bg($src: '../images/ico/ico_w_play.png');
+    background-size: 2.4rem auto;
     &.is-stop {
-        @include bg($src: '../images/ico/ico_w_pause.svg');
+        @include bg($src: '../images/ico/ico_w_pause.png');
     }
 }
 .btn-share {

@@ -713,11 +713,12 @@ h1 {
                         width: 2.4rem;
                         height: 2.4rem;
                         margin: 0 auto;
-                        @include bg($src: '../images/ico/ico_w_play.svg');
+                        @include bg($src: '../images/ico/ico_w_play.png');
+                        background-size: 2.4rem auto;
                     }
                     &.is-stop {
                         &:after {
-                            @include bg($src: '../images/ico/ico_w_pause.svg');
+                            @include bg($src: '../images/ico/ico_w_pause.png');
                         }
                     }
                 }
@@ -1235,10 +1236,11 @@ h1 {
             display: block;
             width: 2.4rem;
             height: 2.4rem;
-            @include bg($src: '../images/ico/ico_w_pause.svg', $po: center);
+            @include bg($src: '../images/ico/ico_w_pause.png', $po: center);
+            background-size: 2.4rem auto;
 
             &.is-stop {
-                background-image: url('../images/ico/ico_w_play.svg');
+                background-image: url('../images/ico/ico_w_play.png');
             }
         }
     }

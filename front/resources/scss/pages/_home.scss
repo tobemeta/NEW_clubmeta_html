@@ -75,12 +75,12 @@
                     height: 1.6rem;
                 }
                 &.like:before {
-                    @include bg($src: '../images/ico/ico_w_heart.svg');
-                    background-size: cover;
+                    @include bg($src: '../images/ico/ico_w_heart.png');
+                    background-size: 1.6rem auto;
                 }
                 &.reply:before {
-                    @include bg($src: '../images/ico/ico_w_reply.svg');
-                    background-size: cover;
+                    @include bg($src: '../images/ico/ico_w_reply.png');
+                    background-size: 1.6rem auto;
                 }
             }
             span {
@@ -114,8 +114,8 @@
                     height: 1.6rem;
                 }
                 &.like:before {
-                    @include bg($src: '../images/ico/ico_w_heart.svg');
-                    background-size: cover;
+                    @include bg($src: '../images/ico/ico_w_heart.png');
+                    background-size: 1.6rem auto;
                 }
             }
         }
@@ -641,11 +641,12 @@
             width: 2.4rem;
             height: 2.4rem;
             transform: translate(-50%, -50%);
-            @include bg($src: '../images/ico/ico_w_play.svg');
+            @include bg($src: '../images/ico/ico_w_play.png');
+            background-size: 2.4rem auto;
         }
         &.is-stop {
             &:after {
-                background-image: url('../images/ico/ico_w_pause.svg');
+                background-image: url('../images/ico/ico_w_pause.png');
             }
         }
     }
