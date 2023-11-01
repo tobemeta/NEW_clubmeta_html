@@ -547,7 +547,8 @@
         top: 0;
         &:checked + label {
             &:before {
-                background: url('../../resources/images/ico/ico_chkbox_on.svg') no-repeat;
+                background: url('../../resources/images/ico/ico_chkbox_on.png') no-repeat center center;
+                background-size: contain;
                 border: none;
                 transition: all 0.275s;
             }
@@ -555,14 +556,14 @@
         &:disabled + label {
             cursor: default;
             &:before {
-                background: #cfcfcf;
+                background-color: #cfcfcf;
                 border: 1px solid #888888;
             }
         }
 
         &:checked:disabled + label {
             &:before {
-                background: url('../../resources/images/ico/ico_chkbox_disable.svg') no-repeat;
+                background-image: url('../../resources/images/ico/ico_chkbox_disable.png');
                 border: none;
             }
         }
