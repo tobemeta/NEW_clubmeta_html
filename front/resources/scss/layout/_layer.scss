@@ -155,7 +155,7 @@
         .layer-popup {
             position: relative;
             transform: none !important;
-            min-height: -vh(100);
+            min-height: -vh(100, var(--statusBarHeight), true);
         }
         .layer-header {
             position: fixed;

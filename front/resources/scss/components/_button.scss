@@ -96,9 +96,7 @@
 }
 .btn-go {
     @include bg($src: '../images/ico/ico_s_right.png', $po: center);
-    width: 1.6rem;
-    height: 1.6rem;
-    background-size: contain;
+    background-size: 1.6rem;
 }
 
 .btn-loadmore {
