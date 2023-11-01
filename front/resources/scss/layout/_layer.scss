@@ -169,12 +169,19 @@
                     padding-top: constant(safe-area-inset-top);
                     padding-top: env(safe-area-inset-top);
                 }
+                html.android & {
+                    height: calc(4.8rem + var(--statusBarHeight));
+                    padding-top: var(--statusBarHeight);
+                }
             }
             .layer-content {
                 padding-top: 4.8rem;
                 html.ios & {
                     padding-top: calc(4.8rem + constant(safe-area-inset-top));
                     padding-top: calc(4.8rem + env(safe-area-inset-top));
+                }
+                html.android & {
+                    padding-top: calc(4.8rem + var(--statusBarHeight));
                 }
             }
         }

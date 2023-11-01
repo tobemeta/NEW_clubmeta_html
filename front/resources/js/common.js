@@ -36,6 +36,7 @@ const ui = {
             // else if (userAgent.indexOf('iphone') > -1 || userAgent.indexOf('ipad') > -1) {
             // }
 
+            $('html').css('--statusBarHeight', statusBarHeight);
             $header.css('padding-top', statusBarHeight + 'px');
 
             if ($('.layerpopup-box.full.is-active').length) {

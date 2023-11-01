@@ -78,7 +78,8 @@
                 left: 0.8rem;
                 width: 2.4rem;
                 height: 2.4rem;
-                @include bg($src: '../images/ico/ico_w_lock.svg');
+                @include bg($src: '../images/ico/ico_w_lock.png');
+                background-size: contain;
             }
         }
 
