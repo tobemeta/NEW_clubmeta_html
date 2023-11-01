@@ -236,7 +236,8 @@
         right: 1.6rem;
         width: 2.4rem;
         height: 2.4rem;
-        @include bg($src: '../images/btn/btn_ip_delete.svg');
+        @include bg($src: '../images/btn/btn_ip_delete.png');
+        background-size: contain;
     }
 
     .btn-inp-pw {
@@ -317,7 +318,7 @@
         right: 1.6rem;
         width: 2.4rem;
         height: 2.4rem;
-        @include bg($src: '../images/btn/btn_ip_delete.svg');
+        @include bg($src: '../images/btn/btn_ip_delete.png');
     }
 }
 
