@@ -168,6 +168,7 @@
 
             .tag-list {
                 display: block;
+                min-height: 2.3rem;
                 @include ellipsis();
                 .tag {
                     display: inline;
@@ -175,7 +176,6 @@
                     line-height: 2rem;
                     color: #404040;
                 }
-                @include ellipsis();
             }
             .tag {
                 &.blue {
