@@ -95,8 +95,8 @@
         right: 0.8rem;
         width: 2.4rem;
         height: 2.4rem;
-        @include bg($src: '../images/ico/ico_w_more.svg');
-        background-size: 2.4rem;
+        @include bg($src: '../images/ico/ico_w_more.png');
+        background-size: contain;
         z-index: 10;
     }
 
@@ -135,14 +135,15 @@
                 left: 0;
                 width: 1.6rem;
                 height: 1.6rem;
+                background-size: contain;
             }
 
             &.view:before {
-                @include bg($src: '../images/ico/ico_util_view.svg');
+                @include bg($src: '../images/ico/ico_util_view.png');
             }
 
             &.like:before {
-                @include bg($src: '../images/ico/ico_util_like.svg');
+                @include bg($src: '../images/ico/ico_util_like.png');
             }
         }
 

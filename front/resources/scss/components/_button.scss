@@ -177,7 +177,8 @@
 }
 
 .btn-set {
-    @include bg($src: '../images/ico/ico_set.svg');
+    @include bg($src: '../images/ico/ico_set.png');
+    background-size: 2.4rem;
 }
 
 .btn-menu {
