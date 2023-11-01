@@ -586,7 +586,8 @@
                 height: 1.6rem;
                 transform: translateY(-50%);
                 border: none;
-                @include bg($src: '../images/ico/ico_chk_cate.svg', $color: transparent);
+                @include bg($src: '../images/ico/ico_chk_cate.png', $color: transparent);
+                background-size: 1.6rem;
             }
         }
         input {
@@ -595,7 +596,8 @@
                 color: $main-color;
 
                 &:before {
-                    @include bg($src: '../images/ico/ico_chk_cate_on.svg', $color: transparent);
+                    @include bg($src: '../images/ico/ico_chk_cate_on.png', $color: transparent);
+                    background-size: 1.6rem;
                 }
             }
         }
@@ -735,17 +737,20 @@
         input {
             &.ai + label {
                 &:before {
-                    @include bg($src: '../images/ico/ico_chk_ai.svg', $color: transparent);
+                    @include bg($src: '../images/ico/ico_chk_ai.png', $color: transparent);
+                    background-size: contain;
                 }
             }
             &.music + label {
                 &:before {
-                    @include bg($src: '../images/ico/ico_chk_music.svg', $color: transparent);
+                    @include bg($src: '../images/ico/ico_chk_music.png', $color: transparent);
+                    background-size: contain;
                 }
             }
             &.camera + label {
                 &:before {
-                    @include bg($src: '../images/ico/ico_chk_camera.svg', $color: transparent);
+                    @include bg($src: '../images/ico/ico_chk_camera.png', $color: transparent);
+                    background-size: contain;
                 }
             }
 
@@ -756,21 +761,24 @@
             &.ai {
                 &:checked + label {
                     &:before {
-                        @include bg($src: '../images/ico/ico_chk_ai_on.svg', $color: transparent);
+                        @include bg($src: '../images/ico/ico_chk_ai_on.png', $color: transparent);
+                        background-size: contain;
                     }
                 }
             }
             &.music {
                 &:checked + label {
                     &:before {
-                        @include bg($src: '../images/ico/ico_chk_music_on.svg', $color: transparent);
+                        @include bg($src: '../images/ico/ico_chk_music_on.png', $color: transparent);
+                        background-size: contain;
                     }
                 }
             }
             &.camera {
                 &:checked + label {
                     &:before {
-                        @include bg($src: '../images/ico/ico_chk_camera_on.svg', $color: transparent);
+                        @include bg($src: '../images/ico/ico_chk_camera_on.png', $color: transparent);
+                        background-size: contain;
                     }
                 }
             }
