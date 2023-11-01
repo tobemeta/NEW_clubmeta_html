@@ -100,7 +100,8 @@
 }
 
 .btn-loadmore {
-    @include bg($src: '../images/ico/ico_more2.svg', $po: left);
+    @include bg($src: '../images/ico/ico_more2.png', $po: left);
+    background-size: 1.6rem;
     padding-left: 2rem;
 }
 
@@ -173,7 +174,8 @@
             width: 2.4rem;
             height: 2.4rem;
             transform: translateY(-50%);
-            background: url('../images/ico/ico_w_download.svg') no-repeat center;
+            background: url('../images/ico/ico_w_download.png') no-repeat center;
+            background-size: 2.4rem;
         }
     }
 }

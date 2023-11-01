@@ -1,148 +1,140 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>AI 챌린지 리스트 팝업 | 클럽메타</title>
+        <link rel="stylesheet" href="../../resources/css/common.min.css" />
+        <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
+        <script src="../../resources/js/lib/jquery-ui.min.js"></script>
+        <script src="../../resources/js/common.js"></script>
+        <style>
+            /* 스크롤 애니메이션 css */
+            /* 2023-10-13 피드백 반영으로 수정 */
+            .header-box {
+                opacity: 0;
+                transition: opacity 0.5s 0.25s ease-out;
+            }
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="format-detection" content="telephone=no" />
-    <title>AI 챌린지 리스트 팝업 | 클럽메타</title>
-    <link rel="stylesheet" href="../../resources/css/common.min.css" />
-    <script src="../../resources/js/lib/jquery-3.7.0.min.js"></script>
-    <script src="../../resources/js/lib/jquery-ui.min.js"></script>
-    <script src="../../resources/js/common.js"></script>
-    <style>
-        /* 스크롤 애니메이션 css */
-        /* 2023-10-13 피드백 반영으로 수정 */
-        .header-box {
-            opacity: 0;
-            transition: opacity 0.5s 0.25s ease-out;
-        }
+            .header-box.is-visible {
+                opacity: 1;
+            }
 
-        .header-box.is-visible {
-            opacity: 1;
-        }
+            .heading {
+                transform: translate(0, calc(-50% + 5em));
+                transition: transform 4s 0.25s cubic-bezier(0, 1, 0.3, 1), filter 10s 2s ease-out;
+                will-change: transform;
+            }
 
-        .heading {
-            transform: translate(0, calc(-50% + 5em));
-            transition: transform 4s 0.25s cubic-bezier(0, 1, 0.3, 1), filter 10s 2s ease-out;
-            will-change: transform;
-        }
+            .is-visible .heading {
+                transform: translate(0, -50%);
+            }
 
-        .is-visible .heading {
-            transform: translate(0, -50%);
-        }
+            .inline-photo {
+                opacity: 0;
+                transform: translateY(4em) rotateZ(-5deg);
+                transition: transform 4s 0.25s cubic-bezier(0, 1, 0.3, 1), opacity 0.3s 0.25s ease-out;
+                width: 259px;
+                height: 259px;
+                margin-top: 4rem;
+                will-change: transform, opacity;
+            }
 
-        .inline-photo {
-            opacity: 0;
-            transform: translateY(4em) rotateZ(-5deg);
-            transition: transform 4s 0.25s cubic-bezier(0, 1, 0.3, 1), opacity 0.3s 0.25s ease-out;
-            width: 259px;
-            height: 259px;
-            margin-top: 4rem;
-            will-change: transform, opacity;
-        }
+            .inline-photo:first-child {
+                margin-top: 2.4rem;
+            }
 
-        .inline-photo:first-child {
-            margin-top: 2.4rem;
-        }
+            .inline-photo.is-visible {
+                opacity: 1;
+                transform: rotateZ(-2deg);
+            }
+        </style>
+    </head>
 
-        .inline-photo.is-visible {
-            opacity: 1;
-            transform: rotateZ(-2deg);
-        }
-    </style>
-</head>
-
-<body>
-    <article class="layerpopup-box full is-active is-animation body-layer" id="fullViewPop" role="dialog"
-        data-callback="cbFun">
-        <div class="layer-popup">
-            <header class="layer-header">
-                <div class="header-inner">
-                    <div class="header-left"></div>
-                    <div class="header-center">
-                        <h1 class="blind">작곡가 안내</h1>
+    <body>
+        <article class="layerpopup-box full is-active is-animation body-layer" id="fullViewPop" role="dialog" data-callback="cbFun">
+            <div class="layer-popup">
+                <header class="layer-header">
+                    <div class="header-inner">
+                        <div class="header-left"></div>
+                        <div class="header-center">
+                            <h1 class="blind">작곡가 안내</h1>
+                        </div>
+                        <div class="header-right">
+                            <button type="button" class="btn-close btn-pop-close" title="레이어팝업 닫기">닫기</button>
+                        </div>
                     </div>
-                    <div class="header-right">
-                        <button type="button" class="btn-close btn-pop-close" title="레이어팝업 닫기">닫기</button>
-                    </div>
-                </div>
-            </header>
+                </header>
 
-            <div class="layer-content">
-                <div class="layer-inner">
-                    <div class="composer-info-area">
-                        <!-- 2023-10-13 피드백 반영 -->
-                        <div class="header-box show-on-scroll">
-                            <span class="body-title heading">음원을 등록해</span>
-                            <h2 class="sub-title heading">클럽메타만의 작곡가가 되어봐요!</h2>
+                <div class="layer-content">
+                    <div class="layer-inner">
+                        <div class="composer-info-area">
+                            <!-- 2023-10-13 피드백 반영 -->
+                            <div class="header-box show-on-scroll">
+                                <span class="body-title heading">음원을 등록해</span>
+                                <h2 class="sub-title heading">클럽메타만의 작곡가가 되어봐요!</h2>
+                            </div>
+                            <img src="../../resources/images/img/img_dancing.png" alt="" class="inline-photo show-on-scroll" />
+                            <h2 class="sub-title">내가 등록한 음원으로<br />챌린지를 열어봐요!</h2>
+                            <p class="text-l">내가 만든 음원으로 챌린지를 열어,<br />여러 사람들과 공유하고 즐길 수 있어요!</p>
+
+                            <img src="../../resources/images/img/img_communicating.png" alt="" class="inline-photo show-on-scroll" />
+                            <h2 class="sub-title">다른 사용자들과<br />소통할 수 있어요!</h2>
+                            <p class="text-l">Talk을 통해 음원에 대한 반응을 살펴보고,<br />또 새로운 영감을 얻을 수 있어요!</p>
+
+                            <img src="../../resources/images/img/img_uploading.png" alt="" class="inline-photo show-on-scroll" />
+                            <h2 class="sub-title">음원을 등록하고<br />수익을 창출하세요!</h2>
+                            <p class="text-l">음원을 등록하고, 챌린지를 통해<br />수익을 창출할 수 있어요!</p>
+
+                            <p class="sub-title mt-40 mb-49">내가 만든 콘텐츠의 업로드와 성과 확인,<br />정산까지 모두 한 곳에서!</p>
+
+                            <div class="btn-box">
+                                <a href="" role="button" class="btn-l btn-primary btn-download" download title="작곡가웹 안내 및 가이드 PDF파일 다운로드">
+                                    <span>자세히 알아보기</span>
+                                </a>
+                            </div>
+                            <div class="img">
+                                <img src="../../resources/images/img/img_logo_disk.png" alt="" />
+                            </div>
+                            <p class="sub-title mt-4">지금 클럽메타에서<br />작곡가가 되어보세요</p>
+                            <p class="body-title mt-40">웹에서 접속하세요</p>
+                            <a href="https://clubmeta.song-writer.com" class="btn-link">https://clubmeta.song-writer.com</a>
                         </div>
-                        <img src="../../resources/images/img/img_dancing.png" alt=""
-                            class="inline-photo show-on-scroll" />
-                        <h2 class="sub-title">내가 등록한 음원으로<br />챌린지를 열어봐요!</h2>
-                        <p class="text-l">내가 만든 음원으로 챌린지를 열어,<br />여러 사람들과 공유하고 즐길 수 있어요!</p>
-
-                        <img src="../../resources/images/img/img_communicating.png" alt=""
-                            class="inline-photo show-on-scroll" />
-                        <h2 class="sub-title">다른 사용자들과<br />소통할 수 있어요!</h2>
-                        <p class="text-l">Talk을 통해 음원에 대한 반응을 살펴보고,<br />또 새로운 영감을 얻을 수 있어요!</p>
-
-                        <img src="../../resources/images/img/img_uploading.png" alt=""
-                            class="inline-photo show-on-scroll" />
-                        <h2 class="sub-title">음원을 등록하고<br />수익을 창출하세요!</h2>
-                        <p class="text-l">음원을 등록하고, 챌린지를 통해<br />수익을 창출할 수 있어요!</p>
-
-                        <p class="sub-title mt-40 mb-49">내가 만든 콘텐츠의 업로드와 성과 확인,<br />정산까지 모두 한 곳에서!</p>
-
-                        <div class="btn-box">
-                            <a href="" role="button" class="btn-l btn-primary btn-download" download
-                                title="작곡가웹 안내 및 가이드 PDF파일 다운로드">
-                                <span>자세히 알아보기</span>
-                            </a>
-                        </div>
-                        <div class="img">
-                            <img src="../../resources/images/img/img_logo.svg" alt="" />
-                        </div>
-                        <p class="sub-title mt-4">지금 클럽메타에서<br />작곡가가 되어보세요</p>
-                        <p class="body-title mt-40">웹에서 접속하세요</p>
-                        <a href="https://clubmeta.song-writer.com" class="btn-link">https://clubmeta.song-writer.com</a>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- //layer-popup -->
-    </article>
-    <script>
-        /* 스크롤 애니메이션 script */
-        // 2023-10-13 수정
-        $(document).ready(function () {
-            var elementsToShow = $('.show-on-scroll');
+            <!-- //layer-popup -->
+        </article>
+        <script>
+            /* 스크롤 애니메이션 script */
+            // 2023-10-13 수정
+            $(document).ready(function () {
+                var elementsToShow = $('.show-on-scroll');
 
-            function loop() {
-                elementsToShow.each(function () {
-                    if (isElementInViewport($(this))) {
-                        $(this).addClass('is-visible');
-                    } else {
-                        $(this).removeClass('is-visible');
-                    }
-                });
+                function loop() {
+                    elementsToShow.each(function () {
+                        if (isElementInViewport($(this))) {
+                            $(this).addClass('is-visible');
+                        } else {
+                            $(this).removeClass('is-visible');
+                        }
+                    });
 
-                window.requestAnimationFrame(loop);
-            }
+                    window.requestAnimationFrame(loop);
+                }
 
-            // 2023-11-01 수정
-            setTimeout(function () {
-                loop();
-            }, 200);
+                // 2023-11-01 수정
+                setTimeout(function () {
+                    loop();
+                }, 200);
 
-            function isElementInViewport($el) {
-                var rect = $el[0].getBoundingClientRect();
-                return (rect.top <= 0 && rect.bottom >= 0) || (rect.bottom >= ($(window).height() || $(document).height()) && rect.top <= ($(window).height() || $(document).height())) || (rect.top >= 0 && rect.bottom <= ($(window).height() || $(document).height()));
-            }
-        });
-    </script>
-</body>
-
+                function isElementInViewport($el) {
+                    var rect = $el[0].getBoundingClientRect();
+                    return (rect.top <= 0 && rect.bottom >= 0) || (rect.bottom >= ($(window).height() || $(document).height()) && rect.top <= ($(window).height() || $(document).height())) || (rect.top >= 0 && rect.bottom <= ($(window).height() || $(document).height()));
+                }
+            });
+        </script>
+    </body>
 </html>
