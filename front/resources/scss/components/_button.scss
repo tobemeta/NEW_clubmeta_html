@@ -75,13 +75,15 @@
 }
 
 .btn-close {
-    @include bg($src: '../images/btn/btn_close.svg', $po: center);
+    @include bg($src: '../images/btn/btn_close.png', $po: center);
     font-size: 0;
+    background-size: 2.4rem;
 }
 
 .btn-search {
-    @include bg($src: '../images/btn/btn_search.svg', $po: center);
+    @include bg($src: '../images/btn/btn_search.png', $po: center);
     font-size: 0;
+    background-size: 2.4rem 2.4rem;
 }
 .btn-alarm {
     @include bg($src: '../images/ico/ico_alarm.png', $po: center);

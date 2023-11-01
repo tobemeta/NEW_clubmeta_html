@@ -356,7 +356,7 @@
         }
     }
     .btn-close {
-        @include bg($src: '../images/btn/btn_close.svg');
+        @include bg($src: '../images/btn/btn_close.png');
     }
     &.is-end {
         opacity: 0;
