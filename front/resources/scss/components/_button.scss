@@ -84,7 +84,8 @@
     font-size: 0;
 }
 .btn-alarm {
-    @include bg($src: '../images/ico/ico_alarm.svg', $po: center);
+    @include bg($src: '../images/ico/ico_alarm.png', $po: center);
+    background-size: 2.4rem;
     font-size: 0;
 }
 .btn-del {
@@ -92,9 +93,10 @@
     background-size: contain;
 }
 .btn-go {
-    @include bg($src: '../images/ico/ico_s_right.svg', $po: center);
+    @include bg($src: '../images/ico/ico_s_right.png', $po: center);
     width: 1.6rem;
     height: 1.6rem;
+    background-size: contain;
 }
 
 .btn-loadmore {

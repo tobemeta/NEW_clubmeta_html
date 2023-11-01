@@ -37,12 +37,11 @@ const ui = {
             // }
 
             $('html').css('--statusBarHeight', statusBarHeight + 'px');
-            $header.css('padding-top', statusBarHeight + 'px');
 
             if ($('.layerpopup-box.full.is-active').length) {
                 $('body').css('background-color', '#fff');
-                $('.layerpopup-box.full').css('padding-top', statusBarHeight + 'px');
-                $('.layerpopup-box.full').css('box-sizing', 'border-box');
+                // $('.layerpopup-box.full').css('padding-top', statusBarHeight + 'px');
+                // $('.layerpopup-box.full').css('box-sizing', 'border-box');
                 $('.layerpopup-box.full .layer-popup').wrap('<div class="status-relative"></div>');
 
                 if ($('.layerpopup-box.full .chall-swiper').length) {
@@ -62,14 +61,16 @@ const ui = {
 
             if (!scrolling) {
                 // 2023-08-11 개발 수정
-                $header.addClass('up').css('top', -headerHeight - statusBarHeight + 'px');
+                $header.addClass('up');
+                // $header.css('top', -headerHeight - statusBarHeight + 'px');
             }
 
             clearTimeout(scrolling);
             scrolling = setTimeout(() => {
-                $header.removeClass('up').css('top', 0);
+                $header.removeClass('up');
+                //$header.css('top', 0);
                 // 2023-08-11 개발 수정
-                $header.removeClass('up').css('padding-top', statusBarHeight + 'px');
+                // $header.removeClass('up').css('padding-top', statusBarHeight + 'px');
                 scrolling = undefined;
             }, 250);
         });
