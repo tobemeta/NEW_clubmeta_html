@@ -327,7 +327,8 @@
                 left: 0;
                 width: 2.4rem;
                 height: 2.4rem;
-                @include bg($src: '../images/ico/ico_w_check.svg', $po: center);
+                @include bg($src: '../images/ico/ico_w_check.png', $po: center);
+                background-size: 2.4rem;
                 transform: translateY(-50%);
             }
         }
@@ -342,7 +343,8 @@
                 left: 0;
                 width: 2.4rem;
                 height: 2.4rem;
-                @include bg($src: '../images/ico/ico_w_warning.svg', $po: center);
+                @include bg($src: '../images/ico/ico_w_warning.png', $po: center);
+                background-size: 2.4rem;
                 transform: translateY(-50%);
             }
         }
@@ -405,20 +407,21 @@
                 height: 3.6rem;
                 background-color: $main-color;
                 border-radius: 50%;
+                background-size: 2.4rem;
             }
             &.camera {
                 &::before {
-                    @include bg($src: '../images/ico/ico_w_camera.svg');
+                    @include bg($src: '../images/ico/ico_w_camera.png');
                 }
             }
             &.photo {
                 &::before {
-                    @include bg($src: '../images/ico/ico_w_photo.svg');
+                    @include bg($src: '../images/ico/ico_w_photo.png');
                 }
             }
             &.alarm {
                 &::before {
-                    @include bg($src: '../images/ico/ico_w_alarm.svg');
+                    @include bg($src: '../images/ico/ico_w_alarm.png');
                 }
             }
             & + li {
