@@ -1,5 +1,15 @@
+$(function() {
+    ui.init();
+});
+
+$(window).on('resize', function () {
+    ui.vhChk();
+});
+
 const ui = {
     init: function () {
+        ui.Device.check();
+
         const _this = this;
 
         _this.vhChk();
@@ -12,8 +22,6 @@ const ui = {
         _this.tooltip.init();
         _this.select.init();
         _this.lottie();
-
-        ui.Device.check();
     },
     vhChk: function () {
         const $vh = window.innerHeight * 0.01;
@@ -25,32 +33,11 @@ const ui = {
         const headerHeight = $header.height();
         // 2023-08-31 개발 수정
         const statusBarHeight = location.pathname.includes('v2/page/login') ? 0 : window.statusBarHeight || 0;
+        $('html').css('--statusBarHeight', statusBarHeight + 'px');
 
-        // 2023-08-31 개발 수정
-        $(document).ready(function () {
-            // var userAgent = navigator.userAgent.toLowerCase();
-            // Android 디바이스라면
-            // if (userAgent.indexOf('android') > -1) {
-            // }
-            // iOS 디바이스라면
-            // else if (userAgent.indexOf('iphone') > -1 || userAgent.indexOf('ipad') > -1) {
-            // }
-
-            $('html').css('--statusBarHeight', statusBarHeight + 'px');
-
-            if ($('.layerpopup-box.full.is-active').length) {
-                $('body').css('background-color', '#fff');
-                // $('.layerpopup-box.full').css('padding-top', statusBarHeight + 'px');
-                // $('.layerpopup-box.full').css('box-sizing', 'border-box');
-                $('.layerpopup-box.full .layer-popup').wrap('<div class="status-relative"></div>');
-
-                if ($('.layerpopup-box.full .chall-swiper').length) {
-                    setTimeout(function () {
-                        $('.layerpopup-box.full').removeAttr('style');
-                    }, 50);
-                }
-            }
-        });
+        if ($('.layerpopup-box.full.is-active').length && !$('.wrap').length) {
+            $('.layerpopup-box.full.is-active').addClass('body-layer');
+        }
 
         $(window).on('scroll', (e) => {
             if ($(this).scrollTop() > headerHeight) {
@@ -60,17 +47,12 @@ const ui = {
             }
 
             if (!scrolling) {
-                // 2023-08-11 개발 수정
                 $header.addClass('up');
-                // $header.css('top', -headerHeight - statusBarHeight + 'px');
             }
 
             clearTimeout(scrolling);
             scrolling = setTimeout(() => {
                 $header.removeClass('up');
-                //$header.css('top', 0);
-                // 2023-08-11 개발 수정
-                // $header.removeClass('up').css('padding-top', statusBarHeight + 'px');
                 scrolling = undefined;
             }, 250);
         });
@@ -1025,10 +1007,4 @@ ui.Device = {
     }
 };
 
-$(document).ready(() => {
-    ui.init();
-});
 
-$(window).on('resize', function () {
-    ui.vhChk();
-});

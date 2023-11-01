@@ -85,9 +85,14 @@
 }
 
 .comment-inp-box {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     margin-top: auto;
     padding: 2.4rem 1.6rem 2.4rem 1.6rem;
     box-sizing: $sizing;
+    background-color: #fff;
 
     .text-box {
         .textarea {
