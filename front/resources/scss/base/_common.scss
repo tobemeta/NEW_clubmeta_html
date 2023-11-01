@@ -934,17 +934,17 @@ h1 {
             }
             &.original {
                 &:before {
-                    background-image: url('../images/ico/ico_original.svg');
+                    background-image: url('../images/ico/ico_original.png');
                 }
             }
             &.block {
                 &:before {
-                    background-image: url('../images/ico/ico_banned.svg');
+                    background-image: url('../images/ico/ico_banned.png');
                 }
             }
             &.report {
                 &:before {
-                    background-image: url('../images/ico/ico_redlight.svg');
+                    background-image: url('../images/ico/ico_redlight.png');
                 }
             }
             &.download {
@@ -969,102 +969,82 @@ h1 {
             }
             &.accuse {
                 &:before {
-                    background-image: url('../images/ico/ico_redlight.svg');
+                    background-image: url('../images/ico/ico_redlight.png');
                 }
             }
             &.alarm {
                 &:before {
-                    background-image: url('../images/ico/ico_alarm.svg');
+                    background-image: url('../images/ico/ico_alarm.png');
                 }
             }
             &.user {
                 &:before {
-                    background-image: url('../images/ico/ico_b_user.svg');
+                    background-image: url('../images/ico/ico_b_user.png');
                 }
             }
             &.bookmark {
                 &:before {
-                    background-image: url('../images/ico/ico_bookmark.svg');
+                    background-image: url('../images/ico/ico_bookmark.png');
                 }
             }
             &.privacy {
                 &:before {
-                    background-image: url('../images/ico/ico_privacy.svg');
+                    background-image: url('../images/ico/ico_privacy.png');
                 }
             }
             &.like {
                 &:before {
-                    background-image: url('../images/ico/ico_like.svg');
+                    background-image: url('../images/ico/ico_like.png');
                 }
             }
             &.badge {
                 &:before {
-                    background-image: url('../images/ico/ico_badge.svg');
+                    background-image: url('../images/ico/ico_badge.png');
                 }
             }
             &.wallet {
                 &:before {
-                    background-image: url('../images/ico/ico_wallet.svg');
-                }
-            }
-            &.notice {
-                &:before {
-                    background-image: url('../images/ico/ico_wallet.svg');
-                }
-            }
-            &.event {
-                &:before {
-                    background-image: url('../images/ico/ico_wallet.svg');
-                }
-            }
-            &.qm {
-                &:before {
-                    background-image: url('../images/ico/ico_wallet.svg');
-                }
-            }
-            &.app {
-                &:before {
-                    background-image: url('../images/ico/ico_wallet.svg');
+                    background-image: url('../images/ico/ico_wallet.png');
                 }
             }
             &.service {
                 &:before {
-                    background-image: url('../images/ico/ico_service.svg');
+                    background-image: url('../images/ico/ico_service.png');
                 }
             }
             &.policy {
                 &:before {
-                    background-image: url('../images/ico/ico_policy.svg');
+                    background-image: url('../images/ico/ico_policy.png');
                 }
             }
             &.guide {
                 &:before {
-                    background-image: url('../images/ico/ico_guide.svg');
+                    background-image: url('../images/ico/ico_guide.png');
                 }
             }
             &.source {
                 &:before {
-                    background-image: url('../images/ico/ico_source.svg');
+                    background-image: url('../images/ico/ico_source.png');
                 }
             }
             &.notice {
                 &:before {
-                    background-image: url('../images/ico/ico_notice.svg');
+                    background-image: url('../images/ico/ico_notice.png');
                 }
             }
             &.event {
                 &:before {
-                    background-image: url('../images/ico/ico_event.svg');
+                    background-image: url('../images/ico/ico_event.png');
                 }
             }
             &.kakao {
                 &:before {
-                    background-image: url('../images/ico/ico_kakao.svg');
+                    background-image: url('../images/ico/ico_kakao.png');
                 }
             }
             &.app {
                 &:before {
-                    background-image: url('../images/ico/ico_phone.svg');
+                    background-image: url('../images/ico/ico_phone.png');
                 }
             }
         }
@@ -1080,7 +1060,8 @@ h1 {
                 right: 1.6rem;
                 width: 1.6rem;
                 height: 1.6rem;
-                background: url('../images/ico/ico_s_right.svg') no-repeat 0 0;
+                background: url('../images/ico/ico_s_right.png') no-repeat 0 0;
+                background-size: contain;
                 transform: translateY(-50%);
             }
         }
