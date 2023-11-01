@@ -785,7 +785,8 @@
             transform: translateX(-50%);
             width: 25.8rem;
             height: 25.8rem;
-            @include bg($src: '../images/bg/bg_no_internet.svg');
+            @include bg($src: '../images/bg/bg_no_internet.png');
+            background-size: 25.8rem;
         }
         & + .body-title {
             padding-top: 0;
@@ -808,7 +809,8 @@
             transform: translateX(-50%);
             width: 25.8rem;
             height: 25.8rem;
-            @include bg($src: '../images/bg/bg_no_internet.svg');
+            @include bg($src: '../images/bg/bg_no_internet.png');
+            background-size: 25.8rem;
         }
     }
 }
