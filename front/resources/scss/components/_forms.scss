@@ -182,7 +182,7 @@
         }
         &.comment {
             &::before {
-                background-image: url('../images/ico/ico_reply.svg');
+                @include bg($src: '../images/ico/ico_reply.png');
             }
         }
     }
@@ -288,7 +288,8 @@
                 width: 2.4rem;
                 height: 2.4rem;
                 transform: translateY(-50%);
-                background-image: url('../images/ico/ico_reply.svg');
+                @include bg($src: '../images/ico/ico_reply.png');
+                background-size: contain;
             }
         }
     }
@@ -335,7 +336,8 @@
     }
     .select-sort {
         width: 3.2rem;
-        @include bg($src: '../images/ico/ico_sort.svg', $color: #fff);
+        @include bg($src: '../images/ico/ico_sort.png', $color: #fff);
+        background-size: 2.4rem auto;
 
         border: 1px solid #e7e7e7;
         border-radius: 0.8rem 0 0 0.8rem;
@@ -690,7 +692,8 @@
                 border-radius: 0;
                 border: none;
                 transform: translate(-50%, -50%);
-                @include bg($src: '../images/ico/ico_heart.svg', $color: transparent);
+                @include bg($src: '../images/ico/ico_heart.png', $color: transparent);
+                background-size: contain;
             }
         }
         input {
@@ -699,7 +702,8 @@
                 color: $main-color;
 
                 &:before {
-                    @include bg($src: '../images/ico/ico_heart_on.svg', $color: transparent);
+                    @include bg($src: '../images/ico/ico_heart_on.png', $color: transparent);
+                    background-size: contain;
                 }
             }
         }
