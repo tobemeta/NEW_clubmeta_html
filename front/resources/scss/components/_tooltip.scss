@@ -52,7 +52,7 @@
             background-color: $main-color;
             color: #fff;
             .tooltip-arr {
-                @include bg($src: '../images/ico/ico_ogbox_tail.svg');
+                @include bg($src: '../images/ico/ico_ogbox_tail.png');
             }
         }
     }

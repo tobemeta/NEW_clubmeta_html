@@ -36,7 +36,8 @@
                 left: 0;
                 width: 2.4rem;
                 height: 2.4rem;
-                @include bg($src: '../images/ico/ico_shoe_s.svg');
+                @include bg($src: '../images/ico/ico_shoe.png');
+                background-size: contain;
             }
         }
         &.mdt {
@@ -50,8 +51,8 @@
                 left: 0;
                 width: 2.4rem;
                 height: 2.4rem;
-                @include bg($src: '../images/ico/ico_mdt.svg');
-                background-size: cover;
+                @include bg($src: '../images/ico/ico_mdt.png');
+                background-size: contain;
             }
         }
     }
@@ -172,7 +173,7 @@
         }
         &.-user {
             &::before {
-                @include bg($src: '../images/ico/ico_ip_user.svg');
+                @include bg($src: '../images/ico/ico_ip_user.png');
             }
         }
         &.-lock {
@@ -222,7 +223,8 @@
             left: 1.6rem;
             width: 1.6rem;
             height: 1.6rem;
-            @include bg($src: '../images/ico/ico_ip_sch.svg');
+            @include bg($src: '../images/ico/ico_ip_sch.png');
+            background-size: contain;
             transform: translateY(-50%);
         }
         input {

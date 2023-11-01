@@ -445,7 +445,8 @@ h1 {
                         right: 0;
                         width: 4.6rem;
                         height: 1.7rem;
-                        background: url('../images/ico/ico_note.svg') no-repeat center;
+                        background: url('../images/ico/ico_note.png') no-repeat center;
+                        background-size: contain;
                         transform: translateY(-50%);
                     }
                 }

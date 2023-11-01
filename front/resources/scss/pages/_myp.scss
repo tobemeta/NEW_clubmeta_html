@@ -375,22 +375,23 @@
             display: block;
             content: '';
             position: absolute;
-            top: -4rem;
-            left: 1rem;
-            width: 10rem;
-            height: 10rem;
+            top: -3.1rem;
+            left: 2.3rem;
+            width: 7.6rem;
+            height: 7.6rem;
+            background-size: contain;
         }
 
         &.shoe {
             &:after {
-                @include bg($src: '../images/ico/ico_shoe.svg');
+                @include bg($src: '../images/ico/ico_shoe.png');
             }
         }
 
         &.mdt {
             border-color: #b7b7b7;
             &:after {
-                @include bg($src: '../images/ico/ico_mdt.svg');
+                @include bg($src: '../images/ico/ico_mdt.png');
             }
         }
 
