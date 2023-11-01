@@ -363,7 +363,8 @@
                     border-radius: 0;
                     background-color: transparent;
                     transform: none;
-                    @include bg($src: '../images/ico/ico_rank_up.svg', $po: center left);
+                    @include bg($src: '../images/ico/ico_rank_up.png');
+                    background-size: contain;
                 }
             }
             &.rank-down {
@@ -377,7 +378,8 @@
                     border-radius: 0;
                     background-color: transparent;
                     transform: none;
-                    @include bg($src: '../images/ico/ico_rank_down.svg', $po: center);
+                    @include bg($src: '../images/ico/ico_rank_down.png');
+                    background-size: contain;
                 }
             }
         }

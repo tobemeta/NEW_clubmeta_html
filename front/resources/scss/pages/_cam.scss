@@ -23,8 +23,8 @@
     }
 
     .img {
-        width: 14rem;
-        height: 10.2rem;
+        width: 16rem;
+        // height: 10.2rem;
         margin: 0 auto;
     }
 
@@ -312,10 +312,11 @@ a.btn-composer {
                     &:after {
                         display: inline-block;
                         content: '';
-                        width: 1.7rem;
-                        height: 1.7rem;
+                        width: 1.6rem;
+                        height: 1.6rem;
                         margin-left: 0.2rem;
-                        background: url('../images/ico/ico_g_right.svg') no-repeat;
+                        background: url('../images/ico/ico_g_right.png') no-repeat;
+                        background-size: contain;
                         vertical-align: middle;
                     }
                 }
