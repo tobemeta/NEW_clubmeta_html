@@ -39,8 +39,8 @@
             display: block;
             width: 1.4rem;
             height: 1.3rem;
-            @include bg($src: '../images/ico/ico_box_tail.svg');
-            background-size: cover;
+            @include bg($src: '../images/ico/ico_box_tail.png');
+            background-size: contain;
         }
         .tooltip-inner {
             padding: 1rem 1.6rem;

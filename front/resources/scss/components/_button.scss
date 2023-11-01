@@ -133,7 +133,8 @@
     &.is-ing {
         span {
             &:before {
-                background: url('../images/ico/ico_check.svg') no-repeat center;
+                background: url('../images/ico/ico_check.png') no-repeat center;
+                background-size: contain;
             }
         }
     }

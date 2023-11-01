@@ -92,7 +92,8 @@
                     display: block;
                     width: 1.4rem;
                     height: 1.2rem;
-                    @include bg($src: '../images/ico/ico_box_tail.svg');
+                    @include bg($src: '../images/ico/ico_box_tail.png');
+                    background-size: contain;
                     z-index: 5;
                 }
                 &::after {
@@ -771,10 +772,7 @@
 
     .sub-title {
         display: block;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        position: relative;
         margin-bottom: 0.4rem;
         padding-top: 25.8rem;
         box-sizing: $sizing;
