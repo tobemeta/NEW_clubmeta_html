@@ -89,7 +89,8 @@
     font-size: 0;
 }
 .btn-del {
-    @include imgBtn($src: '../images/btn/btn_ip_delete');
+    @include bg($src: '../images/btn/btn_ip_delete.png');
+    background-size: contain;
 }
 .btn-go {
     @include bg($src: '../images/ico/ico_s_right.png', $po: center);
