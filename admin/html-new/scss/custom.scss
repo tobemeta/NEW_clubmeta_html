@@ -206,6 +206,32 @@ li {
     }
 }
 
+// footer
+footer {
+    &.sticky-footer {
+        padding: 1.5rem 0;
+    }
+
+    .footer-links {
+        padding: 0;
+        margin: 0;
+        li {
+            padding: 0 0.5rem;
+            & + li {
+                &:before {
+                    display: inline-block;
+                    content: '|';
+                    color: #fff;
+                    margin-right: 1rem;
+                }
+            }
+        }
+        a {
+            color: #fff;
+        }
+    }
+}
+
 // login
 .form-signin-wrap {
     display: flex;
