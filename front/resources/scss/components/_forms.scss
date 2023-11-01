@@ -247,10 +247,10 @@
         right: 4rem;
         width: 2.4rem;
         height: 2.4rem;
-        @include bg($src: '../images/btn/btn_ip_pw.svg');
-
+        @include bg($src: '../images/btn/btn_ip_pw.png');
+        background-size: contain;
         &.is-show {
-            @include bg($src: '../images/btn/btn_ip_pw_on.svg');
+            @include bg($src: '../images/btn/btn_ip_pw_on.png');
         }
     }
 
