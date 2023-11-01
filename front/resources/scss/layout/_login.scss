@@ -546,7 +546,8 @@
                     height: 2rem;
                     margin-left: 0.2rem;
                     border-radius: 50%;
-                    @include bg($src: '../images/ico/ico_o_new.svg');
+                    @include bg($src: '../images/ico/ico_o_new.png');
+                    background-size: contain;
                     box-shadow: $shadow;
                 }
             }
@@ -611,7 +612,8 @@
                         width: 2rem;
                         height: 2rem;
                         border-radius: 50%;
-                        @include bg($src: '../images/ico/ico_o_new.svg');
+                        @include bg($src: '../images/ico/ico_o_new.png');
+                        background-size: contain;
                         box-shadow: $shadow;
                     }
                 }

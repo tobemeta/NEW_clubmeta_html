@@ -90,7 +90,8 @@ body.login {
             width: 1.6rem;
             height: 1.6rem;
             transform: translateX(-50%);
-            @include bg($src: '../images/ico/ico_arrow_top.svg');
+            @include bg($src: '../images/ico/ico_arrow_top.png');
+            background-size: contain;
         }
     }
 }

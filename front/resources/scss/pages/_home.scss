@@ -199,7 +199,8 @@
                     height: 1.6rem;
                     margin-right: 0.4rem;
                     vertical-align: middle;
-                    @include bg($src: '../images/ico/ico_music_bk.svg');
+                    @include bg($src: '../images/ico/ico_music_bk.png');
+                    background-size: contain;
                 }
 
                 & ~ div {
@@ -230,15 +231,18 @@
                         left: 0;
                         width: 1.6rem;
                         height: 1.6rem;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        background-size: contain;
                     }
                     &.like:before {
-                        background: url('../images/ico/ico_heart_grey.svg') no-repeat center;
+                        background-image: url('../images/ico/ico_heart_grey.png');
                     }
                     &.veiw:before {
-                        background: url('../images/ico/ico_eye_grey.svg') no-repeat center;
+                        background-image: url('../images/ico/ico_eye_grey.png');
                     }
                     &.number:before {
-                        background: url('../images/ico/ico_user_grey.svg') no-repeat center;
+                        background-image: url('../images/ico/ico_user_grey.png');
                     }
                     span {
                         display: inline-block;
@@ -256,7 +260,8 @@
                 right: 1.65rem;
                 width: 2rem;
                 height: 2rem;
-                background: url('../images/ico/ico_o_new.svg') no-repeat center;
+                background: url('../images/ico/ico_o_new.png') no-repeat center;
+                background-size: contain;
             }
         }
         &.vinyl {
@@ -496,15 +501,18 @@
                     left: 0;
                     width: 1.6rem;
                     height: 1.6rem;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: contain;
                 }
                 &.like:before {
-                    background: url('../images/ico/ico_heart_grey.svg') no-repeat center;
+                    background-image: url('../images/ico/ico_heart_grey.png');
                 }
                 &.view:before {
-                    background: url('../images/ico/ico_eye_grey.svg') no-repeat center;
+                    background-image: url('../images/ico/ico_eye_grey.png');
                 }
                 &.number:before {
-                    background: url('../images/ico/ico_user_grey.svg') no-repeat center;
+                    background-image: url('../images/ico/ico_user_grey.png');
                 }
                 span {
                     display: inline-block;
@@ -565,18 +573,21 @@
                 left: 0;
                 width: 2.4rem;
                 height: 2.4rem;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: contain;
             }
             &.date:before {
-                background: url('../images/ico/ico_date_color.svg') no-repeat 0 0;
+                background-image: url('../images/ico/ico_date_color.png');
             }
             &.name:before {
-                background: url('../images/ico/ico_original_color.svg') no-repeat 0 0;
+                background-image: url('../images/ico/ico_original_color.png');
             }
             &.music:before {
-                background: url('../images/ico/ico_music_color.svg') no-repeat 0 0;
+                background-image: url('../images/ico/ico_music_color.png');
             }
             &.info:before {
-                background: url('../images/ico/ico_info_color.svg') no-repeat 0 0;
+                background-image: url('../images/ico/ico_info_color.png');
             }
 
             &.music {

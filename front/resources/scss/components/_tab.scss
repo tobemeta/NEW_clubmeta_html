@@ -164,22 +164,22 @@
             .ico {
                 &.all {
                     &:before {
-                        background: url('../images/ico/ico_all.svg') no-repeat 0 0;
+                        background-image: url('../images/ico/ico_all.png');
                     }
                 }
                 &.ai {
                     &:before {
-                        background: url('../images/ico/ico_ai.svg') no-repeat 0 0;
+                        background-image: url('../images/ico/ico_ai.png');
                     }
                 }
                 &.music {
                     &:before {
-                        background: url('../images/ico/ico_b_music.svg') no-repeat 0 0;
+                        background-image: url('../images/ico/ico_b_music.png');
                     }
                 }
                 &.cam {
                     &:before {
-                        background: url('../images/ico/ico_b_film.svg') no-repeat 0 0;
+                        background-image: url('../images/ico/ico_b_film.png');
                     }
                 }
             }
@@ -213,25 +213,28 @@
                 width: 2.4rem;
                 height: 2.4rem;
                 transform: translateY(-50%);
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: contain;
             }
             &.all {
                 &:before {
-                    background: url('../images/ico/ico_g_all.svg') no-repeat 0 0;
+                    background-image: url('../images/ico/ico_g_all.png');
                 }
             }
             &.ai {
                 &:before {
-                    background: url('../images/ico/ico_g_ai.svg') no-repeat 0 0;
+                    background-image: url('../images/ico/ico_g_ai.png');
                 }
             }
             &.music {
                 &:before {
-                    background: url('../images/ico/ico_g_music.svg') no-repeat 0 0;
+                    background-image: url('../images/ico/ico_g_music.png');
                 }
             }
             &.cam {
                 &:before {
-                    background: url('../images/ico/ico_film.svg') no-repeat 0 0;
+                    background-image: url('../images/ico/ico_film.png');
                 }
             }
         }
