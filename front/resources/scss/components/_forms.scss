@@ -535,7 +535,7 @@
         top: 0;
         &:checked + label {
             &:before {
-                background: url('../../resources/images/ico/ico_chkbox_on.png') no-repeat center center;
+                background: url('../images/ico/ico_chkbox_on.png') no-repeat center center;
                 background-size: contain;
                 border: none;
                 transition: all 0.275s;
@@ -551,7 +551,7 @@
 
         &:checked:disabled + label {
             &:before {
-                background-image: url('../../resources/images/ico/ico_chkbox_disable.png');
+                background-image: url('../images/ico/ico_chkbox_disable.png');
                 border: none;
             }
         }
