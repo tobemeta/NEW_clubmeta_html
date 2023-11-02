@@ -1887,7 +1887,7 @@ $shadow: 0px 4px 12px 0px rgba(20, 36, 91, 0.18);
 }
 .progress {
     position: relative;
-    button {
+    > button {
         position: absolute;
         left: 0;
         top: 0;
@@ -1898,12 +1898,37 @@ $shadow: 0px 4px 12px 0px rgba(20, 36, 91, 0.18);
         flex-shrink: 0;
         text-shadow: 1px 1px 1px #fff, -1px 1px 1px #fff, 1px -1px 1px #fff, -1px -1px 1px #fff;
     }
-    .timer {
+    > .timer {
         position: absolute;
         right: 0;
         top: 0;
         padding: 0 0.3rem;
         font-size: 10px;
+        line-height: 1rem;
+        white-space: nowrap;
+        // mix-blend-mode: difference;
+        text-shadow: 1px 1px 1px #fff, -1px 1px 1px #fff, 1px -1px 1px #fff, -1px -1px 1px #fff;
+    }
+}
+.progress-wrap {
+    display: flex;
+    align-items: center;
+    > button {
+        width: 20px;
+        height: 1rem;
+        padding: 0;
+        text-align: center;
+        flex-shrink: 0;
+        font-size: 0.65625rem;
+    }
+    > .progress {
+        width: 100%;
+    }
+    > .timer {
+        width: 33px;
+        text-align: right;
+        flex-shrink: 0;
+        font-size: 11px;
         line-height: 1rem;
         white-space: nowrap;
         // mix-blend-mode: difference;
