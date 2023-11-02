@@ -31,7 +31,9 @@
 
     &.full {
         box-sizing: $sizing;
-        padding-top: var(--statusBarHeight);
+        :not(.like-not-full) {
+            padding-top: var(--statusBarHeight);
+        }
         .layer-popup {
             padding: 0;
             max-width: 100%;
@@ -72,7 +74,9 @@
             min-height: 4.8rem;
             align-items: center;
             border-radius: 0;
-            padding-top: var(--statusBarHeight);
+            :not(.like-not-full) {
+                padding-top: var(--statusBarHeight);
+            }
             .btn-close {
                 width: 100%;
                 height: 100%;
@@ -162,7 +166,6 @@
         .layer-header {
             position: fixed;
             z-index: 21;
-            padding-top: var(--statusBarHeight);
         }
         .layer-content {
             padding-top: 4.8rem;

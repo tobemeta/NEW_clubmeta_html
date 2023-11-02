@@ -35,9 +35,14 @@ const ui = {
         const statusBarHeight = location.pathname.includes('v2/page/login') ? 0 : window.statusBarHeight || 0;
         if (statusBarHeight) $('html').css('--statusBarHeight', statusBarHeight + 'px');
 
-        if ($('.layerpopup-box.full.is-active').length && !$('.wrap').length) {
+        const bodyLayer = $('.layerpopup-box.full.is-active');
+        if (bodyLayer.length && !$('.wrap').length) {
             $('body').css('background-color', '#fff');
-            $('.layerpopup-box.full.is-active').addClass('body-layer');
+            if(bodyLayer.find('.challPop').length){
+                bodyLayer.addClass('like-not-full');
+            }else{
+                bodyLayer.addClass('body-layer');
+            }
         }
 
         $(window).on('scroll', (e) => {
