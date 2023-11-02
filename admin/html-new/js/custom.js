@@ -1,9 +1,63 @@
+$(window).on('load', function () {
+    ui.init();
+});
+
 const ui = {
     init: function () {
         const _this = this;
 
         _this.menuActive();
+        _this.input();
+        _this.monthpicker();
+        _this.UI();
+    },
+    menuActive: function () {
+        if ($('.sidebar').length) {
+            var $path = location.pathname;
+            var $href = $path.split('/').pop();
 
+            $('.sidebar .nav-item a').each(function () {
+                if ($(this).attr('href').indexOf($href) !== -1) {
+                    $(this).addClass('active');
+
+                    $(this).closest('.collapse').addClass('show');
+                    $(this).closest('.nav-item').addClass('active');
+                }
+            });
+        } else {
+            console.log('error');
+        }
+    },
+    input: function(){
+        $('.input-box .form-control').each(function(){
+            const _this = this;
+            ui.inputChk(_this);
+        });
+    },
+    inputChk: function(element){
+        var inpType = $(element).attr('type');
+        if ($(element).val() !== '') {
+            if (inpType === 'password') $(element).closest('.input-box').addClass('pw');
+            $(element).closest('.input-box').addClass('focus');
+        } else {
+            $(element).closest('.input-box').removeClass('focus');
+            $(element).closest('.input-box').removeClass('pw');
+        }
+    },
+    monthpicker: function (){
+        $('.datepicker.month').each(function(){
+            const $this = $(this);
+            $this.datepicker({
+                format: 'yyyy-mm',
+                viewMode: 'months',
+                minViewMode: 'months',
+                language: 'ko',
+                immediateUpdates: true,
+                orientation: 'bottom left'
+            }).datepicker('update', new Date());
+        })
+    },
+    UI: function(){
         // Add event listener to play button
         $('.play').on('click', function () {
             $(this).addClass('d-none');
@@ -22,35 +76,12 @@ const ui = {
             associatedInput.datepicker('show');
         });
 
-        $('#dateMonth')
-            .datepicker({
-                format: 'yyyy-mm',
-                viewMode: 'months',
-                minViewMode: 'months',
-                language: 'ko',
-                immediateUpdates: true,
-                orientation: 'bottom left'
-            })
-            .datepicker('update', new Date());
-
-        var inpBox = $('.input-box');
-        var inp = $('.input-box .form-control');
-
-        inpBox.each(function () {
-            inp.on('input', function () {
-                var inpType = $(this).attr('type');
-
-                if ($(this).val() != '') {
-                    if (inpType === 'password') {
-                        $(this).parent(inpBox).addClass('pw');
-                    }
-                    $(this).parent(inpBox).addClass('focus');
-                } else {
-                    $(this).parent(inpBox).removeClass('focus');
-                    $(this).parent(inpBox).removeClass('pw');
-                }
-            });
+        // input
+        $(document).on('input', '.input-box .form-control', function () {
+            const _this = this;
+            ui.inputChk(_this);
         });
+
         $(document).on('click', '.btn-inp-del', function () {
             var $inp = $(this).siblings('input', 'textarea');
             $inp.val('').change().focus();
@@ -72,29 +103,8 @@ const ui = {
                 $(this).attr('aria-label', '비밀번호 표시');
             }
         });
-    },
-    menuActive: function () {
-        if ($('.sidebar').length) {
-            var $path = location.pathname;
-            var $href = $path.split('/').pop();
-
-            $('.sidebar .nav-item a').each(function () {
-                if ($(this).attr('href').indexOf($href) !== -1) {
-                    $(this).addClass('active');
-
-                    $(this).closest('.collapse').addClass('show');
-                    $(this).closest('.nav-item').addClass('active');
-                }
-            });
-        } else {
-            console.log('error');
-        }
     }
 };
-
-$(window).on('load', function () {
-    ui.init();
-});
 
 // confirmPop
 function conAlert(msg, callback) {
