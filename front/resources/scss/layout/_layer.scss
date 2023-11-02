@@ -153,6 +153,7 @@
     &.full.body-layer {
         position: relative;
         height: auto;
+        overflow: hidden;
         .layer-popup {
             position: relative;
             transform: none !important;

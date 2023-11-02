@@ -277,8 +277,6 @@
         &:focus {
             border: 1px solid $base-color;
         }
-        &.autosize {
-        }
         &.comment {
             position: relative;
             padding-left: 4.4rem;
@@ -934,9 +932,6 @@
             &:checked + label {
                 border-color: $main-color;
                 color: $main-color;
-
-                &:before {
-                }
                 &:after {
                     display: none;
                 }

@@ -33,9 +33,10 @@ const ui = {
         const headerHeight = $header.height();
         // 2023-08-31 개발 수정
         const statusBarHeight = location.pathname.includes('v2/page/login') ? 0 : window.statusBarHeight || 0;
-        $('html').css('--statusBarHeight', statusBarHeight + 'px');
+        if (statusBarHeight) $('html').css('--statusBarHeight', statusBarHeight + 'px');
 
         if ($('.layerpopup-box.full.is-active').length && !$('.wrap').length) {
+            $('body').css('background-color', '#fff');
             $('.layerpopup-box.full.is-active').addClass('body-layer');
         }
 
