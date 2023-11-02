@@ -38,7 +38,7 @@
                                 <div class="swiper-slide">
                                     <a href="#none" class="card" role="button" title="해당 클립으로 이동">
                                         <div class="img">
-                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png" alt="" />
+                                            <img src="../../resources/images/temp/temp-img-0.jpg" alt="" />
                                         </div>
                                         <p class="tag blue">그린챌린지</p>
                                         <p class="date">2022.11.11 ~ 2022.11.22</p>
@@ -47,7 +47,7 @@
                                 <div class="swiper-slide">
                                     <a href="#none" class="card" role="button" title="해당 클립으로 이동">
                                         <div class="img">
-                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png" alt="" />
+                                            <img src="../../resources/images/temp/temp-img-1.jpg" alt="" />
                                         </div>
                                         <p class="tag blue">그린챌린지</p>
                                         <p class="date">2022.11.11 ~ 2022.11.22</p>
@@ -56,7 +56,7 @@
                                 <div class="swiper-slide">
                                     <a href="#none" class="card" role="button" title="해당 클립으로 이동">
                                         <div class="img">
-                                            <img src="../../resources/images/img/img_aichallenge_thumbnail_01.png" alt="" />
+                                            <img src="../../resources/images/temp/temp-img-2.jpg" alt="" />
                                         </div>
                                         <p class="tag blue">그린챌린지</p>
                                         <p class="date">2022.11.11 ~ 2022.11.22</p>
@@ -104,8 +104,10 @@
         </article>
     </body>
     <script>
+        // 2023-11-02 스크립트 변경: loop 일때 2개노출시 loop 돌리면 뒤바뀌는 현상이 있음
+        const $loop = $('.swiper-slide').length > 2 ? true : false;
         const challSlideSet = {
-            loop: true,
+            loop: $loop,
             centeredSlides: true,
             slidesPerView: 'auto',
             slideToClickedSlide: true,
@@ -118,6 +120,7 @@
             }
         };
         const challSwiper = new Swiper('.chall-swiper', challSlideSet);
+        // challSwiper.slideTo(0); // 1번째꺼부터 나오게 하려면 주석 제거. 근데 좌측이 비어 있음
     </script>
 </html>
 

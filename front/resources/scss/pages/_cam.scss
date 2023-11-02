@@ -78,29 +78,6 @@
             height: 40.8rem;
             margin: 2.4rem 0 0;
 
-            &.vinyl {
-                padding-top: 90px;
-                position: relative;
-                box-sizing: border-box;
-                .img {
-                    height: 304px;
-                    z-index: 2;
-                }
-
-                &:after {
-                    display: block;
-                    content: '';
-                    position: absolute;
-                    top: 2.5rem;
-                    left: 50%;
-                    width: 15.2rem;
-                    height: 15.2rem;
-                    background: url('../images/img/img_vinyl.png') no-repeat 0 0;
-                    background-size: cover;
-                    transform: translateX(-50%);
-                }
-            }
-
             .img {
                 height: 304px;
                 overflow: hidden;
@@ -119,6 +96,36 @@
                 font-size: 1.4rem;
                 color: #585858;
                 line-height: 2rem;
+            }
+        }
+    }
+
+    &.ty2 {
+        .chall-swiper {
+            .swiper-slide {
+                height: auto;
+            }
+            .card {
+                position: relative;
+                box-sizing: border-box;
+                padding-top: 90px;
+                .img {
+                    height: 228px;
+                    z-index: 2;
+                }
+
+                &:after {
+                    display: block;
+                    content: '';
+                    position: absolute;
+                    top: 2.5rem;
+                    left: 50%;
+                    width: 15.2rem;
+                    height: 15.2rem;
+                    background: url('../images/img/img_vinyl.png') no-repeat 0 0;
+                    background-size: cover;
+                    transform: translateX(-50%);
+                }
             }
         }
     }
