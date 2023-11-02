@@ -156,12 +156,11 @@
         .layer-popup {
             position: relative;
             transform: none !important;
-            min-height: -vh(100, var(--statusBarHeight), true);
+            min-height: -vh(100);
         }
         .layer-header {
             position: fixed;
             z-index: 21;
-            // height: calc(4.8rem + var(--statusBarHeight));
             padding-top: var(--statusBarHeight);
         }
         .layer-content {
