@@ -132,13 +132,26 @@
 }
 
 a.btn-composer {
+    position: relative;
     display: block;
     margin-bottom: 0.8rem;
-    padding: 0.6rem 1.6rem;
+    padding: 0.6rem 4rem 0.6rem 1.6rem;
     border-radius: 0.8rem;
     font-size: 1.4rem;
     color: #e45200;
     background: #ffe0ce;
+    &:after {
+        content: '';
+        display: block;
+        width: 1.6rem;
+        height: 1.6rem;
+        position: absolute;
+        right: 1.6rem;
+        top: 50%;
+        margin-top: -0.8rem;
+        @include bg($src: '../images/ico/ico_org_right.png');
+        background-size: contain;
+    }
 }
 
 .banner-area {
