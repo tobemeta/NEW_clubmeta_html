@@ -1,5 +1,5 @@
 body {
-    min-height: -vh(100);
+    min-height: -vh(100, var(--statusBarHeight));
     background-color: $main-bg-color;
     color: $base-color;
     font-weight: $normal;
@@ -12,7 +12,7 @@ body {
 }
 
 .wrap {
-    min-height: -vh(100);
+    min-height: -vh(100, var(--statusBarHeight));
     &.lock-wrap {
         overflow: hidden;
     }
