@@ -482,18 +482,16 @@ h1 {
                 margin-top: 2.4rem;
             }
         }
-        &:not(.noData) {
-            a {
-                &:not(.btn-coment) {
-                    padding: 0.8rem 1.6rem 0.8rem 0.8rem;
-                    box-shadow: $shadow;
-                    border-radius: 2.4rem;
-                    background: #fff;
-                    display: flex;
-                    overflow: hidden;
-                    flex: 1;
-                }
-            }
+    }
+    a {
+        &:not(.btn-coment) {
+            padding: 0.8rem 1.6rem 0.8rem 0.8rem;
+            box-shadow: $shadow;
+            border-radius: 2.4rem;
+            background: #fff;
+            display: flex;
+            overflow: hidden;
+            flex: 1;
         }
     }
 
@@ -537,18 +535,16 @@ h1 {
                 background: none;
                 box-shadow: none;
             }
-            &:not(.noData) {
-                a {
-                    &:not(.btn-coment) {
-                        display: block;
-                        padding: 0;
-                        box-shadow: none;
-                        background: none;
-                    }
-                    &.btn-coment {
-                        margin-right: 0.4rem;
-                    }
-                }
+        }
+        a {
+            &:not(.btn-coment) {
+                display: block;
+                padding: 0;
+                box-shadow: none;
+                background: none;
+            }
+            &.btn-coment {
+                margin-right: 0.4rem;
             }
         }
 
@@ -558,6 +554,15 @@ h1 {
             border-radius: 1.6rem;
             overflow: hidden;
             flex-shrink: 0;
+        }
+        .noData {
+            .btn {
+                display: inline-flex;
+                padding: 0 0.5rem;
+                background-color: #fff;
+                border-radius: 1.6rem;
+                flex: 0 1 auto;
+            }
         }
     }
     .sound-area {
@@ -835,7 +840,7 @@ h1 {
     &.faq {
         a {
             position: relative;
-            padding: 1.6rem 1.6rem 1.6rem 4rem;
+            padding: 1.6rem 1.6rem 1.6rem 4rem !important;
             &:before {
                 display: block;
                 content: 'Q.';
