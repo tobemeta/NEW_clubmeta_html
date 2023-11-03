@@ -12,6 +12,7 @@ body {
 }
 
 .wrap {
+    min-height: -vh(100);
     &.lock-wrap {
         overflow: hidden;
     }
