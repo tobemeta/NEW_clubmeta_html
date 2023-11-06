@@ -135,13 +135,13 @@
         line-height: 2.2rem;
         padding: 1.2rem 1.6rem;
     }
-    .auto-height {
-        // transition: height 0s 0.1s;
-        // &:focus {
-        //     height: var(--input-height);
-        //     transition-delay: 0s;
-        // }
-    }
+    //.auto-height {
+    // transition: height 0s 0.1s;
+    // &:focus {
+    //     height: var(--input-height);
+    //     transition-delay: 0s;
+    // }
+    //}
     &.success {
         flex-direction: column;
         .validate-txt {
@@ -164,14 +164,15 @@
         }
     }
     &.small {
-        input,
-        textarea {
-            height: 4rem;
-        }
-        .btn-inp-pw,
-        .btn-inp-del {
-            top: 0.8rem;
-        }
+        --input-height: 4rem;
+        // input,
+        // textarea {
+        //     height: 4rem;
+        // }
+        // .btn-inp-pw,
+        // .btn-inp-del {
+        //     top: 0.8rem;
+        // }
     }
     &.ico {
         input,
@@ -268,14 +269,14 @@
     .btn-inp-pw {
         display: none;
         position: absolute;
-        top: 1.2rem;
+        top: 0;
         right: 4rem;
         width: 2.4rem;
-        height: 2.4rem;
+        height: var(--input-height);
         @include bg($src: '../images/btn/btn_ip_pw.png');
         background-size: contain;
         &.is-show {
-            @include bg($src: '../images/btn/btn_ip_pw_on.png');
+            background-image: url('../images/btn/btn_ip_pw_on.png');
         }
     }
 
