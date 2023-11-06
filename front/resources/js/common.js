@@ -296,7 +296,7 @@ const ui = {
         inpBox.each(function () {
             const _this = this;
             const _input = $(_this).find('input, textarea');
-            if(_input.length){
+            if(_input.length && _input.attr('type') !== 'hidden'){
                 ui.inputFocus(_input);
                 if($(_this).hasClass('error')) _input.addClass('error');
             }
