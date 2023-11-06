@@ -310,7 +310,8 @@ const ui = {
     },
     inputFocus: function(element){
         const _closest = '.input-box, .text-box';
-        if ($(element).val() != '') {
+        const _val = $(element).val();
+        if (_val.trim() !== '') {
             $(element).closest(_closest).addClass('focus');
         } else {
             $(element).closest(_closest).removeClass('focus');
