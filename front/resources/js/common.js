@@ -325,8 +325,8 @@ const ui = {
         const $etcH = parseInt($(elem).css('padding-top')) + parseInt($(elem).css('padding-bottom')) + parseInt($(elem).css('border-top-width')) + parseInt($(elem).css('border-bottom-width'));
         const $oldH = $(elem).data('old-height') || 48;
         const $newH = $count * $lineH + $etcH;
-        if($oldH < $newH) $(elem).css('--auto-height', $newH + 'px');
-        else $(elem).css('--auto-height', '');
+        if($oldH < $newH) $(elem).closest('.input-box, .text-box').css('--input-height', $newH + 'px');
+        else $(elem).closest('.input-box, .text-box').css('--input-height', '');
 
         const _el = $(elem)[0];
         if ((_el.selectionStart == _el.value.length && _el.selectionEnd == _el.value.length) || isLastScroll) {
@@ -350,7 +350,7 @@ const ui = {
         $(document).on('click', '.btn-inp-del', function () {
             const $inp = $(this).siblings('input, textarea');
             $inp.val('').change().focus();
-            $(this).closest('.input-box').removeClass('focus');
+            $(this).closest('.input-box, .text-box').removeClass('focus');
         });
 
         $(document).on('click', '.btn-inp-pw', function (e) {
