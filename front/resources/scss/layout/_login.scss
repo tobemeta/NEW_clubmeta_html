@@ -29,17 +29,9 @@
         padding: 0 2.5rem 9.4rem;
     }
     .form-box {
-        // .input-box {
-        //     &::before {
-        //         top: 1rem;
-        //     }
-        // }
-        input {
-            height: 4.4rem;
+        .input-box {
+            --input-height: 4.4rem;
         }
-        // a {
-        //     top: 1rem;
-        // }
         .btn-box {
             padding: 0;
             padding-top: 1.6rem;
