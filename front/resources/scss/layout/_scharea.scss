@@ -99,7 +99,7 @@
                 width: 21.2rem;
                 height: 21.2rem;
                 @include bg($src: '../images/img/img_no_search.png');
-                background-size: cover;
+                background-size: contain;
             }
         }
     }

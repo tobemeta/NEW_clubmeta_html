@@ -260,7 +260,7 @@ h1 {
                         height: 18.2rem;
                         transform: translateX(-50%);
                         background: url('../images/img/img_no_clip.png');
-                        background-size: cover;
+                        background-size: contain;
                     }
                 }
                 .btn {
@@ -475,7 +475,7 @@ h1 {
                     height: 18.2rem;
                     transform: translateX(-50%);
                     background: url('../images/img/img_no_clip.png');
-                    background-size: cover;
+                    background-size: contain;
                 }
             }
             .btn {

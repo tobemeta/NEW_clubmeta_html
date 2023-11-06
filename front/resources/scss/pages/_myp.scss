@@ -193,7 +193,7 @@
                     width: 21.2rem;
                     height: 20.9rem;
                     background: url('../images/img/img_no_result.png') no-repeat 0 0;
-                    background-size: cover;
+                    background-size: contain;
                 }
             }
         }
@@ -269,7 +269,7 @@
                     width: 21.2rem;
                     height: 21.2rem;
                     @include bg($src: '../images/img/img_no_search.png');
-                    background-size: cover;
+                    background-size: contain;
                 }
             }
         }

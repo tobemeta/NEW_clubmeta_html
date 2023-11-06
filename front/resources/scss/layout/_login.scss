@@ -17,7 +17,7 @@
             width: 30rem;
             height: 19.6rem;
             @include bg($src: '../images/img/img_login_logo.png');
-            background-size: cover;
+            background-size: contain;
         }
         p {
             font-size: 1.2rem;
@@ -29,11 +29,11 @@
         padding: 0 2.5rem 9.4rem;
     }
     .form-box {
-        .input-box {
-            &::before {
-                top: 1rem;
-            }
-        }
+        // .input-box {
+        //     &::before {
+        //         top: 1rem;
+        //     }
+        // }
         input {
             height: 4.4rem;
         }
@@ -201,7 +201,7 @@
             transform: translateX(-50%);
             width: 4.8rem;
             height: 4.8rem;
-            background-size: cover;
+            background-size: contain;
         }
 
         &.kakao {
@@ -327,7 +327,7 @@
             width: 4.4rem;
             height: 4.4rem;
             @include bg($src: '../images/btn/btn_pf_pic.png');
-            background-size: cover;
+            background-size: contain;
         }
     }
 }
@@ -746,7 +746,7 @@
             width: 25.8rem;
             height: 25.8rem;
             @include bg($src: '../images/img/img_secession.png');
-            background-size: cover;
+            background-size: contain;
         }
     }
 

@@ -14,8 +14,8 @@
             width: 21.2rem;
             height: 21.2rem;
             margin-bottom: 1.6rem;
-            background-size: cover;
             @include bg($src: '../images/img/img_no_result.png');
+            background-size: contain;
         }
         .title {
             margin-bottom: 0.4rem;
@@ -279,7 +279,7 @@
                     height: 6.8rem;
                     transform: translateX(-50%);
                     background: url('../images/img/img_vinyl.png') no-repeat 0 0;
-                    background-size: cover;
+                    background-size: contain;
                 }
                 &:before {
                     border-radius: 2.4rem;
@@ -536,7 +536,7 @@
                     height: 14.4rem;
                     transform: translateX(-50%);
                     background: url('../images/img/img_vinyl.png') no-repeat 0 0;
-                    background-size: cover;
+                    background-size: contain;
                 }
             }
             .img {
