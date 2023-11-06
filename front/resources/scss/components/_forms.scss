@@ -187,21 +187,23 @@
             display: block;
             width: 2.4rem;
             height: var(--input-height);
+            background-repeat: no-repeat;
+            background-position: center center;
             background-size: 2.4rem auto;
         }
         &.-user {
             &::before {
-                @include bg($src: '../images/ico/ico_ip_user.png');
+                background-image: url('../images/ico/ico_ip_user.png');
             }
         }
         &.-lock {
             &::before {
-                @include bg($src: '../images/ico/ico_lock.png');
+                background-image: url('../images/ico/ico_lock.png');
             }
         }
         &.comment {
             &::before {
-                @include bg($src: '../images/ico/ico_reply.png');
+                background-image: url('../images/ico/ico_reply.png');
             }
         }
     }
@@ -242,13 +244,12 @@
             display: block;
             content: '';
             position: absolute;
-            top: 50%;
+            top: 0;
             left: 1.6rem;
             width: 1.6rem;
-            height: 1.6rem;
+            height: var(--input-height);
             @include bg($src: '../images/ico/ico_ip_sch.png');
             background-size: contain;
-            transform: translateY(-50%);
         }
         input,
         textarea {

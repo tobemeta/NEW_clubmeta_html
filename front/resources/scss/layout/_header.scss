@@ -76,13 +76,12 @@
                     display: block;
                     content: '';
                     position: absolute;
-                    top: 50%;
+                    top: 0;
                     left: 1.6rem;
                     width: 1.6rem;
-                    height: 1.6rem;
+                    height: var(--input-height);
                     @include bg($src: '../images/ico/ico_ip_sch.png');
                     background-size: contain;
-                    transform: translateY(-50%);
                 }
                 input {
                     padding-left: 3.6rem;
