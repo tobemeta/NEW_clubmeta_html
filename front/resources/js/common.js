@@ -16,6 +16,7 @@ const ui = {
         _this.header();
         _this.top();
         _this.tab();
+        _this.input();
         _this.forms();
         _this.sch();
         _this.etc();
@@ -290,31 +291,66 @@ const ui = {
                 });
         }
     },
-    forms: () => {
-        const inpBox = $('.input-box');
-        const inp = $('.input-box input');
-
+    input: function(){
+        const inpBox = $('.input-box');        
         inpBox.each(function () {
-            inp.on('input', function () {
-                if ($(this).val() != '') {
-                    $(this).closest(inpBox).addClass('focus');
-                } else {
-                    $(this).closest(inpBox).removeClass('focus');
-                }
-            });
+            const _this = this;
+            const _input = $(_this).find('input, textarea');
+            if(_input.length){
+                ui.inputFocus(_input);
+                if($(_this).hasClass('error')) _input.addClass('error');
+            }
+            const _autoheightEl = $(_this).find('textarea.auto-height');
+            if(_autoheightEl.length) {
+                const $oldH = _autoheightEl.outerHeight();
+                _autoheightEl.data('old-height', $oldH);
+                ui.textareaHeight(_autoheightEl, true);
+            }
+        });
+    },
+    inputFocus: function(element){
+        const _closest = '.input-box, .text-box';
+        if ($(element).val() != '') {
+            $(element).closest(_closest).addClass('focus');
+        } else {
+            $(element).closest(_closest).removeClass('focus');
+        }
+    },
+    textareaHeight: function (elem, isLastScroll) {
+        const $val = $(elem).val();
+        const $lines = $val.split(/\r|\r\n|\n/);
+        const $maxLine = $(elem).data('max-line') || 2;
+        const $count = Math.min($maxLine, $lines.length);
+        const $lineH = parseInt($(elem).css('line-height'));
+        const $etcH = parseInt($(elem).css('padding-top')) + parseInt($(elem).css('padding-bottom')) + parseInt($(elem).css('border-top-width')) + parseInt($(elem).css('border-bottom-width'));
+        const $oldH = $(elem).data('old-height') || 48;
+        const $newH = $count * $lineH + $etcH;
+        if($oldH < $newH) $(elem).css('--auto-height', $newH + 'px');
+        else $(elem).css('--auto-height', '');
+
+        const _el = $(elem)[0];
+        if ((_el.selectionStart == _el.value.length && _el.selectionEnd == _el.value.length) || isLastScroll) {
+            // 커서가 맨 마지막 줄에 있는지 확인
+            const _elH = _el.offsetHeight;
+            const _sclH = _el.scrollHeight + parseInt($(elem).css('border-top-width')) + parseInt($(elem).css('border-bottom-width'));
+            if(_elH < _sclH) _el.scrollTop = _sclH - _elH;
+        } 
+    },
+    forms: () => {
+        $(document).on('input change', '.input-box input, .input-box textarea', function () {
+            const _this = this;
+            ui.inputFocus(_this);
         });
 
-        const inpError = inpBox.hasClass('error');
-
-        if (inpError) {
-            $(this).find('input').addClass('error');
-        } else {
-        }
+        $(document).on('input change blur', 'textarea.auto-height', function () {
+            const _this = this;
+            ui.textareaHeight(_this);
+        });
 
         $(document).on('click', '.btn-inp-del', function () {
-            const $inp = $(this).siblings('input', 'textarea');
+            const $inp = $(this).siblings('input, textarea');
             $inp.val('').change().focus();
-            $(this).parents('.input-box').removeClass('focus');
+            $(this).closest('.input-box').removeClass('focus');
         });
 
         $(document).on('click', '.btn-inp-pw', function (e) {
