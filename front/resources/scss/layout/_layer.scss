@@ -158,10 +158,11 @@
         position: relative;
         height: auto;
         overflow: visible;
+        min-height: -vh(100, var(--statusBarHeight));
         .layer-popup {
             position: relative;
             transform: none !important;
-            min-height: -vh(100, var(--statusBarHeight));
+            min-height: auto;
         }
         .layer-header {
             position: fixed;
