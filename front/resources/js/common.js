@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
     ui.init();
 });
 
@@ -23,6 +23,7 @@ const ui = {
         _this.tooltip.init();
         _this.select.init();
         _this.lottie();
+        _this.ios();
     },
     vhChk: function () {
         const $vh = window.innerHeight * 0.01;
@@ -39,9 +40,9 @@ const ui = {
         const bodyLayer = $('.layerpopup-box.full.is-active');
         if (bodyLayer.length && !$('.wrap').length) {
             $('body').css('background-color', '#fff');
-            if(bodyLayer.find('.challPop').length){
+            if (bodyLayer.find('.challPop').length) {
                 bodyLayer.addClass('like-not-full');
-            }else{
+            } else {
                 bodyLayer.addClass('body-layer');
             }
         }
@@ -291,24 +292,24 @@ const ui = {
                 });
         }
     },
-    input: function(){
-        const inpBox = $('.input-box');        
+    input: function () {
+        const inpBox = $('.input-box');
         inpBox.each(function () {
             const _this = this;
             const _input = $(_this).find('input, textarea');
-            if(_input.length && _input.attr('type') !== 'hidden'){
+            if (_input.length && _input.attr('type') !== 'hidden') {
                 ui.inputFocus(_input);
-                if($(_this).hasClass('error')) _input.addClass('error');
+                if ($(_this).hasClass('error')) _input.addClass('error');
             }
             const _autoheightEl = $(_this).find('textarea.auto-height');
-            if(_autoheightEl.length) {
+            if (_autoheightEl.length) {
                 const $oldH = _autoheightEl.outerHeight();
                 _autoheightEl.data('old-height', $oldH);
                 ui.textareaHeight(_autoheightEl, true);
             }
         });
     },
-    inputFocus: function(element){
+    inputFocus: function (element) {
         const _closest = '.input-box, .text-box';
         const _val = $(element).val();
         if (_val.trim() !== '') {
@@ -326,7 +327,10 @@ const ui = {
         const $etcH = parseInt($(elem).css('padding-top')) + parseInt($(elem).css('padding-bottom')) + parseInt($(elem).css('border-top-width')) + parseInt($(elem).css('border-bottom-width'));
         const $oldH = $(elem).data('old-height') || 48;
         const $newH = $count * $lineH + $etcH;
-        if($oldH < $newH) $(elem).closest('.input-box, .text-box').css('--input-height', $newH + 'px');
+        if ($oldH < $newH)
+            $(elem)
+                .closest('.input-box, .text-box')
+                .css('--input-height', $newH + 'px');
         else $(elem).closest('.input-box, .text-box').css('--input-height', '');
 
         const _el = $(elem)[0];
@@ -334,8 +338,8 @@ const ui = {
             // 커서가 맨 마지막 줄에 있는지 확인
             const _elH = _el.offsetHeight;
             const _sclH = _el.scrollHeight + parseInt($(elem).css('border-top-width')) + parseInt($(elem).css('border-bottom-width'));
-            if(_elH < _sclH) _el.scrollTop = _sclH - _elH;
-        } 
+            if (_elH < _sclH) _el.scrollTop = _sclH - _elH;
+        }
     },
     forms: () => {
         $(document).on('input change', '.input-box input, .input-box textarea', function () {
@@ -897,6 +901,45 @@ const ui = {
             });
         };
         $lottieInit();
+    },
+    ios: function () {
+        if (!ui.Mobile.iOS()) return;
+        const windowHeight = window.innerHeight;
+        let prevHeight = 0;
+        let revertWindowInnerHeight = null;
+        let isClose = false;
+        function viewportHandler(event) {
+            var viewport = event.target;
+            const viewportHeight = viewport.height;
+            if (windowHeight !== viewportHeight) {
+                const sclNow = window.scrollY || window.pageYOffset;
+                if (prevHeight) {
+                    if (viewportHeight < prevHeight) {
+                        // 이모티콘 키보드 갈때
+                        const sclVal = prevHeight - viewportHeight;
+                        $(window).scrollTop(sclNow + sclVal);
+                    } else {
+                        // 자판 키보드로 돌아갈때
+                        if (!isClose) {
+                            isClose = true;
+                            const windowHeight = revertWindowInnerHeight || window.innerHeight;
+                            const lastSCl = $('body').height() - windowHeight;
+                            $(window).scrollTop(lastSCl);
+                            revertWindowInnerHeight = windowHeight;
+                        } else {
+                            isClose = false;
+                        }
+                    }
+                }
+                prevHeight = viewportHeight;
+            } else {
+                prevHeight = null;
+            }
+        }
+
+        if ($('.comment-inp-box').length) {
+            window.visualViewport.addEventListener('resize', viewportHandler);
+        }
     }
 };
 
@@ -1049,5 +1092,3 @@ ui.Device = {
         }
     }
 };
-
-

@@ -157,11 +157,11 @@
     &.full.body-layer {
         position: relative;
         height: auto;
-        overflow: hidden;
+        overflow: visible;
         .layer-popup {
             position: relative;
             transform: none !important;
-            min-height: -vh(100);
+            min-height: -vh(100, var(--statusBarHeight));
         }
         .layer-header {
             position: fixed;
@@ -169,6 +169,7 @@
         }
         .layer-content {
             padding-top: 4.8rem;
+            overflow: visible;
         }
     }
 }
