@@ -905,7 +905,7 @@ const ui = {
     ios: function () {
         if (!ui.Mobile.iOS()) return;
         const windowHeight = window.innerHeight;
-        let prevHeight = 0;
+        let prevHeight = null;
         let revertWindowInnerHeight = null;
         let isClose = false;
         function viewportHandler(event) {
