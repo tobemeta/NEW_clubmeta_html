@@ -50,19 +50,20 @@ const ui = {
         $(window).on('scroll', (e) => {
             if ($(this).scrollTop() > headerHeight) {
                 $header.addClass('is-focus');
+
+                if (!scrolling) {
+                    $header.addClass('up');
+                }
+    
+                clearTimeout(scrolling);
+                scrolling = setTimeout(() => {
+                    $header.removeClass('up');
+                    scrolling = undefined;
+                }, 250);
             } else {
                 $header.removeClass('is-focus');
-            }
-
-            if (!scrolling) {
-                $header.addClass('up');
-            }
-
-            clearTimeout(scrolling);
-            scrolling = setTimeout(() => {
                 $header.removeClass('up');
-                scrolling = undefined;
-            }, 250);
+            }
         });
     },
     sch: () => {
