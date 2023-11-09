@@ -47,26 +47,25 @@ const ui = {
             }
         }
 
-        /* //header 이전 버전
-        $(window).on('scroll', (e) => {
-            if ($(this).scrollTop() > headerHeight) {
-                $header.addClass('is-focus');
+        //header 이전 버전
+        // $(window).on('scroll', (e) => {
+        //     if ($(this).scrollTop() > headerHeight) {
+        //         $header.addClass('is-focus');
 
-                if (!scrolling) {
-                    $header.addClass('up');
-                }
+        //         if (!scrolling) {
+        //             $header.addClass('up');
+        //         }
     
-                clearTimeout(scrolling);
-                scrolling = setTimeout(() => {
-                    $header.removeClass('up');
-                    scrolling = undefined;
-                }, 250);
-            } else {
-                $header.removeClass('is-focus');
-                $header.removeClass('up');
-            }
-        });
-        */
+        //         clearTimeout(scrolling);
+        //         scrolling = setTimeout(() => {
+        //             $header.removeClass('up');
+        //             scrolling = undefined;
+        //         }, 250);
+        //     } else {
+        //         $header.removeClass('is-focus');
+        //         $header.removeClass('up');
+        //     }
+        // });
         //header 새버전
         let prevSclTop = $(window).scrollTop();
         $(window).on('scroll', (e) => {
@@ -74,7 +73,6 @@ const ui = {
             if (nowSclTop > headerHeight) {
                 const sclDirection = nowSclTop > prevSclTop ? 'down' : 'up';
                 const sclDistance = Math.abs(nowSclTop - prevSclTop);
-                console.log(sclDirection, sclDistance)
                 if (sclDistance > 5) {
                     if (sclDirection === 'down') {
                         $header.addClass('up');
@@ -82,6 +80,7 @@ const ui = {
                         $header.removeClass('up');
                     }
                 }
+                $header.addClass('is-focus');
             } else {
                 $header.removeClass('is-focus');
                 $header.removeClass('up');
