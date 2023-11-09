@@ -47,6 +47,7 @@ const ui = {
             }
         }
 
+        /* //header 이전 버전
         $(window).on('scroll', (e) => {
             if ($(this).scrollTop() > headerHeight) {
                 $header.addClass('is-focus');
@@ -60,6 +61,27 @@ const ui = {
                     $header.removeClass('up');
                     scrolling = undefined;
                 }, 250);
+            } else {
+                $header.removeClass('is-focus');
+                $header.removeClass('up');
+            }
+        });
+        */
+        //header 새버전
+        let prevSclTop = $(window).scrollTop();
+        $(window).on('scroll', (e) => {
+            const nowSclTop = $(window).scrollTop();
+            if (nowSclTop > headerHeight) {
+                const scrollDirection = nowSclTop > prevSclTop ? 'down' : 'up';
+                const scrollDistance = Math.abs(nowSclTop - prevSclTop);
+                console.log(scrollDirection, scrollDistance);
+                if (scrollDistance > 10) {
+                    if (scrollDirection === 'down') {
+                        $header.addClass('up');
+                    } else {
+                        $header.removeClass('up');
+                    }
+                }
             } else {
                 $header.removeClass('is-focus');
                 $header.removeClass('up');
