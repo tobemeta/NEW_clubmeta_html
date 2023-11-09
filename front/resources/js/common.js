@@ -82,8 +82,7 @@ const ui = {
                 }
                 $header.addClass('is-focus');
             } else {
-                $header.removeClass('is-focus');
-                $header.removeClass('up');
+                $header.removeClass('is-focus up');
             }
 
             prevSclTop = nowSclTop;
