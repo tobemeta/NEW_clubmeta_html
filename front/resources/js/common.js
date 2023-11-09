@@ -72,11 +72,11 @@ const ui = {
         $(window).on('scroll', (e) => {
             const nowSclTop = $(window).scrollTop();
             if (nowSclTop > headerHeight) {
-                const scrollDirection = nowSclTop > prevSclTop ? 'down' : 'up';
-                const scrollDistance = Math.abs(nowSclTop - prevSclTop);
-                console.log(scrollDirection, scrollDistance);
-                if (scrollDistance > 10) {
-                    if (scrollDirection === 'down') {
+                const sclDirection = nowSclTop > prevSclTop ? 'down' : 'up';
+                const sclDistance = Math.abs(nowSclTop - prevSclTop);
+                console.log(sclDirection, sclDistance)
+                if (sclDistance > 5) {
+                    if (sclDirection === 'down') {
                         $header.addClass('up');
                     } else {
                         $header.removeClass('up');
@@ -86,6 +86,8 @@ const ui = {
                 $header.removeClass('is-focus');
                 $header.removeClass('up');
             }
+
+            prevSclTop = nowSclTop;
         });
     },
     sch: () => {
