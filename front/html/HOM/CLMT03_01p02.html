@@ -17,11 +17,16 @@
             <div class="layer-popup">
                 <header class="layer-header">
                     <div class="header-inner">
-                        <div class="header-left"></div>
+                        <div class="header-left">
+                            <!-- 2023-11-09: '닫기' => '뒤로가기' 변경 -->
+                            <a href="javascript:history.back();" class="btn-back" role="button" title="뒤로가기">뒤로가기</a>
+                        </div>
                         <div class="header-center">
                             <h1 class="pop-title">알림 타임라인</h1>
                         </div>
-                        <div class="header-right"><button type="button" class="btn-close" onclick="ui.popup.close('#fullViewPop')" title="레이어팝업 닫기">닫기</button></div>
+                        <div class="header-right">
+                            <!-- <button type="button" class="btn-close" onclick="ui.popup.close('#fullViewPop')" title="레이어팝업 닫기">닫기</button> -->
+                        </div>
                     </div>
                 </header>
                 <div class="layer-content">
