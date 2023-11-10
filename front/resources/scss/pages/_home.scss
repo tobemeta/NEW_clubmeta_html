@@ -665,30 +665,40 @@
     }
     .bar-area {
         position: relative;
+        margin-right: 1.5rem;
         flex: 1;
         height: 0.4rem;
-        border-radius: 0.2rem;
-        background: #fff;
-        box-shadow: $shadow;
+        &:before {
+            content: '';
+            display: block;
+            height: 0.4rem;
+            position: absolute;
+            left: 0rem;
+            top: 0;
+            right: -1.5rem;
+            border-radius: 0.2rem;
+            background: #fff;
+            box-shadow: $shadow;
+        }
 
         .bar {
             position: absolute;
             left: 0;
             top: 0;
-            padding: 0 0.7rem;
+            // padding: 0 0.7rem;
             height: 100%;
             background: linear-gradient(135deg, #ff7300 0%, #ef510e 100%);
-            border-radius: 0.2rem;
+            border-radius: 0.2rem 0 0 0.2rem;
             box-sizing: border-box;
             &:after {
                 display: block;
                 content: '';
                 position: absolute;
                 top: 50%;
-                right: 0;
+                left: 100%;
                 width: 1.6rem;
                 height: 1.6rem;
-                margin: -0.8rem 0 -0.1rem 0;
+                margin: -0.8rem 0 0 -0.1rem;
                 border-radius: 50%;
                 background: linear-gradient(135deg, #ff880a 0%, #ff5c00 44.79%, #ff5c00 78.65%, #e45200 100%);
                 box-shadow: $shadow;
