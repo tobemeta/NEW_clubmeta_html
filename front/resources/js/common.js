@@ -55,7 +55,7 @@ const ui = {
         //         if (!scrolling) {
         //             $header.addClass('up');
         //         }
-    
+
         //         clearTimeout(scrolling);
         //         scrolling = setTimeout(() => {
         //             $header.removeClass('up');
@@ -342,19 +342,25 @@ const ui = {
         }
     },
     textareaHeight: function (elem, isLastScroll) {
-        const $val = $(elem).val();
-        const $lines = $val.split(/\r|\r\n|\n/);
+        const $elem = $(elem);
+        $elem[0].style.height = 'auto';
         const $maxLine = $(elem).data('max-line') || 2;
-        const $count = Math.min($maxLine, $lines.length);
         const $lineH = parseInt($(elem).css('line-height'));
-        const $etcH = parseInt($(elem).css('padding-top')) + parseInt($(elem).css('padding-bottom')) + parseInt($(elem).css('border-top-width')) + parseInt($(elem).css('border-bottom-width'));
+        const $pdH = parseInt($(elem).css('padding-top')) + parseInt($(elem).css('padding-bottom'));
+        const $borderH = parseInt($(elem).css('border-top-width')) + parseInt($(elem).css('border-bottom-width'));
+        console.log($lineH, $maxLine, $pdH, $borderH)
+        const $maxH = $lineH * $maxLine + $pdH + $borderH;
         const $oldH = $(elem).data('old-height') || 48;
-        const $newH = $count * $lineH + $etcH;
-        if ($oldH < $newH)
+        
+        const $newH = Math.min($maxH, $elem[0].scrollHeight + $borderH);
+        if ($oldH < $newH) {
+            $elem[0].style.height = '';
             $(elem)
                 .closest('.input-box, .text-box')
                 .css('--input-height', $newH + 'px');
-        else $(elem).closest('.input-box, .text-box').css('--input-height', '');
+        } else {
+            $(elem).closest('.input-box, .text-box').css('--input-height', '');
+        }
 
         const _el = $(elem)[0];
         if ((_el.selectionStart == _el.value.length && _el.selectionEnd == _el.value.length) || isLastScroll) {
