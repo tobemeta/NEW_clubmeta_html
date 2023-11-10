@@ -348,13 +348,11 @@ const ui = {
         const $lineH = parseInt($(elem).css('line-height'));
         const $pdH = parseInt($(elem).css('padding-top')) + parseInt($(elem).css('padding-bottom'));
         const $borderH = parseInt($(elem).css('border-top-width')) + parseInt($(elem).css('border-bottom-width'));
-        console.log($lineH, $maxLine, $pdH, $borderH)
         const $maxH = $lineH * $maxLine + $pdH + $borderH;
         const $oldH = $(elem).data('old-height') || 48;
-        
         const $newH = Math.min($maxH, $elem[0].scrollHeight + $borderH);
+        $elem[0].style.height = '';
         if ($oldH < $newH) {
-            $elem[0].style.height = '';
             $(elem)
                 .closest('.input-box, .text-box')
                 .css('--input-height', $newH + 'px');
