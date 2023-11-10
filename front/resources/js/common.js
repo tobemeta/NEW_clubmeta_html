@@ -880,6 +880,13 @@ const ui = {
                 $(this).find('span').text('팔로잉');
             }
         });
+
+        $('[data-ellipsis-line]').click(function(e){
+            const $this = $(this);
+            const $line = $this.data('ellipsis-line') || 2;
+            const $className = 'ellipsis'+$line;
+            $this.toggleClass($className);
+        });
     },
     lottie: function (readyEvt, completeEvt) {
         const $lottie = $('[data-lottie]');

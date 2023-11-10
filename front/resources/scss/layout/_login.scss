@@ -530,7 +530,7 @@
                 max-height: 4.6rem;
                 .body-title {
                     max-height: 4.6rem;
-                    @include ellipsis2();
+                    @include ellipsis(2);
                 }
                 .ico-new {
                     display: none;

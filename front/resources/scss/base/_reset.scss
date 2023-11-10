@@ -278,7 +278,8 @@ textarea {
 .ellipsis {
     @include ellipsis();
 }
-/* 2줄 말줄임 */
-.ellipsis2 {
-    @include ellipsis2();
+@for $i from 1 through 5 {
+    .ellipsis#{$i} {
+        @include ellipsis($i);
+    }
 }
