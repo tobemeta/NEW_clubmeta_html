@@ -982,41 +982,52 @@ const ui = {
     },
     ios: function () {
         if (!ui.Mobile.iOS()) return;
+        const $target = $('.comment-inp-box');
         const windowHeight = window.innerHeight;
         let prevHeight = null;
-        let revertWindowInnerHeight = null;
-        let isClose = false;
+        let moveSCl = null;
+        let lastSCl = null;
         function viewportHandler(event) {
             var viewport = event.target;
             const viewportHeight = viewport.height;
             if (windowHeight !== viewportHeight) {
                 const sclNow = window.scrollY || window.pageYOffset;
+                const $maxScl = $('body').height() - viewportHeight;
+                let sclVal = null;
                 if (prevHeight) {
                     if (viewportHeight < prevHeight) {
                         // 이모티콘 키보드 갈때
-                        const sclVal = prevHeight - viewportHeight;
-                        $(window).scrollTop(sclNow + sclVal);
+                        moveSCl = prevHeight - viewportHeight;
+                        sclVal = sclNow + moveSCl;
+                        lastSCl = sclNow;
+                        if($maxScl < sclVal){
+                            sclVal = $maxScl;
+                            $target.css('transform', 'translateY(-50%)');
+                        }
+                        $(window).scrollTop(sclVal);
                     } else {
                         // 자판 키보드로 돌아갈때
-                        if (!isClose) {
-                            isClose = true;
-                            const windowHeight = revertWindowInnerHeight || window.innerHeight;
-                            const lastSCl = $('body').height() - windowHeight;
-                            $(window).scrollTop(lastSCl);
-                            revertWindowInnerHeight = windowHeight;
+                        if (lastSCl) {
+                            sclVal = Math.min($maxScl, lastSCl);
+                            $(window).scrollTop(sclVal);
+                            $target.css('transform', 'translateY(-50%)');
                         } else {
-                            isClose = false;
+                            lastSCl = null;
                         }
                     }
                 }
                 prevHeight = viewportHeight;
             } else {
                 prevHeight = null;
+                $target.css('transform', '');
             }
         }
 
-        if ($('.comment-inp-box').length) {
+        if ($target.length) {
             window.visualViewport.addEventListener('resize', viewportHandler);
+            $target.on('focusout', function(){
+                $(this).css('transform', '');
+            })
         }
     }
 };
