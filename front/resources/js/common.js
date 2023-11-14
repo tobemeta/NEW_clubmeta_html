@@ -1,5 +1,12 @@
 $(function () {
-    ui.init();
+    const $elements = $.find('*[data-html-include]');
+    if ($elements.length) {
+        ui.include(function(){
+            ui.init();
+        });
+    } else {
+        ui.init();
+    }
 });
 
 $(window).on('resize', function () {
@@ -24,6 +31,43 @@ const ui = {
         _this.select.init();
         _this.lottie();
         _this.ios();
+
+        //퍼블리스트 확인용
+        if(getUrlParams().pubPop){
+            ui.popup.open('#'+getUrlParams().pubPop)
+        }
+    },
+    include: function (fn) {
+        const $elements = $.find('*[data-html-include]');
+        if ($elements.length) {
+            // const $url = location.href;
+            //if ($url.indexOf('http') >= 0) {
+            if (location.host) {
+                $.each($elements, function (i) {
+                    const $this = $(this);
+                    $this.empty();
+                    const $html = $this.data('html-include');
+                    const $htmlAry = $html.split('/');
+                    const $htmlFile = $htmlAry[$htmlAry.length - 1];
+                    const $docTitle = document.title;
+                    let $title = null;
+                    if ($docTitle.indexOf(' | ') > -1) {
+                        $title = $docTitle.split(' | ')[0];
+                    }
+                    $this.load($html, function (res, sta, xhr) {
+                        if (sta == 'success') {
+                            if (!$this.attr('class') && !$this.attr('id')) $this.children().unwrap();
+                            else $this.removeAttr('data-html-include');
+                        }
+                        if (i === $elements.length - 1) {
+                            if (!!fn) fn();
+                        }
+                    });
+                });
+            } else {
+                if (!!fn) fn();
+            }
+        }
     },
     vhChk: function () {
         const $vh = window.innerHeight * 0.01;
@@ -881,10 +925,10 @@ const ui = {
             }
         });
 
-        $('[data-ellipsis-line]').click(function(e){
+        $('[data-ellipsis-line]').click(function (e) {
             const $this = $(this);
             const $line = $this.data('ellipsis-line') || 2;
-            const $className = 'ellipsis'+$line;
+            const $className = 'ellipsis' + $line;
             $this.toggleClass($className);
         });
     },
@@ -1125,4 +1169,13 @@ ui.Device = {
             $viewport.attr('content', $newContent);
         }
     }
+};
+
+//파라미터 값 갖고오기
+const getUrlParams = function () {
+    const params = {};
+    window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (str, key, value) {
+        params[key] = value;
+    });
+    return params;
 };

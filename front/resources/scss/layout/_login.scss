@@ -320,6 +320,8 @@
             height: 4.4rem;
             @include bg($src: '../images/btn/btn_pf_pic.png');
             background-size: contain;
+            @include blind();
+            overflow: hidden;
         }
     }
 }

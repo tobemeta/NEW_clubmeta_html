@@ -1,4 +1,9 @@
 //Sass mixin
+@mixin blind() {
+    font-size: 0.5rem;
+    color: transparent;
+    line-height: 0.5;
+}
 
 @mixin ellipsis($line: 0) {
     overflow: hidden;
