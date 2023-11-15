@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 // Sass functions
 @function -vh($val: 1, $add: null, $isMinus: false) {
     @if ($add) {
@@ -9,4 +11,8 @@
     } @else {
         @return calc(var(--vh) * #{$val});
     }
+}
+
+@function -aspect-ratio($width: 1, $height: 1, $unit: '%') {
+    @return (math.div($height, $width) * 100) + #{$unit};
 }

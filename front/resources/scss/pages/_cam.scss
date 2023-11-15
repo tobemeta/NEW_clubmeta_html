@@ -164,11 +164,13 @@ a.btn-composer {
 .banner-area {
     &.advert {
         position: relative;
-        height: 88px;
         a {
             display: block;
         }
 
+        .img {
+            @include img-ratio(360, 88);
+        }
         .text {
             position: absolute;
             top: 50%;
