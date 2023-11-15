@@ -380,8 +380,8 @@
 
 //관심 카테고리 페이지
 .category-box {
-    width: 100%;
-    margin-top: 2.4rem;
+    max-width: calc(52rem - 3.2rem);
+    margin: 2.4rem auto 0;
     box-sizing: border-box;
     .cell-row {
         display: flex;

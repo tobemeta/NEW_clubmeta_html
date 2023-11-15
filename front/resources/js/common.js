@@ -1172,7 +1172,7 @@ ui.Device = {
         }
 
         // 최소기준 디바이스(가로)크기보다 작으면 meta[name="viewport"] 수정
-        const deviceMinWidth = 320;
+        const deviceMinWidth = 360;
         if ($(window).width() < deviceMinWidth) {
             const $viewport = $('meta[name="viewport"]');
             // const $content = $viewport.attr('content');
