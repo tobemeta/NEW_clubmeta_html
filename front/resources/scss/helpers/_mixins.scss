@@ -21,6 +21,7 @@
 @mixin img() {
     position: relative;
     flex-shrink: 0;
+    background-color: #fff;
     img {
         width: 100%;
         height: 100%;
