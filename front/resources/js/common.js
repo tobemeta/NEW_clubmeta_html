@@ -981,16 +981,19 @@ const ui = {
         $lottieInit();
     },
     ios: function () {
-        if (!ui.Mobile.iOS()) return;
+        // if (!ui.Mobile.iOS()) return;
         const $target = $('.comment-inp-box');
         const windowHeight = window.innerHeight;
+        const isApp = windowHeight !== window.visualViewport.height;
+        //console.log('isApp', isApp, windowHeight, window.visualViewport.height);
         let prevHeight = null;
         let moveSCl = null;
         let lastSCl = null;
         function viewportHandler(event) {
             var viewport = event.target;
             const viewportHeight = viewport.height;
-            if (windowHeight !== viewportHeight) {
+            if (windowHeight > viewportHeight) {
+                // console.log('키패드 올리고')
                 const sclNow = window.scrollY || window.pageYOffset;
                 const $maxScl = $('body').height() - viewportHeight;
                 let sclVal = null;
@@ -1002,7 +1005,7 @@ const ui = {
                         lastSCl = sclNow;
                         if($maxScl < sclVal){
                             sclVal = $maxScl;
-                            $target.css('transform', 'translateY(-50%)');
+                            if(!isApp) $target.css('transform', 'translateY(-50%)');
                         }
                         $(window).scrollTop(sclVal);
                     } else {
@@ -1010,23 +1013,26 @@ const ui = {
                         if (lastSCl) {
                             sclVal = Math.min($maxScl, lastSCl);
                             $(window).scrollTop(sclVal);
-                            $target.css('transform', 'translateY(-50%)');
+                            if(!isApp) $target.css('transform', 'translateY(-50%)');
                         } else {
                             lastSCl = null;
                         }
                     }
+                }else{
+                    prevHeight = viewportHeight;
                 }
-                prevHeight = viewportHeight;
             } else {
+                // console.log('키패드 내리고')
                 prevHeight = null;
-                $target.css('transform', '');
+                if(!isApp) $target.css('transform', '');
             }
         }
 
         if ($target.length) {
             window.visualViewport.addEventListener('resize', viewportHandler);
-            $target.on('focusout', function(){
-                $(this).css('transform', '');
+            console.log('event')
+            $target.find('input, textarea').on('focusout', function(){
+                if(!isApp) $target.css('transform', '');
             })
         }
     }
