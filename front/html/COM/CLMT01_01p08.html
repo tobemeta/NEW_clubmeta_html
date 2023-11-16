@@ -20,7 +20,21 @@
                 <div class="title-box">
                     <strong class="sub-title bold">보유한 Shoe가 부족합니다.</strong>
                 </div>
-                <p class="msg">Shoe를 획득할 수 있는 다양한<br />활동이 있어요!</p>
+                <!-- 2023-11-16: show 정보 추가 -->
+                <div class="shoe-info-box mt-16 mb-24">
+                    <ul>
+                        <li>
+                            <div class="th">보유</div>
+                            <div class="td"><strong class="fc-main">00</strong> Shoe</div>
+                        </li>
+                        <li>
+                            <div class="th">참가</div>
+                            <div class="td"><strong>00</strong> Shoe</div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 2023-11-16: br 태그 위치 변경 -->
+                <p class="msg">Shoe를 획득할 수 있는<br />다양한 활동이 있어요!</p>
                 <div class="btn-box">
                     <button type="button" class="btn btn-outline btn-pop-close" title="취소" onclick="ui.popup.close('#msgBox')">취소</button>
                     <a href="#none" class="btn btn-primary" title="확인하러 가기">확인하러 가기</a>
