@@ -1,7 +1,7 @@
 $(function () {
     const $elements = $.find('*[data-html-include]');
     if ($elements.length) {
-        ui.include(function(){
+        ui.include(function () {
             ui.init();
         });
     } else {
@@ -33,8 +33,8 @@ const ui = {
         _this.ios();
 
         //퍼블리스트 확인용
-        if(getUrlParams().pubPop){
-            ui.popup.open('#'+getUrlParams().pubPop)
+        if (getUrlParams().pubPop) {
+            ui.popup.open('#' + getUrlParams().pubPop);
         }
     },
     include: function (fn) {
@@ -981,10 +981,10 @@ const ui = {
         $lottieInit();
     },
     ios: function () {
-        // if (!ui.Mobile.iOS()) return;
+        if (!ui.Mobile.iOS()) return;
         const $target = $('.comment-inp-box');
         const windowHeight = window.innerHeight;
-        const isApp = windowHeight !== window.visualViewport.height;
+        const isApp = navigator.userAgent.match(/Safari/i) == null ? true : false;
         //console.log('isApp', isApp, windowHeight, window.visualViewport.height);
         let prevHeight = null;
         let moveSCl = null;
@@ -993,7 +993,7 @@ const ui = {
             var viewport = event.target;
             const viewportHeight = viewport.height;
             if (windowHeight > viewportHeight) {
-                // console.log('키패드 올리고')
+                console.log('키패드 올리고');
                 const sclNow = window.scrollY || window.pageYOffset;
                 const $maxScl = $('body').height() - viewportHeight;
                 let sclVal = null;
@@ -1003,9 +1003,9 @@ const ui = {
                         moveSCl = prevHeight - viewportHeight;
                         sclVal = sclNow + moveSCl;
                         lastSCl = sclNow;
-                        if($maxScl < sclVal){
+                        if ($maxScl < sclVal) {
                             sclVal = $maxScl;
-                            if(!isApp) $target.css('transform', 'translateY(-50%)');
+                            if (!isApp) $target.css('transform', 'translateY(-50%)');
                         }
                         $(window).scrollTop(sclVal);
                     } else {
@@ -1013,27 +1013,26 @@ const ui = {
                         if (lastSCl) {
                             sclVal = Math.min($maxScl, lastSCl);
                             $(window).scrollTop(sclVal);
-                            if(!isApp) $target.css('transform', 'translateY(-50%)');
+                            if (!isApp) $target.css('transform', 'translateY(-50%)');
                         } else {
                             lastSCl = null;
                         }
                     }
-                }else{
+                } else {
                     prevHeight = viewportHeight;
                 }
             } else {
-                // console.log('키패드 내리고')
+                console.log('키패드 내리고');
                 prevHeight = null;
-                if(!isApp) $target.css('transform', '');
+                if (!isApp) $target.css('transform', '');
             }
         }
 
         if ($target.length) {
             window.visualViewport.addEventListener('resize', viewportHandler);
-            console.log('event')
-            $target.find('input, textarea').on('focusout', function(){
-                if(!isApp) $target.css('transform', '');
-            })
+            $target.find('input, textarea').on('focusout', function () {
+                if (!isApp) $target.css('transform', '');
+            });
         }
     }
 };
