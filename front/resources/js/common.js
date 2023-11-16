@@ -984,8 +984,8 @@ const ui = {
         if (!ui.Mobile.iOS()) return;
         const $target = $('.comment-inp-box');
         const windowHeight = window.innerHeight;
-        const isApp = navigator.userAgent.match(/Safari/i) == null ? true : false;
-        //console.log('isApp', isApp, windowHeight, window.visualViewport.height);
+        const isSafari = navigator.userAgent.match(/Safari/i) == null ? false : true;
+        //console.log('isSafari', isSafari, windowHeight, window.visualViewport.height);
         let prevHeight = null;
         let moveSCl = null;
         let lastSCl = null;
@@ -1005,7 +1005,7 @@ const ui = {
                         lastSCl = sclNow;
                         if ($maxScl < sclVal) {
                             sclVal = $maxScl;
-                            if (!isApp) $target.css('transform', 'translateY(-50%)');
+                            if (isSafari) $target.css('transform', 'translateY(-50%)');
                         }
                         $(window).scrollTop(sclVal);
                     } else {
@@ -1013,7 +1013,7 @@ const ui = {
                         if (lastSCl) {
                             sclVal = Math.min($maxScl, lastSCl);
                             $(window).scrollTop(sclVal);
-                            if (!isApp) $target.css('transform', 'translateY(-50%)');
+                            if (isSafari) $target.css('transform', 'translateY(-50%)');
                         } else {
                             lastSCl = null;
                         }
@@ -1024,14 +1024,14 @@ const ui = {
             } else {
                 console.log('키패드 내리고');
                 prevHeight = null;
-                if (!isApp) $target.css('transform', '');
+                if (isSafari) $target.css('transform', '');
             }
         }
 
         if ($target.length) {
             window.visualViewport.addEventListener('resize', viewportHandler);
             $target.find('input, textarea').on('focusout', function () {
-                if (!isApp) $target.css('transform', '');
+                if (isSafari) $target.css('transform', '');
             });
         }
     }
