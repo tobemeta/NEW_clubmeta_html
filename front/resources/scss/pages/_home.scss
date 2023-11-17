@@ -552,14 +552,11 @@
             gap: 0.8rem;
             padding: 0.8rem 0;
         }
-        dt,
-        dd {
-            line-height: 2.4rem;
-        }
         dt {
             position: relative;
             width: 10rem;
             padding-left: 3.2rem;
+            line-height: 2.4rem;
             box-sizing: $sizing;
             color: #404040;
             flex-shrink: 0;
@@ -596,11 +593,17 @@
         }
         dd {
             flex: 1;
+            line-height: 2rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
             .tag-list {
-                gap: 0.4rem;
                 .tag {
                     font-size: 1.4rem;
                     color: #404040;
+                    margin-right: 0.4rem;
+                    &:last-child {
+                        margin-right: 0;
+                    }
                 }
             }
         }
