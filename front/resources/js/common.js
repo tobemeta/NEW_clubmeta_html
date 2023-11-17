@@ -15,6 +15,7 @@ $(window).on('resize', function () {
 
 const ui = {
     init: function () {
+        ui.Device.viewport();
         ui.Device.check();
 
         const _this = this;
@@ -30,7 +31,7 @@ const ui = {
         _this.tooltip.init();
         _this.select.init();
         _this.lottie();
-        _this.ios();
+        _this.keyboard();
 
         //퍼블리스트 확인용
         if (getUrlParams().pubPop) {
@@ -980,12 +981,11 @@ const ui = {
         };
         $lottieInit();
     },
-    ios: function () {
-        if (!ui.Mobile.iOS()) return;
-        const $target = $('.comment-inp-box');
+    keyboard: function () {
+        const $commentInp = $('.comment-inp-box');
         const windowHeight = window.innerHeight;
+        const isIOS = ui.Mobile.iOS();
         const isSafari = navigator.userAgent.match(/Safari/i) == null ? false : true;
-        //console.log('isSafari', isSafari, windowHeight, window.visualViewport.height);
         let prevHeight = null;
         let moveSCl = null;
         let lastSCl = null;
@@ -994,46 +994,52 @@ const ui = {
             const viewportHeight = viewport.height;
             if (windowHeight > viewportHeight) {
                 console.log('키패드 올리고');
-                const sclNow = window.scrollY || window.pageYOffset;
-                const $maxScl = $('body').height() - viewportHeight;
-                let sclVal = null;
-                if (prevHeight) {
-                    if (viewportHeight < prevHeight) {
-                        // 이모티콘 키보드 갈때
-                        moveSCl = prevHeight - viewportHeight;
-                        sclVal = sclNow + moveSCl;
-                        lastSCl = sclNow;
-                        if ($maxScl < sclVal) {
-                            sclVal = $maxScl;
-                            if (isSafari) $target.css('transform', 'translateY(-50%)');
-                        }
-                        $(window).scrollTop(sclVal);
-                    } else {
-                        // 자판 키보드로 돌아갈때
-                        if (lastSCl) {
-                            sclVal = Math.min($maxScl, lastSCl);
-                            if (isSafari) {
-                                $(window).scrollTop(sclVal);
-                                $target.css('transform', 'translateY(-50%)');
+                $('html').addClass('is-keyboard-active');
+                if (isIOS) {
+                    const sclNow = window.scrollY || window.pageYOffset;
+                    const $maxScl = $('body').height() - viewportHeight;
+                    let sclVal = null;
+                    if (prevHeight) {
+                        if (viewportHeight < prevHeight) {
+                            console.log('이모티콘 키패드');
+                            moveSCl = prevHeight - viewportHeight;
+                            sclVal = sclNow + moveSCl;
+                            lastSCl = sclNow;
+                            if ($maxScl < sclVal) {
+                                sclVal = $maxScl;
+                                if (isSafari) $commentInp.css('transform', 'translateY(-50%)');
                             }
+                            $(window).scrollTop(sclVal);
                         } else {
-                            lastSCl = null;
+                            console.log('일반 키패드');
+                            if (lastSCl) {
+                                sclVal = Math.min($maxScl, lastSCl);
+                                if (isSafari) {
+                                    $(window).scrollTop(sclVal);
+                                    if (sclNow !== lastSCl) $commentInp.css('transform', 'translateY(-50%)');
+                                    else $commentInp.css('transform', '');
+                                }
+                            } else {
+                                lastSCl = null;
+                            }
                         }
                     }
-                } else {
                     prevHeight = viewportHeight;
                 }
             } else {
                 console.log('키패드 내리고');
-                prevHeight = null;
-                if (isSafari) $target.css('transform', '');
+                $('html').removeClass('is-keyboard-active');
+                if (isIOS) {
+                    prevHeight = null;
+                    if (isSafari) $commentInp.css('transform', '');
+                }
             }
         }
 
-        if ($target.length) {
-            window.visualViewport.addEventListener('resize', viewportHandler);
-            $target.find('input, textarea').on('focusout', function () {
-                if (isSafari) $target.css('transform', '');
+        window.visualViewport.addEventListener('resize', viewportHandler);
+        if (isIOS && $commentInp.length) {
+            $commentInp.find('input, textarea').on('focusout', function () {
+                if (isSafari) $commentInp.css('transform', '');
             });
         }
     }
@@ -1177,7 +1183,8 @@ ui.Device = {
                 }
             });
         }
-
+    },
+    viewport: function(){
         // 최소기준 디바이스(가로)크기보다 작으면 meta[name="viewport"] 수정
         const deviceMinWidth = 360;
         if ($(window).width() < deviceMinWidth) {
