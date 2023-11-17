@@ -993,7 +993,7 @@ const ui = {
             var viewport = event.target;
             const viewportHeight = viewport.height;
             if (windowHeight > viewportHeight) {
-                console.log('키패드 올리고');
+                // console.log('키패드 올리고');
                 $('html').addClass('is-keyboard-active');
                 if (isIOS) {
                     const sclNow = window.scrollY || window.pageYOffset;
@@ -1001,7 +1001,7 @@ const ui = {
                     let sclVal = null;
                     if (prevHeight) {
                         if (viewportHeight < prevHeight) {
-                            console.log('이모티콘 키패드');
+                            // console.log('이모티콘 키패드');
                             moveSCl = prevHeight - viewportHeight;
                             sclVal = sclNow + moveSCl;
                             lastSCl = sclNow;
@@ -1011,7 +1011,7 @@ const ui = {
                             }
                             $(window).scrollTop(sclVal);
                         } else {
-                            console.log('일반 키패드');
+                            // console.log('일반 키패드');
                             if (lastSCl) {
                                 sclVal = Math.min($maxScl, lastSCl);
                                 if (isSafari) {
@@ -1027,7 +1027,7 @@ const ui = {
                     prevHeight = viewportHeight;
                 }
             } else {
-                console.log('키패드 내리고');
+                // console.log('키패드 내리고');
                 $('html').removeClass('is-keyboard-active');
                 if (isIOS) {
                     prevHeight = null;
