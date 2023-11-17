@@ -1012,8 +1012,10 @@ const ui = {
                         // 자판 키보드로 돌아갈때
                         if (lastSCl) {
                             sclVal = Math.min($maxScl, lastSCl);
-                            $(window).scrollTop(sclVal);
-                            if (isSafari) $target.css('transform', 'translateY(-50%)');
+                            if (isSafari) {
+                                $(window).scrollTop(sclVal);
+                                $target.css('transform', 'translateY(-50%)');
+                            }
                         } else {
                             lastSCl = null;
                         }
