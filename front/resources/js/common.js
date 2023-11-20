@@ -254,6 +254,7 @@ const ui = {
                 if ($rightOver > 0) $left = $left + $rightOver;
                 if ($leftOver < 0) $left = $left + $leftOver;
 
+                if($bodyW >= $winW - ($margin * 2)) $body.addClass('is-wrap');
                 $body.css({
                     left: -$left
                 });
