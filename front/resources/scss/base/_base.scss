@@ -198,3 +198,7 @@
         padding-right: $i * 0.1rem !important;
     }
 }
+
+.pointer-events-none {
+    pointer-events: none !important;
+}

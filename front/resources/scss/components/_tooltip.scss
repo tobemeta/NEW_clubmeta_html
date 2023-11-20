@@ -1,4 +1,5 @@
 .tooltip-box {
+    display: inline-block;
     position: relative;
     width: 2.4rem;
     height: 2.4rem;
@@ -20,10 +21,10 @@
         display: none;
         position: absolute;
         left: 0;
-        top: calc(100% + 4px);
-        width: 10rem;
-        min-width: 21.2rem;
-        // min-width: 21.2rem;
+        top: calc(100% + 0.4rem);
+        min-width: 20rem;
+        width: auto;
+        max-width: calc(100vw - 3.2rem);
         border-radius: 0.8rem;
         background-color: #fff;
         font-size: 1rem;
@@ -31,6 +32,8 @@
         z-index: 20;
         box-shadow: $shadow;
         box-sizing: border-box;
+        white-space: nowrap;
+        word-break: break-all;
         .tooltip-arr {
             content: '';
             position: absolute;
@@ -39,6 +42,7 @@
             display: block;
             width: 1.4rem;
             height: 1.3rem;
+            margin-left: -0.65rem;
             @include bg($src: '../images/ico/ico_box_tail.png');
             background-size: contain;
         }

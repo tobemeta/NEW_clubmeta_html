@@ -238,44 +238,39 @@ const ui = {
             $(ui.tooltip.className.btn + ui.tooltip.className.active).each(function () {
                 const $btn = $(this);
                 const $wrap = $btn.closest(ui.tooltip.className.wrap);
-                const $cont = $wrap.find(ui.tooltip.className.body);
-                const $winW = $(window).width() - 40;
-                const $bodyW = $(ui.tooltip.className.body).width();
+                const $body = $wrap.find(ui.tooltip.className.body);
+                const $arr = $wrap.find(ui.tooltip.className.arrow);
+                const $winW = $(window).width();
+                const $bodyW = $body.width();
                 const $btnW = $btn.outerWidth();
-                const $btnX = Math.min($winW + $btnW / 2 - 2, $btn.offset().left) - 20;
+                const $btnX = $btn.offset().left;
+                const $btnCenter = $btnX + $btnW / 2;
                 let $scrollEnd = $(window).height() + $(window).scrollTop();
+                const $margin = 16;
 
                 // if ($(ui.className.bottomFixed + ':visible').length) $scrollEnd = $scrollEnd - $(ui.className.bottomFixed).children().outerHeight();
+                let $left = ($bodyW - $btnW) / 2;
+                const $rightOver = ($btnCenter + $bodyW / 2) - ($winW - $margin);
+                const $leftOver = $btnCenter - ($bodyW / 2) - $margin;
+                console.log($leftOver)
+                if($rightOver > 0) $left = $left + $rightOver;
+                if($leftOver < 0) $left = $left + $leftOver;
+                
+                $body.css({
+                    left: -$left
+                });
+                $arr.css({
+                    left: $left + $btnW / 2
+                });
 
-                const $left = Math.max(-4, $btnX);
-                if ($(this).parent('.tooltip-box').hasClass('left')) {
-                    $cont.children(ui.tooltip.className.arrow).css({
-                        left: $left + $btnW / 2 - 7
-                    });
-                    $cont.css({
-                        width: 'auto',
-                        left: -$left
-                    });
+                const $bodyY = $wrap.offset().top + $wrap.outerHeight() + parseInt($body.css('margin-top')) + parseInt($body.css('margin-bottom')) + $body.outerHeight();
+                if ($body.hasClass('is-bottom')) {
+                    $body.addClass('bottom');
                 } else {
-                    console.log(2222);
-                    $cont.children(ui.tooltip.className.arrow).css({
-                        left: 101 + 'px'
-                    });
-                    $cont.css({
-                        width: 'auto',
-                        left: -50 + '%',
-                        transform: 'translateX(calc(-50% + 22px))'
-                    });
-                }
-
-                const $contY = $wrap.offset().top + $wrap.outerHeight() + parseInt($cont.css('margin-top')) + parseInt($cont.css('margin-bottom')) + $cont.outerHeight();
-                if ($cont.hasClass('is-bottom')) {
-                    $cont.addClass('bottom');
-                } else {
-                    if ($scrollEnd - 10 < $contY) {
-                        $cont.addClass('bottom');
+                    if ($scrollEnd - 10 < $bodyY) {
+                        $body.addClass('bottom');
                     } else {
-                        $cont.removeClass('bottom');
+                        $body.removeClass('bottom');
                     }
                 }
             });
@@ -291,17 +286,17 @@ const ui = {
         aria: function (element) {
             $(element).each(function (e) {
                 const $btn = $(this).find(ui.tooltip.className.btn);
-                const $cont = $(this).find(ui.tooltip.className.body);
-                let $contId = $cont.attr('id');
+                const $body = $(this).find(ui.tooltip.className.body);
+                let $bodyId = $body.attr('id');
                 const $closeBtn = $(this).find(ui.tooltip.className.closeBtn);
 
-                if (!$contId) $contId = 'ttCont-' + e;
+                if (!$bodyId) $bodyId = 'ttCont-' + e;
                 $btn.attr({
                     role: 'button'
-                    // 'aria-describedby': $contId
+                    // 'aria-describedby': $bodyId
                 });
-                $cont.attr({
-                    // id: $contId,
+                $body.attr({
+                    // id: $bodyId,
                     role: 'tooltip'
                 });
                 $closeBtn.attr('role', 'button');
@@ -316,10 +311,10 @@ const ui = {
             //열기
             $(document).on('click', ui.tooltip.className.wrap + ' ' + ui.tooltip.className.btn, function (e) {
                 e.preventDefault();
-                $cont = $(this).closest(ui.tooltip.className.wrap).find(ui.tooltip.className.body);
+                $body = $(this).closest(ui.tooltip.className.wrap).find(ui.tooltip.className.body);
                 if ($(this).hasClass('is-pop')) {
-                    const $popContent = $cont.html();
-                    const $popTitle = $cont.attr('title');
+                    const $popContent = $body.html();
+                    const $popTitle = $body.attr('title');
                     if ($popTitle !== undefined) {
                         Layer.tooltip($popContent, $popTitle);
                     } else {
@@ -327,26 +322,26 @@ const ui = {
                     }
                 } else {
                     if ($(this).hasClass(ui.tooltip.className.active.slice(1))) {
-                        $cont.stop(true, false).fadeOut();
+                        $body.stop(true, false).fadeOut();
                         $(this).removeClass(ui.tooltip.className.active.slice(1));
                     } else {
                         $(ui.tooltip.className.btn).removeClass(ui.tooltip.className.active.slice(1));
                         $(ui.tooltip.className.body).fadeOut();
                         $(this).addClass(ui.tooltip.className.active.slice(1));
-                        $cont.stop(true, false).fadeIn();
+                        $body.stop(true, false).fadeIn();
                         setTimeout(function () {
-                            ui.tooltip.position($cont);
-                        }, 30);
+                            ui.tooltip.position($body);
+                        }, 10);
                     }
                 }
             });
             //닫기
             $(document).on('click', ui.tooltip.className.closeBtn, function (e) {
                 e.preventDefault();
-                const $cont = $(this).closest(ui.tooltip.className.body);
-                const $btn = $cont.siblings(ui.tooltip.className.btn);
+                const $body = $(this).closest(ui.tooltip.className.body);
+                const $btn = $body.siblings(ui.tooltip.className.btn);
                 $btn.removeClass(ui.tooltip.className.active.slice(1));
-                $cont.stop(true, false).fadeOut(500, function () {
+                $body.stop(true, false).fadeOut(500, function () {
                     $btn.focus();
                 });
             });
@@ -358,6 +353,24 @@ const ui = {
                 .on('click touchend', ui.tooltip.className.wrap, function (e) {
                     e.stopPropagation();
                 });
+
+            $(ui.tooltip.className.btn + ui.tooltip.className.active).each(function(){
+                const $this = $(this);
+                const $body = $this.siblings(ui.tooltip.className.body);
+                const $hideTimer = $this.data('hide-timer');
+                if($body.length){
+                    $body.show();
+                    ui.tooltip.position($body);
+                    if($hideTimer) {
+                        $this.addClass('pointer-events-none');
+                        setTimeout(function () {
+                            $body.stop(true, false).fadeOut(500, function () {
+                                $this.removeClass('pointer-events-none');
+                            });
+                        }, $hideTimer);
+                    }
+                }
+            });
         }
     },
     input: function () {
