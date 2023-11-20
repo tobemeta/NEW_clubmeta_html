@@ -365,7 +365,7 @@ const ui = {
                         $this.addClass('pointer-events-none');
                         setTimeout(function () {
                             $body.stop(true, false).fadeOut(500, function () {
-                                $this.removeClass('pointer-events-none');
+                                $this.removeClass('pointer-events-none on');
                             });
                         }, $hideTimer);
                     }
