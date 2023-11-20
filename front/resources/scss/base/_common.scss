@@ -1202,20 +1202,15 @@ h1 {
 }
 .swiper-container {
     height: 100%;
-    & + .visual-custom {
+    & ~ .visual-custom {
         position: absolute;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        bottom: 4rem;
+        bottom: 3.2rem;
         left: 1.6rem;
         right: 1.6rem;
         z-index: 10;
         pointer-events: none;
-        .banner-area.advert & {
-            bottom: auto;
-            top: 1.2rem;
-        }
+
         .custom-left {
             display: inline-flex;
             height: 3.2rem;
@@ -1229,10 +1224,12 @@ h1 {
         }
         .custom-right {
             pointer-events: auto;
+            margin-left: auto;
             .btn-visual-more {
                 display: block;
                 width: 2.4rem;
                 height: 2.4rem;
+                margin-bottom: 0.8rem;
                 @include bg($src: '../images/ico/ico_w_list.png');
                 background-size: contain;
             }
@@ -1252,6 +1249,16 @@ h1 {
 
             &.is-stop {
                 background-image: url('../images/ico/ico_w_play.png');
+            }
+        }
+        .banner-area.advert & {
+            bottom: auto;
+            top: 1.2rem;
+            align-items: center;
+            .custom-right {
+                .btn-visual-more {
+                    margin-bottom: 0;
+                }
             }
         }
     }

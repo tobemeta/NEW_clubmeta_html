@@ -50,6 +50,17 @@
         object-fit: cover;
     }
 }
+@mixin box-ratio($width: null, $height: null) {
+    &:before {
+        content: '';
+        display: block;
+        @if ($width != null and $height != null) {
+            padding-top: -aspect-ratio($width, $height);
+        } @else {
+            padding-top: 100%;
+        }
+    }
+}
 
 @mixin bg($src: null, $repeat: no-repeat, $po: center, $on: null, $color: null) {
     @if $src != null {

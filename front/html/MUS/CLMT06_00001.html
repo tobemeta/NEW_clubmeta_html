@@ -510,7 +510,8 @@
                             </div>
                         </div>
                         <div class="visual-custom">
-                            <div class="custom-left">
+                            <!-- 2023-11-20: 기본 숨김처리 -->
+                            <div class="custom-left" style="display: none">
                                 <div class="count_insert"><span class="current">1</span>/<span class="total"></span></div>
                                 <button type="button" class="swiper-auto-ctl" aria-label="슬라이드 자동롤링 중지">
                                     <span class="blind">정지</span>
@@ -1353,6 +1354,9 @@
             <button type="button" class="btn-top">TOP</button>
         </div>
         <script>
+            // 임시 퍼블 화면확인용 스크립트 (개발 사용X)
+            if (getUrlParams().banner === 'none') $('.banner-area.advert .swiper-slide').remove();
+
             // 2023-09-14 수정
             var bannerSlideSet = {
                 // slidesPerView: 'auto',
@@ -1368,9 +1372,8 @@
                 },
                 on: {
                     init: function () {
-                        // 2023-09-14 수정
-                        var duplicate = this.loopedSlides * 2;
-                        var slideidx = this.slides.length - duplicate;
+                        // 2023-11-20
+                        var slideidx = this.slides.length;
 
                         // 가상 slide 뺀 slide 총 개수
                         $('.event-swiper .swiper-wrapper .swiper-slide').addClass('changed');
@@ -1403,7 +1406,14 @@
                     }
                 }
             };
-            const bannerSwiper = new Swiper('.banner-swiper', bannerSlideSet);
+
+            // 2023-11-20: 메인배너 스크립트 수정
+            let bannerSwiper;
+            if ($('.banner-swiper .swiper-slide').length > 1) {
+                // 배너가 2개부터 작동 O
+                bannerSwiper = new Swiper('.banner-swiper', bannerSlideSet);
+                $('.banner-area.advert .visual-custom .custom-left').show();
+            }
 
             var rankSlideSet = {
                 watchOverflow: true,

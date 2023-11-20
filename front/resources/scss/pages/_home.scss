@@ -1,6 +1,18 @@
 //홈화면
 .event-swiper {
     overflow: hidden;
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(5, 4, 37, 0) 75.52%, rgba(5, 4, 37, 0.4) 86.98%, rgba(5, 4, 37, 0.5) 100%);
+        pointer-events: none;
+        z-index: 1;
+    }
 }
 //알림 리스트 화면
 .alarm-list-box {
@@ -25,12 +37,25 @@
 
 .visual-box {
     &.event-slider {
+        position: relative;
+        .swiper-container {
+            @include box-ratio(320, 280);
+            @include bg($src: '../images/img/home_event_default.png');
+            background-size: cover;
+        }
+        .swiper-wrapper {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: auto;
+            background-color: #f9f9f9;
+        }
         & + .section {
             margin-top: -2.4rem;
             position: relative;
             z-index: 10;
         }
-        position: relative;
 
         .swiper-slide {
             a {
