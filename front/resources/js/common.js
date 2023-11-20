@@ -241,21 +241,19 @@ const ui = {
                 const $body = $wrap.find(ui.tooltip.className.body);
                 const $arr = $wrap.find(ui.tooltip.className.arrow);
                 const $winW = $(window).width();
-                const $bodyW = $body.width();
+                const $bodyW = $body.outerWidth();
                 const $btnW = $btn.outerWidth();
                 const $btnX = $btn.offset().left;
                 const $btnCenter = $btnX + $btnW / 2;
-                let $scrollEnd = $(window).height() + $(window).scrollTop();
+                const $scrollEnd = $(window).height() + $(window).scrollTop();
                 const $margin = 16;
 
-                // if ($(ui.className.bottomFixed + ':visible').length) $scrollEnd = $scrollEnd - $(ui.className.bottomFixed).children().outerHeight();
                 let $left = ($bodyW - $btnW) / 2;
-                const $rightOver = ($btnCenter + $bodyW / 2) - ($winW - $margin);
-                const $leftOver = $btnCenter - ($bodyW / 2) - $margin;
-                console.log($leftOver)
-                if($rightOver > 0) $left = $left + $rightOver;
-                if($leftOver < 0) $left = $left + $leftOver;
-                
+                const $rightOver = $btnCenter + $bodyW / 2 - ($winW - $margin);
+                const $leftOver = $btnCenter - $bodyW / 2 - $margin;
+                if ($rightOver > 0) $left = $left + $rightOver;
+                if ($leftOver < 0) $left = $left + $leftOver;
+
                 $body.css({
                     left: -$left
                 });
@@ -264,15 +262,9 @@ const ui = {
                 });
 
                 const $bodyY = $wrap.offset().top + $wrap.outerHeight() + parseInt($body.css('margin-top')) + parseInt($body.css('margin-bottom')) + $body.outerHeight();
-                if ($body.hasClass('is-bottom')) {
-                    $body.addClass('bottom');
-                } else {
-                    if ($scrollEnd - 10 < $bodyY) {
-                        $body.addClass('bottom');
-                    } else {
-                        $body.removeClass('bottom');
-                    }
-                }
+                if ($body.hasClass('is-bottom')) $body.addClass('bottom');
+                else if ($scrollEnd - 10 < $bodyY) $body.addClass('bottom');
+                else $body.removeClass('bottom');
             });
         },
         position: function (tar) {
@@ -354,14 +346,14 @@ const ui = {
                     e.stopPropagation();
                 });
 
-            $(ui.tooltip.className.btn + ui.tooltip.className.active).each(function(){
+            $(ui.tooltip.className.btn + ui.tooltip.className.active).each(function () {
                 const $this = $(this);
                 const $body = $this.siblings(ui.tooltip.className.body);
                 const $hideTimer = $this.data('hide-timer');
-                if($body.length){
+                if ($body.length) {
                     $body.show();
                     ui.tooltip.position($body);
-                    if($hideTimer) {
+                    if ($hideTimer) {
                         $this.addClass('pointer-events-none');
                         setTimeout(function () {
                             $body.stop(true, false).fadeOut(500, function () {
@@ -1197,7 +1189,7 @@ ui.Device = {
             });
         }
     },
-    viewport: function(){
+    viewport: function () {
         // 최소기준 디바이스(가로)크기보다 작으면 meta[name="viewport"] 수정
         const deviceMinWidth = 360;
         if ($(window).width() < deviceMinWidth) {
