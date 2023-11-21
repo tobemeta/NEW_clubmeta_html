@@ -459,6 +459,7 @@
     .swiper-slide {
         width: 216px;
         opacity: 0.5;
+        > a,
         .slide-inner {
             display: block;
             height: 100%;
@@ -552,6 +553,7 @@
             }
         }
         &.vinyl {
+            > a,
             .slide-inner {
                 display: flex;
                 flex-direction: column;
