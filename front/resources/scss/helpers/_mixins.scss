@@ -62,7 +62,7 @@
     }
 }
 
-@mixin bg($src: null, $repeat: no-repeat, $po: center, $on: null, $color: null) {
+@mixin bg($src: null, $repeat: no-repeat, $po: center center, $on: null, $color: null) {
     @if $src != null {
         background-image: url($src);
     }

@@ -339,11 +339,11 @@ const ui = {
                 });
             });
             $(document)
-                .on('click touchend', function (e) {
+                .on('click touchstart', function (e) {
                     $(ui.tooltip.className.body).stop(true, false).fadeOut();
                     $(ui.tooltip.className.wrap + ' ' + ui.tooltip.className.btn).removeClass(ui.tooltip.className.active.slice(1));
                 })
-                .on('click touchend', ui.tooltip.className.wrap, function (e) {
+                .on('click touchstart', ui.tooltip.className.wrap, function (e) {
                     e.stopPropagation();
                 });
 

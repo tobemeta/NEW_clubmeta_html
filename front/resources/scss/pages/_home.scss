@@ -459,60 +459,61 @@
     .swiper-slide {
         width: 216px;
         opacity: 0.5;
-        a {
+        .slide-inner {
             display: block;
             height: 100%;
-
-            .img {
-                overflow: hidden;
-                border-radius: 2.4rem;
-                height: 28.8rem;
-                background-color: #fff;
-            }
-            .time {
-                display: none;
-            }
         }
+        .img {
+            display: block;
+            overflow: hidden;
+            border-radius: 2.4rem;
+            height: 28.8rem;
+            background-color: #fff;
+        }
+        .time {
+            display: none;
+        }
+
         &.swiper-slide-active {
             opacity: 1;
             .util-list {
                 display: flex;
             }
-            a {
-                .img {
-                    box-shadow: $shadow;
-                    &:before {
-                        display: block;
-                        content: '';
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        background: linear-gradient(180deg, rgba(20, 36, 91, 0.036) 0%, rgba(0, 0, 0, 0) 100%);
-                        z-index: 1;
-                    }
-                }
-                .time {
+            .img {
+                box-shadow: $shadow;
+                &:before {
                     display: block;
+                    content: '';
                     position: absolute;
-                    top: 1.6rem;
-                    right: 1.6rem;
-                    font-size: 1rem;
-                    line-height: 1.4rem;
-                    color: #fff;
-                    z-index: 2;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(180deg, rgba(20, 36, 91, 0.036) 0%, rgba(0, 0, 0, 0) 100%);
+                    z-index: 1;
                 }
+            }
+            .time {
+                display: block;
+                position: absolute;
+                top: 1.6rem;
+                right: 1.6rem;
+                font-size: 1rem;
+                line-height: 1.4rem;
+                color: #fff;
+                z-index: 2;
             }
         }
         .util-list {
             display: none;
-            justify-content: space-around;
-            margin-top: 1.6rem;
+            margin-top: 1.2rem;
+            padding: 0 1.6rem;
+            align-items: center;
+            justify-content: space-between;
             p {
                 display: inline-flex;
                 position: relative;
-                max-width: calc(100% / 3);
+                max-width: calc((100% - 2.4rem) / 3);
                 padding-left: 1.8rem;
                 font-size: 1.2rem;
                 line-height: 1.7rem;
@@ -546,9 +547,12 @@
                     }
                 }
             }
+            .tooltip-box {
+                margin-left: 0;
+            }
         }
         &.vinyl {
-            a {
+            .slide-inner {
                 display: flex;
                 flex-direction: column;
                 padding-top: 7.2rem;
