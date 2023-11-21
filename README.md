@@ -1,6 +1,6 @@
 # NEW_clubmeta_html
 
-### 퍼블리싱프로그램(에디터) : vscode   
+### 퍼블리싱프로그램(에디터) : vscode   test
 > <https://code.visualstudio.com/>   
 > Microsoft의 무료 라이센스 프로그램   
 > 설치형, 무설치형(포터블) 있습니다.
