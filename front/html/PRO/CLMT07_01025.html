@@ -92,8 +92,7 @@
                             </div>
                         </div>
                         <div class="btn-bottom-box">
-                            <!-- 선택항목 0개일때만 disabled -->
-                            <button type="button" class="btn-primary" title="확인" disabled>확인</button>
+                            <button type="button" class="btn-primary" title="확인">확인</button>
                         </div>
                     </div>
                 </div>
@@ -104,18 +103,15 @@
     <script>
         var $inpchk = $('.category-box input');
         var $chkAll = $('.category-box input[name="chk_all"]');
-        var $btnPrimary = $('.btn-primary');
 
         $chkAll.on('click', function () {
             var isChecked = $chkAll.prop('checked');
             $inpchk.prop('checked', isChecked);
-            $btnPrimary.prop('disabled', !isChecked || $inpchk.filter(':checked').length === 0);
         });
 
         $inpchk.on('change', function () {
             var checkedCount = $inpchk.filter(':checked').length;
             $chkAll.prop('checked', $inpchk.length === checkedCount);
-            $btnPrimary.prop('disabled', checkedCount === 0);
         });
     </script>
 </html>
