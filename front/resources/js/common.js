@@ -254,7 +254,7 @@ const ui = {
                 if ($rightOver > 0) $left = $left + $rightOver;
                 if ($leftOver < 0) $left = $left + $leftOver;
 
-                if($bodyW >= $winW - ($margin * 2)) $body.addClass('is-wrap');
+                if ($bodyW >= $winW - $margin * 2) $body.addClass('is-wrap');
                 $body.css({
                     left: -$left
                 });
@@ -989,12 +989,15 @@ const ui = {
     },
     keyboard: function () {
         const $commentInp = $('.comment-inp-box');
-        const windowHeight = window.innerHeight;
+        let windowHeight = window.innerHeight;
         const isIOS = ui.Mobile.iOS();
         const isSafari = navigator.userAgent.match(/Safari/i) == null ? false : true;
         let prevHeight = null;
         let moveSCl = null;
         let lastSCl = null;
+        function resiseHandler() {
+            windowHeight = window.innerHeight;
+        }
         function viewportHandler(event) {
             var viewport = event.target;
             const viewportHeight = viewport.height;
@@ -1042,6 +1045,7 @@ const ui = {
             }
         }
 
+        window.addEventListener('resize', resiseHandler);
         window.visualViewport.addEventListener('resize', viewportHandler);
         if (isIOS && $commentInp.length) {
             $commentInp.find('input, textarea').on('focusout', function () {
