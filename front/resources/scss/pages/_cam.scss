@@ -165,18 +165,18 @@ a.btn-composer {
 .banner-area {
     &.advert {
         position: relative;
-        .swiper-container {
+        .swiper-container:not(.swiper-initialized) {
             @include box-ratio(360, 88);
             @include bg($src: '../images/img/music_event_default.png');
-            background-size: cover;
-        }
-        .swiper-wrapper {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: auto;
-            background-color: #f9f9f9;
+            background-size: auto 120%;
+            background-color: #ff5c00;
+            .swiper-wrapper {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: auto;
+            }
         }
 
         a {

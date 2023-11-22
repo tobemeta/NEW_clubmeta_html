@@ -38,19 +38,19 @@
 .visual-box {
     &.event-slider {
         position: relative;
-        .swiper-container {
+        .swiper-container:not(.swiper-initialized) {
             @include box-ratio(320, 280);
             @include bg($src: '../images/img/home_event_default.png');
             background-size: cover;
+            .swiper-wrapper {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: auto;
+            }
         }
-        .swiper-wrapper {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: auto;
-            background-color: #f9f9f9;
-        }
+
         & + .section {
             margin-top: -2.4rem;
             position: relative;
