@@ -168,8 +168,7 @@ a.btn-composer {
         .swiper-container:not(.swiper-initialized) {
             @include box-ratio(360, 88);
             @include bg($src: '../images/img/music_event_default.png');
-            background-size: auto 120%;
-            background-color: #ff5c00;
+            background-size: cover;
             .swiper-wrapper {
                 position: absolute;
                 left: 0;
