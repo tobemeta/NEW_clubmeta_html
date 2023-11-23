@@ -49,6 +49,7 @@
                     width: 100%;
                     text-align: left;
                     @include ellipsis(1);
+                    height: 3.4rem;
                     &:before {
                         display: inline-flex;
                         content: '#';
