@@ -1202,7 +1202,8 @@ h1 {
     & ~ .visual-custom {
         position: absolute;
         display: flex;
-        bottom: 3.2rem;
+        align-items: center;
+        bottom: 3.6rem;
         left: 1.6rem;
         right: 1.6rem;
         z-index: 10;
@@ -1226,7 +1227,6 @@ h1 {
                 display: block;
                 width: 2.4rem;
                 height: 2.4rem;
-                margin-bottom: 0.8rem;
                 @include bg($src: '../images/ico/ico_w_list.png');
                 background-size: contain;
             }
@@ -1251,12 +1251,6 @@ h1 {
         .banner-area.advert & {
             bottom: auto;
             top: 1.2rem;
-            align-items: center;
-            .custom-right {
-                .btn-visual-more {
-                    margin-bottom: 0;
-                }
-            }
         }
     }
 }
