@@ -28,6 +28,7 @@
         transform: translateY(-100%);
         padding-bottom: var(--statusBarHeight);
         top: var(--statusBarHeight);
+        border-bottom-width: 0;
     }
     .header-inner {
         display: flex;
