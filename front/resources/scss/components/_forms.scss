@@ -112,7 +112,7 @@
 
         &.disabled,
         &:disabled {
-            background: $disabled;
+            background: $input-disabled;
             color: $disabled-color;
             & + .btn-inp-pw,
             & + .btn-inp-del {
