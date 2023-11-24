@@ -870,16 +870,13 @@ h1 {
 }
 
 .tag-list-box {
-    ul {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
     li {
-        display: none;
+        + li {
+            margin-top: 1rem;
+        }
     }
     a {
-        display: flex;
+        display: block;
         position: relative;
         align-items: center;
         height: 4.8rem;
@@ -890,7 +887,7 @@ h1 {
         box-shadow: $shadow;
         line-height: 3.2rem;
         box-sizing: $sizing;
-        @include ellipsis(1);
+        @include ellipsis(0);
         &:before {
             display: inline-flex;
             content: '#';
@@ -1175,16 +1172,21 @@ h1 {
     }
     .tag-list-box {
         ul {
-            flex-wrap: wrap;
-            flex-direction: row;
+            margin: -0.5rem;
+        }
+        li {
+            display: inline-block;
+            max-width: calc(100% - 1rem);
+            margin: 0.5rem;
         }
         a {
             height: 3.2rem;
             padding: 0.4rem 1.6rem;
+            line-height: 2.4rem;
             border: 1px solid rgba(255, 255, 255, 0.6);
             background: #fff;
             box-sizing: $sizing;
-            @include ellipsis(1);
+
             &:before {
                 display: inline-block;
                 content: '#';
