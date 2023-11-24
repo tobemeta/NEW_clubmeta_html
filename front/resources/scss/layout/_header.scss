@@ -27,7 +27,7 @@
     &.up {
         transform: translateY(-100%);
         padding-bottom: var(--statusBarHeight);
-        margin-bottom: calc(var(--statusBarHeight) * -1);
+        top: var(--statusBarHeight);
     }
     .header-inner {
         display: flex;
