@@ -25,7 +25,9 @@
         }
     }
     &.up {
-        transform: translateY(-110%);
+        transform: translateY(-100%);
+        padding-bottom: var(--statusBarHeight);
+        margin-bottom: calc(var(--statusBarHeight) * -1);
     }
     .header-inner {
         display: flex;
