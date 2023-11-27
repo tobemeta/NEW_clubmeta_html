@@ -343,7 +343,9 @@ a.btn-composer {
                 color: #585858;
 
                 span {
-                    display: block;
+                    display: flex;
+                    align-items: center;
+                    line-height: 1.6rem;
 
                     &:after {
                         display: inline-block;

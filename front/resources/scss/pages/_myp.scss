@@ -146,6 +146,8 @@
             font-size: 0;
             color: #404040;
             box-sizing: $sizing;
+            line-height: 1.6rem;
+            height: 1.6rem;
             &:before {
                 display: block;
                 content: '';
@@ -155,6 +157,9 @@
                 width: 1.6rem;
                 height: 1.6rem;
                 background-size: contain;
+                html.ios & {
+                    top: -0.1rem;
+                }
             }
 
             &.view:before {
