@@ -77,10 +77,19 @@
         .sch-result-nodata {
             display: flex;
         }
-        // .sch-result-cont {
-        //     display: none;
-        // }
+        .sch-result-cont {
+            display: none;
+        }
     }
+    &.result-no-ty2 {
+        .sch-result-nodata {
+            display: flex;
+        }
+        .challenge-box {
+            display: none;
+        }
+    }
+
     .sch-result-nodata {
         display: none;
         justify-content: center;
