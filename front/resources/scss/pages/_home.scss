@@ -138,6 +138,8 @@
                     content: '';
                     width: 1.6rem;
                     height: 1.6rem;
+                    position: relative;
+                    top: -0.1rem;
                 }
                 &.like:before {
                     @include bg($src: '../images/ico/ico_w_heart.png');
