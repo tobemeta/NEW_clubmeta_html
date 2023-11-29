@@ -394,7 +394,7 @@
                     @include bg($src: '../images/ico/ico_rank_up.png');
                     background-size: contain;
                     html.ios & {
-                        top: 0.1rem;
+                        top: -0.1rem;
                     }
                 }
             }
@@ -412,7 +412,7 @@
                     @include bg($src: '../images/ico/ico_rank_down.png');
                     background-size: contain;
                     html.ios & {
-                        top: 0.1rem;
+                        top: -0.1rem;
                     }
                 }
             }
