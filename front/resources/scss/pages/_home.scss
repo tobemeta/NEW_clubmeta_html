@@ -94,13 +94,11 @@
                 line-height: 1.6rem;
                 &:before {
                     position: relative;
+                    top: -0.1rem;
                     display: inline-block;
                     content: '';
                     width: 1.6rem;
                     height: 1.6rem;
-                    html.ios & {
-                        top: -0.1rem;
-                    }
                 }
                 &.like:before {
                     @include bg($src: '../images/ico/ico_w_heart.png');
@@ -384,7 +382,7 @@
                 font-size: 1rem;
                 color: #e92dff;
                 &:before {
-                    top: 0;
+                    top: -0.1rem;
                     width: 1.6rem;
                     height: 1.6rem;
                     margin-bottom: 0;
@@ -393,16 +391,13 @@
                     transform: none;
                     @include bg($src: '../images/ico/ico_rank_up.png');
                     background-size: contain;
-                    html.ios & {
-                        top: -0.1rem;
-                    }
                 }
             }
             &.rank-down {
                 font-size: 1rem;
                 color: #306aff;
                 &:before {
-                    top: 0;
+                    top: -0.1rem;
                     width: 1.6rem;
                     height: 1.6rem;
                     margin-bottom: 0;
@@ -411,9 +406,6 @@
                     transform: none;
                     @include bg($src: '../images/ico/ico_rank_down.png');
                     background-size: contain;
-                    html.ios & {
-                        top: -0.1rem;
-                    }
                 }
             }
         }

@@ -152,14 +152,11 @@
                 display: block;
                 content: '';
                 position: absolute;
-                top: 0;
+                top: -0.1rem;
                 left: 0;
                 width: 1.6rem;
                 height: 1.6rem;
                 background-size: contain;
-                html.ios & {
-                    top: -0.1rem;
-                }
             }
 
             &.view:before {
