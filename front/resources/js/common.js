@@ -880,13 +880,30 @@ const ui = {
         }
 
         function expandScroll() {
-            const $fScl = $(document).outerHeight();
-            $('html, body').stop().animate({ scrollTop: $fScl }, 1500);
+            let $SclVal = $btnMore.is(':visible') ? $btnMore.offset().top + $btnMore.outerHeight() :$listWrap.offset().top + $listWrap.outerHeight();
+            if($(window).scrollTop() + $(window).height() < $SclVal) {
+                $SclVal = Math.min($listWrap.offset().top - 10, $SclVal - $(window).height() + 10);
+                $('html, body').stop().animate({ scrollTop: $SclVal }, 1000);
+            }
+        }
+
+        function toggleItem() {
+            if($btnMore.hasClass('open')){
+                $li.slice(5, $li.length).hide();
+                $btnMore.removeClass('open').text('더보기');
+            }else{
+                $li.show();
+                $btnMore.addClass('open').text('접기');
+            }
         }
 
         $btnMore.on('click', function (e) {
             e.preventDefault();
-            showNextBatch();
+            if($btnMore.hasClass('ty2')){
+                toggleItem()
+            }else{
+                showNextBatch();
+            }
             expandScroll();
         });
 

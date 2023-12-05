@@ -100,9 +100,25 @@
 }
 
 .btn-loadmore {
-    @include bg($src: '../images/ico/ico_more2.png', $po: left);
-    background-size: 1.6rem;
+    position: relative;
     padding-left: 2rem;
+    &:before {
+        content: '';
+        display: block;
+        width: 1.6rem;
+        height: 1.6rem;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: -0.8rem;
+        @include bg($src: '../images/ico/ico_more2.png', $po: left);
+        background-size: contain;
+    }
+    &.open {
+        &:before {
+            transform: rotate(180deg);
+        }
+    }
 }
 
 .btn-play {
